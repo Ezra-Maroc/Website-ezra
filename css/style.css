@@ -1,0 +1,381 @@
+/* ===== RESET ET STYLES DE BASE ===== */
+:root {
+  --primary-color: #c5281c;
+  --secondary-color: #28a745; /* Utilisé pour les puces check-circle */
+  --dark-color: #333;
+  --light-color: #f9f9f9;
+  --accent-color: #f0b429;
+  --font-main: 'Poppins', sans-serif;
+  --font-heading: 'Montserrat', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  line-height: 1.6;
+  color: var(--dark-color);
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #a71c13;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== HEADER ===== */
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  position: relative;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo span {
+  color: var(--dark-color);
+}
+
+/* Styles Navigation Bureau (et mobile simple sans JS) */
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+.nav-links a {
+  font-weight: 500;
+  color: var(--dark-color);
+  position: relative;
+  padding: 5px 0;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+/* Active nav link Bureau */
+.nav-links a.active {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+/* Styles pour .nav-toggle, .hamburger, body.nav-open retirés (confirmé) */
+
+
+/* ===== BOUTONS ===== */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 5px;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+  margin: 5px 10px;
+}
+
+.btn-primary { background-color: var(--primary-color); color: #fff; }
+.btn-primary:hover { background-color: #a71c13; color: #fff; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(197, 40, 28, 0.3); }
+.btn-outline { border: 2px solid var(--primary-color); color: var(--primary-color); background-color: transparent; }
+.btn-outline:hover { background-color: var(--primary-color); color: #fff; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(197, 40, 28, 0.3); }
+.btn-outline-light { border: 2px solid #fff; color: #fff; background-color: transparent; }
+.btn-outline-light:hover { background-color: #fff; color: var(--primary-color); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3); }
+.btn-text { color: var(--primary-color); padding: 12px 20px; background: transparent; text-decoration: underline; }
+.btn-text:hover { color: #a71c13; transform: translateY(-2px); }
+.btn-link { display: inline-flex; align-items: center; color: var(--primary-color); font-weight: 500; padding: 8px 0; position: relative; }
+.btn-link i { margin-left: 8px; transition: transform 0.3s ease; }
+.btn-link:hover i { transform: translateX(5px); }
+.btn-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-color); transition: width 0.3s ease; }
+.btn-link:hover::after { width: 100%; }
+/* Style spécifique bouton CTA blanc */
+.btn-light { background-color: #fff; color: var(--primary-color); font-weight: 600; }
+.btn-light:hover { background-color: var(--light-color); color: var(--primary-color); /* Garder couleur texte */ transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3); }
+
+
+/* ===== HERO SECTION ===== */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/drapeau-maroc.jpg') center/cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  padding-top: 100px; /* Espace pour header fixe */
+  padding-bottom: 40px;
+}
+
+.hero-content { max-width: 800px; padding: 0 20px; }
+.hero h1 { font-family: var(--font-heading); font-size: 3.5rem; font-weight: 700; margin-bottom: 20px; line-height: 1.2; }
+.hero p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; }
+.hero-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
+
+
+/* ===== INTRO SECTION ===== */
+.intro-section { padding: 80px 0; text-align: center; }
+.intro-text { max-width: 800px; margin: 0 auto 50px; font-size: 1.2rem; color: var(--dark-color); }
+.strengths { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 40px; }
+.strength-item { padding: 20px; transition: all 0.3s ease; }
+.strength-item:hover { transform: translateY(-5px); }
+.strength-icon { font-size: 36px; color: var(--primary-color); margin-bottom: 15px; }
+.strength-item h3 { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 600; margin-bottom: 10px; color: var(--dark-color); }
+.strength-item p { color: #666; font-size: 0.9rem; }
+
+
+/* ===== SECTIONS GÉNÉRALES ===== */
+.section { padding: 100px 0; scroll-margin-top: 100px; /* Header height offset */ }
+.section-title { text-align: center; font-family: var(--font-heading); font-size: 2.5rem; font-weight: 700; margin-bottom: 50px; color: var(--dark-color); position: relative; }
+.section-title::after { content: ''; position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); width: 70px; height: 3px; background-color: var(--primary-color); }
+.section-title span { color: var(--primary-color); }
+
+
+/* ===== SECTION SERVICES (Index Page) ===== */
+.services-section { background-color: #fff; }
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 40px; }
+.feature-card { background-color: #fff; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); padding: 30px; transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; }
+.feature-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); }
+.feature-icon { font-size: 40px; color: var(--primary-color); margin-bottom: 20px; }
+.feature-title { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; margin-bottom: 15px; }
+.services-more { text-align: center; margin-top: 30px; }
+
+
+/* ===== SECTION PROCESSUS (Index Page) ===== */
+.process-section { background-color: var(--light-color); }
+.process-steps { display: flex; flex-direction: column; gap: 30px; margin-bottom: 40px; }
+.process-step { display: flex; align-items: flex-start; gap: 20px; background-color: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.process-step:hover { transform: translateX(10px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
+.step-number { display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background-color: var(--primary-color); color: #fff; font-weight: 700; font-size: 1.5rem; flex-shrink: 0; }
+.step-content { flex-grow: 1; }
+.step-title { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 600; margin-bottom: 10px; color: var(--primary-color); }
+.step-duration { display: inline-block; padding: 5px 12px; background-color: rgba(197, 40, 28, 0.1); color: var(--primary-color); border-radius: 20px; font-size: 0.85rem; font-weight: 500; margin-top: 10px; }
+.process-more { text-align: center; margin-top: 30px; }
+
+
+/* ===== SECTION TÉMOIGNAGES (Index Page) ===== */
+.testimonial-section { background-color: #fff; } /* Ajout fond pour section index */
+.testimonial { max-width: 800px; margin: 0 auto; }
+.testimonial-content { background-color: var(--light-color); border-radius: 10px; padding: 40px; position: relative; margin-bottom: 30px; text-align: center; }
+.testimonial-content::after { content: ''; position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); border-width: 15px 15px 0; border-style: solid; border-color: var(--light-color) transparent transparent; }
+.testimonial-text { font-size: 1.1rem; font-style: italic; margin-bottom: 20px; position: relative; }
+.testimonial-text::before, .testimonial-text::after { content: '"'; font-size: 4rem; color: rgba(197, 40, 28, 0.2); position: absolute; line-height: 0; }
+.testimonial-text::before { top: 0; left: -20px; }
+.testimonial-text::after { bottom: 0; right: -20px; }
+.testimonial-client { display: flex; flex-direction: column; align-items: center; margin-bottom: 30px; }
+.testimonial-client h4 { font-weight: 600; font-size: 1.1rem; margin-bottom: 5px; }
+.testimonial-client p { color: #666; }
+.testimonials-more { text-align: center; }
+
+
+/* ===== SECTION WHY US (Index Page) ===== */
+.why-us-section { background-color: var(--light-color); } /* Changé le fond */
+.why-us-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+.why-us-item { text-align: center; padding: 20px; transition: transform 0.3s ease; flex: 1 1 220px; max-width: 300px; }
+.why-us-item:hover { transform: translateY(-10px); }
+.why-us-icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 20px; }
+.why-us-item h3 { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 600; margin-bottom: 10px; }
+.why-us-item p { color: #666; }
+
+
+/* ===== SECTION PAGE BANNER (Pour les autres pages) ===== */
+/* Styles ajoutés/confirmés pour être utilisés par les autres CSS */
+.page-banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/drapeau-maroc.jpg') center/cover no-repeat;
+  padding: 150px 0 80px;
+  color: #fff;
+  text-align: center;
+}
+
+.page-banner h1 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.page-banner p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* ===== SECTION CTA (Globale) ===== */
+/* Styles ajoutés/confirmés pour être utilisés globalement */
+.cta-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+              url('../img/bleu.jpeg') /* Chemin image global */
+              center center / cover
+              no-repeat;
+  color: #fff;
+  padding: 80px 0;
+  text-align: center;
+}
+.cta-title { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 700; margin-bottom: 30px; }
+.cta-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+
+
+/* ===== FOOTER ===== */
+footer { background-color: var(--dark-color); color: #fff; padding: 60px 0 20px; }
+.footer-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+.footer-logo { font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 20px; display: block; }
+.footer-text { margin-bottom: 20px; opacity: 0.8; font-size: 0.9rem; }
+.footer-heading { font-size: 1.2rem; font-weight: 600; margin-bottom: 20px; }
+.footer-social { display: flex; gap: 15px; }
+.footer-social a { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1); color: #fff; transition: all 0.3s ease; }
+.footer-social a:hover { background-color: var(--primary-color); transform: translateY(-5px); }
+.footer-links ul, .footer-services ul, .footer-contact ul { list-style: none; padding: 0; }
+.footer-links li, .footer-services li, .footer-contact li { margin-bottom: 10px; }
+.footer-links a, .footer-services a { color: rgba(255, 255, 255, 0.7); transition: all 0.3s ease; }
+.footer-links a:hover, .footer-services a:hover { color: #fff; padding-left: 5px; }
+.footer-contact i { margin-right: 10px; color: var(--primary-color); }
+.footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.9rem; opacity: 0.7; }
+
+
+/* ===== ANIMATIONS AU DEFILEMENT (retirées/commentées) ===== */
+/* .animate-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; } */
+/* .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); } */
+
+
+/* ===== RESPONSIVE ===== */
+
+/* --- Styles pour écrans moyens (Tablettes, petits laptops) --- */
+@media (max-width: 992px) {
+  .hero h1 { font-size: 3rem; }
+  .section-title { font-size: 2.2rem; }
+  .cta-title { font-size: 2.2rem; }
+  .page-banner h1 { font-size: 2.5rem; } /* Responsive bannière globale */
+}
+
+/* --- Styles pour tablettes et mobile (version simple sans menu JS) --- */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.5rem; }
+  .section-title { font-size: 2rem; }
+  .cta-title { font-size: 2rem; } /* Responsive CTA globale */
+  .page-banner { padding: 120px 0 60px; } /* Responsive bannière globale */
+  .page-banner h1 { font-size: 2rem; } /* Responsive bannière globale */
+
+  /* --- Comportement Header Mobile SIMPLE --- */
+  .header-container {
+      flex-direction: column;
+      padding-bottom: 10px; /* Espace entre logo et nav si colonne */
+  }
+
+  /* Comportement Nav Mobile SIMPLE */
+  .nav-links {
+      margin-top: 15px; /* Réduire espace */
+      flex-wrap: wrap;
+      justify-content: center;
+      position: static;
+      height: auto;
+      width: auto;
+      max-width: none;
+      background-color: transparent;
+      flex-direction: row;
+      box-shadow: none;
+      transform: none;
+      transition: none;
+      padding: 0;
+  }
+   .nav-links li {
+     margin-left: 10px;
+     margin-right: 10px;
+     margin-bottom: 10px;
+     width: auto;
+     text-align: left;
+   }
+   .nav-links a {
+      font-size: 0.95rem; /* Taille police légèrement réduite sur mobile */
+   }
+   .nav-links a.active::after {
+      display: block; /* Assurer que le soulignement est visible */
+      bottom: -3px; /* Rapprocher légèrement */
+   }
+  /* --- Fin Comportement Header Mobile SIMPLE --- */
+
+  /* Autres ajustements responsives */
+  .process-step { flex-direction: column; align-items: center; text-align: center; }
+  .step-number { margin-bottom: 15px; }
+  .hero-buttons { flex-direction: column; align-items: center; }
+  .btn { margin-bottom: 10px; width: 80%; max-width: 300px; }
+  .cta-buttons { flex-direction: column; align-items: center; }
+  .why-us-item { flex-basis: calc(50% - 15px); max-width: calc(50% - 15px); }
+}
+
+
+/* --- Styles pour Petits Mobiles --- */
+@media (max-width: 576px) {
+  .hero h1 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
+  .section { padding: 60px 0; }
+  .btn { padding: 10px 20px; font-size: 14px; width: 90%; }
+  .feature-card { padding: 20px; }
+  .process-step { padding: 20px; }
+  .testimonial-content { padding: 25px; }
+  .testimonial-text::before, .testimonial-text::after { font-size: 3rem; }
+  .why-us-item { flex-basis: 100%; max-width: none; }
+  /* Ajustements Page Banner */
+  .page-banner p { font-size: 0.95rem; }
+  /* Ajustements Header mobile */
+   .nav-links li { margin-left: 5px; margin-right: 5px; } /* Moins d'espace */
+   .nav-links a { font-size: 0.9rem; }
+}

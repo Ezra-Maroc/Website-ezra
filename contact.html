@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez Ezra Maroc | Votre Projet de Nationalité</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="Ezra Maroc Logo">
+                <span>Ezra <strong>Maroc</strong></span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="processus.html">Processus</a></li>
+                    <li><a href="temoignages.html">Livre d'Or</a></li>
+                    <li><a href="a-propos.html">À propos</a></li>
+                    <li class="nav-item"><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-banner">
+        <div class="container">
+            <h1>Prenons Contact</h1>
+            <p>Prêt à discuter de votre projet d'obtention de la nationalité marocaine ? Notre équipe est là pour répondre à vos questions et vous guider.</p>
+        </div>
+    </section>
+
+    <section id="contact-details" class="section contact-section">
+        <div class="container">
+             <h2 class="section-title internal-title">Comment nous <span>joindre ?</span></h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3 class="info-title">Nos Coordonnées</h3>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-building"></i></div>
+                        <div class="info-content">
+                            <h4>Siège Administratif (USA)</h4>
+                            <p>30 N Gould St Ste R<br>Sheridan, WY 82801, États-Unis</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                        <div class="info-content">
+                            <h4>Email Principal</h4>
+                            <p><a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-regular fa-clock"></i></div>
+                        <div class="info-content">
+                             <h4>Heures d'Assistance</h4>
+                             <p>Lundi - Vendredi : 9h00 - 18h00<br><span class="timezone">(Préciser Fuseau Horaire, ex: GMT+1)</span></p>
+                        </div>
+                    </div>
+
+                    <div class="social-media">
+                        <h4>Restons Connectés</h4>
+                        <div class="social-icons">
+                            <a href="#" aria-label="Facebook" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#" aria-label="LinkedIn" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Instagram" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <h3 class="form-title">Envoyez-nous Votre Demande</h3>
+                    <div id="form-message" class="form-message" style="display:none;"></div>
+                     <form id="contact-form" class="contact-form" novalidate>
+                        <div class="form-group">
+                            <label for="name">Nom complet <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" placeholder="Ex: Jean Dupont" required>
+                            <div class="error-message" id="name-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="Ex: jean.dupont@email.com" required>
+                             <div class="error-message" id="email-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Téléphone <span class="optional">(Optionnel)</span></label>
+                            <input type="tel" id="phone" name="phone" placeholder="Ex: +33 6 12 34 56 78">
+                             <div class="error-message" id="phone-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Sujet de votre demande <span class="required">*</span></label>
+                            <select id="subject" name="subject" required>
+                                <option value="" selected disabled>-- Choisissez un sujet --</option>
+                                <option value="eligibility">Évaluation d'éligibilité</option>
+                                <option value="dossier">Constitution du dossier</option>
+                                <option value="suivi">Suivi administratif</option>
+                                <option value="post-obtention">Assistance post-obtention</option>
+                                <option value="partenariat">Demande de partenariat</option>
+                                <option value="autre">Autre demande</option>
+                            </select>
+                             <div class="error-message" id="subject-error"></div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="message">Votre message <span class="required">*</span></label>
+                            <textarea id="message" name="message" rows="5" placeholder="Décrivez votre situation ou votre question ici..." required></textarea>
+                            <div class="error-message" id="message-error"></div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="privacy" name="privacy" required>
+                                <label for="privacy">J'ai lu et j'accepte la <a href="/politique-confidentialite.html" target="_blank">politique de confidentialité</a> d'Ezra Maroc.<span class="required">*</span></label>
+                            </div>
+                             <div class="error-message" id="privacy-error"></div>
+                        </div>
+
+                        <div class="form-submit full-width">
+                            <button type="submit" class="btn btn-primary">
+                                <span class="btn-text">Envoyer le message</span>
+                                <span class="btn-loader" style="display: none;"><i class="fa-solid fa-spinner fa-spin"></i> Envoi...</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <h2 class="section-title visually-hidden">Localisation</h2>
+        <div class="map-container">
+            <!-- Mettre à jour l'URL iframe ici -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.690103489995!2d-73.98786488459385!3d40.7484409793284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117429%3A0xF6A7E32C742B8A48!2sEmpire%20State%20Building!5e0!3m2!1sfr!2sfr!4v1678886878888!5m2!1sfr!2sfr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Carte indiquant la localisation"></iframe>
+            </div>
+    </section>
+
+    <!-- Section FAQ Snippet SUPPRIMÉE -->
+    <!-- <section id="faq-snippet-section" class="section faq-section alt-bg"> ... </section> -->
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Vous avez d'autres questions ou êtes prêt à démarrer ?</h2>
+            <div class="cta-buttons">
+                 <a href="#contact-details" class="btn btn-light">Nous Contacter Directement</a>
+                 <a href="services.html" class="btn btn-outline-light">Revoir nos Services</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <!-- Footer Standard -->
+        <div class="container footer-container">
+            <div class="footer-about">
+                 <a href="index.html" class="footer-logo">Ezra Maroc</a>
+                <p class="footer-text">Spécialistes de l'obtention de la nationalité marocaine, nous vous accompagnons à chaque étape de votre démarche.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                 <h3 class="footer-heading">Liens rapides</h3>
+                 <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Nos services</a></li>
+                    <li><a href="processus.html">Notre processus</a></li>
+                    <li><a href="temoignages.html">Livre d'Or</a></li>
+                    <li><a href="a-propos.html">À propos de nous</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                 </ul>
+            </div>
+             <div class="footer-services">
+                <h3 class="footer-heading">Nos services</h3>
+                 <ul>
+                    <li><a href="services.html#eligibility">Évaluation d'éligibilité</a></li>
+                    <li><a href="services.html#constitution">Constitution du dossier</a></li>
+                    <li><a href="services.html#suivi">Suivi administratif</a></li>
+                    <li><a href="services.html#post-obtention">Assistance post-obtention</a></li>
+                    <li><a href="services.html#expertise">Conseil juridique</a></li>
+                 </ul>
+            </div>
+            <div class="footer-contact">
+                 <h3 class="footer-heading">Contact</h3>
+                 <ul>
+                    <li><i class="fa-solid fa-location-dot"></i> 30 N Gould St Ste R, Sheridan, WY 82801, USA</li>
+                    <li><i class="fa-solid fa-envelope"></i> info@ezra-project.fr</li>
+                 </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+             <div class="container">
+                <p>© 2024 Ezra Maroc Consulting Services LLC. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lien JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
