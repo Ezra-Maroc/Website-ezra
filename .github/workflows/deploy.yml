@@ -18,8 +18,8 @@ jobs:
 
       - name: 🔧 Configuration de Git
         run: |
-          git config --global user.email "an.assayag@gmail.com"
-          git config --global user.name "Ariel Assayag"
+          git config --global user.email "albertassayag@ezra-project.fr"
+          git config --global user.name "Ezra-Maroc"
 
       - name: 🚀 Déploiement vers gh-pages
         run: |
@@ -30,7 +30,7 @@ jobs:
           touch .nojekyll
           echo 'ezra-maroc.com' > CNAME
           git init
-          git remote add origin https://github.com/Ezra-Maroc/Website-ezra.git
+          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Ezra-Maroc/Website-ezra.git
           git checkout -b gh-pages
           git add .
           git commit -m "⚡ Déploiement automatique"
