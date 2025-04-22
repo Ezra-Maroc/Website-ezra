@@ -1,0 +1,29 @@
+name: Déploiement GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout du dépôt
+        uses: actions/checkout@v3
+
+      - name: ⚙️ Configuration Git
+        run: |
+          git config --global user.name "Ariel Assayag"
+          git config --global user.email "an.assayag@gmail.com"
+
+      - name: 🚀 Déploiement vers gh-pages
+        run: |
+          git fetch origin
+          git worktree add ../gh-pages gh-pages
+          cp -r * ../gh-pages
+          cd ../gh-pages
+          git add .
+          git commit -m "🚀 Déploiement automatique depuis master"
+          git push origin gh-pages
