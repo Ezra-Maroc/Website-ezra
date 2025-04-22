@@ -23,13 +23,24 @@
                     <li><a href="index.html">Accueil</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="processus.html">Processus</a></li>
-                    <li><a href="temoignages.html">Livre d'Or</a></li> <!-- MàJ Texte Lien -->
-                    <li class="nav-item"><a href="a-propos.html" class="active">À propos</a></li> <!-- Classe active -->
+                    <li><a href="temoignages.html">Témoignages</a></li> <!-- Texte Lien mis à jour -->
+                    <li><a href="a-propos.html" class="active">À propos</a></li> <!-- Classe active -->
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </nav>
-            <!-- Bouton burger supprimé -->
+            <!-- Sélecteur de Langue Ajouté -->
+             <div class="language-switcher">
+                <label for="lang-select" class="visually-hidden">Choisir la langue</label>
+                <select name="lang" id="lang-select" onchange="location = this.value;">
+                    <!-- Liens adaptés pour la page À Propos -->
+                    <option value="a-propos.html" selected lang="fr">Français</option>
+                    <!-- Mettre les vrais chemins vers les pages traduites -->
+                    <option value="/en/about.html" lang="en">English</option>
+                    <option value="/es/about.html" lang="es">Español</option>
+                    <option value="/he/about.html" lang="he">עברית</option>
+                </select>
+            </div>
         </div>
     </header>
 
@@ -42,15 +53,12 @@
 
     <section id="histoire" class="section about-section">
         <div class="container">
-             <!-- Titre interne H2 ajouté -->
             <h2 class="section-title internal-title">Aux Racines d'<span>Ezra Maroc</span></h2>
             <div class="about-content">
                 <div class="about-image">
-                    <!-- Image originale (logo) -->
                     <img src="img/logo.png" alt="Logo Ezra Maroc">
                 </div>
                 <div class="about-text">
-                    <!-- Texte amélioré -->
                     <p>Fondé avec une mission claire, <strong>Ezra Maroc</strong> est né de l'observation directe des défis rencontrés par ceux désireux de renouer avec leurs racines marocaines. Nous avons vu la frustration face à des démarches administratives complexes, souvent perçues comme un labyrinthe décourageant.</p>
                     <p>Particulièrement pour la diaspora, dont les liens avec le Maroc traversent parfois les générations et les continents, obtenir la nationalité représente bien plus qu'une formalité : c'est une <strong>affirmation d'identité</strong>, un <strong>pont vers un héritage culturel</strong>. C'est pour transformer ce parcours difficile en une voie accessible et sereine qu'Ezra Maroc a été créé.</p>
                     <blockquote class="about-quote">
@@ -83,7 +91,6 @@
             <h2 class="section-title">Notre Équipe <span>d'Experts</span></h2>
             <p class="team-intro">Une synergie de compétences au service de votre projet, alliant savoir-faire juridique, connaissance administrative et engagement humain.</p>
             <div class="team-grid">
-                <!-- Structure originale .team-category conservée -->
                 <div class="team-category">
                     <div class="category-icon"><i class="fa-solid fa-scale-balanced"></i></div>
                     <h3>Experts Juridiques</h3>
@@ -95,15 +102,14 @@
                     <p>Anciens de l'administration, ils connaissent les rouages internes.</p>
                 </div>
                 <div class="team-category">
-                     <!-- Icône et titre originaux conservés ou adaptés ? Gardons originaux pour le style -->
                     <div class="category-icon"><i class="fa-solid fa-file-signature"></i></div>
-                    <h3>Spécialistes Administratifs</h3>
-                    <p>Votre interlocuteur dédié, assurant un suivi personnalisé.</p> <!-- Texte ajusté -->
+                    <h3>Conseillers Clientèle</h3> <!-- Titre modifié -->
+                    <p>Votre interlocuteur dédié, assurant un suivi personnalisé.</p>
                 </div>
                 <div class="team-category">
                     <div class="category-icon"><i class="fa-solid fa-tree"></i></div>
                     <h3>Experts en Généalogie</h3>
-                    <p>Mobilisés pour retrouver les preuves et documents essentiels.</p> <!-- Texte ajusté -->
+                    <p>Mobilisés pour retrouver les preuves et documents essentiels.</p>
                 </div>
                 <div class="team-category">
                     <div class="category-icon"><i class="fa-solid fa-language"></i></div>
@@ -120,22 +126,19 @@
             <h2 class="section-title">Notre Méthodologie <span>Éprouvée</span></h2>
             <p class="methodology-intro">L'approche <strong>"EZRA MAROC PROJECT"</strong> combine rigueur et adaptabilité pour maximiser vos chances de succès :</p>
             <div class="methodology-pillars">
-                <!-- Structure originale .pillar conservée -->
                 <div class="pillar">
                     <div class="pillar-icon"><i class="fa-solid fa-gavel"></i></div>
                     <h3>Analyse Juridique</h3>
                     <p>Diagnostic précis de votre éligibilité et stratégie sur mesure.</p>
                 </div>
                 <div class="pillar">
-                     <!-- Utiliser icône originale si folder-tree était une amélioration non désirée -->
                     <div class="pillar-icon"><i class="fa-solid fa-building-columns"></i></div>
-                    <h3>Procédures Admin.</h3> <!-- Texte simplifié -->
+                    <h3>Procédures Admin.</h3>
                     <p>Collecte et préparation rigoureuse de chaque pièce du dossier.</p>
                 </div>
                 <div class="pillar">
-                     <!-- Utiliser icône originale si user-check était non désiré -->
                     <div class="pillar-icon"><i class="fa-solid fa-user-tie"></i></div>
-                    <h3>Accompagnement</h3> <!-- Texte simplifié -->
+                    <h3>Accompagnement</h3>
                     <p>Un interlocuteur dédié vous accompagne et vous informe.</p>
                 </div>
                 <div class="pillar">
@@ -154,16 +157,15 @@
 
     <section id="valeurs" class="section values-section">
         <div class="container">
-            <h2 class="section-title">Nos <span>Valeurs</span> Cardinales</h2>
+            <!-- Titre Modifié: "Cardinales" supprimé -->
+            <h2 class="section-title">Nos <span>Valeurs</span></h2>
             <div class="values-grid">
-                <!-- Structure originale .value-card conservée -->
                 <div class="value-card">
                     <div class="value-icon"><i class="fa-solid fa-trophy"></i></div>
                     <h3>Excellence</h3>
                     <p>Nous visons la perfection dans chaque dossier, avec une expertise constamment affinée et une qualité de service irréprochable.</p>
                 </div>
                 <div class="value-card">
-                    <!-- Icône originale -->
                     <div class="value-icon"><i class="fa-solid fa-glasses"></i></div>
                     <h3>Transparence</h3>
                     <p>Une communication ouverte et honnête vous garantit une visibilité totale sur l'avancement de votre démarche.</p>
@@ -174,7 +176,6 @@
                     <p>Nous agissons avec une éthique stricte, assurant la conformité légale et la confidentialité de votre dossier.</p>
                 </div>
                 <div class="value-card">
-                    <!-- Icône originale -->
                     <div class="value-icon"><i class="fa-solid fa-heart"></i></div>
                     <h3>Empathie</h3>
                     <p>Nous comprenons l'importance personnelle de votre projet et vous offrons un soutien respectueux et attentionné.</p>
@@ -208,14 +209,12 @@
     </section>
 
     <footer>
-        <!-- Footer Standard -->
+        <!-- Footer Standard (avec liens sociaux corrigés) -->
         <div class="container footer-container">
             <div class="footer-about">
                  <a href="index.html" class="footer-logo">Ezra Maroc</a>
                 <p class="footer-text">Spécialistes de l'obtention de la nationalité marocaine, nous vous accompagnons à chaque étape de votre démarche avec expertise et professionnalisme.</p>
-                <div class="footer-social">
-                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                 <div class="footer-social">
                     <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                 </div>
@@ -226,7 +225,7 @@
                      <li><a href="index.html">Accueil</a></li>
                     <li><a href="services.html">Nos services</a></li>
                     <li><a href="processus.html">Notre processus</a></li>
-                    <li><a href="temoignages.html">Livre d'Or</a></li> <!-- MàJ Texte Lien -->
+                    <li><a href="temoignages.html">Témoignages</a></li> <!-- Texte Lien mis à jour -->
                     <li><a href="a-propos.html">À propos de nous</a></li>
                     <li><a href="faq.html">FAQ</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -237,16 +236,18 @@
                  <ul>
                     <li><a href="services.html#eligibility">Évaluation d'éligibilité</a></li>
                     <li><a href="services.html#constitution">Constitution du dossier</a></li>
+                    <li><a href="services.html#expertise">Expertise Juridique</a></li>
                     <li><a href="services.html#suivi">Suivi administratif</a></li>
+                    <li><a href="services.html#accompagnement">Accompagnement personnalisé</a></li>
+                    <li><a href="services.html#rendez-vous">Assistance RDV Final</a></li>
                     <li><a href="services.html#post-obtention">Assistance post-obtention</a></li>
-                    <li><a href="services.html#expertise">Conseil juridique</a></li>
-                </ul>
+                 </ul>
             </div>
             <div class="footer-contact">
                 <h3 class="footer-heading">Contact</h3>
                  <ul>
                     <li><i class="fa-solid fa-location-dot"></i> 30 N Gould St Ste R, Sheridan, WY 82801, États-Unis</li>
-                    <li><i class="fa-solid fa-envelope"></i> info@ezra-project.fr</li>
+                    <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></li>
                  </ul>
             </div>
         </div>
@@ -257,7 +258,7 @@
         </div>
     </footer>
 
-    <!-- Lien JS -->
+    <!-- Lien JS (si nécessaire) -->
     <script src="js/script.js"></script>
 </body>
 </html>
