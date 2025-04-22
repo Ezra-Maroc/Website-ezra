@@ -1,29 +1,37 @@
-name: Déploiement GitHub Pages
+name: 🚀 Déploiement GitHub Pages
 
 on:
   push:
     branches:
       - master
 
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout du dépôt
+      - name: 📥 Cloner le dépôt
         uses: actions/checkout@v3
 
-      - name: ⚙️ Configuration Git
+      - name: 🔧 Configuration de Git
         run: |
-          git config --global user.name "Ariel Assayag"
           git config --global user.email "an.assayag@gmail.com"
+          git config --global user.name "Ariel Assayag"
 
       - name: 🚀 Déploiement vers gh-pages
         run: |
-          git fetch origin
-          git worktree add ../gh-pages gh-pages
-          cp -r * ../gh-pages
-          cd ../gh-pages
+          rm -rf .gitignore .github
+          mkdir public
+          cp -r * public || true
+          cd public
+          touch .nojekyll
+          echo 'ezra-maroc.com' > CNAME
+          git init
+          git remote add origin https://github.com/Ezra-Maroc/Website-ezra.git
+          git checkout -b gh-pages
           git add .
-          git commit -m "🚀 Déploiement automatique depuis master"
-          git push origin gh-pages
+          git commit -m "⚡ Déploiement automatique"
+          git push --force origin gh-pages
