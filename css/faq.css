@@ -1,255 +1,238 @@
-/* ===== STYLES SPÉCIFIQUES POUR LA PAGE FAQ ===== */
-/* (Fichier: css/faq.css) */
+/* ============================================= */
+/* ===          STYLES PAGE FAQ              === */
+/* ============================================= */
 
-/* Page Banner */
+/* ----- Surcharge Bannière de Page ----- */
 .page-banner {
-  /* Chemin image mis à jour */
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/drapeau-maroc.jpg') center/cover no-repeat;
-  padding: 150px 0 80px;
-  color: #fff;
+}
+
+/* ==================================================== */
+/* == Styles Section AVANTAGES (Style Service-Like) === */
+/* ==================================================== */
+.advantages-section-servicelike {
+    padding: 80px 0; /* Padding standard section */
+    background-color: #fff; /* Fond blanc pour cette section */
+    /* Le titre H2 utilise le style .section-title défini dans style.css */
+}
+
+.advantages-grid-sl { /* sl = Service-Like */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive */
+  gap: 30px;
+}
+
+.advantage-card-sl {
+  background-color: var(--white-color); /* Assure un fond blanc */
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+  padding: 30px 25px;
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Assure même hauteur */
 }
 
-.page-banner h1 {
-  font-family: var(--font-heading);
-  font-size: 3rem;
-  font-weight: 700;
+.advantage-card-sl:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.advantage-icon-sl {
+  font-size: 2.5rem;
+  color: var(--primary-600);
   margin-bottom: 20px;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+.advantage-card-sl:hover .advantage-icon-sl {
+    transform: scale(1.1);
 }
 
-.page-banner p {
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 1.1rem;
-  opacity: 0.9;
-}
-
-/* FAQ Container */
-.faq-container {
-  max-width: 1100px; /* Cohérent avec a-propos */
-  margin: 0 auto;
-  padding: 80px 20px; /* Augmenter padding vertical */
-}
-
-/* FAQ Sections */
-.faq-section {
-  margin-bottom: 50px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  padding: 40px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* AJOUT : Transition pour hover */
-}
-
-/* AJOUT : Effet de survol */
-.faq-section:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-.faq-section h2 {
-  color: var(--primary-color);
+.advantage-title-sl { /* Style H3 */
   font-family: var(--font-heading);
-  font-size: 2.0rem; /* Légèrement réduit pour moins d'emphase */
-  font-weight: 700;
-  margin-bottom: 30px;
-  position: relative;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #eee; /* Remplacer ::after par border */
-}
-
-/* ::after retiré de H2 */
-/* .faq-section h2::after { ... } */
-
-
-.faq-section h3 {
-  color: var(--dark-color);
-  font-size: 1.4rem; /* Légèrement augmenté */
+  font-size: 1.25rem;
   font-weight: 600;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  position: relative;
-  padding-left: 25px; /* Espace pour l'icône/puce */
-  transition: color 0.3s ease; /* AJOUT : Transition pour hover */
-}
-
-/* AJOUT : Effet hover sur H3 */
-.faq-section h3:hover {
-    color: var(--primary-color);
-}
-
-/* Puce personnalisée pour H3 */
-.faq-section h3::before {
-  content: '\f138'; /* Icône FontAwesome 'question-circle' ou 'angle-right' f105 */
-  font-family: 'Font Awesome 6 Free';
-  font-weight: 900; /* Pour icône solide */
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--primary-color);
-  font-size: 1.1rem; /* Taille de l'icône */
-  /* transition: transform 0.3s ease; */ /* Si on veut l'animer */
-}
-/* Optionnel : Animation icone H3 au hover */
-/* .faq-section h3:hover::before {
-    transform: translateY(-50%) rotate(90deg);
-} */
-
-
-.faq-section p, .faq-section li {
-  color: #555;
-  line-height: 1.7;
   margin-bottom: 15px;
-}
-
-.faq-section ul, .faq-section ol {
-  padding-left: 25px; /* Indentation pour les listes */
-  margin-bottom: 25px;
-  margin-top: 15px; /* Espace après p */
-}
-
-.faq-section li {
-  margin-bottom: 12px;
-  position: relative;
-  padding: 4px 8px; /* Padding pour le fond hover */
-  margin-left: -8px; /* Compenser padding */
-  border-radius: 4px;
-  transition: background-color 0.2s ease; /* AJOUT : Transition fond */
-}
-
-/* AJOUT : Effet hover sur les li */
-.faq-section li:hover {
-    background-color: #f5f5f5; /* Fond gris très léger */
-}
-
-
-/* Puce pour les listes internes */
-.faq-section ul > li::before {
-  content: '•';
-  color: var(--primary-color);
-  position: absolute;
-  left: -15px;
-  top: 8px; /* Ajuster position verticale */
-  font-size: 1.2rem;
-}
-/* Styles spécifiques si besoin pour les ol */
-.faq-section ol {
-    list-style: decimal;
-    padding-left: 30px; /* Garder indentation pour numéros */
-}
-.faq-section ol > li::before {
-    content: none; /* Enlever la puce personnalisée pour les ol */
-}
-
-
-.faq-section strong {
   color: var(--dark-color);
+}
+
+.advantage-card-sl p {
+  color: var(--grey-text);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  flex-grow: 1;
+  margin-bottom: 0;
+}
+/* === FIN Styles Section Avantages === */
+
+
+/* ================================================= */
+/* == Styles Généraux FAQ (Intro, Accordéon, etc.) == */
+/* ================================================= */
+
+/* Conteneur pour le reste de la FAQ */
+.faq-container {
+  max-width: 850px;
+  margin: 40px auto 60px auto; /* Marge top réduite */
+  padding: 0 15px;
+}
+
+/* Section FAQ Standard (Accordéon, Intro, Contact) */
+.faq-section {
+  margin-bottom: 35px;
+  background-color: var(--white-color);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden; /* Important pour les arrondis et ombres */
+}
+/* Le style de .advantages-section-servicelike surcharge celui-ci si besoin */
+
+/* Titres H2 des sections dans .faq-container */
+.faq-container .faq-section h2 {
+  background-color: var(--light-color);
+  color: var(--primary-600);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
   font-weight: 600;
+  margin: 0;
+  padding: 20px 30px;
+  border-bottom: 1px solid var(--border-color);
+}
+/* Titre spécifique section Contact/Assistance */
+.faq-container .faq-section:last-of-type h2 { /* Cible le H2 dans la dernière .faq-section */
+     background-color: #fff;
+     color: var(--dark-color);
 }
 
-/* Contact Info Box */
+/* Paragraphes DIRECTS dans .faq-section */
+.faq-container .faq-section > p {
+   padding: 0 30px;
+   color: var(--dark-color);
+   line-height: 1.75;
+   margin: 0 0 16px 0;
+   font-size: 0.95rem;
+}
+.faq-container .faq-section h2 + p { padding-top: 20px; }
+.faq-container .faq-section > p:last-of-type { margin-bottom: 0; }
+
+/* === Styles Accordéon (dans .faq-container) === */
+.faq-item {
+  border-bottom: 1px solid var(--border-color);
+}
+.faq-item:last-child { border-bottom: none; }
+.faq-question {
+  background-color: var(--white-color);
+  border: none;
+  padding: 18px 30px 18px 25px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--dark-color);
+  transition: background-color 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-question:hover { background-color: var(--primary-50); color: var(--primary-600); }
+.faq-question:hover .faq-icon { color: var(--primary-600); }
+.faq-question span { flex-grow: 1; padding-right: 15px; line-height: 1.4; }
+.faq-icon { font-size: 0.9rem; color: var(--grey-text); transition: transform 0.3s ease, color 0.2s ease; flex-shrink: 0; }
+.faq-question[aria-expanded="true"] .faq-icon { transform: rotate(180deg); }
+.faq-answer {
+  padding: 0px 30px; /* Commence sans padding vertical */
+  color: var(--dark-color);
+  line-height: 1.75;
+  font-size: 0.95rem;
+  background-color: var(--white-color);
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s ease-out, padding 0.4s ease-out, opacity 0.3s ease-out 0.1s;
+}
+.faq-answer.is-open { padding-top: 15px; padding-bottom: 25px; max-height: 1200px; opacity: 1; }
+.faq-answer p { margin-bottom: 16px; }
+.faq-answer p:last-child { margin-bottom: 0; }
+.faq-answer ul { list-style: none; padding-left: 20px; margin: 18px 0; }
+.faq-answer ul + p { margin-top: 18px; }
+.faq-answer li { margin-bottom: 12px; position: relative; padding-left: 5px; }
+.faq-answer li::before { content: '\f105'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--primary-500); position: absolute; left: -18px; top: 5px; font-size: 0.85rem; }
+.faq-answer strong { font-weight: 600; color: var(--dark-color); }
+.faq-answer em { font-style: italic; color: var(--grey-text); }
+
+
+/* === Styles Section Contact & Disclaimer === */
 .contact-info {
-  background-color: rgba(197, 40, 28, 0.05);
-  padding: 30px;
-  border-radius: 10px; /* Cohérent avec .faq-section */
-  margin-top: 30px;
-  border-left: 4px solid var(--primary-color);
+  background-color: var(--light-color);
+  padding: 25px 30px;
+  border-radius: 8px;
+  margin: 20px 30px 25px 30px;
+  border: 1px solid var(--border-color);
 }
+.contact-info p { margin-bottom: 12px; line-height: 1.6; color: var(--dark-color); font-size: 0.95rem;}
+.contact-info p:last-of-type { margin-bottom: 0;}
+.contact-info ul { list-style: none; padding-left: 0; margin: 15px 0 0 0; }
+.contact-info li { padding: 6px 0; margin-bottom: 10px; position: relative; display: flex; align-items: center;}
+.contact-info li:last-child { margin-bottom: 0;}
+.contact-info li i { margin-right: 12px; color: var(--primary-600); width: 20px; text-align: center; font-size: 1.1rem; flex-shrink: 0;}
+.contact-info li a { color: var(--primary-600); font-weight: 500; }
+.contact-info li a:hover { text-decoration: underline; }
 
-.contact-info p {
-  margin-bottom: 20px;
-}
-
-.contact-info ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 0; /* Reset marge */
-}
-
-.contact-info li {
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(197, 40, 28, 0.1);
-  margin: 0; /* Reset marge */
-  transition: none; /* Pas besoin de transition ici */
-}
-.contact-info li:hover {
-    background-color: transparent; /* Annuler hover des autres li */
-}
-
-.contact-info li:last-child {
-  border-bottom: none;
-}
-
-/* Enlever le ::before hérité des autres listes */
-.contact-info li::before {
-  display: none;
-}
-
-.contact-info li i { /* Style pour les icônes contact */
-    margin-right: 10px;
-    color: var(--primary-color);
-    width: 20px; /* Alignement texte */
-    text-align: center;
-}
-/* Retrait du strong car pas présent dans le HTML */
-/* .contact-info li strong { ... } */
-
-/* Disclaimer */
 .disclaimer {
-  font-style: italic;
-  font-size: 0.95rem; /* Légèrement plus grand */
-  color: #777;
-  padding: 25px; /* Plus de padding */
-  border-top: 1px solid #eee;
-  margin-top: 40px;
-  background-color: #fdfdfd;
-  border-radius: 0 0 10px 10px;
+  font-style: italic; font-size: 0.85rem; color: var(--grey-text);
+  padding: 20px 30px 25px 30px;
+  border-top: 1px solid var(--border-color);
+  margin: 0;
 }
-
-/* CTA Section Styles (Si ce fichier doit les contenir, sinon ils sont dans style.css) */
-/* Normalement, ces styles sont globaux et définis dans style.css */
-/* Si tu veux des styles CTA spécifiques pour cette page, ajoute-les ici */
-/* Sinon, cette section peut être retirée de faq.css */
-
-/* .cta-section { ... } */
-/* .cta-title { ... } */
-/* .cta-buttons { ... } */
-/* .btn-light { ... } */
-/* .btn-light:hover { ... } */
-/* .btn-outline-light { ... } */
-/* .btn-outline-light:hover { ... } */
+.faq-section > p + .disclaimer { margin-top: 25px; }
+.disclaimer strong { color: var(--dark-color); font-style: normal; }
 
 
-/* Styles redondants retirés */
-/* .nav-links a.active { ... } */
-/* .nav-links a.active::after { ... } */
-
-
-/* Responsive styles */
+/* === Styles Responsive === */
 @media (max-width: 992px) {
-  .page-banner h1 { font-size: 2.5rem; }
-  .faq-section h2 { font-size: 1.8rem; }
-  .faq-section h3 { font-size: 1.3rem; }
+  /* Adapte la grille des avantages */
+   .advantages-grid-sl { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-  .page-banner { padding: 120px 0 60px; }
-  .page-banner h1 { font-size: 2rem; }
-  .faq-container { padding: 60px 15px; }
-  .faq-section { padding: 30px 20px; }
-  .faq-section h2 { font-size: 1.6rem; }
-  .faq-section h3 { font-size: 1.2rem; padding-left: 20px; /* Ajuster padding icone */ }
-  .faq-section h3::before { font-size: 1rem; left: 0; } /* Ajuster icone H3 */
+    .advantages-section-servicelike { padding: 60px 0; }
+
+    /* Reste de la FAQ */
+    .faq-container { margin-top: 40px; margin-bottom: 40px; }
+    .faq-container .faq-section h2 { font-size: 1.4rem; padding: 15px 20px; }
+    .faq-container .faq-section > p { padding: 15px 20px 0px 20px; margin-bottom: 12px;}
+
+    .contact-info { padding: 20px; margin: 20px; }
+    .disclaimer { padding: 15px 20px 20px 20px;}
+
+    .faq-question { font-size: 1.1rem; padding: 18px 25px 18px 20px; }
+    .faq-answer { padding-left: 20px; padding-right: 20px; }
+    .faq-answer.is-open { padding-top: 15px; padding-bottom: 18px;}
 }
 
 @media (max-width: 576px) {
-  .faq-container { padding: 40px 10px; } /* Réduire padding */
-  .faq-section { padding: 25px 15px; margin-bottom: 30px; }
-  .faq-section h2 { font-size: 1.5rem; }
-  .faq-section h3 { font-size: 1.15rem; }
-  .contact-info { padding: 20px 15px; }
-  .disclaimer { padding: 20px 15px; }
-  .faq-section ul, .faq-section ol { padding-left: 20px; } /* Ajuster indentation liste */
-  .faq-section ul > li::before { left: -12px; } /* Ajuster puce */
+    .advantages-section-servicelike { padding: 50px 0; }
+    .advantages-grid-sl { grid-template-columns: 1fr; } /* 1 colonne */
+    .advantage-card-sl { padding: 25px 20px; }
+    .advantage-title-sl { font-size: 1.15rem; }
+    .advantage-card-sl p { font-size: 0.9rem; }
+
+    /* Reste de la FAQ */
+    .faq-container { padding: 0 10px; }
+    .faq-container .faq-section h2 { font-size: 1.3rem; padding: 15px; }
+    .faq-container .faq-section > p { padding: 15px; font-size: 0.9rem;}
+
+    .faq-question { font-size: 1.05rem; padding: 15px 20px 15px 15px; }
+    .faq-answer { padding-left: 15px; padding-right: 15px; font-size: 0.9rem;}
+
+    .contact-info { padding: 15px; margin: 15px; }
+    .disclaimer { padding: 15px; }
 }
+
+/* === FIN STYLES PAGE FAQ === */

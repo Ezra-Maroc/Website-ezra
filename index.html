@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr"> <!-- Définit la langue de CETTE page -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ezra Maroc - Votre passerelle vers la nationalité marocaine</title>
     <!-- CSS Global -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css"> <!-- Lien vers le CSS mis à jour -->
     <!-- Polices Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,6 @@
                 <img src="img/logo.png" alt="Ezra Maroc Logo">
                 <span>Ezra <strong>Maroc</strong></span>
             </a>
-            <!-- Bouton burger mobile supprimé -->
             <nav>
                 <ul class="nav-links">
                     <!-- Classe active sur Accueil -->
@@ -33,28 +32,42 @@
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </nav>
-        </div>
+
+            <!-- NOUVEAU BLOC: Sélecteur de Langue -->
+            <div class="language-switcher">
+                <label for="lang-select" class="visually-hidden">Choisir la langue</label>
+                <select name="lang" id="lang-select" onchange="location = this.value;">
+                    <!-- ATTENTION: Mettre les VRAIS chemins vers tes pages traduites -->
+                    <option value="index.html" selected lang="fr">Français</option> <!-- Page FR actuelle -->
+                    <option value="/en/index.html" lang="en">English</option>       <!-- Lien vers page EN -->
+                    <option value="/es/index.html" lang="es">Español</option>       <!-- Lien vers page ES -->
+                    <option value="/he/index.html" lang="he">עברית</option>         <!-- Lien vers page HE -->
+                </select>
+            </div>
+            <!-- FIN NOUVEAU BLOC -->
+
+        </div> <!-- Fin .header-container -->
     </header>
+
+    <!-- Le reste du contenu de index.html reste identique à la version précédente -->
+    <!-- (Avec les boutons du Hero en .btn-light et .btn-outline-light, etc.) -->
 
     <section class="hero">
         <div class="container hero-content">
             <h1>Votre passerelle vers la nationalité marocaine</h1>
             <p>Nous vous guidons pas à pas dans votre démarche d'obtention de la nationalité marocaine avec un accompagnement sur mesure et une expertise juridique de pointe.</p>
             <div class="hero-buttons">
-                <!-- Lien mis à jour pour pointer vers la section services sur CETTE page -->
-                <a href="#nos-services-phares" class="btn btn-primary">Découvrir nos services</a>
-                <a href="#process" class="btn btn-outline">Notre processus simplifié</a>
-                <a href="a-propos.html" class="btn btn-text">En savoir plus sur nous</a>
+                <a href="#nos-services-phares" class="btn btn-light">Découvrir nos services</a>
+                <a href="#process" class="btn btn-light">Notre processus simplifié</a>
+                <a href="a-propos.html" class="btn btn-outline-light">En savoir plus sur nous</a>
             </div>
         </div>
     </section>
 
     <section class="section intro-section">
         <div class="container">
-            <!-- Texte intro légèrement reformulé -->
-            <p class="intro-text">Facilitez votre connexion à votre héritage marocain. Ezra Maroc, spécialiste reconnu, vous accompagne avec succès à chaque étape de votre demande de nationalité, de l'évaluation initiale à l'obtention finale.</p>
+            <p class="intro-text">Facilitez votre connexion à votre héritage marocain. Ezra Maroc, spécialiste reconnu, vous accompagne avec succès à chaque étape de votre demande de nationalité, de l'évaluation initiale jusqu'à la remise de votre certificat de nationalité.</p>
             <div class="strengths">
-                <!-- Classe animate-on-scroll supprimée de chaque item -->
                 <div class="strength-item">
                     <i class="fa-solid fa-scale-balanced strength-icon"></i>
                     <h3>Expertise juridique spécialisée</h3>
@@ -72,7 +85,7 @@
                 </div>
                 <div class="strength-item">
                     <i class="fa-solid fa-trophy strength-icon"></i>
-                    <h3>Taux de réussite élevé</h3> <!-- Modifié de "exceptionnel" -->
+                    <h3>Taux de réussite élevé</h3>
                     <p>pour nos dossiers clients</p>
                 </div>
                 <div class="strength-item">
@@ -84,13 +97,10 @@
         </div>
     </section>
 
-    <!-- Section Services Phares avec ID corrigé -->
     <section id="nos-services-phares" class="section services-section">
         <div class="container">
-            <h2 class="section-title">Nos Services <span>Phares</span></h2>
+            <h2 class="section-title">Nos <span>Services</span></h2>
             <div class="features">
-                <!-- Classe animate-on-scroll supprimée des cards -->
-                <!-- ID #eligibility supprimé de la première card -->
                 <div class="feature-card">
                     <i class="fa-solid fa-magnifying-glass feature-icon"></i>
                     <h3 class="feature-title">Évaluation d'éligibilité</h3>
@@ -117,7 +127,6 @@
         <div class="container">
             <h2 class="section-title">Notre Processus <span>Simplifié</span></h2>
             <div class="process-steps">
-                <!-- Classe animate-on-scroll supprimée des steps -->
                 <div class="process-step">
                     <div class="step-number">1</div>
                     <div class="step-content">
@@ -153,9 +162,9 @@
                 <div class="process-step">
                     <div class="step-number">5</div>
                     <div class="step-content">
-                        <h3 class="step-title">Assistance post-obtention</h3>
-                        <p>Support pour vos démarches après l'obtention de votre nationalité (optionnel).</p>
-                        <span class="step-duration">Optionnelle</span> <!-- Texte rendu plus clair -->
+                        <h3 class="step-title">Accompagnement Post-Nationalité</h3>
+                        <p>Nous vous aidons pour les démarches suivant l'obtention de votre nationalité (CNIE, passeport...).</p>
+                        <span class="step-duration">Service Optionnel</span>
                     </div>
                 </div>
             </div>
@@ -167,14 +176,13 @@
 
     <section id="testimonials" class="section testimonial-section">
         <div class="container">
-            <h2 class="section-title">Ils nous ont fait <span>Confiance</span></h2>
-            <!-- Classe animate-on-scroll supprimée -->
+            <h2 class="section-title">Les Réussites de Nos <span>Clients</span></h2>
             <div class="testimonial">
                 <div class="testimonial-content">
                     <p class="testimonial-text">"Après des années d'essais infructueux, Ezra Maroc a réussi à m'obtenir la nationalité marocaine en moins d'un an. Leur expertise et leur professionnalisme ont fait toute la différence."</p>
                 </div>
                 <div class="testimonial-client">
-                    <h4>David Cohen</h4>
+                    <h4>D****</h4> <!-- Exemple anonymisé -->
                     <p>Paris, France</p>
                 </div>
                 <div class="testimonials-more">
@@ -188,7 +196,6 @@
         <div class="container">
             <h2 class="section-title">Pourquoi Choisir <span>Ezra Maroc ?</span></h2>
             <div class="why-us-grid">
-                <!-- Classe animate-on-scroll supprimée des items -->
                 <div class="why-us-item">
                     <i class="fa-solid fa-key why-us-icon"></i>
                     <h3>Approche clé en main</h3>
@@ -215,7 +222,7 @@
                     <p>d'avocats et de partenaires au Maroc</p>
                 </div>
             </div>
-             <div style="text-align: center; margin-top: 40px;"> <!-- Ajout lien vers A Propos -->
+            <div style="text-align: center; margin-top: 40px;">
                 <a href="a-propos.html" class="btn-link">Découvrir notre équipe et nos valeurs <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
@@ -225,7 +232,6 @@
         <div class="container">
             <h2 class="cta-title">Prêt à entamer votre démarche vers la nationalité marocaine?</h2>
             <div class="cta-buttons">
-                <!-- Lien mis à jour pour pointer vers la section services sur CETTE page -->
                 <a href="#nos-services-phares" class="btn btn-light">Voir nos services</a>
                 <a href="contact.html" class="btn btn-outline-light">Nous contacter</a>
             </div>
@@ -238,36 +244,31 @@
                 <a href="index.html" class="footer-logo">Ezra Maroc</a>
                 <p class="footer-text">Spécialistes de l'obtention de la nationalité marocaine, nous vous accompagnons à chaque étape de votre démarche avec expertise et professionnalisme.</p>
                 <div class="footer-social">
-                    <!-- Mettre les vrais liens -->
-                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <!-- Mettre le vrai lien LinkedIn, supprimer les autres -->
+                    <a href="URL_LINKEDIN_EZRA_MAROC" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
             </div>
             <div class="footer-links">
                 <h3 class="footer-heading">Liens rapides</h3>
                 <ul>
-                    <!-- Liens vers les autres pages -->
                     <li><a href="services.html">Nos services</a></li>
                     <li><a href="processus.html">Notre processus</a></li>
                     <li><a href="temoignages.html">Témoignages</a></li>
                     <li><a href="a-propos.html">À propos de nous</a></li>
                     <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="contact.html">Contact</a></li> <!-- Ajout contact -->
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-services">
                 <h3 class="footer-heading">Nos services</h3>
                 <ul>
-                    <!-- Liens vers la page services.html -->
                     <li><a href="services.html#eligibility">Évaluation d'éligibilité</a></li>
                     <li><a href="services.html#constitution">Constitution du dossier</a></li>
                     <li><a href="services.html#suivi">Suivi administratif</a></li>
                     <li><a href="services.html#post-obtention">Assistance post-obtention</a></li>
                     <li><a href="services.html#expertise">Conseil juridique</a></li>
-                     <li><a href="services.html#accompagnement">Accompagnement</a></li> <!-- Lien ajouté si pertinent -->
-                     <li><a href="services.html#rendez-vous">Assistance RDV</a></li> <!-- Lien ajouté si pertinent -->
+                     <li><a href="services.html#accompagnement">Accompagnement</a></li>
+                     <li><a href="services.html#rendez-vous">Assistance RDV</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
@@ -280,13 +281,11 @@
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <!-- Mettre à jour l'année -->
                 <p>© 2024 Ezra Maroc Consulting Services LLC. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Lien JS avant </body> -->
     <script src="js/script.js"></script>
 </body>
 </html>
