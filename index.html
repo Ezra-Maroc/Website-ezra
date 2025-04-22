@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr"> <!-- Définit la langue de CETTE page -->
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ezra Maroc - Votre passerelle vers la nationalité marocaine</title>
     <!-- CSS Global -->
-    <link rel="stylesheet" href="css/style.css"> <!-- Lien vers le CSS mis à jour -->
+    <link rel="stylesheet" href="css/style.css">
     <!-- Polices Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+    <!-- HEADER -->
     <header>
         <div class="container header-container">
             <a href="index.html" class="logo">
@@ -32,8 +33,7 @@
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </nav>
-
-            <!-- NOUVEAU BLOC: Sélecteur de Langue -->
+            <!-- Sélecteur de Langue -->
             <div class="language-switcher">
                 <label for="lang-select" class="visually-hidden">Choisir la langue</label>
                 <select name="lang" id="lang-select" onchange="location = this.value;">
@@ -44,26 +44,24 @@
                     <option value="/he/index.html" lang="he">עברית</option>         <!-- Lien vers page HE -->
                 </select>
             </div>
-            <!-- FIN NOUVEAU BLOC -->
-
         </div> <!-- Fin .header-container -->
     </header>
 
-    <!-- Le reste du contenu de index.html reste identique à la version précédente -->
-    <!-- (Avec les boutons du Hero en .btn-light et .btn-outline-light, etc.) -->
-
+    <!-- SECTION HERO -->
     <section class="hero">
         <div class="container hero-content">
             <h1>Votre passerelle vers la nationalité marocaine</h1>
             <p>Nous vous guidons pas à pas dans votre démarche d'obtention de la nationalité marocaine avec un accompagnement sur mesure et une expertise juridique de pointe.</p>
             <div class="hero-buttons">
-                <a href="#nos-services-phares" class="btn btn-light">Découvrir nos services</a>
-                <a href="#process" class="btn btn-light">Notre processus simplifié</a>
+                 <!-- ID de section processus ajouté au lien -->
+                <a href="#nos-services" class="btn btn-light">Découvrir nos services</a>
+                <a href="processus.html" class="btn btn-light">Notre processus simplifié</a>
                 <a href="a-propos.html" class="btn btn-outline-light">En savoir plus sur nous</a>
             </div>
         </div>
     </section>
 
+    <!-- SECTION INTRODUCTION -->
     <section class="section intro-section">
         <div class="container">
             <p class="intro-text">Facilitez votre connexion à votre héritage marocain. Ezra Maroc, spécialiste reconnu, vous accompagne avec succès à chaque étape de votre demande de nationalité, de l'évaluation initiale jusqu'à la remise de votre certificat de nationalité.</p>
@@ -97,8 +95,10 @@
         </div>
     </section>
 
-    <section id="nos-services-phares" class="section services-section">
+    <!-- SECTION SERVICES -->
+    <section id="nos-services" class="section services-section"> <!-- id corrigé -->
         <div class="container">
+            <!-- Titre modifié: "Phares" retiré -->
             <h2 class="section-title">Nos <span>Services</span></h2>
             <div class="features">
                 <div class="feature-card">
@@ -123,7 +123,8 @@
         </div>
     </section>
 
-    <section id="process" class="section process-section">
+    <!-- SECTION PROCESSUS -->
+    <section id="process" class="section process-section"> <!-- id conservé -->
         <div class="container">
             <h2 class="section-title">Notre Processus <span>Simplifié</span></h2>
             <div class="process-steps">
@@ -156,14 +157,15 @@
                     <div class="step-content">
                         <h3 class="step-title">Instruction et décision</h3>
                         <p>Période d'examen de votre dossier par les autorités marocaines.</p>
-                        <span class="step-duration">7-20 mois</span>
+                        <span class="step-duration">7-20 mois+</span> <!-- Précision délai -->
                     </div>
                 </div>
                 <div class="process-step">
                     <div class="step-number">5</div>
                     <div class="step-content">
-                        <h3 class="step-title">Accompagnement Post-Nationalité</h3>
-                        <p>Nous vous aidons pour les démarches suivant l'obtention de votre nationalité (CNIE, passeport...).</p>
+                        <!-- Titre et Texte Modifiés -->
+                        <h3 class="step-title">Finalisation & Documents</h3>
+                        <p>Assistance pour obtenir vos documents marocains (CNIE, passeport...) une fois la nationalité acquise.</p>
                         <span class="step-duration">Service Optionnel</span>
                     </div>
                 </div>
@@ -174,15 +176,19 @@
         </div>
     </section>
 
+    <!-- SECTION TEMOIGNAGES -->
     <section id="testimonials" class="section testimonial-section">
         <div class="container">
-            <h2 class="section-title">Les Réussites de Nos <span>Clients</span></h2>
+             <!-- Titre Modifié -->
+            <h2 class="section-title">Leurs Parcours, <span>Notre Fierté</span></h2>
             <div class="testimonial">
                 <div class="testimonial-content">
                     <p class="testimonial-text">"Après des années d'essais infructueux, Ezra Maroc a réussi à m'obtenir la nationalité marocaine en moins d'un an. Leur expertise et leur professionnalisme ont fait toute la différence."</p>
                 </div>
                 <div class="testimonial-client">
-                    <h4>D****</h4> <!-- Exemple anonymisé -->
+                     <!-- Anonymisation Modifiée au format "Prénom Initiale." -->
+                    <h3>David C.</h3> <!-- Exemple -->
+                    <!-- NOTE: Appliquer ce format à TOUS les témoignages réels -->
                     <p>Paris, France</p>
                 </div>
                 <div class="testimonials-more">
@@ -192,7 +198,8 @@
         </div>
     </section>
 
-    <section id="about" class="section why-us-section">
+    <!-- SECTION POURQUOI NOUS CHOISIR -->
+    <section id="why-us" class="section why-us-section"> <!-- id="about" était ambigu, renommé -->
         <div class="container">
             <h2 class="section-title">Pourquoi Choisir <span>Ezra Maroc ?</span></h2>
             <div class="why-us-grid">
@@ -228,64 +235,74 @@
         </div>
     </section>
 
-    <section id="contact" class="cta-section">
+    <!-- SECTION CTA FINALE -->
+    <section class="cta-section">
         <div class="container">
             <h2 class="cta-title">Prêt à entamer votre démarche vers la nationalité marocaine?</h2>
             <div class="cta-buttons">
-                <a href="#nos-services-phares" class="btn btn-light">Voir nos services</a>
+                 <!-- Classes modifiées pour style transparent initial -->
+                <a href="services.html" class="btn btn-outline-light">Voir nos services</a>
                 <a href="contact.html" class="btn btn-outline-light">Nous contacter</a>
             </div>
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
         <div class="container footer-container">
             <div class="footer-about">
                 <a href="index.html" class="footer-logo">Ezra Maroc</a>
                 <p class="footer-text">Spécialistes de l'obtention de la nationalité marocaine, nous vous accompagnons à chaque étape de votre démarche avec expertise et professionnalisme.</p>
                 <div class="footer-social">
-                    <!-- Mettre le vrai lien LinkedIn, supprimer les autres -->
+                    <!-- Lien LinkedIn Seulement (Remplacer par le VRAI lien) -->
                     <a href="URL_LINKEDIN_EZRA_MAROC" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
             </div>
             <div class="footer-links">
                 <h3 class="footer-heading">Liens rapides</h3>
                 <ul>
+                    <li><a href="index.html">Accueil</a></li>
                     <li><a href="services.html">Nos services</a></li>
                     <li><a href="processus.html">Notre processus</a></li>
                     <li><a href="temoignages.html">Témoignages</a></li>
                     <li><a href="a-propos.html">À propos de nous</a></li>
                     <li><a href="faq.html">FAQ</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                     <!-- Exemple liens légaux si nécessaire -->
+                     <!-- <li><a href="mentions-legales.html">Mentions Légales</a></li> -->
+                     <!-- <li><a href="politique-confidentialite.html">Confidentialité</a></li> -->
                 </ul>
             </div>
             <div class="footer-services">
                 <h3 class="footer-heading">Nos services</h3>
-                <ul>
+                 <ul>
+                     <!-- Liens vers les ancres de la page Services -->
                     <li><a href="services.html#eligibility">Évaluation d'éligibilité</a></li>
                     <li><a href="services.html#constitution">Constitution du dossier</a></li>
                     <li><a href="services.html#suivi">Suivi administratif</a></li>
-                    <li><a href="services.html#post-obtention">Assistance post-obtention</a></li>
-                    <li><a href="services.html#expertise">Conseil juridique</a></li>
-                     <li><a href="services.html#accompagnement">Accompagnement</a></li>
-                     <li><a href="services.html#rendez-vous">Assistance RDV</a></li>
-                </ul>
+                    <li><a href="services.html#expertise">Expertise Juridique</a></li>
+                    <li><a href="services.html#accompagnement">Accompagnement Personnalisé</a></li>
+                    <li><a href="services.html#rendez-vous">Assistance RDV Final</a></li>
+                    <li><a href="services.html#post-obtention">Support Post-Obtention</a></li>
+                 </ul>
             </div>
             <div class="footer-contact">
                 <h3 class="footer-heading">Contact</h3>
                  <ul>
                     <li><i class="fa-solid fa-location-dot"></i> 30 N Gould St Ste R, Sheridan, WY 82801, États-Unis</li>
-                    <li><i class="fa-solid fa-envelope"></i> info@ezra-project.fr</li>
+                    <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></li>
                  </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <p>© 2024 Ezra Maroc Consulting Services LLC. Tous droits réservés.</p>
+                 <p>© 2024 Ezra Maroc Consulting Services LLC. Tous droits réservés.</p>
+                 <!-- Exemple liens légaux si besoin -->
+                 <!-- <p><a href="mentions-legales.html">Mentions Légales</a> | <a href="politique-confidentialite.html">Politique de Confidentialité</a></p> -->
             </div>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js"></script> <!-- Adapter le chemin si nécessaire -->
 </body>
 </html>
