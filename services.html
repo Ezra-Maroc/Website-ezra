@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nos Services | Ezra Maroc</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/services.css"> <!-- CSS spécifique aux services -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -21,6 +21,7 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="index.html">Accueil</a></li>
+                    <!-- Classe active sur Services -->
                     <li><a href="services.html" class="active">Services</a></li>
                     <li><a href="processus.html">Processus</a></li>
                     <li><a href="temoignages.html">Témoignages</a></li>
@@ -29,21 +30,40 @@
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </nav>
-        </div>
+            <!-- Sélecteur de Langue (Ajouté ici) -->
+            <div class="language-switcher">
+                <label for="lang-select" class="visually-hidden">Choisir la langue</label>
+                <select name="lang" id="lang-select" onchange="location = this.value;">
+                    <!-- Liens adaptés pour la page Services -->
+                    <option value="services.html" selected lang="fr">Français</option> <!-- Page Services FR actuelle -->
+                    <option value="/en/services.html" lang="en">English</option>       <!-- Lien vers page Services EN -->
+                    <option value="/es/services.html" lang="es">Español</option>       <!-- Lien vers page Services ES -->
+                    <option value="/he/services.html" lang="he">עברית</option>         <!-- Lien vers page Services HE -->
+                    <!-- ATTENTION: Assure-toi que ces fichiers existent bien aux chemins indiqués -->
+                </select>
+            </div>
+        </div> <!-- Fin .header-container -->
     </header>
 
     <section class="page-banner">
         <div class="container">
             <h1>Nos Services Dédiés</h1>
-            <!-- Contenu Bannière Amélioré -->
             <p>Simplifiez votre parcours vers la citoyenneté marocaine. Ezra Maroc transforme la complexité administrative en une démarche sereine et réussie, vous reconnectant à votre héritage.</p>
         </div>
     </section>
 
-    <!-- Ajout Section Introduction Services -->
+    <!-- Section Introduction Services - Structurée en Paragraphes -->
     <section class="section services-intro">
         <div class="container">
-            <p>Naviguer dans les méandres administratifs pour obtenir la nationalité marocaine peut sembler décourageant. C'est pourquoi nous avons conçu une gamme de services complets, gérés par des experts dédiés, pour vous assurer une expérience fluide, transparente et couronnée de succès. Découvrez comment nous pouvons vous aider à chaque étape clé de votre projet.</p>
+            <p>
+                Retrouver vos racines marocaines par la nationalité est un projet fort, mais les démarches administratives peuvent souvent sembler décourageantes.
+            </p>
+            <p>
+                Chez Ezra Maroc, nous comprenons parfaitement ces défis. C'est pourquoi nous avons conçu une <strong>gamme de services complète et intégrée</strong>, pilotée par des <strong>experts dédiés</strong>. Notre mission : transformer la complexité administrative en un parcours <strong>clair, maîtrisé et serein</strong> pour vous.
+            </p>
+            <p>
+                Laissez-nous prendre en charge les aspects techniques et administratifs, afin que vous puissiez vous concentrer sur l'essentiel : votre reconnexion avec le Maroc. Découvrez ci-dessous comment nous vous <strong>accompagnons vers le succès</strong>, étape par étape.
+            </p>
         </div>
     </section>
 
@@ -59,7 +79,6 @@
                         <div class="service-block">
                             <h3 class="block-title"><i class="fa-solid fa-check-circle"></i> Ce que nous faisons</h3>
                             <ul class="service-list">
-                                <!-- Optionnel: Ajouter <strong> pour la scannabilité -->
                                 <li><strong>Analyse approfondie</strong> de votre situation familiale et de vos liens avec le Maroc</li>
                                 <li><strong>Étude préliminaire</strong> des documents dont vous disposez</li>
                                 <li><strong>Entretien personnalisé</strong> pour comprendre votre histoire familiale</li>
@@ -67,10 +86,9 @@
                                 <li><strong>Évaluation experte</strong> des chances de succès de votre demande</li>
                             </ul>
                         </div>
-                        <div class="service-block benefit-block"> <!-- Ajout classe benefit-block -->
+                        <div class="service-block benefit-block">
                             <h3 class="block-title"><i class="fa-solid fa-gift"></i> Votre bénéfice clair</h3>
-                            <!-- Contenu Bénéfice Amélioré -->
-                            <p>Obtenez une <strong>évaluation claire et honnête</strong> de vos chances *avant* d'investir du temps et de l'argent. <strong>Prenez une décision éclairée</strong> sur la base d'une analyse experte.</p>
+                            <p>Recevez une <strong>analyse franche et précise</strong> de votre éligibilité. <strong>Décidez sereinement</strong> de poursuivre ou non, *avant* d'engager du temps et des frais.</p>
                         </div>
                     </div>
                 </div>
@@ -100,7 +118,7 @@
                         </div>
                         <div class="service-block benefit-block">
                             <h3 class="block-title"><i class="fa-solid fa-gift"></i> Votre bénéfice direct</h3>
-                            <p>Présentez un <strong>dossier irréprochable</strong>, méticuleusement préparé et **conforme aux attentes précises** des autorités, <strong>augmentant significativement</strong> vos chances d'acceptation rapide.</p>
+                            <p>Assurez-vous de présenter un <strong>dossier méticuleusement préparé</strong> et <strong>strictement conforme</strong> aux exigences des autorités, <strong>maximisant ainsi</strong> vos chances d'acceptation rapide.</p>
                         </div>
                     </div>
                 </div>
@@ -207,7 +225,7 @@
                         <div class="service-block">
                             <h3 class="block-title"><i class="fa-solid fa-check-circle"></i> Ce que nous faisons</h3>
                             <ul class="service-list">
-                                <li><strong>Préparation minutieuse</strong> et coaching pour votre entretien au tribunal</li>
+                                <li><strong>Préparation approfondie</strong> pour votre entretien au tribunal</li>
                                 <li><strong>Organisation logistique</strong> facilitée de votre déplacement au Maroc</li>
                                 <li><strong>Accompagnement physique</strong> par un avocat expert le jour J</li>
                                 <li><strong>Assistance dédiée</strong> pour toutes les formalités finales</li>
@@ -253,14 +271,14 @@
         </div>
     </section>
 
-    <!-- Section Approche Améliorée -->
-    <section class="section approach-section-enhanced"> <!-- Nouvelle classe pour stylisation -->
+    <!-- Section Approche Améliorée - ** remplacés par <strong> -->
+    <section class="section approach-section-enhanced">
          <div class="container">
             <h2 class="section-title">Notre Approche <span>Intégrée</span></h2>
             <div class="approach-content">
-                <i class="fa-solid fa-key approach-bg-icon"></i> <!-- Icône de fond -->
-                <p>Chacun de nos services s'intègre dans une **approche globale et clé en main**. Nous prenons en charge l'intégralité des démarches administratives et juridiques, vous permettant de vous concentrer sereinement sur votre projet de reconnexion avec vos racines marocaines.</p>
-                <p>Notre équipe dédiée coordonne tous les intervenants et toutes les étapes, garantissant une **expérience fluide, transparente et sans stress**, même face aux situations les plus complexes.</p>
+                <i class="fa-solid fa-key approach-bg-icon"></i>
+                <p>Chacun de nos services s'intègre dans une <strong>approche globale et clé en main</strong>. Nous prenons en charge l'intégralité des démarches administratives et juridiques, vous permettant de vous concentrer sereinement sur votre projet de reconnexion avec vos racines marocaines.</p>
+                <p>Notre équipe dédiée coordonne tous les intervenants et toutes les étapes, garantissant une <strong>expérience fluide, transparente et sans stress</strong>, même face aux situations les plus complexes.</p>
             </div>
         </div>
     </section>
@@ -276,16 +294,15 @@
     </section>
 
     <footer>
-        <!-- Footer inchangé structurellement, vérifier contenu/liens -->
         <div class="container footer-container">
              <div class="footer-about">
                  <a href="index.html" class="footer-logo">Ezra Maroc</a>
                 <p class="footer-text">Spécialistes de l'obtention de la nationalité marocaine, nous vous accompagnons à chaque étape de votre démarche avec expertise et professionnalisme.</p>
+                <!-- Footer Social - Liens LinkedIn et Instagram seulement -->
                 <div class="footer-social">
-                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
                     <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <!-- N'oubliez pas de mettre les vrais liens vers vos profils LinkedIn et Instagram dans les href="#" -->
                 </div>
             </div>
             <div class="footer-links">
@@ -316,7 +333,7 @@
                 <h3 class="footer-heading">Contact</h3>
                  <ul>
                     <li><i class="fa-solid fa-location-dot"></i> 30 N Gould St Ste R, Sheridan, WY 82801, États-Unis</li>
-                    <li><i class="fa-solid fa-envelope"></i> info@ezra-project.fr</li>
+                    <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></li> <!-- Email cliquable ajouté -->
                  </ul>
             </div>
         </div>

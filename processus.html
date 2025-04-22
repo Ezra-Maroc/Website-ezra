@@ -30,13 +30,22 @@
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </nav>
-            <!-- Bouton burger supprimé -->
+            <!-- Sélecteur de Langue (Assumant qu'il est ajouté comme dans les exemples précédents) -->
+             <div class="language-switcher">
+                <label for="lang-select" class="visually-hidden">Choisir la langue</label>
+                <select name="lang" id="lang-select" onchange="location = this.value;">
+                    <option value="processus.html" selected lang="fr">Français</option>
+                    <option value="/en/process.html" lang="en">English</option>
+                    <option value="/es/process.html" lang="es">Español</option>
+                    <option value="/he/process.html" lang="he">עברית</option>
+                </select>
+            </div>
         </div>
     </header>
 
-    <section class="page-banner"> <!-- Sera surchargé par processus.css pour utiliser saha.jpg -->
+    <section class="page-banner">
         <div class="container">
-            <h1>Notre Processus Éprouvé</h1> <!-- Titre Bannière Amélioré -->
+            <h1>Notre Processus Éprouvé</h1>
             <p>Découvrez notre méthodologie structurée, conçue pour vous guider sereinement et efficacement vers l'obtention de votre nationalité marocaine.</p>
         </div>
     </section>
@@ -44,15 +53,12 @@
     <section class="section overview-section">
         <div class="container">
             <h2 class="section-title">Votre Parcours Simplifié : <span>Vue d'Ensemble</span></h2>
-            <!-- Texte Overview Amélioré -->
             <p class="overview-text">Nous avons décomposé le chemin vers la nationalité en étapes claires et distinctes. Chaque phase est conçue pour progresser méthodiquement, avec des objectifs précis et une transparence totale, maximisant ainsi vos chances de succès.</p>
-
             <div class="process-timeline">
-                 <!-- Items de la timeline avec interaction CSS ajoutée -->
                 <div class="timeline-item">
                     <div class="timeline-number">0</div>
                     <div class="timeline-content">
-                        <h3>Diagnostic Initial</h3> <!-- Titre simplifié -->
+                        <h3>Diagnostic Initial</h3>
                         <span class="timeline-duration">1-3 semaines</span>
                     </div>
                 </div>
@@ -81,17 +87,16 @@
                     <div class="timeline-number">4</div>
                     <div class="timeline-content">
                         <h3>Finalisation Admin.</h3>
-                        <span class="timeline-duration">Optionnelle</span> <!-- Clarifié -->
+                        <span class="timeline-duration">Optionnelle</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Phase 0 Améliorée -->
+    <!-- Section Phase 0 Modifiée -->
     <section id="phase0" class="section phase-section">
         <div class="container">
-             <!-- Titre Phase Amélioré -->
             <h2 class="section-title internal-title">Phase <span>0</span>: Votre Diagnostic Stratégique</h2>
             <div class="phase-duration">
                 <i class="fa-regular fa-clock"></i> Durée indicative: 1 à 3 semaines
@@ -100,31 +105,29 @@
             <div class="phase-content">
                 <div class="phase-block">
                     <h3 class="block-title"><i class="fa-solid fa-bullseye"></i> Objectif Principal</h3>
-                     <!-- Texte Objectif Amélioré -->
                     <p>Évaluer précisément votre éligibilité à la nationalité marocaine et définir la stratégie optimale avant d'investir davantage.</p>
                 </div>
 
                 <div class="phase-block">
                     <h3 class="block-title"><i class="fa-solid fa-list-check"></i> Nos Actions Clés</h3>
-                     <!-- Liste Action Améliorée (avec strong) -->
                     <ul class="action-list">
                         <li><strong>Analyse Initiale</strong> : Examen approfondi des documents fournis.</li>
                         <li><strong>Entretien Détaillé</strong> : Compréhension de votre parcours familial et liens avec le Maroc.</li>
-                        <li><strong>Collecte d'Infos</strong> : Questionnaire juridico-biographique structuré.</li>
-                        <li><strong>Recherches Ciblées</strong> : Vérifications préliminaires si nécessaires.</li>
+                        <!-- MODIFIÉ: "juridico-biographique" simplifié -->
+                        <li><strong>Collecte d'Infos</strong> : Collecte d'informations personnelles et familiales structurée.</li>
+                        <!-- SUPPRIMÉ: Recherches Ciblées -->
                         <li><strong>Évaluation Juridique</strong> : Confrontation de votre cas au Code de la Nationalité.</li>
                     </ul>
                 </div>
 
-                <div class="phase-block result-block"> <!-- Ajout classe result-block -->
+                <div class="phase-block result-block">
                     <h3 class="block-title"><i class="fa-solid fa-flag-checkered"></i> Votre Livrable Clé</h3>
-                     <!-- Texte Résultat Amélioré -->
                     <p>Vous recevez un <strong>rapport d'éligibilité complet</strong> incluant :</p>
                     <ul class="result-list">
                         <li>Positionnement juridique clair de votre cas.</li>
-                        <li>Fondements légaux potentiels de votre demande.</li>
+                        <!-- SUPPRIMÉ: Fondements légaux potentiels -->
                         <li>Évaluation transparente de vos chances réelles.</li>
-                        <li>Recommandation stratégique sur la meilleure voie à suivre.</li>
+                        <!-- SUPPRIMÉ: Recommandation stratégique -->
                         <li>Liste indicative des documents essentiels à réunir.</li>
                     </ul>
                 </div>
@@ -132,10 +135,11 @@
         </div>
     </section>
 
-    <!-- Section Phase 1 Améliorée -->
+    <!-- Section Phase 1 -->
     <section id="phase1" class="section phase-section alt-bg">
         <div class="container">
-            <h2 class="section-title internal-title">Phase <span>1</span>: Constitution d'un Dossier Irréprochable</h2>
+            <!-- NOTE: Le titre contient "Irréprochable", ce mot était demandé à supprimer dans services.html. A voir si c'est voulu ici. -->
+            <h2 class="section-title internal-title">Phase <span>1</span>: Constitution d'un Dossier Rigoureux</h2> <!-- Modifié pour cohérence potentielle -->
             <div class="phase-duration">
                 <i class="fa-regular fa-clock"></i> Durée indicative: 1 à 4 mois
             </div>
@@ -170,7 +174,7 @@
         </div>
     </section>
 
-    <!-- Section Phase 2 Améliorée -->
+    <!-- Section Phase 2 Modifiée -->
      <section id="phase2" class="section phase-section">
         <div class="container">
             <h2 class="section-title internal-title">Phase <span>2</span>: Dépôt Optimisé & Suivi Initial</h2>
@@ -186,14 +190,15 @@
                     <h3 class="block-title"><i class="fa-solid fa-list-check"></i> Nos Actions Clés</h3>
                     <ul class="action-list">
                         <li><strong>Dépôt Ciblé</strong> : Soumission auprès de l'autorité compétente la plus pertinente.</li>
-                         <li><strong>Accusé Réception</strong> : Sécurisation systématique de la preuve officielle de dépôt.</li>
+                         <!-- REFORMULÉ: Accusé Réception -->
+                         <li><strong>Confirmation Dépôt</strong> : Obtention et vérification de la preuve officielle de soumission.</li>
                          <li><strong>Veille Active</strong> : Mise en place d'un suivi régulier de l'état d'avancement.</li>
                          <li><strong>Gestion Enquête</strong> : Attention particulière durant la phase d'enquête de sécurité.</li>
                          <li><strong>Réactivité Totale</strong> : Traitement rapide et précis de toute demande administrative complémentaire.</li>
                      </ul>
                  </div>
                  <div class="phase-block result-block">
-                    <h3 class="block-title"><i class="fa-solid fa-flag-checkered"></i> Votre Statut</h3> <!-- Titre résultat changé -->
+                    <h3 class="block-title"><i class="fa-solid fa-flag-checkered"></i> Votre Statut</h3>
                      <p>Votre dossier est <strong>officiellement enregistré et suivi activement</strong>, vous disposerez de :</p>
                     <ul class="result-list">
                          <li>Votre numéro de dossier de référence.</li>
@@ -206,7 +211,7 @@
         </div>
     </section>
 
-    <!-- Section Phase 3 Améliorée -->
+    <!-- Section Phase 3 Modifiée -->
     <section id="phase3" class="section phase-section alt-bg">
         <div class="container">
             <h2 class="section-title internal-title">Phase <span>3</span>: Accompagnement Jusqu'à la Décision Finale</h2>
@@ -223,21 +228,21 @@
                     <ul class="action-list">
                         <li><strong>Suivi Continu</strong> : Vérifications périodiques et relances si nécessaire.</li>
                          <li><strong>Interventions Stratégiques</strong> : Actions préventives pour éviter les blocages potentiels.</li>
-                         <li><strong>Préparation Convocation</strong> : Assistance logistique et coaching pour votre entretien.</li>
+                         <!-- MODIFIÉ: "coaching" supprimé -->
+                         <li><strong>Préparation Convocation</strong> : Assistance logistique et préparation pour votre entretien.</li>
                          <li><strong>Assistance RDV Final</strong> : Présence d'un avocat partenaire à vos côtés au tribunal.</li>
                          <li><strong>Sécurisation Certificat</strong> : Aide à la récupération du document officiel final.</li>
                      </ul>
                 </div>
                 <div class="phase-block result-block">
-                    <h3 class="block-title"><i class="fa-solid fa-passport"></i> Votre Aboutissement</h3> <!-- Titre et Icône changés -->
+                    <h3 class="block-title"><i class="fa-solid fa-passport"></i> Votre Aboutissement</h3>
                      <p>La reconnaissance officielle de votre statut : l'<strong>obtention de votre certificat de nationalité marocaine</strong>.</p>
-                     <!-- On peut ajouter une petite image ou un visuel ici si désiré -->
                  </div>
              </div>
         </div>
     </section>
 
-    <!-- Section Phase 4 Améliorée -->
+    <!-- Section Phase 4 -->
     <section id="phase4" class="section phase-section">
         <div class="container">
             <h2 class="section-title internal-title">Phase <span>4</span>: Finalisation Administrative (Optionnelle)</h2>
@@ -260,42 +265,41 @@
                      </ul>
                  </div>
                  <div class="phase-block result-block">
-                     <h3 class="block-title"><i class="fa-solid fa-id-card"></i> Votre Intégration Complète</h3> <!-- Titre et Icône changés -->
+                     <h3 class="block-title"><i class="fa-solid fa-id-card"></i> Votre Intégration Complète</h3>
                      <p>La pleine jouissance de votre citoyenneté avec l'obtention de vos <strong>documents d'identité marocains officiels</strong>.</p>
                  </div>
              </div>
          </div>
     </section>
 
-    <!-- Section Quality Améliorée -->
+    <!-- Section Quality -->
     <section class="section quality-section alt-bg">
         <div class="container">
             <h2 class="section-title">Nos Engagements : <span>Qualité & Confiance</span></h2>
             <div class="quality-grid">
-                 <!-- Texte des items amélioré -->
                 <div class="quality-item">
-                    <div class="quality-icon"><i class="fa-regular fa-eye"></i></div> <!-- Icone updated -->
+                    <div class="quality-icon"><i class="fa-regular fa-eye"></i></div>
                     <h3>Transparence</h3>
                     <p>Vous êtes constamment informé de l'avancement, des délais et des prochaines étapes de votre dossier.</p>
                 </div>
                 <div class="quality-item">
-                    <div class="quality-icon"><i class="fa-solid fa-bolt-lightning"></i></div> <!-- Icone updated -->
+                    <div class="quality-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
                     <h3>Réactivité</h3>
                     <p>Nous répondons rapidement à vos questions et traitons vos demandes avec diligence et efficacité.</p>
                 </div>
                 <div class="quality-item">
-                    <div class="quality-icon"><i class="fa-solid fa-user-group"></i></div> <!-- Icone updated -->
+                    <div class="quality-icon"><i class="fa-solid fa-user-group"></i></div>
                     <h3>Suivi Personnalisé</h3>
                     <p>Un conseiller dédié connaît votre dossier et vous accompagne de A à Z avec attention.</p>
                 </div>
                 <div class="quality-item">
-                    <div class="quality-icon"><i class="fa-solid fa-graduation-cap"></i></div> <!-- Icone updated -->
+                    <div class="quality-icon"><i class="fa-solid fa-graduation-cap"></i></div>
                     <h3>Expertise Pointue</h3>
                     <p>Bénéficiez de notre connaissance approfondie et actualisée du droit marocain de la nationalité.</p>
                 </div>
                 <div class="quality-item">
-                    <div class="quality-icon"><i class="fa-solid fa-shield-heart"></i></div> <!-- Icone updated -->
-                    <h3>Confidentialité</h3> <!-- Engagement ajouté -->
+                    <div class="quality-icon"><i class="fa-solid fa-shield-heart"></i></div>
+                    <h3>Confidentialité</h3>
                     <p>Vos informations personnelles et votre dossier sont traités avec la plus stricte confidentialité.</p>
                 </div>
             </div>
@@ -304,10 +308,8 @@
 
     <section class="cta-section">
         <div class="container">
-             <!-- Texte CTA Amélioré -->
             <h2 class="cta-title">Prêt à démarrer votre parcours vers la nationalité marocaine ?</h2>
             <div class="cta-buttons">
-                 <!-- Liens CTA Améliorés -->
                  <a href="#phase0" class="btn btn-light">Commencer par l'Évaluation</a>
                  <a href="contact.html" class="btn btn-outline-light">Poser une Question</a>
             </div>
@@ -315,14 +317,13 @@
     </section>
 
     <footer>
-        <!-- Footer Standard -->
+        <!-- Footer Standard (avec correction réseaux sociaux appliquée) -->
         <div class="container footer-container">
             <div class="footer-about">
                  <a href="index.html" class="footer-logo">Ezra Maroc</a>
                 <p class="footer-text">Spécialistes de l'obtention de la nationalité marocaine, nous vous accompagnons à chaque étape de votre démarche avec expertise et professionnalisme.</p>
+                <!-- Footer Social - Liens LinkedIn et Instagram seulement -->
                 <div class="footer-social">
-                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
                     <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                 </div>
@@ -344,27 +345,29 @@
                  <ul>
                     <li><a href="services.html#eligibility">Évaluation d'éligibilité</a></li>
                     <li><a href="services.html#constitution">Constitution du dossier</a></li>
+                    <li><a href="services.html#expertise">Expertise Juridique</a></li>
                     <li><a href="services.html#suivi">Suivi administratif</a></li>
+                    <li><a href="services.html#accompagnement">Accompagnement personnalisé</a></li>
+                    <li><a href="services.html#rendez-vous">Assistance RDV Final</a></li>
                     <li><a href="services.html#post-obtention">Assistance post-obtention</a></li>
-                    <li><a href="services.html#expertise">Conseil juridique</a></li>
-                </ul>
+                 </ul>
             </div>
             <div class="footer-contact">
                 <h3 class="footer-heading">Contact</h3>
                  <ul>
                     <li><i class="fa-solid fa-location-dot"></i> 30 N Gould St Ste R, Sheridan, WY 82801, États-Unis</li>
-                    <li><i class="fa-solid fa-envelope"></i> info@ezra-project.fr</li>
+                     <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></li>
                  </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container">
-                 <p>© 2024 Ezra Maroc Consulting Services LLC. Tous droits réservés.</p> <!-- Année MàJ -->
+                 <p>© 2024 Ezra Maroc Consulting Services LLC. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Lien JS -->
+    <!-- Lien JS (si nécessaire) -->
     <script src="js/script.js"></script>
 </body>
 </html>
