@@ -1,0 +1,8 @@
+name = "ezra-contact"
+main = "worker.js"
+compatibility_date = "2025-04-23"
+
+[vars]
+TO_EMAIL = "info@ezra-project.fr"
+FROM_EMAIL = "info@ezra-project.fr"
+SENDGRID_API_KEY = "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"
