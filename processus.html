@@ -3,26 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notre Processus Clair et Structuré | Ezra Maroc</title> <!-- Titre amélioré -->
+    <title>Notre Processus Clair et Structuré | Ezra Maroc</title>
+    <!-- CSS Global -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- CSS Spécifique -->
     <link rel="stylesheet" href="css/processus.css">
+    <!-- Polices -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <header>
+
+    <!-- ==========================================================================
+       HEADER (Standardisé)
+       ========================================================================== -->
+    <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="logo">
                 <img src="img/logo.png" alt="Ezra Maroc Logo">
-                <span>Ezra <strong>Maroc</strong></span>
+                <div class="brand-text">
+                    <span>Ezra</span> <strong>Maroc</strong>
+                </div>
             </a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="index.html">Accueil</a></li>
+                     <li><a href="index.html">Accueil</a></li>
+                    <li><a href="avantages.html">Avantages</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <!-- Classe active ici -->
+                     <!-- Classe active déplacée ici -->
                     <li><a href="processus.html" class="active">Processus</a></li>
                     <li><a href="temoignages.html">Témoignages</a></li>
                     <li><a href="a-propos.html">À propos</a></li>
@@ -30,19 +41,23 @@
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </nav>
-            <!-- Sélecteur de Langue (Assumant qu'il est ajouté comme dans les exemples précédents) -->
-             <div class="language-switcher">
-                <label for="lang-select" class="visually-hidden">Choisir la langue</label>
-                <select name="lang" id="lang-select" onchange="location = this.value;">
+            <div class="language-switcher">
+                 <label for="lang-select" class="visually-hidden">Choisir la langue</label>
+                 <!-- Liens du switcher adaptés pour la page Processus -->
+                 <select name="lang" id="lang-select" class="language-select" onchange="location = this.value;">
                     <option value="processus.html" selected lang="fr">Français</option>
                     <option value="/en/process.html" lang="en">English</option>
                     <option value="/es/process.html" lang="es">Español</option>
                     <option value="/he/process.html" lang="he">עברית</option>
                 </select>
             </div>
+            <!-- <button class="menu-toggle" aria-label="Ouvrir le menu"><i class="fas fa-bars"></i></button> -->
         </div>
     </header>
 
+    <!-- ==========================================================================
+       CONTENU SPÉCIFIQUE À LA PAGE "PROCESSUS" (INCHANGÉ)
+       ========================================================================== -->
     <section class="page-banner">
         <div class="container">
             <h1>Notre Processus Éprouvé</h1>
@@ -94,40 +109,32 @@
         </div>
     </section>
 
-    <!-- Section Phase 0 Modifiée -->
     <section id="phase0" class="section phase-section">
         <div class="container">
             <h2 class="section-title internal-title">Phase <span>0</span>: Votre Diagnostic Stratégique</h2>
             <div class="phase-duration">
                 <i class="fa-regular fa-clock"></i> Durée indicative: 1 à 3 semaines
             </div>
-
             <div class="phase-content">
                 <div class="phase-block">
                     <h3 class="block-title"><i class="fa-solid fa-bullseye"></i> Objectif Principal</h3>
                     <p>Évaluer précisément votre éligibilité à la nationalité marocaine et définir la stratégie optimale avant d'investir davantage.</p>
                 </div>
-
                 <div class="phase-block">
                     <h3 class="block-title"><i class="fa-solid fa-list-check"></i> Nos Actions Clés</h3>
                     <ul class="action-list">
                         <li><strong>Analyse Initiale</strong> : Examen approfondi des documents fournis.</li>
                         <li><strong>Entretien Détaillé</strong> : Compréhension de votre parcours familial et liens avec le Maroc.</li>
-                        <!-- MODIFIÉ: "juridico-biographique" simplifié -->
                         <li><strong>Collecte d'Infos</strong> : Collecte d'informations personnelles et familiales structurée.</li>
-                        <!-- SUPPRIMÉ: Recherches Ciblées -->
                         <li><strong>Évaluation Juridique</strong> : Confrontation de votre cas au Code de la Nationalité.</li>
                     </ul>
                 </div>
-
                 <div class="phase-block result-block">
                     <h3 class="block-title"><i class="fa-solid fa-flag-checkered"></i> Votre Livrable Clé</h3>
                     <p>Vous recevez un <strong>rapport d'éligibilité complet</strong> incluant :</p>
                     <ul class="result-list">
                         <li>Positionnement juridique clair de votre cas.</li>
-                        <!-- SUPPRIMÉ: Fondements légaux potentiels -->
                         <li>Évaluation transparente de vos chances réelles.</li>
-                        <!-- SUPPRIMÉ: Recommandation stratégique -->
                         <li>Liste indicative des documents essentiels à réunir.</li>
                     </ul>
                 </div>
@@ -135,11 +142,9 @@
         </div>
     </section>
 
-    <!-- Section Phase 1 -->
     <section id="phase1" class="section phase-section alt-bg">
         <div class="container">
-            <!-- NOTE: Le titre contient "Irréprochable", ce mot était demandé à supprimer dans services.html. A voir si c'est voulu ici. -->
-            <h2 class="section-title internal-title">Phase <span>1</span>: Constitution d'un Dossier Rigoureux</h2> <!-- Modifié pour cohérence potentielle -->
+            <h2 class="section-title internal-title">Phase <span>1</span>: Constitution d'un Dossier Rigoureux</h2>
             <div class="phase-duration">
                 <i class="fa-regular fa-clock"></i> Durée indicative: 1 à 4 mois
             </div>
@@ -174,7 +179,6 @@
         </div>
     </section>
 
-    <!-- Section Phase 2 Modifiée -->
      <section id="phase2" class="section phase-section">
         <div class="container">
             <h2 class="section-title internal-title">Phase <span>2</span>: Dépôt Optimisé & Suivi Initial</h2>
@@ -190,7 +194,6 @@
                     <h3 class="block-title"><i class="fa-solid fa-list-check"></i> Nos Actions Clés</h3>
                     <ul class="action-list">
                         <li><strong>Dépôt Ciblé</strong> : Soumission auprès de l'autorité compétente la plus pertinente.</li>
-                         <!-- REFORMULÉ: Accusé Réception -->
                          <li><strong>Confirmation Dépôt</strong> : Obtention et vérification de la preuve officielle de soumission.</li>
                          <li><strong>Veille Active</strong> : Mise en place d'un suivi régulier de l'état d'avancement.</li>
                          <li><strong>Gestion Enquête</strong> : Attention particulière durant la phase d'enquête de sécurité.</li>
@@ -211,7 +214,6 @@
         </div>
     </section>
 
-    <!-- Section Phase 3 Modifiée -->
     <section id="phase3" class="section phase-section alt-bg">
         <div class="container">
             <h2 class="section-title internal-title">Phase <span>3</span>: Accompagnement Jusqu'à la Décision Finale</h2>
@@ -228,7 +230,6 @@
                     <ul class="action-list">
                         <li><strong>Suivi Continu</strong> : Vérifications périodiques et relances si nécessaire.</li>
                          <li><strong>Interventions Stratégiques</strong> : Actions préventives pour éviter les blocages potentiels.</li>
-                         <!-- MODIFIÉ: "coaching" supprimé -->
                          <li><strong>Préparation Convocation</strong> : Assistance logistique et préparation pour votre entretien.</li>
                          <li><strong>Assistance RDV Final</strong> : Présence d'un avocat partenaire à vos côtés au tribunal.</li>
                          <li><strong>Sécurisation Certificat</strong> : Aide à la récupération du document officiel final.</li>
@@ -242,7 +243,6 @@
         </div>
     </section>
 
-    <!-- Section Phase 4 -->
     <section id="phase4" class="section phase-section">
         <div class="container">
             <h2 class="section-title internal-title">Phase <span>4</span>: Finalisation Administrative (Optionnelle)</h2>
@@ -272,7 +272,6 @@
          </div>
     </section>
 
-    <!-- Section Quality -->
     <section class="section quality-section alt-bg">
         <div class="container">
             <h2 class="section-title">Nos Engagements : <span>Qualité & Confiance</span></h2>
@@ -315,57 +314,71 @@
             </div>
         </div>
     </section>
+    <!-- ==========================================================================
+       FIN DU CONTENU SPÉCIFIQUE
+       ========================================================================== -->
 
+    <!-- ==========================================================================
+       FOOTER (Standardisé)
+       ========================================================================== -->
     <footer>
-        <!-- Footer Standard (avec correction réseaux sociaux appliquée) -->
-        <div class="container footer-container">
-            <div class="footer-about">
-                 <a href="index.html" class="footer-logo">Ezra Maroc</a>
-                <p class="footer-text">Spécialistes de l'obtention de la nationalité marocaine, nous vous accompagnons à chaque étape de votre démarche avec expertise et professionnalisme.</p>
-                <!-- Footer Social - Liens LinkedIn et Instagram seulement -->
-                <div class="footer-social">
-                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="footer-links">
-                <h3 class="footer-heading">Liens rapides</h3>
-                <ul>
+         <div class="container footer-container">
+             <!-- Colonne 1: About -->
+             <div class="footer-about">
+                 <a href="index.html" class="footer-logo">Ezra<strong>Maroc</strong></a>
+                 <p class="footer-text">Spécialistes de l'obtention de la nationalité marocaine, nous vous accompagnons à chaque étape avec expertise et professionnalisme.</p>
+                 <div class="footer-social">
+                     <!-- !! Remplacer par VOS liens réels !! -->
+                     <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                     <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                 </div>
+             </div>
+             <!-- Colonne 2: Liens Rapides -->
+             <div class="footer-links">
+                 <h3 class="footer-heading">Liens rapides</h3>
+                 <ul>
                      <li><a href="index.html">Accueil</a></li>
-                    <li><a href="services.html">Nos services</a></li>
-                    <li><a href="processus.html">Notre processus</a></li>
-                    <li><a href="temoignages.html">Témoignages</a></li>
-                    <li><a href="a-propos.html">À propos de nous</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                     <li><a href="avantages.html">Avantages</a></li>
+                     <li><a href="services.html">Services</a></li>
+                     <li><a href="processus.html">Processus</a></li>
+                     <li><a href="temoignages.html">Témoignages</a></li>
+                     <li><a href="a-propos.html">À propos</a></li>
+                     <li><a href="faq.html">FAQ</a></li>
+                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-services">
-                <h3 class="footer-heading">Nos services</h3>
-                 <ul>
-                    <li><a href="services.html#eligibility">Évaluation d'éligibilité</a></li>
-                    <li><a href="services.html#constitution">Constitution du dossier</a></li>
-                    <li><a href="services.html#expertise">Expertise Juridique</a></li>
-                    <li><a href="services.html#suivi">Suivi administratif</a></li>
-                    <li><a href="services.html#accompagnement">Accompagnement personnalisé</a></li>
-                    <li><a href="services.html#rendez-vous">Assistance RDV Final</a></li>
-                    <li><a href="services.html#post-obtention">Assistance post-obtention</a></li>
+            <!-- Colonne 3: Services -->
+             <div class="footer-services">
+                <h3 class="footer-heading">Nos Services Clés</h3>
+                <ul>
+                     <li><a href="services.html#eligibility">Analyse d'Éligibilité</a></li>
+                     <li><a href="services.html#constitution">Constitution du Dossier</a></li>
+                    <li><a href="services.html#recherche">Recherche Généalogique</a></li>
+                    <li><a href="services.html#suivi">Suivi Administratif</a></li>
+                    <li><a href="services.html#post-obtention">Assistance Post-Obtention</a></li>
                  </ul>
             </div>
-            <div class="footer-contact">
-                <h3 class="footer-heading">Contact</h3>
+            <!-- Colonne 4: Contact -->
+             <div class="footer-contact">
+                 <h3 class="footer-heading">Contact</h3>
                  <ul>
-                    <li><i class="fa-solid fa-location-dot"></i> 30 N Gould St Ste R, Sheridan, WY 82801, États-Unis</li>
+                    <li><i class="fa-solid fa-location-dot"></i> <span>30 N Gould St Ste R,<br>Sheridan, WY 82801, USA</span></li>
                      <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></li>
+                    <!-- Ajouter Téléphone si besoin -->
+                    <!-- <li><i class="fa-solid fa-phone"></i> <a href="tel:+1...">+1 ...</a></li> -->
                  </ul>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div class="container">
+         <div class="footer-bottom">
+             <div class="container">
                  <p>© 2024 Ezra Maroc Consulting Services LLC. Tous droits réservés.</p>
+                 <p>Les informations sur ce site sont fournies à titre indicatif et ne constituent pas un conseil juridique ou fiscal. Consultez des professionnels qualifiés.</p>
             </div>
-        </div>
+         </div>
     </footer>
+    <!-- ==========================================================================
+       FIN FOOTER
+       ========================================================================== -->
 
     <!-- Lien JS (si nécessaire) -->
     <script src="js/script.js"></script>

@@ -4,44 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ - Nationalité Marocaine | Ezra Maroc</title>
-    <link rel="stylesheet" href="css/style.css"> <!-- CSS Global -->
-    <link rel="stylesheet" href="css/faq.css">   <!-- CSS FAQ -->
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- CSS Spécifique -->
+    <link rel="stylesheet" href="css/faq.css">
+    <!-- Polices -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <!-- HEADER -->
-    <header>
+
+    <!-- ==========================================================================
+       HEADER (Standardisé)
+       ========================================================================== -->
+    <header class="site-header">
         <div class="container header-container">
-             <a href="index.html" class="logo">
+            <a href="index.html" class="logo">
                 <img src="img/logo.png" alt="Ezra Maroc Logo">
-                <span>Ezra <strong>Maroc</strong></span>
+                <div class="brand-text">
+                    <span>Ezra</span> <strong>Maroc</strong>
+                </div>
             </a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="index.html">Accueil</a></li>
+                     <li><a href="index.html">Accueil</a></li>
+                    <li><a href="avantages.html">Avantages</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="processus.html">Processus</a></li>
                     <li><a href="temoignages.html">Témoignages</a></li>
                     <li><a href="a-propos.html">À propos</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <!-- Classe active ici -->
                     <li><a href="faq.html" class="active">FAQ</a></li>
                 </ul>
             </nav>
             <div class="language-switcher">
-                <label for="lang-select" class="visually-hidden">Choisir la langue</label>
-                <select name="lang" id="lang-select" onchange="location = this.value;">
+                 <label for="lang-select" class="visually-hidden">Choisir la langue</label>
+                 <!-- Liens du switcher adaptés pour la page FAQ -->
+                 <select name="lang" id="lang-select" class="language-select" onchange="location = this.value;">
                     <option value="faq.html" selected lang="fr">Français</option>
                     <option value="/en/faq.html" lang="en">English</option>
                     <option value="/es/faq.html" lang="es">Español</option>
                     <option value="/he/faq.html" lang="he">עברית</option>
                 </select>
             </div>
+            <!-- <button class="menu-toggle" aria-label="Ouvrir le menu"><i class="fas fa-bars"></i></button> -->
         </div>
     </header>
 
+    <!-- ==========================================================================
+       CONTENU SPÉCIFIQUE À LA PAGE "FAQ"
+       ========================================================================== -->
     <!-- BANNIERE DE PAGE -->
     <section class="page-banner">
         <div class="container">
@@ -50,83 +66,24 @@
         </div>
     </section>
 
-    <!-- ================================================================ -->
-    <!-- === SECTION AVANTAGES - STYLE SIMILAIRE AUX SERVICES ACCUEIL === -->
-    <!-- ================================================================ -->
+    <!-- SECTION AVANTAGES - STYLE SIMILAIRE AUX SERVICES ACCUEIL -->
     <section class="section advantages-section-servicelike">
         <div class="container">
             <h2 class="section-title">Pourquoi obtenir la Nationalité Marocaine ? <span>Principaux Avantages</span></h2>
-            <div class="advantages-grid-sl"> <!-- sl = Service-Like -->
-
-                <!-- Avantage 1 -->
-                <div class="advantage-card-sl">
-                    <div class="advantage-icon-sl"><i class="fa-solid fa-house-user"></i></div>
-                    <h3 class="advantage-title-sl">Droit de Séjour Illimité</h3>
-                    <p>Résider, travailler et circuler librement au Maroc sans titre de séjour.</p>
-                </div>
-
-                <!-- Avantage 2 -->
-                <div class="advantage-card-sl">
-                    <div class="advantage-icon-sl"><i class="fa-solid fa-vote-yea"></i></div>
-                    <h3 class="advantage-title-sl">Droits Civiques & Politiques</h3>
-                    <p>Participer pleinement à la vie publique (vote, éligibilité).</p>
-                </div>
-
-                <!-- Avantage 3 -->
-                <div class="advantage-card-sl">
-                    <div class="advantage-icon-sl"><i class="fa-solid fa-briefcase"></i></div>
-                    <h3 class="advantage-title-sl">Accès à l'Emploi</h3>
-                    <p>Ouverture à la majorité des emplois (restrictions postes sensibles).</p>
-                </div>
-
-                <!-- Avantage 4 -->
-                <div class="advantage-card-sl">
-                    <div class="advantage-icon-sl"><i class="fa-solid fa-leaf"></i></div>
-                    <h3 class="advantage-title-sl">Propriété Étendue</h3>
-                    <p>Possibilité d'acquérir tous biens, y compris terres agricoles.</p>
-                </div>
-
-                <!-- Avantage 5 -->
-                 <div class="advantage-card-sl">
-                    <div class="advantage-icon-sl"><i class="fa-solid fa-children"></i></div>
-                    <h3 class="advantage-title-sl">Transmission Facilitée</h3>
-                    <p>Nationalité généralement transmise à vos enfants.</p>
-                </div>
-
-                <!-- Avantage 6 -->
-                 <div class="advantage-card-sl">
-                    <div class="advantage-icon-sl"><i class="fa-solid fa-passport"></i></div>
-                    <h3 class="advantage-title-sl">Voyages Facilités</h3>
-                    <p>Passeport offrant accès facilité (~85 pays, ~60ème mondial).</p>
-                </div>
-
-                 <!-- Avantage 7 -->
-                 <div class="advantage-card-sl">
-                    <div class="advantage-icon-sl"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h3 class="advantage-title-sl">Protection Consulaire</h3>
-                    <p>Assistance des ambassades/consulats à l'étranger.</p>
-                </div>
-
-                 <!-- Avantage 8 -->
-                 <div class="advantage-card-sl">
-                    <div class="advantage-icon-sl"><i class="fa-solid fa-landmark-flag"></i></div>
-                    <h3 class="advantage-title-sl">Reconnexion Culturelle</h3>
-                    <p>Officialiser et renforcer vos liens avec l'héritage marocain.</p>
-                </div>
-
-                 <!-- Avantage 9 -->
-                 <div class="advantage-card-sl">
-                    <div class="advantage-icon-sl"><i class="fa-solid fa-heart-pulse"></i></div>
-                    <h3 class="advantage-title-sl">Accès Services Sociaux</h3>
-                    <p>Accès potentiel aux systèmes éducation, santé, etc.</p>
-                </div>
-
-            </div> <!-- Fin .advantages-grid-sl -->
-        </div> <!-- Fin .container -->
+            <div class="advantages-grid-sl">
+                 <!-- Cartes Avantages (inchangées) -->
+                <div class="advantage-card-sl"> <div class="advantage-icon-sl"><i class="fa-solid fa-house-user"></i></div> <h3 class="advantage-title-sl">Droit de Séjour Illimité</h3> <p>Résider, travailler et circuler librement au Maroc sans titre de séjour.</p> </div>
+                <div class="advantage-card-sl"> <div class="advantage-icon-sl"><i class="fa-solid fa-vote-yea"></i></div> <h3 class="advantage-title-sl">Droits Civiques & Politiques</h3> <p>Participer pleinement à la vie publique (vote, éligibilité).</p> </div>
+                <div class="advantage-card-sl"> <div class="advantage-icon-sl"><i class="fa-solid fa-briefcase"></i></div> <h3 class="advantage-title-sl">Accès à l'Emploi</h3> <p>Ouverture à la majorité des emplois (restrictions postes sensibles).</p> </div>
+                <div class="advantage-card-sl"> <div class="advantage-icon-sl"><i class="fa-solid fa-leaf"></i></div> <h3 class="advantage-title-sl">Propriété Étendue</h3> <p>Possibilité d'acquérir tous biens, y compris terres agricoles.</p> </div>
+                <div class="advantage-card-sl"> <div class="advantage-icon-sl"><i class="fa-solid fa-children"></i></div> <h3 class="advantage-title-sl">Transmission Facilitée</h3> <p>Nationalité généralement transmise à vos enfants.</p> </div>
+                <div class="advantage-card-sl"> <div class="advantage-icon-sl"><i class="fa-solid fa-passport"></i></div> <h3 class="advantage-title-sl">Voyages Facilités</h3> <p>Passeport offrant accès facilité (~85 pays, ~60ème mondial).</p> </div>
+                <div class="advantage-card-sl"> <div class="advantage-icon-sl"><i class="fa-solid fa-shield-halved"></i></div> <h3 class="advantage-title-sl">Protection Consulaire</h3> <p>Assistance des ambassades/consulats à l'étranger.</p> </div>
+                <div class="advantage-card-sl"> <div class="advantage-icon-sl"><i class="fa-solid fa-landmark-flag"></i></div> <h3 class="advantage-title-sl">Reconnexion Culturelle</h3> <p>Officialiser et renforcer vos liens avec l'héritage marocain.</p> </div>
+                <div class="advantage-card-sl"> <div class="advantage-icon-sl"><i class="fa-solid fa-heart-pulse"></i></div> <h3 class="advantage-title-sl">Accès Services Sociaux</h3> <p>Accès potentiel aux systèmes éducation, santé, etc.</p> </div>
+            </div>
+        </div>
     </section>
-    <!-- ============================================ -->
-    <!-- === FIN SECTION AVANTAGES - STYLE SERVICES === -->
-    <!-- ============================================ -->
 
     <!-- CONTENEUR ACCORDEON ET AUTRES SECTIONS -->
     <div class="faq-container">
@@ -134,32 +91,12 @@
         <!-- SECTION INTRODUCTION RÉVISÉE -->
         <section class="faq-section">
             <h2>La nationalité marocaine : bien plus qu'un statut juridique</h2>
-            <p>
-                La nationalité marocaine ne se résume pas à une simple formalité juridique.
-                Elle représente un lien profond entre une personne et le Maroc, enraciné dans l’histoire,
-                la culture, et la mémoire familiale. C’est une manière de reconnaître officiellement
-                une appartenance qui traverse les générations, même au-delà des frontières ou des migrations.
-            </p>
-            <p>
-                Demander ou retrouver la nationalité marocaine, surtout par filiation, est souvent un acte fort d’identité.
-                Cela permet à des individus de renouer avec leurs origines, de faire reconnaître un lien personnel
-                et familial avec le Royaume, et de participer pleinement à la communauté nationale.
-            </p>
-            <p>
-                Cependant, les démarches administratives peuvent être complexes, en particulier lorsqu’il s’agit de prouver
-                la filiation avec un ascendant marocain. C’est pourquoi nous avons créé cette FAQ : pour vous guider de manière
-                claire et structurée dans ce processus. Elle s’adresse en priorité à celles et ceux dont les parents ou grands-parents
-                sont d’origine marocaine et qui souhaitent obtenir la nationalité à ce titre.
-            </p>
-            <p>
-                Notre équipe allie une expertise juridique précise avec une compréhension humaine des parcours individuels.
-                Nous ne nous contentons pas de traiter des dossiers : nous accompagnons des histoires, nous rétablissons des liens,
-                et nous aidons chacun à inscrire son héritage dans une reconnaissance légale.
-            </p>
-            <p>
-                Nous vous encourageons à engager cette démarche de reconnexion identitaire, en vous appuyant sur notre accompagnement
-                rigoureux, respectueux et profondément attentif à la richesse des parcours personnels.
-            </p>
+            <!-- Paragraphes introductifs (inchangés) -->
+            <p> La nationalité marocaine ne se résume pas à une simple formalité juridique. Elle représente un lien profond entre une personne et le Maroc, enraciné dans l’histoire, la culture, et la mémoire familiale. C’est une manière de reconnaître officiellement une appartenance qui traverse les générations, même au-delà des frontières ou des migrations. </p>
+            <p> Demander ou retrouver la nationalité marocaine, surtout par filiation, est souvent un acte fort d’identité. Cela permet à des individus de renouer avec leurs origines, de faire reconnaître un lien personnel et familial avec le Royaume, et de participer pleinement à la communauté nationale. </p>
+            <p> Cependant, les démarches administratives peuvent être complexes, en particulier lorsqu’il s’agit de prouver la filiation avec un ascendant marocain. C’est pourquoi nous avons créé cette FAQ : pour vous guider de manière claire et structurée dans ce processus. Elle s’adresse en priorité à celles et ceux dont les parents ou grands-parents sont d’origine marocaine et qui souhaitent obtenir la nationalité à ce titre. </p>
+            <p> Notre équipe allie une expertise juridique précise avec une compréhension humaine des parcours individuels. Nous ne nous contentons pas de traiter des dossiers : nous accompagnons des histoires, nous rétablissons des liens, et nous aidons chacun à inscrire son héritage dans une reconnaissance légale. </p>
+            <p> Nous vous encourageons à engager cette démarche de reconnexion identitaire, en vous appuyant sur notre accompagnement rigoureux, respectueux et profondément attentif à la richesse des parcours personnels. </p>
         </section>
 
         <!-- SECTION QUESTIONS GÉNÉRALES (Accordéon) -->
@@ -170,14 +107,10 @@
                     <span>Qui peut prétendre à la nationalité marocaine?</span>
                     <i class="fas fa-chevron-down faq-icon"></i>
                 </button>
-                <div class="faq-answer" id="faq-qg1">
+                 <!-- Ajout aria-hidden="true" -->
+                <div class="faq-answer" id="faq-qg1" aria-hidden="true">
                     <p>La nationalité marocaine est principalement régie par le Code de la Nationalité Marocaine. Les principaux modes d'acquisition sont :</p>
-                    <ul>
-                        <li><strong>Par Filiation :</strong> Être né d'un père marocain ou d'une mère marocaine. C'est la voie la plus fréquente pour la diaspora et notre expertise principale. <em>(Note : Pour les personnes nées d'une mère marocaine avant 2007, une déclaration spécifique est souvent nécessaire.)</em></li>
-                        <li><strong>Par Naissance au Maroc (Jus Soli) :</strong> Dans des cas très spécifiques (ex: parents inconnus, parents étrangers eux-mêmes nés au Maroc sous conditions, jeunes résidents réguliers...).</li>
-                        <li><strong>Par Mariage :</strong> Pour l'étranger(ère) marié(e) à un(e) Marocain(e) après 5 ans de mariage et de résidence commune, stable et continue au Maroc.</li>
-                        <li><strong>Par Naturalisation :</strong> Décision de l'État accordée à un étranger remplissant certaines conditions (résidence longue durée, intégration, etc.).</li>
-                    </ul>
+                    <ul> <li><strong>Par Filiation :</strong> Être né d'un père marocain ou d'une mère marocaine. C'est la voie la plus fréquente pour la diaspora et notre expertise principale. <em>(Note : Pour les personnes nées d'une mère marocaine avant 2007, une déclaration spécifique est souvent nécessaire.)</em></li> <li><strong>Par Naissance au Maroc (Jus Soli) :</strong> Dans des cas très spécifiques (ex: parents inconnus, parents étrangers eux-mêmes nés au Maroc sous conditions, jeunes résidents réguliers...).</li> <li><strong>Par Mariage :</strong> Pour l'étranger(ère) marié(e) à un(e) Marocain(e) après 5 ans de mariage et de résidence commune, stable et continue au Maroc.</li> <li><strong>Par Naturalisation :</strong> Décision de l'État accordée à un étranger remplissant certaines conditions (résidence longue durée, intégration, etc.).</li> </ul>
                     <p>Chaque cas est unique et nécessite une analyse individuelle.</p>
                 </div>
             </div>
@@ -186,7 +119,8 @@
                    <span>Puis-je conserver ma nationalité actuelle (Double Nationalité)?</span>
                    <i class="fas fa-chevron-down faq-icon"></i>
                 </button>
-                <div class="faq-answer" id="faq-qg2">
+                 <!-- Ajout aria-hidden="true" -->
+                <div class="faq-answer" id="faq-qg2" aria-hidden="true">
                      <p>Oui, le Maroc autorise la double nationalité. Vous n'avez généralement pas à renoncer à votre autre nationalité pour acquérir la nationalité marocaine.</p>
                      <p>Il est important de savoir que lorsque vous êtes sur le territoire marocain, les autorités marocaines vous considèrent avant tout comme Marocain. Cela signifie que les lois marocaines s'appliquent prioritairement et que l'assistance consulaire de votre autre pays pourrait être limitée dans certaines situations.</p>
                  </div>
@@ -196,25 +130,9 @@
                    <span>Quels documents sont généralement requis ?</span>
                     <i class="fas fa-chevron-down faq-icon"></i>
                 </button>
-                <div class="faq-answer" id="faq-qg3">
-                     <p>
-                         Les documents précis dépendent toujours de votre situation personnelle et de la base sur laquelle vous demandez la nationalité (filiation paternelle, maternelle, date de naissance, etc.).
-                     </p>
-                     <p>
-                         Typiquement, il faudra fournir des actes d'état civil récents et complets (les vôtres, ceux de vos parents/grands-parents marocains) pour établir les liens familiaux de manière irréfutable.
-                     </p>
-                     <p>
-                         La preuve cruciale concerne la nationalité marocaine de vos ascendants au moment de la transmission pertinente (votre naissance, celle de votre parent...). Cela peut inclure une copie de leur Carte Nationale d'Identité Électronique (CNIE), un ancien certificat de nationalité, ou d'autres documents officiels marocains probants.
-                     </p>
-                     <p>
-                         Prouver le lien de filiation directe peut être complexe, surtout sur plusieurs générations, et implique souvent des recherches approfondies dans les registres d'état civil (Adouls, officiers d'état civil) ou les archives consulaires marocaines.
-                     </p>
-                     <p>
-                         N'oubliez pas que les documents délivrés par des autorités étrangères doivent généralement être traduits en arabe par un traducteur assermenté auprès des tribunaux marocains. Ils nécessitent aussi souvent une légalisation ou une apostille (selon les conventions internationales) pour être reconnus au Maroc.
-                     </p>
-                     <p>
-                         Ezra Maroc vous aide à identifier la liste exacte des documents nécessaires pour *votre* cas spécifique et vous accompagne dans les démarches de collecte, traduction et légalisation/apostille.
-                     </p>
+                 <!-- Ajout aria-hidden="true" -->
+                <div class="faq-answer" id="faq-qg3" aria-hidden="true">
+                     <p> Les documents précis dépendent toujours de votre situation personnelle et de la base sur laquelle vous demandez la nationalité (filiation paternelle, maternelle, date de naissance, etc.). </p> <p> Typiquement, il faudra fournir des actes d'état civil récents et complets (les vôtres, ceux de vos parents/grands-parents marocains) pour établir les liens familiaux de manière irréfutable. </p> <p> La preuve cruciale concerne la nationalité marocaine de vos ascendants au moment de la transmission pertinente (votre naissance, celle de votre parent...). Cela peut inclure une copie de leur Carte Nationale d'Identité Électronique (CNIE), un ancien certificat de nationalité, ou d'autres documents officiels marocains probants. </p> <p> Prouver le lien de filiation directe peut être complexe, surtout sur plusieurs générations, et implique souvent des recherches approfondies dans les registres d'état civil (Adouls, officiers d'état civil) ou les archives consulaires marocaines. </p> <p> N'oubliez pas que les documents délivrés par des autorités étrangères doivent généralement être traduits en arabe par un traducteur assermenté auprès des tribunaux marocains. Ils nécessitent aussi souvent une légalisation ou une apostille (selon les conventions internationales) pour être reconnus au Maroc. </p> <p> Ezra Maroc vous aide à identifier la liste exacte des documents nécessaires pour *votre* cas spécifique et vous accompagne dans les démarches de collecte, traduction et légalisation/apostille. </p>
                  </div>
             </div>
              <div class="faq-item">
@@ -222,7 +140,8 @@
                     <span>Dois-je parler arabe ou amazigh pour obtenir la nationalité par filiation ?</span>
                      <i class="fas fa-chevron-down faq-icon"></i>
                 </button>
-                <div class="faq-answer" id="faq-qg4">
+                 <!-- Ajout aria-hidden="true" -->
+                <div class="faq-answer" id="faq-qg4" aria-hidden="true">
                     <p>Non, la connaissance de la langue (arabe dialectal, arabe classique ou amazigh) n'est pas une condition légale pour obtenir la nationalité marocaine par filiation (droit du sang).</p>
                     <p>Cette exigence de connaissance linguistique concerne principalement la procédure de naturalisation, où l'intégration à la société marocaine est évaluée.</p>
                 </div>
@@ -237,12 +156,9 @@
                     <span>Quelle est la procédure type ?</span>
                      <i class="fas fa-chevron-down faq-icon"></i>
                 </button>
-                <div class="faq-answer" id="faq-proc1">
-                    <p>La procédure générale implique la constitution méticuleuse d'un dossier contenant toutes les preuves requises (état civil, preuves de nationalité de l'ascendant, lien de filiation).</p>
-                    <p>Ce dossier est ensuite déposé auprès de l'autorité compétente : le plus souvent le Tribunal de Première Instance (service de la nationalité) au Maroc, ou parfois via le Consulat marocain de votre lieu de résidence.</p>
-                    <p>S'ensuit une phase d'instruction durant laquelle les documents sont vérifiés par le Procureur du Roi et le juge chargé de la nationalité. Des enquêtes complémentaires peuvent être demandées.</p>
-                    <p>La procédure se conclut par une décision officielle : soit la délivrance directe d'un Certificat de Nationalité Marocaine (CNM), soit un jugement déclaratif de nationalité rendu par le tribunal.</p>
-                    <p>Nous vous guidons à chaque étape, de la collecte des preuves au dépôt et au suivi, pour assurer la conformité et maximiser les chances de succès de votre demande.</p>
+                 <!-- Ajout aria-hidden="true" -->
+                <div class="faq-answer" id="faq-proc1" aria-hidden="true">
+                    <p>La procédure générale implique la constitution méticuleuse d'un dossier contenant toutes les preuves requises (état civil, preuves de nationalité de l'ascendant, lien de filiation).</p> <p>Ce dossier est ensuite déposé auprès de l'autorité compétente : le plus souvent le Tribunal de Première Instance (service de la nationalité) au Maroc, ou parfois via le Consulat marocain de votre lieu de résidence.</p> <p>S'ensuit une phase d'instruction durant laquelle les documents sont vérifiés par le Procureur du Roi et le juge chargé de la nationalité. Des enquêtes complémentaires peuvent être demandées.</p> <p>La procédure se conclut par une décision officielle : soit la délivrance directe d'un Certificat de Nationalité Marocaine (CNM), soit un jugement déclaratif de nationalité rendu par le tribunal.</p> <p>Nous vous guidons à chaque étape, de la collecte des preuves au dépôt et au suivi, pour assurer la conformité et maximiser les chances de succès de votre demande.</p>
                 </div>
              </div>
             <div class="faq-item">
@@ -250,15 +166,9 @@
                    <span>Combien de temps prend le processus ?</span>
                     <i class="fas fa-chevron-down faq-icon"></i>
                 </button>
-                <div class="faq-answer" id="faq-proc2">
-                     <p>Les délais varient <strong>considérablement</strong> selon la complexité du dossier, la charge de travail des administrations concernées (tribunaux, consulats) et la nécessité d'éventuelles enquêtes ou vérifications. Il n'existe <strong>aucun délai légal ou réglementaire garanti</strong> par la loi marocaine pour statuer sur une demande de nationalité.</p>
-                    <p>À titre purement indicatif et basé sur notre expérience :</p>
-                    <ul>
-                        <li><strong>Filiation (cas simples et bien documentés) :</strong> Un délai de 6 mois à 2 ans est parfois observé, mais cette fourchette reste optimiste et non garantie.</li>
-                        <li><strong>Filiation (cas complexes) :</strong> Les dossiers nécessitant des recherches approfondies (archives anciennes, preuves indirectes), impliquant plusieurs générations, ou présentant des complications administratives (actes manquants, transcriptions) <strong>peuvent facilement dépasser 3 ans, voire plus</strong>.</li>
-                        <li><strong>Mariage / Naturalisation :</strong> Ces processus sont généralement plus longs et dépendent strictement du respect des conditions légales (durée de résidence effective, etc.).</li>
-                    </ul>
-                    <p>Notre rôle est de préparer le dossier le plus complet et le mieux argumenté possible pour tenter d'optimiser ces délais, et d'assurer un suivi régulier auprès des autorités, mais l'administration reste souveraine quant à son rythme de traitement.</p>
+                 <!-- Ajout aria-hidden="true" -->
+                <div class="faq-answer" id="faq-proc2" aria-hidden="true">
+                     <p>Les délais varient <strong>considérablement</strong> selon la complexité du dossier, la charge de travail des administrations concernées (tribunaux, consulats) et la nécessité d'éventuelles enquêtes ou vérifications. Il n'existe <strong>aucun délai légal ou réglementaire garanti</strong> par la loi marocaine pour statuer sur une demande de nationalité.</p> <p>À titre purement indicatif et basé sur notre expérience :</p> <ul> <li><strong>Filiation (cas simples et bien documentés) :</strong> Un délai de 6 mois à 2 ans est parfois observé, mais cette fourchette reste optimiste et non garantie.</li> <li><strong>Filiation (cas complexes) :</strong> Les dossiers nécessitant des recherches approfondies (archives anciennes, preuves indirectes), impliquant plusieurs générations, ou présentant des complications administratives (actes manquants, transcriptions) <strong>peuvent facilement dépasser 3 ans, voire plus</strong>.</li> <li><strong>Mariage / Naturalisation :</strong> Ces processus sont généralement plus longs et dépendent strictement du respect des conditions légales (durée de résidence effective, etc.).</li> </ul> <p>Notre rôle est de préparer le dossier le plus complet et le mieux argumenté possible pour tenter d'optimiser ces délais, et d'assurer un suivi régulier auprès des autorités, mais l'administration reste souveraine quant à son rythme de traitement.</p>
                 </div>
              </div>
              <div class="faq-item">
@@ -266,19 +176,9 @@
                      <span>Peut-on suivre son dossier ? Y a-t-il des recours ?</span>
                      <i class="fas fa-chevron-down faq-icon"></i>
                  </button>
-                 <div class="faq-answer" id="faq-proc3">
-                    <p>
-                         Oui, le suivi est possible, bien qu'il demande méthode et persévérance. Il est essentiel de conserver précieusement une copie complète de votre dossier déposé ainsi que le récépissé de dépôt officiel qui contient généralement un numéro de référence.
-                     </p>
-                     <p>
-                         Un suivi régulier auprès de l'administration compétente (greffe du tribunal, service consulaire) est recommandé pour s'enquérir de l'état d'avancement. Soyez cependant conscient que les réponses peuvent être laconiques et les délais de traitement parfois longs.
-                     </p>
-                     <p>
-                         En cas de décision de refus explicite (ou parfois implicite après un long silence), ne vous découragez pas. Des voies de recours existent (appel, pourvoi en cassation selon les cas) pour contester la décision devant les juridictions supérieures.
-                     </p>
-                     <p>
-                         Notre équipe juridique est expérimentée dans ces procédures contentieuses et peut vous conseiller sur l'opportunité d'un recours, et vous assister dans sa préparation et son dépôt si nécessaire.
-                     </p>
+                  <!-- Ajout aria-hidden="true" -->
+                 <div class="faq-answer" id="faq-proc3" aria-hidden="true">
+                    <p> Oui, le suivi est possible, bien qu'il demande méthode et persévérance. Il est essentiel de conserver précieusement une copie complète de votre dossier déposé ainsi que le récépissé de dépôt officiel qui contient généralement un numéro de référence. </p> <p> Un suivi régulier auprès de l'administration compétente (greffe du tribunal, service consulaire) est recommandé pour s'enquérir de l'état d'avancement. Soyez cependant conscient que les réponses peuvent être laconiques et les délais de traitement parfois longs. </p> <p> En cas de décision de refus explicite (ou parfois implicite après un long silence), ne vous découragez pas. Des voies de recours existent (appel, pourvoi en cassation selon les cas) pour contester la décision devant les juridictions supérieures. </p> <p> Notre équipe juridique est expérimentée dans ces procédures contentieuses et peut vous conseiller sur l'opportunité d'un recours, et vous assister dans sa préparation et son dépôt si nécessaire. </p>
                  </div>
               </div>
                <div class="faq-item">
@@ -286,19 +186,9 @@
                        <span>Un voyage au Maroc est-il toujours nécessaire ?</span>
                        <i class="fas fa-chevron-down faq-icon"></i>
                    </button>
-                   <div class="faq-answer" id="faq-proc4">
-                      <p>
-                           La nécessité de voyager physiquement au Maroc dépend de votre situation géographique, du consulat dont vous dépendez, et de la nature exacte de votre procédure. Ce n'est pas toujours systématique, mais reste fréquent.
-                       </p>
-                       <p>
-                           <strong>Pour les documents d'identité (CNIE, passeport) :</strong> Une fois la nationalité obtenue et prouvée (par CNM ou jugement transcrit), un déplacement est souvent requis pour la demande et le retrait de ces documents. Cependant, certains grands consulats (ex: Paris, Madrid, Montréal, New York, etc.) sont désormais équipés pour réaliser la capture des données biométriques. Renseignez-vous auprès de votre consulat pour savoir s'ils offrent ce service.
-                       </p>
-                       <p>
-                           <strong>Pour la procédure judiciaire (si applicable) :</strong> Si votre cas nécessite une comparution devant un juge (par exemple, pour un jugement déclaratif de nationalité), certaines étapes ou auditions *peuvent parfois* être déléguées par le juge marocain au consulat via une "commission rogatoire". Toutefois, cela dépend de la décision du juge et de la nature de l'acte à accomplir. Une comparution personnelle au Maroc peut donc rester nécessaire dans certains cas judiciaires.
-                       </p>
-                       <p>
-                           <strong>Conclusion :</strong> Une présence physique peut être requise à différentes étapes. Une évaluation personnalisée de votre dossier par nos soins permettra de mieux anticiper les éventuels déplacements nécessaires dans votre cas spécifique.
-                       </p>
+                    <!-- Ajout aria-hidden="true" -->
+                   <div class="faq-answer" id="faq-proc4" aria-hidden="true">
+                      <p> La nécessité de voyager physiquement au Maroc dépend de votre situation géographique, du consulat dont vous dépendez, et de la nature exacte de votre procédure. Ce n'est pas toujours systématique, mais reste fréquent. </p> <p> <strong>Pour les documents d'identité (CNIE, passeport) :</strong> Une fois la nationalité obtenue et prouvée (par CNM ou jugement transcrit), un déplacement est souvent requis pour la demande et le retrait de ces documents. Cependant, certains grands consulats (ex: Paris, Madrid, Montréal, New York, etc.) sont désormais équipés pour réaliser la capture des données biométriques. Renseignez-vous auprès de votre consulat pour savoir s'ils offrent ce service. </p> <p> <strong>Pour la procédure judiciaire (si applicable) :</strong> Si votre cas nécessite une comparution devant un juge (par exemple, pour un jugement déclaratif de nationalité), certaines étapes ou auditions *peuvent parfois* être déléguées par le juge marocain au consulat via une "commission rogatoire". Toutefois, cela dépend de la décision du juge et de la nature de l'acte à accomplir. Une comparution personnelle au Maroc peut donc rester nécessaire dans certains cas judiciaires. </p> <p> <strong>Conclusion :</strong> Une présence physique peut être requise à différentes étapes. Une évaluation personnalisée de votre dossier par nos soins permettra de mieux anticiper les éventuels déplacements nécessaires dans votre cas spécifique. </p>
                    </div>
                </div>
         </section>
@@ -311,16 +201,9 @@
                       <span>Qu'en est-il des descendants de Juifs marocains?</span>
                       <i class="fas fa-chevron-down faq-icon"></i>
                   </button>
-                 <div class="faq-answer" id="faq-cas1">
-                    <p>
-                         Absolument. Les citoyens marocains de confession juive et leurs descendants peuvent revendiquer la nationalité marocaine par filiation, dans les mêmes conditions que tout autre Marocain, conformément au Code de la Nationalité. La Constitution marocaine de 2011 reconnaît d'ailleurs explicitement l'affluent hébraïque comme une des composantes de l'identité nationale unie.
-                     </p>
-                     <p>
-                         Le principal défi, comme pour de nombreuses demandes par filiation concernant des familles ayant émigré il y a longtemps, réside souvent dans la collecte des preuves documentaires. Il faut pouvoir attester de manière irréfutable du lien de filiation directe avec l'ancêtre marocain (père ou mère selon les cas et l'époque) et de la conservation de sa nationalité marocaine (qu'il/elle ne l'ait pas perdue ou répudiée volontairement avant la transmission).
-                     </p>
-                     <p>
-                         La recherche de documents anciens (actes d'état civil hébraïques ou civils, documents de voyage, registres consulaires, preuves de résidence...) peut être complexe. Ezra Maroc a développé une expertise spécifique dans ce domaine, incluant la recherche dans diverses archives et la constitution rigoureuse de ces dossiers pour répondre aux exigences légales.
-                     </p>
+                   <!-- Ajout aria-hidden="true" -->
+                 <div class="faq-answer" id="faq-cas1" aria-hidden="true">
+                    <p> Absolument. Les citoyens marocains de confession juive et leurs descendants peuvent revendiquer la nationalité marocaine par filiation, dans les mêmes conditions que tout autre Marocain, conformément au Code de la Nationalité. La Constitution marocaine de 2011 reconnaît d'ailleurs explicitement l'affluent hébraïque comme une des composantes de l'identité nationale unie. </p> <p> Le principal défi, comme pour de nombreuses demandes par filiation concernant des familles ayant émigré il y a longtemps, réside souvent dans la collecte des preuves documentaires. Il faut pouvoir attester de manière irréfutable du lien de filiation directe avec l'ancêtre marocain (père ou mère selon les cas et l'époque) et de la conservation de sa nationalité marocaine (qu'il/elle ne l'ait pas perdue ou répudiée volontairement avant la transmission). </p> <p> La recherche de documents anciens (actes d'état civil hébraïques ou civils, documents de voyage, registres consulaires, preuves de résidence...) peut être complexe. Ezra Maroc a développé une expertise spécifique dans ce domaine, incluant la recherche dans diverses archives et la constitution rigoureuse de ces dossiers pour répondre aux exigences légales. </p>
                  </div>
              </div>
              <div class="faq-item">
@@ -328,19 +211,9 @@
                      <span>Comment les mineurs obtiennent-ils la nationalité ?</span>
                      <i class="fas fa-chevron-down faq-icon"></i>
                   </button>
-                 <div class="faq-answer" id="faq-cas2">
-                     <p>
-                         Pour un enfant mineur, l'acquisition de la nationalité marocaine dépend principalement de la nationalité de ses parents au moment de sa naissance et de la législation en vigueur à cette date.
-                     </p>
-                     <p>
-                         Selon le Code de la Nationalité actuel (depuis la réforme de 2007), est Marocain l'enfant né d'un père marocain OU d'une mère marocaine. La transmission par la mère est donc équivalente à celle par le père. L'acquisition est généralement de plein droit (automatique), mais nécessite une inscription à l'état civil marocain pour être effective.
-                     </p>
-                     <p>
-                         Attention : Pour les enfants nés d'une mère marocaine et d'un père étranger *avant* la réforme de 2007, la nationalité n'était pas automatique. Des procédures spécifiques de déclaration ou de demande par la mère ou l'enfant devenu majeur existent pour faire reconnaître cette nationalité (article 6 du Code).
-                     </p>
-                     <p>
-                         Il est important de noter que la *Kafala* (recueil légal en droit marocain et musulman, qui n'est pas une adoption plénière rompant la filiation d'origine) ne confère pas automatiquement la nationalité marocaine à l'enfant recueilli (makfoul). Des conditions spécifiques de résidence et une procédure distincte sont prévues pour la naturalisation éventuelle de l'enfant sous Kafala.
-                     </p>
+                   <!-- Ajout aria-hidden="true" -->
+                 <div class="faq-answer" id="faq-cas2" aria-hidden="true">
+                     <p> Pour un enfant mineur, l'acquisition de la nationalité marocaine dépend principalement de la nationalité de ses parents au moment de sa naissance et de la législation en vigueur à cette date. </p> <p> Selon le Code de la Nationalité actuel (depuis la réforme de 2007), est Marocain l'enfant né d'un père marocain OU d'une mère marocaine. La transmission par la mère est donc équivalente à celle par le père. L'acquisition est généralement de plein droit (automatique), mais nécessite une inscription à l'état civil marocain pour être effective. </p> <p> Attention : Pour les enfants nés d'une mère marocaine et d'un père étranger *avant* la réforme de 2007, la nationalité n'était pas automatique. Des procédures spécifiques de déclaration ou de demande par la mère ou l'enfant devenu majeur existent pour faire reconnaître cette nationalité (article 6 du Code). </p> <p> Il est important de noter que la *Kafala* (recueil légal en droit marocain et musulman, qui n'est pas une adoption plénière rompant la filiation d'origine) ne confère pas automatiquement la nationalité marocaine à l'enfant recueilli (makfoul). Des conditions spécifiques de résidence et une procédure distincte sont prévues pour la naturalisation éventuelle de l'enfant sous Kafala. </p>
                  </div>
              </div>
          </section>
@@ -353,16 +226,9 @@
                     <span>Peut-on perdre la nationalité marocaine?</span>
                     <i class="fas fa-chevron-down faq-icon"></i>
                   </button>
-                  <div class="faq-answer" id="faq-perte1">
-                     <p>
-                         La perte *involontaire* de la nationalité marocaine est très rare et encadrée strictement par la loi. Elle ne peut survenir que dans des cas précis prévus par le Code de la Nationalité (par exemple, l'acquisition volontaire d'une nationalité étrangère avec demande expresse de perte de la nationalité marocaine avant certaines dates, l'exercice de fonctions publiques pour un état étranger sans autorisation, des actes graves contre la sûreté de l'État...).
-                     </p>
-                     <p>
-                         Il est possible de *demander volontairement* à renoncer à la nationalité marocaine (acte de répudiation), par exemple si une autre nationalité l'exige. Cependant, cette renonciation n'est jamais automatique. Elle requiert une autorisation expresse accordée par décret du gouvernement marocain, qui examine la demande au cas par cas et peut la refuser.
-                     </p>
-                     <p>
-                         Pour les personnes qui auraient perdu la nationalité marocaine dans le passé (par exemple, par l'effet d'anciennes lois sur le mariage ou la résidence à l'étranger), des procédures de *réintégration* dans la nationalité marocaine sont prévues par le Code, sous réserve de remplir certaines conditions (notamment établir sa résidence habituelle au Maroc).
-                     </p>
+                   <!-- Ajout aria-hidden="true" -->
+                  <div class="faq-answer" id="faq-perte1" aria-hidden="true">
+                     <p> La perte *involontaire* de la nationalité marocaine est très rare et encadrée strictement par la loi. Elle ne peut survenir que dans des cas précis prévus par le Code de la Nationalité (par exemple, l'acquisition volontaire d'une nationalité étrangère avec demande expresse de perte de la nationalité marocaine avant certaines dates, l'exercice de fonctions publiques pour un état étranger sans autorisation, des actes graves contre la sûreté de l'État...). </p> <p> Il est possible de *demander volontairement* à renoncer à la nationalité marocaine (acte de répudiation), par exemple si une autre nationalité l'exige. Cependant, cette renonciation n'est jamais automatique. Elle requiert une autorisation expresse accordée par décret du gouvernement marocain, qui examine la demande au cas par cas et peut la refuser. </p> <p> Pour les personnes qui auraient perdu la nationalité marocaine dans le passé (par exemple, par l'effet d'anciennes lois sur le mariage ou la résidence à l'étranger), des procédures de *réintégration* dans la nationalité marocaine sont prévues par le Code, sous réserve de remplir certaines conditions (notamment établir sa résidence habituelle au Maroc). </p>
                   </div>
              </div>
          </section>
@@ -376,7 +242,7 @@
                  <p>Il est vivement recommandé de consulter un professionnel qualifié pour évaluer votre cas spécifique avant d'entreprendre des démarches.</p>
                  <ul>
                     <li><i class="fa-solid fa-location-dot"></i> 30 N Gould St Ste R, Sheridan, WY 82801, États-Unis</li>
-                    <li><i class="fa-solid fa-envelope"></i> info@ezra-project.fr</li>
+                    <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></li> <!-- Email rendu cliquable -->
                  </ul>
                  <p>Contactez-nous pour démarrer votre évaluation préliminaire.</p>
             </div>
@@ -397,57 +263,77 @@
             </div>
         </div>
     </section>
+    <!-- ==========================================================================
+       FIN DU CONTENU SPÉCIFIQUE
+       ========================================================================== -->
 
-    <!-- FOOTER -->
+
+    <!-- ==========================================================================
+       FOOTER (Standardisé)
+       ========================================================================== -->
     <footer>
-        <div class="container footer-container">
-            <div class="footer-about">
-                <a href="index.html" class="footer-logo">Ezra Maroc</a>
-                <p class="footer-text">Experts en accompagnement pour l'obtention de la nationalité marocaine.</p>
-                <div class="footer-social">
-                     <a href="URL_LINKEDIN_EZRA_MAROC" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="footer-links">
-                 <h3 class="footer-heading">Navigation</h3>
+         <div class="container footer-container">
+             <!-- Colonne 1: About -->
+             <div class="footer-about">
+                 <a href="index.html" class="footer-logo">Ezra<strong>Maroc</strong></a>
+                 <p class="footer-text">Spécialistes de l'obtention de la nationalité marocaine, nous vous accompagnons à chaque étape avec expertise et professionnalisme.</p>
+                 <div class="footer-social">
+                     <!-- !! Remplacer par VOS liens réels !! -->
+                     <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                     <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                 </div>
+             </div>
+             <!-- Colonne 2: Liens Rapides -->
+             <div class="footer-links">
+                 <h3 class="footer-heading">Liens rapides</h3>
                  <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="services.html">Nos Services</a></li>
-                    <li><a href="processus.html">Notre Processus</a></li>
-                    <li><a href="temoignages.html">Témoignages Clients</a></li>
-                    <li><a href="a-propos.html">Qui Sommes-Nous ?</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="contact.html">Nous Contacter</a></li>
+                     <li><a href="index.html">Accueil</a></li>
+                     <li><a href="avantages.html">Avantages</a></li>
+                     <li><a href="services.html">Services</a></li>
+                     <li><a href="processus.html">Processus</a></li>
+                     <li><a href="temoignages.html">Témoignages</a></li>
+                     <li><a href="a-propos.html">À propos</a></li>
+                     <li><a href="faq.html">FAQ</a></li>
+                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-services">
-                <h3 class="footer-heading">Nos Prestations</h3>
-                 <ul>
-                    <li><a href="services.html#eligibility">Analyse d'Éligibilité</a></li>
-                    <li><a href="services.html#constitution">Constitution du Dossier</a></li>
-                    <li><a href="services.html#recherche">Recherche d'Archives</a></li>
-                    <li><a href="services.html#suivi">Suivi Administratif & Judiciaire</a></li>
+            <!-- Colonne 3: Services -->
+             <div class="footer-services">
+                <h3 class="footer-heading">Nos Services Clés</h3>
+                <ul>
+                     <li><a href="services.html#eligibility">Analyse d'Éligibilité</a></li>
+                     <li><a href="services.html#constitution">Constitution du Dossier</a></li>
+                    <li><a href="services.html#recherche">Recherche Généalogique</a></li>
+                    <li><a href="services.html#suivi">Suivi Administratif</a></li>
                     <li><a href="services.html#post-obtention">Assistance Post-Obtention</a></li>
-                    <li><a href="services.html#expertise">Conseil Juridique Spécialisé</a></li>
                  </ul>
             </div>
-            <div class="footer-contact">
-                 <h3 class="footer-heading">Contactez-Nous</h3>
+            <!-- Colonne 4: Contact -->
+             <div class="footer-contact">
+                 <h3 class="footer-heading">Contact</h3>
                  <ul>
-                    <li><i class="fa-solid fa-location-dot"></i> Siège Social: 30 N Gould St Ste R, Sheridan, WY 82801, USA</li>
+                    <li><i class="fa-solid fa-location-dot"></i> <span>30 N Gould St Ste R,<br>Sheridan, WY 82801, USA</span></li>
                      <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></li>
+                    <!-- Ajouter Téléphone si besoin -->
+                    <!-- <li><i class="fa-solid fa-phone"></i> <a href="tel:+1...">+1 ...</a></li> -->
                  </ul>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div class="container">
-                 <p>© 2024 Ezra Maroc Consulting Services LLC. Tous droits réservés. | <a href="mentions-legales.html">Mentions Légales</a> | <a href="politique-confidentialite.html">Politique de Confidentialité</a></p>
+         <div class="footer-bottom">
+             <div class="container">
+                 <p>© 2024 Ezra Maroc Consulting Services LLC. Tous droits réservés.</p>
+                 <p>Les informations sur ce site sont fournies à titre indicatif et ne constituent pas un conseil juridique ou fiscal. Consultez des professionnels qualifiés.</p>
             </div>
-        </div>
+         </div>
     </footer>
+    <!-- ==========================================================================
+       FIN FOOTER
+       ========================================================================== -->
 
      <!-- SCRIPT JS POUR L'ACCORDÉON -->
      <script src="js/faq-accordion.js"></script>
+     <!-- Autres scripts si besoin -->
+     <!-- <script src="js/script.js"></script> -->
 
 </body>
 </html>

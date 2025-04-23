@@ -4,46 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notre Histoire & Engagement | Ezra Maroc</title>
+    <!-- CSS Global -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- CSS Spécifique -->
     <link rel="stylesheet" href="css/a-propos.css">
+    <!-- Polices -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <header>
+
+    <!-- ==========================================================================
+       HEADER (Standardisé)
+       ========================================================================== -->
+    <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="logo">
                 <img src="img/logo.png" alt="Ezra Maroc Logo">
-                <span>Ezra <strong>Maroc</strong></span>
+                <div class="brand-text">
+                    <span>Ezra</span> <strong>Maroc</strong>
+                </div>
             </a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="index.html">Accueil</a></li>
+                     <li><a href="index.html">Accueil</a></li>
+                    <li><a href="avantages.html">Avantages</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="processus.html">Processus</a></li>
-                    <li><a href="temoignages.html">Témoignages</a></li> <!-- Texte Lien mis à jour -->
-                    <li><a href="a-propos.html" class="active">À propos</a></li> <!-- Classe active -->
+                    <li><a href="temoignages.html">Témoignages</a></li>
+                     <!-- Classe active déplacée ici -->
+                    <li><a href="a-propos.html" class="active">À propos</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </nav>
-            <!-- Sélecteur de Langue Ajouté -->
-             <div class="language-switcher">
-                <label for="lang-select" class="visually-hidden">Choisir la langue</label>
-                <select name="lang" id="lang-select" onchange="location = this.value;">
-                    <!-- Liens adaptés pour la page À Propos -->
+            <div class="language-switcher">
+                 <label for="lang-select" class="visually-hidden">Choisir la langue</label>
+                 <!-- Liens du switcher adaptés pour la page À Propos -->
+                 <select name="lang" id="lang-select" class="language-select" onchange="location = this.value;">
                     <option value="a-propos.html" selected lang="fr">Français</option>
-                    <!-- Mettre les vrais chemins vers les pages traduites -->
                     <option value="/en/about.html" lang="en">English</option>
                     <option value="/es/about.html" lang="es">Español</option>
                     <option value="/he/about.html" lang="he">עברית</option>
                 </select>
             </div>
+            <!-- <button class="menu-toggle" aria-label="Ouvrir le menu"><i class="fas fa-bars"></i></button> -->
         </div>
     </header>
 
+    <!-- ==========================================================================
+       CONTENU SPÉCIFIQUE À LA PAGE "À PROPOS" (INCHANGÉ)
+       ========================================================================== -->
     <section class="page-banner">
         <div class="container">
             <h1>Notre Histoire, Votre Pont vers le Maroc</h1>
@@ -103,7 +117,7 @@
                 </div>
                 <div class="team-category">
                     <div class="category-icon"><i class="fa-solid fa-file-signature"></i></div>
-                    <h3>Conseillers Clientèle</h3> <!-- Titre modifié -->
+                    <h3>Conseillers Clientèle</h3>
                     <p>Votre interlocuteur dédié, assurant un suivi personnalisé.</p>
                 </div>
                 <div class="team-category">
@@ -157,7 +171,6 @@
 
     <section id="valeurs" class="section values-section">
         <div class="container">
-            <!-- Titre Modifié: "Cardinales" supprimé -->
             <h2 class="section-title">Nos <span>Valeurs</span></h2>
             <div class="values-grid">
                 <div class="value-card">
@@ -207,56 +220,71 @@
             </div>
         </div>
     </section>
+    <!-- ==========================================================================
+       FIN DU CONTENU SPÉCIFIQUE
+       ========================================================================== -->
 
+    <!-- ==========================================================================
+       FOOTER (Standardisé)
+       ========================================================================== -->
     <footer>
-        <!-- Footer Standard (avec liens sociaux corrigés) -->
-        <div class="container footer-container">
-            <div class="footer-about">
-                 <a href="index.html" class="footer-logo">Ezra Maroc</a>
-                <p class="footer-text">Spécialistes de l'obtention de la nationalité marocaine, nous vous accompagnons à chaque étape de votre démarche avec expertise et professionnalisme.</p>
+         <div class="container footer-container">
+             <!-- Colonne 1: About -->
+             <div class="footer-about">
+                 <a href="index.html" class="footer-logo">Ezra<strong>Maroc</strong></a>
+                 <p class="footer-text">Spécialistes de l'obtention de la nationalité marocaine, nous vous accompagnons à chaque étape avec expertise et professionnalisme.</p>
                  <div class="footer-social">
-                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="footer-links">
-                <h3 class="footer-heading">Liens rapides</h3>
-                <ul>
+                     <!-- !! Remplacer par VOS liens réels !! -->
+                     <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                     <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                 </div>
+             </div>
+             <!-- Colonne 2: Liens Rapides -->
+             <div class="footer-links">
+                 <h3 class="footer-heading">Liens rapides</h3>
+                 <ul>
                      <li><a href="index.html">Accueil</a></li>
-                    <li><a href="services.html">Nos services</a></li>
-                    <li><a href="processus.html">Notre processus</a></li>
-                    <li><a href="temoignages.html">Témoignages</a></li> <!-- Texte Lien mis à jour -->
-                    <li><a href="a-propos.html">À propos de nous</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                     <li><a href="avantages.html">Avantages</a></li>
+                     <li><a href="services.html">Services</a></li>
+                     <li><a href="processus.html">Processus</a></li>
+                     <li><a href="temoignages.html">Témoignages</a></li>
+                     <li><a href="a-propos.html">À propos</a></li>
+                     <li><a href="faq.html">FAQ</a></li>
+                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-services">
-                <h3 class="footer-heading">Nos services</h3>
-                 <ul>
-                    <li><a href="services.html#eligibility">Évaluation d'éligibilité</a></li>
-                    <li><a href="services.html#constitution">Constitution du dossier</a></li>
-                    <li><a href="services.html#expertise">Expertise Juridique</a></li>
-                    <li><a href="services.html#suivi">Suivi administratif</a></li>
-                    <li><a href="services.html#accompagnement">Accompagnement personnalisé</a></li>
-                    <li><a href="services.html#rendez-vous">Assistance RDV Final</a></li>
-                    <li><a href="services.html#post-obtention">Assistance post-obtention</a></li>
+            <!-- Colonne 3: Services -->
+             <div class="footer-services">
+                <h3 class="footer-heading">Nos Services Clés</h3>
+                <ul>
+                     <li><a href="services.html#eligibility">Analyse d'Éligibilité</a></li>
+                     <li><a href="services.html#constitution">Constitution du Dossier</a></li>
+                    <li><a href="services.html#recherche">Recherche Généalogique</a></li>
+                    <li><a href="services.html#suivi">Suivi Administratif</a></li>
+                    <li><a href="services.html#post-obtention">Assistance Post-Obtention</a></li>
                  </ul>
             </div>
-            <div class="footer-contact">
-                <h3 class="footer-heading">Contact</h3>
+            <!-- Colonne 4: Contact -->
+             <div class="footer-contact">
+                 <h3 class="footer-heading">Contact</h3>
                  <ul>
-                    <li><i class="fa-solid fa-location-dot"></i> 30 N Gould St Ste R, Sheridan, WY 82801, États-Unis</li>
-                    <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></li>
+                    <li><i class="fa-solid fa-location-dot"></i> <span>30 N Gould St Ste R,<br>Sheridan, WY 82801, USA</span></li>
+                     <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></li>
+                    <!-- Ajouter Téléphone si besoin -->
+                    <!-- <li><i class="fa-solid fa-phone"></i> <a href="tel:+1...">+1 ...</a></li> -->
                  </ul>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div class="container">
+         <div class="footer-bottom">
+             <div class="container">
                  <p>© 2024 Ezra Maroc Consulting Services LLC. Tous droits réservés.</p>
+                 <p>Les informations sur ce site sont fournies à titre indicatif et ne constituent pas un conseil juridique ou fiscal. Consultez des professionnels qualifiés.</p>
             </div>
-        </div>
+         </div>
     </footer>
+    <!-- ==========================================================================
+       FIN FOOTER
+       ========================================================================== -->
 
     <!-- Lien JS (si nécessaire) -->
     <script src="js/script.js"></script>

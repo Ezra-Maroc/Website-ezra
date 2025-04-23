@@ -3,42 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Titre de page mis à jour -->
-    <title>Livre d'Or | Les Réussites de nos Clients | Ezra Maroc</title>
+    <!-- Titre standardisé (optionnel, le titre original était aussi bon) -->
+    <title>Témoignages de nos Clients | Ezra Maroc</title>
+    <!-- CSS Global -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- CSS Spécifique -->
     <link rel="stylesheet" href="css/temoignages.css">
+    <!-- Polices -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <header>
+
+    <!-- ==========================================================================
+       HEADER (Standardisé)
+       ========================================================================== -->
+    <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="logo">
                 <img src="img/logo.png" alt="Ezra Maroc Logo">
-                <span>Ezra <strong>Maroc</strong></span>
+                <div class="brand-text">
+                    <span>Ezra</span> <strong>Maroc</strong>
+                </div>
             </a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="index.html">Accueil</a></li>
+                     <li><a href="index.html">Accueil</a></li>
+                    <li><a href="avantages.html">Avantages</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="processus.html">Processus</a></li>
-                    <!-- Classe active ici -->
-                    <li><a href="temoignages.html" class="active">Livre d'Or</a></li> <!-- Texte lien MàJ -->
+                    <!-- Classe active ici & Texte standardisé -->
+                    <li><a href="temoignages.html" class="active">Témoignages</a></li>
                     <li><a href="a-propos.html">À propos</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </nav>
-            <!-- Bouton burger supprimé -->
+            <div class="language-switcher">
+                 <label for="lang-select" class="visually-hidden">Choisir la langue</label>
+                 <!-- Liens du switcher adaptés pour la page Témoignages -->
+                 <select name="lang" id="lang-select" class="language-select" onchange="location = this.value;">
+                    <option value="temoignages.html" selected lang="fr">Français</option>
+                    <option value="/en/testimonials.html" lang="en">English</option> <!-- Chemin adapté -->
+                    <option value="/es/testimonials.html" lang="es">Español</option> <!-- Chemin adapté -->
+                    <option value="/he/testimonials.html" lang="he">עברית</option>     <!-- Chemin adapté -->
+                </select>
+            </div>
+            <!-- <button class="menu-toggle" aria-label="Ouvrir le menu"><i class="fas fa-bars"></i></button> -->
         </div>
     </header>
 
+    <!-- ==========================================================================
+       CONTENU SPÉCIFIQUE À LA PAGE "TÉMOIGNAGES" (INCHANGÉ)
+       ========================================================================== -->
     <section class="page-banner"> <!-- Sera surchargé par temoignages.css pour utiliser kite.jpg -->
         <div class="container">
-             <!-- Titre et Texte Bannière Mis à Jour -->
-            <h1>Notre Livre d'Or</h1>
+             <!-- Titre et Texte Bannière (Standardisé) -->
+            <h1>Nos Témoignages Clients</h1> <!-- Titre standardisé -->
             <p>Les parcours de nos clients sont notre plus grande fierté. Découvrez leurs expériences et comment Ezra Maroc a contribué à concrétiser leur projet de nationalité marocaine.</p>
         </div>
     </section>
@@ -164,7 +188,6 @@
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-profile">
-                             <!-- Icône couple conservée, ou mettre "E&N" ? Préférable garder icône ici -->
                             <div class="testimonial-avatar"><i class="fa-solid fa-users"></i></div>
                             <div class="testimonial-identity">
                                 <h3>É. & N. M.</h3> <!-- Initiales -->
@@ -204,9 +227,8 @@
                         <p>Je suis particulièrement reconnaissant pour leur accompagnement lors de mon déplacement au Maroc pour le rendez-vous final. Leur avocat sur place a assuré une transition parfaite et m'a mis dans les meilleures conditions pour cette étape cruciale.</p>
                     </div>
                 </div>
-            </div> <!-- Fin testimonial-cards -->
+            </div>
 
-            <!-- Ajout d'un bouton pour encourager le contact -->
             <div class="guestbook-cta">
                 <p>Vous aussi, vous souhaitez partager votre réussite ou démarrer votre projet ?</p>
                 <a href="contact.html" class="btn btn-primary">Contactez-nous dès aujourd'hui</a>
@@ -215,10 +237,9 @@
         </div>
     </section>
 
-    <!-- Section Engagement conservée ou supprimée ? Conservons-la pour l'instant -->
     <section class="section engagement-section alt-bg">
         <div class="container">
-            <h2 class="section-title">Notre Engagement : <span>Votre Histoire</span></h2> <!-- Titre modifié -->
+            <h2 class="section-title">Notre Engagement : <span>Votre Histoire</span></h2>
             <div class="engagement-content">
                 <p>Chaque témoignage est une preuve de notre engagement envers l'excellence et la réussite de nos clients. Votre parcours unique mérite toute notre attention et notre expertise dédiée.</p>
                 <p>Nous serions honorés de vous aider à écrire votre propre chapitre dans ce livre d'or et de vous accompagner vers la reconnaissance de votre nationalité marocaine.</p>
@@ -230,64 +251,79 @@
         <div class="container">
             <h2 class="cta-title">Prêt à ajouter votre nom à notre Livre d'Or ?</h2> <!-- Titre modifié -->
             <div class="cta-buttons">
-                 <!-- Liens modifiés -->
                  <a href="contact.html#contact-form-container" class="btn btn-light">Demander une Évaluation</a>
                 <a href="processus.html" class="btn btn-outline-light">Voir Notre Processus</a>
             </div>
         </div>
     </section>
+    <!-- ==========================================================================
+       FIN DU CONTENU SPÉCIFIQUE
+       ========================================================================== -->
 
+
+    <!-- ==========================================================================
+       FOOTER (Standardisé)
+       ========================================================================== -->
     <footer>
-        <!-- Footer Standard -->
-        <div class="container footer-container">
-            <div class="footer-about">
-                 <a href="index.html" class="footer-logo">Ezra Maroc</a>
-                <p class="footer-text">Spécialistes de l'obtention de la nationalité marocaine, nous vous accompagnons à chaque étape de votre démarche avec expertise et professionnalisme.</p>
-                <div class="footer-social">
-                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="footer-links">
-                <h3 class="footer-heading">Liens rapides</h3>
-                <ul>
+         <div class="container footer-container">
+             <!-- Colonne 1: About -->
+             <div class="footer-about">
+                 <a href="index.html" class="footer-logo">Ezra<strong>Maroc</strong></a>
+                 <p class="footer-text">Spécialistes de l'obtention de la nationalité marocaine, nous vous accompagnons à chaque étape avec expertise et professionnalisme.</p>
+                 <div class="footer-social">
+                     <!-- !! Remplacer par VOS liens réels !! -->
+                     <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                     <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                 </div>
+             </div>
+             <!-- Colonne 2: Liens Rapides -->
+             <div class="footer-links">
+                 <h3 class="footer-heading">Liens rapides</h3>
+                 <ul>
                      <li><a href="index.html">Accueil</a></li>
-                    <li><a href="services.html">Nos services</a></li>
-                    <li><a href="processus.html">Notre processus</a></li>
-                    <li><a href="temoignages.html">Livre d'Or</a></li> <!-- Texte lien MàJ -->
-                    <li><a href="a-propos.html">À propos de nous</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                     <li><a href="avantages.html">Avantages</a></li>
+                     <li><a href="services.html">Services</a></li>
+                     <li><a href="processus.html">Processus</a></li>
+                     <li><a href="temoignages.html">Témoignages</a></li> <!-- Standardisé -->
+                     <li><a href="a-propos.html">À propos</a></li>
+                     <li><a href="faq.html">FAQ</a></li>
+                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-services">
-                <h3 class="footer-heading">Nos services</h3>
-                 <ul>
-                    <li><a href="services.html#eligibility">Évaluation d'éligibilité</a></li>
-                    <li><a href="services.html#constitution">Constitution du dossier</a></li>
-                    <li><a href="services.html#suivi">Suivi administratif</a></li>
-                    <li><a href="services.html#post-obtention">Assistance post-obtention</a></li>
-                    <li><a href="services.html#expertise">Conseil juridique</a></li>
+            <!-- Colonne 3: Services -->
+             <div class="footer-services">
+                <h3 class="footer-heading">Nos Services Clés</h3>
+                <ul>
+                     <li><a href="services.html#eligibility">Analyse d'Éligibilité</a></li>
+                     <li><a href="services.html#constitution">Constitution du Dossier</a></li>
+                    <li><a href="services.html#recherche">Recherche Généalogique</a></li>
+                    <li><a href="services.html#suivi">Suivi Administratif</a></li>
+                    <li><a href="services.html#post-obtention">Assistance Post-Obtention</a></li>
                  </ul>
             </div>
-            <div class="footer-contact">
-                <h3 class="footer-heading">Contact</h3>
+            <!-- Colonne 4: Contact -->
+             <div class="footer-contact">
+                 <h3 class="footer-heading">Contact</h3>
                  <ul>
-                    <li><i class="fa-solid fa-location-dot"></i> 30 N Gould St Ste R, Sheridan, WY 82801, États-Unis</li>
-                    <li><i class="fa-solid fa-envelope"></i> info@ezra-project.fr</li>
+                    <li><i class="fa-solid fa-location-dot"></i> <span>30 N Gould St Ste R,<br>Sheridan, WY 82801, USA</span></li>
+                     <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></li>
+                    <!-- Ajouter Téléphone si besoin -->
+                    <!-- <li><i class="fa-solid fa-phone"></i> <a href="tel:+1...">+1 ...</a></li> -->
                  </ul>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div class="container">
-                 <p>© 2024 Ezra Maroc Consulting Services LLC. Tous droits réservés.</p> <!-- Année MàJ -->
+         <div class="footer-bottom">
+             <div class="container">
+                 <p>© 2024 Ezra Maroc Consulting Services LLC. Tous droits réservés.</p>
+                 <p>Les informations sur ce site sont fournies à titre indicatif et ne constituent pas un conseil juridique ou fiscal. Consultez des professionnels qualifiés.</p>
             </div>
-        </div>
+         </div>
     </footer>
+    <!-- ==========================================================================
+       FIN FOOTER
+       ========================================================================== -->
 
-    <!-- Lien JS -->
+    <!-- Lien JS (si nécessaire) -->
     <script src="js/script.js"></script>
 </body>
 </html>

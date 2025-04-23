@@ -14,17 +14,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <!-- HEADER -->
-    <header>
+
+    <!-- ==========================================================================
+       HEADER (Standardisé)
+       ========================================================================== -->
+    <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="logo">
                 <img src="img/logo.png" alt="Ezra Maroc Logo">
-                <span>Ezra <strong>Maroc</strong></span>
+                <div class="brand-text">
+                    <span>Ezra</span> <strong>Maroc</strong>
+                </div>
             </a>
             <nav>
                 <ul class="nav-links">
-                    <!-- Classe active sur Accueil -->
+                     <!-- Classe active mise ici -->
                     <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="avantages.html">Avantages</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="processus.html">Processus</a></li>
                     <li><a href="temoignages.html">Témoignages</a></li>
@@ -33,27 +39,29 @@
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </nav>
-            <!-- Sélecteur de Langue -->
             <div class="language-switcher">
-                <label for="lang-select" class="visually-hidden">Choisir la langue</label>
-                <select name="lang" id="lang-select" onchange="location = this.value;">
-                    <!-- ATTENTION: Mettre les VRAIS chemins vers tes pages traduites -->
-                    <option value="index.html" selected lang="fr">Français</option> <!-- Page FR actuelle -->
-                    <option value="/en/index.html" lang="en">English</option>       <!-- Lien vers page EN -->
-                    <option value="/es/index.html" lang="es">Español</option>       <!-- Lien vers page ES -->
-                    <option value="/he/index.html" lang="he">עברית</option>         <!-- Lien vers page HE -->
+                 <label for="lang-select" class="visually-hidden">Choisir la langue</label>
+                 <!-- Liens du switcher adaptés pour la page Index -->
+                 <select name="lang" id="lang-select" class="language-select" onchange="location = this.value;">
+                    <option value="index.html" selected lang="fr">Français</option>
+                    <option value="/en/index.html" lang="en">English</option>
+                    <option value="/es/index.html" lang="es">Español</option>
+                    <option value="/he/index.html" lang="he">עברית</option>
                 </select>
             </div>
-        </div> <!-- Fin .header-container -->
+            <!-- <button class="menu-toggle" aria-label="Ouvrir le menu"><i class="fas fa-bars"></i></button> -->
+        </div>
     </header>
 
+    <!-- ==========================================================================
+       CONTENU SPÉCIFIQUE À LA PAGE "INDEX" (INCHANGÉ)
+       ========================================================================== -->
     <!-- SECTION HERO -->
     <section class="hero">
         <div class="container hero-content">
             <h1>Votre passerelle vers la nationalité marocaine</h1>
             <p>Nous vous guidons pas à pas dans votre démarche d'obtention de la nationalité marocaine avec un accompagnement sur mesure et une expertise juridique de pointe.</p>
             <div class="hero-buttons">
-                 <!-- ID de section processus ajouté au lien -->
                 <a href="#nos-services" class="btn btn-light">Découvrir nos services</a>
                 <a href="processus.html" class="btn btn-light">Notre processus simplifié</a>
                 <a href="a-propos.html" class="btn btn-outline-light">En savoir plus sur nous</a>
@@ -96,9 +104,8 @@
     </section>
 
     <!-- SECTION SERVICES -->
-    <section id="nos-services" class="section services-section"> <!-- id corrigé -->
+    <section id="nos-services" class="section services-section">
         <div class="container">
-            <!-- Titre modifié: "Phares" retiré -->
             <h2 class="section-title">Nos <span>Services</span></h2>
             <div class="features">
                 <div class="feature-card">
@@ -124,7 +131,7 @@
     </section>
 
     <!-- SECTION PROCESSUS -->
-    <section id="process" class="section process-section"> <!-- id conservé -->
+    <section id="process" class="section process-section">
         <div class="container">
             <h2 class="section-title">Notre Processus <span>Simplifié</span></h2>
             <div class="process-steps">
@@ -157,13 +164,12 @@
                     <div class="step-content">
                         <h3 class="step-title">Instruction et décision</h3>
                         <p>Période d'examen de votre dossier par les autorités marocaines.</p>
-                        <span class="step-duration">7-20 mois+</span> <!-- Précision délai -->
+                        <span class="step-duration">7-20 mois+</span>
                     </div>
                 </div>
                 <div class="process-step">
                     <div class="step-number">5</div>
                     <div class="step-content">
-                        <!-- Titre et Texte Modifiés -->
                         <h3 class="step-title">Finalisation & Documents</h3>
                         <p>Assistance pour obtenir vos documents marocains (CNIE, passeport...) une fois la nationalité acquise.</p>
                         <span class="step-duration">Service Optionnel</span>
@@ -179,16 +185,13 @@
     <!-- SECTION TEMOIGNAGES -->
     <section id="testimonials" class="section testimonial-section">
         <div class="container">
-             <!-- Titre Modifié -->
             <h2 class="section-title">Leurs Parcours, <span>Notre Fierté</span></h2>
             <div class="testimonial">
                 <div class="testimonial-content">
                     <p class="testimonial-text">"Après des années d'essais infructueux, Ezra Maroc a réussi à m'obtenir la nationalité marocaine en moins d'un an. Leur expertise et leur professionnalisme ont fait toute la différence."</p>
                 </div>
                 <div class="testimonial-client">
-                     <!-- Anonymisation Modifiée au format "Prénom Initiale." -->
-                    <h3>David C.</h3> <!-- Exemple -->
-                    <!-- NOTE: Appliquer ce format à TOUS les témoignages réels -->
+                    <h3>David C.</h3>
                     <p>Paris, France</p>
                 </div>
                 <div class="testimonials-more">
@@ -199,7 +202,7 @@
     </section>
 
     <!-- SECTION POURQUOI NOUS CHOISIR -->
-    <section id="why-us" class="section why-us-section"> <!-- id="about" était ambigu, renommé -->
+    <section id="why-us" class="section why-us-section">
         <div class="container">
             <h2 class="section-title">Pourquoi Choisir <span>Ezra Maroc ?</span></h2>
             <div class="why-us-grid">
@@ -240,68 +243,76 @@
         <div class="container">
             <h2 class="cta-title">Prêt à entamer votre démarche vers la nationalité marocaine?</h2>
             <div class="cta-buttons">
-                 <!-- Classes modifiées pour style transparent initial -->
                 <a href="services.html" class="btn btn-outline-light">Voir nos services</a>
                 <a href="contact.html" class="btn btn-outline-light">Nous contacter</a>
             </div>
         </div>
     </section>
+    <!-- ==========================================================================
+       FIN DU CONTENU SPÉCIFIQUE
+       ========================================================================== -->
 
-    <!-- FOOTER -->
+    <!-- ==========================================================================
+       FOOTER (Standardisé)
+       ========================================================================== -->
     <footer>
-        <div class="container footer-container">
-            <div class="footer-about">
-                <a href="index.html" class="footer-logo">Ezra Maroc</a>
-                <p class="footer-text">Spécialistes de l'obtention de la nationalité marocaine, nous vous accompagnons à chaque étape de votre démarche avec expertise et professionnalisme.</p>
-                <div class="footer-social">
-                    <!-- Lien LinkedIn Seulement (Remplacer par le VRAI lien) -->
-                    <a href="URL_LINKEDIN_EZRA_MAROC" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="footer-links">
-                <h3 class="footer-heading">Liens rapides</h3>
-                <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="services.html">Nos services</a></li>
-                    <li><a href="processus.html">Notre processus</a></li>
-                    <li><a href="temoignages.html">Témoignages</a></li>
-                    <li><a href="a-propos.html">À propos de nous</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                     <!-- Exemple liens légaux si nécessaire -->
-                     <!-- <li><a href="mentions-legales.html">Mentions Légales</a></li> -->
-                     <!-- <li><a href="politique-confidentialite.html">Confidentialité</a></li> -->
+         <div class="container footer-container">
+             <!-- Colonne 1: About -->
+             <div class="footer-about">
+                 <a href="index.html" class="footer-logo">Ezra<strong>Maroc</strong></a>
+                 <p class="footer-text">Spécialistes de l'obtention de la nationalité marocaine, nous vous accompagnons à chaque étape avec expertise et professionnalisme.</p>
+                 <div class="footer-social">
+                     <!-- !! Remplacer par VOS liens réels !! -->
+                     <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                     <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                 </div>
+             </div>
+             <!-- Colonne 2: Liens Rapides -->
+             <div class="footer-links">
+                 <h3 class="footer-heading">Liens rapides</h3>
+                 <ul>
+                     <li><a href="index.html">Accueil</a></li>
+                     <li><a href="avantages.html">Avantages</a></li>
+                     <li><a href="services.html">Services</a></li>
+                     <li><a href="processus.html">Processus</a></li>
+                     <li><a href="temoignages.html">Témoignages</a></li>
+                     <li><a href="a-propos.html">À propos</a></li>
+                     <li><a href="faq.html">FAQ</a></li>
+                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-services">
-                <h3 class="footer-heading">Nos services</h3>
-                 <ul>
-                     <!-- Liens vers les ancres de la page Services -->
-                    <li><a href="services.html#eligibility">Évaluation d'éligibilité</a></li>
-                    <li><a href="services.html#constitution">Constitution du dossier</a></li>
-                    <li><a href="services.html#suivi">Suivi administratif</a></li>
-                    <li><a href="services.html#expertise">Expertise Juridique</a></li>
-                    <li><a href="services.html#accompagnement">Accompagnement Personnalisé</a></li>
-                    <li><a href="services.html#rendez-vous">Assistance RDV Final</a></li>
-                    <li><a href="services.html#post-obtention">Support Post-Obtention</a></li>
+            <!-- Colonne 3: Services -->
+             <div class="footer-services">
+                <h3 class="footer-heading">Nos Services Clés</h3>
+                <ul>
+                     <li><a href="services.html#eligibility">Analyse d'Éligibilité</a></li>
+                     <li><a href="services.html#constitution">Constitution du Dossier</a></li>
+                    <li><a href="services.html#recherche">Recherche Généalogique</a></li>
+                    <li><a href="services.html#suivi">Suivi Administratif</a></li>
+                    <li><a href="services.html#post-obtention">Assistance Post-Obtention</a></li>
                  </ul>
             </div>
-            <div class="footer-contact">
-                <h3 class="footer-heading">Contact</h3>
+            <!-- Colonne 4: Contact -->
+             <div class="footer-contact">
+                 <h3 class="footer-heading">Contact</h3>
                  <ul>
-                    <li><i class="fa-solid fa-location-dot"></i> 30 N Gould St Ste R, Sheridan, WY 82801, États-Unis</li>
-                    <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></li>
+                    <li><i class="fa-solid fa-location-dot"></i> <span>30 N Gould St Ste R,<br>Sheridan, WY 82801, USA</span></li>
+                     <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></li>
+                    <!-- Ajouter Téléphone si besoin -->
+                    <!-- <li><i class="fa-solid fa-phone"></i> <a href="tel:+1...">+1 ...</a></li> -->
                  </ul>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div class="container">
+         <div class="footer-bottom">
+             <div class="container">
                  <p>© 2024 Ezra Maroc Consulting Services LLC. Tous droits réservés.</p>
-                 <!-- Exemple liens légaux si besoin -->
-                 <!-- <p><a href="mentions-legales.html">Mentions Légales</a> | <a href="politique-confidentialite.html">Politique de Confidentialité</a></p> -->
+                 <p>Les informations sur ce site sont fournies à titre indicatif et ne constituent pas un conseil juridique ou fiscal. Consultez des professionnels qualifiés.</p>
             </div>
-        </div>
+         </div>
     </footer>
+    <!-- ==========================================================================
+       FIN FOOTER
+       ========================================================================== -->
 
     <script src="js/script.js"></script> <!-- Adapter le chemin si nécessaire -->
 </body>
