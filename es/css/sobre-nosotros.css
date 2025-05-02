@@ -1,0 +1,503 @@
+/* ===== STYLES SPÉCIFIQUES POUR LA PAGE À PROPOS (Adapté pour en/css/) ===== */
+/* (Fichier: en/css/a-propos.css) */
+
+/* ----- Surcharge Style Global pour CETTE page ----- */
+
+/* Surcharge pour l'image de fond de la bannière spécifique à la page À Propos */
+.page-banner {
+  /* Chemin de l'image corrigé pour remonter de deux niveaux (depuis en/css/ vers img/) */
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../img/kara.jpeg') center/cover no-repeat;
+  /* Optionnel: Ajuster la position si l'image le nécessite */
+  /* background-position: center center; ou center top; etc. */
+}
+
+
+/* ----- Styles Uniques à la Page À Propos ----- */
+
+/* Base commune sections */
+.section {
+  padding: 80px 0;
+}
+.alt-bg {
+  background-color: var(--light-color);
+}
+/* Style pour les titres internes H2 (communs à plusieurs sections de cette page) */
+.internal-title {
+  font-size: 2rem; /* Plus petit que titre principal de page */
+  margin-bottom: 40px;
+  text-align: left; /* Aligner à gauche */
+  position: relative;
+  color: var(--dark-color); /* Couleur standard */
+  padding-bottom: 10px;
+}
+.internal-title span { /* Pour la partie colorée */
+    color: var(--primary-color);
+}
+.internal-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0; /* Juste en dessous du padding-bottom */
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary-color);
+}
+
+
+/* --- Section Histoire --- */
+.about-section {
+  /* Pas de style spécifique nécessaire pour la section elle-même */
+}
+
+.about-content {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  max-width: 1100px; /* Limite largeur contenu */
+  margin: 40px auto 0; /* Marge après le titre interne */
+}
+
+.about-image {
+  flex: 1; /* Prend 1 part de l'espace */
+  max-width: 400px;
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  max-height: 250px; /* Garder taille logo */
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Ajouter transition */
+}
+.about-image img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.about-text {
+  flex: 1.5; /* Texte prend un peu plus de place */
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+.about-text strong {
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+/* Style pour la citation */
+.about-quote {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-top: 30px;
+    padding: 20px 20px 20px 45px; /* Augmenter padding gauche */
+    border-left: 4px solid var(--primary-color);
+    background-color: rgba(197, 40, 28, 0.03);
+    position: relative;
+    border-radius: 0 8px 8px 0;
+}
+.about-quote::before {
+    content: "\f10d"; /* fa-quote-left */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 15px; /* Ajuster position */
+    top: 18px; /* Ajuster position */
+    font-size: 1.6rem; /* Légèrement plus grand */
+    color: rgba(197, 40, 28, 0.15); /* Moins transparent */
+}
+
+
+/* --- Section Mission --- */
+.mission-section {
+  padding: 80px 0;
+  /* alt-bg géré globalement */
+}
+
+.mission-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.mission-statement {
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--primary-color);
+  margin-bottom: 50px; /* Plus d'espace */
+  padding-bottom: 15px; /* Espace pour soulignement */
+  position: relative;
+  display: inline-block; /* Pour que le soulignement s'ajuste au texte */
+}
+/* Soulignement pour le mission statement */
+.mission-statement::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: var(--primary-color);
+    opacity: 0.6;
+}
+
+.mission-commitments h3 {
+  font-size: 1.2rem;
+  margin-bottom: 25px; /* Plus d'espace */
+  color: var(--dark-color);
+}
+
+.commitment-list {
+  list-style: none;
+  padding: 0;
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.commitment-list li {
+  display: flex;
+  align-items: center; /* Mieux aligner verticalement */
+  margin-bottom: 15px;
+  background-color: #fff;
+  padding: 18px 25px; /* Padding ajusté */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.2s ease;
+}
+
+.commitment-list li:hover {
+  transform: translateX(8px); /* Décalage au survol */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  background-color: #fdfdfd;
+}
+
+.commitment-list i {
+  color: var(--secondary-color); /* Utiliser vert pour le check */
+  margin-right: 15px;
+  font-size: 1.2rem; /* Légèrement plus grand */
+  /* margin-top: retiré car align-items: center */
+  transition: transform 0.3s ease;
+}
+.commitment-list li:hover i {
+    transform: scale(1.25); /* Grossir icône check */
+}
+.commitment-list li strong {
+  color: var(--dark-color);
+  font-weight: 600; /* Moins gras que 700 */
+}
+
+
+/* --- Section Équipe --- */
+.team-section {
+  padding: 80px 0;
+}
+
+.team-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto 40px;
+}
+
+.team-category {
+  text-align: center;
+  background-color: #fff;
+  padding: 35px 25px; /* Plus de padding vertical */
+  border-radius: 10px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06); /* Ombre ajustée */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 210px; /* Ajuster flex-basis */
+  max-width: 270px; /* Ajuster max-width */
+  position: relative; /* Requis pour l'interaction icone */
+}
+
+.team-category:hover {
+  transform: translateY(-12px); /* Plus de soulèvement */
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.1);
+}
+
+.category-icon {
+  width: 75px; /* Légèrement plus grand */
+  height: 75px;
+  background-color: rgba(197, 40, 28, 0.08); /* Plus subtil */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px; /* Plus d'espace */
+  transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Effet rebond */
+}
+
+/* Interaction icône équipe (identique à la version précédente) */
+.team-category:hover .category-icon {
+    transform: scale(1.15) rotate(-10deg);
+}
+
+.category-icon i {
+  font-size: 1.9rem; /* Plus grand */
+  color: var(--primary-color);
+}
+
+.team-category h3 {
+  font-size: 1.25rem; /* Plus grand */
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.team-category p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6; /* Augmenter interligne */
+}
+
+.team-commitment {
+  text-align: center;
+  max-width: 800px;
+  margin: 30px auto 0; /* Plus d'espace */
+  font-weight: 500;
+  color: var(--dark-color);
+  font-style: italic; /* Ajouter italique */
+}
+
+
+/* --- Section Méthodologie --- */
+.methodology-section {
+  padding: 80px 0;
+}
+
+.methodology-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  font-size: 1.1rem;
+}
+.methodology-intro strong { font-weight: 700; color: var(--primary-color); }
+
+.methodology-pillars {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.pillar {
+  text-align: center;
+  padding: 25px 20px;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 200px;
+  max-width: 250px;
+  border-radius: 8px;
+  background-color: rgba(255,255,255,0.6); /* Fond blanc semi-transparent sur alt-bg */
+}
+
+.pillar:hover {
+  transform: translateY(-6px);
+  background-color: #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.pillar-icon {
+  width: 65px; /* Légèrement plus grand */
+  height: 65px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px; /* Plus d'espace */
+  transition: transform 0.4s ease-out;
+}
+
+/* Interaction icône méthodologie (identique) */
+.pillar:hover .pillar-icon {
+    transform: rotateY(360deg);
+}
+
+.pillar-icon i {
+  font-size: 1.6rem; /* Plus grand */
+}
+
+.pillar h3 {
+  font-size: 1.1rem; /* Plus grand */
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.pillar p {
+    font-size: 0.9rem;
+    color: #555; /* Plus foncé */
+}
+
+
+/* --- Section Valeurs --- */
+.values-section {
+  padding: 80px 0;
+}
+
+.values-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 35px; /* Plus d'espace */
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.value-card {
+  background-color: #fff;
+  padding: 35px; /* Plus de padding */
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06); /* Ombre ajustée */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 320px; /* Un peu plus large */
+  max-width: calc(50% - 18px); /* Ajuster pour gap */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #eee; /* Ajouter bordure */
+}
+
+/* Effet bordure animée (identique) */
+.value-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 4px;
+    background-color: var(--primary-color);
+    transition: left 0.4s ease-in-out;
+}
+
+.value-card:hover {
+  transform: translateY(-10px); /* Augmenter soulèvement */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+.value-card:hover::before {
+    left: 0;
+}
+
+.value-icon {
+  width: 75px; /* Plus grand */
+  height: 75px;
+  background-color: rgba(197, 40, 28, 0.08); /* Ajusté */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px; /* Plus d'espace */
+  transition: transform 0.3s ease;
+}
+
+/* Interaction icône valeurs (identique) */
+.value-card:hover .value-icon {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.value-icon i {
+  font-size: 2rem; /* Plus grand */
+  color: var(--primary-color);
+}
+
+.value-card h3 {
+  font-size: 1.35rem; /* Plus grand */
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.value-card p {
+  line-height: 1.7; /* Augmenter interligne */
+  color: #555;
+}
+
+
+/* --- Section Engagement --- */
+.engagement-section {
+  padding: 80px 0;
+}
+
+.engagement-content {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.engagement-content p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+}
+.engagement-content strong { font-weight: 600; color: var(--primary-color); }
+
+.engagement-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.engagement-actions .btn-outline {
+     border: 2px solid var(--primary-color);
+     color: var(--primary-color);
+     background-color: transparent;
+ }
+.engagement-actions .btn-outline:hover {
+     background-color: var(--primary-color);
+     color: #fff;
+ }
+
+
+/* ----- Responsive styles ----- */
+@media (max-width: 992px) {
+  .internal-title { text-align: center; font-size: 1.8rem; }
+  .internal-title::after { left: 50%; transform: translateX(-50%); }
+  .about-content { flex-direction: column; text-align: center; }
+  .about-image { order: 1; margin: 0 auto 30px; }
+  .about-text { order: 2; }
+  .value-card { max-width: calc(50% - 18px); /* Ajuster pour gap */ }
+  .pillar { flex-basis: calc(33.33% - 21px); max-width: calc(33.33% - 21px); }
+  .team-category { flex-basis: calc(33.33% - 21px); max-width: calc(33.33% - 21px); }
+}
+
+@media (max-width: 768px) {
+  .section { padding: 60px 0; }
+  .internal-title { font-size: 1.6rem; }
+  .engagement-actions { flex-direction: column; align-items: center; }
+  .engagement-actions .btn { width: 100%; max-width: 300px; }
+  .pillar { flex-basis: calc(50% - 15px); max-width: calc(50% - 15px); }
+  .value-card { max-width: 100%; flex-basis: 100%; padding: 30px 25px; } /* Ajuster padding mobile */
+  .team-category { flex-basis: calc(50% - 15px); max-width: calc(50% - 15px); }
+}
+
+@media (max-width: 576px) {
+  .internal-title { font-size: 1.5rem; }
+  .mission-statement { font-size: 1.1rem; }
+  .section { padding: 50px 0; }
+  .pillar, .team-category { flex-basis: 100%; max-width: none; }
+  .about-text p { font-size: 1rem; }
+  .value-card { padding: 25px 20px; } /* Padding mobile */
+  .value-icon { width: 65px; height: 65px; margin-bottom: 20px; }
+  .value-icon i { font-size: 1.8rem; }
+  .value-card h3 { font-size: 1.25rem; }
+}

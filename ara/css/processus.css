@@ -1,0 +1,368 @@
+/* ===== STYLES SPÉCIFIQUES POUR LA PAGE PROCESSUS (Amélioré) ===== */
+/* (Fichier: css/processus.css) */
+
+/* ----- Surcharge Style Global pour CETTE page ----- */
+
+/* Surcharge pour l'image de fond de la bannière spécifique à la page Processus */
+.page-banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/saha.jpg') center/cover no-repeat;
+}
+
+
+/* ----- Styles Uniques à la Page Processus ----- */
+
+/* Section Overview */
+.overview-section {
+    padding-top: 80px; /* Maintenir espace haut */
+}
+
+.overview-text {
+  max-width: 800px;
+  margin: 0 auto 60px; /* Augmenter espace avant timeline */
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* Timeline */
+.process-timeline {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 60px auto; /* Centrer et marge verticale */
+  flex-wrap: wrap;
+  gap: 25px 15px; /* Espacement lignes et colonnes */
+  max-width: 1100px; /* Limiter largeur timeline */
+}
+
+/* Ligne de la timeline */
+.process-timeline::before {
+  content: '';
+  position: absolute;
+  top: 30px; /* Position verticale de la ligne */
+  left: 5%;  /* Ne va pas jusqu'au bord */
+  right: 5%; /* Ne va pas jusqu'au bord */
+  height: 3px; /* Ligne plus épaisse */
+  background: linear-gradient(to right, rgba(197, 40, 28, 0.3), var(--primary-color), rgba(197, 40, 28, 0.3)); /* Dégradé */
+  z-index: 1;
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1; /* Prend l'espace dispo */
+  min-width: 160px; /* Largeur minimum */
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateY(-5px); /* Léger soulèvement au survol */
+}
+
+.timeline-number {
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  border: 4px solid var(--light-color); /* Bordure plus épaisse pour ressortir */
+  box-shadow: 0 0 0 4px var(--primary-color);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Effet survol numéro */
+.timeline-item:hover .timeline-number {
+    background-color: #a71c13; /* Assombrir couleur primaire */
+    transform: scale(1.1);
+}
+
+
+.timeline-content h3 {
+  font-size: 1rem; /* Garder taille */
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--dark-color); /* Couleur standard */
+}
+
+.timeline-duration {
+  display: inline-block;
+  padding: 4px 12px;
+  background-color: rgba(197, 40, 28, 0.1);
+  color: var(--primary-color);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Sections de Phase */
+.phase-section {
+  padding: 70px 0; /* Padding réduit */
+}
+
+.alt-bg {
+  background-color: var(--light-color);
+}
+
+/* Style pour titre H2 interne des phases */
+.internal-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: left;
+    position: relative;
+}
+.internal-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.phase-duration {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Aligner à gauche */
+  margin-bottom: 30px;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.phase-duration i {
+  margin-right: 8px;
+}
+
+.phase-content {
+  max-width: 900px; /* Largeur contenu phase */
+  margin: 0 auto;
+}
+
+.phase-block {
+  margin-bottom: 30px; /* Espacement réduit */
+  background: #fff;
+  padding: 25px; /* Padding réduit */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 4px solid transparent; /* Préparer bordure gauche */
+}
+.phase-section:not(.alt-bg) .phase-block {
+    background: var(--light-color);
+}
+/* Mise en évidence du bloc résultat */
+.result-block {
+    background-color: rgba(40, 167, 69, 0.05); /* Fond vert très léger */
+    border-left-color: var(--secondary-color); /* Bordure verte */
+}
+.phase-section:not(.alt-bg) .result-block {
+    background-color: #fff; /* Garder blanc sur fond gris */
+}
+
+
+.phase-block:hover {
+     transform: translateY(-4px);
+     box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+     border-left-color: var(--primary-color); /* Bordure primaire au survol */
+}
+.result-block:hover {
+    border-left-color: var(--secondary-color); /* Garder vert au survol */
+}
+
+
+.block-title {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem; /* Légèrement plus grand */
+  color: var(--primary-color);
+  margin-bottom: 15px; /* Espace réduit */
+  font-weight: 600;
+  padding-bottom: 8px; /* Moins d'espace sous titre */
+  border-bottom: 1px solid #eee;
+}
+
+.block-title i {
+  margin-right: 12px;
+  font-size: 1.3rem; /* Légèrement réduit */
+  width: 20px; /* Garder largeur pour alignement */
+  text-align: center;
+}
+
+.action-list, .result-list {
+  padding-left: 25px;
+  margin-top: 15px;
+  list-style: none;
+}
+
+.action-list li, .result-list li {
+  margin-bottom: 10px; /* Espacement réduit */
+  position: relative;
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+  padding: 2px 5px; /* Préparer hover */
+  margin-left: -5px; /* Compenser padding */
+  border-radius: 4px;
+}
+/* Style strong ajouté dans HTML */
+.action-list li strong { color: var(--dark-color); }
+
+/* Puces de liste (check-circle vert) */
+.action-list li::before, .result-list li::before {
+  content: "\f058"; /* check-circle */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900; /* Ou 400 pour version regular si préférée */
+  color: var(--secondary-color); /* Vert */
+  position: absolute;
+  left: -15px; /* Position icone */
+  top: 6px; /* Ajuster */
+  font-size: 0.95rem; /* Taille icone */
+  transition: transform 0.2s ease;
+}
+
+/* Effet survol listes */
+.action-list li:hover, .result-list li:hover {
+    transform: translateX(4px);
+    color: var(--primary-color);
+    background-color: rgba(0,0,0,0.03);
+    cursor: default;
+}
+.action-list li:hover::before, .result-list li:hover::before {
+    transform: scale(1.1); /* Grossir légèrement la puce */
+}
+
+/* Styles paragraphe résultat */
+.result-block p {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+
+/* Section Quality */
+ .quality-section {
+     padding: 80px 0;
+ }
+
+.quality-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px; /* Réduire marge top */
+}
+
+.quality-item {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 220px; /* Ajuster base flex */
+  max-width: 280px; /* Limiter largeur */
+}
+
+.quality-icon {
+  width: 65px; /* Taille réduite */
+  height: 65px; /* Taille réduite */
+  margin: 0 auto 20px;
+  background-color: rgba(197, 40, 28, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Ajouter transition fond */
+}
+
+.quality-icon i {
+  font-size: 1.6rem; /* Taille réduite */
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+.quality-item h3 {
+  font-size: 1.15rem; /* Taille réduite */
+  font-weight: 600;
+  margin-bottom: 10px; /* Espace réduit */
+  transition: color 0.3s ease;
+}
+.quality-item p {
+    font-size: 0.9rem; /* Texte plus petit */
+    color: #666;
+    line-height: 1.5;
+}
+
+
+/* Effet survol Quality Item */
+.quality-item:hover {
+  transform: translateY(-6px); /* Moins de soulèvement */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+.quality-item:hover .quality-icon {
+  transform: scale(1.1) rotate(5deg); /* Rotation moins prononcée */
+  background-color: var(--primary-color);
+}
+.quality-item:hover .quality-icon i {
+    color: #fff;
+}
+.quality-item:hover h3 {
+  color: var(--primary-color);
+}
+
+
+/* ----- Responsive styles pour Processus (Amélioré) ----- */
+
+@media (max-width: 992px) {
+  /* Banner responsive géré globalement */
+
+  .process-timeline { gap: 30px 15px; } /* Augmenter gap ligne */
+  .process-timeline::before { left: 10%; right: 10%; } /* Raccourcir ligne */
+  .timeline-item { min-width: calc(33.33% - 11px); } /* 3 par ligne */
+
+  .internal-title { text-align: center; }
+  .internal-title::after { left: 50%; transform: translateX(-50%); }
+  .phase-duration { justify-content: center; }
+
+  .quality-item { max-width: calc(33.33% - 21px); flex-basis: calc(33.33% - 21px); }
+}
+
+@media (max-width: 768px) {
+  /* Banner responsive géré globalement */
+
+  .process-timeline::before { display: none; } /* Cacher ligne sur tablette */
+  .timeline-item { min-width: calc(50% - 15px); } /* 2 par ligne */
+
+  .internal-title { font-size: 1.8rem; }
+  .block-title { font-size: 1.2rem; }
+  .phase-block { padding: 20px; }
+
+  .quality-item { max-width: calc(50% - 15px); flex-basis: calc(50% - 15px); }
+}
+
+@media (max-width: 576px) {
+  .overview-text { margin-bottom: 40px; }
+  .process-timeline { margin-top: 40px; }
+  .timeline-item { min-width: 100%; margin-bottom: 20px; } /* 1 par ligne */
+  .timeline-item:last-child { margin-bottom: 0; }
+
+  .phase-section { padding: 50px 0; }
+  .internal-title { font-size: 1.6rem; }
+  .phase-block { padding: 20px 15px; }
+  .action-list, .result-list { padding-left: 20px; }
+  .action-list li::before, .result-list li::before { left: -15px; }
+
+  .quality-section { padding: 60px 0; }
+  .quality-item { padding: 25px 15px; max-width: none; flex-basis: 100%; }
+}

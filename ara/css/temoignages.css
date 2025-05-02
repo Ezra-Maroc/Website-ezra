@@ -1,0 +1,313 @@
+/* ===== STYLES SPÉCIFIQUES POUR LA PAGE LIVRE D'OR (Témoignages) (Amélioré) ===== */
+/* (Fichier: css/temoignages.css) */
+
+/* ----- Surcharge Style Global pour CETTE page ----- */
+
+/* Surcharge pour l'image de fond de la bannière */
+.page-banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/kite.jpg') center/cover no-repeat;
+  /* Ajuster la position si besoin pour l'image kite.jpg, ex: center top */
+  /* background-position: center top; */
+}
+
+/* ----- Styles Uniques à la Page Livre d'Or ----- */
+
+/* Section Guestbook (remplace Testimonials Section) */
+.guestbook-section {
+  padding: 80px 0 60px; /* Moins de padding en bas */
+  background-color: #fff;
+}
+
+/* Intro texte optionnelle */
+.guestbook-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px; /* Espace avant les cartes */
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.testimonial-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Espacement entre cartes */
+  max-width: 850px; /* Légèrement réduit pour centrage */
+  margin: 0 auto;
+}
+
+/* Carte Témoignage */
+.testimonial-card {
+  background-color: #fff;
+  border-radius: 12px; /* Plus arrondi */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07); /* Ombre légèrement ajustée */
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.4s ease;
+  border: 1px solid #eee; /* Ajouter une fine bordure */
+  position: relative; /* Pour le ruban */
+}
+
+/* Ajout d'un effet ruban décoratif (optionnel) */
+.testimonial-card::after {
+    content: '\f005'; /* Étoile FontAwesome */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    font-size: 1.8rem;
+    color: var(--accent-color); /* Couleur accent */
+    opacity: 0.2;
+    transform: rotate(15deg);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+.testimonial-card:hover {
+  transform: translateY(-10px) scale(1.01); /* Soulèvement + léger zoom */
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+}
+/* Animation ruban au survol */
+.testimonial-card:hover::after {
+    opacity: 0.6;
+    transform: rotate(0deg) scale(1.1);
+}
+
+
+/* Header Témoignage */
+.testimonial-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Permettre retour à la ligne si besoin */
+  gap: 15px; /* Espace si retour à la ligne */
+  padding: 20px 25px; /* Padding ajusté */
+  background-color: var(--light-color);
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.testimonial-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Avatar avec Initiales */
+.testimonial-avatar {
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-color); /* Fond plein couleur primaire */
+  color: #fff; /* Texte blanc */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem; /* Taille pour initiales */
+  font-weight: 600; /* Initiales en gras */
+  flex-shrink: 0;
+  border: 2px solid rgba(255,255,255,0.5); /* Bordure blanche semi-transparente */
+  transition: transform 0.3s ease;
+}
+/* Rotation avatar au survol carte */
+.testimonial-card:hover .testimonial-avatar {
+    transform: rotate(-10deg);
+}
+
+.testimonial-identity h3 {
+  font-size: 1.15rem; /* Légèrement réduit */
+  font-weight: 600;
+  margin-bottom: 2px; /* Rapprocher du lieu */
+  color: var(--dark-color);
+}
+
+.testimonial-identity p {
+  font-size: 0.85rem; /* Plus petit */
+  color: #777; /* Plus clair */
+  margin: 0;
+}
+
+.testimonial-success {
+  display: flex;
+  align-items: center;
+}
+
+/* Badge Succès */
+.success-badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(40, 167, 69, 0.1);
+  color: #218c3a; /* Vert plus soutenu */
+  padding: 5px 12px; /* Ajusté */
+  border-radius: 20px;
+  font-size: 0.8rem; /* Plus petit */
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.success-badge i {
+  margin-right: 5px;
+  font-size: 0.9em; /* Icône proportionnelle */
+}
+
+/* Effet hover badge succès */
+.testimonial-card:hover .success-badge {
+    background-color: var(--secondary-color);
+    color: white;
+    transform: scale(1.05); /* Léger grossissement */
+}
+
+/* Contenu Témoignage */
+.testimonial-content {
+  padding: 25px 30px 30px 35px; /* Padding ajusté */
+  position: relative;
+}
+
+/* Citation */
+.testimonial-quote {
+  position: absolute;
+  top: 15px; /* Remontée */
+  left: 15px; /* Rapprochée */
+  color: rgba(197, 40, 28, 0.08); /* Encore plus pâle */
+  font-size: 3rem; /* Plus grande */
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  opacity: 1;
+}
+
+/* Effet hover citation */
+.testimonial-card:hover .testimonial-quote {
+    opacity: 0.2;
+    transform: scale(1.1) translateX(-3px);
+}
+
+.testimonial-content p {
+  margin-bottom: 15px;
+  line-height: 1.75; /* Interligne augmenté */
+  font-size: 0.95rem; /* Texte légèrement plus petit */
+  color: #444; /* Texte un peu plus foncé */
+}
+
+/* Premier paragraphe (citation principale) */
+.testimonial-content p:first-of-type {
+  font-weight: 500;
+  color: var(--primary-color);
+  font-style: normal; /* Pas d'italique par défaut */
+  font-size: 1rem; /* Un peu plus grand */
+  margin-bottom: 20px; /* Plus d'espace après */
+  padding-left: 10px; /* Léger retrait */
+  border-left: 2px solid rgba(197, 40, 28, 0.2); /* Bordure gauche discrète */
+}
+
+.testimonial-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Bouton CTA dans la section */
+.guestbook-cta {
+    text-align: center;
+    margin-top: 60px; /* Espace après les cartes */
+    padding-top: 40px;
+    border-top: 1px solid #eee;
+}
+.guestbook-cta p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+
+/* Section Engagement */
+.engagement-section {
+  padding: 80px 0;
+  background-color: var(--light-color);
+}
+
+.engagement-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.engagement-content p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.engagement-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* ----- Responsive styles pour temoignages.css (Amélioré) ----- */
+
+@media (max-width: 992px) {
+  /* Banner responsive géré globalement */
+}
+
+@media (max-width: 768px) {
+  /* Banner responsive géré globalement */
+
+  .testimonial-header {
+    /* Garder flex-start car flex-wrap est actif */
+    /* flex-direction: column; */ /* Retiré pour laisser flex-wrap gérer */
+    /* align-items: flex-start; */
+  }
+
+  /* .testimonial-success { */ /* Pas besoin de redéfinir */
+    /* align-self: flex-start; */
+  /* } */
+
+  .testimonial-content {
+    padding: 25px 25px 25px 30px; /* Ajusté */
+  }
+
+  .testimonial-quote {
+    font-size: 2.5rem; /* Ajusté */
+    left: 10px;
+    top: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .testimonial-content p {
+    font-size: 0.9rem; /* Réduire encore */
+  }
+   .testimonial-content p:first-of-type {
+      font-size: 0.95rem; /* Ajuster aussi premier p */
+   }
+
+  .testimonial-profile {
+    gap: 10px;
+  }
+
+  .testimonial-avatar {
+    width: 45px; /* Léger ajustement */
+    height: 45px;
+    font-size: 1rem; /* Taille initiale mobile */
+  }
+
+  .testimonial-identity h3 {
+    font-size: 1.05rem; /* Ajusté */
+  }
+
+  .guestbook-section,
+  .engagement-section {
+    padding: 60px 0;
+  }
+
+  .success-badge {
+    font-size: 0.75rem; /* Encore plus petit */
+    padding: 4px 10px;
+  }
+
+   .testimonial-header {
+       padding: 15px 20px;
+   }
+    .testimonial-content {
+       padding: 20px 20px 20px 20px; /* Moins de padding gauche */
+   }
+   .testimonial-quote {
+      display: none; /* Cacher la citation sur très petits écrans */
+   }
+    .guestbook-cta { margin-top: 40px; padding-top: 30px;}
+    .guestbook-cta p { font-size: 1rem; }
+}
