@@ -1,26 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Client Testimonials | Ezra Maroc</title>
-    {/* Meta Description Suggested */}
-    {/* <meta name="description" content="Read success stories from our clients. Discover their experiences obtaining Moroccan nationality with Ezra Maroc's expert guidance."> */}
+    <title>המלצות לקוחות | עזרא מרוק</title>
+    {/* הצעה לתיאור מטא */}
+    {/* <meta name="description" content="קראו סיפורי הצלחה של לקוחותינו. גלו את חוויותיהם בקבלת אזרחות מרוקאית עם הדרכה מומחית של עזרא מרוק."> */}
 
-    <!-- CSS Global relative to 'en' folder -->
+    <!-- CSS גלובלי יחסית לתיקיית 'he' -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- Specific CSS relative to 'en' folder -->
-    <link rel="stylesheet" href="css/temoignages.css"> {/* Keep original name if CSS file wasn't renamed */}
-    <!-- Fonts -->
+    <!-- CSS ספציפי יחסית לתיקיית 'he' -->
+    <link rel="stylesheet" href="css/temoignages.css"> <!-- שימוש באותו שם קובץ CSS -->
+    <!-- פונטים (גופנים לעברית) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&family=Assistant:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Hreflang Tags (Replace yourdomain.com) -->
-    <!-- <link rel="alternate" hreflang="fr" href="https://www.yourdomain.com/temoignages.html" /> -->
+    <!-- תגיות Hreflang (יש להחליף את yourdomain.com) -->
+    <!-- <link rel="alternate" hreflang="fr" href="https://www.yourdomain.com/fr/temoignages.html" /> -->
     <!-- <link rel="alternate" hreflang="en" href="https://www.yourdomain.com/en/testimonials.html" /> -->
-    <!-- <link rel="alternate" hreflang="x-default" href="https://www.yourdomain.com/temoignages.html" /> -->
+    <!-- <link rel="alternate" hreflang="es" href="https://www.yourdomain.com/es/testimonios.html" /> -->
+    <!-- <link rel="alternate" hreflang="he" href="https://www.yourdomain.com/he/testimonials.html" /> -->
+    <!-- <link rel="alternate" hreflang="x-default" href="https://www.yourdomain.com/fr/temoignages.html" /> -->
 </head>
 <body>
 
@@ -28,207 +30,208 @@
     <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="logo">
-                <img src="img/logo.png" alt="Ezra Maroc Logo">
+                <img src="img/logo.png" alt="לוגו עזרא מרוק">
                 <div class="brand-text">
                     <span>Ezra</span> <strong>Maroc</strong>
                 </div>
             </a>
             <nav>
                 <ul class="nav-links">
-                     <li><a href="index.html">Home</a></li>
-                    <li><a href="advantages.html">Advantages</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="process.html">Process</a></li>
-                    <li><a href="testimonials.html" class="active">Testimonials</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
+                     <li><a href="index.html">דף הבית</a></li>
+                    <li><a href="advantages.html">יתרונות</a></li>
+                    <li><a href="services.html">שירותים</a></li>
+                    <li><a href="process.html">תהליך</a></li>
+                    <li><a href="testimonials.html" class="active">המלצות</a></li>
+                    <li><a href="about.html">אודות</a></li>
+                    <li><a href="contact.html">צור קשר</a></li>
+                    <li><a href="faq.html">שאלות נפוצות</a></li>
                 </ul>
             </nav>
             <div class="language-switcher">
-                 <label for="lang-select" class="visually-hidden">Choose language</label>
+                 <label for="lang-select" class="visually-hidden">בחירת שפה</label>
                  <select name="lang" id="lang-select" class="language-select" onchange="location = this.value;">
                     <option value="../fr/temoignages.html" lang="fr">Français</option>
-                    <option value="testimonials.html" selected lang="en">English</option>
-                    <option value="../es/testimonials.html" lang="es" >Español</option>
-                    <option value="../he/testimonios.html" lang="he" >עברית</option>
+                    <option value="../en/testimonials.html" lang="en">English</option>
+                    <!--שים לב, השם בספרדית אולי לא testimonios-->
+                    <option value="../es/testimonios.html" lang="es">Español</option>
+                    <option value="testimonials.html" selected lang="he">עברית</option>
                 </select>
             </div>
-            <!-- <button class="menu-toggle" aria-label="Open menu"><i class="fas fa-bars"></i></button> -->
+            <!-- <button class="menu-toggle" aria-label="פתיחת תפריט"><i class="fas fa-bars"></i></button> -->
         </div>
     </header>
 
-    <!-- SPECIFIC CONTENT FOR "TESTIMONIALS" PAGE -->
+    <!-- תוכן ספציפי לעמוד "המלצות" -->
     <section class="page-banner">
         <div class="container">
-            <h1>Our Client Testimonials</h1>
-            <p>Our clients' journeys are our greatest pride. Discover their experiences and how Ezra Maroc helped bring their Moroccan nationality projects to fruition.</p>
+            <h1>המלצות הלקוחות שלנו</h1>
+            <p>המסעות של לקוחותינו הם הגאווה הגדולה ביותר שלנו. גלו את חוויותיהם וכיצד עזרא מרוק עזרה להגשים את פרויקטי האזרחות המרוקאית שלהם.</p>
         </div>
     </section>
 
     <section class="section guestbook-section">
         <div class="container">
-            <p class="guestbook-intro">These authentic testimonials illustrate the diversity of situations and the effectiveness of our personalized support.</p>
+            <p class="guestbook-intro">המלצות אותנטיות אלה ממחישות את מגוון המצבים ואת יעילות התמיכה האישית שלנו.</p>
 
             <div class="testimonial-cards">
-                <!-- Testimonial 1 -->
+                <!-- המלצה 1 -->
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-profile">
-                            <div class="testimonial-avatar">DC</div>
+                            <div class="testimonial-avatar">דכ</div>
                             <div class="testimonial-identity">
-                                <h3>D. C.</h3>
-                                <p>Paris, France</p>
+                                <h3>ד. כ.</h3>
+                                <p>פריז, צרפת</p>
                             </div>
                         </div>
                         <div class="testimonial-success">
-                            <span class="success-badge"><i class="fa-solid fa-certificate"></i> Certificate obtained in 11 months</span>
+                            <span class="success-badge"><i class="fa-solid fa-certificate"></i> תעודה הושגה תוך 11 חודשים</span>
                         </div>
                     </div>
                     <div class="testimonial-content">
-                        <div class="testimonial-quote"><i class="fa-solid fa-quote-left"></i></div>
-                        <p>After years of unsuccessful attempts, Ezra Maroc managed to get me Moroccan nationality in less than a year. Their expertise and professionalism made all the difference.</p>
-                        <p>I had tried twice to compile my file myself, but I consistently ran into administrative roadblocks. The Ezra Maroc team immediately identified the weaknesses in my previous file and proposed an effective strategy.</p>
-                        <p>What particularly impressed me was their deep knowledge of Moroccan procedures and their ability to anticipate the administration's requests. Their regular follow-up also allowed me to remain calm throughout the process.</p>
+                        <div class="testimonial-quote"><i class="fa-solid fa-quote-right"></i></div> <!-- שינוי לציטוט ימני -->
+                        <p>אחרי שנים של ניסיונות לא מוצלחים, עזרא מרוק הצליחו להשיג לי אזרחות מרוקאית בפחות משנה. המומחיות והמקצועיות שלהם עשו את כל ההבדל.</p>
+                        <p>ניסיתי פעמיים להרכיב את התיק בעצמי, אבל נתקלתי בעקביות בחסמים מנהליים. צוות עזרא מרוק זיהה מיד את החולשות בתיק הקודם שלי והציע אסטרטגיה יעילה.</p>
+                        <p>מה שהרשים אותי במיוחד היה הידע העמוק שלהם בהליכים המרוקאיים ויכולתם לצפות מראש את דרישות המנהל. המעקב הקבוע שלהם גם אפשר לי להישאר רגוע לאורך כל התהליך.</p>
                     </div>
                 </div>
 
-                <!-- Testimonial 2 -->
+                <!-- המלצה 2 -->
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-profile">
-                            <div class="testimonial-avatar">SB</div>
+                            <div class="testimonial-avatar">סב</div>
                             <div class="testimonial-identity">
-                                <h3>S. B.</h3>
-                                <p>Montreal, Canada</p>
+                                <h3>ס. ב.</h3>
+                                <p>מונטריאול, קנדה</p>
                             </div>
                         </div>
                         <div class="testimonial-success">
-                            <span class="success-badge"><i class="fa-solid fa-certificate"></i> Certificate obtained in 14 months</span>
+                            <span class="success-badge"><i class="fa-solid fa-certificate"></i> תעודה הושגה תוך 14 חודשים</span>
                         </div>
                     </div>
                     <div class="testimonial-content">
-                         <div class="testimonial-quote"><i class="fa-solid fa-quote-left"></i></div>
-                        <p>I feared that the distance and administrative complexity would be insurmountable obstacles, but the Ezra Maroc team handled everything with remarkable efficiency. Today, I am officially Moroccan!</p>
-                        <p>Residing in Canada, I thought the procedures would be particularly complicated for me. Ezra Maroc managed the entire process considering this constraint, minimizing my travel to only what was strictly necessary. Their online tracking platform kept me informed in real-time about my file's progress.</p>
-                        <p>On the day of my appointment at the court in Rabat, I was accompanied by their lawyer who ensured everything went perfectly. An emotional moment I will never forget.</p>
+                         <div class="testimonial-quote"><i class="fa-solid fa-quote-right"></i></div>
+                        <p>חששתי שהמרחק והמורכבות המנהלית יהיו מכשולים בלתי עבירים, אבל צוות עזרא מרוק טיפל בהכל ביעילות יוצאת דופן. היום, אני רשמית מרוקאית!</p>
+                        <p>כתושבת קנדה, חשבתי שההליכים יהיו מסובכים במיוחד עבורי. עזרא מרוק ניהלו את כל התהליך תוך התחשבות באילוץ זה, וצמצמו את נסיעותיי למינימום ההכרחי. פלטפורמת המעקב המקוונת שלהם עדכנה אותי בזמן אמת על התקדמות התיק שלי.</p>
+                        <p>ביום הפגישה שלי בבית המשפט ברבאט, ליווה אותי עורך הדין שלהם שהבטיח שהכל יתנהל בצורה מושלמת. רגע מרגש שלא אשכח לעולם.</p>
                     </div>
                 </div>
 
-                <!-- Testimonial 3 -->
+                <!-- המלצה 3 -->
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-profile">
-                            <div class="testimonial-avatar">ML</div>
+                            <div class="testimonial-avatar">מל</div>
                             <div class="testimonial-identity">
-                                <h3>M. L.</h3>
-                                <p>New York, USA</p>
+                                <h3>מ. ל.</h3>
+                                <p>ניו יורק, ארה"ב</p>
                             </div>
                         </div>
                         <div class="testimonial-success">
-                            <span class="success-badge"><i class="fa-solid fa-certificate"></i> Certificate obtained in 16 months</span>
+                            <span class="success-badge"><i class="fa-solid fa-certificate"></i> תעודה הושגה תוך 16 חודשים</span>
                         </div>
                     </div>
                     <div class="testimonial-content">
-                         <div class="testimonial-quote"><i class="fa-solid fa-quote-left"></i></div>
-                        <p>The transparency and professionalism of Ezra Maroc impressed me. I was always informed about the progress of my file, and their legal expertise helped overcome obstacles I thought were insurmountable.</p>
-                        <p>My case was particularly complex because my grandfather's documents were lost during the war. The Ezra Maroc team undertook real detective work, finding archives I never thought could be obtained.</p>
-                        <p>Their methodical approach and perseverance ultimately allowed for the creation of a solid file that convinced the Moroccan authorities. I am immensely grateful for their exceptional work.</p>
+                         <div class="testimonial-quote"><i class="fa-solid fa-quote-right"></i></div>
+                        <p>השקיפות והמקצועיות של עזרא מרוק הרשימו אותי. תמיד הייתי מעודכן לגבי התקדמות התיק שלי, והמומחיות המשפטית שלהם עזרה להתגבר על מכשולים שחשבתי שהם בלתי עבירים.</p>
+                        <p>המקרה שלי היה מורכב במיוחד כי המסמכים של סבי אבדו במהלך המלחמה. צוות עזרא מרוק ביצע עבודת בילוש אמיתית, ומצא ארכיונים שמעולם לא חשבתי שניתן להשיג.</p>
+                        <p>הגישה השיטתית וההתמדה שלהם אפשרו בסופו של דבר ליצור תיק מוצק ששכנע את הרשויות המרוקאיות. אני אסיר תודה לאין קץ על עבודתם יוצאת הדופן.</p>
                     </div>
                 </div>
 
-                 <!-- Testimonial 4 -->
+                 <!-- המלצה 4 -->
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-profile">
-                            <div class="testimonial-avatar">RH</div>
+                            <div class="testimonial-avatar">רח</div>
                             <div class="testimonial-identity">
-                                <h3>R. H.</h3>
-                                <p>Tel Aviv, Israel</p>
+                                <h3>ר. ה.</h3>
+                                <p>תל אביב, ישראל</p>
                             </div>
                         </div>
                         <div class="testimonial-success">
-                            <span class="success-badge"><i class="fa-solid fa-certificate"></i> Certificate obtained in 19 months</span>
+                            <span class="success-badge"><i class="fa-solid fa-certificate"></i> תעודה הושגה תוך 19 חודשים</span>
                         </div>
                     </div>
                     <div class="testimonial-content">
-                         <div class="testimonial-quote"><i class="fa-solid fa-quote-left"></i></div>
-                        <p>Obtaining Moroccan nationality was a dream I thought inaccessible, especially with the complexity of diplomatic relations. Ezra Maroc turned this dream into reality with remarkable professionalism.</p>
-                        <p>From our first conversation, I was reassured by their deep knowledge of the specific situation of Moroccan Jews who emigrated to Israel. They knew how to find solutions to every obstacle that arose.</p>
-                        <p>What struck me most was their ability to handle the emotional and identity aspects of my journey, beyond purely administrative considerations. Today, I can return to Morocco with my Moroccan passport and fully reconnect with my roots.</p>
+                         <div class="testimonial-quote"><i class="fa-solid fa-quote-right"></i></div>
+                        <p>קבלת אזרחות מרוקאית הייתה חלום שחשבתי שהוא בלתי נגיש, במיוחד עם מורכבות היחסים הדיפלומטיים. עזרא מרוק הפכו את החלום הזה למציאות במקצועיות יוצאת דופן.</p>
+                        <p>מהשיחה הראשונה שלנו, הרגיע אותי הידע המעמיק שלהם במצב הספציפי של יהודים מרוקאים שהיגרו לישראל. הם ידעו למצוא פתרונות לכל מכשול שצץ.</p>
+                        <p>מה שהכי הרשים אותי הייתה היכולת שלהם להתמודד עם ההיבטים הרגשיים והזהותיים של המסע שלי, מעבר לשיקולים המנהליים הטהורים. היום, אני יכול לחזור למרוקו עם הדרכון המרוקאי שלי ולהתחבר מחדש לשורשים שלי במלואם.</p>
                     </div>
                 </div>
 
-                 <!-- Testimonial 5 -->
+                 <!-- המלצה 5 -->
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-profile">
-                            <div class="testimonial-avatar">AB</div>
+                            <div class="testimonial-avatar">אב</div>
                             <div class="testimonial-identity">
-                                <h3>A. B.</h3>
-                                <p>Lyon, France</p>
+                                <h3>א. ב.</h3>
+                                <p>ליון, צרפת</p>
                             </div>
                         </div>
                         <div class="testimonial-success">
-                            <span class="success-badge"><i class="fa-solid fa-certificate"></i> Certificate obtained in 13 months</span>
+                            <span class="success-badge"><i class="fa-solid fa-certificate"></i> תעודה הושגה תוך 13 חודשים</span>
                         </div>
                     </div>
                     <div class="testimonial-content">
-                         <div class="testimonial-quote"><i class="fa-solid fa-quote-left"></i></div>
-                        <p>I want to express my deep gratitude to the entire Ezra Maroc team. Their expertise and dedication were decisive in the successful outcome of my Moroccan nationality application.</p>
-                        <p>Despite a complex family situation and partially missing documents, they managed to find innovative and legally sound solutions. Their knowledge of Moroccan administrative procedures saved me from numerous pitfalls and errors that could have significantly delayed my file.</p>
-                        <p>I highly recommend their services to anyone wishing to undertake this important and symbolic process.</p>
+                         <div class="testimonial-quote"><i class="fa-solid fa-quote-right"></i></div>
+                        <p>ברצוני להביע את תודתי העמוקה לכל צוות עזרא מרוק. המומחיות והמסירות שלהם היו מכריעות בתוצאה המוצלחת של בקשת האזרחות המרוקאית שלי.</p>
+                        <p>למרות מצב משפחתי מורכב ומסמכים חסרים חלקית, הם הצליחו למצוא פתרונות חדשניים ונכונים מבחינה משפטית. הידע שלהם בהליכים המנהליים המרוקאיים חסך ממני מהמורות ושגיאות רבות שיכלו לעכב משמעותית את התיק שלי.</p>
+                        <p>אני ממליץ בחום על שירותיהם לכל מי שמעוניין לבצע את התהליך החשוב והסמלי הזה.</p>
                     </div>
                 </div>
 
-                 <!-- Testimonial 6 -->
+                 <!-- המלצה 6 -->
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-profile">
                             <div class="testimonial-avatar"><i class="fa-solid fa-users"></i></div>
                             <div class="testimonial-identity">
-                                <h3>É. & N. M.</h3>
-                                <p>Marseille, France</p>
+                                <h3>א. ונ. מ.</h3>
+                                <p>מרסיי, צרפת</p>
                             </div>
                         </div>
                         <div class="testimonial-success">
-                             <span class="success-badge"><i class="fa-solid fa-certificate"></i> Certificates obtained in 15 months</span>
+                             <span class="success-badge"><i class="fa-solid fa-certificate"></i> תעודות הושגו תוך 15 חודשים</span>
                         </div>
                     </div>
                     <div class="testimonial-content">
-                         <div class="testimonial-quote"><i class="fa-solid fa-quote-left"></i></div>
-                        <p>As a couple, we both wished to obtain Moroccan nationality, with different family situations. Ezra Maroc managed both our files in parallel with perfect coordination.</p>
-                        <p>Their personalized approach particularly touched us - they took the time to understand our family history and deep motivations. Their team showed remarkable patience and pedagogy in explaining each step of the process to us.</p>
-                        <p>We are infinitely grateful for their support, which allowed us to realize this important project for our family and our children.</p>
+                         <div class="testimonial-quote"><i class="fa-solid fa-quote-right"></i></div>
+                        <p>כזוג, שנינו רצינו לקבל אזרחות מרוקאית, עם מצבים משפחתיים שונים. עזרא מרוק ניהלו את שני התיקים שלנו במקביל בתיאום מושלם.</p>
+                        <p>הגישה האישית שלהם נגעה בנו במיוחד - הם הקדישו זמן להבין את ההיסטוריה המשפחתית והמניעים העמוקים שלנו. הצוות שלהם הפגין סבלנות ופדגוגיה יוצאות דופן בהסברת כל שלב בתהליך.</p>
+                        <p>אנו אסירי תודה לאין קץ על תמיכתם, שאפשרה לנו לממש את הפרויקט החשוב הזה עבור משפחתנו וילדינו.</p>
                     </div>
                 </div>
 
-                 <!-- Testimonial 7 -->
+                 <!-- המלצה 7 -->
                 <div class="testimonial-card">
                      <div class="testimonial-header">
                         <div class="testimonial-profile">
-                            <div class="testimonial-avatar">RA</div>
+                            <div class="testimonial-avatar">רא</div>
                             <div class="testimonial-identity">
-                                <h3>R. A.</h3>
-                                <p>Miami, USA</p>
+                                <h3>ר. א.</h3>
+                                <p>מיאמי, ארה"ב</p>
                             </div>
                         </div>
                         <div class="testimonial-success">
-                            <span class="success-badge"><i class="fa-solid fa-certificate"></i> Certificate obtained in 12 months</span>
+                            <span class="success-badge"><i class="fa-solid fa-certificate"></i> תעודה הושגה תוך 12 חודשים</span>
                         </div>
                     </div>
                     <div class="testimonial-content">
-                        <div class="testimonial-quote"><i class="fa-solid fa-quote-left"></i></div>
-                        <p>Hiring Ezra Maroc was the best decision I made in my process of obtaining Moroccan nationality. Despite the distance and time difference, their team was always available and responsive.</p>
-                        <p>The file compilation was conducted with exemplary rigor, which certainly contributed to the relative speed of the process. Each document was perfectly prepared, translated, and legalized according to the specific requirements of the Moroccan authorities.</p>
-                        <p>I am particularly grateful for their support during my trip to Morocco for the final appointment. Their lawyer on site ensured a perfect transition and put me in the best conditions for this crucial step.</p>
+                        <div class="testimonial-quote"><i class="fa-solid fa-quote-right"></i></div>
+                        <p>לשכור את שירותי עזרא מרוק הייתה ההחלטה הטובה ביותר שעשיתי בתהליך קבלת האזרחות המרוקאית שלי. למרות המרחק והפרשי השעות, הצוות שלהם תמיד היה זמין ומגיב.</p>
+                        <p>הרכבת התיק בוצעה בקפדנות מופתית, מה שבוודאי תרם למהירות היחסית של התהליך. כל מסמך הוכן בצורה מושלמת, תורגם ואושר על פי הדרישות הספציפיות של הרשויות המרוקאיות.</p>
+                        <p>אני אסיר תודה במיוחד על תמיכתם במהלך נסיעתי למרוקו לפגישה הסופית. עורך הדין שלהם במקום הבטיח מעבר מושלם והכניס אותי לתנאים הטובים ביותר לשלב מכריע זה.</p>
                     </div>
                 </div>
             </div>
 
             <div class="guestbook-cta">
-                <p>Do you also want to share your success or start your project?</p>
-                <a href="contact.html" class="btn btn-primary">Contact us today</a>
+                <p>האם גם אתם רוצים לחלוק את הצלחתכם או להתחיל את הפרויקט שלכם?</p>
+                <a href="contact.html" class="btn btn-primary">צרו קשר עוד היום</a>
             </div>
 
         </div>
@@ -236,20 +239,20 @@
 
     <section class="section engagement-section alt-bg">
         <div class="container">
-            <h2 class="section-title">Our Commitment: <span>Your Story</span></h2>
+            <h2 class="section-title">המחויבות שלנו: <span>הסיפור שלכם</span></h2>
             <div class="engagement-content">
-                <p>Each testimonial is proof of our commitment to excellence and the success of our clients. Your unique journey deserves our full attention and dedicated expertise.</p>
-                <p>We would be honored to help you write your own chapter in this guestbook and accompany you towards the recognition of your Moroccan nationality.</p>
+                <p>כל המלצה היא הוכחה למחויבותנו למצוינות ולהצלחת לקוחותינו. המסע הייחודי שלכם ראוי לתשומת לבנו המלאה ולמומחיות הייעודית שלנו.</p>
+                <p>נתכבד לעזור לכם לכתוב פרק משלכם בספר אורחים זה וללוות אתכם לקראת ההכרה באזרחותכם המרוקאית.</p>
             </div>
         </div>
     </section>
 
     <section class="cta-section">
         <div class="container">
-            <h2 class="cta-title">Ready to add your name to our Guestbook?</h2>
+            <h2 class="cta-title">מוכנים להוסיף את שמכם לספר האורחים שלנו?</h2>
             <div class="cta-buttons">
-                 <a href="contact.html#contact-form-container" class="btn btn-light">Request an Evaluation</a>
-                <a href="process.html" class="btn btn-outline-light">See Our Process</a>
+                 <a href="contact.html#contact-form-container" class="btn btn-light">בקשו הערכה</a>
+                <a href="process.html" class="btn btn-outline-light">ראו את התהליך שלנו</a>
             </div>
         </div>
     </section>
@@ -259,53 +262,53 @@
          <div class="container footer-container">
              <div class="footer-about">
                  <a href="index.html" class="footer-logo">Ezra<strong>Maroc</strong></a>
-                 <p class="footer-text">Specialists in obtaining Moroccan nationality, we support you every step of the way with expertise and professionalism.</p>
+                 <p class="footer-text">מומחים בקבלת אזרחות מרוקאית, אנו תומכים בכם בכל שלב בדרך עם מומחיות ומקצועיות.</p>
                  <div class="footer-social">
-                     <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
-                     <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                     <a href="#" aria-label="לינקדאין" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                     <a href="#" aria-label="אינסטגרם" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
                  </div>
              </div>
              <div class="footer-links">
-                 <h3 class="footer-heading">Quick links</h3>
+                 <h3 class="footer-heading">קישורים מהירים</h3>
                  <ul>
-                     <li><a href="index.html">Home</a></li>
-                     <li><a href="advantages.html">Advantages</a></li>
-                     <li><a href="services.html">Services</a></li>
-                     <li><a href="process.html">Process</a></li>
-                     <li><a href="testimonials.html">Testimonials</a></li>
-                     <li><a href="about.html">About</a></li>
-                     <li><a href="faq.html">FAQ</a></li>
-                     <li><a href="contact.html">Contact</a></li>
+                     <li><a href="index.html">דף הבית</a></li>
+                     <li><a href="advantages.html">יתרונות</a></li>
+                     <li><a href="services.html">שירותים</a></li>
+                     <li><a href="process.html">תהליך</a></li>
+                     <li><a href="testimonials.html">המלצות</a></li>
+                     <li><a href="about.html">אודות</a></li>
+                     <li><a href="faq.html">שאלות נפוצות</a></li>
+                     <li><a href="contact.html">צור קשר</a></li>
                 </ul>
             </div>
              <div class="footer-services">
-                <h3 class="footer-heading">Our Key Services</h3>
+                <h3 class="footer-heading">שירותי המפתח שלנו</h3>
                 <ul>
-                     <li><a href="services.html#eligibility">Eligibility Analysis</a></li>
-                     <li><a href="services.html#constitution">File Compilation</a></li>
-                    <li><a href="services.html#recherche">Genealogical Research</a></li>
-                    <li><a href="services.html#suivi">Administrative Follow-up</a></li>
-                    <li><a href="services.html#post-obtention">Post-Obtainment Assistance</a></li>
+                     <li><a href="services.html#eligibility">ניתוח זכאות</a></li>
+                     <li><a href="services.html#constitution">הרכבת תיק</a></li>
+                    <li><a href="services.html#recherche">מחקר גנאלוגי</a></li>
+                    <li><a href="services.html#suivi">מעקב מנהלי</a></li>
+                    <li><a href="services.html#post-obtention">סיוע לאחר קבלה</a></li>
                  </ul>
             </div>
              <div class="footer-contact">
-                 <h3 class="footer-heading">Contact</h3>
+                 <h3 class="footer-heading">צור קשר</h3>
                  <ul>
-                    <li><i class="fa-solid fa-location-dot"></i> <span>30 N Gould St Ste R,<br>Sheridan, WY 82801, USA</span></li>
+                    <li><i class="fa-solid fa-location-dot"></i> <span>30 N Gould St Ste R,<br>שרידן, ויומינג 82801, ארה"ב</span></li>
                      <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></li>
                  </ul>
             </div>
         </div>
          <div class="footer-bottom">
              <div class="container">
-                 <p>© 2024 Ezra Maroc Consulting Services LLC. All rights reserved.</p>
-                 <p>The information on this site is provided for informational purposes only and does not constitute legal or tax advice. Consult qualified professionals.</p>
+                 <p>© 2024 עזרא מרוק ייעוץ שירותים LLC. כל הזכויות שמורות.</p>
+                 <p>המידע באתר זה ניתן למטרות מידע בלבד ואינו מהווה ייעוץ משפטי או מס. התייעצו עם אנשי מקצוע מוסמכים.</p>
             </div>
          </div>
     </footer>
 
-    <!-- JS Link -->
-    <script src="js/script.js"></script>
-    <script src="js/language-links.js"></script>
+    <!-- קישור JS -->
+    <script src="js/script.js"></script> <!-- אם יש סקריפט גלובלי -->
+    <script src="js/language-links.js"></script> <!-- סקריפט לקישורי שפה -->
 </body>
 </html>
