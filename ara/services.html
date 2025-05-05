@@ -1,81 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services | Ezra Maroc</title>
-    {/* Meta Description Suggested */}
-    {/* <meta name="description" content="Discover Ezra Maroc's dedicated services for obtaining Moroccan nationality: eligibility assessment, file compilation, administrative follow-up, and more."> */}
+    <title>خدماتنا | عزرا ماروك</title>
+    <meta name="description" content="اكتشفو خدمات عزرا ماروك المخصصة للحصول على الجنسية المغربية: تقييم الأهلية، تكوين الملف، المتابعة الإدارية، والمزيد.">
 
-    <!-- CSS Global relative to 'en' folder -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- Specific CSS relative to 'en' folder -->
-    <link rel="stylesheet" href="css/services.css"> {/* Keep original name if CSS file wasn't renamed */}
-    <!-- Fonts -->
+    <link rel="stylesheet" href="css/services.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Hreflang Tags (Replace yourdomain.com) -->
-    <!-- <link rel="alternate" hreflang="fr" href="https://www.yourdomain.com/services.html" /> -->
-    <!-- <link rel="alternate" hreflang="en" href="https://www.yourdomain.com/en/services.html" /> -->
-    <!-- <link rel="alternate" hreflang="x-default" href="https://www.yourdomain.com/services.html" /> -->
-</head>
-<body>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- HEADER -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body class="rtl">
+
     <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="logo">
-                <img src="img/logo.png" alt="Ezra Maroc Logo">
+                <img src="img/logo.png" alt="لوغو عزرا ماروك">
                 <div class="brand-text">
-                    <span>Ezra</span> <strong>Maroc</strong>
+                    <span>عزرا</span> <strong>ماروك</strong>
                 </div>
             </a>
             <nav>
                 <ul class="nav-links">
-                     <li><a href="index.html">Home</a></li>
-                    <li><a href="advantages.html">Advantages</a></li>
-                    <li><a href="services.html" class="active">Services</a></li>
-                    <li><a href="process.html">Process</a></li>
-                    <li><a href="testimonials.html">Testimonials</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
+                     <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="advantages.html">المزايا</a></li>
+                    <li><a href="services.html" class="active">الخدمات</a></li>
+                    <li><a href="process.html">المسار</a></li>
+                    <li><a href="testimonials.html">شهادات</a></li>
+                    <li><a href="about.html">شكون حنا</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                    <li><a href="faq.html">أسئلة شائعة</a></li>
                 </ul>
             </nav>
             <div class="language-switcher">
-                 <label for="lang-select" class="visually-hidden">Choose language</label>
+                 <label for="lang-select" class="visually-hidden">اختار اللغة</label>
                  <select name="lang" id="lang-select" class="language-select" onchange="location = this.value;">
-                    <option value="../services.html" lang="fr">Français</option>
-                    <option value="services.html" selected lang="en">English</option>
-                    <option value="../es/services.html" lang="es" disabled>Español</option>
-                    <option value="../he/services.html" lang="he" disabled>עברית</option>
+                    <option value="../fr/services.html" lang="fr">Français</option>
+                    <option value="../en/services.html" lang="en">English</option>
+                    <option value="../es/servicios.html" lang="es" >Español</option> {/* vérifier nom fichier */}
+                    <option value="../he/services.html" lang="he" >עברית</option>
+                    <option value="services.html" selected lang="ar">العربية (الدارجة)</option>
                 </select>
             </div>
-            <!-- <button class="menu-toggle" aria-label="Open menu"><i class="fas fa-bars"></i></button> -->
         </div>
     </header>
 
-    <!-- SPECIFIC CONTENT FOR "SERVICES" PAGE -->
     <section class="page-banner">
         <div class="container">
-            <h1>Our Dedicated Services</h1>
-            <p>Simplify your journey to Moroccan citizenship. Ezra Maroc transforms administrative complexity into a serene and successful process, reconnecting you to your heritage.</p>
+            <h1>خدماتنا المخصصة</h1>
+            <p>بسطو رحلتكم للمواطنة المغربية. عزرا ماروك كتحول التعقيد الإداري لمسار هادئ وناجح، كتعاود تربطكم بتراثكم.</p>
         </div>
     </section>
 
     <section class="section services-intro">
         <div class="container">
             <p>
-                Reconnecting with your Moroccan roots through nationality is a powerful project, but administrative procedures can often seem daunting.
+                إعادة التواصل مع جذوركم المغربية عن طريق الجنسية مشروع قوي، ولكن الإجراءات الإدارية غالبا كتبان صعيبة.
             </p>
             <p>
-                At Ezra Maroc, we fully understand these challenges. That's why we've designed a <strong>comprehensive and integrated range of services</strong>, led by <strong>dedicated experts</strong>. Our mission: to transform administrative complexity into a <strong>clear, controlled, and serene journey</strong> for you.
+                فعزرا ماروك، كنفهمو هاد التحديات مزيان. هادشي علاش صممنا مجموعة <strong>شاملة ومتكاملة من الخدمات</strong>، كيقودوها <strong>خبراء مخصصون</strong>. المهمة ديالنا: نحولو التعقيد الإداري لرحلة <strong>واضحة، متحكم فيها، وهادئة</strong> ليكم.
             </p>
             <p>
-                Let us handle the technical and administrative aspects, so you can focus on what matters most: your reconnection with Morocco. Discover below how we <strong>guide you towards success</strong>, step by step.
+                خليونا نتكلفو بالجوانب التقنية والإدارية، باش تقدرو تركزو على الأهم: إعادة تواصلكم مع المغرب. اكتشفو لتحت كيفاش <strong>كنوجهوكم نحو النجاح</strong>، خطوة بخطوة.
             </p>
         </div>
     </section>
@@ -87,21 +79,21 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
                 <div class="service-content">
-                    <h2 class="service-title">Strategic Eligibility Assessment</h2>
+                    <h2 class="service-title">تقييم الأهلية الاستراتيجي</h2>
                     <div class="service-blocks">
                         <div class="service-block">
-                            <h3 class="block-title"><i class="fa-solid fa-check-circle"></i> What we do</h3>
+                            <h3 class="block-title"><i class="fa-solid fa-check-circle"></i> شنو كنديرو</h3>
                             <ul class="service-list">
-                                <li><strong>In-depth analysis</strong> of your family situation and ties to Morocco</li>
-                                <li><strong>Preliminary review</strong> of the documents you possess</li>
-                                <li><strong>Personalized interview</strong> to understand your family history</li>
-                                <li><strong>Targeted genealogical research</strong> if necessary</li>
-                                <li><strong>Expert evaluation</strong> of your application's chances of success</li>
+                                <li><strong>تحليل معمق</strong> لوضعيتكم العائلية وروابطكم بالمغرب</li>
+                                <li><strong>مراجعة أولية</strong> للوثائق لي عندكم</li>
+                                <li><strong>مقابلة شخصية</strong> باش نفهمو تاريخ عائلتكم</li>
+                                <li><strong>بحث أنساب مستهدف</strong> إذا كان ضروري</li>
+                                <li><strong>تقييم خبير</strong> لفرص نجاح طلبكم</li>
                             </ul>
                         </div>
                         <div class="service-block benefit-block">
-                            <h3 class="block-title"><i class="fa-solid fa-gift"></i> Your clear benefit</h3>
-                            <p>Receive a <strong>frank and precise analysis</strong> of your eligibility. <strong>Decide confidently</strong> whether to proceed or not, *before* committing time and expense.</p>
+                            <h3 class="block-title"><i class="fa-solid fa-gift"></i> فائدتكم الواضحة</h3>
+                            <p>تلقاو <strong>تحليل صريح ودقيق</strong> لأهليتكم. <strong>قررو بثقة</strong> واش تكملو أو لا، *قبل* ما تستثمرو الوقت والفلوس.</p>
                         </div>
                     </div>
                 </div>
@@ -116,22 +108,22 @@
                     <i class="fa-solid fa-folder-open"></i>
                 </div>
                 <div class="service-content">
-                    <h2 class="service-title">Rigorous File Compilation</h2>
+                    <h2 class="service-title">تكوين دقيق للملف</h2>
                     <div class="service-blocks">
                         <div class="service-block">
-                            <h3 class="block-title"><i class="fa-solid fa-check-circle"></i> What we do</h3>
+                            <h3 class="block-title"><i class="fa-solid fa-check-circle"></i> شنو كنديرو</h3>
                             <ul class="service-list">
-                                <li><strong>Precise establishment</strong> of the exhaustive document list for your case</li>
-                                <li><strong>Proactive assistance</strong> in collecting official documents</li>
-                                <li><strong>Complete organization</strong> of required sworn translations</li>
-                                <li><strong>Meticulous management</strong> of legalization and apostille procedures</li>
-                                <li><strong>Rigorous legal verification</strong> of each document</li>
-                                <li><strong>Structured preparation</strong> of a file meeting Moroccan requirements</li>
+                                <li><strong>تحديد دقيق</strong> للائحة الوثائق الشاملة لحالتكم</li>
+                                <li><strong>مساعدة استباقية</strong> فجمع الوثائق الرسمية</li>
+                                <li><strong>تنظيم كامل</strong> للترجمات المحلفة المطلوبة</li>
+                                <li><strong>إدارة دقيقة</strong> لإجراءات المصادقة والأبوستيل</li>
+                                <li><strong>تحقق قانوني صارم</strong> لكل وثيقة</li>
+                                <li><strong>تحضير منظم</strong> لملف كيستوفي المتطلبات المغربية</li>
                             </ul>
                         </div>
                         <div class="service-block benefit-block">
-                            <h3 class="block-title"><i class="fa-solid fa-gift"></i> Your direct benefit</h3>
-                            <p>Ensure you submit a <strong>meticulously prepared file</strong> that is <strong>strictly compliant</strong> with authorities' requirements, thereby <strong>maximizing</strong> your chances of swift approval.</p>
+                            <h3 class="block-title"><i class="fa-solid fa-gift"></i> فائدتكم المباشرة</h3>
+                            <p>تأكدو أنكم كتقدمو <strong>ملف محضر بعناية</strong> و <strong>مطابق تماما</strong> لمتطلبات السلطات، وبالتالي <strong>كتزيدو لأقصى حد</strong> من فرص الموافقة السريعة.</p>
                         </div>
                     </div>
                 </div>
@@ -146,21 +138,21 @@
                     <i class="fa-solid fa-tree"></i>
                 </div>
                 <div class="service-content">
-                    <h2 class="service-title">In-Depth Genealogical Research</h2>
+                    <h2 class="service-title">بحث الأنساب المعمق</h2>
                     <div class="service-blocks">
                         <div class="service-block">
-                            <h3 class="block-title"><i class="fa-solid fa-check-circle"></i> What we do</h3>
+                            <h3 class="block-title"><i class="fa-solid fa-check-circle"></i> شنو كنديرو</h3>
                             <ul class="service-list">
-                                <li><strong>Targeted investigation</strong> in civil status archives (Morocco and abroad)</li>
-                                <li><strong>Analysis of Adoul</strong> and consular registers</li>
-                                <li><strong>Reconstruction of family lines</strong> to establish lineage</li>
-                                <li><strong>Search for crucial documents</strong>, old or missing</li>
-                                <li><strong>Collaboration with local experts</strong> in archival research</li>
+                                <li><strong>بحث مستهدف</strong> فأرشيفات الحالة المدنية (المغرب والخارج)</li>
+                                <li><strong>تحليل لسجلات العدول</strong> والقنصليات</li>
+                                <li><strong>إعادة بناء الخطوط العائلية</strong> لإثبات النسب</li>
+                                <li><strong>البحث على وثائق حاسمة</strong>، قديمة أو مفقودة</li>
+                                <li><strong>تعاون مع خبراء محليين</strong> فالبحث فالأرشيف</li>
                             </ul>
                         </div>
                         <div class="service-block benefit-block">
-                            <h3 class="block-title"><i class="fa-solid fa-gift"></i> Your essential proof</h3>
-                            <p>Find the <strong>crucial documentary evidence</strong>, even old records, to <strong>irrefutably</strong> establish your line of descent and your ancestors' nationality.</p>
+                            <h3 class="block-title"><i class="fa-solid fa-gift"></i> إثباتكم الأساسي</h3>
+                            <p>لقاو <strong>الأدلة الوثائقية الحاسمة</strong>، حتى لو كانت سجلات قديمة، باش تثبتو <strong>بشكل قاطع</strong> خط نسبكم وجنسية أجدادكم.</p>
                         </div>
                     </div>
                 </div>
@@ -175,21 +167,21 @@
                     <i class="fa-solid fa-clipboard-check"></i>
                 </div>
                 <div class="service-content">
-                    <h2 class="service-title">Active Administrative Follow-up</h2>
+                    <h2 class="service-title">متابعة إدارية نشطة</h2>
                     <div class="service-blocks">
                         <div class="service-block">
-                            <h3 class="block-title"><i class="fa-solid fa-check-circle"></i> What we do</h3>
+                            <h3 class="block-title"><i class="fa-solid fa-check-circle"></i> شنو كنديرو</h3>
                             <ul class="service-list">
-                                <li><strong>Optimized submission</strong> of your file to the competent authorities</li>
-                                <li><strong>Continuous and regular monitoring</strong> of your application's progress</li>
-                                <li><strong>Targeted interventions</strong> with Moroccan administrations</li>
-                                <li><strong>Swift handling</strong> of any additional requests</li>
-                                <li><strong>Transparent communication</strong> on the progress status</li>
+                                <li><strong>تقديم محسن</strong> لملفكم للسلطات المختصة</li>
+                                <li><strong>مراقبة مستمرة ومنتظمة</strong> لتقدم طلبكم</li>
+                                <li><strong>تدخلات مستهدفة</strong> مع الإدارات المغربية</li>
+                                <li><strong>معالجة سريعة</strong> لأي طلبات إضافية</li>
+                                <li><strong>تواصل شفاف</strong> حول حالة التقدم</li>
                             </ul>
                         </div>
                         <div class="service-block benefit-block">
-                            <h3 class="block-title"><i class="fa-solid fa-gift"></i> Your peace of mind</h3>
-                            <p>Gain <strong>serenity</strong> through proactive monitoring that <strong>streamlines the processing</strong> of your application and keeps you informed of progress in real time.</p>
+                            <h3 class="block-title"><i class="fa-solid fa-gift"></i> راحتكم النفسية</h3>
+                            <p>كسبو <strong>الطمأنينة</strong> من خلال متابعة استباقية لي <strong>كتبسط المعالجة</strong> ديال طلبكم وكتبقيكم على علم بالتقدم فوقت حقيقي.</p>
                         </div>
                     </div>
                 </div>
@@ -204,21 +196,21 @@
                     <i class="fa-solid fa-passport"></i>
                 </div>
                 <div class="service-content">
-                    <h2 class="service-title">Post-Obtainment Support (Optional)</h2>
+                    <h2 class="service-title">دعم ما بعد الحصول (اختياري)</h2>
                     <div class="service-blocks">
                         <div class="service-block">
-                            <h3 class="block-title"><i class="fa-solid fa-check-circle"></i> What we do</h3>
+                            <h3 class="block-title"><i class="fa-solid fa-check-circle"></i> شنو كنديرو</h3>
                             <ul class="service-list">
-                                <li><strong>Practical advice</strong> for obtaining your Moroccan identity documents</li>
-                                <li><strong>Specific assistance</strong> for CNIE-related procedures</li>
-                                <li><strong>Complete support</strong> for the Moroccan passport application</li>
-                                <li><strong>Administrative guidance</strong> for post-nationality formalities</li>
-                                <li><strong>Sound advice</strong> for potentially settling in Morocco</li>
+                                <li><strong>نصائح عملية</strong> للحصول على وثائق هويتكم المغربية</li>
+                                <li><strong>مساعدة خاصة</strong> لإجراءات البطاقة الوطنية</li>
+                                <li><strong>دعم كامل</strong> لطلب جواز السفر المغربي</li>
+                                <li><strong>توجيه إداري</strong> للإجراءات ما بعد الجنسية</li>
+                                <li><strong>نصائح قيمة</strong> لاحتمال الاستقرار فالمغرب</li>
                             </ul>
                         </div>
                         <div class="service-block benefit-block">
-                            <h3 class="block-title"><i class="fa-solid fa-gift"></i> Your facilitated integration</h3>
-                            <p>Finalize your integration as a Moroccan citizen <strong>hassle-free</strong>. We guide you to quickly obtain your <strong>official documents</strong> (CNIE, passport).</p>
+                            <h3 class="block-title"><i class="fa-solid fa-gift"></i> اندماجكم الميسر</h3>
+                            <p>ختمو اندماجكم كمواطن مغربي <strong>بلا صداع</strong>. كنوجهوكم باش تحصلو بسرعة على <strong>وثائقكم الرسمية</strong> (بطاقة وطنية، جواز سفر).</p>
                         </div>
                     </div>
                 </div>
@@ -228,61 +220,60 @@
 
     <section class="section approach-section-enhanced">
          <div class="container">
-            <h2 class="section-title">Our <span>Integrated</span> Approach</h2>
+            <h2 class="section-title">مقاربتنا <span>المتكاملة</span></h2>
             <div class="approach-content">
                 <i class="fa-solid fa-key approach-bg-icon"></i>
-                <p>Each of our services is part of a <strong>comprehensive, turnkey approach</strong>. We handle all administrative and legal procedures, allowing you to focus serenely on your project of reconnecting with your Moroccan roots.</p>
-                <p>Our dedicated team coordinates all stakeholders and steps, ensuring a <strong>smooth, transparent, and stress-free experience</strong>, even in the most complex situations.</p>
+                <p>كل خدمة من خدماتنا جزء من <strong>مقاربة شاملة ومتكاملة</strong>. كنتكلفو بجميع الإجراءات الإدارية والقانونية، كنخليوكم تركزو بهدوء على مشروعكم ديال إعادة التواصل مع جذوركم المغربية.</p>
+                <p>الفريق المخصص ديالنا كينسق بين جميع المتدخلين والخطوات، كيضمن تجربة <strong>سلسة، شفافة، وبلا ضغوط</strong>، حتى فالحالات الأكثر تعقيدا.</p>
             </div>
         </div>
     </section>
 
     <section class="cta-section">
         <div class="container">
-            <h2 class="cta-title">Ready to make your Moroccan nationality project a reality?</h2>
+            <h2 class="cta-title">مستعد تحقق مشروع جنسيتك المغربية؟</h2>
             <div class="cta-buttons">
-                 <a href="#eligibility" class="btn btn-light">Assess my eligibility</a>
-                <a href="contact.html" class="btn btn-outline-light">Contact an expert</a>
+                 <a href="#eligibility" class="btn btn-light">تقييم أهليتي</a>
+                <a href="contact.html" class="btn btn-outline-light">اتصل بخبير</a>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
          <div class="container footer-container">
              <div class="footer-about">
-                 <a href="index.html" class="footer-logo">Ezra<strong>Maroc</strong></a>
-                 <p class="footer-text">Specialists in obtaining Moroccan nationality, we support you every step of the way with expertise and professionalism.</p>
+                 <a href="index.html" class="footer-logo">عزرا<strong>ماروك</strong></a>
+                 <p class="footer-text">متخصصون في الحصول على الجنسية المغربية، ندعمكم في كل خطوة بخبرة واحترافية.</p>
                  <div class="footer-social">
                      <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
                      <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
                  </div>
              </div>
              <div class="footer-links">
-                 <h3 class="footer-heading">Quick links</h3>
+                 <h3 class="footer-heading">روابط سريعة</h3>
                  <ul>
-                     <li><a href="index.html">Home</a></li>
-                     <li><a href="advantages.html">Advantages</a></li>
-                     <li><a href="services.html">Services</a></li>
-                     <li><a href="process.html">Process</a></li>
-                     <li><a href="testimonials.html">Testimonials</a></li>
-                     <li><a href="about.html">About</a></li>
-                     <li><a href="faq.html">FAQ</a></li>
-                     <li><a href="contact.html">Contact</a></li>
+                     <li><a href="index.html">الرئيسية</a></li>
+                     <li><a href="advantages.html">المزايا</a></li>
+                     <li><a href="services.html">الخدمات</a></li>
+                     <li><a href="process.html">المسار</a></li>
+                     <li><a href="testimonials.html">شهادات</a></li>
+                     <li><a href="about.html">شكون حنا</a></li>
+                     <li><a href="faq.html">أسئلة شائعة</a></li>
+                     <li><a href="contact.html">اتصل بنا</a></li>
                 </ul>
             </div>
              <div class="footer-services">
-                <h3 class="footer-heading">Our Key Services</h3>
+                <h3 class="footer-heading">خدماتنا الرئيسية</h3>
                 <ul>
-                     <li><a href="#eligibility">Eligibility Analysis</a></li>
-                     <li><a href="#constitution">File Compilation</a></li>
-                     <li><a href="#recherche">Genealogical Research</a></li>
-                     <li><a href="#suivi">Administrative Follow-up</a></li>
-                     <li><a href="#post-obtention">Post-Obtainment Assistance</a></li>
+                     <li><a href="#eligibility">تحليل الأهلية</a></li>
+                     <li><a href="#constitution">تكوين الملف</a></li>
+                     <li><a href="#recherche">بحث الأنساب</a></li>
+                     <li><a href="#suivi">متابعة إدارية</a></li>
+                     <li><a href="#post-obtention">مساعدة ما بعد الحصول</a></li>
                  </ul>
             </div>
              <div class="footer-contact">
-                 <h3 class="footer-heading">Contact</h3>
+                 <h3 class="footer-heading">الاتصال</h3>
                  <ul>
                     <li><i class="fa-solid fa-location-dot"></i> <span>30 N Gould St Ste R,<br>Sheridan, WY 82801, USA</span></li>
                      <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></li>
@@ -291,14 +282,12 @@
         </div>
          <div class="footer-bottom">
              <div class="container">
-                 <p>© 2024 Ezra Maroc Consulting Services LLC. All rights reserved.</p>
-                 <p>The information on this site is provided for informational purposes only and does not constitute legal or tax advice. Consult qualified professionals.</p>
+                 <p>© 2024 عزرا ماروك لخدمات الاستشارة ذ.م.م. جميع الحقوق محفوظة.</p>
+                 <p>المعلومات الواردة في هذا الموقع مقدمة لأغراض إعلامية فقط ولا تشكل استشارة قانونية أو ضريبية. استشر مهنيين مؤهلين.</p>
             </div>
          </div>
     </footer>
 
-    <!-- Optional Scripts -->
-     <!-- <script src="js/script.js"></script> -->
      <script src="js/language-links.js"></script>
 
 </body>
