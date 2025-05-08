@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Services | Ezra Maroc</title>
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- CSS Spécifique -->
+    <link rel="stylesheet" href="css/services.css">
+    <!-- Polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ==========================================================================
+       HEADER (Standardisé)
+       ========================================================================== -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="Ezra Maroc Logo">
+                <div class="brand-text">
+                    <span>Ezra</span> <strong>Maroc</strong>
+                </div>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                     <li><a href="index.html">Accueil</a></li>
+                    <li><a href="avantages.html">Avantages</a></li>
+                    <!-- Classe active déplacée ici -->
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="processus.html">Processus</a></li>
+                    <li><a href="temoignages.html">Témoignages</a></li>
+                    <li><a href="a-propos.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </nav>
+            <div class="language-switcher">
+                 <label for="lang-select" class="visually-hidden">Choisir la langue</label>
+                 <!-- Liens du switcher adaptés pour la page Services -->
+                 <select name="lang" id="lang-select" class="language-select" onchange="location = this.value;">
+                    <option value="services.html" selected lang="fr">Français</option>
+                    <option value="../en/services.html" lang="en">English</option>
+                    <option value="../es/servicios.html" lang="es">Español</option>
+                    <option value="../he/services.html" lang="he">עברית</option>
+                    <option value="../ara/services.html" lang="ara">العربية (الدارجة)</option>
+                </select>
+            </div>
+            <!-- <button class="menu-toggle" aria-label="Ouvrir le menu"><i class="fas fa-bars"></i></button> -->
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+       CONTENU SPÉCIFIQUE À LA PAGE "SERVICES" (INCHANGÉ)
+       ========================================================================== -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>Nos Services Dédiés</h1>
+            <p>Simplifiez votre parcours vers la citoyenneté marocaine. Ezra Maroc transforme la complexité administrative en une démarche sereine et réussie, vous reconnectant à votre héritage.</p>
+        </div>
+    </section>
+
+    <section class="section services-intro">
+        <div class="container">
+            <p>
+                Retrouver vos racines marocaines par la nationalité est un projet fort, mais les démarches administratives peuvent souvent sembler décourageantes.
+            </p>
+            <p>
+                Chez Ezra Maroc, nous comprenons parfaitement ces défis. C'est pourquoi nous avons conçu une <strong>gamme de services complète et intégrée</strong>, pilotée par des <strong>experts dédiés</strong>. Notre mission : transformer la complexité administrative en un parcours <strong>clair, maîtrisé et serein</strong> pour vous.
+            </p>
+            <p>
+                Laissez-nous prendre en charge les aspects techniques et administratifs, afin que vous puissiez vous concentrer sur l'essentiel : votre reconnexion avec le Maroc. Découvrez ci-dessous comment nous vous <strong>accompagnons vers le succès</strong>, étape par étape.
+            </p>
+        </div>
+    </section>
+
+    <section id="eligibility" class="section service-section">
+        <div class="container">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div class="service-content">
+                    <h2 class="service-title">Évaluation d'Éligibilité Stratégique</h2>
+                    <div class="service-blocks">
+                        <div class="service-block">
+                            <h3 class="block-title"><i class="fa-solid fa-check-circle"></i> Ce que nous faisons</h3>
+                            <ul class="service-list">
+                                <li><strong>Analyse approfondie</strong> de votre situation familiale et de vos liens avec le Maroc</li>
+                                <li><strong>Étude préliminaire</strong> des documents dont vous disposez</li>
+                                <li><strong>Entretien personnalisé</strong> pour comprendre votre histoire familiale</li>
+                                <li><strong>Recherche généalogique</strong> ciblée si nécessaire</li> <!-- Ajout item recherche -->
+                                <li><strong>Évaluation experte</strong> des chances de succès de votre demande</li>
+                            </ul>
+                        </div>
+                        <div class="service-block benefit-block">
+                            <h3 class="block-title"><i class="fa-solid fa-gift"></i> Votre bénéfice clair</h3>
+                            <p>Recevez une <strong>analyse franche et précise</strong> de votre éligibilité. <strong>Décidez sereinement</strong> de poursuivre ou non, *avant* d'engager du temps et des frais.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="constitution" class="section service-section alt-bg">
+        <div class="container">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-folder-open"></i>
+                </div>
+                <div class="service-content">
+                    <h2 class="service-title">Constitution Rigoureuse du Dossier</h2>
+                    <div class="service-blocks">
+                        <div class="service-block">
+                            <h3 class="block-title"><i class="fa-solid fa-check-circle"></i> Ce que nous faisons</h3>
+                            <ul class="service-list">
+                                <li><strong>Établissement précis</strong> de la liste exhaustive des documents pour votre cas</li>
+                                <li><strong>Assistance proactive</strong> dans la collecte des documents officiels</li>
+                                <li><strong>Organisation complète</strong> des traductions assermentées requises</li>
+                                <li><strong>Gestion méticuleuse</strong> des procédures de légalisation et d'apostille</li>
+                                <li><strong>Vérification juridique</strong> rigoureuse de chaque pièce</li>
+                                <li><strong>Préparation structurée</strong> d'un dossier répondant aux exigences marocaines</li>
+                            </ul>
+                        </div>
+                        <div class="service-block benefit-block">
+                            <h3 class="block-title"><i class="fa-solid fa-gift"></i> Votre bénéfice direct</h3>
+                            <p>Assurez-vous de présenter un <strong>dossier méticuleusement préparé</strong> et <strong>strictement conforme</strong> aux exigences des autorités, <strong>maximisant ainsi</strong> vos chances d'acceptation rapide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Recherche Généalogique ajoutée pour correspondre au footer -->
+    <section id="recherche" class="section service-section">
+         <div class="container">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-tree"></i> <!-- Icône arbre pour généalogie -->
+                </div>
+                <div class="service-content">
+                    <h2 class="service-title">Recherche Généalogique Approfondie</h2>
+                    <div class="service-blocks">
+                        <div class="service-block">
+                            <h3 class="block-title"><i class="fa-solid fa-check-circle"></i> Ce que nous faisons</h3>
+                            <ul class="service-list">
+                                <li><strong>Investigation ciblée</strong> dans les archives d'état civil (Maroc et étranger)</li>
+                                <li><strong>Analyse des registres</strong> Adoulaires et consulaires</li>
+                                <li><strong>Reconstitution de lignées</strong> familiales pour établir la filiation</li>
+                                <li><strong>Recherche de documents probants</strong> anciens ou manquants</li>
+                                <li><strong>Collaboration avec des experts</strong> locaux en recherche d'archives</li>
+                            </ul>
+                        </div>
+                        <div class="service-block benefit-block">
+                            <h3 class="block-title"><i class="fa-solid fa-gift"></i> Votre preuve essentielle</h3>
+                            <p>Retrouvez les <strong>preuves documentaires cruciales</strong>, même anciennes, pour établir de manière <strong>irréfutable</strong> votre lien de filiation et la nationalité de vos ancêtres.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ID 'expertise' retiré car non utilisé dans footer standardisé -->
+    <!-- <section id="expertise" class="section service-section"> ... </section> -->
+
+    <section id="suivi" class="section service-section alt-bg">
+        <div class="container">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                </div>
+                <div class="service-content">
+                    <h2 class="service-title">Suivi Administratif Actif</h2>
+                    <div class="service-blocks">
+                        <div class="service-block">
+                            <h3 class="block-title"><i class="fa-solid fa-check-circle"></i> Ce que nous faisons</h3>
+                            <ul class="service-list">
+                                <li><strong>Dépôt optimisé</strong> de votre dossier auprès des autorités compétentes</li>
+                                <li><strong>Suivi continu</strong> et régulier de l'avancement de votre demande</li>
+                                <li><strong>Interventions ciblées</strong> auprès des administrations marocaines</li>
+                                <li><strong>Gestion rapide</strong> des demandes complémentaires éventuelles</li>
+                                <li><strong>Communication transparente</strong> sur l'état d'avancement</li>
+                            </ul>
+                        </div>
+                        <div class="service-block benefit-block">
+                            <h3 class="block-title"><i class="fa-solid fa-gift"></i> Votre tranquillité d'esprit</h3>
+                            <p>Gagnez en <strong>sérénité</strong> grâce à un suivi proactif qui <strong>fluidifie le traitement</strong> de votre demande et vous tient informé en temps réel des progrès.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ID 'accompagnement' retiré car non utilisé dans footer standardisé -->
+    <!-- <section id="accompagnement" class="section service-section"> ... </section> -->
+
+    <!-- ID 'rendez-vous' retiré car non utilisé dans footer standardisé -->
+    <!-- <section id="rendez-vous" class="section service-section alt-bg"> ... </section> -->
+
+    <section id="post-obtention" class="section service-section"> <!-- ID conservé car présent dans footer -->
+        <div class="container">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-passport"></i>
+                </div>
+                <div class="service-content">
+                    <h2 class="service-title">Support Post-Obtention (Optionnel)</h2>
+                    <div class="service-blocks">
+                        <div class="service-block">
+                            <h3 class="block-title"><i class="fa-solid fa-check-circle"></i> Ce que nous faisons</h3>
+                            <ul class="service-list">
+                                <li><strong>Conseils pratiques</strong> pour obtenir vos documents d'identité marocains</li>
+                                <li><strong>Assistance spécifique</strong> pour les démarches liées à la CNIE</li>
+                                <li><strong>Support complet</strong> pour la demande de passeport marocain</li>
+                                <li><strong>Orientation administrative</strong> pour les formalités post-nationalité</li>
+                                <li><strong>Conseils avisés</strong> pour une éventuelle installation au Maroc</li>
+                            </ul>
+                        </div>
+                        <div class="service-block benefit-block">
+                            <h3 class="block-title"><i class="fa-solid fa-gift"></i> Votre intégration facilitée</h3>
+                            <p>Finalisez votre intégration en tant que citoyen marocain <strong>sans tracas</strong>. Nous vous guidons pour obtenir rapidement vos <strong>documents officiels</strong> (CNIE, passeport).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section approach-section-enhanced">
+         <div class="container">
+            <h2 class="section-title">Notre Approche <span>Intégrée</span></h2>
+            <div class="approach-content">
+                <i class="fa-solid fa-key approach-bg-icon"></i>
+                <p>Chacun de nos services s'intègre dans une <strong>approche globale et clé en main</strong>. Nous prenons en charge l'intégralité des démarches administratives et juridiques, vous permettant de vous concentrer sereinement sur votre projet de reconnexion avec vos racines marocaines.</p>
+                <p>Notre équipe dédiée coordonne tous les intervenants et toutes les étapes, garantissant une <strong>expérience fluide, transparente et sans stress</strong>, même face aux situations les plus complexes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Prêt à concrétiser votre projet de nationalité marocaine?</h2>
+            <div class="cta-buttons">
+                 <a href="#eligibility" class="btn btn-light">Évaluer mon éligibilité</a>
+                <a href="contact.html" class="btn btn-outline-light">Contacter un expert</a>
+            </div>
+        </div>
+    </section>
+    <!-- ==========================================================================
+       FIN DU CONTENU SPÉCIFIQUE
+       ========================================================================== -->
+
+    <!-- ==========================================================================
+       FOOTER (Standardisé)
+       ========================================================================== -->
+    <footer>
+         <div class="container footer-container">
+             <!-- Colonne 1: About -->
+             <div class="footer-about">
+                 <a href="index.html" class="footer-logo">Ezra<strong>Maroc</strong></a>
+                 <p class="footer-text">Spécialistes de l'obtention de la nationalité marocaine, nous vous accompagnons à chaque étape avec expertise et professionnalisme.</p>
+                 <div class="footer-social">
+                     <!-- !! Remplacer par VOS liens réels !! -->
+                     <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                     <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                 </div>
+             </div>
+             <!-- Colonne 2: Liens Rapides -->
+             <div class="footer-links">
+                 <h3 class="footer-heading">Liens rapides</h3>
+                 <ul>
+                     <li><a href="index.html">Accueil</a></li>
+                     <li><a href="avantages.html">Avantages</a></li>
+                     <li><a href="services.html">Services</a></li>
+                     <li><a href="processus.html">Processus</a></li>
+                     <li><a href="temoignages.html">Témoignages</a></li>
+                     <li><a href="a-propos.html">À propos</a></li>
+                     <li><a href="faq.html">FAQ</a></li>
+                     <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Colonne 3: Services -->
+             <div class="footer-services">
+                <h3 class="footer-heading">Nos Services Clés</h3>
+                <ul>
+                     <li><a href="#eligibility">Analyse d'Éligibilité</a></li>      <!-- Ancre locale -->
+                     <li><a href="#constitution">Constitution du Dossier</a></li>   <!-- Ancre locale -->
+                     <li><a href="#recherche">Recherche Généalogique</a></li>      <!-- Ancre locale -->
+                     <li><a href="#suivi">Suivi Administratif</a></li>         <!-- Ancre locale -->
+                     <li><a href="#post-obtention">Assistance Post-Obtention</a></li><!-- Ancre locale -->
+                 </ul>
+            </div>
+            <!-- Colonne 4: Contact -->
+             <div class="footer-contact">
+                 <h3 class="footer-heading">Contact</h3>
+                 <ul>
+                    <li><i class="fa-solid fa-location-dot"></i> <span>30 N Gould St Ste R,<br>Sheridan, WY 82801, USA</span></li>
+                     <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></li>
+                    <!-- Ajouter Téléphone si besoin -->
+                    <!-- <li><i class="fa-solid fa-phone"></i> <a href="tel:+1...">+1 ...</a></li> -->
+                 </ul>
+            </div>
+        </div>
+         <div class="footer-bottom">
+             <div class="container">
+                 <p>© 2024 Ezra Maroc Consulting Services LLC. Tous droits réservés.</p>
+                 <p>Les informations sur ce site sont fournies à titre indicatif et ne constituent pas un conseil juridique ou fiscal. Consultez des professionnels qualifiés.</p>
+            </div>
+         </div>
+    </footer>
+    <!-- ==========================================================================
+       FIN FOOTER
+       ========================================================================== -->
+
+    <!-- Scripts éventuels -->
+    <!-- <script src="js/script.js"></script> -->
+
+</body>
+</html>

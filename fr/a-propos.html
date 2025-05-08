@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre Histoire & Engagement | Ezra Maroc</title>
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- CSS Spécifique -->
+    <link rel="stylesheet" href="css/a-propos.css">
+    <!-- Polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ==========================================================================
+       HEADER (Standardisé)
+       ========================================================================== -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="Ezra Maroc Logo">
+                <div class="brand-text">
+                    <span>Ezra</span> <strong>Maroc</strong>
+                </div>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                     <li><a href="index.html">Accueil</a></li>
+                    <li><a href="avantages.html">Avantages</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="processus.html">Processus</a></li>
+                    <li><a href="temoignages.html">Témoignages</a></li>
+                     <!-- Classe active déplacée ici -->
+                    <li><a href="a-propos.html" class="active">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </nav>
+            <div class="language-switcher">
+                 <label for="lang-select" class="visually-hidden">Choisir la langue</label>
+                 <!-- Liens du switcher adaptés pour la page À Propos -->
+                 <select name="lang" id="lang-select" class="language-select" onchange="location = this.value;">
+                    <option value="a-propos.html" selected lang="fr">Français</option>
+                    <option value="../en/about.html" lang="en">English</option>
+                    <option value="../es/sobre-nosotros.html" lang="es">Español</option>
+                    <option value="../he/about.html" lang="he">עברית</option>
+                    <option value="../ara/about.html" lang="ara">العربية (الدارجة)</option>
+                </select>
+            </div>
+            <!-- <button class="menu-toggle" aria-label="Ouvrir le menu"><i class="fas fa-bars"></i></button> -->
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+       CONTENU SPÉCIFIQUE À LA PAGE "À PROPOS" (INCHANGÉ)
+       ========================================================================== -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>Notre Histoire, Votre Pont vers le Maroc</h1>
+            <p>Découvrez qui nous sommes, notre passion pour reconnecter les individus à leur héritage, et les valeurs qui guident notre engagement à vos côtés.</p>
+        </div>
+    </section>
+
+    <section id="histoire" class="section about-section">
+        <div class="container">
+            <h2 class="section-title internal-title">Aux Racines d'<span>Ezra Maroc</span></h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="img/logo.png" alt="Logo Ezra Maroc">
+                </div>
+                <div class="about-text">
+                    <p>Fondé avec une mission claire, <strong>Ezra Maroc</strong> est né de l'observation directe des défis rencontrés par ceux désireux de renouer avec leurs racines marocaines. Nous avons vu la frustration face à des démarches administratives complexes, souvent perçues comme un labyrinthe décourageant.</p>
+                    <p>Particulièrement pour la diaspora, dont les liens avec le Maroc traversent parfois les générations et les continents, obtenir la nationalité représente bien plus qu'une formalité : c'est une <strong>affirmation d'identité</strong>, un <strong>pont vers un héritage culturel</strong>. C'est pour transformer ce parcours difficile en une voie accessible et sereine qu'Ezra Maroc a été créé.</p>
+                    <blockquote class="about-quote">
+                         "Simplifier l'accès à la nationalité marocaine, c'est notre métier et notre passion."
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mission" class="section mission-section alt-bg">
+        <div class="container">
+            <h2 class="section-title">Notre <span>Mission</span> Fondamentale</h2>
+            <div class="mission-content">
+                <p class="mission-statement">Être votre partenaire expert et bienveillant pour transformer la complexité administrative en un chemin clair vers votre citoyenneté marocaine.</p>
+                <div class="mission-commitments">
+                    <h3>Nos engagements concrets :</h3>
+                    <ul class="commitment-list">
+                        <li><i class="fa-solid fa-check"></i> <strong>Rendre Accessible</strong> : Lever les obstacles pour tous ceux qui ont légitimement droit à la nationalité.</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Valoriser les Liens</strong> : Reconnaître et renforcer les connexions historiques et culturelles avec le Maroc.</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Servir avec Excellence</strong> : Fournir une expertise juridique pointue et un accompagnement humain de premier ordre.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="equipe" class="section team-section">
+        <div class="container">
+            <h2 class="section-title">Notre Équipe <span>d'Experts</span></h2>
+            <p class="team-intro">Une synergie de compétences au service de votre projet, alliant savoir-faire juridique, connaissance administrative et engagement humain.</p>
+            <div class="team-grid">
+                <div class="team-category">
+                    <div class="category-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <h3>Experts Juridiques</h3>
+                    <p>Maîtrisant le Code de la Nationalité, ils bâtissent la stratégie de votre dossier.</p>
+                </div>
+                <div class="team-category">
+                    <div class="category-icon"><i class="fa-solid fa-landmark"></i></div>
+                    <h3>Spécialistes Admin.</h3>
+                    <p>Anciens de l'administration, ils connaissent les rouages internes.</p>
+                </div>
+                <div class="team-category">
+                    <div class="category-icon"><i class="fa-solid fa-file-signature"></i></div>
+                    <h3>Conseillers Clientèle</h3>
+                    <p>Votre interlocuteur dédié, assurant un suivi personnalisé.</p>
+                </div>
+                <div class="team-category">
+                    <div class="category-icon"><i class="fa-solid fa-tree"></i></div>
+                    <h3>Experts en Généalogie</h3>
+                    <p>Mobilisés pour retrouver les preuves et documents essentiels.</p>
+                </div>
+                <div class="team-category">
+                    <div class="category-icon"><i class="fa-solid fa-language"></i></div>
+                    <h3>Traducteurs Assermentés</h3>
+                    <p>Assurant la conformité linguistique de vos documents officiels.</p>
+                </div>
+            </div>
+            <p class="team-commitment">Notre force collective : une passion commune pour reconnecter les individus à leur histoire marocaine.</p>
+        </div>
+    </section>
+
+    <section id="methodologie" class="section methodology-section alt-bg">
+        <div class="container">
+            <h2 class="section-title">Notre Méthodologie <span>Éprouvée</span></h2>
+            <p class="methodology-intro">L'approche <strong>"EZRA MAROC PROJECT"</strong> combine rigueur et adaptabilité pour maximiser vos chances de succès :</p>
+            <div class="methodology-pillars">
+                <div class="pillar">
+                    <div class="pillar-icon"><i class="fa-solid fa-gavel"></i></div>
+                    <h3>Analyse Juridique</h3>
+                    <p>Diagnostic précis de votre éligibilité et stratégie sur mesure.</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon"><i class="fa-solid fa-building-columns"></i></div>
+                    <h3>Procédures Admin.</h3>
+                    <p>Collecte et préparation rigoureuse de chaque pièce du dossier.</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon"><i class="fa-solid fa-user-tie"></i></div>
+                    <h3>Accompagnement</h3>
+                    <p>Un interlocuteur dédié vous accompagne et vous informe.</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon"><i class="fa-solid fa-rocket"></i></div>
+                    <h3>Gestion Proactive</h3>
+                    <p>Anticipation et résolution rapide des éventuels blocages.</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <h3>Réseau Local Actif</h3>
+                    <p>Nos partenaires au Maroc facilitent les démarches sur place.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="valeurs" class="section values-section">
+        <div class="container">
+            <h2 class="section-title">Nos <span>Valeurs</span></h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa-solid fa-trophy"></i></div>
+                    <h3>Excellence</h3>
+                    <p>Nous visons la perfection dans chaque dossier, avec une expertise constamment affinée et une qualité de service irréprochable.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa-solid fa-glasses"></i></div>
+                    <h3>Transparence</h3>
+                    <p>Une communication ouverte et honnête vous garantit une visibilité totale sur l'avancement de votre démarche.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Intégrité</h3>
+                    <p>Nous agissons avec une éthique stricte, assurant la conformité légale et la confidentialité de votre dossier.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa-solid fa-heart"></i></div>
+                    <h3>Empathie</h3>
+                    <p>Nous comprenons l'importance personnelle de votre projet et vous offrons un soutien respectueux et attentionné.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="engagement" class="section engagement-section alt-bg">
+        <div class="container">
+            <h2 class="section-title">Notre Engagement : <span>Votre Réussite</span></h2>
+            <div class="engagement-content">
+                <p>Chez Ezra Maroc, obtenir votre certificat de nationalité n'est pas la fin, c'est le début d'un nouveau chapitre. Nous sommes investis dans votre succès, car votre reconnexion à vos racines est aussi notre plus belle récompense.</p>
+                <p>Faites confiance à une équipe qui considère votre projet avec le sérieux et l'attention qu'il mérite, transformant votre aspiration en une réalité tangible.</p>
+            </div>
+            <div class="engagement-actions">
+                <a href="services.html" class="btn btn-primary">Découvrir nos Services en Détail</a>
+                <a href="contact.html" class="btn btn-outline">Échanger avec un Conseiller</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Prêt à faire le premier pas vers votre citoyenneté marocaine ?</h2>
+            <div class="cta-buttons">
+                <a href="contact.html#contact-form-container" class="btn btn-light">Demander une Évaluation Gratuite</a>
+                <a href="faq.html" class="btn btn-outline-light">Voir les Questions Fréquentes</a>
+            </div>
+        </div>
+    </section>
+    <!-- ==========================================================================
+       FIN DU CONTENU SPÉCIFIQUE
+       ========================================================================== -->
+
+    <!-- ==========================================================================
+       FOOTER (Standardisé)
+       ========================================================================== -->
+    <footer>
+         <div class="container footer-container">
+             <!-- Colonne 1: About -->
+             <div class="footer-about">
+                 <a href="index.html" class="footer-logo">Ezra<strong>Maroc</strong></a>
+                 <p class="footer-text">Spécialistes de l'obtention de la nationalité marocaine, nous vous accompagnons à chaque étape avec expertise et professionnalisme.</p>
+                 <div class="footer-social">
+                     <!-- !! Remplacer par VOS liens réels !! -->
+                     <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                     <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                 </div>
+             </div>
+             <!-- Colonne 2: Liens Rapides -->
+             <div class="footer-links">
+                 <h3 class="footer-heading">Liens rapides</h3>
+                 <ul>
+                     <li><a href="index.html">Accueil</a></li>
+                     <li><a href="avantages.html">Avantages</a></li>
+                     <li><a href="services.html">Services</a></li>
+                     <li><a href="processus.html">Processus</a></li>
+                     <li><a href="temoignages.html">Témoignages</a></li>
+                     <li><a href="a-propos.html">À propos</a></li>
+                     <li><a href="faq.html">FAQ</a></li>
+                     <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Colonne 3: Services -->
+             <div class="footer-services">
+                <h3 class="footer-heading">Nos Services Clés</h3>
+                <ul>
+                     <li><a href="services.html#eligibility">Analyse d'Éligibilité</a></li>
+                     <li><a href="services.html#constitution">Constitution du Dossier</a></li>
+                    <li><a href="services.html#recherche">Recherche Généalogique</a></li>
+                    <li><a href="services.html#suivi">Suivi Administratif</a></li>
+                    <li><a href="services.html#post-obtention">Assistance Post-Obtention</a></li>
+                 </ul>
+            </div>
+            <!-- Colonne 4: Contact -->
+             <div class="footer-contact">
+                 <h3 class="footer-heading">Contact</h3>
+                 <ul>
+                    <li><i class="fa-solid fa-location-dot"></i> <span>30 N Gould St Ste R,<br>Sheridan, WY 82801, USA</span></li>
+                     <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></li>
+                    <!-- Ajouter Téléphone si besoin -->
+                    <!-- <li><i class="fa-solid fa-phone"></i> <a href="tel:+1...">+1 ...</a></li> -->
+                 </ul>
+            </div>
+        </div>
+         <div class="footer-bottom">
+             <div class="container">
+                 <p>© 2024 Ezra Maroc Consulting Services LLC. Tous droits réservés.</p>
+                 <p>Les informations sur ce site sont fournies à titre indicatif et ne constituent pas un conseil juridique ou fiscal. Consultez des professionnels qualifiés.</p>
+            </div>
+         </div>
+    </footer>
+    <!-- ==========================================================================
+       FIN FOOTER
+       ========================================================================== -->
+
+    <!-- Lien JS (si nécessaire) -->
+    <script src="js/script.js"></script>
+</body>
+</html>
