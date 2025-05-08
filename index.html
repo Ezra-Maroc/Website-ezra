@@ -12,6 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- ========== AJOUT TARTEAUCITRON CSS ========== -->
+    <link rel="stylesheet" href="tarteaucitron/css/tarteaucitron.css">
+    <!-- ========================================= -->
+
 </head>
 <body>
 
@@ -55,7 +60,7 @@
     </header>
 
     <!-- ==========================================================================
-       CONTENU SPÉCIFIQUE À LA PAGE "INDEX" (INCHANGÉ)
+       CONTENU SPÉCIFIQUE À LA PAGE "INDEX"
        ========================================================================== -->
     <!-- SECTION HERO -->
     <section class="hero">
@@ -254,7 +259,7 @@
        ========================================================================== -->
 
     <!-- ==========================================================================
-       FOOTER (Standardisé)
+       FOOTER (Standardisé avec structure améliorée)
        ========================================================================== -->
     <footer>
          <div class="container footer-container">
@@ -304,17 +309,113 @@
                  </ul>
             </div>
         </div>
+
+         <!-- ========== FOOTER BOTTOM AMÉLIORÉ ========== -->
          <div class="footer-bottom">
              <div class="container">
-                 <p>© 2024 Ezra Maroc Consulting Services LLC. Tous droits réservés.</p>
-                 <p>Les informations sur ce site sont fournies à titre indicatif et ne constituent pas un conseil juridique ou fiscal. Consultez des professionnels qualifiés.</p>
-            </div>
+                 <!-- Copyright sur sa propre ligne -->
+                 <p class="copyright">© 2024 Ezra Maroc Consulting Services LLC. Tous droits réservés.</p>
+                 <!-- Disclaimer sur sa propre ligne -->
+                 <p class="disclaimer">Les informations sur ce site sont fournies à titre indicatif et ne constituent pas un conseil juridique ou fiscal. Consultez des professionnels qualifiés.</p>
+                 <!-- Navigation pour les liens légaux -->
+                 <nav class="footer-legal-links" aria-label="Liens légaux">
+                     <a href="politique-confidentialite.html" rel="noopener noreferrer">Politique de confidentialité</a>
+                     <a href="mentions-legales.html" rel="noopener noreferrer">Mentions légales</a>
+                     <a href="conditions-utilisation.html" rel="noopener noreferrer">Conditions d'Utilisation</a>
+                     <a href="#" onclick="tarteaucitron.userInterface.openPanel(); return false;">Gestion des cookies</a> <!-- LIEN AJOUTÉ -->
+                 </nav>
+             </div>
          </div>
+         <!-- ============================================== -->
+
     </footer>
     <!-- ==========================================================================
        FIN FOOTER
        ========================================================================== -->
 
+    <!-- Scripts JS existants -->
     <script src="js/script.js"></script> <!-- Adapter le chemin si nécessaire -->
+
+    <!-- ========== AJOUT TARTEAUCITRON ========== -->
+    <script type="text/javascript" src="tarteaucitron/tarteaucitron.js"></script>
+
+    <script type="text/javascript">
+    tarteaucitron.init({
+        "privacyUrl": "politique-confidentialite.html", /* Lien vers votre politique de confidentialité */
+
+        "hashtag": "#tarteaucitron", /* Laissez tel quel */
+        "cookieName": "tarteaucitron", /* Laissez tel quel */
+
+        "orientation": "bottom", /* Position du bandeau: 'bottom', 'top', 'middle' */
+        "groupServices": false, /* Services groupés par catégorie */
+
+        "showAlertSmall": false, /* Petite pastille après choix */
+        "cookieslist": true, /* Afficher lien liste cookies */
+
+        "closePopup": false, /* Afficher la croix de fermeture sur le bandeau */
+        "showIcon": true, /* Afficher l'icône de gestion flottante */
+        /* "iconSrc": "tarteaucitron/img/cookie.svg", */ /* Optionnel: Chemin vers une icône personnalisée */
+        "iconPosition": "BottomRight", /* Position de l'icône */
+
+        "adblocker": false, /* Détection Adblocker */
+        "DenyAllCta": true, /* Bouton Tout Refuser */
+        "AcceptAllCta": true, /* Bouton Tout Accepter */
+        "highPrivacy": true, /* Requis pour RGPD, consentement explicite */
+
+        "handleBrowserDNTRequest": false, /* Gérer l'option 'Do Not Track' du navigateur */
+
+        "removeCredit": false, /* Retirer le lien Tarteaucitron (respecter licence ou faire un don) */
+        "moreInfoLink": true, /* Lien vers politique de confidentialité */
+
+        "useExternalCss": false, /* Utilise le CSS interne de Tarteaucitron */
+        "mandatory": true, /* Info sur les cookies obligatoires */
+        "mandatoryCta": true /* Bouton Personnaliser même si cookies obligatoires seuls */
+    });
+
+    // ----- CONFIGURATION DES SERVICES TIERS -----
+    // IMPORTANT: Décommentez et configurez les services que vous utilisez RÉELLEMENT.
+    //            Supprimez/commentez le code des services non utilisés.
+    //            N'oubliez pas de SUPPRIMER l'ancien code de suivi des services que vous ajoutez ici.
+
+    // --- Exemple Google Analytics (GA4) ---
+    // 1. Supprimez l'ancien code de suivi GA4 de vos pages (s'il existe).
+    // 2. Remplacez 'G-XXXXXXXXXX' par votre ID de mesure GA4.
+    // 3. Adaptez la liste des cookies si votre ID GA4 est différent (_ga_ID...).
+
+    /* Décommentez ce bloc si vous utilisez Google Analytics 4 */
+    /*
+    tarteaucitron.services.gtag = {
+        "key": "G-XXXXXXXXXX", // <--- REMPLACEZ PAR VOTRE ID GA4
+        "type": "gtag",
+        "name": "Google Analytics (GA4)",
+        "uri": "https://policies.google.com/privacy",
+        "needConsent": true,
+        "cookies": ['_ga', '_gid', '_ga_XXXXXXXXXX'], // <--- ADAPTEZ _ga_... avec votre ID sans le "G-"
+        "js": function () {
+            "use strict";
+            // Vérifie si la clé a été définie dans init ou ailleurs
+            if (tarteaucitron.user.gtagKey === undefined) {
+                 // Si non définie globalement, utilise la clé de ce service
+                 tarteaucitron.user.gtagKey = tarteaucitron.services.gtag.key;
+                 if (tarteaucitron.user.gtagKey === undefined || tarteaucitron.user.gtagKey === 'G-XXXXXXXXXX') {
+                      console.warn('Tarteaucitron: Google Analytics key is not defined or still placeholder.');
+                      return;
+                 }
+            }
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            // Configuration avec anonymisation IP (recommandé RGPD)
+            gtag('config', tarteaucitron.user.gtagKey, {'anonymize_ip': true});
+        }
+    };
+    (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+    */
+
+    </script>
+    <!-- ========================================= -->
+
 </body>
 </html>

@@ -60,7 +60,7 @@ a:hover {
 }
 
 /* ===== HEADER ===== */
-header {
+header.site-header { /* Ajout selecteur pour spécificité si besoin */
   background-color: var(--white-color);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); /* Ombre plus douce */
   position: fixed;
@@ -83,6 +83,7 @@ header {
   color: var(--primary-600); /* Logo en rouge */
   display: flex;
   align-items: center;
+  text-decoration: none; /* Assurer pas de soulignement sur logo */
 }
 
 .logo img {
@@ -90,10 +91,18 @@ header {
   margin-right: 10px;
 }
 
-.logo span {
+/* CSS spécifique pour le texte du logo */
+.logo .brand-text {
+  display: inline-block; /* Pour alignement vertical si besoin */
+  line-height: 1; /* Ajuster si nécessaire */
+}
+
+.logo .brand-text span {
+  font-weight: 400; /* Poids normal pour 'Ezra' */
   color: var(--dark-color);
 }
-.logo span strong {
+.logo .brand-text strong {
+    font-weight: 700; /* Gras pour 'Maroc' */
     color: var(--primary-600); /* "Maroc" en rouge */
 }
 
@@ -152,6 +161,7 @@ header {
   margin: 5px; /* Retiré margin left/right, géré par gap si besoin */
   cursor: pointer;
   border: 2px solid transparent; /* Base pour tous les boutons */
+  font-size: 0.95rem; /* Taille de police de base */
 }
 
 /* Bouton Primaire (fond rouge) */
@@ -235,8 +245,9 @@ header {
   position: relative;
   background: transparent;
   border: none;
+  font-size: 0.95rem;
 }
-.btn-link i { margin-left: 8px; transition: transform 0.3s ease; }
+.btn-link i { margin-left: 8px; transition: transform 0.3s ease; font-size: 0.9em; }
 .btn-link:hover i { transform: translateX(5px); }
 .btn-link::after {
   content: '';
@@ -424,7 +435,8 @@ header {
 .testimonial-text::after { content: '”'; bottom: 10px; right: -15px; }
 
 .testimonial-client { display: flex; flex-direction: column; align-items: center; margin-bottom: 30px; }
-.testimonial-client h4 { font-weight: 600; font-size: 1.05rem; margin-bottom: 3px; }
+/* Correction : Il s'agit d'un H3 dans le HTML de l'index */
+.testimonial-client h3 { font-weight: 600; font-size: 1.05rem; margin-bottom: 3px; }
 .testimonial-client p { color: var(--grey-text); font-size: 0.9rem;}
 .testimonials-more { text-align: center; }
 
@@ -504,15 +516,16 @@ header {
 footer {
   background-color: var(--dark-color);
   color: rgba(255, 255, 255, 0.8); /* Texte légèrement transparent */
-  padding: 70px 0 30px;
+  padding: 70px 0 0; /* Retrait padding bottom car géré par footer-bottom */
 }
 .footer-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 40px 30px; /* Espace ligne/colonne */
-  margin-bottom: 50px;
+  margin-bottom: 50px; /* Espace avant footer-bottom */
 }
-.footer-about .footer-logo { margin-bottom: 15px; /* Hérite styles logo */ }
+.footer-about .footer-logo { margin-bottom: 15px; display: inline-block; /* Assurer que logo est inline-block */}
+.footer-about .footer-logo:hover { text-decoration: none; } /* Empêcher soulignement au survol du logo */
 .footer-text { margin-bottom: 25px; opacity: 0.7; font-size: 0.9rem; }
 .footer-heading { font-size: 1.1rem; font-weight: 600; margin-bottom: 20px; color: var(--white-color); }
 
@@ -537,30 +550,86 @@ footer {
 .footer-links a, .footer-services a {
   color: rgba(255, 255, 255, 0.7);
   transition: color 0.3s ease, padding-left 0.3s ease;
+  display: inline-block; /* Permet padding-left */
 }
 .footer-links a:hover, .footer-services a:hover {
   color: var(--white-color);
   padding-left: 6px;
 }
 
-.footer-contact li { display: flex; align-items: flex-start; } /* Alignement vertical */
+.footer-contact li { display: flex; align-items: flex-start; margin-bottom: 15px; /* Augmenter espace */ }
 .footer-contact i {
   margin-right: 12px;
   color: var(--primary-600); /* Icones contact en rouge */
   margin-top: 4px; /* Ajustement alignement icone */
   width: 16px; /* Largeur fixe pour alignement */
   text-align: center;
+  flex-shrink: 0; /* Empêcher l'icône de rétrécir */
 }
-.footer-contact p { margin: 0; } /* Si adresses sur plusieurs lignes */
+.footer-contact span, .footer-contact a { /* Cible texte et lien dans la colonne contact */
+     color: rgba(255, 255, 255, 0.75);
+     line-height: 1.4; /* Interligne amélioré pour adresses */
+     font-size: 0.9rem;
+}
+.footer-contact a {
+     transition: color 0.3s ease;
+}
+.footer-contact a:hover {
+    color: var(--white-color);
+}
 
+/* --- AMÉLIORATIONS FOOTER BOTTOM --- */
 .footer-bottom {
-  text-align: center;
-  padding-top: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 0.85rem;
-  opacity: 0.6;
+  margin-top: 40px; /* Ajouter une marge pour séparer du contenu du footer principal */
+  padding-top: 25px; /* Espace interne au-dessus du contenu */
+  padding-bottom: 25px; /* Espace interne sous le contenu */
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Ligne de séparation */
+  text-align: center; /* Centrer le contenu par défaut */
 }
 
+.footer-bottom .container {
+  /* Le container existe déjà, on ajuste juste le padding interne du .footer-bottom */
+}
+
+.footer-bottom p { /* Style général pour les paragraphes ici */
+     margin-bottom: 10px; /* Espace SOUS chaque paragraphe */
+     line-height: 1.5; /* Assurer une bonne lisibilité verticale */
+     font-size: 0.88rem; /* Taille de police cohérente et petite */
+     color: rgba(255, 255, 255, 0.7); /* Gris clair pour le texte secondaire */
+}
+.footer-bottom p:last-child { margin-bottom: 0; } /* Pas d'espace sous le dernier paragraphe */
+
+.footer-bottom p.copyright { /* Style spécifique copyright */
+     color: rgba(255, 255, 255, 0.8); /* Un peu plus visible */
+     font-size: 0.9rem; /* Légèrement plus grand */
+     margin-bottom: 15px; /* Plus d'espace sous le copyright */
+}
+
+/* Conteneur pour les liens légaux */
+.footer-bottom .footer-legal-links {
+    margin-top: 15px; /* Espace au-dessus des liens */
+    display: flex; /* Pour aligner les liens */
+    flex-wrap: wrap; /* Permettre le retour à la ligne sur mobile */
+    justify-content: center; /* Centrer les liens */
+    gap: 10px 20px; /* Espacement vertical (10px) et horizontal (20px) entre les liens */
+}
+
+/* Style individuel des liens légaux */
+.footer-bottom .footer-legal-links a {
+    color: rgba(255, 255, 255, 0.75); /* Couleur des liens */
+    font-size: 0.85rem; /* Liens un peu plus petits */
+    text-decoration: none; /* Pas de soulignement par défaut */
+    padding: 2px 0; /* Petit padding pour zone de clic */
+    border-bottom: 1px solid transparent; /* Préparation pour le survol */
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+/* Style des liens légaux au survol */
+.footer-bottom .footer-legal-links a:hover {
+    color: var(--white-color); /* Liens deviennent blancs */
+    border-bottom-color: rgba(255, 255, 255, 0.5); /* Soulignement subtil */
+}
+/* --- FIN AMÉLIORATIONS FOOTER BOTTOM --- */
 
 /* ===== Styles pour Sélecteur de Langue ===== */
 .language-switcher {
@@ -646,19 +715,21 @@ footer {
   .section { padding: 60px 0; } /* Moins de padding vertical sections */
 
   /* Header Mobile Simple (Flex Column) */
+  header.site-header { padding-top: 10px; padding-bottom: 10px; } /* Réduire padding Header global */
   .header-container {
       flex-direction: column;
-      padding: 15px;
+      padding: 0 15px; /* Utiliser le padding du container */
+      gap: 10px; /* Espacement entre logo, switcher et nav */
   }
-  .logo { margin-bottom: 15px; } /* Espace sous logo */
+  .logo { margin-bottom: 0; } /* Reset espace sous logo */
   .nav-links {
-      margin-top: 0;
-      margin-right: 0; /* Reset marge auto */
+      margin: 10px 0 0; /* Ajouter marge au-dessus */
       order: 3; /* Mettre la nav après le logo et le switcher */
       flex-wrap: wrap;
       justify-content: center;
       gap: 5px 15px; /* Espace entre liens */
       padding: 0;
+      width: 100%; /* Prendre toute la largeur */
   }
    .nav-links li {
      margin-left: 0; /* Reset marge individuelle */
@@ -667,9 +738,7 @@ footer {
    .nav-links a.active::after { bottom: -3px; }
 
    .language-switcher {
-        margin-left: 0;
-        margin-top: 0; /* Reset margin top */
-        margin-bottom: 15px; /* Espace avant la nav */
+        margin: 0; /* Reset marges */
         order: 2; /* Placer le switcher entre logo et nav */
         align-self: center;
     }
@@ -679,24 +748,35 @@ footer {
    /* Fin Header Mobile Simple */
 
    /* Ajustements Contenu */
+   body {
+       padding-top: 140px; /* AJOUTER PADDING pour compenser le header fixe qui est plus haut en mobile */
+       /* Ajuster cette valeur si la hauteur réelle du header change */
+   }
+   .hero { min-height: calc(100vh - 140px); } /* Ajuster hauteur hero si besoin */
+
    .hero-buttons, .cta-buttons { flex-direction: column; align-items: center; gap: 10px;}
    .btn { width: 80%; max-width: 350px; margin: 5px 0; } /* Boutons plus larges sur mobile */
    .process-step { flex-direction: column; align-items: center; text-align: center; padding: 20px;}
    .step-number { margin-bottom: 15px; }
    .footer-container { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; }
-   .page-banner { padding: 120px 0 60px; }
+   .page-banner { padding: 100px 0 60px; } /* Réduire padding bannière pour compenser body padding-top */
 
    /* Ajustement why-us-grid pour petites tablettes */
    .why-us-grid {
       grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
       gap: 20px;
    }
+
+   .footer-bottom .container {
+       max-width: 100%; /* Pour éviter que le container interne ne limite trop sur mobile */
+   }
 }
 
 
 /* --- Petits Mobiles (≤ 576px) --- */
 @media (max-width: 576px) {
-  body { line-height: 1.7; } /* Augmenter interligne général */
+  body { line-height: 1.7; padding-top: 130px; } /* Ajuster padding top si header change de hauteur */
+  .hero { min-height: calc(100vh - 130px); } /* Ajuster hauteur hero */
   .section { padding: 50px 0; }
   .btn { width: 90%; font-size: 0.95rem; padding: 10px 20px; }
   .nav-links a { font-size: 0.9rem; }
@@ -706,9 +786,9 @@ footer {
   .testimonial-text::before { left: -10px; }
   .testimonial-text::after { right: -10px; }
   .footer-container { grid-template-columns: 1fr; text-align: center;} /* 1 colonne */
-  .footer-about, .footer-links, .footer-services, .footer-contact { align-items: center; }
+  .footer-about, .footer-links, .footer-services, .footer-contact { align-items: center; display: flex; flex-direction: column; /* Pour centrer le contenu des colonnes */ }
   .footer-social { justify-content: center; }
-  .footer-contact li { justify-content: center; text-align: left; } /* Centrer la ligne mais garder texte gauche */
+  .footer-contact li { justify-content: center; text-align: left; max-width: 280px; /* Limiter largeur pour lisibilité */ }
   .footer-contact i { margin-top: 2px; }
 
   /* Ajustement why-us-grid pour mobiles */
@@ -716,4 +796,22 @@ footer {
      grid-template-columns: 1fr; /* 1 colonne */
      gap: 20px;
    }
+
+   .footer-bottom .footer-legal-links {
+       gap: 5px 15px; /* Moins d'espace horizontal sur mobile */
+       justify-content: center;
+   }
+    .footer-bottom .footer-legal-links a {
+       font-size: 0.8rem; /* Encore plus petit */
+   }
+}
+
+/* Ajout pour le padding-top dynamique du body pour compenser le header fixe */
+/* IMPORTANT: Ce padding-top devra être ajusté si la hauteur du header change (ex: logo plus grand, ajout éléments) */
+@media (min-width: 769px) {
+    body {
+        padding-top: 70px; /* Hauteur approximative du header sur desktop */
+    }
+    .hero { min-height: calc(100vh - 70px); } /* Ajuster hauteur hero */
+    .page-banner { padding-top: 110px; } /* Réduire padding bannière */
 }

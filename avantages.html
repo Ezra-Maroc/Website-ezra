@@ -17,11 +17,16 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- ========== AJOUT TARTEAUCITRON CSS ========== -->
+    <link rel="stylesheet" href="tarteaucitron/css/tarteaucitron.css">
+    <!-- ========================================= -->
+
 </head>
 <body>
 
     <!-- ==========================================================================
-       HEADER
+       HEADER (Standardisé) - PAS DE CHANGEMENT ICI
        ========================================================================== -->
     <header class="site-header">
         <div class="container header-container">
@@ -57,7 +62,7 @@
     </header>
 
     <!-- ==========================================================================
-       BANNIERE DE PAGE
+       CONTENU DE LA PAGE "AVANTAGES" - PAS DE CHANGEMENT ICI
        ========================================================================== -->
     <section class="page-banner avantages-banner">
         <div class="container">
@@ -66,16 +71,12 @@
         </div>
     </section>
 
-    <!-- ==========================================================================
-       SECTION INTRODUCTION
-       ========================================================================== -->
     <section class="section intro-section">
         <div class="container">
             <h2 class="section-title intro-title">
                 Le Maroc : Hub Économique Ouvert à <strong>TOUTE</strong> Sa Diaspora et à la Richesse de Ses <strong>Multiples Héritages Culturels</strong>.
             </h2>
-
-            <div class="intro-columns">
+             <div class="intro-columns">
                 <div class="intro-column">
                     <p>Le Maroc d'aujourd'hui est une <strong>économie en pleine effervescence</strong>, une plateforme industrielle et technologique incontournable attirant des investissements internationaux et connaissant une croissance soutenue dans des secteurs de pointe (automobile, aéronautique, énergies renouvelables, technologies...).</p>
                 </div>
@@ -83,12 +84,10 @@
                     <p>La <strong>diaspora marocaine mondiale</strong>, forte de ses multiples affluents historiques et culturels, est une force vive. Le Royaume <strong>tend la main à TOUS ses descendants</strong>, encourageant activement le retour et la participation de ses diverses communautés expatriées.</p>
                 </div>
             </div>
-
-            <div class="transition-text">
+             <div class="transition-text">
                 Obtenir la <strong>nationalité marocaine par filiation</strong>, c'est acquérir un <strong>véritable actif stratégique</strong>, la clé indispensable pour :
             </div>
-
-            <div class="benefits-grid">
+             <div class="benefits-grid">
                 <div class="benefit-card">
                     <div class="benefit-icon"><i class="fas fa-rocket"></i></div>
                     <div class="benefit-text">Participer à la <strong>dynamique économique</strong> exceptionnelle du Maroc.</div>
@@ -106,27 +105,21 @@
                     <div class="benefit-text">Débloquer des <strong>opportunités professionnelles exclusives</strong> réservées aux nationaux.</div>
                 </div>
             </div>
-
-            <div class="nationality-callout">
+             <div class="nationality-callout">
                 <p class="nationality-callout-title">La <span>double nationalité est pleinement autorisée</span>.</p>
                 <p class="nationality-callout-subtitle">Saisissez ces avantages sans renoncer à votre citoyenneté actuelle.</p>
             </div>
-
-            <div class="action-section">
+             <div class="action-section">
                 <p class="action-title">Découvrez ici l'éventail complet des bénéfices CONCRETS et STRATÉGIQUES.</p>
                 <p class="info-links"><em>(Pour l'éligibilité et la procédure : <a href="processus.html">Notre Processus</a> | <a href="faq.html">FAQ</a>.)</em></p>
             </div>
         </div>
     </section>
 
-    <!-- ==========================================================================
-       SECTION "COUP D'OEIL"
-       ========================================================================== -->
     <section class="section advantages-overview alt-bg">
         <div class="container">
             <h2 class="section-title">Vos Avantages <span>en un Coup d'Œil</span></h2>
-
-            <div class="advantages-grid">
+             <div class="advantages-grid">
                 <div class="advantage-card">
                     <div class="advantage-icon"><i class="fas fa-chart-line"></i></div>
                     <h3 class="advantage-title">Économie & Finance</h3>
@@ -161,11 +154,7 @@
         </div>
     </section>
 
-    <!-- ==========================================================================
-       SECTION ACCORDEON DÉTAILS (Contenu allégé et titres H2 modifiés)
-       ========================================================================== -->
     <div class="faq-container">
-
          <!-- I. AVANTAGES ÉCONOMIQUES -->
          <section id="avantages-economiques-details" class="faq-section">
              <h2><i class="fas fa-chart-line"></i> I. Avantages Économiques & Patrimoniaux</h2>
@@ -432,7 +421,7 @@
     </section>
 
     <!-- ==========================================================================
-       FOOTER
+       FOOTER (Standardisé avec structure améliorée)
        ========================================================================== -->
     <footer>
          <div class="container footer-container">
@@ -475,18 +464,113 @@
                  </ul>
             </div>
         </div>
+
+         <!-- ========== FOOTER BOTTOM AMÉLIORÉ ========== -->
          <div class="footer-bottom">
              <div class="container">
-                 <p>© 2024 Ezra Maroc Consulting Services LLC. Tous droits réservés.</p>
-                 <p>Les informations sur ce site sont fournies à titre indicatif et ne constituent pas un conseil juridique ou fiscal. Consultez des professionnels qualifiés.</p>
-            </div>
+                 <!-- Copyright sur sa propre ligne -->
+                 <p class="copyright">© 2024 Ezra Maroc Consulting Services LLC. Tous droits réservés.</p>
+                 <!-- Disclaimer sur sa propre ligne -->
+                 <p class="disclaimer">Les informations sur ce site sont fournies à titre indicatif et ne constituent pas un conseil juridique ou fiscal. Consultez des professionnels qualifiés.</p>
+                 <!-- Navigation pour les liens légaux -->
+                 <nav class="footer-legal-links" aria-label="Liens légaux">
+                     <a href="politique-confidentialite.html" rel="noopener noreferrer">Politique de confidentialité</a>
+                     <a href="mentions-legales.html" rel="noopener noreferrer">Mentions légales</a>
+                     <a href="conditions-utilisation.html" rel="noopener noreferrer">Conditions d'Utilisation</a>
+                     <a href="#" onclick="tarteaucitron.userInterface.openPanel(); return false;">Gestion des cookies</a> <!-- LIEN AJOUTÉ -->
+                 </nav>
+             </div>
          </div>
+         <!-- ============================================== -->
+
     </footer>
+    <!-- ==========================================================================
+       FIN FOOTER
+       ========================================================================== -->
 
     <!-- ==========================================================================
        SCRIPTS JAVASCRIPT (FIN DU BODY)
        ========================================================================== -->
+    <!-- Script spécifique pour cette page (accordéon) -->
     <script src="js/faq-accordion.js"></script>
+    <!-- Si vous avez un script global -->
+    <!-- <script src="js/script.js"></script> -->
+
+    <!-- ========== AJOUT TARTEAUCITRON ========== -->
+    <script type="text/javascript" src="tarteaucitron/tarteaucitron.js"></script>
+
+    <script type="text/javascript">
+    tarteaucitron.init({
+        "privacyUrl": "politique-confidentialite.html", /* Lien vers votre politique de confidentialité */
+
+        "hashtag": "#tarteaucitron", /* Laissez tel quel */
+        "cookieName": "tarteaucitron", /* Laissez tel quel */
+
+        "orientation": "bottom", /* Position du bandeau: 'bottom', 'top', 'middle' */
+        "groupServices": false, /* Services groupés par catégorie */
+
+        "showAlertSmall": false, /* Petite pastille après choix */
+        "cookieslist": true, /* Afficher lien liste cookies */
+
+        "closePopup": false, /* Afficher la croix de fermeture sur le bandeau */
+        "showIcon": true, /* Afficher l'icône de gestion flottante */
+        /* "iconSrc": "tarteaucitron/img/cookie.svg", */ /* Optionnel: Chemin vers une icône personnalisée */
+        "iconPosition": "BottomRight", /* Position de l'icône */
+
+        "adblocker": false, /* Détection Adblocker */
+        "DenyAllCta": true, /* Bouton Tout Refuser */
+        "AcceptAllCta": true, /* Bouton Tout Accepter */
+        "highPrivacy": true, /* Requis pour RGPD, consentement explicite */
+
+        "handleBrowserDNTRequest": false, /* Gérer l'option 'Do Not Track' du navigateur */
+
+        "removeCredit": false, /* Retirer le lien Tarteaucitron (respecter licence ou faire un don) */
+        "moreInfoLink": true, /* Lien vers politique de confidentialité */
+
+        "useExternalCss": false, /* Utilise le CSS interne de Tarteaucitron */
+        "mandatory": true, /* Info sur les cookies obligatoires */
+        "mandatoryCta": true /* Bouton Personnaliser même si cookies obligatoires seuls */
+    });
+
+    // ----- CONFIGURATION DES SERVICES TIERS -----
+    // IMPORTANT: Ajoutez ici UNIQUEMENT les services utilisés sur CETTE page (avantages.html)
+    //            ou globalement sur tout le site (comme Google Analytics).
+
+    // --- Exemple Google Analytics (GA4) ---
+    // Si vous utilisez GA4 sur tout le site, incluez cette config sur TOUTES les pages.
+    // Remplacez 'G-XXXXXXXXXX' et adaptez la liste des cookies.
+
+    /* Décommentez ce bloc si vous utilisez Google Analytics 4 */
+    /*
+    tarteaucitron.services.gtag = {
+        "key": "G-XXXXXXXXXX", // <--- REMPLACEZ PAR VOTRE ID GA4
+        "type": "gtag",
+        "name": "Google Analytics (GA4)",
+        "uri": "https://policies.google.com/privacy",
+        "needConsent": true,
+        "cookies": ['_ga', '_gid', '_ga_XXXXXXXXXX'], // <--- ADAPTEZ _ga_...
+        "js": function () {
+            "use strict";
+            if (tarteaucitron.user.gtagKey === undefined) {
+                 tarteaucitron.user.gtagKey = tarteaucitron.services.gtag.key;
+                 if (tarteaucitron.user.gtagKey === undefined || tarteaucitron.user.gtagKey === 'G-XXXXXXXXXX') {
+                      console.warn('Tarteaucitron: Google Analytics key is not defined or still placeholder.');
+                      return;
+                 }
+            }
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', tarteaucitron.user.gtagKey, {'anonymize_ip': true});
+        }
+    };
+    (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+    */
+
+    </script>
+    <!-- ========================================= -->
 
 </body>
-</html>
+</html>tu peuc continuer je suis ent rain d enregister merci
