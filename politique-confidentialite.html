@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Politique de Confidentialité Détaillée | Ezra Maroc</title>
-    <meta name="description" content="Politique de confidentialité complète d'Ezra Maroc Consulting Services LLC concernant la collecte, l'utilisation, la protection et vos droits sur les données personnelles traitées via le site www.ezra-maroc.com.">
+    <title>Politique d'Utilisation des Cookies | Ezra Maroc</title>
+    <meta name="description" content="Informations complètes sur les cookies utilisés par www.ezra-maroc.com (Ezra Maroc Consulting Services LLC), leurs finalités, et comment gérer vos consentements conformément au RGPD et aux recommandations de la CNIL.">
     <meta name="robots" content="noindex, follow">
 
     <!-- CSS Global -->
@@ -16,55 +16,34 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <!-- ========== AJOUT TARTEAUCITRON CSS ========== -->
+    <link rel="stylesheet" href="tarteaucitron/css/tarteaucitron.css">
+    <!-- ========================================= -->
+
+    <!-- Styles CSS spécifiques à la page Politique de Cookies -->
     <style>
-        /* Styles pour améliorer lisibilité (identique) */
         .legal-content-section { padding: 60px 0; }
         .legal-content-section .container { max-width: 800px; }
-        .legal-content-section h2 {
-            font-family: var(--font-heading);
-            font-size: 1.7rem;
-            color: var(--primary-color);
-            margin-top: 2.5em;
-            margin-bottom: 1.2em;
-            padding-bottom: 0.6em;
-            border-bottom: 2px solid var(--primary-50);
-            font-weight: 600;
-        }
+        .legal-content-section h2 { font-family: var(--font-heading); font-size: 1.7rem; color: var(--primary-color); margin-top: 2.5em; margin-bottom: 1.2em; padding-bottom: 0.6em; border-bottom: 2px solid var(--primary-50); font-weight: 600; }
         .legal-content-section h2:first-of-type { margin-top: 0; }
-        .legal-content-section h3 {
-            font-family: var(--font-heading);
-            font-size: 1.3rem;
-            color: var(--dark-color);
-            margin-top: 1.8em;
-            margin-bottom: 1em;
-            font-weight: 600;
-        }
-         .legal-content-section h4 {
-            font-family: var(--font-heading);
-            font-size: 1.1rem;
-            color: var(--dark-color);
-            margin-top: 1.5em;
-            margin-bottom: 0.8em;
-            font-weight: 600;
-        }
-        .legal-content-section p, .legal-content-section li {
-            font-family: var(--font-main);
-            font-size: 0.95rem;
-            line-height: 1.8;
-            color: #333;
-            margin-bottom: 1.1em;
-            text-align: justify; /* Justification texte légal */
-        }
-        .legal-content-section ul {
-            list-style-type: disc;
-            margin-left: 20px;
-            margin-bottom: 1.2em;
-            padding-left: 1.5em;
-        }
+        .legal-content-section h3 { font-family: var(--font-heading); font-size: 1.3rem; color: var(--dark-color); margin-top: 1.8em; margin-bottom: 1em; font-weight: 600; }
+        .legal-content-section h4 { font-family: var(--font-heading); font-size: 1.1rem; color: var(--dark-color); margin-top: 1.5em; margin-bottom: 0.8em; font-weight: 600; }
+        .legal-content-section p, .legal-content-section li { font-family: var(--font-main); font-size: 0.95rem; line-height: 1.8; color: #333; margin-bottom: 1.1em; text-align: justify; }
+        .legal-content-section ul { list-style-type: disc; margin-left: 20px; margin-bottom: 1.2em; padding-left: 1.5em; }
         .legal-content-section strong { color: #111; font-weight: 600; }
         .legal-content-section a { color: var(--primary-color); text-decoration: underline; }
         .legal-content-section a:hover { color: var(--primary-500); text-decoration: none; }
-        .legal-content-section .article-number { font-weight: bold; margin-right: 0.5em; }
+        .legal-content-section .cookie-category { margin-bottom: 1.5em; padding-bottom: 1em; border-bottom: 1px dashed #eee; }
+        .legal-content-section .cookie-category:last-child { border-bottom: none; }
+        /* Style pour la table des cookies */
+        .cookie-table { width: 100%; border-collapse: collapse; margin: 1.5em 0; }
+        .cookie-table th, .cookie-table td { border: 1px solid #ddd; padding: 10px 12px; text-align: left; font-size: 0.9rem; vertical-align: top; }
+        .cookie-table th { background-color: var(--light-color); font-weight: 600; font-family: var(--font-heading); }
+        /* Cibler la dernière colonne (Catégorie) pour éventuellement centrer ou ajuster */
+        .cookie-table td:last-child, .cookie-table th:last-child {
+            /* text-align: center; */ /* Optionnel: si on veut centrer le texte dans cette colonne */
+            white-space: nowrap; /* Empêcher le retour à la ligne si possible */
+        }
     </style>
 </head>
 <body>
@@ -93,229 +72,270 @@
             <div class="language-switcher">
                  <label for="lang-select" class="visually-hidden">Choisir la langue</label>
                  <select name="lang" id="lang-select" class="language-select" onchange="location = this.value;">
-                    <option value="politique-confidentialite.html" selected lang="fr">Français</option>
-                    <option value="../en/privacy-policy.html" lang="en">English</option>
-                    <option value="../es/politica-privacidad.html" lang="es">Español</option>
-                    <option value="../he/privacy-policy.html" lang="he">עברית</option>
-                    <option value="../ara/privacy-policy.html" lang="ara">العربية (الدارجة)</option>
+                    <option value="politique-cookies.html" selected lang="fr">Français</option>
+                    <option value="../en/cookie-policy.html" lang="en">English</option>
+                    <option value="../es/politica-cookies.html" lang="es">Español</option>
+                    <option value="../he/cookie-policy.html" lang="he">עברית</option>
+                    <option value="../ara/cookie-policy.html" lang="ara">العربية (الدارجة)</option>
                 </select>
             </div>
         </div>
     </header>
 
-    <!-- CONTENU POLITIQUE DE CONFIDENTIALITÉ -->
+    <!-- CONTENU POLITIQUE DE COOKIES -->
     <section class="page-banner">
         <div class="container">
-            <h1>Politique de Confidentialité</h1>
-             <p>Gestion de vos données personnelles sur www.ezra-maroc.com</p>
-       </div>
+            <h1>Politique d'Utilisation des Cookies</h1>
+            <p>Comment nous utilisons les cookies sur www.ezra-maroc.com</p>
+        </div>
     </section>
 
     <section class="section legal-content-section">
         <div class="container">
 
-            <p><strong>Date d'entrée en vigueur :</strong> [Remplacer par la date de publication/mise à jour]</p>
+            <p><strong>Date de dernière mise à jour :</strong> 7 Mai 2024</p> <!-- Date Placeholder -->
 
-            <h2>ARTICLE 1 : Introduction et Engagement</h2>
-            <p>La présente Politique de Confidentialité décrit les pratiques de la société Ezra Maroc Consulting Services LLC (ci-après "Ezra Maroc", "nous", "notre", "nos"), concernant la collecte, l'utilisation, la conservation, le partage et la protection des données à caractère personnel des utilisateurs (ci-après l'"Utilisateur", "vous", "vos") de notre site internet accessible à l'adresse https://www.ezra-maroc.com (ci-après le "Site").</p>
-            <p>En notre qualité de responsable du traitement, nous sommes fermement engagés à protéger votre vie privée et à traiter vos données personnelles avec transparence, équité et sécurité, conformément aux réglementations applicables, incluant le Règlement Général sur la Protection des Données (UE) 2016/679 ("RGPD") et la loi française "Informatique et Libertés".</p>
-             <p>Cette Politique a pour but de vous informer sur : quelles données nous collectons, pourquoi nous les collectons, comment nous les utilisons, avec qui nous pouvons les partager, comment nous les protégeons, combien de temps nous les conservons, et quels sont vos droits à leur égard.</p>
+            <h2>ARTICLE 1 : Introduction</h2>
+            <p>Le site internet https://www.ezra-maroc.com (le "Site"), édité par Ezra Maroc Consulting Services LLC ("Ezra Maroc", "nous", "notre"), utilise des cookies et des technologies similaires pour diverses finalités décrites ci-après. Cette Politique a pour but de vous fournir une information claire, transparente et complète sur l'usage que nous faisons de ces technologies et sur les moyens mis à votre disposition pour les gérer.</p>
+            <p>Nous accordons une grande importance à la protection de votre vie privée et traitons les informations collectées via les cookies conformément au RGPD et aux recommandations des autorités de contrôle compétentes, notamment la CNIL en France.</p>
 
+            <h2>ARTICLE 2 : Qu'est-ce qu'un Cookie ?</h2>
+            <p>Un cookie est un petit fichier texte qu'un site web demande à votre navigateur de stocker sur votre appareil (ordinateur, tablette, smartphone) lorsque vous le visitez. Ce fichier permet au site de "se souvenir" de vos actions ou préférences (telles que la langue, la taille de police, les informations de connexion ou d'autres préférences d'affichage) pendant une certaine période, ou de reconnaître votre appareil lors de visites ultérieures.</p>
+            <p>Il existe différents types de cookies classés selon leur origine, leur durée de vie et leur finalité.</p>
 
-            <h2>ARTICLE 2 : Responsable du Traitement</h2>
-            <p>Le responsable du traitement de vos données personnelles est :</p>
-            <p>
-                <strong>Ezra Maroc Consulting Services LLC</strong><br>
-                30 N Gould St Ste R, Sheridan, WY 82801, USA.<br>
-                Pour toute question relative à cette Politique ou pour exercer vos droits, vous pouvez nous contacter via notre Délégué à la Protection des Données (si désigné) ou notre service dédié :<br>
-                Courrier électronique : <a href="mailto:privacy@ezra-project.fr">privacy@ezra-project.fr</a> [Vérifier/Confirmer cet email ou utiliser info@]
-            </p>
-
-             <h2>ARTICLE 3 : Principes Généraux de Protection des Données</h2>
-             <p>Nous nous engageons à traiter vos données personnelles en respectant les principes fondamentaux édictés par le RGPD :</p>
-             <ul>
-                 <li><strong>Licéité, Loyauté, Transparence :</strong> Traitement juste, légal et transparent.</li>
-                 <li><strong>Limitation des Finalités :</strong> Collecte pour des objectifs spécifiques, explicites et légitimes.</li>
-                 <li><strong>Minimisation des Données :</strong> Collecte limitée aux données strictement nécessaires.</li>
-                 <li><strong>Exactitude :</strong> Maintien de données exactes et à jour.</li>
-                 <li><strong>Limitation de la Conservation :</strong> Conservation pour une durée n'excédant pas celle nécessaire aux finalités.</li>
-                 <li><strong>Intégrité et Confidentialité :</strong> Mise en œuvre de mesures de sécurité appropriées.</li>
-                 <li><strong>Responsabilité ("Accountability") :</strong> Capacité à démontrer notre conformité.</li>
-             </ul>
-
-
-            <h2>ARTICLE 4 : Données Personnelles Collectées</h2>
-            <p>Nous collectons des données personnelles vous concernant de différentes manières :</p>
-
-            <h3>4.1. Données fournies directement par vous</h3>
-             <p>Ceci concerne principalement les informations que vous nous communiquez volontairement via le formulaire de contact sur le Site :</p>
-             <ul>
-                 <li><strong>Identification et contact :</strong> Nom, prénom, adresse électronique, numéro de téléphone (facultatif).</li>
-                 <li><strong>Objet de la demande :</strong> Le sujet que vous sélectionnez dans la liste déroulante.</li>
-                 <li><strong>Contenu de votre message :</strong> Toute information que vous choisissez d'inclure, potentiellement relative à votre situation personnelle, familiale, à vos ascendants (noms, dates, lieux, etc.) dans le but d'obtenir une information ou une première évaluation d'éligibilité. <strong>Nous vous recommandons vivement de limiter les informations partagées à ce stade à ce qui est strictement nécessaire à votre demande initiale et de ne pas transmettre de données sensibles non sollicitées (origine raciale ou ethnique, opinions politiques, convictions religieuses ou philosophiques, appartenance syndicale, données génétiques ou biométriques, données concernant la santé ou la vie sexuelle).</strong> La transmission de telles données via le formulaire se fait sous votre seule responsabilité et vaut consentement explicite à leur traitement aux seules fins de répondre à votre demande spécifique.</li>
-             </ul>
-
-            <h3>4.2. Données collectées automatiquement lors de votre navigation</h3>
-             <p>Lorsque vous visitez notre Site, des données techniques et de navigation sont collectées automatiquement par nos serveurs et potentiellement par des outils tiers (sécurité, analyse) :</p>
+            <h2>ARTICLE 3 : Pourquoi utilisons-nous des Cookies ? (Finalités)</h2>
+            <p>Nous utilisons des cookies pour plusieurs raisons essentielles :</p>
             <ul>
-                <li>Adresse IP (Protocole Internet).</li>
-                <li>Type et version du navigateur web.</li>
-                <li>Système d'exploitation et type d'appareil utilisé.</li>
-                <li>Date et heure de la visite.</li>
-                <li>Pages consultées et parcours de navigation sur le Site.</li>
-                <li>Temps passé sur les pages.</li>
-                <li>Référent (site web d'où vous provenez, le cas échéant).</li>
-                <li>Données de logs techniques (erreurs, etc.).</li>
-            </ul>
+                <li><strong>Assurer le fonctionnement technique et la sécurité du Site :</strong> Certains cookies sont indispensables pour que le Site fonctionne correctement et en toute sécurité.</li>
+                <li><strong>Améliorer votre expérience de navigation :</strong> Mémoriser vos préférences (comme la langue) pour vous éviter de les saisir à nouveau.</li>
+                <li><strong>Analyser l'utilisation du Site :</strong> Comprendre comment les visiteurs interagissent avec notre Site (pages les plus visitées, sources de trafic, etc.) afin d'optimiser sa structure, son contenu et sa performance. Ces analyses sont réalisées de manière à respecter votre vie privée (voir Art. 4.2).</li>
+                 <li><strong>Gérer votre consentement :</strong> Mémoriser vos choix concernant le dépôt des cookies non essentiels.</li>
+           </ul>
 
-             <h3>4.3. Données collectées via les Cookies et Traceurs</h3>
-             <p>Nous utilisons des cookies et technologies similaires. Pour une information complète et détaillée sur les cookies que nous utilisons, leurs finalités, leur durée de vie et comment gérer vos consentements, veuillez consulter notre [Politique de Cookies dédiée](lien-vers-politique-cookies.html) - **LIEN À CRÉER ET INSÉRER**. En résumé, ces outils peuvent collecter des informations sur vos préférences de navigation, vos interactions avec le site, ou des données pour des analyses statistiques.</p>
+            <h2>ARTICLE 4 : Types de Cookies Utilisés sur ce Site</h2>
+            <p>Voici les catégories de cookies que nous sommes susceptibles d'utiliser sur le Site :</p>
 
-            <h2>ARTICLE 5 : Finalités et Bases Légales des Traitements</h2>
-             <p>Chaque traitement de données personnelles repose sur une finalité légitime et une base légale valide :</p>
-             <ul>
-                 <li><strong>Gestion de vos demandes via le formulaire de contact :</strong> Traiter votre demande d'information ou d'évaluation préliminaire, communiquer avec vous pour y répondre et assurer le suivi.
-                     <ul><li><em>Bases légales : Votre Consentement (Art. 6.1.a RGPD) pour l'ensemble des données fournies ; Exécution de mesures précontractuelles (Art. 6.1.b RGPD) pour l'évaluation d'éligibilité en vue d'une éventuelle prestation.</em></li>
-                     <li><em>En soumettant le formulaire, vous acceptez explicitement que nous vous recontactions par email ou téléphone (si fourni) dans le strict cadre de votre demande initiale.</em></li>
-                     </ul>
-                 </li>
-                 <li><strong>Fourniture, maintenance et sécurisation du Site :</strong> Assurer le bon fonctionnement technique du Site, prévenir et détecter les incidents de sécurité, les fraudes ou les activités illicites.
-                      <ul><li><em>Base légale : Notre Intérêt légitime (Art. 6.1.f RGPD) à maintenir un service en ligne sécurisé et fonctionnel.</em></li></ul>
-                 </li>
-                 <li><strong>Analyse et amélioration du Site :</strong> Comprendre comment les Utilisateurs utilisent le Site pour améliorer son contenu, son ergonomie et sa performance (statistiques d'audience, analyse du parcours utilisateur).
-                      <ul><li><em>Base légale : Votre Consentement (Art. 6.1.a RGPD) pour les cookies analytiques non essentiels ; Notre Intérêt légitime (Art. 6.1.f RGPD) pour les analyses globales et anonymisées strictement nécessaires au bon fonctionnement.</em></li></ul>
-                </li>
-                 <li><strong>Gestion précontractuelle et contractuelle :</strong> (Si applicable suite à une demande) Préparer, conclure et exécuter un contrat de Prestations de Conseil.
-                      <ul><li><em>Base légale : Exécution de mesures précontractuelles ou d'un contrat (Art. 6.1.b RGPD).</em></li></ul>
-                 </li>
-                <li><strong>Respect des obligations légales :</strong> Se conformer à toute obligation légale ou réglementaire à laquelle nous sommes soumis (ex: réponse à une demande d'autorité judiciaire).
-                    <ul><li><em>Base légale : Obligation légale (Art. 6.1.c RGPD).</em></li></ul>
-                 </li>
-            </ul>
+            <div class="cookie-category">
+                <h4>4.1. Cookies Strictement Nécessaires</h4>
+                <p>Ces cookies sont essentiels pour vous permettre de naviguer sur le Site et d'utiliser ses fonctionnalités de base. Sans eux, le Site ne pourrait pas fonctionner correctement. Ils ne collectent généralement pas d'informations permettant de vous identifier personnellement.</p>
+                <p><strong>Exemples :</strong> Cookies de session pour la navigation, cookies de sécurité (ex: pour Cloudflare), cookie pour mémoriser votre choix de consentement aux cookies (`tarteaucitron`).</p>
+                <p><em>Base légale : Notre intérêt légitime (Art. 6.1.f RGPD) à assurer le bon fonctionnement technique et la sécurité du Site. Ces cookies sont exemptés de l'exigence de consentement préalable selon les recommandations de la CNIL et la directive ePrivacy.</em></p>
+            </div>
+
+             <div class="cookie-category">
+                 <h4>4.2. Cookies Analytiques et de Mesure d'Audience</h4>
+                 <p>Ces cookies nous permettent de recueillir des informations sur la manière dont les Utilisateurs utilisent notre Site (nombre de visiteurs, pages consultées, temps passé, taux de rebond, source du trafic, etc.). Les données collectées nous aident à comprendre les performances du Site et à identifier les axes d'amélioration.</p>
+                 <p>Nous utilisons [ou sommes susceptibles d'utiliser] l'outil suivant : <strong>Google Analytics (GA4)</strong>. Pour garantir le respect de votre vie privée, nous avons activé <strong>la fonction d'anonymisation de l'adresse IP</strong> sur cet outil. Les informations collectées sont donc traitées de manière agrégée et ne permettent pas votre identification directe.</p>
+                 <p><em>Base légale : Votre consentement préalable et explicite (Art. 6.1.a RGPD), recueilli via notre outil de gestion des cookies (Tarteaucitron.js).</em></p>
+            </div>
+
+            <div class="cookie-category">
+                 <h4>4.3. Cookies Fonctionnels</h4>
+                 <p>Ces cookies permettent au Site de se souvenir des choix que vous avez faits (comme votre préférence linguistique) afin de fournir des fonctionnalités améliorées et plus personnelles.</p>
+                 <p><strong>Exemple :</strong> Cookie stockant la langue sélectionnée dans le sélecteur de langue (`language-select`).</p>
+                 <p><em>Base légale : Votre consentement préalable et explicite (Art. 6.1.a RGPD), recueilli via notre outil de gestion des cookies.</em></p>
+            </div>
+
+            <div class="cookie-category">
+                <h4>4.4. Cookies Marketing ou Publicitaires</h4>
+                 <p><strong>Le Site n'utilise actuellement aucun cookie à des fins de marketing ciblé ou de publicité comportementale.</strong> Nous ne suivons pas votre activité sur d'autres sites et n'utilisons pas de cookies pour vous présenter des publicités personnalisées.</p>
+            </div>
+
+            <h2>ARTICLE 5 : Liste Détaillée des Cookies Potentiellement Utilisés</h2>
+            <p>Vous trouverez ci-dessous une liste plus détaillée des cookies susceptibles d'être utilisés, sous réserve de votre consentement pour ceux qui ne sont pas strictement nécessaires. Vous pouvez gérer ces cookies via notre panneau de gestion accessible depuis le lien "Gestion des cookies" en pied de page.</p>
+            <table class="cookie-table">
+                <thead>
+                    <tr>
+                        <th>Nom du Cookie</th>
+                        <th>Fournisseur</th>
+                        <th>Finalité</th>
+                        <th>Type</th>
+                        <th>Durée</th>
+                        <th>Catégorie</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>tarteaucitron</code></td>
+                        <td>Tarteaucitron.js (Site)</td>
+                        <td>Sauvegarde vos choix de consentement.</td>
+                        <td>Interne</td>
+                        <td>6 mois</td>
+                        <td>Nécessaire</td>
+                    </tr>
+                     <tr>
+                        <td><code>_ga</code></td>
+                        <td>Google Analytics</td>
+                        <td>Analyse statistique (distinguer utilisateurs).</td>
+                        <td>Tiers</td>
+                        <td>2 ans</td>
+                        <td>Analytique</td>
+                    </tr>
+                     <tr>
+                        <td><code>_gid</code></td>
+                        <td>Google Analytics</td>
+                        <td>Analyse statistique (distinguer utilisateurs).</td>
+                        <td>Tiers</td>
+                        <td>24 h</td>
+                        <td>Analytique</td>
+                    </tr>
+                     <tr>
+                        <td><code>_ga_<GA4_ID></code></td>
+                        <td>Google Analytics</td>
+                        <td>Maintien de l'état de la session.</td>
+                        <td>Tiers</td>
+                        <td>2 ans</td>
+                        <td>Analytique</td>
+                    </tr>
+                     <tr>
+                        <td><code>[Nom_Cookie_Langue]</code></td>
+                        <td>Ezra Maroc (Site)</td>
+                        <td>Mémorise la langue préférée.</td>
+                        <td>Interne</td>
+                        <td>12 mois</td>
+                        <td>Fonctionnel</td>
+                    </tr>
+                     <tr>
+                        <td><code>__cf_*</code> (ex: __cf_bm)</td>
+                        <td>Cloudflare, Inc.</td>
+                        <td>Sécurité (anti-bot, équilibrage charge).</td>
+                        <td>Tiers</td>
+                        <td>Session</td>
+                        <td>Nécessaire</td>
+                    </tr>
+                    <!-- Ajoutez d'autres lignes si nécessaire -->
+                </tbody>
+            </table>
+            <p><em>Note : La colonne Catégorie indique si le consentement est requis. Les cookies "Nécessaires" ne demandent pas votre consentement. Les durées sont indicatives. La liste exacte et les durées peuvent être consultées dans l'outil de gestion des cookies.</em></p>
 
 
-            <h2>ARTICLE 6 : Destinataires et Partage des Données Personnelles</h2>
-            <p>6.1. Les données collectées sont traitées en interne par le personnel habilité d'Ezra Maroc, dans la limite de leurs attributions respectives.</p>
-            <p>6.2. Nous faisons appel à des prestataires de services (sous-traitants) pour certaines opérations techniques. Ces sous-traitants peuvent avoir accès à vos données dans le cadre strict des services qu'ils nous fournissent et sont contractuellement tenus de respecter la confidentialité et la sécurité de vos données. Nos principaux sous-traitants actuels relèvent des catégories suivantes :</p>
+            <h2>ARTICLE 6 : Gestion de Votre Consentement aux Cookies</h2>
+            <p><span class="article-number">6.1.</span> <strong>Outil de Gestion :</strong> Nous utilisons l'outil Tarteaucitron.js pour recueillir et gérer votre consentement concernant les cookies non essentiels. Un bandeau s'affiche lors de votre première visite.</p>
+            <p><span class="article-number">6.2.</span> <strong>Vos Choix :</strong> Via ce bandeau ou le panneau de gestion, vous pouvez "Tout accepter", "Tout refuser" (sauf les cookies nécessaires), ou "Personnaliser" vos choix par finalité ou par service.</p>
+            <p><span class="article-number">6.3.</span> <strong>Durée et Modification :</strong> Votre consentement (ou refus) est conservé pendant une durée maximale de <strong>6 mois</strong>. Vous pouvez modifier vos préférences à tout moment via le lien "Gestion des cookies" dans le pied de page du Site.</p>
+
+            <h2>ARTICLE 7 : Paramétrage de Votre Navigateur</h2>
+            <p>Vous pouvez également contrôler les cookies via les paramètres de votre navigateur. Consultez l'aide de votre navigateur pour savoir comment faire (voir liens à l'Article 7 de notre <a href="politique-confidentialite.html#browser-settings">Politique de Confidentialité</a><!-- Lien optionnel si section détaillée -->).</p>
+            <p><strong>Attention :</strong> Bloquer tous les cookies peut affecter le bon fonctionnement du Site.</p>
+
+            <h2>ARTICLE 8 : Cookies Tiers</h2>
+            <p>Certains cookies (ex: Google Analytics, Cloudflare) sont déposés par des sociétés tierces. Leur utilisation est régie par leurs propres politiques de confidentialité, que nous vous invitons à consulter :</p>
             <ul>
-                <li><strong>Hébergement Web et Infrastructure :</strong> Cloudflare, Inc. (USA) pour le CDN, la sécurité et potentiellement une partie de l'hébergement. [Nom de l'hébergeur principal si différent, ex: OVH (France), AWS (Irlande/USA), etc. - **À PRÉCISER**]</li>
-                <li><strong>Fournisseur de services d'Emailing Transactionnel :</strong> [Nom du fournisseur si utilisé pour les réponses du formulaire, ex: SendGrid (USA), Mailgun (USA/UE), Brevo (France/UE) - **À PRÉCISER**]</li>
-                 <li><strong>Outils d'Analyse d'Audience :</strong> [Ex: Google Analytics (USA), Matomo (auto-hébergé ou UE), Plausible Analytics (UE) - **À PRÉCISER**, en indiquant si anonymisation IP activée].</li>
-                <!-- Ajouter d'autres catégories si pertinent : CRM, outil de prise de RDV, etc. -->
-            </ul>
-             <p>6.3. Vos données peuvent également être communiquées à des tiers si la loi l'exige, ou dans le cadre d'une procédure judiciaire, pour protéger nos droits, ou lors d'une restructuration d'entreprise (fusion, acquisition), toujours dans le respect de la réglementation.</p>
-            <p>6.4. En dehors de ces cas, vos données personnelles ne sont ni vendues, ni louées, ni échangées avec des tiers.</p>
+                <li>Politique de Google : <a href="https://policies.google.com/privacy?hl=fr" target="_blank" rel="noopener noreferrer">Lien</a></li>
+                <li>Politique de Cloudflare : <a href="https://www.cloudflare.com/fr-fr/privacypolicy/" target="_blank" rel="noopener noreferrer">Lien</a></li>
+                <!-- Ajoutez d'autres tiers si applicable -->
+           </ul>
+
+            <h2>ARTICLE 9 : Vos Droits</h2>
+             <p>Pour exercer vos droits (accès, rectification, etc.) sur les données personnelles collectées via les cookies, référez-vous à l'Article 10 de notre <a href="politique-confidentialite.html">Politique de Confidentialité</a>.</p>
+            <p>En cas de réclamation, vous pouvez contacter la CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a>).</p>
 
 
-            <h2>ARTICLE 7 : Transferts de Données Hors de l'Union Européenne</h2>
-            <p>Étant une société basée aux États-Unis et utilisant potentiellement des sous-traitants internationaux (voir Article 6.2), vos données personnelles peuvent être transférées et traitées dans des pays situés en dehors de l'EEE. Nous prenons toutes les mesures nécessaires pour garantir que ces transferts soient effectués en conformité avec le RGPD, en mettant en place des garanties appropriées, principalement par la signature des Clauses Contractuelles Types (CCT) de la Commission Européenne avec nos sous-traitants situés dans des pays n'assurant pas un niveau de protection adéquat, et en réalisant les évaluations d'impact nécessaires.</p>
+            <h2>ARTICLE 10 : Mise à Jour de cette Politique</h2>
+            <p>Cette politique peut être mise à jour. La date de dernière révision figure en haut de cette page. Nous vous invitons à la consulter périodiquement.</p>
 
-            <h2>ARTICLE 8 : Durée de Conservation des Données</h2>
-            <p>Vos données personnelles sont conservées pour une durée limitée, n'excédant pas celle nécessaire à l'accomplissement des finalités pour lesquelles elles ont été collectées :</p>
-            <ul>
-                <li><strong>Données issues du formulaire de contact :</strong> Pour une simple demande d'information, conservées le temps de fournir une réponse complète et pour une durée maximale de <strong>douze (12) mois</strong> après le dernier échange, sauf exercice de vos droits. Pour une demande d'évaluation menant à une proposition commerciale non acceptée, conservées également pour une durée maximale de douze (12) mois. Si la demande aboutit à une relation contractuelle, les données sont conservées pendant toute la durée du contrat, puis archivées pour la durée de prescription légale applicable (notamment 5 ans pour la responsabilité contractuelle en France).</li>
-                <li><strong>Données de connexion et logs serveur :</strong> Conservées pour une durée maximale de <strong>douze (12) mois</strong> à des fins de sécurité et de diagnostic.</li>
-                <li><strong>Cookies et traceurs :</strong> Durées spécifiques détaillées dans notre [Politique Cookies], avec un maximum de 13 mois pour le consentement aux cookies non essentiels.</li>
-            </ul>
-
-            <h2>ARTICLE 9 : Sécurité et Confidentialité des Données</h2>
-            <p>Nous mettons en œuvre des mesures de sécurité techniques (chiffrement HTTPS/SSL, pare-feux, contrôles d'accès logiques, etc.) et organisationnelles (procédures internes, habilitations restreintes, sensibilisation du personnel, etc.) appropriées et conformes à l'état de l'art pour protéger vos données personnelles contre toute destruction, perte, altération, divulgation ou accès non autorisé, qu'il soit accidentel ou illicite.</p>
-             <p><strong>Responsabilité de l'Utilisateur :</strong> Vous êtes également responsable de la sécurité des informations que vous nous transmettez et de la protection de vos propres appareils et données (mots de passe, accès à votre messagerie électronique, etc.). Nous ne pouvons être tenus responsables d'un accès non autorisé à vos données résultant d'une négligence ou d'une faille de sécurité de votre part ou de celle de tiers hors de notre contrôle direct.</p>
-
-
-            <h2>ARTICLE 10 : Vos Droits sur Vos Données Personnelles</h2>
-            <p>Conformément à la réglementation applicable (RGPD, Loi Informatique et Libertés), vous disposez des droits suivants sur vos données personnelles :</p>
-            <ul>
-                <li>Droit d'accès</li>
-                <li>Droit de rectification</li>
-                <li>Droit à l'effacement ("droit à l'oubli")</li>
-                <li>Droit à la limitation du traitement</li>
-                <li>Droit à la portabilité des données</li>
-                <li>Droit d'opposition (y compris à la prospection)</li>
-                <li>Droit de retirer votre consentement à tout moment</li>
-                <li>Droit de définir des directives post-mortem</li>
-                <li>Droit d'introduire une réclamation auprès d'une autorité de contrôle (ex : la CNIL en France).</li>
-            </ul>
-            <p>Pour une description détaillée de ces droits, veuillez vous référer aux textes réglementaires (notamment les articles 15 à 22 du RGPD).</p>
-            <p><strong>Exercice de vos droits :</strong> Vous pouvez exercer ces droits en adressant une demande écrite, claire et motivée, accompagnée si nécessaire d'un justificatif d'identité (pour éviter les demandes frauduleuses) :</p>
-            <ul>
-                <li>Par courrier électronique à : <a href="mailto:privacy@ezra-project.fr">[Adapter si besoin]</a></li>
-                <li>Par courrier postal recommandé à l'adresse indiquée à l'Article 2.</li>
-            </ul>
-             <p>Nous nous engageons à accuser réception de votre demande dans un délai maximal de <strong>sept (7) jours ouvrables</strong> et à y répondre dans les meilleurs délais, et au plus tard dans un délai d'un (1) mois (prolongeable de deux mois si nécessaire, auquel cas nous vous en informerons).</p>
-             <p><strong>Retrait du consentement aux communications :</strong> Si vous avez consenti à recevoir des communications de notre part (non applicable actuellement mais prévu pour l'avenir), vous pourrez retirer ce consentement à tout moment via un lien de désinscription présent dans nos emails ou en nous contactant directement.</p>
-             <p><strong>CNIL (France) :</strong> Pour les résidents français, l'autorité de contrôle compétente est la Commission Nationale de l'Informatique et des Libertés (CNIL), 3 Place de Fontenoy - TSA 80715 - 75334 Paris Cedex 07, France - Site web : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a>.</p>
-
-            <h2>ARTICLE 11 : Gestion des Cookies</h2>
-            <p>Le Site utilise des cookies. Pour une information complète sur les types de cookies utilisés, leurs finalités, et pour gérer vos préférences de consentement, veuillez consulter notre [**Politique de Cookies dédiée**](lien-vers-politique-cookies.html) - **CE LIEN EST ESSENTIEL et la politique doit être créée.** Vous pouvez modifier vos choix à tout moment via cet outil.</p>
-
-            <h2>ARTICLE 12 : Liens vers d'Autres Sites</h2>
-            <p>Le Site peut contenir des liens vers des sites internet de tiers. Nous n'exerçons aucun contrôle sur ces sites et déclinons toute responsabilité quant à leurs pratiques en matière de confidentialité ou à leur contenu. Nous vous encourageons à lire attentivement les politiques de confidentialité de ces sites tiers avant de leur fournir des données personnelles.</p>
-
-            <h2>ARTICLE 13 : Protection des Mineurs</h2>
-             <p>Le Site et les services proposés par Ezra Maroc ne sont pas destinés aux individus âgés de moins de 15 ans (âge du consentement numérique en France, ou l'âge minimum pertinent fixé par la loi applicable dans la juridiction de l'Utilisateur si plus élevé). Nous ne collectons et ne traitons pas sciemment les données personnelles des mineurs en dessous de cet âge sans le consentement préalable et vérifiable des titulaires de l'autorité parentale. Si vous avez des raisons de croire qu'un mineur nous a fourni des données personnelles sans ce consentement, veuillez nous contacter immédiatement pour que nous prenions les mesures appropriées.</p>
-
-
-            <h2>ARTICLE 14 : Modifications de la Politique de Confidentialité</h2>
-            <p>Nous nous réservons le droit de modifier la présente Politique de Confidentialité à tout moment. Toute modification sera effective dès sa publication sur le Site, avec mise à jour de la "Date d'entrée en vigueur". En cas de modifications substantielles, nous pourrons utiliser des moyens supplémentaires pour vous en informer (bannière sur le site, email si nous avons votre contact).</p>
-             <p>Nous vous encourageons à consulter cette page régulièrement.</p>
-
-
-            <h2>ARTICLE 15 : Contact et Questions</h2>
-            <p>Pour toute question, demande d'information ou exercice de vos droits concernant cette Politique de Confidentialité et le traitement de vos données personnelles, veuillez contacter notre service dédié à la confidentialité :</p>
-            <p>
-                <strong>Par courrier électronique :</strong> <a href="mailto:privacy@ezra-project.fr">[Adapter si besoin]</a><br>
-                <strong>Par courrier postal :</strong><br>
-                Ezra Maroc Consulting Services LLC<br>
-                Attn: Data Privacy Inquiry<br>
-                30 N Gould St Ste R<br>
-                Sheridan, WY 82801<br>
-                USA
-            </p>
+             <h2>ARTICLE 11 : Contact</h2>
+            <p>Pour toute question sur notre utilisation des cookies, contactez-nous à <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a>.</p>
 
         </div>
     </section>
 
-    <!-- FOOTER Standardisé -->
-    <footer>
-        <!-- ... (Contenu du footer identique, y compris les liens vers ML, PdC, CGU) ... -->
-           <div class="container footer-container">
-            <!-- Colonne 1: About -->
-             <div class="footer-about">
-                 <a href="index.html" class="footer-logo">Ezra<strong>Maroc</strong></a>
-                 <p class="footer-text">Spécialistes de l'obtention de la nationalité marocaine...</p>
-                 <div class="footer-social">...</div>
+    <!-- ========== FOOTER (Standardisé avec structure améliorée) ========== -->
+     <footer>
+         <div class="container footer-container">
+            <!-- Contenu identique aux autres footers -->
+               <div class="footer-about"> <a href="index.html" class="footer-logo">Ezra<strong>Maroc</strong></a> <p class="footer-text">Spécialistes...</p> <div class="footer-social">...</div> </div>
+               <div class="footer-links"> <h3 class="footer-heading">Liens rapides</h3> <ul>...</ul> </div>
+               <div class="footer-services"> <h3 class="footer-heading">Nos Services Clés</h3> <ul>...</ul> </div>
+               <div class="footer-contact"> <h3 class="footer-heading">Contactez-Nous</h3> <ul>...</ul> </div>
+         </div>
+         <div class="footer-bottom">
+             <div class="container">
+                 <p class="copyright">© 2024 Ezra Maroc Consulting Services LLC. Tous droits réservés.</p>
+                 <p class="disclaimer">Les informations sur ce site sont fournies à titre indicatif et ne constituent pas un conseil juridique.</p>
+                 <nav class="footer-legal-links" aria-label="Liens légaux">
+                     <a href="politique-confidentialite.html" rel="noopener noreferrer">Politique de confidentialité</a>
+                     <a href="mentions-legales.html" rel="noopener noreferrer">Mentions légales</a>
+                     <a href="conditions-utilisation.html" rel="noopener noreferrer">Conditions d'Utilisation</a>
+                     <a href="#" onclick="tarteaucitron.userInterface.openPanel(); return false;">Gestion des cookies</a> <!-- LIEN AJOUTÉ -->
+                 </nav>
              </div>
-             <!-- Colonne 2: Liens Rapides -->
-             <div class="footer-links">
-                 <h3 class="footer-heading">Liens rapides</h3>
-                 <ul>...</ul>
-             </div>
-             <!-- Colonne 3: Services -->
-             <div class="footer-services">
-                <h3 class="footer-heading">Nos Services</h3>
-                <ul>...</ul>
-             </div>
-             <!-- Colonne 4: Contact -->
-             <div class="footer-contact">
-                 <h3 class="footer-heading">Contactez-Nous</h3>
-                 <ul>...</ul>
-             </div>
-       </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>© 2024 Ezra Maroc Consulting Services LLC. Tous droits réservés.</p>
-                <p>
-                    Les informations sur ce site sont fournies à titre indicatif et ne constituent pas un conseil juridique.
-                    <a href="politique-confidentialite.html" rel="noopener noreferrer">Politique de confidentialité</a> |
-                    <a href="mentions-legales.html" rel="noopener noreferrer">Mentions légales</a> |
-                    <a href="conditions-utilisation.html" rel="noopener noreferrer">Conditions d'Utilisation</a>
-                </p>
-            </div>
-        </div>
-   </footer>
+         </div>
+    </footer>
+    <!-- ============================================== -->
 
-    <!-- Scripts éventuels -->
+
+    <!-- ========== AJOUT TARTEAUCITRON ========== -->
+    <script type="text/javascript" src="tarteaucitron/tarteaucitron.js"></script>
+
+    <script type="text/javascript">
+    tarteaucitron.init({
+        "privacyUrl": "politique-confidentialite.html", /* Lien vers la politique de confidentialité générale */
+
+        "hashtag": "#tarteaucitron", /* Laissez tel quel */
+        "cookieName": "tarteaucitron", /* Laissez tel quel */
+
+        "orientation": "bottom", /* Position du bandeau: 'bottom', 'top', 'middle' */
+        "groupServices": false, /* Services groupés par catégorie */
+
+        "showAlertSmall": false, /* Petite pastille après choix */
+        "cookieslist": true, /* Afficher lien liste cookies */
+
+        "closePopup": false, /* Afficher la croix de fermeture sur le bandeau */
+        "showIcon": true, /* Afficher l'icône de gestion flottante */
+        "iconPosition": "BottomRight", /* Position de l'icône */
+
+        "adblocker": false, /* Détection Adblocker */
+        "DenyAllCta": true, /* Bouton Tout Refuser */
+        "AcceptAllCta": true, /* Bouton Tout Accepter */
+        "highPrivacy": true, /* Requis pour RGPD, consentement explicite */
+
+        "handleBrowserDNTRequest": false, /* Gérer l'option 'Do Not Track' du navigateur */
+
+        "removeCredit": false, /* Retirer le lien Tarteaucitron (respecter licence ou faire un don) */
+        "moreInfoLink": true, /* Lien vers politique de confidentialité */
+
+        "useExternalCss": false, /* Utilise le CSS interne de Tarteaucitron */
+        "mandatory": true, /* Info sur les cookies obligatoires */
+        "mandatoryCta": true /* Bouton Personnaliser même si cookies obligatoires seuls */
+    });
+
+    // ----- CONFIGURATION DES SERVICES TIERS -----
+    // Si vous utilisez GA4 sur tout le site, incluez cette config sur TOUTES les pages.
+
+    /* Décommentez ce bloc si vous utilisez Google Analytics 4 */
+    /*
+    tarteaucitron.services.gtag = {
+        "key": "G-XXXXXXXXXX", // <--- REMPLACEZ PAR VOTRE ID GA4
+        "type": "gtag",
+        "name": "Google Analytics (GA4)",
+        "uri": "https://policies.google.com/privacy",
+        "needConsent": true,
+        "cookies": ['_ga', '_gid', '_ga_XXXXXXXXXX'], // <--- ADAPTEZ _ga_...
+        "js": function () {
+            "use strict";
+            if (tarteaucitron.user.gtagKey === undefined) {
+                 tarteaucitron.user.gtagKey = tarteaucitron.services.gtag.key;
+                 if (tarteaucitron.user.gtagKey === undefined || tarteaucitron.user.gtagKey === 'G-XXXXXXXXXX') {
+                      console.warn('Tarteaucitron: Google Analytics key is not defined or still placeholder.');
+                      return;
+                 }
+            }
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', tarteaucitron.user.gtagKey, {'anonymize_ip': true});
+        }
+    };
+    (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+    */
+
+    </script>
+    <!-- ========================================= -->
+
+    <!-- Scripts éventuels originaux -->
     <!-- <script src="js/script.js"></script> -->
 
 </body>
