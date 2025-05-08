@@ -1,4 +1,4 @@
-name = "ezra-contact"
+name = "em"
 # Chemin correct vers le fichier principal du worker, relatif à CE fichier toml
 main = "cloudflare-worker/worker.js"
 # Date mise à jour pour correspondre au dashboard
