@@ -1,0 +1,13 @@
+name = "ezra-contact"
+# Chemin correct vers le fichier principal du worker, relatif à CE fichier toml
+main = "cloudflare-worker/worker.js"
+# Date mise à jour pour correspondre au dashboard
+compatibility_date = "2024-05-13"
+
+# IMPORTANT: PAS de clé API ici !
+# IMPORTANT: PAS de section [vars] ici si TO_EMAIL/FROM_EMAIL sont dans le dashboard.
+# Si tu les as laissés ici, assure-toi qu'ils sont corrects.
+# Exemple si tu les avais gardés ici (mais dashboard recommandé) :
+# [vars]
+# TO_EMAIL = "info@ezra-project.fr"
+# FROM_EMAIL = "info@ezra-project.fr"

@@ -1,3 +1,5 @@
+--- START OF FILE contact.html ---
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -70,7 +72,7 @@
     </header>
 
     <!-- ==========================================================================
-       CONTENU SPÉCIFIQUE CONTACT - PAS DE CHANGEMENT ICI
+       CONTENU SPÉCIFIQUE CONTACT - CHANGEMENT DANS LE FORMULAIRE
        ========================================================================== -->
 
     <!-- Bannière de Page -->
@@ -191,15 +193,24 @@
                            <span class="error-message" id="message-error" aria-live="polite"></span>
                        </div>
 
-                       <!-- Champ Consentement -->
+                       <!-- Champ Consentement Politique de Confidentialité -->
                        <div class="form-group full-width">
                             <div class="checkbox-group" role="group" aria-labelledby="consent-label">
                                 <input type="checkbox" id="consent" name="consent" value="accepted" required aria-required="true" aria-invalid="false" aria-describedby="consent-error">
-                                <!-- Assurez-vous d'avoir une page politique-confidentialite.html ou adaptez le lien -->
-                                <label for="consent" id="consent-label">Je confirme avoir lu et accepté la <a href="/politique-confidentialite.html" target="_blank" rel="noopener noreferrer">politique de confidentialité</a> et consens au traitement de mes données personnelles pour permettre à Ezra Maroc de répondre à ma demande.<span class="required">*</span></label>
+                                <label for="consent" id="consent-label">Je confirme avoir lu et accepté la <a href="politique-confidentialite.html" target="_blank" rel="noopener noreferrer">politique de confidentialité</a> et consens au traitement de mes données personnelles pour permettre à Ezra Maroc de répondre à ma demande.<span class="required">*</span></label>
                            </div>
                            <span class="error-message" id="consent-error" aria-live="polite"></span>
                        </div>
+
+                       <!-- Champ Consentement CGU (NOUVEAU) -->
+                       <div class="form-group full-width">
+                           <div class="checkbox-group" role="group" aria-labelledby="terms-consent-label">
+                               <input type="checkbox" id="terms_consent" name="terms_consent" value="accepted" required aria-required="true" aria-invalid="false" aria-describedby="terms-consent-error">
+                               <label for="terms_consent" id="terms-consent-label">Je confirme avoir lu et accepté les <a href="conditions-utilisation.html" target="_blank" rel="noopener noreferrer">Conditions Générales d'Utilisation</a> du site.<span class="required">*</span></label>
+                           </div>
+                           <span class="error-message" id="terms-consent-error" aria-live="polite"></span>
+                       </div>
+                       <!-- FIN AJOUT NOUVEAU CHAMP -->
 
                        <!-- Bouton de Soumission -->
                        <div class="form-submit full-width">

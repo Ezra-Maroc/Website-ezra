@@ -1,6 +1,8 @@
+
+
 // ===============================================
 // ===   JS Formulaire Contact Ezra Maroc      ===
-// ===   (Version améliorée avec validation)   ===
+// ===   (Version v3 - Ajout Validation CGU)   ===
 // ===============================================
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -8,18 +10,28 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("contact-form");
     // Vérification initiale si le formulaire existe
     if (!form) {
-        // console.error("Le formulaire avec l'ID 'contact-form' n'a pas été trouvé.");
+        // console.warn("Le formulaire avec l'ID 'contact-form' n'a pas été trouvé sur cette page.");
         return; // Arrêter l'exécution si le formulaire n'est pas là
     }
 
     const submitButton = form.querySelector("button[type='submit']");
-    const loader = submitButton?.querySelector(".btn-loader"); // Utilise optional chaining au cas où
-    const buttonText = submitButton?.querySelector(".btn-text"); // Utilise optional chaining
-    const formMessage = document.getElementById("form-message"); // Message global succès/erreur
+    const loader = submitButton?.querySelector(".btn-loader");
+    const buttonText = submitButton?.querySelector(".btn-text");
+    const formMessage = document.getElementById("form-message");
 
-    // Vérification que les éléments du bouton et le message existent
-    if (!submitButton || !loader || !buttonText || !formMessage) {
-        console.error("Des éléments essentiels (bouton, loader, texte bouton, message global) sont manquants dans le formulaire.");
+    // Récupération des checkboxes spécifiques
+    const consentCheckbox = form.querySelector('#consent');         // Checkbox Politique Conf.
+    const termsConsentCheckbox = form.querySelector('#terms_consent'); // Checkbox CGU (NOUVELLE)
+
+    // Vérification que TOUS les éléments cruciaux existent
+    if (!submitButton || !loader || !buttonText || !formMessage || !consentCheckbox || !termsConsentCheckbox) {
+        console.error("Un ou plusieurs éléments essentiels (bouton, loader, message global, checkboxes) sont manquants dans le formulaire. Vérifiez les ID et classes.");
+        // Afficher une erreur plus visible pour l'utilisateur final serait une bonne idée ici
+        if (formMessage) {
+             formMessage.textContent = "Erreur : Impossible d'initialiser le formulaire. Veuillez contacter le support.";
+             formMessage.className = "form-message error show";
+        }
+        if (submitButton) submitButton.disabled = true; // Désactiver l'envoi si initialisation échoue
         return; // Arrêter si des éléments cruciaux manquent
     }
 
@@ -28,52 +40,56 @@ document.addEventListener("DOMContentLoaded", () => {
         required: (value) => value.trim() !== '', // Vérifie si non vide après avoir retiré les espaces
         email: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()), // Format email simple
         checked: (element) => element.checked, // Vérifie si une checkbox est cochée
-        // Optionnel : une validation plus poussée pour le téléphone pourrait être ajoutée ici
-        // tel: (value) => /^\+?[0-9\s\-()]{7,20}$/.test(value.trim()) // Exemple simple
+        // tel: (value) => /^\+?[0-9\s\-()]{7,20}$/.test(value.trim()) // Optionnel: Regex tél. simple
     };
 
-    // Messages d'erreur standard pour chaque type de validation
+    // Messages d'erreur standard
     const errorMessages = {
         required: "Ce champ est obligatoire.",
         email: "Veuillez fournir une adresse email valide.",
         checked: "Vous devez accepter cette condition.",
-        tel: "Format de téléphone invalide." // Si vous ajoutez la validation téléphone
+        tel: "Format de téléphone invalide." // Si validation tel ajoutée
     };
 
     /**
      * Affiche ou masque un message d'erreur pour un champ donné et met à jour les styles/ARIA.
-     * @param {HTMLInputElement|HTMLSelectElement|HTMLTextAreaElement} field - L'élément de champ à valider.
-     * @param {string|null} message - Le message d'erreur à afficher, ou null pour effacer l'erreur.
+     * @param {HTMLInputElement|HTMLSelectElement|HTMLTextAreaElement} field - L'élément de champ.
+     * @param {string|null} message - Le message d'erreur ou null pour effacer.
      */
     const setFieldError = (field, message) => {
-        const errorSpan = document.getElementById(`${field.id}-error`); // Trouve le span d'erreur associé
+        const errorSpan = document.getElementById(`${field.id}-error`);
         const isCheckbox = field.type === 'checkbox';
-        const groupContainer = isCheckbox ? field.closest('.checkbox-group') : field.closest('.form-group');
+        // Trouve le conteneur parent approprié (.checkbox-group ou .form-group)
+        const groupContainer = field.closest('.checkbox-group, .form-group');
 
         if (message) {
             // Affiche l'erreur
-            field.classList.add("error"); // Ajoute la classe CSS d'erreur au champ
-            field.setAttribute("aria-invalid", "true"); // Indique l'invalidité pour l'accessibilité
+            field.classList.add("error");
+            field.setAttribute("aria-invalid", "true");
             if (errorSpan) {
-                errorSpan.textContent = message; // Affiche le message
-                errorSpan.classList.add("visible"); // Rend le span visible (via CSS)
+                errorSpan.textContent = message;
+                errorSpan.classList.add("visible");
             }
-            if (groupContainer && isCheckbox) groupContainer.classList.add("error"); // Met en évidence le groupe pour la checkbox
+            // Applique la classe d'erreur au conteneur pour un style global si besoin
+            if (groupContainer) groupContainer.classList.add("error-group"); // Classe pour le groupe
+            if (isCheckbox && groupContainer) groupContainer.classList.add("error-checkbox-group"); // Classe spécifique checkbox
+
 
         } else {
             // Efface l'erreur
-            field.classList.remove("error"); // Retire la classe CSS d'erreur
-            field.setAttribute("aria-invalid", "false"); // Indique la validité
+            field.classList.remove("error");
+            field.setAttribute("aria-invalid", "false");
             if (errorSpan) {
-                errorSpan.textContent = ""; // Efface le message
-                errorSpan.classList.remove("visible"); // Cache le span
+                errorSpan.textContent = "";
+                errorSpan.classList.remove("visible");
             }
-             if (groupContainer && isCheckbox) groupContainer.classList.remove("error");
+            // Retire les classes d'erreur du conteneur
+            if (groupContainer) groupContainer.classList.remove("error-group", "error-checkbox-group");
         }
     };
 
     /**
-     * Valide un champ spécifique basé sur ses attributs (required, type...).
+     * Valide un champ spécifique basé sur ses attributs.
      * @param {HTMLInputElement|HTMLSelectElement|HTMLTextAreaElement} field - Le champ à valider.
      * @returns {boolean} - True si le champ est valide, False sinon.
      */
@@ -83,8 +99,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const value = field.value;
         const isCheckbox = field.type === 'checkbox';
 
-        // 1. Validation "Required"
-        if (field.required) {
+        // 1. Validation "Required" (pour tous les types et les checkboxes)
+        if (field.hasAttribute('required')) { // Vérifie explicitement l'attribut required
             if (isCheckbox && !validators.checked(field)) {
                 isValid = false;
                 errorMessage = errorMessages.checked;
@@ -94,13 +110,15 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-        // 2. Validation "Email" (si le champ est requis ou a une valeur)
+        // 2. Validation "Email" (si c'est un champ email et qu'il a une valeur OU qu'il est requis)
+        //    On valide même si vide s'il est required (il tombera dans required ci-dessus),
+        //    mais on valide le format si une valeur est entrée.
         if (isValid && field.type === "email" && value && !validators.email(value)) {
-            isValid = false;
-            errorMessage = errorMessages.email;
+             isValid = false;
+             errorMessage = errorMessages.email;
         }
 
-        // 3. Validation "Tel" (optionnelle, si le champ a une valeur)
+        // 3. Validation "Tel" (optionnelle, seulement si une valeur est entrée)
         // if (isValid && field.type === "tel" && value && !validators.tel(value)) {
         //     isValid = false;
         //     errorMessage = errorMessages.tel;
@@ -108,25 +126,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Applique le résultat de la validation (affiche ou efface l'erreur)
         setFieldError(field, errorMessage);
-        return isValid; // Retourne si le champ est valide ou non
+        return isValid;
     };
 
     // --- Ajout des écouteurs d'événements pour validation interactive ---
 
-    // Pour les inputs, select, textarea : valider quand l'utilisateur quitte le champ (blur)
+    // Inputs (non-checkbox), Select, Textarea : valider au "blur" (quand on quitte le champ)
     form.querySelectorAll("input:not([type='checkbox']), select, textarea").forEach(field => {
         field.addEventListener("blur", () => validateField(field));
-
-        // Optionnel: Validation pendant la saisie pour email/téléphone pour un feedback plus rapide
-        // Cela peut être ajouté ici si désiré, par ex. sur l'événement 'input'
-        // field.addEventListener("input", () => { /* logique de validation input */ });
+        // Optionnel: Valider à l'input pour feedback immédiat sur email/tel si désiré
+        // if (field.type === 'email' || field.type === 'tel') {
+        //     field.addEventListener("input", () => validateField(field));
+        // }
     });
 
-    // Pour la checkbox : valider quand son état change
-    const consentCheckbox = form.querySelector('#consent');
-    if (consentCheckbox) {
-        consentCheckbox.addEventListener('change', () => validateField(consentCheckbox));
-    }
+    // Checkbox Politique de Confidentialité : valider au changement
+    consentCheckbox.addEventListener('change', () => validateField(consentCheckbox));
+
+    // Checkbox CGU : valider au changement (NOUVEAU)
+    termsConsentCheckbox.addEventListener('change', () => validateField(termsConsentCheckbox));
+
 
     // --- Gestion de la soumission du formulaire ---
 
@@ -135,12 +154,13 @@ document.addEventListener("DOMContentLoaded", () => {
         let isFormValid = true;
 
         // Réinitialiser le message global avant de revalider
-        formMessage.className = "form-message"; // Retire 'show', 'success', 'error'
+        formMessage.className = "form-message";
         formMessage.textContent = "";
 
-        // Re-valider TOUS les champs requis avant d'envoyer
-        form.querySelectorAll("input[required], select[required], textarea[required]").forEach(field => {
-            // Si un seul champ est invalide, tout le formulaire l'est
+        // Re-valider TOUS les champs marqués comme requis avant d'envoyer
+        // Cela inclut les deux checkboxes qui ont l'attribut 'required'
+        form.querySelectorAll("[required]").forEach(field => {
+            // On cumule les résultats : si un seul champ est invalide, tout le formulaire l'est
             if (!validateField(field)) {
                 isFormValid = false;
             }
@@ -148,14 +168,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Si le formulaire n'est pas valide, arrêter ici
         if (!isFormValid) {
-            // Mettre le focus sur le premier champ en erreur pour l'accessibilité et l'UX
+            // Mettre le focus sur le premier champ en erreur
             const firstErrorField = form.querySelector(".error");
             if (firstErrorField) {
-                firstErrorField.focus({ preventScroll: true }); // Met le focus sans faire défiler brutalement
-                // Défilement doux vers le champ en erreur (prend en compte le header fixe)
-                const headerOffset = document.querySelector('.site-header')?.offsetHeight || 80; // Hauteur du header ou 80px par défaut
+                firstErrorField.focus({ preventScroll: true });
+                // Scroll doux vers le champ en erreur, en tenant compte du header
+                const headerOffset = document.querySelector('.site-header')?.offsetHeight || 80;
                 const elementPosition = firstErrorField.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 20; // Ajouter 20px de marge
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 20; // Marge sup.
                 window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
             }
             return; // Stopper la fonction submit
@@ -163,71 +183,82 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // --- Le formulaire est valide, procéder à l'envoi ---
 
-        submitButton.disabled = true;       // Désactiver le bouton
-        loader.classList.add("show");       // Afficher le loader
-        buttonText.classList.add("hide");   // Cacher le texte normal
+        submitButton.disabled = true;
+        loader.classList.add("show");
+        buttonText.classList.add("hide");
 
         try {
-            // Préparer les données du formulaire pour l'envoi JSON
-            const formData = Object.fromEntries(new FormData(form).entries());
-            // Assurer que la valeur de la checkbox est cohérente ('accepted' ou 'declined')
-            formData.consent = consentCheckbox?.checked ? 'accepted' : 'declined';
+            // Préparer les données pour l'envoi JSON
+            // Object.fromEntries(new FormData(form)) gère bien les checkboxes cochées (clé=valeur)
+            // et ignore celles non cochées. C'est le comportement standard des formulaires HTML.
+            // Cependant, pour forcer 'accepted'/'declined' explicitement :
+            const rawFormData = new FormData(form);
+            const formData = Object.fromEntries(rawFormData.entries());
 
-            // Envoyer les données au worker
+            // Assurer la valeur explicite 'accepted'/'declined' pour nos checkboxes spécifiques
+            formData.consent = consentCheckbox.checked ? 'accepted' : 'declined';
+            formData.terms_consent = termsConsentCheckbox.checked ? 'accepted' : 'declined'; // AJOUT EXPLICITE
+
+            // Envoi des données (adapter l'URL 'form.action' si nécessaire)
             const response = await fetch(form.action, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "Accept": "application/json" // Indiquer qu'on préfère une réponse JSON
+                    "Accept": "application/json"
                 },
                 body: JSON.stringify(formData)
             });
 
-            // Traiter la réponse du worker
+            // Traiter la réponse du serveur/worker
             if (response.ok) {
                 // Succès !
                 formMessage.textContent = "Votre demande a été envoyée avec succès. Nous reviendrons vers vous rapidement. ✅";
-                formMessage.className = "form-message success show"; // Style succès + afficher
+                formMessage.className = "form-message success show";
                 form.reset(); // Vider le formulaire
 
-                // Nettoyer manuellement les états d'erreur restants après reset
+                // Nettoyer manuellement les indicateurs d'erreur après reset
                 form.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
                 form.querySelectorAll('[aria-invalid="true"]').forEach(el => el.setAttribute('aria-invalid', 'false'));
                 form.querySelectorAll('.error-message.visible').forEach(el => {
                     el.textContent = '';
                     el.classList.remove('visible');
                 });
+                 form.querySelectorAll('.error-group').forEach(el => el.classList.remove('error-group', 'error-checkbox-group'));
 
-                // Optionnel : Redirection ou autre action après succès
-                // setTimeout(() => { window.location.href = '/merci'; }, 2000);
+
+                // Optionnel : Scroll vers le message de succès
+                 const msgPosition = formMessage.getBoundingClientRect().top;
+                 const headerOffsetSucc = document.querySelector('.site-header')?.offsetHeight || 80;
+                 const offsetPosSucc = msgPosition + window.pageYOffset - headerOffsetSucc - 20;
+                 window.scrollTo({ top: offsetPosSucc, behavior: 'smooth' });
+
+                // Optionnel : Redirection après délai
+                // setTimeout(() => { window.location.href = '/page-merci.html'; }, 3000);
 
             } else {
-                // Erreur côté serveur (worker ou SendGrid)
+                // Erreur côté serveur
                 let errorText = `Une erreur est survenue (${response.status}). Veuillez réessayer plus tard.`;
                 try {
-                    // Essayer de lire une réponse JSON d'erreur
-                    const errorData = await response.json();
-                    errorText = `Erreur : ${errorData.message || response.statusText}`;
+                    const errorData = await response.json(); // Tente de lire le JSON
+                    errorText = `Erreur : ${errorData.message || response.statusText}`; // Utilise message si dispo
                 } catch (jsonError) {
-                    // Si pas JSON, essayer texte brut
-                    try {
+                    try { // Si pas JSON, tente texte brut
                        const plainTextError = await response.text();
                        if (plainTextError) errorText = `Erreur : ${plainTextError}`;
                     } catch (textError) { /* Ignorer si même ça échoue */ }
                 }
                 formMessage.textContent = errorText + " ❌";
-                formMessage.className = "form-message error show"; // Style erreur + afficher
+                formMessage.className = "form-message error show";
             }
 
         } catch (error) {
-            // Erreur réseau (fetch impossible)
+            // Erreur réseau ou autre erreur JS inattendue
             console.error("Erreur réseau ou JS lors de la soumission:", error);
             formMessage.textContent = "Impossible de contacter le serveur. Veuillez vérifier votre connexion internet et réessayer. 🌐";
-            formMessage.className = "form-message error show"; // Style erreur + afficher
+            formMessage.className = "form-message error show";
 
         } finally {
-            // Quoi qu'il arrive (succès ou erreur), réactiver le bouton et cacher le loader
-            // Pas besoin de délai ici, l'opération est terminée
+            // Quoi qu'il arrive, réactiver le bouton et masquer le loader
             submitButton.disabled = false;
             loader.classList.remove("show");
             buttonText.classList.remove("hide");
