@@ -15,13 +15,17 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <!-- ========== AJOUT TARTEAUCITRON CSS ========== -->
+    <link rel="stylesheet" href="../tarteaucitron/css/tarteaucitron.css">
+    <!-- ========================================= -->
+
 </head>
 <body class="rtl">
 
     <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="logo">
-                <img src="img/logo.png" alt="لوغو عزرا ماروك">
+                <img src="../img/logo.png" alt="لوغو عزرا ماروك"> <!-- Chemin image corrigé -->
                 <div class="brand-text">
                     <span>عزرا</span> <strong>ماروك</strong>
                 </div>
@@ -51,6 +55,7 @@
         </div>
     </header>
 
+    <!-- Contenu original en arabe Darija conservé -->
     <section class="page-banner">
         <div class="container">
             <h1>أسئلة شائعة (FAQ)</h1>
@@ -82,7 +87,7 @@
             <p> الجنسية المغربية ماشي غير مجرد إجراء قانوني بسيط. هي كتمثل رابط عميق بين الشخص والمغرب، متجذر فالتاريخ، الثقافة، والذاكرة العائلية. هي طريقة للاعتراف الرسمي بالانتماء لي كيمتد عبر الأجيال، حتى من ورا الحدود أو الهجرات. </p>
             <p> طلب أو استرجاع الجنسية المغربية، خصوصا عن طريق النسب، غالبا كيكون فعل هوياتي قوي. كيسمح للأفراد بإعادة التواصل مع أصولهم، يخليو الروابط ديالهم الشخصية والعائلية مع المملكة معترف بها، ويشاركو بشكل كامل فالمجتمع الوطني. </p>
             <p> ولكن، الإجراءات الإدارية تقدر تكون معقدة، خصوصا ملي كيتعلق الأمر بإثبات النسب مع جد مغربي. هادشي علاش درنا هاد الأسئلة الشائعة: باش نوجهوكم بوضوح ومنهجية فهاد المسار. هي موجهة بالأساس للناس لي والديهم أو جدودهم من أصل مغربي وباغين يحصلو على الجنسية على هاد الأساس. </p>
-            <p> الفريق ديالنا كيجمع بين الخبرة القانونية الدقيقة والفهم الإنساني للمسارات الفردية. حنا ماشي غير كنخدمو الملفات: كنرافقو قصص، كنعاودو نربطو الصلات، وكنعاونو كل واحد يرسخ التراث ديالو فاعتراف قانوني. </p>
+            <p> الفريق ديالنا كيجمع بين الخبرة القانونية الدقيقة والفهم الإنساني للمسارات الفردية. حنا ماشي غير كنخدمو الملفات: كنرافقو قصص، كنعاودو نربطو الصلات، وكنعاونو כל واحد يرسخ التراث ديالو فاعتراف قانوني. </p>
             <p> كنشجعوكم تبداو هاد الرحلة ديال إعادة التواصل الهوياتي، معتمدين على دعمنا الصارم، المحترم، والمهتم جدا بغنى المسارات الشخصية. </p>
         </section>
 
@@ -279,14 +284,76 @@
         </div>
          <div class="footer-bottom">
              <div class="container">
-                 <p>© 2024 عزرا ماروك لخدمات الاستشارة ذ.م.م. جميع الحقوق محفوظة.</p>
-                 <p>المعلومات الواردة في هذا الموقع مقدمة لأغراض إعلامية فقط ولا تشكل استشارة قانونية أو ضريبية. استشر مهنيين مؤهلين.</p>
+                 <p class="copyright">© 2024 عزرا ماروك لخدمات الاستشارة ذ.م.م. جميع الحقوق محفوظة.</p>
+                 <p class="disclaimer">المعلومات الواردة في هذا الموقع مقدمة لأغراض إعلامية فقط ولا تشكل استشارة قانونية أو ضريبية. استشر مهنيين مؤهلين.</p>
+                 <nav class="footer-legal-links" aria-label="الروابط القانونية">
+                     <a href="../ara/politique-confidentialite.html" rel="noopener noreferrer">سياسة الخصوصية</a>
+                     <a href="../ara/mentions-legales.html" rel="noopener noreferrer">إشعار قانوني</a>
+                     <a href="../ara/conditions-utilisation.html" rel="noopener noreferrer">شروط الاستخدام</a>
+                     <a href="#" onclick="tarteaucitron.userInterface.openPanel(); return false;">إدارة ملفات تعريف الارتباط</a>
+                 </nav>
             </div>
          </div>
     </footer>
 
      <script src="js/faq-accordion.js"></script>
      <script src="js/language-links.js"></script>
+
+    <!-- ========== AJOUT TARTEAUCITRON ========== -->
+    <script type="text/javascript" src="../tarteaucitron/tarteaucitron.js"></script>
+    <script type="text/javascript">
+    tarteaucitron.init({
+        "privacyUrl": "../fr/politique-confidentialite.html", /* Lien vers la politique de confidentialité FR racine */
+        "hashtag": "#tarteaucitron",
+        "cookieName": "tarteaucitron",
+        "orientation": "bottom",
+        "groupServices": false,
+        "showAlertSmall": false,
+        "cookieslist": true,
+        "closePopup": false,
+        "showIcon": true,
+        "iconPosition": "BottomRight",
+        "adblocker": false,
+        "DenyAllCta": true,
+        "AcceptAllCta": true,
+        "highPrivacy": true,
+        "handleBrowserDNTRequest": false,
+        "removeCredit": false,
+        "moreInfoLink": true,
+        "useExternalCss": false,
+        "mandatory": true,
+        "mandatoryCta": true
+    });
+
+    /* Configuration des services tiers comme Google Analytics
+    tarteaucitron.services.gtag = {
+        "key": "G-XXXXXXXXXX",
+        "type": "gtag",
+        "name": "Google Analytics (GA4)",
+        "uri": "https://policies.google.com/privacy",
+        "needConsent": true,
+        "cookies": ['_ga', '_gid', '_ga_XXXXXXXXXX'],
+        "js": function () {
+            "use strict";
+            if (tarteaucitron.user.gtagKey === undefined) {
+                 tarteaucitron.user.gtagKey = tarteaucitron.services.gtag.key;
+                 if (tarteaucitron.user.gtagKey === undefined || tarteaucitron.user.gtagKey === 'G-XXXXXXXXXX') {
+                      console.warn('Tarteaucitron: Google Analytics key is not defined or still placeholder.');
+                      return;
+                 }
+            }
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', tarteaucitron.user.gtagKey, {'anonymize_ip': true});
+        }
+    };
+    (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+    */
+    </script>
+    <!-- ========================================= -->
 
 </body>
 </html>

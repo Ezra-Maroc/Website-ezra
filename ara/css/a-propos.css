@@ -1,12 +1,11 @@
-/* ===== STYLES SPÉCIFIQUES POUR LA PAGE À PROPOS (Adapté pour en/css/) ===== */
-/* (Fichier: en/css/a-propos.css) */
+/* ===== STYLES SPÉCIFIQUES POUR LA PAGE À PROPOS (Style Original + Interactions) ===== */
+/* (Fichier: css/a-propos.css) */
 
 /* ----- Surcharge Style Global pour CETTE page ----- */
 
 /* Surcharge pour l'image de fond de la bannière spécifique à la page À Propos */
 .page-banner {
-  /* Chemin de l'image corrigé pour remonter de deux niveaux (depuis en/css/ vers img/) */
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../img/kara.jpeg') center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/kara.jpeg') center/cover no-repeat;
   /* Optionnel: Ajuster la position si l'image le nécessite */
   /* background-position: center center; ou center top; etc. */
 }

@@ -15,6 +15,10 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <!-- ========== AJOUT TARTEAUCITRON CSS ========== -->
+    <link rel="stylesheet" href="../tarteaucitron/css/tarteaucitron.css">
+    <!-- ========================================= -->
+
 </head>
 <body class="rtl">
 
@@ -257,13 +261,56 @@
         </div>
          <div class="footer-bottom">
              <div class="container">
-                 <p>© 2024 عزرا ماروك لخدمات الاستشارة ذ.م.م. جميع الحقوق محفوظة.</p>
-                 <p>المعلومات الواردة في هذا الموقع مقدمة لأغراض إعلامية فقط ولا تشكل استشارة قانونية أو ضريبية. استشر مهنيين مؤهلين.</p>
+                 <p class="copyright">© 2024 عزرا ماروك لخدمات الاستشارة ذ.م.م. جميع الحقوق محفوظة.</p>
+                 <p class="disclaimer">المعلومات الواردة في هذا الموقع مقدمة لأغراض إعلامية فقط ولا تشكل استشارة قانونية أو ضريبية. استشر مهنيين مؤهلين.</p>
+                 <!-- Navigation pour les liens légaux -->
+                 <nav class="footer-legal-links" aria-label="الروابط القانونية">
+                     <a href="../ara/politique-confidentialite.html" rel="noopener noreferrer">سياسة الخصوصية</a>
+                     <a href="../ara/mentions-legales.html" rel="noopener noreferrer">إشعار قانوني</a>
+                     <a href="../ara/conditions-utilisation.html" rel="noopener noreferrer">شروط الاستخدام</a>
+                     <a href="#" onclick="tarteaucitron.userInterface.openPanel(); return false;">إدارة ملفات تعريف الارتباط</a>
+                 </nav>
             </div>
          </div>
     </footer>
 
     <script src="js/script.js"></script>
     <script src="js/language-links.js"></script>
+
+    <!-- ========== AJOUT TARTEAUCITRON ========== -->
+    <script type="text/javascript" src="../tarteaucitron/tarteaucitron.js"></script>
+    <script type="text/javascript">
+    tarteaucitron.init({
+        "privacyUrl": "../fr/politique-confidentialite.html", /* Lien vers la politique de confidentialité française racine */
+        "hashtag": "#tarteaucitron",
+        "cookieName": "tarteaucitron",
+        "orientation": "bottom",
+        "groupServices": false,
+        "showAlertSmall": false,
+        "cookieslist": true,
+        "closePopup": false,
+        "showIcon": true,
+        "iconPosition": "BottomRight",
+        "adblocker": false,
+        "DenyAllCta": true,
+        "AcceptAllCta": true,
+        "highPrivacy": true,
+        "handleBrowserDNTRequest": false,
+        "removeCredit": false,
+        "moreInfoLink": true,
+        "useExternalCss": false,
+        "mandatory": true,
+        "mandatoryCta": true
+    });
+    // Services tiers comme GA4 seraient ajoutés ici si nécessaire
+    /*
+    tarteaucitron.services.gtag = {
+        // config GA4
+    };
+    (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+    */
+    </script>
+    <!-- ========================================= -->
+
 </body>
 </html>
