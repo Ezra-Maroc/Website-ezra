@@ -25,7 +25,9 @@
     <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="logo">
-                <img src="img/logo.png" alt="لوغو عزرا ماروك">
+                <!-- CORRECTION CHEMIN LOGO -->
+                <img src="../img/logo.png" alt="لوغو عزرا ماروك">
+                <!-- FIN CORRECTION CHEMIN LOGO -->
                 <div class="brand-text">
                     <span>عزرا</span> <strong>ماروك</strong>
                 </div>
@@ -67,7 +69,9 @@
             <h2 class="section-title internal-title">في جذور <span>عزرا ماروك</span></h2>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="img/logo.png" alt="لوغو عزرا ماروك">
+                    <!-- CORRECTION CHEMIN LOGO (ici aussi s'il est utilisé dans le corps) -->
+                    <img src="../img/logo.png" alt="لوغو عزرا ماروك">
+                    <!-- FIN CORRECTION CHEMIN LOGO -->
                 </div>
                 <div class="about-text">
                     <p>تأسست <strong>عزرا ماروك</strong> بمهمة واضحة، جات من الملاحظة المباشرة للتحديات لي كيواجهوها الناس لي باغين يرجعو يتواصلو مع جذورهم المغربية. شفنا الإحباط من الإجراءات الإدارية المعقدة، لي غالبا كتبان بحال شي متاهة صعيبة.</p>
@@ -263,11 +267,12 @@
              <div class="container">
                  <p class="copyright">© 2024 عزرا ماروك لخدمات الاستشارة ذ.م.م. جميع الحقوق محفوظة.</p>
                  <p class="disclaimer">المعلومات الواردة في هذا الموقع مقدمة لأغراض إعلامية فقط ولا تشكل استشارة قانونية أو ضريبية. استشر مهنيين مؤهلين.</p>
-                 <!-- Navigation pour les liens légaux -->
                  <nav class="footer-legal-links" aria-label="الروابط القانونية">
-                     <a href="../ara/politique-confidentialite.html" rel="noopener noreferrer">سياسة الخصوصية</a>
-                     <a href="../ara/mentions-legales.html" rel="noopener noreferrer">إشعار قانوني</a>
-                     <a href="../ara/conditions-utilisation.html" rel="noopener noreferrer">شروط الاستخدام</a>
+                     <!-- CORRECTION DES LIENS LÉGAUX DU FOOTER -->
+                     <a href="politique-confidentialite.html" rel="noopener noreferrer">سياسة الخصوصية</a>
+                     <a href="mentions-legales.html" rel="noopener noreferrer">إشعار قانوني</a>
+                     <a href="conditions-utilisation.html" rel="noopener noreferrer">شروط الاستخدام</a>
+                     <!-- FIN CORRECTION DES LIENS LÉGAUX DU FOOTER -->
                      <a href="#" onclick="tarteaucitron.userInterface.openPanel(); return false;">إدارة ملفات تعريف الارتباط</a>
                  </nav>
             </div>
@@ -281,7 +286,9 @@
     <script type="text/javascript" src="../tarteaucitron/tarteaucitron.js"></script>
     <script type="text/javascript">
     tarteaucitron.init({
-        "privacyUrl": "../fr/politique-confidentialite.html", /* Lien vers la politique de confidentialité française racine */
+        // CORRECTION DE privacyUrl
+        "privacyUrl": "politique-confidentialite.html", /* Lien vers la politique de confidentialité locale (ARA) */
+        // FIN CORRECTION DE privacyUrl
         "hashtag": "#tarteaucitron",
         "cookieName": "tarteaucitron",
         "orientation": "bottom",

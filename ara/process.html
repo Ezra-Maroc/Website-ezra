@@ -359,23 +359,27 @@
                  <p class="copyright">© 2024 عزرا ماروك لخدمات الاستشارة ذ.م.م. جميع الحقوق محفوظة.</p>
                  <p class="disclaimer">المعلومات الواردة في هذا الموقع مقدمة لأغراض إعلامية فقط ولا تشكل استشارة قانونية أو ضريبية. استشر مهنيين مؤهلين.</p>
                  <nav class="footer-legal-links" aria-label="الروابط القانونية">
-                     <a href="../fr/politique-confidentialite.html" rel="noopener noreferrer">سياسة الخصوصية</a>
-                     <a href="../fr/mentions-legales.html" rel="noopener noreferrer">إشعار قانوني</a>
-                     <a href="../fr/conditions-utilisation.html" rel="noopener noreferrer">شروط الاستخدام</a>
+                     <!-- CORRECTION DES LIENS LÉGAUX DU FOOTER -->
+                     <a href="politique-confidentialite.html" rel="noopener noreferrer">سياسة الخصوصية</a>
+                     <a href="mentions-legales.html" rel="noopener noreferrer">إشعار قانوني</a>
+                     <a href="conditions-utilisation.html" rel="noopener noreferrer">شروط الاستخدام</a>
+                     <!-- FIN CORRECTION DES LIENS LÉGAUX DU FOOTER -->
                      <a href="#" onclick="tarteaucitron.userInterface.openPanel(); return false;">إدارة ملفات تعريف الارتباط</a>
                  </nav>
             </div>
          </div>
     </footer>
 
-    <script src="js/script.js"></script> <!-- Assurez-vous que ce chemin est correct (ara/js/script.js) -->
-    <script src="js/language-links.js"></script> <!-- Script pour les liens de langue, si utilisé et spécifique -->
+    <script src="js/script.js"></script>
+    <script src="js/language-links.js"></script>
 
     <!-- ========== AJOUT TARTEAUCITRON ========== -->
     <script type="text/javascript" src="../tarteaucitron/tarteaucitron.js"></script>
     <script type="text/javascript">
     tarteaucitron.init({
-        "privacyUrl": "../fr/politique-confidentialite.html", /* Lien vers la politique de confidentialité FR racine */
+        // CORRECTION DE privacyUrl
+        "privacyUrl": "politique-confidentialite.html", /* Lien vers la politique de confidentialité locale (ARA) */
+        // FIN CORRECTION DE privacyUrl
         "hashtag": "#tarteaucitron",
         "cookieName": "tarteaucitron",
         "orientation": "bottom",

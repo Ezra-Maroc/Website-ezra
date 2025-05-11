@@ -85,7 +85,7 @@
     <header class="site-header">
            <div class="container header-container">
             <a href="index.html" class="logo">
-                <img src="../img/logo.png" alt="لوغو عزرا ماروك">
+                <img src="../img/logo.png" alt="لوغو عزرا ماروك"> <!-- Chemin correct -->
                 <div class="brand-text">
                     <span>عزرا</span> <strong>ماروك</strong>
                 </div>
@@ -212,7 +212,7 @@
                         <td>تحليلي (خاص الموافقة)</td>
                     </tr>
                      <tr>
-                        <td><code>_ga_<GA4_ID></code></td>
+                        <td><code>_ga_<GA4_ID></code></td> <!-- Correction: GA4_ID -->
                         <td>Google Analytics</td>
                         <td>كايستعمل باش يحافظ على حالة الجلسة. (بدل <GA4_ID> بالمعرف الحقيقي ديال الملكية GA4 ديالكم).</td>
                         <td>طرف ثالث</td>
@@ -268,7 +268,9 @@
             <p>ممكن نبدلو هاد سياسة استخدام الكوكيز. أي تحديث غايتنشر فهاد الصفحة مع تاريخ السريان الجديد. كانطلبو منكم تطلو عليها بانتظام.</p>
 
             <h2>المادة 10: التواصل</h2>
+            <!-- CORRECTION LIENS INTERNES -->
             <p>لأي سؤال بخصوص استعمالنا للكوكيز، تقدرو تتواصلو معانا بالمعلومات لي كاينة ف <a href="mentions-legales.html">البيانات القانونية</a> ديالنا أو <a href="politique-confidentialite.html">سياسة الخصوصية</a> ديالنا.</p>
+            <!-- FIN CORRECTION LIENS INTERNES -->
 
         </div>
     </section>
@@ -317,13 +319,15 @@
          <div class="footer-bottom">
              <div class="container">
                  <p class="copyright">© 2024 عزرا ماروك لخدمات الاستشارة ذ.م.م. جميع الحقوق محفوظة.</p>
-                 <p class="disclaimer">
-                    المعلومات الواردة في هذا الموقع مقدمة لأغراض إعلامية فقط ولا تشكل استشارة قانونية أو ضريبية. استشر مهنيين مؤهلين.<br>
-                    <a href="politique-confidentialite.html" rel="noopener noreferrer">سياسة الخصوصية</a> |
-                    <a href="mentions-legales.html" rel="noopener noreferrer">إشعار قانوني</a> |
-                    <a href="conditions-utilisation.html" rel="noopener noreferrer">شروط الاستخدام</a> |
-                    <a href="#" onclick="tarteaucitron.userInterface.openPanel(); return false;">إدارة ملفات تعريف الارتباط</a>
-                 </p>
+                 <!-- CORRECTION STRUCTURE FOOTER LEGAL LINKS -->
+                 <p class="disclaimer">المعلومات الواردة في هذا الموقع مقدمة لأغراض إعلامية فقط ولا تشكل استشارة قانونية أو ضريبية. استشر مهنيين مؤهلين.</p>
+                 <nav class="footer-legal-links" aria-label="الروابط القانونية">
+                     <a href="politique-confidentialite.html" rel="noopener noreferrer">سياسة الخصوصية</a>
+                     <a href="mentions-legales.html" rel="noopener noreferrer">إشعار قانوني</a>
+                     <a href="conditions-utilisation.html" rel="noopener noreferrer">شروط الاستخدام</a>
+                     <a href="#" onclick="tarteaucitron.userInterface.openPanel(); return false;">إدارة ملفات تعريف الارتباط</a>
+                 </nav>
+                 <!-- FIN CORRECTION STRUCTURE FOOTER LEGAL LINKS -->
             </div>
          </div>
     </footer>
@@ -331,7 +335,9 @@
     <script type="text/javascript" src="../tarteaucitron/tarteaucitron.js"></script>
     <script type="text/javascript">
     tarteaucitron.init({
-        "privacyUrl": "politique-confidentialite.html", 
+        // CORRECTION DE privacyUrl
+        "privacyUrl": "politique-confidentialite.html", /* Lien vers la politique de confidentialité locale (ARA) */
+        // FIN CORRECTION DE privacyUrl
         "hashtag": "#tarteaucitron", 
         "cookieName": "tarteaucitron", 
         "orientation": "bottom", 
