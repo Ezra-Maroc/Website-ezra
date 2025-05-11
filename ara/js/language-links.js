@@ -3,66 +3,73 @@
 document.addEventListener('DOMContentLoaded', () => {
     const languageSelect = document.getElementById('lang-select');
     if (!languageSelect) {
-        // console.warn('Elemento select#lang-select no encontrado.');
+        console.warn('Sélecteur #lang-select non trouvé.');
         return;
     }
 
-    // --- Mapeo de nombres de archivo (EN/FR base -> ES) ---
-    // Asegúrate de que estas correspondencias sean EXACTAS y completas
+    // --- Mappage des noms de fichier (FRANÇAIS RACINE -> AUTRES LANGUES AVEC NOM DIFFÉRENT) ---
+    // Clé: nom de fichier français à la racine
+    // Valeur: objet avec les noms de fichiers spécifiques par langue
     const pageMappings = {
-        // EN/FR Filename : ES Filename
-        'index.html': 'inicio.html',
-        'advantages.html': 'ventajas.html', // Asume 'avantages.html' en FR raíz
-        'services.html': 'servicios.html',
-        'process.html': 'proceso.html', // Asume 'processus.html' en FR raíz
-        'testimonials.html': 'testimonios.html', // Asume 'temoignages.html' en FR raíz
-        'about.html': 'sobre-nosotros.html', // Asume 'a-propos.html' en FR raíz
-        'contact.html': 'contacto.html',
-        'faq.html': 'faq.html', // Mismo nombre
-        'legal-notice.html': 'aviso-legal.html', // Asume este nombre en FR/EN
-        'privacy-policy.html': 'politica-privacidad.html' // Asume este nombre en FR/EN
-        // Añade aquí cualquier otra página raíz que tenga equivalente
+        // Nom FR (racine) : { es: nom_es, en: nom_en (si différent), ... }
+        'index.html'                 : { es: 'inicio.html' },
+        'avantages.html'             : { es: 'ventajas.html' },
+        'services.html'              : { es: 'servicios.html' },
+        'processus.html'             : { es: 'proceso.html' }, // Nom FR racine -> ES
+        'temoignages.html'           : { es: 'testimonios.html' },// Nom FR racine -> ES
+        'a-propos.html'              : { es: 'sobre-nosotros.html' },// Nom FR racine -> ES
+        'contact.html'               : { es: 'contacto.html' },
+        'faq.html'                   : { es: 'faq.html' }, // ES a le même nom
+        // PAGES LÉGALES - Noms FR à la racine -> Noms ES
+        'mentions-legales.html'      : { es: 'aviso-legal.html' },
+        'politique-confidentialite.html': { es: 'politica-privacidad.html' },
+        'conditions-utilisation.html': { es: 'condiciones-uso.html' },
+        'politique-cookies.html'     : { es: 'politica-cookies.html' }
+        // Pour EN, HE, ARA, si les noms sont identiques au FR, pas besoin de les lister ici.
+        // Si par exemple about.html en EN s'appelait about-us.html:
+        // 'a-propos.html'            : { es: 'sobre-nosotros.html', en: 'about-us.html' },
     };
 
-    // --- Crear mapa inverso para encontrar EN/FR desde ES ---
-    const reversePageMappings = {};
-    for (const key in pageMappings) {
-        if (Object.hasOwnProperty.call(pageMappings, key)) {
-            reversePageMappings[pageMappings[key]] = key;
-        }
-    }
-
-    // --- Obtener información de la página actual ---
+    // --- Obtenir information de la page actuelle ---
     const currentPathname = window.location.pathname;
-    let currentLang = 'fr'; // Por defecto (raíz)
-    let currentFilename = '';
-    const pathParts = currentPathname.split('/').filter(part => part !== ''); // Elimina partes vacías
+    let currentLang = 'fr'; // Par défaut (racine)
+    let currentRawFilename = ''; // Nom de fichier tel quel dans l'URL
+    const pathParts = currentPathname.split('/').filter(part => part !== '');
 
-    if (pathParts.length > 0) {
-        if (['en', 'es', 'he'].includes(pathParts[0])) {
-            currentLang = pathParts[0];
-            currentFilename = pathParts[pathParts.length - 1] || 'index.html'; // O 'inicio.html' si ya estás en ES? Mejor usar index.html como defecto universal
-        } else {
-            // Estamos en raíz (FR)
-            currentFilename = pathParts[pathParts.length - 1] || 'index.html';
+    if (pathParts.length === 0) { // Raíz exacta "/"
+        currentRawFilename = 'index.html';
+        currentLang = 'fr';
+    } else if (['en', 'es', 'he', 'ara'].includes(pathParts[0])) {
+        currentLang = pathParts[0];
+        currentRawFilename = pathParts[pathParts.length - 1] || (currentLang === 'es' ? 'inicio.html' : 'index.html');
+    } else { // Racine, mais avec un nom de fichier (ex: /contact.html)
+        currentLang = 'fr';
+        currentRawFilename = pathParts[pathParts.length - 1] || 'index.html';
+    }
+
+    // --- Déterminer le nom de fichier "base" (FRANÇAIS RACINE) ---
+    let baseFilenameFR = currentRawFilename;
+    if (currentLang !== 'fr') {
+        // Essayer de trouver le nom FR à partir du nom actuel et de la langue actuelle
+        let found = false;
+        for (const frName in pageMappings) {
+            if (pageMappings[frName][currentLang] === currentRawFilename) {
+                baseFilenameFR = frName;
+                found = true;
+                break;
+            }
         }
-    } else {
-        // Estamos en la raíz exacta "/" -> index.html
-        currentFilename = 'index.html';
-        currentLang = 'fr'; // Asumimos que la raíz es FR
+        if (!found) { // Si pas dans les mappings, on assume que le nom est le même que le FR
+            baseFilenameFR = currentRawFilename;
+        }
+    }
+    // Cas spécial pour la page d'accueil si on est sur inicio.html
+    if (currentRawFilename === 'inicio.html' && currentLang === 'es') {
+        baseFilenameFR = 'index.html';
     }
 
-    // --- Determinar el nombre de archivo "base" (versión EN/FR) ---
-    let baseFilename = currentFilename;
-    if (currentLang === 'es') {
-        baseFilename = reversePageMappings[currentFilename] || currentFilename; // Si no está en el mapa inverso, usa el nombre actual (puede ser error)
-    }
-     // Asegurarse que si el filename actual es por defecto (tipo index) usemos el base correcto
-    if (currentFilename === 'inicio.html' && currentLang === 'es') baseFilename = 'index.html';
-    if (currentFilename === 'index.html' && currentLang === 'en') baseFilename = 'index.html';
 
-
-    // --- Actualizar los 'value' de cada opción ---
+    // --- Actualiser les 'value' de chaque option ---
     const options = languageSelect.options;
 
     for (let i = 0; i < options.length; i++) {
@@ -70,52 +77,38 @@ document.addEventListener('DOMContentLoaded', () => {
         const targetLang = option.getAttribute('lang');
         if (!targetLang) continue;
 
-        let targetFilename = baseFilename;
-        if (targetLang === 'es') {
-            targetFilename = pageMappings[baseFilename] || baseFilename; // Si no hay mapeo, usa el base (podría ser error o una página sin traducción de nombre)
-             // Caso especial: si el base es index, el target ES es inicio
-            if (baseFilename === 'index.html') targetFilename = 'inicio.html';
+        let targetFilename = baseFilenameFR; // Par défaut, le nom FR
+        if (pageMappings[baseFilenameFR] && pageMappings[baseFilenameFR][targetLang]) {
+            targetFilename = pageMappings[baseFilenameFR][targetLang]; // Utiliser le nom mappé si disponible
         }
-         // Caso especial inverso: si estamos en ES y vamos a EN/FR, usar index si el target ES era inicio
-        if ((targetLang === 'en' || targetLang === 'fr') && baseFilename === 'index.html') {
-             targetFilename = 'index.html';
+        // Si targetLang est 'es' et baseFilenameFR est 'index.html', s'assurer que targetFilename est 'inicio.html'
+        if (targetLang === 'es' && baseFilenameFR === 'index.html') {
+            targetFilename = pageMappings['index.html']?.es || 'inicio.html';
         }
 
 
         let relativePath = '';
 
-        // Calcular ruta relativa desde la ubicación ACTUAL
-        if (currentLang === 'en' || currentLang === 'es' || currentLang === 'he') {
-            // Estamos dentro de una carpeta de idioma (/en/, /es/, /he/)
-            if (targetLang === 'fr') { // Hacia la raíz (FR)
-                relativePath = `../${targetFilename}`;
-            } else { // Hacia otra carpeta de idioma (/en/, /es/, /he/)
-                relativePath = `../${targetLang}/${targetFilename}`;
-            }
-        } else {
-            // Estamos en la raíz (FR)
-            if (targetLang === 'fr') { // Hacia la raíz (misma página)
+        if (currentLang === 'fr') { // Depuis la racine (FR)
+            if (targetLang === 'fr') {
                 relativePath = targetFilename;
-            } else { // Hacia una carpeta de idioma (/en/, /es/, /he/)
+            } else {
                 relativePath = `${targetLang}/${targetFilename}`;
             }
+        } else { // Depuis un sous-dossier de langue (/en/, /es/, /he/, /ara/)
+            if (targetLang === 'fr') {
+                relativePath = `../${targetFilename}`; // Vers la racine (FR)
+            } else {
+                relativePath = `../${targetLang}/${targetFilename}`; // Vers un autre dossier langue
+            }
         }
-
         option.value = relativePath;
 
-        // Actualizar estado 'selected' y 'disabled' (opcional pero bueno)
-         if(targetLang === currentLang) {
-             option.selected = true;
-         } else {
-             option.selected = false;
-         }
-         // Habilitar opción si antes estaba deshabilitada (excepto si realmente no existe)
-         // Para este ejemplo, habilitaremos todas excepto las que tengan 'disabled' en HTML
-         // if (option.disabled && pageMappings[baseFilename]) {
-         //     option.disabled = false; // Habilita si existe mapeo (simple)
-         // }
+        if (targetLang === currentLang) {
+            option.selected = true;
+        } else {
+            option.selected = false;
+        }
     }
-
 });
-
-// --- FIN DEL ARCHIVO language-links.js ---
+// --- FIN DU ARCHIVO language-links.js ---
