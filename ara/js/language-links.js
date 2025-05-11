@@ -1,114 +1,148 @@
-// --- START OF FILE language-links.js ---
+// --- START OF FILE language-links.js (Version Recodée) ---
 
 document.addEventListener('DOMContentLoaded', () => {
     const languageSelect = document.getElementById('lang-select');
     if (!languageSelect) {
-        console.warn('Sélecteur #lang-select non trouvé.');
+        // console.warn('Le sélecteur de langue #lang-select n\'a pas été trouvé sur cette page.');
         return;
     }
 
-    // --- Mappage des noms de fichier (FRANÇAIS RACINE -> AUTRES LANGUES AVEC NOM DIFFÉRENT) ---
-    // Clé: nom de fichier français à la racine
-    // Valeur: objet avec les noms de fichiers spécifiques par langue
-    const pageMappings = {
-        // Nom FR (racine) : { es: nom_es, en: nom_en (si différent), ... }
-        'index.html'                 : { es: 'inicio.html' },
-        'avantages.html'             : { es: 'ventajas.html' },
-        'services.html'              : { es: 'servicios.html' },
-        'processus.html'             : { es: 'proceso.html' }, // Nom FR racine -> ES
-        'temoignages.html'           : { es: 'testimonios.html' },// Nom FR racine -> ES
-        'a-propos.html'              : { es: 'sobre-nosotros.html' },// Nom FR racine -> ES
-        'contact.html'               : { es: 'contacto.html' },
-        'faq.html'                   : { es: 'faq.html' }, // ES a le même nom
-        // PAGES LÉGALES - Noms FR à la racine -> Noms ES
-        'mentions-legales.html'      : { es: 'aviso-legal.html' },
-        'politique-confidentialite.html': { es: 'politica-privacidad.html' },
-        'conditions-utilisation.html': { es: 'condiciones-uso.html' },
-        'politique-cookies.html'     : { es: 'politica-cookies.html' }
-        // Pour EN, HE, ARA, si les noms sont identiques au FR, pas besoin de les lister ici.
-        // Si par exemple about.html en EN s'appelait about-us.html:
-        // 'a-propos.html'            : { es: 'sobre-nosotros.html', en: 'about-us.html' },
+    /**
+     * Configuration des langues et de leurs spécificités.
+     * - defaultFilename: Nom de fichier par défaut pour la page d'accueil de cette langue.
+     * - pathPrefix: Préfixe du chemin (ex: 'en/'). Laisser vide pour la langue racine (français).
+     * - pageNameOverrides: Mappage des noms de fichiers "base" (français) vers les noms de cette langue.
+     */
+    const langConfig = {
+        'fr': {
+            defaultFilename: 'index.html',
+            pathPrefix: '', // Français est à la racine
+            pageNameOverrides: {} // Pas de changement de nom pour le français par rapport à lui-même
+        },
+        'en': {
+            defaultFilename: 'index.html',
+            pathPrefix: 'en/',
+            pageNameOverrides: {} // Supposons que les noms EN sont les mêmes que FR
+        },
+        'es': {
+            defaultFilename: 'inicio.html', // Page d'accueil spécifique pour l'espagnol
+            pathPrefix: 'es/',
+            pageNameOverrides: {
+                'index.html'                 : 'inicio.html',
+                'avantages.html'             : 'ventajas.html',
+                'services.html'              : 'servicios.html',
+                'processus.html'             : 'proceso.html',
+                'temoignages.html'           : 'testimonios.html',
+                'a-propos.html'              : 'sobre-nosotros.html',
+                'contact.html'               : 'contacto.html',
+                'faq.html'                   : 'faq.html',
+                'mentions-legales.html'      : 'aviso-legal.html',
+                'politique-confidentialite.html': 'politica-privacidad.html',
+                'conditions-utilisation.html': 'condiciones-uso.html',
+                'politique-cookies.html'     : 'politica-cookies.html'
+            }
+        },
+        'he': {
+            defaultFilename: 'index.html',
+            pathPrefix: 'he/',
+            pageNameOverrides: {} // Supposons que les noms HE sont les mêmes que FR
+        },
+        'ara': {
+            defaultFilename: 'index.html',
+            pathPrefix: 'ara/',
+            pageNameOverrides: {} // Supposons que les noms ARA sont les mêmes que FR
+        }
     };
 
-    // --- Obtenir information de la page actuelle ---
-    const currentPathname = window.location.pathname;
-    let currentLang = 'fr'; // Par défaut (racine)
-    let currentRawFilename = ''; // Nom de fichier tel quel dans l'URL
-    const pathParts = currentPathname.split('/').filter(part => part !== '');
+    // 1. Déterminer la langue et le nom de fichier "base" (français) de la page actuelle.
+    const getCurrentPageInfo = () => {
+        const pathname = window.location.pathname;
+        const pathSegments = pathname.split('/').filter(segment => segment !== ''); // Retire les segments vides
 
-    if (pathParts.length === 0) { // Raíz exacta "/"
-        currentRawFilename = 'index.html';
-        currentLang = 'fr';
-    } else if (['en', 'es', 'he', 'ara'].includes(pathParts[0])) {
-        currentLang = pathParts[0];
-        currentRawFilename = pathParts[pathParts.length - 1] || (currentLang === 'es' ? 'inicio.html' : 'index.html');
-    } else { // Racine, mais avec un nom de fichier (ex: /contact.html)
-        currentLang = 'fr';
-        currentRawFilename = pathParts[pathParts.length - 1] || 'index.html';
-    }
+        let currentLang = 'fr';
+        let rawFilename = langConfig.fr.defaultFilename;
 
-    // --- Déterminer le nom de fichier "base" (FRANÇAIS RACINE) ---
-    let baseFilenameFR = currentRawFilename;
-    if (currentLang !== 'fr') {
-        // Essayer de trouver le nom FR à partir du nom actuel et de la langue actuelle
-        let found = false;
-        for (const frName in pageMappings) {
-            if (pageMappings[frName][currentLang] === currentRawFilename) {
-                baseFilenameFR = frName;
-                found = true;
-                break;
+        if (pathSegments.length > 0) {
+            const firstSegment = pathSegments[0];
+            if (langConfig[firstSegment]) { // C'est un code de langue connu
+                currentLang = firstSegment;
+                rawFilename = pathSegments[pathSegments.length - 1] || langConfig[currentLang].defaultFilename;
+            } else { // Pas un code de langue, donc on est en français (racine) et le segment est un nom de fichier
+                currentLang = 'fr';
+                rawFilename = pathSegments[pathSegments.length - 1] || langConfig.fr.defaultFilename;
             }
         }
-        if (!found) { // Si pas dans les mappings, on assume que le nom est le même que le FR
-            baseFilenameFR = currentRawFilename;
+        // Si on est à la racine exacte (ex: https://domaine.com/), pathSegments sera vide
+        // et rawFilename sera 'index.html' et currentLang 'fr' par défaut.
+
+        // Convertir rawFilename en nom de fichier "base" (français)
+        let baseFilenameFR = rawFilename;
+        if (currentLang !== 'fr') {
+            // Chercher si rawFilename est une valeur dans les overrides de la langue actuelle
+            const overrides = langConfig[currentLang].pageNameOverrides;
+            for (const frName in overrides) {
+                if (overrides[frName] === rawFilename) {
+                    baseFilenameFR = frName;
+                    break;
+                }
+            }
+            // Si non trouvé dans les overrides, on suppose que rawFilename est déjà le nom de base FR
         }
-    }
-    // Cas spécial pour la page d'accueil si on est sur inicio.html
-    if (currentRawFilename === 'inicio.html' && currentLang === 'es') {
-        baseFilenameFR = 'index.html';
-    }
+        // Gérer le cas où la page d'accueil d'une langue a un nom spécifique (ex: inicio.html pour es)
+        // mais que son équivalent "base FR" est index.html
+        if (rawFilename === langConfig[currentLang]?.defaultFilename && langConfig[currentLang]?.defaultFilename !== langConfig.fr.defaultFilename) {
+             if (currentLang === 'es' && rawFilename === 'inicio.html') baseFilenameFR = 'index.html';
+             // Ajouter d'autres cas si nécessaire pour d'autres langues
+        }
 
 
-    // --- Actualiser les 'value' de chaque option ---
-    const options = languageSelect.options;
+        return { currentLang, baseFilenameFR };
+    };
 
-    for (let i = 0; i < options.length; i++) {
-        const option = options[i];
+    const { currentLang, baseFilenameFR } = getCurrentPageInfo();
+    // console.log(`Langue Actuelle: ${currentLang}, Fichier Base FR: ${baseFilenameFR}`);
+
+    // 2. Mettre à jour les attributs 'value' de chaque option du sélecteur.
+    Array.from(languageSelect.options).forEach(option => {
         const targetLang = option.getAttribute('lang');
-        if (!targetLang) continue;
-
-        let targetFilename = baseFilenameFR; // Par défaut, le nom FR
-        if (pageMappings[baseFilenameFR] && pageMappings[baseFilenameFR][targetLang]) {
-            targetFilename = pageMappings[baseFilenameFR][targetLang]; // Utiliser le nom mappé si disponible
-        }
-        // Si targetLang est 'es' et baseFilenameFR est 'index.html', s'assurer que targetFilename est 'inicio.html'
-        if (targetLang === 'es' && baseFilenameFR === 'index.html') {
-            targetFilename = pageMappings['index.html']?.es || 'inicio.html';
+        if (!targetLang || !langConfig[targetLang]) {
+            // console.warn(`Attribut lang manquant ou langue cible non configurée pour l'option : ${option.textContent}`);
+            return;
         }
 
+        // Déterminer le nom de fichier pour la langue cible
+        let targetFilename = langConfig[targetLang].pageNameOverrides[baseFilenameFR] || baseFilenameFR;
+        
+        // Cas spécifique pour la page d'accueil de la langue cible
+        if (baseFilenameFR === langConfig.fr.defaultFilename) {
+            targetFilename = langConfig[targetLang].defaultFilename;
+        }
 
-        let relativePath = '';
+        let newPathValue = '';
 
-        if (currentLang === 'fr') { // Depuis la racine (FR)
+        if (currentLang === 'fr') {
+            // Depuis la racine (FR)
             if (targetLang === 'fr') {
-                relativePath = targetFilename;
+                newPathValue = targetFilename; // Reste à la racine
             } else {
-                relativePath = `${targetLang}/${targetFilename}`;
+                newPathValue = `${langConfig[targetLang].pathPrefix}${targetFilename}`; // Va vers un dossier langue
             }
-        } else { // Depuis un sous-dossier de langue (/en/, /es/, /he/, /ara/)
-            if (targetLang === 'fr') {
-                relativePath = `../${targetFilename}`; // Vers la racine (FR)
-            } else {
-                relativePath = `../${targetLang}/${targetFilename}`; // Vers un autre dossier langue
-            }
-        }
-        option.value = relativePath;
-
-        if (targetLang === currentLang) {
-            option.selected = true;
         } else {
-            option.selected = false;
+            // Depuis un dossier de langue (ex: /ara/)
+            if (targetLang === 'fr') {
+                newPathValue = `../${targetFilename}`; // Remonte et va à la racine (FR)
+            } else {
+                newPathValue = `../${langConfig[targetLang].pathPrefix}${targetFilename}`; // Remonte et va vers un autre dossier langue
+            }
         }
-    }
+
+        option.value = newPathValue;
+
+        // Mettre à jour l'état 'selected'
+        option.selected = (targetLang === currentLang);
+    });
+
+    // console.log('Liens du sélecteur de langue mis à jour.');
 });
-// --- FIN DU ARCHIVO language-links.js ---
+
+// --- FIN DU FICHIER language-links.js (Version Recodée) ---
