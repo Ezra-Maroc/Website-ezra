@@ -4,23 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Client Testimonials | Ezra Maroc</title>
-    {/* Meta Description Suggested */}
-    {/* <meta name="description" content="Read success stories from our clients. Discover their experiences obtaining Moroccan nationality with Ezra Maroc's expert guidance."> */}
+    <meta name="description" content="Read success stories from our clients. Discover their experiences obtaining Moroccan nationality with Ezra Maroc's expert guidance.">
 
     <!-- CSS Global relative to 'en' folder -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Specific CSS relative to 'en' folder -->
-    <link rel="stylesheet" href="css/temoignages.css"> {/* Keep original name if CSS file wasn't renamed */}
+    <link rel="stylesheet" href="css/temoignages.css">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Hreflang Tags (Replace yourdomain.com) -->
-    <!-- <link rel="alternate" hreflang="fr" href="https://www.yourdomain.com/temoignages.html" /> -->
+    <!-- Hreflang Tags (Example, replace yourdomain.com) -->
+    <!-- <link rel="alternate" hreflang="fr" href="https://www.yourdomain.com/fr/temoignages.html" /> -->
     <!-- <link rel="alternate" hreflang="en" href="https://www.yourdomain.com/en/testimonials.html" /> -->
-    <!-- <link rel="alternate" hreflang="x-default" href="https://www.yourdomain.com/temoignages.html" /> -->
+    <!-- <link rel="alternate" hreflang="x-default" href="https://www.yourdomain.com/fr/temoignages.html" /> -->
+
+    <!-- ========== TARTEAUCITRON CSS ========== -->
+    <link rel="stylesheet" href="tarteaucitron/css/tarteaucitron.css">
+    <!-- ========================================= -->
 </head>
 <body>
 
@@ -299,8 +302,15 @@
         </div>
          <div class="footer-bottom">
              <div class="container">
-                 <p>© 2024 Ezra Maroc Consulting Services LLC. All rights reserved.</p>
-                 <p>The information on this site is provided for informational purposes only and does not constitute legal or tax advice. Consult qualified professionals.</p>
+                 <p class="copyright">© 2024 Ezra Maroc Consulting Services LLC. All rights reserved.</p>
+                 <p class="disclaimer">The information on this site is provided for informational purposes only and does not constitute legal or tax advice. Consult qualified professionals.</p>
+                 <nav class="footer-legal-links" aria-label="Legal links">
+                     <a href="privacy-policy.html" rel="noopener noreferrer">Privacy Policy</a>
+                     <a href="legal-notice.html" rel="noopener noreferrer">Legal Notice</a>
+                     <a href="terms-of-service.html" rel="noopener noreferrer">Terms of Service</a>
+                     <a href="cookie-policy.html" rel="noopener noreferrer">Cookie Policy</a>
+                     <a href="#" onclick="tarteaucitron.userInterface.openPanel(); return false;">Cookie Management</a>
+                 </nav>
             </div>
          </div>
     </footer>
@@ -308,5 +318,63 @@
     <!-- JS Link -->
     <script src="js/script.js"></script>
     <script src="js/language-links.js"></script>
+
+    <!-- ========== TARTEAUCITRON JS ========== -->
+    <script type="text/javascript" src="tarteaucitron/tarteaucitron.js"></script>
+    <script type="text/javascript">
+    tarteaucitron.init({
+        "privacyUrl": "privacy-policy.html", /* Link to your English privacy policy */
+        "hashtag": "#tarteaucitron", 
+        "cookieName": "tarteaucitron",
+        "orientation": "bottom",
+        "groupServices": false,
+        "showAlertSmall": false,
+        "cookieslist": true,
+        "closePopup": false,
+        "showIcon": true,
+        "iconPosition": "BottomRight",
+        "adblocker": false,
+        "DenyAllCta": true,
+        "AcceptAllCta": true,
+        "highPrivacy": true,
+        "handleBrowserDNTRequest": false,
+        "removeCredit": false,
+        "moreInfoLink": true,
+        "useExternalCss": false,
+        "mandatory": true,
+        "mandatoryCta": true
+    });
+
+    // Example GA4 configuration (uncomment and replace G-XXXXXXXXXX if used)
+    /*
+    tarteaucitron.services.gtag = {
+        "key": "G-XXXXXXXXXX", // REPLACE WITH YOUR GA4 ID
+        "type": "gtag",
+        "name": "Google Analytics (GA4)",
+        "uri": "https://policies.google.com/privacy",
+        "needConsent": true,
+        "cookies": ['_ga', '_gid', '_ga_XXXXXXXXXX'], // ADAPT _ga_...
+        "js": function () {
+            "use strict";
+            if (tarteaucitron.user.gtagKey === undefined) {
+                 tarteaucitron.user.gtagKey = tarteaucitron.services.gtag.key;
+                 if (tarteaucitron.user.gtagKey === undefined || tarteaucitron.user.gtagKey === 'G-XXXXXXXXXX') {
+                      console.warn('Tarteaucitron: Google Analytics key is not defined or still placeholder.');
+                      return;
+                 }
+            }
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', tarteaucitron.user.gtagKey, {'anonymize_ip': true});
+        }
+    };
+    (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+    */
+    </script>
+    <!-- ========================================= -->
+
 </body>
 </html>
