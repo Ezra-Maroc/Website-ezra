@@ -1,6 +1,6 @@
 /* ============================================= */
 /* ===     STYLES PAGE CONTACT (Complet)     === */
-/* ===   (Fichier: contact.css - CORRIGÉ v2) === */
+/* === (Fichier: contact.css - AJOUTS POUR V4) === */
 /* ============================================= */
 
 /* ----- Dépendances ----- */
@@ -197,7 +197,7 @@
 }
 
 .form-group {
-  margin-bottom: 0;
+  margin-bottom: 0; /* Déjà présent, on laisse */
   position: relative;
 }
 .form-group.full-width {
@@ -216,13 +216,21 @@
   margin-left: 3px;
   font-weight: 600;
 }
-.optional {
+/* NOUVEAU/MODIFIÉ : Spécifique pour les indicateurs dans les labels */
+.required-indicator { /* Sera affiché par JS */
+    /* display: none;  géré inline par JS, ici juste pour s'assurer */
+    color: var(--primary-color, #c5281c);
+    font-weight: 600;
+    margin-left: 2px; /* Ajustez selon le rendu désiré */
+}
+.optional-text, .optional { /* .optional est existant, .optional-text est nouveau pour JS */
   font-size: 0.85em;
   color: #888;
   margin-left: 5px;
   font-weight: 400;
   font-style: italic;
 }
+
 
 .form-group input,
 .form-group select,
@@ -324,16 +332,16 @@
   font-weight: 500;
   color: var(--primary-color, #c5281c);
   margin-top: 5px;
-  min-height: 1.1em;
+  min-height: 1.1em; /* Conserve l'espace même si vide pour éviter les sauts */
   padding-left: 2px;
   opacity: 0;
-  max-height: 0;
+  max-height: 0; /* Transition pour l'apparition */
   overflow: hidden;
   transition: opacity 0.3s ease, max-height 0.3s ease, margin-top 0.3s ease;
 }
 .error-message.visible {
   opacity: 1;
-  max-height: 3em;
+  max-height: 3.5em; /* Augmenté légèrement pour le message des mots interdits si besoin */
   margin-top: 5px;
 }
 
@@ -344,13 +352,30 @@
   border-color: var(--primary-color, #c5281c) !important;
   background-color: rgba(var(--primary-600-rgb, 197, 40, 28), 0.02);
 }
+/* Style spécifique si un groupe de checkbox est invalide (si l'input.error n'est pas suffisant) */
+/* .form-group.error-group .checkbox-group label, */
+.form-group .checkbox-group input.error + label { /* Cible le label après une checkbox en erreur */
+  color: var(--primary-color, #c5281c);
+  font-weight: 500;
+}
 .form-group .checkbox-group input.error {
   outline: 1.5px solid var(--primary-color, #c5281c);
   outline-offset: 1px;
 }
-.form-group .checkbox-group input.error + label {
+
+
+/* NOUVEAU : Style pour le compteur de caractères sous le textarea */
+.char-counter-display {
+  font-size: 0.75rem;
+  color: #777;
+  margin-top: 5px; /* Espace par rapport au textarea */
+  text-align: right;
+  padding-right: 5px;
+  min-height: 1em; /* Pour éviter les sauts de layout lors de l'affichage */
+}
+.char-counter-display.error { /* Si on dépasse le maxlength (principalement pour feedback visuel) */
   color: var(--primary-color, #c5281c);
-  font-weight: 500;
+  font-weight: bold;
 }
 
 
@@ -362,7 +387,6 @@
 
 /* Bouton de soumission */
 .form-submit button {
-  /* Styles de base .btn et .btn-primary hérités */
   width: 100%;
   cursor: pointer;
   position: relative;
@@ -374,71 +398,56 @@
   justify-content: center;
   vertical-align: middle;
   text-align: center;
-  /* Styles spécifiques au bouton primaire DANS ce contexte */
   background-color: var(--primary-color, #c5281c);
   border-color: var(--primary-color, #c5281c);
-  /* ========= CORRECTION COULEUR TEXTE ========== */
-  color: var(--white-color, #fff); /* FORCE la couleur blanche */
-  /* ============================================= */
+  color: var(--white-color, #fff);
   transition: background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
-/* Style du bouton pendant le survol (non désactivé) */
 .form-submit button:not(:disabled):hover {
   background-color: var(--primary-500, #d84d3f);
   border-color: var(--primary-500, #d84d3f);
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(var(--primary-600-rgb, 197, 40, 28), 0.2);
 }
-
-/* Style du bouton lorsqu'il est désactivé (pendant l'envoi) */
 .form-submit button:disabled {
-  background-color: var(--primary-500, #d84d3f);
-  border-color: var(--primary-500, #d84d3f);
+  background-color: var(--primary-500, #d84d3f); /* Peut-être une couleur plus grisée ? */
+  border-color: var(--primary-500, #d84d3f);  /* Idem */
   opacity: 0.65;
   cursor: not-allowed;
   box-shadow: none;
   transform: none;
 }
-/* Loader (icône spinner + texte "Envoi...") */
+
 .btn-loader {
-  display: none; /* Caché par défaut */
+  display: none;
   align-items: center;
   justify-content: center;
-  /* ========= CORRECTION COULEUR TEXTE LOADER ========== */
-  color: var(--white-color, #fff); /* Assure couleur blanche */
-  /* ================================================== */
+  color: var(--white-color, #fff);
   font-weight: 500;
   font-size: 0.95em;
 }
-/* Classe ajoutée par JS pour afficher le loader */
 .btn-loader.show {
-  display: inline-flex; /* Afficher */
+  display: inline-flex;
 }
 .btn-loader i {
   margin-right: 8px;
   font-size: 1em;
-  /* Optionnel : Animation de rotation (si FontAwesome ne l'inclut pas par défaut) */
-  /* animation: fa-spin 1s infinite linear; */
+  /* animation: fa-spin 1s infinite linear; déjà géré par FontAwesome via fa-spin */
 }
-/* @keyframes fa-spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } } */
 
-/* Texte normal du bouton ("Envoyer ma demande") */
 .btn-text {
-  display: inline-block; /* Affiché par défaut */
-  /* ========= CORRECTION COULEUR TEXTE ========== */
-  color: inherit; /* Hérite la couleur du bouton (qui est maintenant forcée à blanc) */
-  /* ============================================= */
+  display: inline-block;
+  color: inherit;
 }
-/* Classe ajoutée par JS pour cacher le texte normal */
 .btn-text.hide {
-  display: none; /* Caché */
+  display: none;
 }
 
 /* Message global (succès ou erreur après soumission) */
 #form-message {
   grid-column: span 2;
   border-radius: 6px;
-  margin: 10px 0 0;
+  margin: 10px 0 0; /* Ajusté pour commencer sans marge si non visible */
   font-weight: 500;
   font-size: 0.9rem;
   border-left-width: 5px;
@@ -451,19 +460,19 @@
 }
 #form-message.show {
   opacity: 1;
-  max-height: 100px;
-  margin-top: 15px;
+  max-height: 100px; /* Peut être ajusté si les messages sont plus longs */
+  margin-top: 15px; /* Ajoute une marge seulement quand visible */
   padding: 12px 18px;
 }
 #form-message.success {
   background-color: rgba(40, 167, 69, 0.1);
-  border-left-color: var(--secondary-color, #28a745);
-  color: #185e2a;
+  border-left-color: var(--secondary-color, #28a745); /* Assurez-vous que var(--secondary-color) est défini */
+  color: #185e2a; /* Ou une variable pour le texte de succès */
 }
 #form-message.error {
   background-color: rgba(var(--primary-600-rgb, 197, 40, 28), 0.1);
   border-left-color: var(--primary-color, #c5281c);
-  color: #a1261d;
+  color: #a1261d; /* Ou une variable pour le texte d'erreur */
 }
 
 
@@ -499,13 +508,13 @@
       gap: 50px;
   }
   .contact-info {
-      height: auto;
+      height: auto; /* Devient auto car plus en colonne à côté du form */
   }
   .info-title, .form-title {
       text-align: center;
-      border-bottom: none;
+      border-bottom: none; /* Enlever la bordure car on utilise ::after */
   }
-  .info-title::after, .form-title::after {
+  .info-title::after, .form-title::after { /* Assurer la visibilité du ::after */
       content: '';
       position: absolute;
       bottom: 0;
@@ -515,7 +524,7 @@
       height: 3px;
       background-color: var(--primary-color, #c5281c);
       border-radius: 1.5px;
-      display: block;
+      display: block; /* Important */
   }
 }
 
@@ -526,10 +535,10 @@
       margin-bottom: 50px;
   }
   .contact-form {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr; /* Passage à une seule colonne */
   }
   .form-group.full-width {
-      grid-column: 1;
+      grid-column: 1; /* S'assure qu'il prend toute la largeur en mode 1 colonne */
   }
   .contact-form-container, .contact-info {
       padding: 35px 30px;
@@ -549,40 +558,42 @@
   .info-item {
       flex-direction: column;
       align-items: flex-start;
-      text-align: left;
+      text-align: left; /* Ajustement du texte */
       gap: 10px;
-      margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0;
+      margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0; /* Simplification */
   }
-  .info-item:hover { background-color: transparent; }
+  .info-item:hover { background-color: transparent; } /* Pas de hover sur mobile */
   .info-icon { margin-bottom: 5px; width: 40px; height: 40px; font-size: 1rem; }
   .info-content h4 { font-size: 1rem; }
   .info-title, .form-title {
       font-size: 1.4rem;
       margin-bottom: 30px;
-      text-align: left;
+      text-align: left; /* Alignement à gauche sur mobile */
       padding-bottom: 10px;
   }
-   .info-title::after, .form-title::after {
+   .info-title::after, .form-title::after { /* Ajustement du ::after pour alignement à gauche */
       left: 0;
       transform: none;
       width: 40px;
    }
 
   .contact-form-container, .contact-info { padding: 30px 20px; }
-  .contact-form { gap: 20px 0; }
+  .contact-form { gap: 20px 0; } /* Réduit l'espacement vertical seulement */
+
   .form-group input, .form-group select, .form-group textarea {
       font-size: 0.9rem;
-      padding: 11px 13px;
+      padding: 11px 13px; /* Réduction du padding interne */
   }
   .form-group label { font-size: 0.85rem; }
   .checkbox-group label { font-size: 0.75rem; }
   .error-message { font-size: 0.75rem; }
+  .char-counter-display { font-size: 0.7rem; } /* Ajuster taille compteur */
 
   .form-submit button { padding: 12px 20px; min-height: 48px; }
   .btn-loader { font-size: 0.9em; }
   .map-section { height: 300px; }
 
-  .internal-title::after { display: none; }
+  .internal-title::after { display: none; } /* Cacher le ::after du titre principal sur petit mobile */
 }
 
 /* Classe utilitaire pour l'accessibilité */
@@ -591,5 +602,5 @@
   height: 1px; width: 1px;
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap;
+  white-space: nowrap; /* Ajouté pour être complet */
 }

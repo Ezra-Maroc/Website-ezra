@@ -1,5 +1,3 @@
---- START OF FILE contact.html ---
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -164,9 +162,9 @@
                            <span class="error-message" id="email-error" aria-live="polite"></span>
                        </div>
 
-                       <!-- Champ Téléphone -->
+                       <!-- Champ Téléphone (MODIFIÉ POUR JS) -->
                        <div class="form-group">
-                           <label for="phone">Téléphone <span class="optional">(Recommandé pour un suivi rapide)</span></label>
+                           <label for="phone">Téléphone <span class="required required-indicator" style="display: none;">*</span><span class="optional-text">(Recommandé pour un suivi rapide)</span></label>
                            <input type="tel" id="phone" name="phone" placeholder="Ex: +33 6 12 34 56 78 (avec indicatif)" aria-invalid="false" aria-describedby="phone-error">
                            <span class="error-message" id="phone-error" aria-live="polite"></span>
                        </div>
@@ -186,10 +184,19 @@
                            <span class="error-message" id="subject-error" aria-live="polite"></span>
                        </div>
 
-                       <!-- Champ Message -->
+                       <!-- NOUVEAU CHAMP : Préciser autre sujet (initialement caché) -->
+                       <div class="form-group full-width" id="other-subject-group" style="display: none;">
+                           <label for="other_subject_details">Préciser l'objet de votre demande <span class="required">*</span></label>
+                           <input type="text" id="other_subject_details" name="other_subject_details" placeholder="Ex: Partenariat, Problème technique..." aria-invalid="false" aria-describedby="other-subject-details-error">
+                           <span class="error-message" id="other-subject-details-error" aria-live="polite"></span>
+                       </div>
+
+                       <!-- Champ Message (MODIFIÉ POUR COMPTEUR) -->
                        <div class="form-group full-width">
                            <label for="message">Détails de votre demande <span class="required">*</span></label>
-                           <textarea id="message" name="message" rows="6" required aria-required="true" placeholder="Merci de décrire votre situation : Qui dans votre famille est/était Marocain(e) (père, mère, grand-père...) ? Quand sont-ils nés/ont-ils quitté le Maroc ? Possédez-vous des documents marocains (actes de naissance, CIN, passeport...) ? Quelle est votre question précise ?" aria-invalid="false" aria-describedby="message-error"></textarea>
+                           <textarea id="message" name="message" rows="6" required aria-required="true" placeholder="Merci de décrire votre situation : Qui dans votre famille est/était Marocain(e) (père, mère, grand-père...) ? Quand sont-ils nés/ont-ils quitté le Maroc ? Possédez-vous des documents marocains (actes de naissance, CIN, passeport...) ? Quelle est votre question précise ?" aria-invalid="false" aria-describedby="message-error" maxlength="1000"></textarea>
+                           <!-- NOUVEAU : Compteur de caractères -->
+                           <div id="char-counter" class="char-counter-display">Caractères restants : 1000</div>
                            <span class="error-message" id="message-error" aria-live="polite"></span>
                        </div>
 
@@ -202,7 +209,7 @@
                            <span class="error-message" id="consent-error" aria-live="polite"></span>
                        </div>
 
-                       <!-- Champ Consentement CGU (NOUVEAU) -->
+                       <!-- Champ Consentement CGU -->
                        <div class="form-group full-width">
                            <div class="checkbox-group" role="group" aria-labelledby="terms-consent-label">
                                <input type="checkbox" id="terms_consent" name="terms_consent" value="accepted" required aria-required="true" aria-invalid="false" aria-describedby="terms-consent-error">
@@ -210,7 +217,6 @@
                            </div>
                            <span class="error-message" id="terms-consent-error" aria-live="polite"></span>
                        </div>
-                       <!-- FIN AJOUT NOUVEAU CHAMP -->
 
                        <!-- Bouton de Soumission -->
                        <div class="form-submit full-width">
