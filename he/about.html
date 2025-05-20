@@ -16,6 +16,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&family=Assistant:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- ========== AJOUT TARTEAUCITRON CSS ========== -->
+    <link rel="stylesheet" href="tarteaucitron/css/tarteaucitron.css">
+    <!-- ========================================= -->
+
     <!-- תגיות Hreflang (יש להחליף את yourdomain.com) -->
     <!-- <link rel="alternate" hreflang="fr" href="https://www.yourdomain.com/fr/a-propos.html" /> -->
     <!-- <link rel="alternate" hreflang="en" href="https://www.yourdomain.com/en/about.html" /> -->
@@ -269,8 +274,15 @@
         </div>
          <div class="footer-bottom">
              <div class="container">
-                 <p>© 2024 עזרא מרוק ייעוץ שירותים LLC. כל הזכויות שמורות.</p>
-                 <p>המידע באתר זה ניתן למטרות מידע בלבד ואינו מהווה ייעוץ משפטי או מס. התייעצו עם אנשי מקצוע מוסמכים.</p>
+                 <p class="copyright">© 2024 עזרא מרוק ייעוץ שירותים LLC. כל הזכויות שמורות.</p>
+                 <p class="disclaimer">המידע באתר זה ניתן למטרות מידע בלבד ואינו מהווה ייעוץ משפטי או מס. התייעצו עם אנשי מקצוע מוסמכים.</p>
+                 <!-- Navigation pour les liens légaux -->
+                 <nav class="footer-legal-links" aria-label="קישורים משפטיים">
+                     <a href="privacy-policy.html" rel="noopener noreferrer">מדיניות פרטיות</a>
+                     <a href="legal-notice.html" rel="noopener noreferrer">הודעה משפטית</a>
+                     <a href="terms-of-service.html" rel="noopener noreferrer">תנאי שימוש</a>
+                     <a href="#" onclick="tarteaucitron.userInterface.openPanel(); return false;">ניהול עוגיות</a>
+                 </nav>
             </div>
          </div>
     </footer>
@@ -278,5 +290,81 @@
     <!-- קישורי JS יחסית לתיקיית 'he' -->
     <script src="js/script.js"></script> <!-- אם קיים סקריפט גלובלי -->
     <script src="js/language-links.js"></script> <!-- סקריפט לעדכון קישורי שפות -->
+
+    <!-- ========== AJOUT TARTEAUCITRON ========== -->
+    <script type="text/javascript" src="tarteaucitron/tarteaucitron.js"></script>
+
+    <script type="text/javascript">
+    tarteaucitron.init({
+        "privacyUrl": "privacy-policy.html", /* קישור למדיניות הפרטיות שלך */
+
+        "hashtag": "#tarteaucitron", 
+        "cookieName": "tarteaucitron", 
+
+        "orientation": "bottom", 
+        "groupServices": false, 
+
+        "showAlertSmall": false, 
+        "cookieslist": true, 
+
+        "closePopup": false, 
+        "showIcon": true, 
+        "iconPosition": "BottomRight", 
+
+        "adblocker": false, 
+        "DenyAllCta": true, 
+        "AcceptAllCta": true, 
+        "highPrivacy": true, 
+
+        "handleBrowserDNTRequest": false, 
+
+        "removeCredit": false, 
+        "moreInfoLink": true, 
+
+        "useExternalCss": false, 
+        "mandatory": true, 
+        "mandatoryCta": true 
+    });
+
+    // ----- CONFIGURATION DES SERVICES TIERS -----
+    // IMPORTANT: הוסף כאן רק שירותים שבהם אתה משתמש בדף זה (about.html)
+    //            או באופן גלובלי בכל האתר (כמו גוגל אנליטיקס).
+
+    // --- דוגמה לגוגל אנליטיקס (GA4) ---
+    // אם אתה משתמש ב-GA4 בכל האתר, כלול הגדרה זו בכל הדפים.
+    // החלף את 'G-XXXXXXXXXX' והתאם את רשימת העוגיות.
+
+    /* בטל את ההערה של בלוק זה אם אתה משתמש בגוגל אנליטיקס 4 */
+    /*
+    tarteaucitron.services.gtag = {
+        "key": "G-XXXXXXXXXX", // <--- החלף במזהה GA4 שלך
+        "type": "gtag",
+        "name": "Google Analytics (GA4)",
+        "uri": "https://policies.google.com/privacy",
+        "needConsent": true,
+        "cookies": ['_ga', '_gid', '_ga_XXXXXXXXXX'], // <--- התאם את _ga_...
+        "js": function () {
+            "use strict";
+            if (tarteaucitron.user.gtagKey === undefined) {
+                 tarteaucitron.user.gtagKey = tarteaucitron.services.gtag.key;
+                 if (tarteaucitron.user.gtagKey === undefined || tarteaucitron.user.gtagKey === 'G-XXXXXXXXXX') {
+                      console.warn('Tarteaucitron: מפתח גוגל אנליטיקס לא מוגדר או עדיין מציין מיקום.');
+                      return;
+                 }
+            }
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', tarteaucitron.user.gtagKey, {'anonymize_ip': true});
+        }
+    };
+    (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+    */
+
+    </script>
+    <!-- ========================================= -->
+
 </body>
 </html>
