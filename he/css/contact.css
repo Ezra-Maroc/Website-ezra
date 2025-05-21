@@ -1,12 +1,13 @@
 /* ============================================= */
-/* ===     STYLES PAGE CONTACT (Complet)     === */
-/* ===   (Fichier: contact.css - CORRIGÉ v2) === */
+/* === STYLES PAGE CONTACT (Hébreu - RTL)    === */
+/* === (Basé sur contact.css V4 Français)    === */
 /* ============================================= */
 
 /* ----- Dépendances ----- */
 /* Ce fichier suppose que les variables CSS (:root), les styles de base (body, container),
    les styles de header/footer, et les styles de boutons GÉNÉRAUX (.btn)
-   sont définis dans votre fichier CSS global (ex: style.css) */
+   sont définis dans votre fichier CSS global (ex: style.css)
+   ET que style.css définit les polices hébraïques pour --font-main et --font-heading. */
 
 /* ----- Surcharge Style Global pour CETTE page ----- */
 
@@ -22,7 +23,7 @@
 }
 
 .internal-title {
-  font-family: var(--font-heading, 'Montserrat', sans-serif);
+  font-family: var(--font-heading, 'Heebo', 'Assistant', sans-serif); /* Priorité aux polices HE */
   font-size: clamp(1.8rem, 4vw, 2.4rem);
   font-weight: 700;
   margin-bottom: 60px;
@@ -38,6 +39,7 @@
   content: '';
   position: absolute;
   bottom: 0;
+  /* RTL: left: 50% et transform: translateX(-50%) restent valables pour le centrage */
   left: 50%;
   transform: translateX(-50%);
   width: 70px;
@@ -48,7 +50,7 @@
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  grid-template-columns: 1fr 1.5fr; /* L'ordre des colonnes sera visuellement inversé en RTL si besoin, mais la structure reste */
   gap: 40px 60px;
   align-items: start;
   max-width: 1200px;
@@ -67,7 +69,7 @@
 }
 
 .info-title {
-  font-family: var(--font-heading, 'Montserrat', sans-serif);
+  font-family: var(--font-heading, 'Heebo', 'Assistant', sans-serif); /* Priorité aux polices HE */
   font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 40px;
@@ -75,6 +77,7 @@
   position: relative;
   padding-bottom: 12px;
   border-bottom: 1px solid rgba(var(--primary-600-rgb, 197, 40, 28), 0.15);
+  /* RTL: text-align implicitement à droite via dir="rtl" sur body/html */
 }
 
 .info-item {
@@ -85,6 +88,7 @@
   padding: 10px;
   border-radius: 6px;
   transition: background-color 0.25s ease-in-out;
+  /* RTL: margin-left devient margin-right et vice-versa, mais ici symétrique (-10px de chaque côté) */
   margin-left: -10px; margin-right: -10px;
 }
 .info-item:hover {
@@ -114,12 +118,14 @@
   font-weight: 600;
   margin-bottom: 5px;
   color: var(--dark-color, #333);
+  /* RTL: text-align implicitement à droite */
 }
 .info-content p {
   color: #555;
   line-height: 1.6;
   margin: 0;
   font-size: 0.95rem;
+  /* RTL: text-align implicitement à droite */
 }
 .info-content p a {
   color: var(--primary-color, #c5281c);
@@ -137,6 +143,7 @@
   color: #777;
   display: block;
   margin-top: 4px;
+  /* RTL: text-align implicitement à droite */
 }
 
 .social-media {
@@ -149,9 +156,10 @@
   font-weight: 600;
   margin-bottom: 15px;
   color: var(--dark-color, #333);
+  /* RTL: text-align implicitement à droite */
 }
 .social-icons {
-  display: flex;
+  display: flex; /* L'ordre sera inversé en RTL si la source HTML les met dans un certain ordre */
   gap: 15px;
 }
 .social-icon {
@@ -180,7 +188,7 @@
 }
 
 .form-title {
-  font-family: var(--font-heading, 'Montserrat', sans-serif);
+  font-family: var(--font-heading, 'Heebo', 'Assistant', sans-serif); /* Priorité aux polices HE */
   font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 40px;
@@ -188,16 +196,17 @@
   position: relative;
   padding-bottom: 12px;
   border-bottom: 1px solid rgba(var(--primary-600-rgb, 197, 40, 28), 0.15);
+  /* RTL: text-align implicitement à droite */
 }
 
 .contact-form {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* L'ordre des colonnes visuelles sera inversé en RTL */
   gap: 25px 25px;
 }
 
 .form-group {
-  margin-bottom: 0;
+  margin-bottom: 0; 
   position: relative;
 }
 .form-group.full-width {
@@ -210,19 +219,34 @@
   font-weight: 500;
   color: #333;
   font-size: 0.9rem;
+  /* RTL: text-align implicitement à droite */
 }
 .required {
   color: var(--primary-color, #c5281c);
-  margin-left: 3px;
+  /* RTL: margin-left devient margin-right */
+  margin-right: 3px; 
+  margin-left: 0;
   font-weight: 600;
 }
-.optional {
+
+/* NOUVEAU/MODIFIÉ DANS CSS V4 Français : Spécifique pour les indicateurs dans les labels */
+.required-indicator { 
+    color: var(--primary-color, #c5281c);
+    font-weight: 600;
+    /* RTL: margin-left devient margin-right */
+    margin-right: 2px; 
+    margin-left: 0;
+}
+.optional-text, .optional { 
   font-size: 0.85em;
   color: #888;
-  margin-left: 5px;
+  /* RTL: margin-left devient margin-right */
+  margin-right: 5px; 
+  margin-left: 0;
   font-weight: 400;
   font-style: italic;
 }
+
 
 .form-group input,
 .form-group select,
@@ -231,12 +255,13 @@
   padding: 12px 15px;
   border: 1px solid #ccc;
   border-radius: 6px;
-  font-family: var(--font-main, 'Poppins', sans-serif);
+  font-family: var(--font-main, 'Heebo', 'Assistant', sans-serif); /* Priorité aux polices HE */
   font-size: 0.95rem;
   line-height: 1.5;
   color: var(--dark-color, #333);
   background-color: #fff;
   transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  /* RTL: text-align implicitement à droite si le placeholder est aussi en RTL */
 }
 .form-group textarea {
   resize: vertical;
@@ -248,6 +273,7 @@
   color: #aaa;
   font-size: 0.9em;
   font-style: italic;
+  /* RTL: S'assurer que le placeholder s'affiche bien à droite. Généralement automatique. */
 }
 
 .form-group input:focus-visible,
@@ -260,18 +286,23 @@
 }
 .checkbox-group input:focus-visible {
   outline: 2px solid var(--primary-color, #c5281c);
-  outline-offset: 1px;
+  /* RTL: outline-offset peut être inversé si besoin, mais souvent ok */
+  outline-offset: 1px; 
 }
 
 .form-group select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23c5281c' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+  /* RTL: Inverser la position de la flèche */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23c5281c' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m14 5-6 6-6-6'/%3E%3C/svg%3E"); /* Flèche inversée */
   background-repeat: no-repeat;
-  background-position: right 15px center;
+  /* RTL: background-position right devient left */
+  background-position: left 15px center; 
   background-size: 0.9em;
-  padding-right: 40px;
+  /* RTL: padding-right devient padding-left */
+  padding-left: 40px; 
+  padding-right: 15px; /* Maintenir un padding à droite aussi */
   cursor: pointer;
 }
 .form-group select:required:invalid {
@@ -284,6 +315,8 @@
 .form-group select option {
   color: var(--dark-color, #333);
   font-style: normal;
+  /* RTL: text-align: right; si le navigateur ne le fait pas automatiquement pour les options */
+  /* En général, les options de select s'alignent selon dir="rtl" de la page */
 }
 
 .checkbox-group {
@@ -291,14 +324,19 @@
   align-items: flex-start;
   gap: 10px;
   margin-top: 5px;
+  /* RTL: flex-direction: row-reverse; si l'ordre visuel checkbox puis label est souhaité.
+     Actuellement, c'est input puis label dans le HTML. L'ordre naturel de flex sera maintenu.
+     Si on veut la checkbox à DROITE du label, il faudrait du CSS spécifique. */
 }
 .checkbox-group input[type="checkbox"] {
   width: 1.1em;
   height: 1.1em;
-  margin-top: 0.2em;
+  /* RTL: margin-top ok, mais si on voulait un margin-left, ça deviendrait margin-right */
+  margin-top: 0.2em; 
   flex-shrink: 0;
   cursor: pointer;
   accent-color: var(--primary-color, #c5281c);
+  /* RTL: Pas de changement spécifique ici. L'input est avant le label dans le DOM. */
 }
 .checkbox-group label {
   font-size: 0.8rem;
@@ -307,6 +345,7 @@
   font-weight: 400;
   color: #555;
   cursor: pointer;
+  /* RTL: text-align implicitement à droite */
 }
 .checkbox-group label a {
   color: var(--primary-color, #c5281c);
@@ -324,16 +363,19 @@
   font-weight: 500;
   color: var(--primary-color, #c5281c);
   margin-top: 5px;
-  min-height: 1.1em;
-  padding-left: 2px;
+  min-height: 1.1em; 
+  /* RTL: padding-left devient padding-right */
+  padding-right: 2px; 
+  padding-left: 0;
   opacity: 0;
-  max-height: 0;
+  max-height: 0; 
   overflow: hidden;
   transition: opacity 0.3s ease, max-height 0.3s ease, margin-top 0.3s ease;
+  /* RTL: text-align implicitement à droite */
 }
 .error-message.visible {
   opacity: 1;
-  max-height: 3em;
+  max-height: 3.5em; 
   margin-top: 5px;
 }
 
@@ -348,9 +390,27 @@
   outline: 1.5px solid var(--primary-color, #c5281c);
   outline-offset: 1px;
 }
-.form-group .checkbox-group input.error + label {
+.form-group .checkbox-group input.error + label { 
   color: var(--primary-color, #c5281c);
   font-weight: 500;
+}
+
+
+/* NOUVEAU CSS V4 Français : Style pour le compteur de caractères sous le textarea */
+.char-counter-display {
+  font-size: 0.75rem;
+  color: #777;
+  margin-top: 5px;
+  /* RTL: text-align: right devient text-align: left */
+  text-align: left; 
+  /* RTL: padding-right devient padding-left */
+  padding-left: 5px; 
+  padding-right: 0;
+  min-height: 1em;
+}
+.char-counter-display.error { 
+  color: var(--primary-color, #c5281c);
+  font-weight: bold;
 }
 
 
@@ -362,7 +422,6 @@
 
 /* Bouton de soumission */
 .form-submit button {
-  /* Styles de base .btn et .btn-primary hérités */
   width: 100%;
   cursor: pointer;
   position: relative;
@@ -374,96 +433,90 @@
   justify-content: center;
   vertical-align: middle;
   text-align: center;
-  /* Styles spécifiques au bouton primaire DANS ce contexte */
   background-color: var(--primary-color, #c5281c);
   border-color: var(--primary-color, #c5281c);
-  /* ========= CORRECTION COULEUR TEXTE ========== */
-  color: var(--white-color, #fff); /* FORCE la couleur blanche */
-  /* ============================================= */
+  color: var(--white-color, #fff);
   transition: background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
-/* Style du bouton pendant le survol (non désactivé) */
 .form-submit button:not(:disabled):hover {
   background-color: var(--primary-500, #d84d3f);
   border-color: var(--primary-500, #d84d3f);
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(var(--primary-600-rgb, 197, 40, 28), 0.2);
 }
-
-/* Style du bouton lorsqu'il est désactivé (pendant l'envoi) */
 .form-submit button:disabled {
-  background-color: var(--primary-500, #d84d3f);
-  border-color: var(--primary-500, #d84d3f);
+  background-color: var(--primary-500, #d84d3f); 
+  border-color: var(--primary-500, #d84d3f);  
   opacity: 0.65;
   cursor: not-allowed;
   box-shadow: none;
   transform: none;
 }
-/* Loader (icône spinner + texte "Envoi...") */
+
 .btn-loader {
-  display: none; /* Caché par défaut */
+  display: none;
   align-items: center;
   justify-content: center;
-  /* ========= CORRECTION COULEUR TEXTE LOADER ========== */
-  color: var(--white-color, #fff); /* Assure couleur blanche */
-  /* ================================================== */
+  color: var(--white-color, #fff);
   font-weight: 500;
   font-size: 0.95em;
 }
-/* Classe ajoutée par JS pour afficher le loader */
 .btn-loader.show {
-  display: inline-flex; /* Afficher */
+  display: inline-flex;
 }
 .btn-loader i {
-  margin-right: 8px;
+  /* RTL: margin-right devient margin-left */
+  margin-left: 8px; 
+  margin-right: 0;
   font-size: 1em;
-  /* Optionnel : Animation de rotation (si FontAwesome ne l'inclut pas par défaut) */
-  /* animation: fa-spin 1s infinite linear; */
 }
-/* @keyframes fa-spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } } */
 
-/* Texte normal du bouton ("Envoyer ma demande") */
 .btn-text {
-  display: inline-block; /* Affiché par défaut */
-  /* ========= CORRECTION COULEUR TEXTE ========== */
-  color: inherit; /* Hérite la couleur du bouton (qui est maintenant forcée à blanc) */
-  /* ============================================= */
+  display: inline-block;
+  color: inherit;
 }
-/* Classe ajoutée par JS pour cacher le texte normal */
 .btn-text.hide {
-  display: none; /* Caché */
+  display: none;
 }
 
 /* Message global (succès ou erreur après soumission) */
 #form-message {
   grid-column: span 2;
   border-radius: 6px;
-  margin: 10px 0 0;
+  margin: 10px 0 0; 
   font-weight: 500;
   font-size: 0.9rem;
-  border-left-width: 5px;
-  border-left-style: solid;
+  /* RTL: border-left-width devient border-right-width */
+  border-right-width: 5px; 
+  border-left-width: 0;
+  border-right-style: solid;
+  border-left-style: none;
   opacity: 0;
   max-height: 0;
   overflow: hidden;
   padding: 0;
   transition: all 0.4s ease-out;
+  /* RTL: text-align implicitement à droite */
 }
 #form-message.show {
   opacity: 1;
-  max-height: 100px;
-  margin-top: 15px;
+  max-height: 100px; 
+  margin-top: 15px; 
   padding: 12px 18px;
 }
 #form-message.success {
   background-color: rgba(40, 167, 69, 0.1);
-  border-left-color: var(--secondary-color, #28a745);
-  color: #185e2a;
+  /* RTL: border-left-color devient border-right-color */
+  border-right-color: var(--secondary-color, #28a745); 
+  border-left-color: transparent;
+  color: #185e2a; 
 }
 #form-message.error {
   background-color: rgba(var(--primary-600-rgb, 197, 40, 28), 0.1);
-  border-left-color: var(--primary-color, #c5281c);
-  color: #a1261d;
+  /* RTL: border-left-color devient border-right-color */
+  border-right-color: var(--primary-color, #c5281c); 
+  border-left-color: transparent;
+  color: #a1261d; 
 }
 
 
@@ -499,23 +552,24 @@
       gap: 50px;
   }
   .contact-info {
-      height: auto;
+      height: auto; 
   }
   .info-title, .form-title {
       text-align: center;
-      border-bottom: none;
+      border-bottom: none; 
   }
-  .info-title::after, .form-title::after {
+  .info-title::after, .form-title::after { 
       content: '';
       position: absolute;
       bottom: 0;
+      /* RTL: Centrage ok */
       left: 50%;
       transform: translateX(-50%);
       width: 50px;
       height: 3px;
       background-color: var(--primary-color, #c5281c);
       border-radius: 1.5px;
-      display: block;
+      display: block; 
   }
 }
 
@@ -526,10 +580,10 @@
       margin-bottom: 50px;
   }
   .contact-form {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr; 
   }
   .form-group.full-width {
-      grid-column: 1;
+      grid-column: 1; 
   }
   .contact-form-container, .contact-info {
       padding: 35px 30px;
@@ -548,41 +602,47 @@
 
   .info-item {
       flex-direction: column;
-      align-items: flex-start;
-      text-align: left;
+      align-items: flex-start; /* Devrait être align-items: start pour RTL, mais flex-start ici alignera à GAUCHE (début de la ligne).
+                                   Pour aligner à DROITE (début de la ligne en RTL), ce serait bien flex-start ou juste align-items: stretch; text-align: right; */
+      /* RTL: text-align: right; (par défaut via dir=rtl) */
       gap: 10px;
-      margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0;
+      margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0; 
   }
-  .info-item:hover { background-color: transparent; }
+  .info-item:hover { background-color: transparent; } 
   .info-icon { margin-bottom: 5px; width: 40px; height: 40px; font-size: 1rem; }
   .info-content h4 { font-size: 1rem; }
   .info-title, .form-title {
       font-size: 1.4rem;
       margin-bottom: 30px;
-      text-align: left;
+      /* RTL: text-align: right; */
+      text-align: right; /* Explicite pour mobile si besoin */
       padding-bottom: 10px;
   }
-   .info-title::after, .form-title::after {
-      left: 0;
+   .info-title::after, .form-title::after { 
+      /* RTL: left devient right pour alignement à droite */
+      right: 0;
+      left: auto; 
       transform: none;
       width: 40px;
    }
 
   .contact-form-container, .contact-info { padding: 30px 20px; }
-  .contact-form { gap: 20px 0; }
+  .contact-form { gap: 20px 0; } 
+
   .form-group input, .form-group select, .form-group textarea {
       font-size: 0.9rem;
-      padding: 11px 13px;
+      padding: 11px 13px; 
   }
   .form-group label { font-size: 0.85rem; }
   .checkbox-group label { font-size: 0.75rem; }
   .error-message { font-size: 0.75rem; }
+  .char-counter-display { font-size: 0.7rem; } 
 
   .form-submit button { padding: 12px 20px; min-height: 48px; }
   .btn-loader { font-size: 0.9em; }
   .map-section { height: 300px; }
 
-  .internal-title::after { display: none; }
+  .internal-title::after { display: none; } 
 }
 
 /* Classe utilitaire pour l'accessibilité */
@@ -591,5 +651,5 @@
   height: 1px; width: 1px;
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap;
+  white-space: nowrap; /* Ajouté pour être complet */
 }
