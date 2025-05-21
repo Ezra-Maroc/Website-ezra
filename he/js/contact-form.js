@@ -41,61 +41,132 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    // --- LISTE DES MOTS INTERDITS (Hébreu - À COMPLÉTER AVEC EXTRÊME PRUDENCE) ---
-    // !!! ATTENTION : CETTE LISTE EST UN POINT DE DÉPART MINIMAL. ELLE DOIT ÊTRE REVUE, COMPLÉTÉE ET TESTÉE SOIGNEUSEMENT. !!!
-    // !!! RISQUE ÉLEVÉ DE FAUX POSITIFS SI NON GÉRÉE CORRECTEMENT. !!!
+    // --- LISTE DES MOTS INTERDITS (Hébreu - PROPOSITION ÉTENDUE - VALIDATION HUMAINE CRUCIALE !) ---
+    // !!! ATTENTION : CETTE LISTE EST GÉNÉRÉE PAR IA ET DOIT ÊTRE IMPÉRATIVEMENT VALIDÉE PAR UN LOCUTEUR NATIF !!!
+    // !!! RISQUE TRÈS ÉLEVÉ DE FAUX POSITIFS ET D'ERREURS !!!
     const disallowedWords = [
-        // Exemples (à vérifier et compléter par un locuteur natif) :
-        "זבל", "חרא", // (Ordures, merde - basiques)
-        "זין", "כוס", // (Termes crus pour organes génitaux)
-        "זונה", "שרמוטה", // (Prostituée, salope - très vulgaires)
-        "בן זונה", // (Fils de pute)
-        "מניאק", // (Connard/salaud - emprunt)
-        // ... AJOUTEZ D'AUTRES TERMES INJURIEUX COURANTS ET NON AMBIGUS EN HÉBREU ...
-        // ... SOYEZ TRÈS PRUDENT AVEC LES VARIATIONS, LES PLURIELS, LES FORMES FÉMININES/MASCULINES ...
-        // ... ET LES MOTS QUI PEUVENT AVOIR UN DOUBLE SENS. ...
+        // === Insultes/Vulgarités Générales ===
+        "זבל",         // Zével (ordure, déchet)
+        "חרא",         // Khara (merde)
+        "פיפי",        // Pipi (pipi - enfantin mais peut être utilisé péjorativement)
+        "קקי",         // Kaki (caca - enfantin mais peut être utilisé péjorativement)
+        "טינופת",      // Tinofet (saleté, ordure)
+        "מגעיל",       // Mag'il (dégoutant)
+        "דוחה",        // Dokhé (répugnant)
+        "מטומטם",      // Metumtam (stupide, idiot)
+        "אידיוט",      // Idiot (idiot - emprunt)
+        "דביל",        // Debil (débile - emprunt)
+        "מפגר",        // Mefager (retardé - très offensant)
+        "טמבל",        // Tembel (crétin, imbécile - emprunt turc)
+        "אימבציל",    // Imbecil (imbécile - emprunt)
+        "ראש כרוב",   // Rosh Kruv (tête de chou - idiot)
+        "סמרטוט",      // Smartout (serpillière, lavette - personne sans volonté)
+        "אפס",         // Efes (zéro, nul - personne insignifiante)
+        "כלומניק",    // Klumnik (vaurien, propre à rien)
+        "עלוב",        // Alouv (minable, pitoyable)
+        "מניאק",      // Manyak (salaud, enfoiré - emprunt)
+        "נבלה",        // Nevéla (charogne - insulte forte)
+        "בהמה",        // Behema (animal, brute - personne grossière)
+        "חמור",        // Khamor (âne - idiot)
+        "כלב",         // Kelev (chien - insulte)
+        "כלבה",        // Kalba (chienne - insulte)
+        "חזיר",        // Khazir (cochon - insulte)
+        "קוף",         // Kof (singe - insulte)
+        "פרצוף תחת",  // Partsouf Takhat (gueule de cul)
+        "לכלך",        // Lekhlekh (salir, souiller - le verbe peut être utilisé agressivement)
+        "זבלן",        // Zablan (éboueur - peut être utilisé péjorativement)
+
+        // === Termes Sexuels Crus / Organes Génitaux ===
+        "זין",         // Zayin (bite - très vulgaire)
+        "בולבול",      // Bulbul (zizi - enfantin mais peut être détourné)
+        "ביצים",       // Beitzim (couilles)
+        // "כוס",      // Kos (chatte/con - très vulgaire) - EXTRÊMEMENT RISQUÉ car "כוס" = "verre". COMMENTÉ PAR DÉFAUT.
+        "ציצים",       // Tsitsim (seins - familier, peut être vulgaire selon contexte)
+        "תחת",         // Takhat (cul)
+        "שדיים",       // Shadaim (seins - neutre, mais peut être utilisé vulgairement)
+        "פטמה",        // Pitma (mamelon - neutre, mais contexte)
+        "דגדגן",       // Dagdegan (clitoris - technique mais contexte)
+
+        // === Actes Sexuels (si utilisés vulgairement) ===
+        "לזיין",       // Lezayen (baiser/niquer - le verbe à l'infinitif)
+        "מזדיין",      // Mizdayen (baise/nique - participe présent/forme argotique)
+        "זיון",        // Ziyoun (baise, rapport sexuel - nom)
+        "למצוץ",       // Limtsots (sucer - peut être sexuel et vulgaire)
+        "אוננות",      // Onanoot (masturbation - nom)
+        "לאונן",       // Le'onen (se masturber - verbe)
+
+        // === Prostitution / Termes Dégradants (souvent envers les femmes) ===
+        "זונה",        // Zona (prostituée, pute - très vulgaire)
+        "שרמוטה",      // Sharmouta (salope, traînée - très vulgaire, emprunt arabe)
+        "שרלילה",      // Sharlila (variante de sharmouta ?)
+        "פרחה",        // Frekha (cagole, fille vulgaire et superficielle - stéréotype péjoratif)
+        "סרסור",      // Sarsour (proxénète)
+
+        // === Insultes Familiales ===
+        "בן זונה",    // Ben Zona (fils de pute)
+        "בת זונה",    // Bat Zona (fille de pute)
+        "אמאשך זונה", // Imashkha Zona (ta mère est une pute)
+        "כוסאמק",      // Kusamak (le con de ta mère - très vulgaire, emprunt arabe)
+        "כוסאמאשך",  // Kusamashkha (variante)
+        "כוסאמאמאשך",// Kusamamashkha (variante encore plus forte)
+        "כוסאוחתק",  // Kusuukhtak (le con de ta sœur - très vulgaire, emprunt arabe)
+        "אחושרמוטה",  // Akhusharmuta (contraction vulgaire)
+        
+        // === Insultes liées à l'origine / Racisme (EXTRÊMEMENT SENSIBLE, VÉRIFICATION CAPITALE) ===
+        "כושי",        // Koushi (nègre - très offensant)
+        "ערבוש",      // Arbush (terme péjoratif pour Arabe - offensant)
+
+        // === Incitations à la violence / Menaces (si utilisées littéralement) ===
+        // "להרוג",    // Laharog (tuer) - RISQUE DE FAUX POSITIF
+        // "לרצוח",    // Lirtsokh (assassiner) - RISQUE DE FAUX POSITIF
+        "תמות",        // Tamut (meurs !)
+        "לך תמות",    // Lekh Tamut (va mourir !)
+        // "אני אהרוג אותך", // Ani Eharog Ot'kha (je vais te tuer) - RISQUE DE FAUX POSITIF
+
+        // === Expressions et Ordres Vulgaires ===
+        "לך תזדיין",  // Lekh Tizdayen (va te faire foutre)
+        "קיבינימט",    // Kibinimat (variante de "va te faire foutre")
+        "עוף לי מהעיניים", // Ouf li meha'eynaim (dégage de ma vue)
+        "סתום ת'פה",  // Stom ta'pé (ferme ta gueule)
+        "תסתום",       // Tistom (la ferme / tais-toi - impératif)
+        "זיבי",        // Zibi ("ma bite" - utilisé comme "mon cul !" / "rien à foutre !")
+        "על הזין שלי",// Al ha'zayin sheli (sur ma bite - je m'en fous complètement)
+
+        // === Termes liés aux excréments de manière vulgaire ===
+        "לחרבן",      // Lekharben (chier - le verbe)
     ];
+
 
     // --- Fonctions de validation ---
     const validators = {
         required: (value) => value.trim() !== '',
         email: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()),
         checked: (element) => element.checked,
-        tel: (value) => /^\+?[0-9\s\-()]{7,20}$/.test(value.trim()), // Valide pour la plupart des numéros internationaux
+        tel: (value) => /^\+?[0-9\s\-()]{7,20}$/.test(value.trim()),
 
         noDisallowedWords: (value) => {
             if (disallowedWords.length === 0) return true;
             if (!value) return true;
             
-            // Normalisation simple pour l'hébreu : minuscules (si applicable, bien que l'hébreu n'ait pas de casse), et suppression de certains signes.
-            // L'hébreu n'a pas d'accents comme le français. La normalisation principale serait la gestion des formes de lettres (finales),
-            // ce qui est complexe et dépasse le cadre d'une simple fonction ici.
-            // On se contente de convertir en "pseudo-minuscules" pour la comparaison (si jamais la liste contient des formes avec casse)
-            // et on enlève quelques signes de ponctuation pour une comparaison plus lâche des mots.
-            const lowerCaseValue = value.toLowerCase(); // Peu d'effet sur l'hébreu mais bonne pratique
+            const lowerCaseValue = value.toLowerCase(); 
             const normalizedValue = lowerCaseValue
-                .replace(/[.,!?;"']/g, '') // Enlève quelques ponctuations courantes
-                .replace(/\s+/g, ' '); // Normalise les espaces multiples
+                .replace(/[.,!?;"']/g, '') 
+                .replace(/\s+/g, ' '); 
 
             const wordsInValue = normalizedValue.split(/\s+/).filter(word => word.length > 0);
 
             return !disallowedWords.some(disallowedWord => {
-                // Les mots interdits dans la liste doivent être en "forme de base" ou toutes leurs variations doivent y être.
-                // Comparaison directe après mise en "pseudo-minuscules".
-                return wordsInValue.includes(disallowedWord.toLowerCase());
+                return wordsInValue.includes(disallowedWord.toLowerCase()); // Comparaison en "minuscules"
             });
         },
 
-        minValidWords: (value, minCount = 15, minWordLength = 2) => {
+        minValidWords: (value, minCount = 15, minWordLength = 2) => { // Seuil de 15 mots, ajuster si besoin
             if (!value) return false;
-            // \p{L} inclut les lettres hébraïques.
             const words = value.match(/(\b\p{L}+(['-]\p{L}+)*\b)/gu) || [];
             let validWordCount = 0;
             for (const word of words) {
                 if (word.length >= minWordLength) {
-                    // Vérifie les répétitions de lettres (ex: אאאא)
                     if (/^(\p{L})\1{3,}$/u.test(word)) continue;
-                    // La vérification des consonnes latines est supprimée.
                     validWordCount++;
                 }
             }
@@ -164,7 +235,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (isValid && disallowedWords.length > 0 && !validators.noDisallowedWords(value)) {
                 isValid = false; errorMessage = errorMessages.disallowedWords;
             }
-            if (isValid && !validators.minValidWords(value, 15, 2)) { // Ajuster 15 si besoin
+            // Valider minValidWords seulement si pas déjà en erreur pour mots interdits (si la liste disallowedWords est active)
+            if (isValid && !validators.minValidWords(value, 15, 2)) { 
                 isValid = false; errorMessage = errorMessages.minValidWords;
             }
         }
@@ -172,9 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return isValid;
     };
 
-    // Variable pour stocker le texte de base du compteur de caractères.
-    // S'assurer que ce texte est bien dans l'élément HTML `div#char-counter` initialement.
-    const charCounterBaseText = charCounterDisplay ? charCounterDisplay.textContent.split(':')[0].trim() : "תווים שנותרו";
+    const charCounterBaseText = charCounterDisplay ? (charCounterDisplay.textContent.split(':')[0] || "תווים שנותרו").trim() : "תווים שנותרו";
 
     const updateCharCounter = () => {
         if(!charCounterDisplay || !messageTextarea) return;
@@ -186,16 +256,15 @@ document.addEventListener("DOMContentLoaded", () => {
         else charCounterDisplay.classList.remove("error");
     };
 
-    // Variable pour stocker le texte de base du champ téléphone optionnel.
     const phoneOptionalBaseText = phoneOptionalText ? phoneOptionalText.textContent : "(מומלץ למעקב מהיר)";
 
     const handleSubjectChange = () => {
         if(!subjectSelect || !phoneField || !otherSubjectGroup || !otherSubjectDetailsInput) return;
-        const selectedSubject = subjectSelect.value; // Les 'value' sont en français dans l'HTML
+        const selectedSubject = subjectSelect.value; 
 
         phoneField.removeAttribute('required');
         if(phoneRequiredIndicator) phoneRequiredIndicator.style.display = 'none';
-        if (phoneOptionalText) phoneOptionalText.textContent = phoneOptionalBaseText; // Rétablir le texte optionnel de base
+        if (phoneOptionalText) phoneOptionalText.textContent = phoneOptionalBaseText;
         setFieldError(phoneField, null);
 
         otherSubjectGroup.style.display = 'none';
@@ -233,31 +302,30 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 }
             } else {
-                setFieldError(messageTextarea, null); // Effacer les erreurs si le champ est vidé
+                setFieldError(messageTextarea, null); 
             }
         });
-        messageTextarea.addEventListener('blur', () => validateField(messageTextarea)); // Validation complète au blur
+        messageTextarea.addEventListener('blur', () => validateField(messageTextarea));
     }
     if(subjectSelect) {
         subjectSelect.addEventListener('change', () => {
             handleSubjectChange();
-            validateField(subjectSelect);
-            if (phoneField.hasAttribute('required')) validateField(phoneField);
-            else setFieldError(phoneField, null);
+            validateField(subjectSelect); // Valider le select lui-même
+            if (phoneField.hasAttribute('required')) validateField(phoneField); // Revalider téléphone si devenu requis
+            else setFieldError(phoneField, null); // Sinon, nettoyer erreurs téléphone
             if (otherSubjectDetailsInput && otherSubjectDetailsInput.hasAttribute('required')) validateField(otherSubjectDetailsInput);
             else if (otherSubjectDetailsInput) setFieldError(otherSubjectDetailsInput, null);
         });
     }
 
-    if (charCounterDisplay) updateCharCounter(); // Appel initial
-    handleSubjectChange(); // Appel initial
+    if (charCounterDisplay) updateCharCounter();
+    handleSubjectChange();
 
-    // Stocker le texte original du bouton de soumission
     const submitButtonBaseText = buttonText ? buttonText.textContent : "שלח את בקשתי";
 
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
-        if (submitButton.disabled && buttonText && buttonText.textContent.includes("המתן")) { // "Patientez" en hébreu
+        if (submitButton.disabled && buttonText && buttonText.textContent.includes("המתן")) {
             return; 
         }
 
@@ -266,7 +334,6 @@ document.addEventListener("DOMContentLoaded", () => {
         formMessage.textContent = "";
 
         form.querySelectorAll("input, select, textarea").forEach(field => {
-            // Valider tous les champs requis, ET le champ message pour tous ses critères
             if (field.hasAttribute('required') || field.id === 'message') {
                 if (!validateField(field)) {
                     isFormValid = false;
@@ -309,11 +376,10 @@ document.addEventListener("DOMContentLoaded", () => {
             if (response.ok) {
                 formMessage.textContent = "בקשתך נשלחה בהצלחה. אנו נחזור אליך בהקדם. ✅";
                 formMessage.className = "form-message success show";
-                form.reset(); // Important: reset avant de mettre à jour les UI dépendantes des valeurs
-                if (charCounterDisplay) updateCharCounter(); // Mettre à jour après reset
-                handleSubjectChange(); // Mettre à jour après reset
+                form.reset(); 
+                if (charCounterDisplay) updateCharCounter(); 
+                handleSubjectChange(); 
 
-                // Nettoyer explicitement les indicateurs d'erreur visuels restants
                 form.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
                 form.querySelectorAll('[aria-invalid="true"]').forEach(el => el.setAttribute('aria-invalid', 'false'));
                 form.querySelectorAll('.error-message.visible').forEach(el => { el.textContent = ''; el.classList.remove('visible'); });
@@ -325,8 +391,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 window.scrollTo({ top: offsetPosSucc, behavior: 'smooth' });
             } else {
                 let errorText = `אירעה שגיאה (${response.status}). אנא נסה שנית מאוחר יותר.`;
-                try { const errorData = await response.json(); errorText = `שגיאה: ${errorData.message || response.statusText || 'לא ידוע'}`; }
-                catch (jsonError) { try { const plainTextError = await response.text(); if (plainTextError) errorText = `שגיאה: ${plainTextError}`; } catch (textError) {} }
+                try { 
+                    const errorData = await response.json(); 
+                    errorText = `שגיאה: ${errorData.message || errorData.error || response.statusText || 'לא ידוע'}`; 
+                } catch (jsonError) { 
+                    try { 
+                        const plainTextError = await response.text(); 
+                        if (plainTextError) errorText = `שגיאה: ${plainTextError}`; 
+                    } catch (textError) { /* Ignore secondary error */ } 
+                }
                 formMessage.textContent = errorText + " ❌";
                 formMessage.className = "form-message error show";
             }
@@ -338,7 +411,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if(loader) loader.classList.remove("show");
             if(buttonText) {
                 buttonText.classList.remove("hide");
-                // Gérer le texte du bouton après soumission
                 if (formMessage.classList.contains('success')) {
                     buttonText.textContent = "תודה! המתן 2 דקות...";
                     setTimeout(() => {
@@ -346,12 +418,12 @@ document.addEventListener("DOMContentLoaded", () => {
                             submitButton.disabled = false;
                             buttonText.textContent = submitButtonBaseText;
                         }
-                    }, 120000); // 2 minutes
+                    }, 120000); 
                 } else {
-                    submitButton.disabled = false; // Réactiver le bouton en cas d'erreur
+                    submitButton.disabled = false; 
                     buttonText.textContent = submitButtonBaseText;
                 }
-            } else { // Fallback si buttonText n'existe pas (ne devrait pas arriver avec les gardes initiales)
+            } else { 
                  submitButton.disabled = false;
             }
         }
