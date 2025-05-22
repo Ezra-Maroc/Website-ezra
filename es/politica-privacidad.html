@@ -6,22 +6,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Política de Privacidad | Ezra Maroc</title>
-    <meta name="description" content="Política de privacidad de Ezra Maroc Consulting Services LLC sobre la recopilación y uso de datos personales.">
+    <meta name="description" content="Política de privacidad completa de Ezra Maroc Consulting Services LLC sobre la recopilación, uso, protección y sus derechos sobre los datos personales tratados a través del sitio www.ezra-maroc.com.">
     <meta name="robots" content="noindex, follow">
 
-    <link rel="stylesheet" href="css/style.css">
-    <!-- <link rel="stylesheet" href="css/legal.css"> -->
-
+    <!-- CSS Global (corregido para apuntar a la raíz) -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Polices -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Hreflang Tags (Actualizar con dominio real) -->
-    <!-- <link rel="alternate" hreflang="fr" href="https://www.yourdomain.com/privacy-policy.html" /> -->
-    <!-- <link rel="alternate" hreflang="en" href="https://www.yourdomain.com/en/privacy-policy.html" /> -->
-    <!-- <link rel="alternate" hreflang="es" href="https://www.yourdomain.com/es/politica-privacidad.html" /> -->
-    <!-- <link rel="alternate" hreflang="x-default" href="https://www.yourdomain.com/privacy-policy.html" /> -->
+
+    <!-- ========== AJOUT TARTEAUCITRON CSS (corregido para apuntar a la raíz) ========== -->
+    <link rel="stylesheet" href="../tarteaucitron/css/tarteaucitron.css">
+    <!-- ========================================= -->
+
+    <!-- Styles CSS spécifiques aux pages légales (identiques aux pages FR) -->
+    <style>
+        .legal-content-section { padding: 60px 0; }
+        .legal-content-section .container { max-width: 800px; }
+        .legal-content-section h2 { font-family: var(--font-heading); font-size: 1.7rem; color: var(--primary-color); margin-top: 2.5em; margin-bottom: 1.2em; padding-bottom: 0.6em; border-bottom: 2px solid var(--primary-50); font-weight: 600; }
+        .legal-content-section h2:first-of-type { margin-top: 0; }
+        .legal-content-section h3 { font-family: var(--font-heading); font-size: 1.3rem; color: var(--dark-color); margin-top: 1.8em; margin-bottom: 1em; font-weight: 600; }
+        .legal-content-section h4 { font-family: var(--font-heading); font-size: 1.1rem; color: var(--dark-color); margin-top: 1.5em; margin-bottom: 0.8em; font-weight: 600; }
+        .legal-content-section p, .legal-content-section li { font-family: var(--font-main); font-size: 0.95rem; line-height: 1.8; color: #333; margin-bottom: 1.1em; text-align: justify; }
+        .legal-content-section ul { list-style-type: disc; margin-left: 20px; margin-bottom: 1.2em; padding-left: 1.5em; }
+        .legal-content-section strong { color: #111; font-weight: 600; }
+        .legal-content-section a { color: var(--primary-color); text-decoration: underline; }
+        .legal-content-section a:hover { color: var(--primary-500); text-decoration: none; }
+        .legal-content-section .article-number { font-weight: bold; margin-right: 0.5em; }
+    </style>
 </head>
 <body>
 
@@ -49,14 +64,13 @@
             <div class="language-switcher">
                  <label for="lang-select" class="visually-hidden">Elige idioma</label>
                  <select name="lang" id="lang-select" class="language-select" onchange="location = this.value;">
-                    <option value="../fr/privacy-policy.html" lang="fr">Français</option>
+                    <option value="../politique-confidentialite.html" lang="fr">Français</option>
                     <option value="../en/privacy-policy.html" lang="en">English</option>
                     <option value="politica-privacidad.html" selected lang="es">Español</option>
                     <option value="../he/privacy-policy.html" lang="he" >עברית</option>
                     <option value="../ara/privacy-policy.html" lang="ara">العربية (الدارجة)</option>
                 </select>
             </div>
-            <!-- <button class="menu-toggle" aria-label="Abrir menú"><i class="fas fa-bars"></i></button> -->
         </div>
     </header>
 
@@ -64,99 +78,172 @@
     <section class="page-banner">
         <div class="container">
             <h1>Política de Privacidad</h1>
+            <p>Gestión de sus datos personales en www.ezra-maroc.com</p>
         </div>
     </section>
 
     <section class="section legal-content-section">
-        <div class="container" style="max-width: 800px;">
+        <div class="container">
 
-            <p><strong>Última actualización:</strong> [Fecha de la última actualización - ej: 1 de Mayo de 2025]</p>
+            <p><strong>Fecha de entrada en vigor:</strong> 7 de Mayo de 2024</p>
 
-            <h2>1. Introducción</h2>
-            <p>Ezra Maroc Consulting Services LLC ("nosotros", "nuestro") se compromete a proteger la privacidad de los visitantes de nuestro sitio web ("usted", "su"). Esta Política de Privacidad explica cómo recopilamos, usamos, divulgamos y salvaguardamos su información cuando visita nuestro sitio web (el "Sitio"), incluyendo cualquier otro medio de comunicación, canal de medios, sitio web móvil o aplicación móvil relacionada o conectada al mismo.</p>
-            <p>Por favor, lea esta política de privacidad cuidadosamente. Si no está de acuerdo con los términos de esta política de privacidad, por favor no acceda al sitio.</p>
+            <h2>ARTÍCULO 1: Introducción y Compromiso</h2>
+            <p>La presente Política de Privacidad describe las prácticas de la sociedad Ezra Maroc Consulting Services LLC (en adelante "Ezra Maroc", "nosotros", "nuestro", "nuestros"), concernientes a la recopilación, uso, conservación, divulgación y protección de los datos de carácter personal de los usuarios (en adelante el "Usuario", "usted", "sus") de nuestro sitio web accesible en la dirección https://www.ezra-maroc.com (en adelante el "Sitio").</p>
+            <p>En nuestra calidad de responsable del tratamiento, estamos firmemente comprometidos a proteger su privacidad y a tratar sus datos personales con transparencia, equidad y seguridad, de conformidad con las normativas aplicables, incluyendo el Reglamento General de Protección de Datos (UE) 2016/679 ("RGPD").</p>
+            <p>Esta Política tiene como objetivo informarle sobre: qué datos recopilamos, por qué los recopilamos, cómo los utilizamos, con quién podemos compartirlos, cómo los protegemos, cuánto tiempo los conservamos y cuáles son sus derechos al respecto.</p>
 
-            <h2>2. Responsable del Tratamiento</h2>
+            <h2>ARTÍCULO 2: Responsable del Tratamiento</h2>
             <p>El responsable del tratamiento de sus datos personales es:</p>
             <p>
-                Ezra Maroc Consulting Services LLC<br>
-                30 N Gould St Ste R, Sheridan, WY 82801, USA<br>
+                <strong>Ezra Maroc Consulting Services LLC</strong><br>
+                30 N Gould St Ste R, Sheridan, WY 82801, USA.<br>
+                Para cualquier pregunta relativa a esta Política o para ejercer sus derechos, puede contactarnos a través de nuestro Delegado de Protección de Datos (si está designado) o nuestro servicio dedicado:<br>
                 Correo electrónico: <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a>
             </p>
 
-            <h2>3. Recopilación de su Información</h2>
-            <p>Podemos recopilar información sobre usted de diversas maneras. La información que podemos recopilar en el Sitio incluye:</p>
+            <h2>ARTÍCULO 3: Principios Generales de Protección de Datos</h2>
+            <p>Nos comprometemos a tratar sus datos personales respetando los principios fundamentales establecidos por el RGPD:</p>
             <ul>
-                <li><strong>Datos Personales Identificables:</strong> Información de identificación personal, como su nombre, dirección de correo electrónico, número de teléfono y cualquier otra información que nos proporcione voluntariamente al completar el formulario de contacto en el Sitio.</li>
-                <li><strong>Datos Derivados:</strong> Información que nuestros servidores recopilan automáticamente cuando accede al Sitio, como su dirección IP, tipo de navegador, sistema operativo, horas de acceso y las páginas que ha visto directamente antes y después de acceder al Sitio. (Aclarar si usan Analytics u otras herramientas).</li>
-                <li><strong>Datos de Cookies:</strong> Podemos usar cookies y tecnologías de seguimiento similares para ayudar a personalizar el Sitio y mejorar su experiencia. Para más información sobre cómo usamos las cookies, por favor refiérase a nuestra Política de Cookies [si existe una, enlazarla aquí]. Por defecto, la mayoría de los navegadores web están configurados para aceptar cookies. Puede elegir configurar su navegador para eliminar o rechazar cookies, pero tenga en cuenta que tal acción podría afectar la disponibilidad y funcionalidad del Sitio.</li>
+                <li><strong>Licitud, Lealtad, Transparencia:</strong> Tratamiento justo, legal y transparente.</li>
+                <li><strong>Limitación de Fines:</strong> Recopilación para objetivos específicos, explícitos y legítimos.</li>
+                <li><strong>Minimización de Datos:</strong> Recopilación limitada a los datos estrictamente necesarios.</li>
+                <li><strong>Exactitud:</strong> Mantenimiento de datos exactos y actualizados.</li>
+                <li><strong>Limitación de la Conservación:</strong> Conservación durante un período que no exceda el necesario para los fines.</li>
+                <li><strong>Integridad y Confidencialidad:</strong> Implementación de medidas de seguridad apropiadas.</li>
+                <li><strong>Responsabilidad ("Accountability"):</strong> Capacidad para demostrar nuestro cumplimiento.</li>
             </ul>
 
-            <h2>4. Uso de su Información</h2>
-            <p>Tener información precisa sobre usted nos permite ofrecerle una experiencia fluida, eficiente y personalizada. Específicamente, podemos usar la información recopilada sobre usted a través del Sitio para:</p>
+            <h2>ARTÍCULO 4: Datos Personales Recopilados</h2>
+            <p>Recopilamos datos personales sobre usted de diferentes maneras:</p>
+
+            <h3>4.1. Datos proporcionados directamente por usted</h3>
+            <p>Esto se refiere principalmente a la información que usted nos comunica voluntariamente a través del formulario de contacto en el Sitio:</p>
             <ul>
-                <li>Responder a sus consultas y solicitudes de contacto o de evaluación preliminar.</li>
-                <li>Enviarle correos electrónicos administrativos o informativos sobre su solicitud o nuestros servicios.</li>
-                <li>Mejorar la eficiencia y el funcionamiento del Sitio.</li>
-                <li>Prevenir actividades fraudulentas y garantizar la seguridad del Sitio.</li>
-                <li>Cumplir con las obligaciones legales y reglamentarias.</li>
-                <!-- Añadir marketing SI SE HACE y se obtiene consentimiento explícito: -->
-                <!-- <li>Enviarle boletines informativos, promociones y otra información sobre nuestros servicios, con su consentimiento previo.</li> -->
+                <li><strong>Identificación y contacto:</strong> Nombre, apellido, dirección de correo electrónico, número de teléfono (opcional).</li>
+                <li><strong>Asunto de la solicitud:</strong> El tema que usted selecciona en la lista desplegable.</li>
+                <li><strong>Contenido de su mensaje:</strong> Cualquier información que usted elija incluir, potencialmente relativa a su situación personal, familiar, a sus ascendientes (nombres, fechas, lugares, etc.) con el fin de obtener información o una primera evaluación de elegibilidad. <strong>Le recomendamos encarecidamente que limite la información compartida en esta etapa a lo estrictamente necesario para su solicitud inicial y que no transmita datos sensibles no solicitados (origen racial o étnico, opiniones políticas, convicciones religiosas o filosóficas, afiliación sindical, datos genéticos o biométricos, datos relativos a la salud o la vida sexual).</strong> La transmisión de dichos datos a través del formulario se realiza bajo su única responsabilidad y constituye un consentimiento explícito a su tratamiento con el único fin de responder a su solicitud específica.</li>
             </ul>
 
-            <h2>5. Base Legal para el Tratamiento</h2>
-            <p>Tratamos sus datos personales sobre las siguientes bases legales:</p>
+            <h3>4.2. Datos recopilados automáticamente durante su navegación</h3>
+            <p>Cuando visita nuestro Sitio, se recopilan automáticamente datos técnicos y de navegación por nuestros servidores y potencialmente por herramientas de terceros (seguridad, análisis) sujeto a su consentimiento cuando este sea requerido:</p>
             <ul>
-                <li><strong>Consentimiento:</strong> Para los datos que usted proporciona voluntariamente a través de nuestro formulario de contacto, procesamos su información basándonos en el consentimiento explícito que nos da al marcar la casilla correspondiente antes de enviar el formulario.</li>
-                <li><strong>Interés Legítimo:</strong> Para los datos derivados y algunos datos de cookies necesarios para el funcionamiento y seguridad del sitio, nos basamos en nuestro interés legítimo para operar y mejorar nuestro Sitio.</li>
-                <li><strong>Obligación Legal:</strong> Podemos procesar su información si es necesario para cumplir con una obligación legal a la que estamos sujetos.</li>
+                <li>Dirección IP (Protocolo de Internet) - [Anonimizada si es posible, ej: por Google Analytics].</li>
+                <li>Tipo y versión del navegador web.</li>
+                <li>Sistema operativo y tipo de dispositivo utilizado.</li>
+                <li>Fecha y hora de la visita.</li>
+                <li>Páginas consultadas y ruta de navegación en el Sitio (si la herramienta analítica está activada).</li>
+                <li>Tiempo empleado en las páginas (si la herramienta analítica está activada).</li>
+                <li>Referente (sitio web desde el que proviene, si aplica).</li>
+                <li>Datos de logs técnicos (errores, seguridad).</li>
             </ul>
 
-            <h2>6. Divulgación de su Información</h2>
-            <p>No compartiremos, venderemos, alquilaremos ni comerciaremos su información personal con terceros para sus fines promocionales sin su consentimiento explícito.</p>
-            <p>Podemos compartir información que hemos recopilado sobre usted en ciertas situaciones:</p>
+            <h3>4.3. Datos recopilados mediante Cookies y Rastreadores</h3>
+            <p>Utilizamos cookies y tecnologías similares. Estas herramientas pueden recopilar información sobre sus preferencias de navegación, sus interacciones con el sitio, o datos para análisis estadísticos, <strong>únicamente si usted lo consiente a través de nuestra herramienta de gestión de cookies.</strong></p>
+            <p>Para una información completa y detallada sobre las cookies que utilizamos (o podríamos utilizar), sus finalidades, su duración y cómo gestionar sus consentimientos, por favor consulte nuestra <a href="politica-cookies.html">Política de Cookies</a>. Puede modificar sus elecciones en cualquier momento a través del enlace "Gestionar cookies" en el pie de página.</p>
+
+            <h2>ARTÍCULO 5: Finalidades y Bases Legales de los Tratamientos</h2>
+            <p>Cada tratamiento de datos personales se basa en una finalidad legítima y una base legal válida:</p>
             <ul>
-                <li><strong>Por Ley o para Proteger Derechos:</strong> Si creemos que la divulgación es necesaria para responder a un proceso legal, investigar o remediar posibles violaciones de nuestras políticas, o proteger los derechos, propiedad y seguridad de otros, podemos compartir su información según lo permitido o requerido por cualquier ley, regla o regulación aplicable.</li>
-                <li><strong>Proveedores de Servicios de Terceros:</strong> Podemos compartir su información con terceros que realizan servicios para nosotros o en nuestro nombre, incluido el alojamiento web (ej: Cloudflare), análisis de datos [si aplica], y servicios de envío de correo electrónico [necesario para el formulario, pero no nombrar el proveedor específico es más seguro]. Estos terceros están obligados a proteger su información.</li>
-                <li><strong>Transferencias Comerciales:</strong> En relación con, o durante las negociaciones de, cualquier fusión, venta de activos de la empresa, financiación o adquisición de todo o parte de nuestro negocio por otra empresa.</li>
+                <li><strong>Gestión de sus solicitudes a través del formulario de contacto:</strong> Tratar su solicitud de información o evaluación preliminar, comunicarnos con usted para responder y asegurar el seguimiento.
+                    <ul><li><em>Bases legales: Su Consentimiento explícito dado mediante la casilla de verificación del formulario (Art. 6.1.a RGPD); Ejecución de medidas precontractuales (Art. 6.1.b RGPD) si su solicitud concierne a nuestros servicios.</em></li></ul>
+                </li>
+                <li><strong>Suministro, mantenimiento y seguridad del Sitio:</strong> Asegurar el buen funcionamiento técnico del Sitio, prevenir y detectar incidentes de seguridad, fraudes o actividades ilícitas (análisis de logs del servidor, uso de herramientas como Cloudflare).
+                     <ul><li><em>Base legal: Nuestro Interés legítimo (Art. 6.1.f RGPD) para mantener un servicio en línea seguro y funcional.</em></li></ul>
+                </li>
+                <li><strong>Análisis y mejora del Sitio (estadísticas de audiencia):</strong> Comprender cómo los Usuarios utilizan el Sitio para mejorar su contenido, ergonomía y rendimiento (ej: Google Analytics).
+                     <ul><li><em>Base legal: Su Consentimiento previo (Art. 6.1.a RGPD) recogido a través de la herramienta de gestión de cookies (Tarteaucitron.js) para las cookies analíticas no esenciales.</em></li></ul>
+               </li>
+                <li><strong>Gestión precontractual y contractual:</strong> (Si aplica después de una solicitud) Preparar, celebrar y ejecutar un contrato de Prestaciones de Asesoramiento.
+                     <ul><li><em>Base legal: Ejecución de medidas precontractuales o de un contrato (Art. 6.1.b RGPD).</em></li></ul>
+                </li>
+               <li><strong>Cumplimiento de obligaciones legales:</strong> Cumplir con cualquier obligación legal o reglamentaria a la que estemos sujetos (ej: respuesta a una solicitud de autoridad judicial).
+                   <ul><li><em>Base legal: Obligación legal (Art. 6.1.c RGPD).</em></li></ul>
+                </li>
             </ul>
 
-            <h2>7. Seguridad de su Información</h2>
-            <p>Utilizamos medidas de seguridad administrativas, técnicas y físicas para ayudar a proteger su información personal. Si bien hemos tomado medidas razonables para asegurar la información personal que nos proporciona, tenga en cuenta que a pesar de nuestros esfuerzos, ninguna medida de seguridad es perfecta o impenetrable, y ningún método de transmisión de datos puede garantizarse contra cualquier interceptación u otro tipo de uso indebido.</p>
-
-            <h2>8. Conservación de Datos</h2>
-            <p>Conservaremos su información personal solo durante el tiempo que sea necesario para los fines establecidos en esta Política de Privacidad, a menos que la ley exija o permita un período de retención más largo (como requisitos fiscales, contables u otros requisitos legales). Principalmente, conservaremos los datos de contacto y correspondencia el tiempo necesario para gestionar su solicitud y para nuestros registros operativos, o hasta que usted solicite su eliminación.</p>
-
-            <h2>9. Sus Derechos de Privacidad</h2>
-            <p>Dependiendo de su ubicación, puede tener los siguientes derechos con respecto a sus datos personales:</p>
+            <h2>ARTÍCULO 6: Destinatarios y Divulgación de Datos Personales</h2>
+            <p><span class="article-number">6.1.</span> Los datos recopilados son tratados internamente por el personal autorizado de Ezra Maroc, dentro del límite de sus respectivas atribuciones.</p>
+            <p><span class="article-number">6.2.</span> Podemos recurrir a proveedores de servicios (subcontratistas) para ciertas operaciones técnicas o analíticas. Estos subcontratistas solo tienen acceso a sus datos para ejecutar estas tareas en nuestro nombre y están obligados a no divulgarlos ni utilizarlos para otros fines. Nuestros principales subcontratistas (o categorías) son:</p>
             <ul>
-                <li>El derecho a solicitar acceso a los datos personales que tenemos sobre usted.</li>
-                <li>El derecho a solicitar la corrección de datos personales inexactos.</li>
-                <li>El derecho a solicitar la eliminación de sus datos personales.</li>
-                <li>El derecho a oponerse al tratamiento de sus datos personales.</li>
-                <li>El derecho a solicitar la limitación del tratamiento de sus datos personales.</li>
-                <li>El derecho a la portabilidad de los datos.</li>
-                <li>El derecho a retirar su consentimiento en cualquier momento (si el tratamiento se basa en el consentimiento).</li>
+                <li><strong>Alojamiento Web e Infraestructura/Seguridad CDN:</strong> Cloudflare, Inc. (EE. UU.).</li>
+                <li><strong>Herramientas de Análisis de Audiencia (si se activan con consentimiento):</strong> Google LLC (para Google Analytics, EE. UU.).</li>
+                <li><strong>Proveedor de Emailing Transaccional (para respuesta al formulario):</strong> [Nombre del proveedor - POR ESPECIFICAR SI SE USA, ej: Brevo (Francia/UE), SendGrid (EE. UU.)].</li>
             </ul>
-            <p>Para ejercer cualquiera de estos derechos, por favor contáctenos utilizando la información de contacto proporcionada a continuación.</p>
+            <p><span class="article-number">6.3.</span> Sus datos también pueden ser comunicados a terceros si la ley lo exige, para responder a un procedimiento judicial, para proteger nuestros derechos, o en el marco de una posible reestructuración empresarial (fusión, adquisición), siempre respetando la normativa.</p>
+            <p><span class="article-number">6.4.</span> Fuera de estos casos, sus datos personales no se venden, alquilan ni intercambian con terceros con fines comerciales.</p>
 
-            <h2>10. Política para Niños</h2>
-            <p>No solicitamos ni comercializamos conscientemente información de niños menores de 13 años [o la edad relevante según la jurisdicción, ej. 16 bajo GDPR]. Si nos damos cuenta de que hemos recopilado información personal de un niño menor de la edad aplicable sin el consentimiento paterno verificado, eliminaremos esa información de nuestros registros rápidamente.</p>
+            <h2>ARTÍCULO 7: Transferencias de Datos Fuera de la Unión Europea</h2>
+            <p>Siendo una empresa con sede en los Estados Unidos y utilizando subcontratistas internacionales (Cloudflare, Google, potencialmente otros), sus datos personales pueden ser transferidos y tratados en países situados fuera del Espacio Económico Europeo (EEE), especialmente en los Estados Unidos. Nos aseguramos de que estas transferencias estén enmarcadas por garantías apropiadas de conformidad con el RGPD, tales como:</p>
+            <ul>
+                <li>El recurso a proveedores certificados en el marco del Data Privacy Framework UE-EE. UU. (sucesor del Privacy Shield).</li>
+                <li>La firma de las Cláusulas Contractuales Tipo (CCT) de la Comisión Europea con los subcontratistas afectados, acompañadas de evaluaciones de impacto sobre las transferencias (TIA) cuando sea necesario.</li>
+            </ul>
+            <p>Puede obtener más información sobre estas garantías contactándonos.</p>
 
-            <h2>11. Cambios a esta Política de Privacidad</h2>
-            <p>Podemos actualizar esta Política de Privacidad de vez en cuando. La versión actualizada se indicará mediante una fecha actualizada de "Última actualización" y la versión actualizada será efectiva tan pronto como sea accesible. Le recomendamos que revise esta política de privacidad periódicamente para estar informado de cómo protegemos su información.</p>
+            <h2>ARTÍCULO 8: Duración de la Conservación de los Datos</h2>
+            <p>Sus datos personales se conservan por un tiempo limitado, proporcional a los fines para los que fueron recopilados:</p>
+            <ul>
+                <li><strong>Datos del formulario de contacto:</strong> Para una simple solicitud de información, se conservan el tiempo necesario para proporcionar una respuesta completa y por un período máximo de <strong>12 meses</strong> después del último intercambio, a menos que ejerza su derecho de supresión antes. Si la solicitud conduce a una propuesta comercial no seguida de efecto, también se conservan durante 12 meses. Si la solicitud resulta en una relación contractual, los datos pertinentes se conservan durante la duración del contrato, y luego se archivan de acuerdo con los plazos de prescripción legal (generalmente 5 años en materia comercial y contractual).</li>
+                <li><strong>Datos de conexión y logs del servidor:</strong> Se conservan por un período máximo de <strong>12 meses</strong> con fines de seguridad y diagnóstico.</li>
+                <li><strong>Cookies y rastreadores:</strong> Los períodos de vida se detallan en nuestra <a href="politica-cookies.html">Política de Cookies</a>. El período de conservación de su consentimiento o rechazo es de <strong>6 meses</strong>.</li>
+            </ul>
 
-            <h2>12. Contacto</h2>
-            <p>Si tiene preguntas o comentarios sobre esta Política de Privacidad, por favor contáctenos en:</p>
+            <h2>ARTÍCULO 9: Seguridad y Confidencialidad de los Datos</h2>
+            <p>Implementamos medidas de seguridad técnicas y organizativas apropiadas para proteger sus datos personales contra la destrucción, pérdida, alteración, divulgación o acceso no autorizado. Esto incluye, en particular, el uso del protocolo HTTPS (SSL/TLS) para asegurar los intercambios de datos, la protección de nuestras infraestructuras y controles de acceso estrictos.</p>
+            <p><strong>Responsabilidad del Usuario:</strong> Usted también es responsable de la confidencialidad de la información que nos transmite y de la seguridad de sus propios equipos (protección con contraseña, antivirus, etc.).</p>
+
+            <h2>ARTÍCULO 10: Sus Derechos sobre Sus Datos Personales</h2>
+            <p>De conformidad con el RGPD, usted dispone de los siguientes derechos sobre sus datos personales:</p>
+            <ul>
+                <li>Derecho de acceso (Art. 15 RGPD)</li>
+                <li>Derecho de rectificación (Art. 16 RGPD)</li>
+                <li>Derecho de supresión ("derecho al olvido") (Art. 17 RGPD)</li>
+                <li>Derecho a la limitación del tratamiento (Art. 18 RGPD)</li>
+                <li>Derecho a la portabilidad de los datos (Art. 20 RGPD)</li>
+                <li>Derecho de oposición (Art. 21 RGPD), especialmente al tratamiento con fines de prospección.</li>
+                <li>Derecho a retirar su consentimiento en cualquier momento (Art. 7.3 RGPD), sin que ello afecte a la licitud del tratamiento basado en el consentimiento previo a su retirada.</li>
+                <li>Derecho a definir directrices relativas al destino de sus datos después de su fallecimiento (aplicable según la legislación nacional).</li>
+                <li>Derecho a presentar una reclamación ante una autoridad de control competente (por ejemplo, la AEPD en España).</li>
+            </ul>
+            <p><strong>Ejercicio de sus derechos:</strong> Puede ejercer estos derechos contactándonos por:</p>
+            <ul>
+                <li>Correo electrónico a: <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></li>
+                <li>Correo postal a la dirección indicada en el Artículo 2.</li>
+            </ul>
+            <p>Por razones de seguridad y para evitar solicitudes fraudulentas, podríamos solicitarle que justifique su identidad. Nos comprometemos a responder a su solicitud en el menor tiempo posible y, a más tardar, en el plazo de un (1) mes desde su recepción (prorrogable dos meses si es necesario, informándole de ello).</p>
+            <p><strong>Autoridad de Control (España):</strong> La autoridad de control española es la Agencia Española de Protección de Datos (AEPD), C/ Jorge Juan, 6, 28001 Madrid, España - Sitio web: <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">www.aepd.es</a>.</p>
+
+            <h2>ARTÍCULO 11: Gestión de Cookies</h2>
+            <p>El Sitio utiliza la herramienta Tarteaucitron.js para gestionar su consentimiento para el depósito de cookies no esenciales. Durante su primera visita, un banner le informa de la presencia de estas tecnologías y le permite aceptar, rechazar o personalizar sus elecciones.</p>
+            <p>Puede modificar sus preferencias en cualquier momento haciendo clic en el enlace "Gestionar cookies" presente en el pie de página del Sitio.</p>
+            <p>Para una descripción detallada de las cookies utilizadas, sus finalidades y su duración, por favor consulte nuestra <a href="politica-cookies.html">Política de Cookies</a>.</p>
+
+            <h2>ARTÍCULO 12: Enlaces a Otros Sitios</h2>
+            <p>El Sitio puede contener enlaces a sitios web de terceros. No ejercemos ningún control sobre estos sitios y declinamos toda responsabilidad en cuanto a sus prácticas de privacidad o su contenido. Le animamos a leer atentamente las políticas de privacidad de estos sitios de terceros antes de proporcionarles datos personales.</p>
+
+            <h2>ARTÍCULO 13: Protección de Menores</h2>
+            <p>El Sitio y los servicios ofrecidos por Ezra Maroc no están destinados a menores de 15 años (o la edad de mayoría digital aplicable). No recopilamos conscientemente datos personales de menores sin el consentimiento previo de los titulares de la patria potestad. Si cree que un menor nos ha proporcionado datos sin este consentimiento, por favor contáctenos para que tomemos las medidas necesarias.</p>
+
+            <h2>ARTÍCULO 14: Modificaciones de la Política de Privacidad</h2>
+            <p>Nos reservamos el derecho de modificar la presente Política de Privacidad en cualquier momento para adaptarnos a las evoluciones legales, reglamentarias, jurisprudenciales o tecnológicas. Cualquier modificación será efectiva desde su publicación en el Sitio, con la actualización de la "Fecha de entrada en vigor". En caso de modificaciones sustanciales, podremos informarle por medios adicionales.</p>
+            <p>Le animamos a consultar esta página regularmente.</p>
+
+            <h2>ARTÍCULO 15: Contacto y Preguntas</h2>
+            <p>Para cualquier pregunta, solicitud de información o ejercicio de sus derechos relativos a esta Política de Privacidad y al tratamiento de sus datos personales, por favor contáctenos:</p>
             <p>
+                <strong>Por correo electrónico:</strong> <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a><br>
+                <strong>Por correo postal:</strong><br>
                 Ezra Maroc Consulting Services LLC<br>
-                <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a>
+                Attn: Data Privacy Inquiry<br>
+                30 N Gould St Ste R<br>
+                Sheridan, WY 82801<br>
+                USA
             </p>
 
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ========== FOOTER (Standardisé avec structure améliorée) ========== -->
     <footer>
          <div class="container footer-container">
              <div class="footer-about">
@@ -178,7 +265,7 @@
                      <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
                      <li><a href="faq.html">FAQ</a></li>
                      <li><a href="contacto.html">Contacto</a></li>
-                </ul>
+                 </ul>
             </div>
              <div class="footer-services">
                 <h3 class="footer-heading">Nuestros Servicios Clave</h3>
@@ -189,29 +276,89 @@
                      <li><a href="servicios.html#suivi">Seguimiento Administrativo</a></li>
                      <li><a href="servicios.html#post-obtention">Asistencia Post-Obtención</a></li>
                  </ul>
-            </div>
+             </div>
              <div class="footer-contact">
                  <h3 class="footer-heading">Contacto</h3>
                  <ul>
-                    <li><i class="fa-solid fa-location-dot"></i> <span>30 N Gould St Ste R,<br>Sheridan, WY 82801, USA</span></li>
+                     <li><i class="fa-solid fa-location-dot"></i> <span>Sede: 30 N Gould St Ste R,<br>Sheridan, WY 82801, USA</span></li>
                      <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></li>
                  </ul>
-            </div>
-        </div>
-         <div class="footer-bottom">
+             </div>
+       </div>
+        <div class="footer-bottom">
              <div class="container">
-                 <p>© 2024 Ezra Maroc Consulting Services LLC. Todos los derechos reservados.</p>
-                  <p>
-                    La información en este sitio se proporciona únicamente con fines informativos y no constituye asesoramiento legal o fiscal. Consulta a profesionales cualificados.
-                    <a href="politica-privacidad.html" rel="noopener noreferrer">Política de Privacidad</a> |
-                    <a href="aviso-legal.html" rel="noopener noreferrer">Aviso Legal</a>
-                </p>
-            </div>
+                 <p class="copyright">© 2024 Ezra Maroc Consulting Services LLC. Todos los derechos reservados.</p>
+                 <p class="disclaimer">La información en este sitio se proporciona únicamente con fines informativos y no constituye asesoramiento legal.</p>
+                 <nav class="footer-legal-links" aria-label="Enlaces legales">
+                     <a href="politica-privacidad.html" rel="noopener noreferrer">Política de Privacidad</a>
+                     <a href="aviso-legal.html" rel="noopener noreferrer">Aviso Legal</a>
+                     <a href="condiciones-uso.html" rel="noopener noreferrer">Condiciones de Uso</a>
+                     <a href="politica-cookies.html" rel="noopener noreferrer">Política de Cookies</a>
+                     <a href="#" onclick="tarteaucitron.userInterface.openPanel(); return false;">Gestionar cookies</a>
+                 </nav>
+             </div>
          </div>
-    </footer>
+   </footer>
+   <!-- ============================================== -->
 
-    <script src="js/language-links.js"></script>
-    <!-- <script src="js/script.js"></script> -->
+    <!-- ========== AJOUT TARTEAUCITRON ========== -->
+    <script type="text/javascript" src="../tarteaucitron/tarteaucitron.js"></script>
+    <script type="text/javascript">
+    tarteaucitron.init({
+        "privacyUrl": "politica-privacidad.html", /* Lien vers cette page */
+        "hashtag": "#tarteaucitron", 
+        "cookieName": "tarteaucitron", 
+        "orientation": "bottom", 
+        "groupServices": false, 
+        "showAlertSmall": false, 
+        "cookieslist": true, 
+        "closePopup": false, 
+        "showIcon": true, 
+        "iconPosition": "BottomRight", 
+        "adblocker": false, 
+        "DenyAllCta": true, 
+        "AcceptAllCta": true, 
+        "highPrivacy": true, 
+        "handleBrowserDNTRequest": false, 
+        "removeCredit": false, 
+        "moreInfoLink": true, 
+        "useExternalCss": false, 
+        "mandatory": true, 
+        "mandatoryCta": true 
+    });
+
+    /* Décommentez ce bloc si vous utilisez Google Analytics 4 */
+    /*
+    tarteaucitron.services.gtag = {
+        "key": "G-XXXXXXXXXX", // <--- REMPLACEZ PAR VOTRE ID GA4
+        "type": "gtag",
+        "name": "Google Analytics (GA4)",
+        "uri": "https://policies.google.com/privacy",
+        "needConsent": true,
+        "cookies": ['_ga', '_gid', '_ga_XXXXXXXXXX'], // <--- ADAPTEZ _ga_... avec votre ID GA4 sans le "G-"
+        "js": function () {
+            "use strict";
+            if (tarteaucitron.user.gtagKey === undefined) {
+                 tarteaucitron.user.gtagKey = tarteaucitron.services.gtag.key;
+                 if (tarteaucitron.user.gtagKey === undefined || tarteaucitron.user.gtagKey === 'G-XXXXXXXXXX') {
+                      console.warn('Tarteaucitron: Google Analytics key is not defined or still placeholder.');
+                      return;
+                 }
+            }
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', tarteaucitron.user.gtagKey, {'anonymize_ip': true});
+        }
+    };
+    (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+    */
+    </script>
+    <!-- ========================================= -->
+    <script src="../js/language-links.js"></script> <!-- Corrigé pour pointer vers la racine -->
+    <!-- <script src="../js/script.js"></script> --> <!-- Corrigé pour pointer vers la racine -->
 
 </body>
 </html>

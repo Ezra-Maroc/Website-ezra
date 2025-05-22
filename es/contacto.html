@@ -8,18 +8,29 @@
     <title>Contacta con Ezra Maroc | Obtén tu Nacionalidad Marroquí</title>
     <meta name="description" content="Contacta con Ezra Maroc para una evaluación gratuita de tu elegibilidad para la nacionalidad marroquí o para cualquier pregunta sobre nuestros servicios de apoyo.">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/contacto.css">
+    <!-- CSS Global (corregido para apuntar a la raíz) -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- CSS Spécifique (corregido para apuntar a la raíz) -->
+    <link rel="stylesheet" href="../css/contact.css">
 
+    <!-- Polices Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Hreflang Tags (Actualizar con dominio real) -->
+
+    <!-- ========== AJOUT TARTEAUCITRON CSS (corregido para apuntar a la raíz) ========== -->
+    <link rel="stylesheet" href="../tarteaucitron/css/tarteaucitron.css">
+    <!-- ========================================= -->
+
+    <!-- Hreflang Tags (Actualizar con dominio real y nombres de archivo correctos) -->
     <!-- <link rel="alternate" hreflang="fr" href="https://www.yourdomain.com/contact.html" /> -->
     <!-- <link rel="alternate" hreflang="en" href="https://www.yourdomain.com/en/contact.html" /> -->
     <!-- <link rel="alternate" hreflang="es" href="https://www.yourdomain.com/es/contacto.html" /> -->
+    <!-- <link rel="alternate" hreflang="he" href="https://www.yourdomain.com/he/contact.html" /> -->
+    <!-- <link rel="alternate" hreflang="ara" href="https://www.yourdomain.com/ara/contact.html" /> -->
     <!-- <link rel="alternate" hreflang="x-default" href="https://www.yourdomain.com/contact.html" /> -->
 </head>
 <body>
@@ -48,20 +59,18 @@
             <div class="language-switcher">
                  <label for="lang-select" class="visually-hidden">Elige idioma</label>
                  <select name="lang" id="lang-select" class="language-select" onchange="location = this.value;">
-                    <option value="../fr/contact.html" lang="fr">Français</option>
+                    <option value="../contact.html" lang="fr">Français</option>
                     <option value="../en/contact.html" lang="en">English</option>
                     <option value="contacto.html" selected lang="es">Español</option>
                     <option value="../he/contact.html" lang="he" >עברית</option>
                     <option value="../ara/contact.html" lang="ara">العربية (الدارجة)</option>
                 </select>
             </div>
-            <!-- <button class="menu-toggle" aria-label="Abrir menú"><i class="fas fa-bars"></i></button> -->
         </div>
     </header>
 
     <!-- CONTENIDO ESPECÍFICO CONTACTO -->
 
-    <!-- Page Banner -->
     <section class="page-banner">
         <div class="container">
             <h1>Contáctanos</h1>
@@ -69,27 +78,20 @@
         </div>
     </section>
 
-    <!-- Main Contact Section -->
     <section class="section contact-section">
         <div class="container">
             <h2 class="section-title internal-title">Empecemos la <span>Conversación</span></h2>
-
-            <!-- Contact Grid (Info + Form) -->
             <div class="contact-grid">
-
-                <!-- Contact Info Column -->
                 <div class="contact-info">
                    <h3 class="info-title">Nuestros Datos de Contacto</h3>
-
                    <div class="info-item">
                         <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
                         <div class="info-content">
-                            <h4>Oficina Administrativa</h4>
+                            <h4>Sede Administrativa</h4>
                             <p>30 N Gould St Ste R,<br>Sheridan, WY 82801, USA</p>
                             <span class="timezone">(Nota: Presencia administrativa únicamente)</span>
                         </div>
                    </div>
-
                    <div class="info-item">
                         <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
                         <div class="info-content">
@@ -97,7 +99,6 @@
                             <p><a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></p>
                         </div>
                    </div>
-
                    <div class="info-item">
                        <div class="info-icon"><i class="fa-regular fa-clock"></i></div>
                        <div class="info-content">
@@ -106,7 +107,6 @@
                            <span class="timezone">(Zona horaria de referencia: CET/París)</span>
                        </div>
                    </div>
-
                    <div class="info-item">
                        <div class="info-icon"><i class="fa-solid fa-circle-info"></i></div>
                        <div class="info-content">
@@ -114,7 +114,6 @@
                            <p>Para un análisis rápido y relevante, por favor, detalla tu situación familiar y tu solicitud lo máximo posible en el formulario.</p>
                        </div>
                    </div>
-
                    <div class="social-media">
                        <h4>Mantente Conectado</h4>
                        <div class="social-icons">
@@ -122,52 +121,50 @@
                            <a href="#" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
                        </div>
                    </div>
-                </div>
+                </div> 
 
-                <!-- Form Column -->
                 <div class="contact-form-container">
                    <h3 class="form-title">Tu Mensaje</h3>
-
-                   <form id="contact-form" action="/api/contact" method="POST" novalidate>
-
+                   <form id="contact-form" action="https://formspree.io/f/mjkwzpdr" method="POST" novalidate>
                        <div class="form-group">
                            <label for="name">Nombre Completo <span class="required">*</span></label>
                            <input type="text" id="name" name="name" required aria-required="true" placeholder="Ej: Juan Pérez" aria-invalid="false" aria-describedby="name-error">
                            <span class="error-message" id="name-error" aria-live="polite"></span>
                        </div>
-
                        <div class="form-group">
                            <label for="email">Dirección de Email <span class="required">*</span></label>
                            <input type="email" id="email" name="email" required aria-required="true" placeholder="Ej: juan.perez@email.com" aria-invalid="false" aria-describedby="email-error">
                            <span class="error-message" id="email-error" aria-live="polite"></span>
                        </div>
-
                        <div class="form-group">
-                           <label for="phone">Teléfono <span class="optional">(Recomendado para seguimiento rápido)</span></label>
+                           <label for="phone">Teléfono <span class="required required-indicator" style="display: none;">*</span><span class="optional-text">(Recomendado para seguimiento rápido)</span></label>
                            <input type="tel" id="phone" name="phone" placeholder="Ej: +34 600 123 456 (con código de país)" aria-invalid="false" aria-describedby="phone-error">
                            <span class="error-message" id="phone-error" aria-live="polite"></span>
                        </div>
-
                        <div class="form-group">
                            <label for="subject">Asunto de tu solicitud <span class="required">*</span></label>
                            <select id="subject" name="subject" required aria-required="true" aria-invalid="false" aria-describedby="subject-error">
                                <option value="" disabled selected>-- Por favor, elige un asunto --</option>
-                               <option value="Evaluación preliminar de elegibilidad">Evaluación preliminar de elegibilidad</option>
+                               <option value="Evaluación preliminar de mi elegibilidad">Evaluación preliminar de mi elegibilidad</option>
                                <option value="Pregunta general sobre sus servicios">Pregunta general sobre sus servicios</option>
-                               <option value="Detalles sobre el proceso de solicitud">Detalles sobre el proceso de solicitud</option>
-                               <option value="Solicitud de información sobre precios">Solicitud de información sobre precios</option>
-                               <option value="Solicitud de devolución de llamada">Solicitud de devolución de llamada</option>
+                               <option value="Precisiones sobre el proceso de obtención">Precisiones sobre el proceso de obtención</option>
+                               <option value="Solicitud de información sobre tarifas">Solicitud de información sobre tarifas</option>
+                               <option value="Solicitud de devolución de llamada telefónica">Solicitud de devolución de llamada telefónica</option>
                                <option value="Otro asunto">Otro asunto</option>
                            </select>
                            <span class="error-message" id="subject-error" aria-live="polite"></span>
                        </div>
-
+                       <div class="form-group full-width" id="other-subject-group" style="display: none;">
+                           <label for="other_subject_details">Precisar el asunto de tu solicitud <span class="required">*</span></label>
+                           <input type="text" id="other_subject_details" name="other_subject_details" placeholder="Ej: Colaboración, Problema técnico..." aria-invalid="false" aria-describedby="other-subject-details-error">
+                           <span class="error-message" id="other-subject-details-error" aria-live="polite"></span>
+                       </div>
                        <div class="form-group full-width">
                            <label for="message">Detalles de tu solicitud <span class="required">*</span></label>
-                           <textarea id="message" name="message" rows="6" required aria-required="true" placeholder="Por favor, describe tu situación: ¿Quién en tu familia es/era marroquí (padre, madre, abuelo...)? ¿Cuándo nacieron/dejaron Marruecos? ¿Tienes documentos marroquíes (certificados de nacimiento, tarjeta de identidad, pasaporte...)? ¿Cuál es tu pregunta específica?" aria-invalid="false" aria-describedby="message-error"></textarea>
+                           <textarea id="message" name="message" rows="6" required aria-required="true" placeholder="Por favor, describe tu situación: ¿Quién en tu familia es/era marroquí (padre, madre, abuelo...)? ¿Cuándo nacieron/dejaron Marruecos? ¿Tienes documentos marroquíes (certificados de nacimiento, DNI, pasaporte...)? ¿Cuál es tu pregunta específica?" aria-invalid="false" aria-describedby="message-error" maxlength="1000"></textarea>
+                           <div id="char-counter" class="char-counter-display">Caracteres restantes: 1000</div>
                            <span class="error-message" id="message-error" aria-live="polite"></span>
                        </div>
-
                        <div class="form-group full-width">
                             <div class="checkbox-group" role="group" aria-labelledby="consent-label">
                                 <input type="checkbox" id="consent" name="consent" value="accepted" required aria-required="true" aria-invalid="false" aria-describedby="consent-error">
@@ -175,26 +172,28 @@
                            </div>
                            <span class="error-message" id="consent-error" aria-live="polite"></span>
                        </div>
-
+                       <div class="form-group full-width">
+                           <div class="checkbox-group" role="group" aria-labelledby="terms-consent-label">
+                               <input type="checkbox" id="terms_consent" name="terms_consent" value="accepted" required aria-required="true" aria-invalid="false" aria-describedby="terms-consent-error">
+                               <label for="terms_consent" id="terms-consent-label">Confirmo que he leído y acepto las <a href="condiciones-uso.html" target="_blank" rel="noopener noreferrer">Condiciones Generales de Uso</a> del sitio.<span class="required">*</span></label>
+                           </div>
+                           <span class="error-message" id="terms-consent-error" aria-live="polite"></span>
+                       </div>
                        <div class="form-submit full-width">
                            <button type="submit" class="btn btn-primary">
                                <span class="btn-loader" aria-hidden="true"><i class="fa-solid fa-spinner fa-spin"></i> Enviando...</span>
                                <span class="btn-text">Enviar Mi Solicitud</span>
                            </button>
                        </div>
-
                        <div id="form-message" class="form-message" role="alert" aria-live="assertive"></div>
+                   </form> 
+                </div> 
+            </div> 
+        </div> 
+    </section> 
 
-                   </form>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Map Section -->
-    <section class="map-section" aria-label="Mapa mostrando nuestra oficina administrativa">
-        <h2 class="visually-hidden">Nuestra Oficina Administrativa (USA)</h2>
+    <section class="map-section" aria-label="Mapa mostrando nuestra sede administrativa">
+        <h2 class="visually-hidden">Nuestra Sede Administrativa (USA)</h2>
         <div class="map-container">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3050.058614989749!2d-106.958361684615!3d44.79916297909831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5335f0e2f67f0a4f%3A0x579ff4e8b9e4b005!2s30%20N%20Gould%20St%20Ste%20R%2C%20Sheridan%2C%20WY%2082801%2C%20USA!5e0!3m2!1sen!2sfr!4v1678886541234!5m2!1sen!2sfr"
@@ -209,12 +208,12 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ========== FOOTER (Standardisé avec structure améliorée) ========== -->
    <footer>
         <div class="container footer-container">
             <div class="footer-about">
                 <a href="inicio.html" class="footer-logo">Ezra<strong>Maroc</strong></a>
-                <p class="footer-text">Expertos en la obtención de la nacionalidad marroquí por ascendencia. Simplificamos tus trámites administrativos.</p>
+                <p class="footer-text">Especialistas en la obtención de la nacionalidad marroquí por ascendencia. Simplificamos tus trámites administrativos.</p>
                 <div class="footer-social">
                     <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
@@ -246,26 +245,86 @@
             <div class="footer-contact">
                 <h3 class="footer-heading">Contáctanos</h3>
                 <ul>
-                   <li><i class="fa-solid fa-location-dot"></i> <span>Oficina: 30 N Gould St Ste R,<br>Sheridan, WY 82801, USA</span></li>
+                   <li><i class="fa-solid fa-location-dot"></i> <span>Sede: 30 N Gould St Ste R,<br>Sheridan, WY 82801, USA</span></li>
                     <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></li>
                 </ul>
            </div>
        </div>
         <div class="footer-bottom">
             <div class="container">
-                <p>© 2024 Ezra Maroc Consulting Services LLC. Todos los derechos reservados.</p>
-                <p>
-                    La información en este sitio se proporciona únicamente con fines informativos y no constituye asesoramiento legal.
-                    <a href="politica-privacidad.html" rel="noopener noreferrer">Política de Privacidad</a> |
-                    <a href="aviso-legal.html" rel="noopener noreferrer">Aviso Legal</a>
-                </p>
+                <p class="copyright">© 2024 Ezra Maroc Consulting Services LLC. Todos los derechos reservados.</p>
+                <p class="disclaimer">La información en este sitio se proporciona únicamente con fines informativos y no constituye asesoramiento legal.</p>
+                 <nav class="footer-legal-links" aria-label="Enlaces legales">
+                     <a href="politica-privacidad.html" rel="noopener noreferrer">Política de Privacidad</a>
+                     <a href="aviso-legal.html" rel="noopener noreferrer">Aviso Legal</a>
+                     <a href="condiciones-uso.html" rel="noopener noreferrer">Condiciones de Uso</a>
+                     <a href="politica-cookies.html" rel="noopener noreferrer">Política de Cookies</a>
+                     <a href="#" onclick="tarteaucitron.userInterface.openPanel(); return false;">Gestionar cookies</a>
+                 </nav>
             </div>
         </div>
    </footer>
+    <!-- ============================================== -->
 
-    <!-- JS SCRIPTS -->
-    <script src="js/contact-form.js"></script>
-    <script src="js/language-links.js"></script>
+    <!-- ========== AJOUT TARTEAUCITRON ========== -->
+    <script type="text/javascript" src="../tarteaucitron/tarteaucitron.js"></script>
+    <script type="text/javascript">
+    tarteaucitron.init({
+        "privacyUrl": "politica-privacidad.html", /* Lien vers votre politique de confidentialité en ES */
+        "hashtag": "#tarteaucitron", 
+        "cookieName": "tarteaucitron", 
+        "orientation": "bottom", 
+        "groupServices": false, 
+        "showAlertSmall": false, 
+        "cookieslist": true, 
+        "closePopup": false, 
+        "showIcon": true, 
+        "iconPosition": "BottomRight", 
+        "adblocker": false, 
+        "DenyAllCta": true, 
+        "AcceptAllCta": true, 
+        "highPrivacy": true, 
+        "handleBrowserDNTRequest": false, 
+        "removeCredit": false, 
+        "moreInfoLink": true, 
+        "useExternalCss": false, 
+        "mandatory": true, 
+        "mandatoryCta": true 
+    });
+
+    /* Décommentez ce bloc si vous utilisez Google Analytics 4 */
+    /*
+    tarteaucitron.services.gtag = {
+        "key": "G-XXXXXXXXXX", // <--- REMPLACEZ PAR VOTRE ID GA4
+        "type": "gtag",
+        "name": "Google Analytics (GA4)",
+        "uri": "https://policies.google.com/privacy",
+        "needConsent": true,
+        "cookies": ['_ga', '_gid', '_ga_XXXXXXXXXX'], // <--- ADAPTEZ _ga_... avec votre ID GA4 sans le "G-"
+        "js": function () {
+            "use strict";
+            if (tarteaucitron.user.gtagKey === undefined) {
+                 tarteaucitron.user.gtagKey = tarteaucitron.services.gtag.key;
+                 if (tarteaucitron.user.gtagKey === undefined || tarteaucitron.user.gtagKey === 'G-XXXXXXXXXX') {
+                      console.warn('Tarteaucitron: Google Analytics key is not defined or still placeholder.');
+                      return;
+                 }
+            }
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', tarteaucitron.user.gtagKey, {'anonymize_ip': true});
+        }
+    };
+    (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+    */
+    </script>
+    <!-- ========================================= -->
+    <script src="../js/contact-form.js"></script> <!-- Corrigé pour pointer vers la racine -->
+    <script src="../js/language-links.js"></script> <!-- Corrigé pour pointer vers la racine -->
+    <!-- <script src="../js/script.js"></script> --> <!-- Corrigé pour pointer vers la racine -->
 
 </body>
 </html>

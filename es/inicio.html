@@ -8,15 +8,25 @@
     <title>Ezra Maroc - Tu Puerta a la Nacionalidad Marroquí</title>
     <meta name="description" content="Ezra Maroc te guía paso a paso para obtener la nacionalidad marroquí con apoyo personalizado y experiencia legal. Descubre nuestros servicios y proceso.">
 
-    <link rel="stylesheet" href="css/style.css">
+    <!-- CSS Global (corregido para apuntar a la raíz) -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Polices -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Hreflang Tags (Actualizar con dominio real) -->
+
+    <!-- ========== AJOUT TARTEAUCITRON CSS (corregido para apuntar a la raíz) ========== -->
+    <link rel="stylesheet" href="../tarteaucitron/css/tarteaucitron.css">
+    <!-- ========================================= -->
+
+    <!-- Hreflang Tags (Actualizar con dominio real y nombres de archivo correctos) -->
     <!-- <link rel="alternate" hreflang="fr" href="https://www.yourdomain.com/index.html" /> -->
     <!-- <link rel="alternate" hreflang="en" href="https://www.yourdomain.com/en/index.html" /> -->
     <!-- <link rel="alternate" hreflang="es" href="https://www.yourdomain.com/es/inicio.html" /> -->
+    <!-- <link rel="alternate" hreflang="he" href="https://www.yourdomain.com/he/index.html" /> -->
+    <!-- <link rel="alternate" hreflang="ara" href="https://www.yourdomain.com/ara/index.html" /> -->
     <!-- <link rel="alternate" hreflang="x-default" href="https://www.yourdomain.com/index.html" /> -->
 </head>
 <body>
@@ -45,32 +55,29 @@
             <div class="language-switcher">
                  <label for="lang-select" class="visually-hidden">Elige idioma</label>
                  <select name="lang" id="lang-select" class="language-select" onchange="location = this.value;">
-                    <option value="../fr/index.html" lang="fr">Français</option>
+                    <option value="../index.html" lang="fr">Français</option>
                     <option value="../en/index.html" lang="en">English</option>
                     <option value="inicio.html" selected lang="es">Español</option>
                     <option value="../he/index.html" lang="he" >עברית</option>
                     <option value="../ara/index.html" lang="ara">العربية (الدارجة)</option>
                 </select>
             </div>
-            <!-- <button class="menu-toggle" aria-label="Abrir menú"><i class="fas fa-bars"></i></button> -->
         </div>
     </header>
 
     <!-- CONTENIDO ESPECÍFICO PARA LA PÁGINA "INICIO" -->
-    <!-- HERO SECTION -->
     <section class="hero">
         <div class="container hero-content">
             <h1>Tu Puerta a la Nacionalidad Marroquí</h1>
             <p>Te guiamos paso a paso en tu proceso de obtención de la nacionalidad marroquí con apoyo a medida y experiencia legal de vanguardia.</p>
             <div class="hero-buttons">
-                <a href="#nuestros-servicios" class="btn btn-light">Descubre Nuestros Servicios</a>
+                <a href="servicios.html" class="btn btn-light">Descubre Nuestros Servicios</a> <!-- Lien direct vers servicios.html -->
                 <a href="proceso.html" class="btn btn-light">Nuestro Proceso Simplificado</a>
                 <a href="sobre-nosotros.html" class="btn btn-outline-light">Conócenos Mejor</a>
             </div>
         </div>
     </section>
 
-    <!-- INTRODUCTION SECTION -->
     <section class="section intro-section">
         <div class="container">
             <p class="intro-text">Conecta fácilmente con tu herencia marroquí. Ezra Maroc, especialista reconocido, te apoya con éxito en cada etapa de tu solicitud de nacionalidad, desde la evaluación inicial hasta la entrega de tu certificado.</p>
@@ -104,8 +111,7 @@
         </div>
     </section>
 
-    <!-- SERVICES SECTION -->
-    <section id="nuestros-servicios" class="section services-section">
+    <section id="nuestros-servicios" class="section services-section"> <!-- ID peut rester pour contexte, mais bouton pointe vers page -->
         <div class="container">
             <h2 class="section-title">Nuestros <span>Servicios</span></h2>
             <div class="features">
@@ -131,7 +137,6 @@
         </div>
     </section>
 
-    <!-- PROCESS SECTION -->
     <section id="proceso" class="section process-section">
         <div class="container">
             <h2 class="section-title">Nuestro <span>Proceso</span> Simplificado</h2>
@@ -183,7 +188,6 @@
         </div>
     </section>
 
-    <!-- TESTIMONIALS SECTION -->
     <section id="testimonios" class="section testimonial-section">
         <div class="container">
             <h2 class="section-title">Sus Historias, <span>Nuestro Orgullo</span></h2>
@@ -202,7 +206,6 @@
         </div>
     </section>
 
-    <!-- WHY US SECTION -->
     <section id="por-que-nosotros" class="section why-us-section">
         <div class="container">
             <h2 class="section-title">¿Por Qué Elegir <span>Ezra Maroc?</span></h2>
@@ -239,7 +242,6 @@
         </div>
     </section>
 
-    <!-- FINAL CTA SECTION -->
     <section class="cta-section">
         <div class="container">
             <h2 class="cta-title">¿Listo/a para empezar tu viaje hacia la nacionalidad marroquí?</h2>
@@ -250,7 +252,7 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ========== FOOTER (Standardisé avec structure améliorée) ========== -->
     <footer>
          <div class="container footer-container">
              <div class="footer-about">
@@ -287,25 +289,85 @@
              <div class="footer-contact">
                  <h3 class="footer-heading">Contacto</h3>
                  <ul>
-                    <li><i class="fa-solid fa-location-dot"></i> <span>30 N Gould St Ste R,<br>Sheridan, WY 82801, USA</span></li>
+                    <li><i class="fa-solid fa-location-dot"></i> <span>Sede: 30 N Gould St Ste R,<br>Sheridan, WY 82801, USA</span></li>
                      <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></li>
                  </ul>
             </div>
         </div>
          <div class="footer-bottom">
              <div class="container">
-                 <p>© 2024 Ezra Maroc Consulting Services LLC. Todos los derechos reservados.</p>
-                 <p>
-                     La información en este sitio se proporciona únicamente con fines informativos y no constituye asesoramiento legal o fiscal. Consulta a profesionales cualificados.
-                     <a href="politica-privacidad.html" rel="noopener noreferrer">Política de Privacidad</a> |
+                 <p class="copyright">© 2024 Ezra Maroc Consulting Services LLC. Todos los derechos reservados.</p>
+                 <p class="disclaimer">La información en este sitio se proporciona únicamente con fines informativos y no constituye asesoramiento legal o fiscal.</p>
+                 <nav class="footer-legal-links" aria-label="Enlaces legales">
+                     <a href="politica-privacidad.html" rel="noopener noreferrer">Política de Privacidad</a>
                      <a href="aviso-legal.html" rel="noopener noreferrer">Aviso Legal</a>
-                 </p>
+                     <a href="condiciones-uso.html" rel="noopener noreferrer">Condiciones de Uso</a>
+                     <a href="politica-cookies.html" rel="noopener noreferrer">Política de Cookies</a>
+                     <a href="#" onclick="tarteaucitron.userInterface.openPanel(); return false;">Gestionar cookies</a>
+                 </nav>
             </div>
          </div>
     </footer>
+    <!-- ============================================== -->
 
-    <script src="js/script.js"></script>
-    <script src="js/language-links.js"></script>
+    <!-- ========== AJOUT TARTEAUCITRON ========== -->
+    <script type="text/javascript" src="../tarteaucitron/tarteaucitron.js"></script>
+    <script type="text/javascript">
+    tarteaucitron.init({
+        "privacyUrl": "politica-privacidad.html", /* Lien vers votre politique de confidentialité en ES */
+        "hashtag": "#tarteaucitron", 
+        "cookieName": "tarteaucitron", 
+        "orientation": "bottom", 
+        "groupServices": false, 
+        "showAlertSmall": false, 
+        "cookieslist": true, 
+        "closePopup": false, 
+        "showIcon": true, 
+        "iconPosition": "BottomRight", 
+        "adblocker": false, 
+        "DenyAllCta": true, 
+        "AcceptAllCta": true, 
+        "highPrivacy": true, 
+        "handleBrowserDNTRequest": false, 
+        "removeCredit": false, 
+        "moreInfoLink": true, 
+        "useExternalCss": false, 
+        "mandatory": true, 
+        "mandatoryCta": true 
+    });
+
+    /* Décommentez ce bloc si vous utilisez Google Analytics 4 */
+    /*
+    tarteaucitron.services.gtag = {
+        "key": "G-XXXXXXXXXX", // <--- REMPLACEZ PAR VOTRE ID GA4
+        "type": "gtag",
+        "name": "Google Analytics (GA4)",
+        "uri": "https://policies.google.com/privacy",
+        "needConsent": true,
+        "cookies": ['_ga', '_gid', '_ga_XXXXXXXXXX'], // <--- ADAPTEZ _ga_... avec votre ID GA4 sans le "G-"
+        "js": function () {
+            "use strict";
+            if (tarteaucitron.user.gtagKey === undefined) {
+                 tarteaucitron.user.gtagKey = tarteaucitron.services.gtag.key;
+                 if (tarteaucitron.user.gtagKey === undefined || tarteaucitron.user.gtagKey === 'G-XXXXXXXXXX') {
+                      console.warn('Tarteaucitron: Google Analytics key is not defined or still placeholder.');
+                      return;
+                 }
+            }
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', tarteaucitron.user.gtagKey, {'anonymize_ip': true});
+        }
+    };
+    (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+    */
+    </script>
+    <!-- ========================================= -->
+    <script src="../js/script.js"></script> <!-- Corrigé pour pointer vers la racine -->
+    <script src="../js/language-links.js"></script> <!-- Corrigé pour pointer vers la racine -->
 
 </body>
 </html>

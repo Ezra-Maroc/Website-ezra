@@ -8,16 +8,28 @@
     <title>FAQ - Nacionalidad Marroquí | Ezra Maroc</title>
     <meta name="description" content="Encuentra respuestas a preguntas comunes sobre la obtención de la nacionalidad marroquí a través de Ezra Maroc. Elegibilidad, proceso, documentos, doble nacionalidad y más.">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/faq.css">
+    <!-- CSS Global (corregido para apuntar a la raíz) -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- CSS Spécifique (corregido para apuntar a la raíz) -->
+    <link rel="stylesheet" href="../css/faq.css">
+
+    <!-- Polices -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Hreflang Tags (Actualizar con dominio real) -->
+
+    <!-- ========== AJOUT TARTEAUCITRON CSS (corregido para apuntar a la raíz) ========== -->
+    <link rel="stylesheet" href="../tarteaucitron/css/tarteaucitron.css">
+    <!-- ========================================= -->
+
+    <!-- Hreflang Tags (Actualizar con dominio real y nombres de archivo correctos) -->
     <!-- <link rel="alternate" hreflang="fr" href="https://www.yourdomain.com/faq.html" /> -->
     <!-- <link rel="alternate" hreflang="en" href="https://www.yourdomain.com/en/faq.html" /> -->
     <!-- <link rel="alternate" hreflang="es" href="https://www.yourdomain.com/es/faq.html" /> -->
+    <!-- <link rel="alternate" hreflang="he" href="https://www.yourdomain.com/he/faq.html" /> -->
+    <!-- <link rel="alternate" hreflang="ara" href="https://www.yourdomain.com/ara/faq.html" /> -->
     <!-- <link rel="alternate" hreflang="x-default" href="https://www.yourdomain.com/faq.html" /> -->
 </head>
 <body>
@@ -46,19 +58,17 @@
             <div class="language-switcher">
                  <label for="lang-select" class="visually-hidden">Elige idioma</label>
                  <select name="lang" id="lang-select" class="language-select" onchange="location = this.value;">
-                    <option value="../fr/faq.html" lang="fr">Français</option>
+                    <option value="../faq.html" lang="fr">Français</option>
                     <option value="../en/faq.html" lang="en">English</option>
                     <option value="faq.html" selected lang="es">Español</option>
                     <option value="../he/faq.html" lang="he" >עברית</option>
                     <option value="../ara/faq.html" lang="ara">العربية (الدارجة)</option>
                 </select>
             </div>
-            <!-- <button class="menu-toggle" aria-label="Abrir menú"><i class="fas fa-bars"></i></button> -->
         </div>
     </header>
 
     <!-- CONTENIDO ESPECÍFICO PÁGINA FAQ -->
-    <!-- PAGE BANNER -->
     <section class="page-banner">
         <div class="container">
             <h1>Preguntas Frecuentes (FAQ)</h1>
@@ -66,7 +76,6 @@
         </div>
     </section>
 
-    <!-- SECCIÓN VENTAJAS - Estilo tipo Servicio -->
     <section class="section advantages-section-servicelike">
         <div class="container">
             <h2 class="section-title">¿Por Qué Obtener la Nacionalidad Marroquí? <span>Principales Ventajas</span></h2>
@@ -84,10 +93,7 @@
         </div>
     </section>
 
-    <!-- CONTENEDOR ACORDEÓN Y OTRAS SECCIONES -->
     <div class="faq-container">
-
-        <!-- SECCIÓN INTRODUCCIÓN REVISADA -->
         <section class="faq-section">
             <h2>Nacionalidad marroquí: mucho más que un estatus legal</h2>
             <p> La nacionalidad marroquí no es solo una simple formalidad legal. Representa una conexión profunda entre una persona y Marruecos, arraigada en la historia, la cultura y la memoria familiar. Es una forma de reconocer oficialmente una pertenencia que atraviesa generaciones, incluso más allá de fronteras o migraciones. </p>
@@ -97,7 +103,6 @@
             <p> Te animamos a emprender este viaje de reconexión identitaria, apoyándote en nuestro soporte riguroso, respetuoso y profundamente atento a la riqueza de los caminos personales. </p>
         </section>
 
-        <!-- SECCIÓN PREGUNTAS GENERALES (Acordeón) -->
         <section class="faq-section">
             <h2>Preguntas generales sobre la nacionalidad marroquí</h2>
             <div class="faq-item">
@@ -142,7 +147,6 @@
             </div>
         </section>
 
-        <!-- SECCIÓN TRÁMITES (Acordeón) -->
         <section class="faq-section">
             <h2>Trámites y Plazos</h2>
             <div class="faq-item">
@@ -183,7 +187,6 @@
                </div>
         </section>
 
-        <!-- SECCIÓN CASOS ESPECIALES (Acordeón) -->
          <section class="faq-section">
              <h2>Casos Especiales</h2>
             <div class="faq-item">
@@ -206,7 +209,6 @@
              </div>
          </section>
 
-        <!-- SECCIÓN PÉRDIDA/REINTEGRACIÓN (Acordeón) -->
          <section class="faq-section">
               <h2>Pérdida y Reintegración</h2>
               <div class="faq-item">
@@ -222,7 +224,6 @@
              </div>
          </section>
 
-        <!-- SECCIÓN CONTACTO Y AVISO LEGAL -->
         <section class="faq-section">
             <h2>Contacto y Asistencia</h2>
             <p>Cada viaje hacia la nacionalidad marroquí es único y está sujeto a las sutilezas de la ley y la administración.</p>
@@ -230,7 +231,7 @@
                 <p>Para un análisis preciso de tu situación personal, una evaluación de tus posibilidades de éxito y un apoyo personalizado durante todo el proceso, nuestro equipo de expertos está a tu disposición.</p>
                  <p>Se recomienda encarecidamente consultar a un profesional cualificado para evaluar tu caso específico antes de tomar cualquier medida.</p>
                  <ul>
-                    <li><i class="fa-solid fa-location-dot"></i> 30 N Gould St Ste R, Sheridan, WY 82801, USA</li>
+                    <li><i class="fa-solid fa-location-dot"></i> Sede: 30 N Gould St Ste R, Sheridan, WY 82801, USA</li>
                     <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></li>
                  </ul>
                  <p>Contáctanos para iniciar tu evaluación preliminar.</p>
@@ -239,10 +240,8 @@
                 <p><strong>Aviso Importante:</strong> Esta sección de Preguntas Frecuentes proporciona información general solo con fines indicativos y de ninguna manera constituye asesoramiento legal formal ni garantía de resultados. La información se basa en nuestra comprensión de la ley marroquí a la fecha de publicación (sujeta a cambios legislativos o jurisprudenciales). Solo una consulta personalizada y un análisis exhaustivo de tu expediente pueden proporcionar un consejo adaptado a tu situación única.</p>
             </div>
         </section>
-
     </div>
 
-    <!-- CTA SECTION -->
     <section class="cta-section">
         <div class="container">
             <h2 class="cta-title">¿Listo/a para explorar tu elegibilidad?</h2>
@@ -253,7 +252,7 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ========== FOOTER (Standardisé avec structure améliorée) ========== -->
     <footer>
          <div class="container footer-container">
              <div class="footer-about">
@@ -290,27 +289,86 @@
              <div class="footer-contact">
                  <h3 class="footer-heading">Contacto</h3>
                  <ul>
-                    <li><i class="fa-solid fa-location-dot"></i> <span>30 N Gould St Ste R,<br>Sheridan, WY 82801, USA</span></li>
+                    <li><i class="fa-solid fa-location-dot"></i> <span>Sede: 30 N Gould St Ste R,<br>Sheridan, WY 82801, USA</span></li>
                      <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></li>
                  </ul>
             </div>
         </div>
          <div class="footer-bottom">
              <div class="container">
-                 <p>© 2024 Ezra Maroc Consulting Services LLC. Todos los derechos reservados.</p>
-                 <p>
-                    La información en este sitio se proporciona únicamente con fines informativos y no constituye asesoramiento legal o fiscal. Consulta a profesionales cualificados.
-                    <a href="politica-privacidad.html" rel="noopener noreferrer">Política de Privacidad</a> |
-                    <a href="aviso-legal.html" rel="noopener noreferrer">Aviso Legal</a>
-                </p>
+                 <p class="copyright">© 2024 Ezra Maroc Consulting Services LLC. Todos los derechos reservados.</p>
+                 <p class="disclaimer">La información en este sitio se proporciona únicamente con fines informativos y no constituye asesoramiento legal o fiscal.</p>
+                 <nav class="footer-legal-links" aria-label="Enlaces legales">
+                     <a href="politica-privacidad.html" rel="noopener noreferrer">Política de Privacidad</a>
+                     <a href="aviso-legal.html" rel="noopener noreferrer">Aviso Legal</a>
+                     <a href="condiciones-uso.html" rel="noopener noreferrer">Condiciones de Uso</a>
+                     <a href="politica-cookies.html" rel="noopener noreferrer">Política de Cookies</a>
+                     <a href="#" onclick="tarteaucitron.userInterface.openPanel(); return false;">Gestionar cookies</a>
+                 </nav>
             </div>
          </div>
     </footer>
+    <!-- ============================================== -->
 
-     <!-- JS SCRIPTS -->
-     <script src="js/faq-accordion.js"></script>
-     <script src="js/language-links.js"></script>
-     <!-- <script src="js/script.js"></script> -->
+    <!-- ========== AJOUT TARTEAUCITRON ========== -->
+    <script type="text/javascript" src="../tarteaucitron/tarteaucitron.js"></script>
+    <script type="text/javascript">
+    tarteaucitron.init({
+        "privacyUrl": "politica-privacidad.html", /* Lien vers votre politique de confidentialité en ES */
+        "hashtag": "#tarteaucitron", 
+        "cookieName": "tarteaucitron", 
+        "orientation": "bottom", 
+        "groupServices": false, 
+        "showAlertSmall": false, 
+        "cookieslist": true, 
+        "closePopup": false, 
+        "showIcon": true, 
+        "iconPosition": "BottomRight", 
+        "adblocker": false, 
+        "DenyAllCta": true, 
+        "AcceptAllCta": true, 
+        "highPrivacy": true, 
+        "handleBrowserDNTRequest": false, 
+        "removeCredit": false, 
+        "moreInfoLink": true, 
+        "useExternalCss": false, 
+        "mandatory": true, 
+        "mandatoryCta": true 
+    });
+
+    /* Décommentez ce bloc si vous utilisez Google Analytics 4 */
+    /*
+    tarteaucitron.services.gtag = {
+        "key": "G-XXXXXXXXXX", // <--- REMPLACEZ PAR VOTRE ID GA4
+        "type": "gtag",
+        "name": "Google Analytics (GA4)",
+        "uri": "https://policies.google.com/privacy",
+        "needConsent": true,
+        "cookies": ['_ga', '_gid', '_ga_XXXXXXXXXX'], // <--- ADAPTEZ _ga_... avec votre ID GA4 sans le "G-"
+        "js": function () {
+            "use strict";
+            if (tarteaucitron.user.gtagKey === undefined) {
+                 tarteaucitron.user.gtagKey = tarteaucitron.services.gtag.key;
+                 if (tarteaucitron.user.gtagKey === undefined || tarteaucitron.user.gtagKey === 'G-XXXXXXXXXX') {
+                      console.warn('Tarteaucitron: Google Analytics key is not defined or still placeholder.');
+                      return;
+                 }
+            }
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', tarteaucitron.user.gtagKey, {'anonymize_ip': true});
+        }
+    };
+    (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+    */
+    </script>
+    <!-- ========================================= -->
+    <script src="../js/faq-accordion.js"></script> <!-- Corrigé pour pointer vers la racine -->
+    <script src="../js/language-links.js"></script> <!-- Corrigé pour pointer vers la racine -->
+    <!-- <script src="../js/script.js"></script> --> <!-- Corrigé pour pointer vers la racine -->
 
 </body>
 </html>
