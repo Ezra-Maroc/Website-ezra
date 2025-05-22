@@ -1,6 +1,7 @@
 // =======================================================
 // ===   JS Formulaire Contact Ezra Maroc (Hébreu)     ===
 // ===   (Basé sur v4.3 FR - Adaptation HE Complète)   ===
+// ===   MODIFIÉ: Suppression restriction 15 mots      ===
 // =======================================================
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -158,30 +159,19 @@ document.addEventListener("DOMContentLoaded", () => {
             return !disallowedWords.some(disallowedWord => {
                 return wordsInValue.includes(disallowedWord.toLowerCase()); // Comparaison en "minuscules"
             });
-        },
-
-        minValidWords: (value, minCount = 15, minWordLength = 2) => { // Seuil de 15 mots, ajuster si besoin
-            if (!value) return false;
-            const words = value.match(/(\b\p{L}+(['-]\p{L}+)*\b)/gu) || [];
-            let validWordCount = 0;
-            for (const word of words) {
-                if (word.length >= minWordLength) {
-                    if (/^(\p{L})\1{3,}$/u.test(word)) continue;
-                    validWordCount++;
-                }
-            }
-            return validWordCount >= minCount;
         }
+
+        // SUPPRIMÉ: minValidWords - Plus de restriction sur le nombre minimum de mots
     };
 
-    // Messages d'erreur standard (TRADUIT)
+    // Messages d'erreur standard (TRADUIT) - Message minValidWords supprimé
     const errorMessages = {
         required: "שדה זה הינו חובה.",
         email: "אנא ספק כתובת דוא\"ל חוקית.",
         checked: "עליך לאשר תנאי זה.",
         tel: "פורמט טלפון לא תקין.",
-        disallowedWords: "ההודעה שלך מכילה מונחים שאינם הולמים. אנא שנה אותה.",
-        minValidWords: "ההודעה שלך נראית קצרה מדי או שאינה מכילה מספיק מילים מובנות. אנא פרט יותר."
+        disallowedWords: "ההודעה שלך מכילה מונחים שאינם הולמים. אנא שנה אותה."
+        // SUPPRIMÉ: minValidWords: "ההודעה שלך נראית קצרה מדי או שאינה מכילה מספיק מילים מובנות. אנא פרט יותר."
     };
 
     const setFieldError = (field, message) => {
@@ -231,14 +221,12 @@ document.addEventListener("DOMContentLoaded", () => {
             isValid = false; errorMessage = errorMessages.tel;
         }
         
+        // MODIFIÉ: Validation simplifiée pour le champ message - seulement mots interdits
         if (field.id === 'message' && value.trim() !== '') {
             if (isValid && disallowedWords.length > 0 && !validators.noDisallowedWords(value)) {
                 isValid = false; errorMessage = errorMessages.disallowedWords;
             }
-            // Valider minValidWords seulement si pas déjà en erreur pour mots interdits (si la liste disallowedWords est active)
-            if (isValid && !validators.minValidWords(value, 15, 2)) { 
-                isValid = false; errorMessage = errorMessages.minValidWords;
-            }
+            // SUPPRIMÉ: Validation minValidWords
         }
         setFieldError(field, errorMessage);
         return isValid;
@@ -292,6 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if(messageTextarea) {
         messageTextarea.addEventListener('input', () => {
             updateCharCounter();
+            // MODIFIÉ: Validation simplifiée - seulement mots interdits en temps réel
             if (messageTextarea.value.trim() !== '') {
                 if (disallowedWords.length > 0 && !validators.noDisallowedWords(messageTextarea.value)) {
                     setFieldError(messageTextarea, errorMessages.disallowedWords);
