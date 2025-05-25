@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Interactif du Maroc | Ezra Maroc</title>
+    <meta name="description" content="Testez vos connaissances sur le Maroc avec notre quiz interactif et ludique ! Découvrez l'histoire, la culture, la géographie et bien plus.">
+
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- CSS Spécifique pour la page Quiz (contiendra les styles du quiz + bannière) -->
+    <link rel="stylesheet" href="css/quiz-page.css">
+
+    <!-- Polices Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (déjà dans votre quiz, mais bonne pratique de l'avoir ici aussi pour cohérence) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- ========== AJOUT TARTEAUCITRON CSS ========== -->
+    <link rel="stylesheet" href="tarteaucitron/css/tarteaucitron.css">
+    <!-- ========================================= -->
+
+</head>
+<body>
+
+    <!-- ==========================================================================
+       HEADER (Standardisé)
+       ========================================================================== -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="Ezra Maroc Logo">
+                <div class="brand-text">
+                    <span>Ezra</span> <strong>Maroc</strong>
+                </div>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="avantages.html">Avantages</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="processus.html">Processus</a></li>
+                    <li><a href="temoignages.html">Témoignages</a></li>
+                    <li><a href="a-propos.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <!-- Lien Quiz (page active) -->
+                    <li><a href="quiz.html" class="active">Quiz</a></li>
+                </ul>
+            </nav>
+            <div class="language-switcher">
+                 <label for="lang-select" class="visually-hidden">Choisir la langue</label>
+                 <select name="lang" id="lang-select" class="language-select" onchange="location = this.value;">
+                    <option value="quiz.html" selected lang="fr">Français</option>
+                    <option value="../en/quiz.html" lang="en">English</option>
+                    <option value="../es/quiz.html" lang="es">Español</option>
+                    <option value="../he/quiz.html" lang="he">עברית</option>
+                    <option value="../ara/quiz.html" lang="ara">العربية (الدارجة)</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+       BANNIÈRE DE PAGE SPÉCIFIQUE AU QUIZ
+       ========================================================================== -->
+    <section class="page-banner quiz-page-banner"> <!-- quiz-page-banner pour CSS spécifique si besoin -->
+        <div class="container">
+            <h1>Le Quiz Majestueux du Maroc</h1>
+            <p>Mettez vos connaissances à l'épreuve et découvrez le Royaume Chérifien comme jamais auparavant !</p>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       CONTENU PRINCIPAL DE LA PAGE QUIZ
+       ========================================================================== -->
+    <section class="section quiz-main-content">
+        <div class="container">
+            <!-- Ici, nous intégrons le contenu du quiz que vous avez fourni -->
+            <div class="quiz-container">
+                <div class="confetti-container" id="confetti-container"></div>
+                <div class="content">
+                    <h1>🇲🇦 Quiz Majestueux du Maroc 🇲🇦</h1>
+                    <p class="subtitle">Testez vos connaissances sur le Royaume Chérifien !</p>
+                    
+                    <div id="theme-selection">
+                        <h2 style="color: var(--primary-color); margin: 25px 0 15px; font-weight:600;">Choisissez un thème pour commencer l'aventure :</h2>
+                        <div class="theme-selector">
+                            <button class="theme-btn" onclick="selectTheme('histoire')"><i class="fas fa-landmark"></i> Histoire</button>
+                            <button class="theme-btn" onclick="selectTheme('geographie')"><i class="fas fa-map-marked-alt"></i> Géographie</button>
+                            <button class="theme-btn" onclick="selectTheme('culture')"><i class="fas fa-theater-masks"></i> Culture</button>
+                            <button class="theme-btn" onclick="selectTheme('cuisine')"><i class="fas fa-utensils"></i> Cuisine</button>
+                            <button class="theme-btn" onclick="selectTheme('judaisme')"><i class="fas fa-star-of-david"></i> Judaïsme Marocain</button>
+                            <button class="theme-btn" onclick="selectTheme('langues')"><i class="fas fa-language"></i> Langues</button>
+                            <button class="theme-btn" onclick="selectTheme('artisanat')"><i class="fas fa-gem"></i> Artisanat</button>
+                            <button class="theme-btn" onclick="selectTheme('musique')"><i class="fas fa-music"></i> Musique</button>
+                            <button class="theme-btn" onclick="selectTheme('mixte')"><i class="fas fa-random"></i> Mélangé</button>
+                        </div>
+                    </div>
+
+                    <div id="quiz-section" class="quiz-section">
+                        <div class="score-board">
+                            <div class="score">Score: <span id="score">0</span>/<span id="total-questions-in-quiz">0</span></div>
+                            <div class="score-details">Question <span id="current-q-num">1</span> sur <span id="total-q-count">0</span></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progress"></div>
+                            </div>
+                        </div>
+
+                        <div class="theme-info" id="theme-info-display"></div>
+
+                        <div class="question-card">
+                            <div class="question" id="question"></div>
+                            <div class="answers" id="answers"></div>
+                            <div id="explanation-container" style="display:none;">
+                                <p class="explanation" id="explanation-text"></p>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top:25px;">
+                            <button class="action-btn next-btn" id="next-btn" onclick="nextQuestion()" style="display: none;"><i class="fas fa-arrow-right"></i> Suivante</button>
+                            <button class="action-btn restart-btn" onclick="restartQuiz()"><i class="fas fa-sync-alt"></i> Nouveau thème</button>
+                        </div>
+                    </div>
+
+                    <div id="final-section" class="quiz-section">
+                        <div class="final-score-card">
+                            <h2>🎉 Quiz Terminé ! Magnifique ! 🎉</h2>
+                            <div class="score" id="final-score-text"></div>
+                            <div id="final-message"></div>
+                        </div>
+                        <div style="margin-top:25px;">
+                            <button class="action-btn restart-btn" onclick="restartQuiz()"><i class="fas fa-redo"></i> Recommencer</button>
+                            <button class="action-btn next-btn" onclick="selectTheme('mixte')"><i class="fas fa-dice"></i> Quiz Mélangé</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin du contenu du quiz -->
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECTION CTA (Optionnelle, à adapter si besoin)
+       ========================================================================== -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Envie d'en savoir plus sur le Maroc ?</h2>
+            <div class="cta-buttons">
+                <a href="avantages.html" class="btn btn-light">Découvrir les Avantages</a>
+                <a href="contact.html" class="btn btn-outline-light">Contactez-Nous</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       FOOTER (Standardisé)
+       ========================================================================== -->
+    <footer>
+         <div class="container footer-container">
+             <div class="footer-about">
+                 <a href="index.html" class="footer-logo">Ezra<strong>Maroc</strong></a>
+                 <p class="footer-text">Spécialistes de l'obtention de la nationalité marocaine, nous vous accompagnons à chaque étape avec expertise et professionnalisme.</p>
+                 <div class="footer-social">
+                     <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                     <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                 </div>
+             </div>
+             <div class="footer-links">
+                 <h3 class="footer-heading">Liens rapides</h3>
+                 <ul>
+                     <li><a href="index.html">Accueil</a></li>
+                     <li><a href="avantages.html">Avantages</a></li>
+                     <li><a href="services.html">Services</a></li>
+                     <li><a href="processus.html">Processus</a></li>
+                     <li><a href="temoignages.html">Témoignages</a></li>
+                     <li><a href="a-propos.html">À propos</a></li>
+                     <li><a href="faq.html">FAQ</a></li>
+                     <li><a href="contact.html">Contact</a></li>
+                     <li><a href="quiz.html">Quiz</a></li>
+                </ul>
+            </div>
+             <div class="footer-services">
+                <h3 class="footer-heading">Nos Services Clés</h3>
+                <ul>
+                     <li><a href="services.html#eligibility">Analyse d'Éligibilité</a></li>
+                     <li><a href="services.html#constitution">Constitution du Dossier</a></li>
+                    <li><a href="services.html#recherche">Recherche Généalogique</a></li>
+                    <li><a href="services.html#suivi">Suivi Administratif</a></li>
+                    <li><a href="services.html#post-obtention">Assistance Post-Obtention</a></li>
+                 </ul>
+            </div>
+             <div class="footer-contact">
+                 <h3 class="footer-heading">Contact</h3>
+                 <ul>
+                    <li><i class="fa-solid fa-location-dot"></i> <span>30 N Gould St Ste R,<br>Sheridan, WY 82801, USA</span></li>
+                     <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></li>
+                 </ul>
+            </div>
+        </div>
+         <div class="footer-bottom">
+             <div class="container">
+                 <p class="copyright">© 2024 Ezra Maroc Consulting Services LLC. Tous droits réservés.</p>
+                 <p class="disclaimer">Les informations sur ce site sont fournies à titre indicatif et ne constituent pas un conseil juridique ou fiscal. Consultez des professionnels qualifiés.</p>
+                 <nav class="footer-legal-links" aria-label="Liens légaux">
+                     <a href="politique-confidentialite.html" rel="noopener noreferrer">Politique de confidentialité</a>
+                     <a href="mentions-legales.html" rel="noopener noreferrer">Mentions légales</a>
+                     <a href="conditions-utilisation.html" rel="noopener noreferrer">Conditions d'Utilisation</a>
+                     <a href="#" onclick="tarteaucitron.userInterface.openPanel(); return false;">Gestion des cookies</a>
+                 </nav>
+             </div>
+         </div>
+    </footer>
+
+    <!-- Script pour le Quiz -->
+    <script>
+        const allQuestions = { // <--- NOUVEL OBJET allQuestions INTÉGRÉ ICI
+            histoire: [
+                { question: "Quelle dynastie a fondé la ville de Marrakech au XIe siècle ?", answers: ["Les Almoravides", "Les Almohades", "Les Mérinides", "Les Saadiens"], correct: 0, explanation: "Marrakech a été fondée en 1062 par Youssef ben Tachfine, chef de la dynastie Almoravide. Elle est rapidement devenue un centre politique, économique et culturel majeur du Maroc médiéval." },
+                { question: "En quelle année le Maroc a-t-il obtenu son indépendance complète du protectorat franco-espagnol ?", answers: ["1945", "1956", "1961", "1975"], correct: 1, explanation: "Le Maroc a retrouvé son indépendance le 2 mars 1956, après la fin du protectorat français, suivi de la fin du protectorat espagnol sur le nord du pays la même année. La ville de Tanger a réintégré le Maroc en octobre 1956." },
+                { question: "Qui était le sultan Mohammed V, figure clé de l'indépendance marocaine ?", answers: ["Le fondateur de la dynastie alaouite", "Le père de l'indépendance marocaine moderne", "Un conquérant célèbre du XVIe siècle", "Le premier ministre sous le protectorat"], correct: 1, explanation: "Sidi Mohammed ben Youssef, connu comme Mohammed V, était sultan puis roi du Maroc. Il est une figure centrale de la lutte pour l'indépendance et est considéré comme le père de la nation marocaine moderne." },
+                { question: "Quelle bataille de 1578, connue sous plusieurs noms, a mis fin aux ambitions portugaises au Maroc et a vu la mort de trois rois ?", answers: ["Bataille de Zallaqa", "Bataille de l'Oued el-Makhazine (ou des Trois Rois)", "Bataille d'Alarcos", "Bataille de Las Navas de Tolosa"], correct: 1, explanation: "La bataille de l'Oued el-Makhazine, également appelée 'Bataille des Trois Rois' ou 'Bataille d'Alcácer Quibir', s'est déroulée en 1578. Elle a vu la défaite cuisante du Portugal et la mort du roi Sébastien Ier de Portugal, du sultan marocain Abd al-Malik, et de son rival Muhammad al-Mutawakkil." },
+                { question: "Quelle dynastie est à l'origine de la construction de la mosquée Koutoubia à Marrakech au XIIe siècle ?", answers: ["Les Almoravides", "Les Almohades", "Les Mérinides", "Les Wattassides"], correct: 1, explanation: "La construction de la Koutoubia a été initiée par les Almohades, sous le règne d'Abdelmoumen, peu après leur conquête de Marrakech. Son minaret emblématique est un chef-d'œuvre de l'architecture hispano-mauresque." },
+                { question: "La 'Marche Verte', événement majeur de l'histoire contemporaine du Maroc, a eu lieu en quelle année ?", answers: ["1969", "1975", "1982", "1991"], correct: 1, explanation: "La Marche Verte, une manifestation pacifique massive initiée par le roi Hassan II, a eu lieu en novembre 1975 pour revendiquer la souveraineté marocaine sur le Sahara Occidental, alors sous administration espagnole." },
+                { question: "Quelle ville, fondée au VIIIe siècle par Moulay Idriss Ier, est considérée comme la plus ancienne des villes impériales du Maroc ?", answers: ["Fès", "Meknès", "Rabat", "Marrakech"], correct: 0, explanation: "Fès a été fondée en 789 par Idriss Ier, fondateur de la dynastie Idrisside. Elle est la plus ancienne des quatre villes impériales et a longtemps été la capitale politique, culturelle et spirituelle du Maroc." },
+                { question: "Qui était Tariq ibn Ziyad, figure historique liée à la conquête de la péninsule ibérique ?", answers: ["Un savant astronome de Fès", "Un général berbère au service des Omeyyades", "Un poète de la cour mérinide", "Un marchand transsaharien influent"], correct: 1, explanation: "Tariq ibn Ziyad était un général berbère qui, en 711, a mené la conquête musulmane de la péninsule ibérique pour le compte du califat Omeyyade. Le rocher de Gibraltar (Djebel Tariq) porte son nom." },
+                { question: "Quel traité a officiellement instauré le protectorat français sur une grande partie du Maroc en 1912 ?", answers: ["Traité de Tordesillas", "Traité de Fès", "Traité de Lalla Maghnia", "Traité d'Algésiras"], correct: 1, explanation: "Le Traité de Fès, signé le 30 mars 1912 entre le sultan Moulay Abd al-Hafid et la France, a officiellement établi le protectorat français sur le Maroc. Un traité similaire a été signé avec l'Espagne pour la zone nord." },
+                { question: "La dynastie Saadienne est particulièrement connue pour avoir repoussé quelle puissance européenne au XVIe siècle ?", answers: ["L'Empire Ottoman", "Le Portugal", "L'Espagne", "L'Angleterre"], correct: 1, explanation: "Les Saadiens, notamment lors de la bataille de l'Oued el-Makhazine (1578), ont infligé une défaite décisive aux Portugais, mettant un frein à leurs ambitions expansionnistes au Maroc." },
+                { question: "Sous quelle dynastie le Maroc a-t-il connu un 'âge d'or' avec la construction de la Médersa Ben Youssef à Marrakech et l'apogée de l'Alhambra de Grenade (influence marocaine) ?", answers: ["Idrissides", "Almoravides", "Almohades", "Mérinides"], correct: 3, explanation: "Les Mérinides (XIIIe-XVe siècles) sont réputés pour leur mécénat artistique et architectural, avec la construction de nombreuses médersas magnifiques comme la Ben Youssef (reconstruite/embellie par les Saadiens mais initialement d'influence mérinide dans son esprit), Bou Inania à Fès et Meknès. L'art hispano-mauresque, dont l'Alhambra est un joyau, a fortement influencé et été influencé par le Maroc à cette époque." }
+            ],
+            geographie: [
+                { question: "Quelle est la capitale administrative et politique du Maroc ?", answers: ["Casablanca, la métropole économique", "Rabat, la ville royale", "Fès, le cœur spirituel", "Marrakech, la perle touristique"], correct: 1, explanation: "Bien que Casablanca soit la plus grande ville et le centre économique, Rabat est la capitale politique et administrative du Maroc depuis 1912 et le début du protectorat français." },
+                { question: "Quel est le nom du point culminant du Maroc et de toute l'Afrique du Nord, s'élevant à 4167 mètres ?", answers: ["Jbel Toubkal", "Jbel Ayachi", "Mont M'Goun", "Jbel Saghro"], correct: 0, explanation: "Le Jbel Toubkal, situé dans le Haut Atlas, est le plus haut sommet du Maroc et de l'Afrique du Nord, culminant à 4167 mètres d'altitude." },
+                { question: "Quelles sont les deux principales chaînes de montagnes qui structurent le relief marocain ?", answers: ["Le Rif et l'Atlas", "Les Pyrénées et l'Atlas", "L'Anti-Atlas et le Moyen Atlas uniquement", "Le Rif et les Alpes"], correct: 0, explanation: "Le relief marocain est dominé par deux grandes chaînes montagneuses : le Rif au nord, longeant la Méditerranée, et l'Atlas (divisé en Moyen Atlas, Haut Atlas et Anti-Atlas) qui traverse le pays du sud-ouest au nord-est." },
+                { question: "Quelle ville du sud, entourée de remparts ocres, est souvent surnommée la 'Perle du Sud' ou la 'Petite Marrakech' ?", answers: ["Agadir", "Ouarzazate", "Zagora", "Taroudant"], correct: 3, explanation: "Taroudant, avec ses impressionnants remparts et sa médina animée, est fréquemment appelée la 'Perle du Sud' ou la 'Petite Marrakech' en raison de son charme et de son architecture traditionnelle." },
+                { question: "Quel détroit, d'une largeur minimale de 14,3 km, sépare le Maroc de l'Espagne et l'Afrique de l'Europe ?", answers: ["Détroit de Gibraltar", "Détroit de Messine", "Canal de Suez", "Détroit du Bosphore"], correct: 0, explanation: "Le détroit de Gibraltar est le passage maritime qui sépare le nord du Maroc de la pointe sud de l'Espagne, reliant l'océan Atlantique à la mer Méditerranée." },
+                { question: "Le Maroc possède des façades maritimes sur quelles étendues d'eau ?", answers: ["Mer Méditerranée uniquement", "Océan Atlantique uniquement", "Mer Rouge et Océan Indien", "Mer Méditerranée et Océan Atlantique"], correct: 3, explanation: "Le Maroc jouit d'une position géographique stratégique avec deux façades maritimes : l'une sur la mer Méditerranée au nord, et l'autre sur l'océan Atlantique à l'ouest." },
+                { question: "Quelle est la plus longue rivière du Maroc, prenant sa source dans le Haut Atlas et se jetant dans l'Atlantique près d'Azemmour ?", answers: ["Oued Souss", "Oued Moulouya", "Oued Drâa", "Oum Errabiaa"], correct: 3, explanation: "L'Oum Errabiaa ('Mère du Printemps') est la plus longue rivière entièrement marocaine (environ 555 km). Le Drâa est plus long au total, mais une partie de son cours est souvent à sec ou souterrain." },
+                { question: "La ville d'Ifrane, connue pour son architecture de style alpin et son climat frais, est située dans quelle chaîne de montagnes ?", answers: ["Haut Atlas", "Moyen Atlas", "Anti-Atlas", "Rif"], correct: 1, explanation: "Ifrane, souvent surnommée la 'Petite Suisse', est une ville de montagne située dans le Moyen Atlas, réputée pour ses hivers neigeux et ses étés frais, ainsi que pour son Parc National." },
+                { question: "Quel désert s'étend sur une grande partie du sud et du sud-est du Maroc ?", answers: ["Désert de Gobi", "Désert du Sahara", "Désert d'Atacama", "Désert du Kalahari"], correct: 1, explanation: "La partie sud et sud-est du Maroc est occupée par le désert du Sahara, le plus vaste désert chaud du monde, caractérisé par ses dunes (ergs), ses plateaux rocheux (hamadas) et ses oasis." },
+                { question: "La lagune de Merja Zerga, important site ornithologique, se trouve sur la côte...", answers: ["Méditerranéenne, près de Nador", "Atlantique, près de Moulay Bousselham", "Atlantique, près de Dakhla", "Méditerranéenne, près d'Al Hoceima"], correct: 1, explanation: "Merja Zerga est une lagune côtière et une réserve naturelle située sur la côte atlantique, au nord de Kénitra, près de Moulay Bousselham. C'est un site majeur pour l'observation des oiseaux migrateurs." }
+            ],
+            culture: [
+                { question: "Qu'est-ce qu'un 'hammam' traditionnel marocain ?", answers: ["Un plat épicé à base de pois chiches", "Un bain de vapeur public, lieu de socialisation et de purification", "Une danse folklorique berbère", "Un instrument de musique à cordes pincées"], correct: 1, explanation: "Le hammam est un bain maure, un bain de vapeur humide ancré dans la tradition marocaine. C'est à la fois un lieu d'hygiène corporelle, de détente, de rituels de beauté et un important lieu de socialisation." },
+                { question: "Que signifie le terme 'baraka' dans la culture marocaine ?", answers: ["Force physique et courage au combat", "Bénédiction divine, influence spirituelle bénéfique", "Richesse matérielle et prospérité commerciale", "Sagesse acquise avec l'âge et l'expérience"], correct: 1, explanation: "La 'baraka' est un concept spirituel important qui désigne une bénédiction divine, une grâce, une influence spirituelle positive ou une force bienfaisante qui peut être attachée à des personnes saintes, des lieux, ou des objets." },
+                { question: "Quel est le nom du vêtement traditionnel long, ample et à capuche, porté aussi bien par les hommes que par les femmes au Maroc ?", answers: ["Le caftan", "La djellaba", "La gandoura", "Le burnous"], correct: 1, explanation: "La djellaba est une longue robe ample, souvent dotée d'une capuche (qob), portée traditionnellement par les hommes et les femmes au Maroc et dans d'autres pays d'Afrique du Nord. Les matières et les décorations varient." },
+                { question: "Qu'est-ce que la 'fantasia' (ou Tbourida), spectacle équestre traditionnel marocain ?", answers: ["Une joute poétique chantée", "Une simulation de charge de cavalerie avec tirs de fusils à poudre noire", "Une danse collective célébrant les récoltes", "Un type de conte populaire transmis oralement"], correct: 1, explanation: "La fantasia, ou Tbourida, est un art équestre traditionnel simulant des assauts militaires. Des groupes de cavaliers en costumes traditionnels effectuent une charge synchronisée, conclue par un tir coordonné de leurs fusils à poudre (moukhala)." },
+                { question: "Comment s'appelle la célèbre place publique au cœur de la médina de Marrakech, classée au patrimoine culturel immatériel de l'UNESCO ?", answers: ["Place Jemaa el-Fna", "Place Hassan II (Casablanca)", "Place Boujloud (Fès)", "Place El Hedim (Meknès)"], correct: 0, explanation: "La place Jemaa el-Fna est le cœur vibrant de Marrakech. De jour comme de nuit, elle offre un spectacle continu avec ses charmeurs de serpents, conteurs, musiciens, acrobates, vendeurs de jus d'orange et stands de nourriture." },
+                { question: "Quel type de logement traditionnel marocain est caractérisé par une cour intérieure centrale (patio) autour de laquelle s'organisent les pièces ?", answers: ["Une kasbah", "Un riad", "Un ksar", "Un douar"], correct: 1, explanation: "Un riad est une maison urbaine traditionnelle marocaine, souvent située dans les médinas. Sa structure s'organise autour d'un patio central à ciel ouvert, parfois doté d'une fontaine ou d'un jardin, assurant fraîcheur et intimité." },
+                { question: "Le henné est traditionnellement utilisé au Maroc pour :", answers: ["Parfumer les vêtements dans les armoires", "Teindre les cheveux et dessiner des motifs corporels temporaires", "Conserver les aliments pour les longs voyages", "Comme épice principale dans le couscous royal"], correct: 1, explanation: "Le henné, une plante dont les feuilles produisent une teinture rougeâtre, est largement utilisé au Maroc pour la coloration des cheveux, la teinture des mains et des pieds avec des motifs décoratifs (particulièrement lors des mariages et fêtes), et pour ses propriétés médicinales." },
+                { question: "Quel est le nom du festival international du film qui se tient annuellement à Marrakech, attirant des célébrités du monde entier ?", answers: ["Festival de Cannes Maroc", "Festival International du Film de Marrakech (FIFM)", "Atlas Film Festival", "Maghreb Film Awards"], correct: 1, explanation: "Le Festival International du Film de Marrakech (FIFM) est un événement cinématographique prestigieux créé en 2001. Il rassemble des personnalités du cinéma mondial et met en avant des films internationaux et marocains." },
+                { question: "Le 'moussem' est un type de célébration populaire au Maroc. De quoi s'agit-il généralement ?", answers: ["Un grand marché hebdomadaire en milieu rural", "Une fête religieuse et culturelle annuelle en l'honneur d'un saint local", "Un concours de poésie et de chant traditionnel", "Une cérémonie de fiançailles collectives"], correct: 1, explanation: "Un moussem est une fête traditionnelle, souvent annuelle, à caractère religieux et commercial, célébrée en l'honneur d'un saint patron (marabout). Il combine pèlerinage, prières, festivités, spectacles (comme la fantasia) et un grand marché." },
+                { question: "L'hospitalité ('Diyafa') est une valeur centrale de la culture marocaine. Comment se manifeste-t-elle couramment ?", answers: ["En offrant toujours le plat le plus cher du menu à ses invités", "En insistant pour que l'invité paie sa part lors d'une sortie", "En accueillant chaleureusement les visiteurs, souvent avec du thé à la menthe et des pâtisseries", "En évitant tout contact visuel direct avec les étrangers"], correct: 2, explanation: "L'hospitalité marocaine est légendaire. Elle se traduit par un accueil chaleureux, l'offre de thé à la menthe accompagné de pâtisseries, des repas généreux partagés, et un souci constant du bien-être de l'invité. C'est un pilier des relations sociales." }
+            ],
+            cuisine: [
+                { question: "Quel plat, souvent préparé le vendredi, est considéré comme le plat national emblématique du Maroc ?", answers: ["Le tajine aux pruneaux", "Le couscous", "La pastilla au poulet et aux amandes", "La harira"], correct: 1, explanation: "Le couscous, un plat à base de semoule de blé dur accompagnée de légumes, de viande (souvent agneau ou poulet) et d'un bouillon parfumé, est le plat national marocain par excellence, traditionnellement partagé en famille le vendredi." },
+                { question: "L'huile d'argan, réputée pour ses usages culinaires et cosmétiques, est extraite des fruits de quel arbre endémique du sud-ouest marocain ?", answers: ["L'olivier", "L'amandier", "L'arganier", "Le dattier"], correct: 2, explanation: "L'huile d'argan est produite à partir des amandons contenus dans les fruits de l'arganier (Argania spinosa), un arbre qui ne pousse que dans certaines régions du sud-ouest du Maroc, notamment la région du Souss." },
+                { question: "Comment mange-t-on traditionnellement de nombreux plats marocains comme le tajine ?", answers: ["Exclusivement avec une fourchette et un couteau", "Principalement avec la main droite, en utilisant du pain comme ustensile", "Avec des baguettes en bois sculpté", "Avec une grande cuillère en bois partagée par tous les convives"], correct: 1, explanation: "La tradition marocaine veut que l'on mange de nombreux plats, en particulier les tajines et certains types de couscous, avec la main droite (les trois premiers doigts). Le pain (khobz) sert souvent à attraper la nourriture et saucer." },
+                { question: "Qu'est-ce que la 'pastilla' (ou bastilla), une spécialité festive marocaine ?", answers: ["Une soupe épaisse et épicée à base de lentilles", "Une tourte feuilletée sucrée-salée, souvent farcie au pigeon ou au poulet et aux amandes", "Un type de pain plat cuit sur une plaque chaude", "Une boisson rafraîchissante à base de lait d'amande et de fleur d'oranger"], correct: 1, explanation: "La pastilla est un plat de fête raffiné. Il s'agit d'une tourte croustillante faite de feuilles de brick (ouarka), traditionnellement farcie d'une préparation sucrée-salée à base de pigeon (ou poulet), d'oignons, de persil, de coriandre, d'œufs, et d'amandes, le tout saupoudré de sucre glace et de cannelle." },
+                { question: "Quelle boisson chaude, symbole de l'hospitalité marocaine, est préparée avec du thé vert, de la menthe fraîche et beaucoup de sucre ?", answers: ["Le café turc", "Le thé noir à la cardamome", "L'atay (thé à la menthe marocain)", "Le maté"], correct: 2, explanation: "L'atay, le thé à la menthe marocain, est bien plus qu'une simple boisson. C'est un rituel social, un symbole d'hospitalité offert à toute heure. Il est préparé avec du thé vert gunpowder, des feuilles de menthe fraîche et une quantité généreuse de sucre, puis servi avec cérémonie." },
+                { question: "Quelle épice, au surnom d''or rouge', est cultivée notamment dans la région de Taliouine et est essentielle dans de nombreux plats marocains ?", answers: ["Le curcuma", "Le paprika", "Le safran", "Le cumin"], correct: 2, explanation: "Le safran, extrait des stigmates de la fleur de Crocus sativus, est une épice précieuse cultivée notamment autour de Taliouine. Il est utilisé pour sa saveur délicate et sa couleur jaune-orangé dans de nombreux tajines, plats de riz et pâtisseries." },
+                { question: "Le 'Ras el Hanout' est un mélange d'épices complexe et variable. Que signifie littéralement son nom en arabe ?", answers: ["'Feu du désert'", "'Parfum des souks'", "'Tête de la boutique' (le meilleur de l'épicier)", "'Secret du chef'"], correct: 2, explanation: "Ras el Hanout signifie littéralement 'tête de la boutique', indiquant que ce mélange représente le meilleur de ce que l'épicier (hanout) peut offrir. Sa composition peut varier grandement, incluant parfois des dizaines d'épices (gingembre, curcuma, cannelle, clou de girofle, cardamome, poivre, etc.)." },
+                { question: "La 'Harira' est une soupe traditionnelle marocaine particulièrement consommée pendant quel mois du calendrier musulman ?", answers: ["Chawwal (fête de l'Aïd el-Fitr)", "Ramadan (pour rompre le jeûne)", "Dhou al-Hijja (pendant le Hajj)", "Mouharram (Nouvel An musulman)"], correct: 1, explanation: "La Harira est une soupe riche et nourrissante à base de tomates, lentilles, pois chiches, vermicelles, viande (facultatif) et épices. Elle est traditionnellement servie pour rompre le jeûne quotidien pendant le mois de Ramadan." },
+                { question: "Quel est le nom du pain rond et plat, souvent cuit au four traditionnel (ferrane) ou à la poêle, qui accompagne la plupart des repas marocains ?", answers: ["Baguette", "Khobz", "Pita", "Naan"], correct: 1, explanation: "Le Khobz est le terme générique pour le pain au Maroc. Il s'agit généralement d'un pain rond et plat, à la mie dense, parfait pour saucer les plats en sauce et accompagner les repas." },
+                { question: "Les 'Chebakia' sont des pâtisseries frites enrobées de miel et parsemées de sésame. Elles sont particulièrement associées à quelle période ?", answers: ["Les anniversaires d'enfants", "Le mois de Ramadan et les fêtes religieuses", "Les pique-niques d'été", "Les petits déjeuners quotidiens"], correct: 1, explanation: "Les Chebakia, des gâteaux en forme de fleur, frits, trempés dans du miel chaud parfumé à la fleur d'oranger et saupoudrés de graines de sésame, sont une gourmandise incontournable pendant le mois de Ramadan et lors de célébrations spéciales." }
+            ],
+            judaisme: [
+                { question: "Quelle ville marocaine historique, grand centre d'études rabbiniques, était parfois surnommée 'la Petite Jérusalem' ou 'la Jérusalem d'Afrique' ?", answers: ["Casablanca", "Fès", "Meknès", "Essaouira (Mogador)"], correct: 1, explanation: "Fès, avec sa médina millénaire et ses nombreuses synagogues et yeshivot (écoles talmudiques), a été un centre majeur de la vie intellectuelle et spirituelle juive au Maroc pendant des siècles, lui valant des surnoms prestigieux comme 'la Petite Jérusalem'." },
+                { question: "Comment appelle-t-on le quartier juif traditionnellement clos que l'on trouvait dans de nombreuses villes marocaines ?", answers: ["Mellah", "Médina", "Kasbah", "Derb Ghalef"], correct: 0, explanation: "Le Mellah (signifiant 'lieu du sel' en référence à une ancienne activité ou taxe) était le quartier traditionnellement réservé aux habitants juifs dans les villes marocaines. Le premier Mellah a été créé à Fès au XVe siècle." },
+                { question: "Quel roi du Maroc est particulièrement vénéré pour sa protection des citoyens juifs marocains face aux lois antisémites du régime de Vichy pendant la Seconde Guerre mondiale ?", answers: ["Moulay Hassan Ier", "Le Sultan Mohammed V", "Le Roi Hassan II", "Le Roi Mohammed VI"], correct: 1, explanation: "Le Sultan Mohammed V (plus tard Roi Mohammed V) est salué pour avoir refusé d'appliquer les lois discriminatoires de Vichy à ses sujets juifs, déclarant : 'Il n'y a pas de Juifs au Maroc, il n'y a que des sujets marocains'. Ce geste lui a valu une reconnaissance éternelle." },
+                { question: "Quelle langue, mélange d'arabe dialectal marocain et d'hébreu, était couramment parlée par les communautés juives du Maroc ?", answers: ["Le ladino (judéo-espagnol)", "L'araméen", "Le judéo-arabe (ou Moghrabi)", "Le yiddish"], correct: 2, explanation: "Le judéo-arabe marocain, aussi appelé Moghrabi par ses locuteurs, était la langue vernaculaire de la majorité des Juifs du Maroc. C'est un dialecte arabe mâtiné de mots hébreux et parfois d'autres influences (espagnol, français)." },
+                { question: "Qu'est-ce que la Mimouna, fête populaire spécifique aux Juifs marocains (et d'autres communautés nord-africaines) ?", answers: ["Une fête marquant la fin de Pessah (Pâque juive)", "Le nouvel an juif (Rosh Hashanah)", "La fête des Lumières (Hanoukka)", "Une célébration de la récolte du blé (Chavouot)"], correct: 0, explanation: "La Mimouna est une fête joyeuse célébrée par les Juifs d'origine marocaine (et nord-africaine) immédiatement après la fin de Pessah. Elle est caractérisée par l'ouverture des maisons, le partage de mets sucrés (notamment la 'moufleta') et la convivialité entre voisins, y compris musulmans." },
+                { question: "Le pèlerinage (Hiloula) sur la tombe de quel saint rabbin, enterré près d'Ouezzane, attire chaque année de nombreux Juifs marocains et de la diaspora ?", answers: ["Rabbi Haïm Pinto (Essaouira)", "Rabbi Amram Ben Diwane", "Rabbi Shlomo Ben Hensh (région de Marrakech)", "Rabbi David Draa (Tidsi)"], correct: 1, explanation: "Rabbi Amram Ben Diwane, un rabbin vénéré du XVIIIe siècle, est enterré près d'Ouezzane. Sa hiloula (anniversaire de décès et pèlerinage) est l'une des plus importantes et fréquentées au Maroc." },
+                { question: "Quel plat à base de fèves, souvent mijoté longuement, est un classique de la cuisine juive marocaine, particulièrement pour le Shabbat ?", answers: ["La Dafina (ou Skhina)", "Le Matboucha", "Les Cigares aux amandes", "Le Couscous aux sept légumes"], correct: 0, explanation: "La Dafina (terme plus courant) ou Skhina est un plat emblématique du Shabbat chez les Juifs marocains. C'est un ragoût mijoté très lentement (souvent toute la nuit du vendredi au samedi) contenant généralement de la viande, des pommes de terre, des œufs durs, des fèves, des pois chiches, et parfois du blé ou du riz." },
+                { question: "Comment se nomme le musée dédié au patrimoine judéo-marocain, unique en son genre dans le monde arabe, situé à Casablanca ?", answers: ["Musée Dar Si Saïd (Marrakech)", "Musée du Judaïsme Marocain", "Musée Batha (Fès)", "Musée de la Kasbah (Tanger)"], correct: 1, explanation: "Le Musée du Judaïsme Marocain, situé à Casablanca dans le quartier de l'Oasis, a été créé en 1997. Il est le seul musée juif dans le monde arabe et présente une riche collection d'objets rituels, de costumes, de documents et d'œuvres d'art témoignant de l'histoire millénaire des Juifs au Maroc." },
+                { question: "André Azoulay, conseiller influent de plusieurs rois du Maroc, est une figure emblématique de quelle communauté marocaine ?", answers: ["La communauté berbère Chleuh", "La communauté juive marocaine", "La communauté des exilés politiques espagnols", "La communauté des soufis de Fès"], correct: 1, explanation: "André Azoulay, né à Essaouira, est une personnalité éminente de la communauté juive marocaine. Il a servi comme conseiller économique et politique auprès du roi Hassan II et continue de conseiller le roi Mohammed VI, jouant un rôle clé dans le dialogue interculturel et le développement du pays." },
+                { question: "Dans l'artisanat judéo-marocain, quel type d'objet rituel, souvent richement décoré, est utilisé pour contenir les rouleaux de la Torah ?", answers: ["Un Tallit (châle de prière)", "Un Tik (étui à Torah)", "Une Hanoukkia (chandelier de Hanoukka)", "Un Shofar (corne de bélier)"], correct: 1, explanation: "Le Tik est un étui rigide, souvent en bois recouvert de velours brodé de fils d'or ou d'argent, ou en métal ciselé, utilisé pour protéger et honorer les rouleaux de la Sefer Torah dans les synagogues marocaines." }
+            ],
+            langues: [
+                { question: "Combien de langues officielles le Maroc reconnaît-il dans sa Constitution depuis 2011 ?", answers: ["Une seule : l'arabe classique", "Deux : l'arabe et le tamazight (berbère)", "Trois : l'arabe, le français et le tamazight", "Quatre : l'arabe, l'espagnol, le français et le tamazight"], correct: 1, explanation: "Depuis la Constitution de 2011, le Maroc reconnaît deux langues officielles : l'arabe et le tamazight (avec ses variantes régionales). Cette reconnaissance marque une étape importante pour la valorisation de la culture amazighe." },
+                { question: "Comment dit-on couramment 'bonjour' en tamazight (berbère), un salut qui a gagné en popularité ?", answers: ["Salam Aleikoum", "Azul", "Sbah Lkhir", "Merhaba"], correct: 1, explanation: "'Azul' (prononcé A-zoul) est une salutation traditionnelle en langue amazighe signifiant 'salut' ou 'bonjour'. Elle est de plus en plus utilisée au Maroc comme marqueur identitaire et d'accueil." },
+                { question: "Quel est le nom du dialecte arabe parlé au quotidien par la majorité des Marocains ?", answers: ["L'arabe littéraire (Fusha)", "Le Darija", "L'arabe levantin", "Le Hassaniya"], correct: 1, explanation: "Le Darija (ou arabe marocain) est le dialecte vernaculaire parlé par la majorité de la population. Il diffère notablement de l'arabe standard moderne (Fusha) et intègre des influences berbères, françaises et espagnoles." },
+                { question: "Dans quel système d'écriture le tamazight (berbère) est-il officiellement écrit au Maroc, bien que les caractères latins et arabes soient aussi utilisés ?", answers: ["L'alphabet cyrillique", "L'alphabet arabe uniquement", "L'alphabet Tifinagh", "L'alphabet grec"], correct: 2, explanation: "L'alphabet Tifinagh, un ancien alphabet libyco-berbère modernisé (Néo-Tifinagh), est le système d'écriture officiel pour la langue amazighe au Maroc, utilisé notamment dans l'enseignement et la signalisation. Les transcriptions en caractères latins ou arabes existent également." },
+                { question: "Quelle langue européenne, héritage de la période du protectorat, reste très largement utilisée dans l'administration, l'éducation supérieure, les affaires et les médias au Maroc ?", answers: ["L'espagnol", "Le français", "L'anglais", "L'italien"], correct: 1, explanation: "Le français conserve une place prépondérante au Maroc comme langue seconde. Il est largement utilisé dans les affaires, l'enseignement supérieur, l'administration, les médias, et par une grande partie de la population éduquée." },
+                { question: "Le Hassaniya est un dialecte arabe parlé principalement dans quelle région du Maroc ?", answers: ["Dans les montagnes du Rif", "Dans les grandes villes du nord (Tanger, Tétouan)", "Dans les provinces sahariennes du sud", "Autour de la ville d'Oujda à l'est"], correct: 2, explanation: "Le Hassaniya est un dialecte arabe bédouin parlé dans les provinces du sud du Maroc (Sahara Occidental), ainsi qu'en Mauritanie et dans certaines parties de l'Algérie et du Mali. Il présente des particularités phonétiques et lexicales distinctes du Darija." },
+                { question: "Quel mot, issu du Darija et signifiant 'un peu' ou 'lentement', est internationalement connu grâce à la musique et à la culture populaire ?", answers: ["Yallah", "Chouia", "Beslama", "Zouina"], correct: 1, explanation: "'Chouia' (ou 'shwiya') est un mot très courant en Darija signifiant 'un peu', 'un petit peu', ou 'doucement/lentement'. Il est souvent compris par les visiteurs étrangers." },
+                { question: "Bien que l'anglais gagne en popularité, surtout chez les jeunes, quelle langue romane est historiquement parlée dans certaines régions du nord du Maroc, en raison de la proximité géographique et de l'ancien protectorat ?", answers: ["Le portugais", "L'italien", "L'espagnol", "Le catalan"], correct: 2, explanation: "L'espagnol est encore parlé et compris par une partie de la population dans les régions du nord du Maroc (ex: Tanger, Tétouan, Chefchaouen) et dans les enclaves espagnoles de Ceuta et Melilla, héritage de l'ancien protectorat espagnol et de la proximité avec l'Espagne." },
+                { question: "Le 'Tachelhit', le 'Tarifit' et le 'Zemmour-Zaïane-Aït Mguild' sont des variantes régionales de quelle langue ?", answers: ["De l'arabe Darija", "De la langue Tamazight (berbère)", "Du français marocain", "De l'ancienne langue punique"], correct: 1, explanation: "Ce sont trois des principales variantes régionales de la langue amazighe (berbère) parlées au Maroc : le Tachelhit (sud-ouest, Souss, Anti-Atlas), le Tarifit (nord, Rif), et le Tamazight du Maroc Central (Moyen Atlas, ex: Zemmour, Zaïane, Aït Mguild)." },
+                { question: "L'expression 'Inch'Allah' est très courante au Maroc. Que signifie-t-elle littéralement ?", answers: ["'Merci beaucoup'", "'S'il plaît à Dieu' / 'Si Dieu le veut'", "'Bienvenue chez nous'", "'À bientôt j'espère'"], correct: 1, explanation: "'Inch'Allah' (إن شاء الله) est une expression arabe signifiant 'Si Dieu le veut' ou 'S'il plaît à Dieu'. Elle est utilisée pour exprimer l'espoir qu'un événement futur se produise, tout en reconnaissant la volonté divine." }
+            ],
+            artisanat: [
+                { question: "Qu'est-ce que le 'zellige', une forme d'art décoratif emblématique de l'architecture marocaine ?", answers: ["Un type de tapis berbère aux motifs géométriques", "Une mosaïque de petits carreaux de faïence émaillée et taillée à la main", "Un travail du cuir repoussé et peint", "Une technique de broderie sur soie fine"], correct: 1, explanation: "Le zellige est un art ancestral de la mosaïque. Il est composé de petits morceaux de carreaux de faïence (terre cuite émaillée) de différentes couleurs, taillés manuellement (par un 'mâalem') pour former des motifs géométriques complexes qui ornent murs, sols, fontaines, et colonnes." },
+                { question: "Quelle ville est historiquement la plus réputée pour la qualité et la finesse de son zellige, ainsi que pour la formation de ses maîtres artisans ('mâalems') ?", answers: ["Marrakech", "Fès", "Salé", "Safi"], correct: 1, explanation: "Fès est considérée comme le berceau et le principal centre de production du zellige marocain de haute qualité. Les 'mâalems zelligeurs' fassis sont renommés pour leur savoir-faire transmis de génération en génération." },
+                { question: "Qu'est-ce que le 'tadelakt', un enduit mural traditionnel marocain à la fois décoratif et imperméable ?", answers: ["Un textile en laine de mouton très dense", "Un enduit à la chaux, poli avec un galet et traité au savon noir pour le rendre étanche", "Un type de marqueterie en bois précieux", "Une poterie vernissée aux couleurs vives"], correct: 1, explanation: "Le tadelakt est un enduit mural traditionnel originaire de la région de Marrakech. Il est réalisé à base de chaux, longuement poli avec un galet de rivière et traité au savon noir, ce qui lui confère un aspect lisse, brillant, et une grande imperméabilité. Il est souvent utilisé dans les hammams et salles de bains." },
+                { question: "Quel bois précieux, issu des forêts marocaines de l'Atlas, est traditionnellement utilisé pour la sculpture, la marqueterie ('zouak') et la menuiserie fine (portes, plafonds) ?", answers: ["Le cèdre de l'Atlas", "L'olivier", "Le thuya", "L'eucalyptus"], correct: 0, explanation: "Le bois de cèdre de l'Atlas, apprécié pour son parfum agréable, sa résistance et la beauté de son grain, est largement utilisé dans l'artisanat marocain pour les plafonds sculptés, les moucharabiehs, les meubles et les objets décoratifs. Le thuya est aussi utilisé, surtout à Essaouira, mais le cèdre est plus répandu pour les grandes structures." },
+                { question: "La 'dinanderie' est l'art du travail de quel type de métal, utilisé pour créer des plateaux ciselés, des théières, des lanternes et autres objets décoratifs ?", answers: ["L'or et l'argent (bijouterie)", "Le cuivre et le laiton", "Le fer forgé (ferronnerie)", "L'étain (poterie d'étain)"], correct: 1, explanation: "La dinanderie est l'art de travailler les feuilles de métaux comme le cuivre, le laiton ou parfois l'argent, par martelage, ciselure, gravure, ou repoussé pour créer des objets utilitaires et décoratifs tels que plateaux (siniya), théières (berrad), lanternes, miroirs, etc." },
+                { question: "Quel type de tapis, souvent caractérisé par des motifs géométriques audacieux et des couleurs vives (ou parfois des fonds écrus avec des lignes sombres), est typique des tribus berbères de l'Atlas ?", answers: ["Le tapis persan", "Le tapis d'Orient (turc)", "Le tapis berbère (Azilal, Beni Ouarain, Boucherouite, etc.)", "La tapisserie de Bayeux"], correct: 2, explanation: "Les tapis berbères marocains sont réputés pour leur diversité. Chaque tribu ou région possède ses propres styles, motifs (souvent symboliques) et techniques de nouage ou de tissage. Parmi les plus connus : Azilal (coloré, laine), Beni Ouarain (épais, laine écrue, motifs losanges noirs/bruns), Boucherouite (tapis de chiffons colorés)." },
+                { question: "La ville de Safi est particulièrement renommée pour quel type d'artisanat ?", answers: ["La maroquinerie de luxe", "La poterie et la céramique", "La sculpture sur bois de thuya", "La fabrication de babouches"], correct: 1, explanation: "Safi est l'un des principaux centres de poterie et de céramique au Maroc, réputé pour ses créations aux couleurs vives (notamment le bleu de Safi) et ses motifs variés. Elle abrite de nombreux ateliers et une colline dédiée aux potiers." },
+                { question: "Les 'babouches' sont un type de chaussure traditionnelle marocaine. Quelle est leur caractéristique principale ?", answers: ["Des sandales à semelle de corde tressée", "Des chaussons en cuir souple, souvent pointus ou arrondis, sans quartier arrière (talon ouvert)", "Des bottes hautes en cuir rigide", "Des sabots en bois sculpté"], correct: 1, explanation: "La babouche (belgha pour hommes, chriba pour femmes) est une chaussure traditionnelle en cuir, souple et légère, caractérisée par l'absence de contrefort à l'arrière, ce qui permet de l'enfiler et de la retirer facilement. Les formes, couleurs et décorations varient grandement." },
+                { question: "Le travail du 'doum' (palmier nain) permet de fabriquer quels types d'objets artisanaux courants au Maroc ?", answers: ["Des bijoux en argent filigrané", "Des paniers, des nattes, des chapeaux et des petits objets tressés", "Des instruments de musique à percussion", "Des carreaux de zellige peints"], correct: 1, explanation: "Les feuilles de palmier nain (doum) sont séchées puis tressées pour confectionner une multitude d'objets utilitaires et décoratifs : paniers de toutes tailles, couffins, nattes de sol, chapeaux, sets de table, et même des petits animaux décoratifs." },
+                { question: "Le 'caftan' marocain, porté lors des grandes occasions, est souvent confectionné dans des tissus luxueux et orné de quel type de passementerie complexe et faite à la main ?", answers: ["De la dentelle de Calais", "Du 'sfifa' (galon tressé) et des 'aakad' (boutons glands)", "Des broderies au point de croix", "Des applications de perles de rocaille"], correct: 1, explanation: "Le caftan marocain est souvent sublimé par des passementeries traditionnelles : le 'sfifa', un galon tressé (parfois en fils d'or ou d'argent), qui borde les coutures et les ouvertures, et les 'aakad', de petits boutons en forme de glands, fabriqués à la main et qui servent à fermer le vêtement." }
+            ],
+            musique: [
+                { question: "Quel instrument à cordes pincées, sorte de luth-tambour à trois cordes et caisse en peau de chameau, est l'instrument central de la musique Gnaoua ?", answers: ["L'oud", "Le guembri (ou sentir)", "Le rabab", "Le banjo"], correct: 1, explanation: "Le guembri (aussi appelé sentir ou hajhouj) est l'instrument mélodique et rythmique principal de la musique Gnaoua. Sa sonorité grave et percussive accompagne les chants et mène la transe lors des cérémonies (lilas)." },
+                { question: "Quel genre musical arabo-andalou, héritage de l'Andalousie musulmane, est particulièrement préservé et apprécié au Maroc, notamment à Fès et Tétouan ?", answers: ["Le raï", "Le malhoun", "La musique Al-Âla (ou Tarab Andalusi)", "Le chaâbi égyptien"], correct: 2, explanation: "La musique Al-Âla, ou Tarab Andalusi, est la forme marocaine de la musique arabo-andalouse. C'est un répertoire savant et poétique, organisé en 'noubas' (suites instrumentales et vocales), qui constitue un patrimoine culturel immatériel important." },
+                { question: "Quel festival, se tenant annuellement à Essaouira, est devenu un rendez-vous incontournable pour les amateurs de musique Gnaoua et de fusions avec des artistes du monde entier ?", answers: ["Mawazine Rythmes du Monde (Rabat)", "Festival Gnaoua et Musiques du Monde d'Essaouira", "Jazzablanca (Casablanca)", "L'Boulevard des Jeunes Musiciens (Casablanca)"], correct: 1, explanation: "Le Festival Gnaoua et Musiques du Monde d'Essaouira, créé en 1998, est un événement majeur qui célèbre la tradition Gnaoua tout en favorisant les rencontres et les fusions avec des musiciens de jazz, blues, soul, rock, et autres genres du monde entier." },
+                { question: "Le 'Chaâbi' marocain est un genre musical très populaire. Que signifie le mot 'chaâbi' et quel est le caractère principal de cette musique ?", answers: ["'Ancien', musique savante des palais", "'Populaire', musique festive et entraînante", "'Religieux', chants liturgiques et soufis", "'Montagnard', mélodies pastorales berbères"], correct: 1, explanation: "Le terme 'chaâbi' (الشعبي) signifie 'populaire' en arabe. La musique chaâbi marocaine est un genre festif, dansant et très apprécié lors des mariages et célébrations. Elle puise ses racines dans diverses traditions (Aïta, Melhoun, influences arabo-andalouses) et est caractérisée par des rythmes entraînants." },
+                { question: "La 'Aïta' est un genre de chant et de poésie populaire ancré dans les traditions rurales de certaines régions marocaines. Quelles sont ses caractéristiques ?", answers: ["Chant religieux a capella interprété uniquement par des hommes", "Musique instrumentale douce jouée à la flûte ney", "Chant puissant, souvent improvisé, accompagné d'instruments comme le violon, le loutar et des percussions", "Musique de cour sophistiquée avec des textes en arabe classique"], correct: 2, explanation: "La Aïta (littéralement 'l'appel' ou 'le cri') est un art vocal et poétique traditionnel des plaines atlantiques et de certaines régions intérieures (Chaouia, Doukkala, Abda, etc.). Elle est interprétée par des chanteuses (chikhat) et musiciens, avec des textes souvent improvisés traitant de l'amour, de la satire sociale, de l'histoire locale, sur des mélodies prenantes et des rythmes percussifs." },
+                { question: "Nass El Ghiwane est un groupe musical marocain légendaire des années 1970. Quel style ont-ils popularisé, mêlant instruments traditionnels et textes engagés ?", answers: ["Le rock psychédélique marocain", "Un style 'folk contestataire' marocain", "La pop marocaine moderne (variété)", "Le rap marocain old-school"], correct: 1, explanation: "Nass El Ghiwane a révolutionné la scène musicale marocaine en créant un style unique, mélangeant des instruments traditionnels (bendir, guembri, banjo adapté) avec des mélodies inspirées du Melhoun et de la Aïta, et des paroles poétiques et socialement engagées. Ils sont souvent comparés aux Rolling Stones marocains pour leur impact culturel." },
+                { question: "Quel instrument à percussion, sorte de grand tambour sur cadre, est omniprésent dans de nombreux genres musicaux marocains, du chaâbi au Gnaoua ?", answers: ["Le derbouka (tabla)", "Le bendir", "Les qarqabous (crotales)", "Le tbel"], correct: 1, explanation: "Le bendir est un grand tambour sur cadre, généralement en peau de chèvre, souvent muni d'un timbre (cordes tendues sous la peau) qui lui donne une sonorité vibrante. Il est fondamental dans de nombreux rythmes marocains et accompagne une grande variété de styles musicaux." },
+                { question: "Le 'Melhoun' est un art poético-musical urbain marocain. D'où tire-t-il principalement son inspiration linguistique et thématique ?", answers: ["Des épopées berbères de l'Atlas", "De la poésie arabe classique préislamique", "De la poésie populaire en arabe dialectal marocain (Darija)", "Des cantiques religieux juifs en hébreu"], correct: 2, explanation: "Le Melhoun est une forme de poésie chantée en arabe dialectal marocain (Darija). Ses textes, souvent longs et narratifs, abordent des thèmes variés (amour, religion, satire sociale, éloges). C'est un art urbain qui s'est développé dans des villes comme Fès, Meknès, Marrakech, Salé." },
+                { question: "Quel type d'ensemble musical traditionnel marocain, jouant une musique festive et rythmée avec des hautbois (ghaita) et des tambours (tbel), anime souvent les mariages et les célébrations en plein air ?", answers: ["Un orchestre symphonique", "Une 'Dekka Marrakchia'", "Un groupe de jazz manouche", "Un 'Issawa' (confrérie soufie)"], correct: 1, explanation: "La Dekka Marrakchia est un ensemble musical particulièrement associé à Marrakech, mais dont l'esprit festif se retrouve ailleurs. Plus largement, les troupes de 'ghaytas' (hautbois stridents) et 'tbels' (grands tambours) sont typiques des ambiances de fête et des cortèges au Maroc. La Dekka elle-même combine percussions complexes et chants." },
+                { question: "Quel instrument à cordes frottées, proche du violon mais souvent tenu verticalement sur le genou, est utilisé dans la musique chaâbi et la Aïta ?", answers: ["La viole de gambe", "Le violoncelle", "Le 'kamanja' (violon adapté) ou le 'rabab'", "La contrebasse"], correct: 2, explanation: "Le 'kamanja' (violon de style occidental mais souvent joué et accordé différemment) est très présent dans la musique chaâbi et la Aïta. Le 'rabab' (ou rebab) est un instrument plus ancien, une vièle monocorde ou bicorde, également utilisée dans certaines traditions, mais le violon est plus courant dans le chaâbi moderne." }
+            ]
+        };
+
+        // Le reste du JavaScript pour la logique du quiz est identique à la version précédente...
+        // DOM Elements (déclarés ici, initialisés dans DOMContentLoaded)
+        let themeSelectionDiv, quizSectionDiv, finalSectionDiv, scoreEl, totalQuestionsInQuizEl, currentQNumEl, totalQCountEl, progressEl, themeInfoDisplayEl, questionEl, answersEl, explanationContainerEl, explanationTextEl, nextBtnEl, confettiContainerEl, finalScoreTextEl, finalMessageEl;
+        
+        let themeButtons; // Déplacé ici, sera initialisé dans DOMContentLoaded
+
+        // State Variables
+        let currentTheme = '';
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let questionsForCurrentQuiz = [];
+        const QUIZ_LENGTH = 10; 
+
+        const themeDisplayNames = {
+            histoire: "Histoire Fascinante",
+            geographie: "Géographie Époustouflante",
+            culture: "Culture Riche et Variée",
+            cuisine: "Cuisine Savoureuse",
+            judaisme: "Héritage du Judaïsme Marocain",
+            langues: "Mosaïque des Langues",
+            artisanat: "Artisanat d'Excellence",
+            musique: "Rythmes Envoûtants",
+            mixte: "Mélange Majestueux"
+        };
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function getThemeDisplayName(themeKey) {
+            return themeDisplayNames[themeKey] || "Quiz Spécial";
+        }
+        
+        function loadQuestionsForTheme(themeName) {
+            questionsForCurrentQuiz = [];
+            if (themeName === 'mixte') {
+                let allMixedQuestions = [];
+                for (const key in allQuestions) {
+                    if (allQuestions.hasOwnProperty(key)) {
+                         if(Array.isArray(allQuestions[key])) {
+                            allMixedQuestions = allMixedQuestions.concat(allQuestions[key]);
+                        }
+                    }
+                }
+                shuffleArray(allMixedQuestions);
+                questionsForCurrentQuiz = allMixedQuestions.slice(0, Math.min(QUIZ_LENGTH, allMixedQuestions.length));
+            } else if (allQuestions[themeName] && Array.isArray(allQuestions[themeName])) {
+                let themeQuestions = [...allQuestions[themeName]]; 
+                shuffleArray(themeQuestions);
+                questionsForCurrentQuiz = themeQuestions.slice(0, Math.min(QUIZ_LENGTH, themeQuestions.length));
+            }
+            
+            if (totalQuestionsInQuizEl) totalQuestionsInQuizEl.textContent = questionsForCurrentQuiz.length;
+            if (totalQCountEl) totalQCountEl.textContent = questionsForCurrentQuiz.length;
+        }
+
+        window.selectTheme = function(themeName) {
+            currentTheme = themeName;
+            if (themeButtons) {
+                themeButtons.forEach(btn => {
+                    btn.classList.remove('selected');
+                    if(btn.getAttribute('onclick') === `selectTheme('${themeName}')`) {
+                        btn.classList.add('selected');
+                    }
+                });
+            }
+
+            loadQuestionsForTheme(themeName);
+            
+            currentQuestionIndex = 0;
+            score = 0;
+            if (scoreEl) updateScoreDisplay();
+
+            if (themeSelectionDiv) themeSelectionDiv.style.display = 'none';
+            if (finalSectionDiv) finalSectionDiv.classList.remove('active');
+            if (quizSectionDiv) quizSectionDiv.classList.add('active');
+            
+            if (themeInfoDisplayEl) themeInfoDisplayEl.textContent = `Thème: ${getThemeDisplayName(currentTheme)}`;
+            
+            displayQuestion();
+            clearConfetti();
+        }
+
+        function displayQuestion() {
+            if (!questionEl || !answersEl || !explanationContainerEl || !nextBtnEl || !currentQNumEl || !progressEl) {
+                return;
+            }
+
+            if (currentQuestionIndex < questionsForCurrentQuiz.length) {
+                const q = questionsForCurrentQuiz[currentQuestionIndex];
+                questionEl.textContent = q.question;
+                answersEl.innerHTML = '';
+                q.answers.forEach((answer, index) => {
+                    const answerBtn = document.createElement('button');
+                    answerBtn.classList.add('answer');
+                    answerBtn.innerHTML = `<span class="icon"><i class="fas fa-circle"></i></span> ${answer}`; 
+                    answerBtn.onclick = () => selectAnswer(index);
+                    answersEl.appendChild(answerBtn);
+                });
+                explanationContainerEl.style.display = 'none';
+                nextBtnEl.style.display = 'none';
+                currentQNumEl.textContent = currentQuestionIndex + 1;
+                updateProgressBar();
+            } else {
+                showFinalScore();
+            }
+        }
+
+        window.selectAnswer = function(selectedIndex) {
+             if (!answersEl || !explanationContainerEl || !explanationTextEl || !nextBtnEl) {
+                return;
+            }
+
+            const q = questionsForCurrentQuiz[currentQuestionIndex];
+            const answerButtons = answersEl.querySelectorAll('.answer');
+            
+            answerButtons.forEach((btn, idx) => {
+                btn.classList.add('disabled'); 
+                btn.onclick = null; 
+                if (idx === q.correct) {
+                    btn.classList.add('correct');
+                }
+            });
+
+            if (selectedIndex === q.correct) {
+                score++;
+                answerButtons[selectedIndex].classList.add('correct'); 
+            } else {
+                answerButtons[selectedIndex].classList.add('incorrect');
+            }
+            
+            if (scoreEl) updateScoreDisplay();
+            explanationTextEl.innerHTML = `<strong>Explication:</strong> ${q.explanation}`;
+            explanationContainerEl.style.display = 'block';
+            nextBtnEl.style.display = 'inline-flex';
+        }
+
+        function updateScoreDisplay() {
+            if (scoreEl) scoreEl.textContent = score;
+        }
+
+        window.nextQuestion = function() {
+            currentQuestionIndex++;
+            displayQuestion();
+        }
+
+        function showFinalScore() {
+            if (quizSectionDiv) quizSectionDiv.classList.remove('active');
+            if (finalSectionDiv) finalSectionDiv.classList.add('active');
+            
+            const percentage = (questionsForCurrentQuiz.length > 0 ? (score / questionsForCurrentQuiz.length) : 0) * 100;
+            
+            if (finalScoreTextEl) finalScoreTextEl.textContent = `Votre score : ${score} / ${questionsForCurrentQuiz.length}`;
+            
+            let message = "";
+            if (percentage === 100) {
+                message = "Incroyable ! Vous êtes un véritable expert du Maroc !";
+                triggerConfetti();
+            } else if (percentage >= 75) {
+                message = "Excellent travail ! Vos connaissances sont impressionnantes.";
+                triggerConfetti();
+            } else if (percentage >= 50) {
+                message = "Bien joué ! Vous avez une bonne connaissance du Maroc.";
+            } else if (percentage >= 25) {
+                message = "Pas mal, mais il y a encore tant à découvrir sur ce pays magnifique !";
+            } else {
+                message = "Continuez d'explorer, le Maroc a tant de merveilles à offrir !";
+            }
+            if (finalMessageEl) finalMessageEl.textContent = message;
+        }
+
+        window.restartQuiz = function() {
+            if (themeSelectionDiv) themeSelectionDiv.style.display = 'block';
+            if (quizSectionDiv) quizSectionDiv.classList.remove('active');
+            if (finalSectionDiv) finalSectionDiv.classList.remove('active');
+            
+            if (themeButtons) {
+                themeButtons.forEach(btn => btn.classList.remove('selected'));
+            }
+            
+            currentQuestionIndex = 0;
+            score = 0;
+            questionsForCurrentQuiz = [];
+            
+            if (scoreEl) updateScoreDisplay();
+            if (progressEl) progressEl.style.width = '0%';
+            clearConfetti();
+        }
+        
+        function updateProgressBar() {
+            const progressPercentage = (questionsForCurrentQuiz.length > 0 ? ((currentQuestionIndex +1) / questionsForCurrentQuiz.length) : 0) * 100;
+            if (progressEl) progressEl.style.width = `${progressPercentage}%`;
+        }
+
+        function triggerConfetti() {
+            if (!confettiContainerEl) return;
+
+            clearConfetti(); 
+            const numConfetti = 100;
+            const colors = ['c1', 'c2', 'c3', 'c4', 'c5'];
+            for (let i = 0; i < numConfetti; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti', colors[Math.floor(Math.random() * colors.length)]);
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                confettiContainerEl.appendChild(confetti);
+                
+                confetti.addEventListener('animationend', () => {
+                     if (confetti.parentNode) {
+                       confetti.remove();
+                    }
+                });
+            }
+        }
+        
+        function clearConfetti() {
+            if (confettiContainerEl) confettiContainerEl.innerHTML = '';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            themeSelectionDiv = document.getElementById('theme-selection');
+            quizSectionDiv = document.getElementById('quiz-section');
+            finalSectionDiv = document.getElementById('final-section');
+            scoreEl = document.getElementById('score');
+            totalQuestionsInQuizEl = document.getElementById('total-questions-in-quiz');
+            currentQNumEl = document.getElementById('current-q-num');
+            totalQCountEl = document.getElementById('total-q-count');
+            progressEl = document.getElementById('progress');
+            themeInfoDisplayEl = document.getElementById('theme-info-display');
+            questionEl = document.getElementById('question');
+            answersEl = document.getElementById('answers');
+            explanationContainerEl = document.getElementById('explanation-container');
+            explanationTextEl = document.getElementById('explanation-text');
+            nextBtnEl = document.getElementById('next-btn');
+            confettiContainerEl = document.getElementById('confetti-container');
+            finalScoreTextEl = document.getElementById('final-score-text');
+            finalMessageEl = document.getElementById('final-message');
+            
+            themeButtons = document.querySelectorAll('.theme-btn'); // Initialisation de themeButtons ici
+
+            restartQuiz();
+        });
+    </script>
+
+    <!-- Script Tarteaucitron (à placer à la fin du body) -->
+    <script type="text/javascript" src="tarteaucitron/tarteaucitron.js"></script>
+    <script type="text/javascript">
+    tarteaucitron.init({
+        "privacyUrl": "politique-confidentialite.html",
+        "hashtag": "#tarteaucitron",
+        "cookieName": "tarteaucitron",
+        "orientation": "bottom",
+        "groupServices": false,
+        "showAlertSmall": false,
+        "cookieslist": true,
+        "closePopup": false,
+        "showIcon": true,
+        "iconPosition": "BottomRight",
+        "adblocker": false,
+        "DenyAllCta": true,
+        "AcceptAllCta": true,
+        "highPrivacy": true,
+        "handleBrowserDNTRequest": false,
+        "removeCredit": false,
+        "moreInfoLink": true,
+        "useExternalCss": false,
+        "mandatory": true,
+        "mandatoryCta": true
+    });
+    // (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+    </script>
+
+</body>
+</html>
