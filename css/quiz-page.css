@@ -246,6 +246,17 @@
     transform: scale(1.1);
 }
 
+/* Centering the 'Mélangé' button */
+.quiz-container .theme-selector #theme-btn-mixte {
+    grid-column: 1 / -1; /* Span all columns in the grid row */
+    justify-self: center; /* Center the button itself within the spanned area */
+    /* Optional: you might want to give it a max-width if it becomes too wide 
+       on certain screen sizes, e.g., max-width: 250px; or a width similar to other buttons
+       if you want to enforce it: width: 190px; (or whatever the computed min-width is)
+    */
+}
+
+
 /* ==========================================================================
    5. SECTION DU QUIZ EN COURS (QUESTIONS, SCORE, PROGRESSION)
    ========================================================================== */
