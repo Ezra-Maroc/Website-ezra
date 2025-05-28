@@ -1,0 +1,315 @@
+/**
+ * Ezra Maroc - avantages.css v5.1 - Final avec Corrections DA
+ * Styles spécifiques pour la page avantages.html.
+ * Inclut animations hover améliorées, layout 2x2 intro, et corrections H4/Puces.
+ * Dépend de style.css pour les bases et éléments globaux.
+ */
+
+/* ==========================================================================
+   1. Variables & Fondamentaux (Hérités de style.css)
+   ========================================================================== */
+/* Assure-toi que les variables (--primary-color, --secondary-color, etc.)
+   et les styles de base sont définis dans ton style.css global. */
+
+/* ==========================================================================
+   2. Bannière de Page Spécifique (`.page-banner.avantages-banner`)
+   ========================================================================== */
+
+   .page-banner.avantages-banner {
+    /* !! VÉRIFIER LE CHEMIN !! */
+    background-image: linear-gradient(rgba(20, 20, 30, 0.75), rgba(20, 20, 30, 0.85)), url('../img/casablanca.jpg');
+    min-height: 55vh; /* Hauteur spécifique si voulue */
+}
+/* Styles H1, P hérités de .page-banner (style.css) */
+
+
+/* ==========================================================================
+   3. Section Introduction (`.intro-section`) - AVEC ANIMATIONS
+   ========================================================================== */
+
+/* Titre H2 : hérite .section-title */
+.intro-section .section-title.intro-title { line-height: 1.4; }
+
+/* Colonnes Intro */
+.intro-columns { display: flex; gap: 35px; margin: 50px 0; }
+.intro-column {
+    flex: 1 1 0;
+    background-color: var(--white-color);
+    padding: 35px;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+    /* --- TRANSITION AMÉLIORÉE --- */
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+                box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+                background-color 0.3s ease;
+}
+.intro-column::before { /* Ligne colorée */
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    opacity: 0.9;
+    transition: height 0.3s ease; /* Transition sur la hauteur */
+}
+.intro-column:hover {
+    /* --- EFFET HOVER AMPLIÉ --- */
+    transform: translateY(-10px) scale(1.01); /* Plus de lift, léger scale */
+    box-shadow: var(--shadow-lg); /* Ombre plus forte */
+    background-color: #fdfdfd; /* Fond très léger */
+}
+.intro-column:hover::before {
+    height: 8px; /* Ligne plus épaisse */
+}
+.intro-column p { color: var(--grey-text); line-height: 1.8; margin-bottom: 1.2em; }
+.intro-column p:last-child { margin-bottom: 0; }
+.intro-column strong { font-weight: 600; color: var(--primary-color); }
+
+/* Texte Transition */
+.transition-text {
+    text-align: center; font-size: 1.3rem; font-weight: 500; color: var(--dark-color);
+    margin: 60px 0; padding: 30px; background-color: var(--light-grey-bg);
+    border: 1px solid var(--border-color); border-radius: var(--border-radius-md); position: relative;
+}
+.transition-text::before { /* Ligne latérale */
+    content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%;
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+    border-radius: var(--border-radius-md) 0 0 var(--border-radius-md);
+}
+.transition-text strong { color: var(--primary-color); font-weight: 600; }
+
+/* --- Grille Bénéfices Intro (LAYOUT 2x2 + ANIMATIONS) --- */
+.benefits-grid {
+    display: grid;
+    /* --- Force 2 colonnes --- */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px; /* Espace entre cartes */
+    margin: 50px auto; /* Centre horizontalement */
+    /* --- Limite largeur et centre grille --- */
+    max-width: 700px; /* Ajuster si besoin pour l'apparence 2x2 */
+}
+.benefit-card { /* Style carte bénéfice */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: var(--white-color);
+    padding: 25px 20px; /* Padding ajusté */
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    height: 100%;
+    /* --- TRANSITION AMÉLIORÉE --- */
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+                box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+                border-color 0.3s ease;
+}
+.benefit-card:hover {
+    /* --- EFFET HOVER AMPLIÉ --- */
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
+}
+.benefit-icon { /* Icône */
+    flex-shrink: 0; width: 55px; height: 55px; /* Un peu plus gros */
+    border-radius: 50%; background-color: rgba(196, 22, 28, 0.08);
+    color: var(--primary-color); display: flex; align-items: center;
+    justify-content: center; font-size: 1.6rem; /* Taille icône FA */
+    transition: var(--transition-base); /* Garder transition base pour icône */
+}
+.benefit-card:hover .benefit-icon {
+    /* --- EFFET HOVER AMPLIÉ ICON --- */
+    transform: scale(1.2) rotate(-8deg); /* Zoom + rotation */
+    background-color: rgba(196, 22, 28, 0.15); /* Fond plus intense */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+.benefit-text { /* Texte */
+    font-size: 1rem; color: var(--grey-text); line-height: 1.6; text-align: left;
+    transition: color 0.3s ease; /* Transition couleur texte */
+}
+.benefit-card:hover .benefit-text {
+    color: var(--dark-color); /* Texte un peu plus foncé au survol */
+}
+.benefit-text strong { font-weight: 600; color: var(--primary-color); }
+
+/* Appel Nationalité */
+.nationality-callout { text-align: center; margin: 60px 0 40px; padding: 40px; background-color: var(--light-grey-bg); border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-sm); position: relative; }
+.nationality-callout::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--primary-color) 50%, var(--secondary-color) 50%); border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0; }
+.nationality-callout-title { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 600; margin-bottom: 10px; }
+.nationality-callout-title span { color: var(--primary-color); border-bottom: 2px dotted var(--primary-color); padding-bottom: 2px; }
+.nationality-callout-subtitle { font-size: 1.15rem; color: var(--grey-text); }
+
+/* Liens Action */
+.action-section { text-align: center; margin-top: 40px; }
+.action-title { font-size: 1.25rem; font-weight: 600; color: var(--primary-color); margin-bottom: 15px; }
+.info-links { font-size: 0.95rem; color: var(--grey-text); font-style: italic; margin-top: 15px; }
+/* Style lien <a> hérité */
+
+
+/* ==========================================================================
+   4. Section "Coup d'Œil" (`.advantages-overview`) - AVEC ANIMATIONS
+   ========================================================================== */
+
+.advantages-overview { position: relative; }
+/* Titre .section-title global */
+.advantages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+/* --- Style CARTE AVANTAGE avec animations déjà amplifiées --- */
+.advantage-card {
+    background-color: var(--white-color); border-radius: var(--border-radius-md); border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm); padding: 35px 30px; display: flex; flex-direction: column; height: 100%;
+    text-align: center; position: relative; overflow: hidden;
+    /* Transitions Amplifiées */
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+                box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+                border-color 0.3s ease;
+}
+.advantage-card:hover {
+    transform: translateY(-12px) scale(1.02); box-shadow: var(--shadow-lg); border-color: var(--primary-color);
+}
+.advantage-card:nth-child(even):hover { border-color: var(--secondary-color); }
+.advantage-card::before { /* Ligne colorée */
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px;
+    background-color: var(--primary-color); transition: height 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.advantage-card:nth-child(even)::before { background-color: var(--secondary-color); }
+.advantage-card:hover::before { height: 10px; }
+
+.advantage-icon { /* Icône */
+    width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 25px auto; font-size: 2rem; flex-shrink: 0;
+    background-color: rgba(196, 22, 28, 0.08); color: var(--primary-color);
+    /* Transitions Amplifiées */
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.advantage-card:nth-child(even) .advantage-icon { background-color: rgba(0, 98, 51, 0.08); color: var(--secondary-color); }
+.advantage-card:hover .advantage-icon {
+    transform: scale(1.2) rotate(15deg); background-color: rgba(196, 22, 28, 0.15); box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.advantage-card:nth-child(even):hover .advantage-icon { transform: scale(1.2) rotate(-15deg); background-color: rgba(0, 98, 51, 0.15); }
+
+.advantage-title { /* Titre H3 */
+    font-family: var(--font-heading); font-size: 1.3rem; font-weight: 600; color: var(--dark-color);
+    margin-bottom: 15px; line-height: 1.4; transition: color 0.3s ease, transform 0.3s ease;
+}
+.advantage-card:hover .advantage-title { color: var(--primary-color); transform: translateY(-2px); }
+.advantage-card:nth-child(even):hover .advantage-title { color: var(--secondary-color); }
+
+.advantage-card p { /* Paragraphe */
+    color: var(--grey-text); font-size: 0.98rem; line-height: 1.7; margin-bottom: 0; flex-grow: 1;
+    transition: color 0.3s ease;
+}
+.advantage-card:hover p { color: var(--dark-color); }
+
+/* ==========================================================================
+   5. Section Accordéon (`.faq-container`) - AVEC CORRECTIONS H4/PUCES
+   ========================================================================== */
+
+.faq-container { max-width: 950px; margin: 80px auto; }
+.faq-section { margin-bottom: 40px; background-color: var(--white-color); border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-md); overflow: hidden; }
+.faq-section > h2 { font-family: var(--font-heading); font-size: 1.7rem; font-weight: 700; color: var(--primary-color); padding: 25px 30px; margin: 0; border-bottom: 1px solid var(--border-color); display: flex; align-items: center; gap: 15px; background-color: rgba(196, 22, 28, 0.03); }
+.faq-section > h2 i { font-size: 1em; width: 25px; text-align: center; flex-shrink: 0; }
+.faq-item { border-bottom: 1px solid var(--border-color); }
+.faq-item:last-child { border-bottom: none; }
+.faq-question { width: 100%; background: none; border: none; text-align: left; padding: 20px 30px; font-family: var(--font-heading); font-size: 1.2rem; font-weight: 600; color: var(--dark-color); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 15px; transition: background-color 0.2s ease, color 0.2s ease; min-height: 65px; }
+.faq-question:hover { background-color: rgba(0, 0, 0, 0.02); color: var(--primary-color);}
+.faq-question span { display: flex; align-items: center; gap: 12px; flex-grow: 1; }
+.faq-question span i { color: var(--primary-color); font-size: 1.2rem; width: 1.5em; text-align: center; flex-shrink: 0; transition: color 0.2s ease;}
+.faq-icon { color: var(--primary-color); transition: transform 0.3s ease; flex-shrink: 0; font-size: 1rem; }
+.faq-question[aria-expanded="true"] .faq-icon { transform: rotate(180deg); }
+.faq-question[aria-expanded="true"] { color: var(--primary-color); }
+.faq-answer { padding: 0px 30px 0px 72px; font-size: 1rem; color: var(--grey-text); line-height: 1.8; background-color: var(--white-color); max-height: 0; opacity: 0; overflow: hidden; visibility: hidden; transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease-out, padding-top 0.6s ease-out, padding-bottom 0.6s ease-out, visibility 0.6s ease-out; }
+.faq-answer[aria-hidden="false"] { padding-top: 25px; padding-bottom: 35px; max-height: 6000px; opacity: 1; visibility: visible; }
+
+/* --- Styles internes réponses - Corrigés --- */
+.faq-answer h4 {
+    font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700;
+    color: var(--primary-color); /* CORRECTION: H4 en Rouge */
+    margin: 30px 0 15px; padding-bottom: 8px; border-bottom: 1px dashed var(--border-color);
+    display: flex; align-items: center; gap: 8px;
+}
+.faq-answer h4:first-child { margin-top: 0; }
+.faq-answer h4 i { font-size: 1em; /* Icône prend la couleur du H4 (rouge) */ }
+.faq-answer p { margin-bottom: 1.2em; }
+.faq-answer ul, .faq-answer ol { padding-left: 25px; margin: 1.2em 0; }
+.faq-answer ul li, .faq-answer ol li { margin-bottom: 0.8em; padding-left: 15px; position: relative; }
+/* --- CORRECTION: Puces UL DA --- */
+.faq-answer ul { list-style: none; }
+.faq-answer ul li::before {
+    content: '\f105'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
+    color: var(--primary-color); /* Puce ROUGE */
+    position: absolute; left: -5px; top: 4px; font-size: 0.9em;
+}
+/* --- CORRECTION: Numéros OL DA --- */
+.faq-answer ol { list-style-type: decimal; margin-left: 5px; }
+.faq-answer ol li::marker { color: var(--primary-color); /* Numéros ROUGES */ font-weight: bold; }
+/* --- Fin Corrections Puces --- */
+.faq-answer strong { font-weight: 600; color: var(--dark-color); }
+.visual-highlight, .example-box { background-color: var(--light-grey-bg); border-left: 5px solid var(--primary-color); padding: 20px 25px; margin: 25px 0; border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0; font-size: 0.95rem; box-shadow: var(--shadow-sm); }
+.visual-highlight p, .example-box p, .example-box { line-height: 1.6; margin: 0; }
+.visual-highlight i, .example-box i { margin-right: 10px; font-size: 1.2em; vertical-align: middle; }
+.example-box { border-left-color: var(--secondary-color); background-color: rgba(0, 98, 51, 0.03); }
+.example-box i, .example-box strong { color: var(--secondary-color); }
+.visual-highlight.accent { border-left-color: var(--accent-color); background-color: rgba(218, 165, 32, 0.04); }
+.visual-highlight.accent i { color: var(--accent-color); }
+.faq-item.highlight-jewish { border-color: var(--accent-color); background-color: rgba(218, 165, 32, 0.03); }
+.faq-item.highlight-jewish .faq-question { color: var(--accent-color); font-weight: 700; }
+.faq-item.highlight-jewish .faq-question span i { color: var(--accent-color); }
+.faq-item.highlight-jewish .faq-icon { color: var(--accent-color); }
+.faq-item.highlight-jewish .faq-answer { background-color: transparent; }
+/* CORRECTION Puce highlight */
+.faq-item.highlight-jewish .faq-answer ul li::before { color: var(--accent-color); }
+/* Style .btn-link hérité */
+
+
+/* ==========================================================================
+   6. Conclusion Section (`.conclusion-avantages`) - AVEC ANIMATIONS
+   ========================================================================== */
+
+.conclusion-avantages { border-top: 1px solid var(--border-color); }
+.conclusion-avantages .section-title i { color: var(--accent-color); margin-right: 10px; }
+.conclusion-subtitle { text-align: center; font-size: 1.15rem; color: var(--grey-text); max-width: 850px; margin: -35px auto 50px auto; }
+.conclusion-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 50px; }
+/* --- Style CARTE CONCLUSION avec animations --- */
+.conclusion-item { display: flex; align-items: center; gap: 18px; background-color: var(--white-color); padding: 20px 25px; border-radius: var(--border-radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); height: 100%; transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease, background-color 0.3s ease; }
+.conclusion-item:hover { transform: translateY(-8px) scale(1.01); box-shadow: var(--shadow-md); border-color: var(--primary-color); background-color: var(--white-color); }
+.conclusion-item:nth-child(even):hover { border-color: var(--secondary-color); }
+.conclusion-icon { flex-shrink: 0; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; background-color: rgba(196, 22, 28, 0.08); color: var(--primary-color); transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), background-color 0.3s ease, color 0.3s ease; }
+.conclusion-item:nth-child(even) .conclusion-icon { background-color: rgba(0, 98, 51, 0.08); color: var(--secondary-color); }
+.conclusion-item:hover .conclusion-icon { transform: scale(1.2) rotate(10deg); background-color: var(--primary-color); color: var(--white-color); }
+.conclusion-item:nth-child(even):hover .conclusion-icon { background-color: var(--secondary-color); transform: scale(1.2) rotate(-10deg); }
+.conclusion-text { font-size: 1rem; font-weight: 500; color: var(--dark-color); line-height: 1.5; flex-grow: 1; text-align: left; transition: color 0.3s ease, transform 0.3s ease; }
+.conclusion-item:hover .conclusion-text { color: var(--primary-color); transform: translateX(3px); }
+.conclusion-item:nth-child(even):hover .conclusion-text { color: var(--secondary-color); }
+.conclusion-final-text { text-align: center; color: var(--grey-text); max-width: 900px; margin: 40px auto 20px; line-height: 1.8; }
+.conclusion-final-text strong { font-weight: 600; color: var(--primary-color); }
+.conclusion-highlight { display: block; text-align: center; font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--primary-color); margin-top: 35px; }
+
+/* ==========================================================================
+   7. CTA Section & Footer
+   ========================================================================== */
+/* Styles hérités */
+
+/* ==========================================================================
+   8. Responsive Design
+   ========================================================================== */
+@media (max-width: 992px) { /* Tablettes larges */
+    .benefits-grid { grid-template-columns: repeat(2, 1fr); max-width: 650px; }
+    .advantages-grid, .conclusion-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+}
+@media (max-width: 768px) { /* Tablettes */
+    .intro-columns { flex-direction: column; }
+    .benefits-grid, .advantages-grid, .conclusion-grid { grid-template-columns: 1fr; max-width: 500px; }
+    .faq-answer { padding-left: 60px; padding-right: 25px; }
+}
+@media (max-width: 576px) { /* Mobiles */
+    .advantage-card, .benefit-card, .conclusion-item { padding: 25px 20px; }
+    .advantage-icon, .benefit-icon, .conclusion-icon { width: 50px; height: 50px; font-size: 1.6rem; }
+    .advantage-title { font-size: 1.15rem; }
+    .benefit-text, .advantage-card p { font-size: 0.95rem; }
+    .faq-answer { font-size: 0.95rem; padding: 0 20px; }
+    .faq-question span i { display: none; }
+    .conclusion-item { flex-direction: column; text-align: center; }
+    .conclusion-icon { margin-bottom: 10px; }
+    .conclusion-text { font-size: 1rem; }
+    .benefits-grid { max-width: 100%; padding: 0 10px;}
+}
