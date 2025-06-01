@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titre standardisé (optionnel, le titre original était aussi bon) -->
+    <title>Témoignages de nos Clients | Ezra Maroc</title>
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- CSS Spécifique -->
+    <link rel="stylesheet" href="css/temoignages.css">
+    <!-- Polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- ========== AJOUT TARTEAUCITRON CSS ========== -->
+    <link rel="stylesheet" href="tarteaucitron/css/tarteaucitron.css">
+    <!-- ========================================= -->
+
+</head>
+<body>
+
+    <!-- ==========================================================================
+       HEADER (Standardisé) - PAS DE CHANGEMENT ICI
+       ========================================================================== -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="Ezra Maroc Logo">
+                <div class="brand-text">
+                    <span>Ezra</span> <strong>Maroc</strong>
+                </div>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                     <li><a href="index.html">Accueil</a></li>
+                    <li><a href="avantages.html">Avantages</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="processus.html">Processus</a></li>
+                    <!-- Classe active ici & Texte standardisé -->
+                    <li><a href="temoignages.html" class="active">Témoignages</a></li>
+                    <li><a href="a-propos.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                </ul>
+            </nav>
+            <div class="language-switcher">
+                 <label for="lang-select" class="visually-hidden">Choisir la langue</label>
+                 <!-- Liens du switcher adaptés pour la page Témoignages -->
+                 <select name="lang" id="lang-select" class="language-select" onchange="location = this.value;">
+                    <option value="temoignages.html" selected lang="fr">Français</option>
+                    <option value="../en/testimonials.html" lang="en">English</option> <!-- Chemin adapté -->
+                    <option value="../es/testimonios.html" lang="es">Español</option> <!-- Chemin adapté -->
+                    <option value="../he/testimonials.html" lang="he">עברית</option>     <!-- Chemin adapté -->
+                    <option value="../ara/testimonials.html" lang="ara">العربية (الدارجة)</option>
+                </select>
+            </div>
+            <!-- <button class="menu-toggle" aria-label="Ouvrir le menu"><i class="fas fa-bars"></i></button> -->
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+       CONTENU SPÉCIFIQUE À LA PAGE "TÉMOIGNAGES" - PAS DE CHANGEMENT ICI
+       ========================================================================== -->
+    <section class="page-banner"> <!-- Sera surchargé par temoignages.css pour utiliser kite.jpg -->
+        <div class="container">
+             <!-- Titre et Texte Bannière (Standardisé) -->
+            <h1>Nos Témoignages Clients</h1> <!-- Titre standardisé -->
+            <p>Les parcours de nos clients sont notre plus grande fierté. Découvrez leurs expériences et comment Ezra Maroc a contribué à concrétiser leur projet de nationalité marocaine.</p>
+        </div>
+    </section>
+
+    <!-- Section Renommée et Introduction Ajoutée -->
+    <section class="section guestbook-section">
+        <div class="container">
+            <!-- Optionnel : petit texte introductif avant les témoignages -->
+            <p class="guestbook-intro">Ces témoignages authentiques illustrent la diversité des situations et l'efficacité de notre accompagnement personnalisé.</p>
+
+            <div class="testimonial-cards">
+                <!-- Témoignage 1 Anonymisé -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-profile">
+                            <div class="testimonial-avatar">DC</div> <!-- Initiales -->
+                            <div class="testimonial-identity">
+                                <h3>D. C.</h3> <!-- Initiales -->
+                                <p>Paris, France</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-success">
+                            <span class="success-badge"><i class="fa-solid fa-certificate"></i> Certificat obtenu en 11 mois</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote"><i class="fa-solid fa-quote-left"></i></div>
+                        <p>Après des années d'essais infructueux, Ezra Maroc a réussi à m'obtenir la nationalité marocaine en moins d'un an. Leur expertise et leur professionnalisme ont fait toute la différence.</p>
+                        <p>J'avais tenté par deux fois de constituer moi-même mon dossier, mais je me heurtais systématiquement à des blocages administratifs. L'équipe d'Ezra Maroc a su identifier immédiatement les faiblesses de mon dossier précédent et proposer une stratégie efficace.</p>
+                        <p>Ce qui m'a particulièrement impressionné, c'est leur connaissance approfondie des procédures marocaines et leur capacité à anticiper les demandes de l'administration. Leur suivi régulier m'a également permis d'être serein tout au long du processus.</p>
+                    </div>
+                </div>
+
+                <!-- Témoignage 2 Anonymisé -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-profile">
+                            <div class="testimonial-avatar">SB</div> <!-- Initiales -->
+                            <div class="testimonial-identity">
+                                <h3>S. B.</h3> <!-- Initiales -->
+                                <p>Montréal, Canada</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-success">
+                            <span class="success-badge"><i class="fa-solid fa-certificate"></i> Certificat obtenu en 14 mois</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                         <div class="testimonial-quote"><i class="fa-solid fa-quote-left"></i></div>
+                        <p>Je craignais que la distance et la complexité administrative soient des obstacles insurmontables, mais l'équipe d'Ezra Maroc a tout géré avec une efficacité remarquable. Aujourd'hui, je suis officiellement marocaine!</p>
+                        <p>Résidant au Canada, je pensais que les démarches seraient particulièrement compliquées pour moi. Ezra Maroc a su organiser l'ensemble du processus en tenant compte de cette contrainte, minimisant mes déplacements au strict nécessaire. Leur plateforme de suivi en ligne m'a permis de rester informée en temps réel de l'avancement de mon dossier.</p>
+                        <p>Le jour de mon rendez-vous au tribunal à Rabat, j'ai été accompagnée par leur avocat qui a veillé à ce que tout se déroule parfaitement. Un moment émouvant que je n'oublierai jamais.</p>
+                    </div>
+                </div>
+
+                <!-- Témoignage 3 Anonymisé -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-profile">
+                            <div class="testimonial-avatar">ML</div> <!-- Initiales -->
+                            <div class="testimonial-identity">
+                                <h3>M. L.</h3> <!-- Initiales -->
+                                <p>New York, USA</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-success">
+                            <span class="success-badge"><i class="fa-solid fa-certificate"></i> Certificat obtenu en 16 mois</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                         <div class="testimonial-quote"><i class="fa-solid fa-quote-left"></i></div>
+                        <p>La transparence et le professionnalisme d'Ezra Maroc m'ont impressionné. J'ai toujours été informé de l'avancement de mon dossier et leur expertise juridique a permis de surmonter des obstacles que je pensais insurmontables.</p>
+                        <p>Mon cas était particulièrement complexe car les documents de mon grand-père avaient été perdus pendant la guerre. L'équipe d'Ezra Maroc a entrepris un véritable travail de détective, retrouvant des archives que je ne pensais jamais pouvoir obtenir.</p>
+                        <p>Leur approche méthodique et leur persévérance ont finalement permis de constituer un dossier solide qui a convaincu les autorités marocaines. Je suis immensément reconnaissant pour leur travail exceptionnel.</p>
+                    </div>
+                </div>
+
+                 <!-- Témoignage 4 Anonymisé -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-profile">
+                            <div class="testimonial-avatar">RH</div> <!-- Initiales -->
+                            <div class="testimonial-identity">
+                                <h3>R. H.</h3> <!-- Initiales -->
+                                <p>Tel Aviv, Israël</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-success">
+                            <span class="success-badge"><i class="fa-solid fa-certificate"></i> Certificat obtenu en 19 mois</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                         <div class="testimonial-quote"><i class="fa-solid fa-quote-left"></i></div>
+                        <p>Obtenir la nationalité marocaine était un rêve que je pensais inaccessible, surtout avec la complexité des relations diplomatiques. Ezra Maroc a transformé ce rêve en réalité avec un professionnalisme remarquable.</p>
+                        <p>Dès notre premier échange, j'ai été rassurée par leur connaissance approfondie de la situation spécifique des juifs marocains ayant émigré en Israël. Ils ont su trouver des solutions à chaque obstacle qui se présentait.</p>
+                        <p>Ce qui m'a le plus marquée, c'est leur capacité à traiter les aspects émotionnels et identitaires de ma démarche, au-delà des considérations purement administratives. Aujourd'hui, je peux retourner au Maroc avec mon passeport marocain et renouer pleinement avec mes racines.</p>
+                    </div>
+                </div>
+
+                 <!-- Témoignage 5 Anonymisé -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-profile">
+                            <div class="testimonial-avatar">AB</div> <!-- Initiales -->
+                            <div class="testimonial-identity">
+                                <h3>A. B.</h3> <!-- Initiales -->
+                                <p>Lyon, France</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-success">
+                            <span class="success-badge"><i class="fa-solid fa-certificate"></i> Certificat obtenu en 13 mois</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                         <div class="testimonial-quote"><i class="fa-solid fa-quote-left"></i></div>
+                        <p>Je tiens à exprimer ma profonde gratitude envers toute l'équipe d'Ezra Maroc. Leur expertise et leur dévouement ont été déterminants dans l'aboutissement de ma demande de nationalité marocaine.</p>
+                        <p>Malgré une situation familiale complexe et des documents partiellement manquants, ils ont su trouver des solutions innovantes et juridiquement solides. Leur connaissance des procédures administratives marocaines m'a évité de nombreux pièges et erreurs qui auraient pu retarder considérablement mon dossier.</p>
+                        <p>Je recommande vivement leurs services à toute personne souhaitant entreprendre cette démarche importante et symbolique.</p>
+                    </div>
+                </div>
+
+                 <!-- Témoignage 6 Anonymisé -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-profile">
+                            <div class="testimonial-avatar"><i class="fa-solid fa-users"></i></div>
+                            <div class="testimonial-identity">
+                                <h3>É. & N. M.</h3> <!-- Initiales -->
+                                <p>Marseille, France</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-success">
+                             <span class="success-badge"><i class="fa-solid fa-certificate"></i> Certificats obtenus en 15 mois</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                         <div class="testimonial-quote"><i class="fa-solid fa-quote-left"></i></div>
+                        <p>En tant que couple, nous souhaitions tous deux obtenir la nationalité marocaine, avec des situations familiales différentes. Ezra Maroc a su gérer nos deux dossiers en parallèle avec une coordination parfaite.</p>
+                        <p>Leur approche personnalisée nous a particulièrement touchés - ils ont pris le temps de comprendre notre histoire familiale et nos motivations profondes. Leur équipe a fait preuve d'une patience et d'une pédagogie remarquables pour nous expliquer chaque étape du processus.</p>
+                        <p>Nous sommes infiniment reconnaissants pour leur accompagnement qui nous a permis de concrétiser ce projet important pour notre famille et nos enfants.</p>
+                    </div>
+                </div>
+
+                 <!-- Témoignage 7 Anonymisé -->
+                <div class="testimonial-card">
+                     <div class="testimonial-header">
+                        <div class="testimonial-profile">
+                            <div class="testimonial-avatar">RA</div> <!-- Initiales -->
+                            <div class="testimonial-identity">
+                                <h3>R. A.</h3> <!-- Initiales -->
+                                <p>Miami, USA</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-success">
+                            <span class="success-badge"><i class="fa-solid fa-certificate"></i> Certificat obtenu en 12 mois</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote"><i class="fa-solid fa-quote-left"></i></div>
+                        <p>Faire appel à Ezra Maroc a été la meilleure décision que j'ai prise dans ma démarche d'obtention de la nationalité marocaine. Malgré la distance et le décalage horaire, leur équipe a toujours été disponible et réactive.</p>
+                        <p>La constitution du dossier a été menée avec une rigueur exemplaire, ce qui a certainement contribué à la rapidité relative du processus. Chaque document était parfaitement préparé, traduit et légalisé selon les exigences spécifiques des autorités marocaines.</p>
+                        <p>Je suis particulièrement reconnaissant pour leur accompagnement lors de mon déplacement au Maroc pour le rendez-vous final. Leur avocat sur place a assuré une transition parfaite et m'a mis dans les meilleures conditions pour cette étape cruciale.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="guestbook-cta">
+                <p>Vous aussi, vous souhaitez partager votre réussite ou démarrer votre projet ?</p>
+                <a href="contact.html" class="btn btn-primary">Contactez-nous dès aujourd'hui</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section engagement-section alt-bg">
+        <div class="container">
+            <h2 class="section-title">Notre Engagement : <span>Votre Histoire</span></h2>
+            <div class="engagement-content">
+                <p>Chaque témoignage est une preuve de notre engagement envers l'excellence et la réussite de nos clients. Votre parcours unique mérite toute notre attention et notre expertise dédiée.</p>
+                <p>Nous serions honorés de vous aider à écrire votre propre chapitre dans ce livre d'or et de vous accompagner vers la reconnaissance de votre nationalité marocaine.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Prêt à ajouter votre nom à notre Livre d'Or ?</h2> <!-- Titre modifié -->
+            <div class="cta-buttons">
+                 <a href="contact.html#contact-form-container" class="btn btn-light">Demander une Évaluation</a>
+                <a href="processus.html" class="btn btn-outline-light">Voir Notre Processus</a>
+            </div>
+        </div>
+    </section>
+    <!-- ==========================================================================
+       FIN DU CONTENU SPÉCIFIQUE
+       ========================================================================== -->
+
+
+    <!-- ==========================================================================
+       FOOTER (Standardisé avec structure améliorée)
+       ========================================================================== -->
+    <footer>
+         <div class="container footer-container">
+             <!-- Colonne 1: About -->
+             <div class="footer-about">
+                 <a href="index.html" class="footer-logo">Ezra<strong>Maroc</strong></a>
+                 <p class="footer-text">Spécialistes de l'obtention de la nationalité marocaine, nous vous accompagnons à chaque étape avec expertise et professionnalisme.</p>
+                 <div class="footer-social">
+                     <!-- !! Remplacer par VOS liens réels !! -->
+                     <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                     <a href="https://www.instagram.com/ezramaroc/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                 </div>
+             </div>
+             <!-- Colonne 2: Liens Rapides -->
+             <div class="footer-links">
+                 <h3 class="footer-heading">Liens rapides</h3>
+                 <ul>
+                     <li><a href="index.html">Accueil</a></li>
+                     <li><a href="avantages.html">Avantages</a></li>
+                     <li><a href="services.html">Services</a></li>
+                     <li><a href="processus.html">Processus</a></li>
+                     <li><a href="temoignages.html">Témoignages</a></li> <!-- Standardisé -->
+                     <li><a href="a-propos.html">À propos</a></li>
+                     <li><a href="faq.html">FAQ</a></li>
+                     <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Colonne 3: Services -->
+             <div class="footer-services">
+                <h3 class="footer-heading">Nos Services Clés</h3>
+                <ul>
+                     <li><a href="services.html#eligibility">Analyse d'Éligibilité</a></li>
+                     <li><a href="services.html#constitution">Constitution du Dossier</a></li>
+                    <li><a href="services.html#recherche">Recherche Généalogique</a></li>
+                    <li><a href="services.html#suivi">Suivi Administratif</a></li>
+                    <li><a href="services.html#post-obtention">Assistance Post-Obtention</a></li>
+                 </ul>
+            </div>
+            <!-- Colonne 4: Contact -->
+             <div class="footer-contact">
+                 <h3 class="footer-heading">Contact</h3>
+                 <ul>
+                    <li><i class="fa-solid fa-location-dot"></i> <span>30 N Gould St Ste R,<br>Sheridan, WY 82801, USA</span></li>
+                     <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></li>
+                    <!-- Ajouter Téléphone si besoin -->
+                    <!-- <li><i class="fa-solid fa-phone"></i> <a href="tel:+1...">+1 ...</a></li> -->
+                 </ul>
+            </div>
+        </div>
+
+         <!-- ========== FOOTER BOTTOM AMÉLIORÉ ========== -->
+         <div class="footer-bottom">
+             <div class="container">
+                 <!-- Copyright sur sa propre ligne -->
+                 <p class="copyright">© 2024 Ezra Maroc Consulting Services LLC. Tous droits réservés.</p>
+                 <!-- Disclaimer sur sa propre ligne -->
+                 <p class="disclaimer">Les informations sur ce site sont fournies à titre indicatif et ne constituent pas un conseil juridique ou fiscal. Consultez des professionnels qualifiés.</p>
+                 <!-- Navigation pour les liens légaux -->
+                 <nav class="footer-legal-links" aria-label="Liens légaux">
+                     <a href="politique-confidentialite.html" rel="noopener noreferrer">Politique de confidentialité</a>
+                     <a href="mentions-legales.html" rel="noopener noreferrer">Mentions légales</a>
+                     <a href="conditions-utilisation.html" rel="noopener noreferrer">Conditions d'Utilisation</a>
+                     <a href="#" onclick="tarteaucitron.userInterface.openPanel(); return false;">Gestion des cookies</a> <!-- LIEN AJOUTÉ -->
+                 </nav>
+             </div>
+         </div>
+         <!-- ============================================== -->
+
+    </footer>
+    <!-- ==========================================================================
+       FIN FOOTER
+       ========================================================================== -->
+
+    <!-- Scripts JS existants -->
+    <script src="js/script.js"></script> <!-- Si un script global est nécessaire -->
+
+    <!-- ========== AJOUT TARTEAUCITRON ========== -->
+    <script type="text/javascript" src="tarteaucitron/tarteaucitron.js"></script>
+
+    <script type="text/javascript">
+    tarteaucitron.init({
+        "privacyUrl": "politique-confidentialite.html", /* Lien vers votre politique de confidentialité */
+
+        "hashtag": "#tarteaucitron", /* Laissez tel quel */
+        "cookieName": "tarteaucitron", /* Laissez tel quel */
+
+        "orientation": "bottom", /* Position du bandeau: 'bottom', 'top', 'middle' */
+        "groupServices": false, /* Services groupés par catégorie */
+
+        "showAlertSmall": false, /* Petite pastille après choix */
+        "cookieslist": true, /* Afficher lien liste cookies */
+
+        "closePopup": false, /* Afficher la croix de fermeture sur le bandeau */
+        "showIcon": true, /* Afficher l'icône de gestion flottante */
+        "iconPosition": "BottomRight", /* Position de l'icône */
+
+        "adblocker": false, /* Détection Adblocker */
+        "DenyAllCta": true, /* Bouton Tout Refuser */
+        "AcceptAllCta": true, /* Bouton Tout Accepter */
+        "highPrivacy": true, /* Requis pour RGPD, consentement explicite */
+
+        "handleBrowserDNTRequest": false, /* Gérer l'option 'Do Not Track' du navigateur */
+
+        "removeCredit": false, /* Retirer le lien Tarteaucitron (respecter licence ou faire un don) */
+        "moreInfoLink": true, /* Lien vers politique de confidentialité */
+
+        "useExternalCss": false, /* Utilise le CSS interne de Tarteaucitron */
+        "mandatory": true, /* Info sur les cookies obligatoires */
+        "mandatoryCta": true /* Bouton Personnaliser même si cookies obligatoires seuls */
+    });
+
+    // ----- CONFIGURATION DES SERVICES TIERS -----
+    // IMPORTANT: Ajoutez ici UNIQUEMENT les services utilisés sur CETTE page (temoignages.html)
+    //            ou globalement sur tout le site (comme Google Analytics).
+
+    // --- Exemple Google Analytics (GA4) ---
+    // Si vous utilisez GA4 sur tout le site, incluez cette config sur TOUTES les pages.
+    // Remplacez 'G-XXXXXXXXXX' et adaptez la liste des cookies.
+
+    /* Décommentez ce bloc si vous utilisez Google Analytics 4 */
+    /*
+    tarteaucitron.services.gtag = {
+        "key": "G-XXXXXXXXXX", // <--- REMPLACEZ PAR VOTRE ID GA4
+        "type": "gtag",
+        "name": "Google Analytics (GA4)",
+        "uri": "https://policies.google.com/privacy",
+        "needConsent": true,
+        "cookies": ['_ga', '_gid', '_ga_XXXXXXXXXX'], // <--- ADAPTEZ _ga_...
+        "js": function () {
+            "use strict";
+            if (tarteaucitron.user.gtagKey === undefined) {
+                 tarteaucitron.user.gtagKey = tarteaucitron.services.gtag.key;
+                 if (tarteaucitron.user.gtagKey === undefined || tarteaucitron.user.gtagKey === 'G-XXXXXXXXXX') {
+                      console.warn('Tarteaucitron: Google Analytics key is not defined or still placeholder.');
+                      return;
+                 }
+            }
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', tarteaucitron.user.gtagKey, {'anonymize_ip': true});
+        }
+    };
+    (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+    */
+
+    </script>
+    <!-- ========================================= -->
+
+</body>
+</html>
