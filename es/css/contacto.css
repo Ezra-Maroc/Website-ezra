@@ -1,0 +1,595 @@
+/* ============================================= */
+/* ===     STYLES PAGE CONTACT (Complet)     === */
+/* ===   (Fichier: contact.css - CORRIGÉ v2) === */
+/* ============================================= */
+
+/* ----- Dépendances ----- */
+/* Ce fichier suppose que les variables CSS (:root), les styles de base (body, container),
+   les styles de header/footer, et les styles de boutons GÉNÉRAUX (.btn)
+   sont définis dans votre fichier CSS global (ex: style.css) */
+
+/* ----- Surcharge Style Global pour CETTE page ----- */
+
+.page-banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/market1.jpg') center/cover no-repeat;
+}
+
+/* ----- Styles Uniques à la Page Contact ----- */
+
+.contact-section {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.internal-title {
+  font-family: var(--font-heading, 'Montserrat', sans-serif);
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 700;
+  margin-bottom: 60px;
+  text-align: center;
+  position: relative;
+  color: var(--dark-color, #333);
+  padding-bottom: 15px;
+}
+.internal-title span {
+  color: var(--primary-color, #c5281c);
+}
+.internal-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 3px;
+  background-color: var(--primary-color, #c5281c);
+  border-radius: 1.5px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px 60px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Colonne Infos Contact --- */
+.contact-info {
+  background-color: var(--light-color, #f8f9fa);
+  border-radius: 10px;
+  padding: 40px 35px;
+  border: 1px solid var(--border-color, #dee2e6);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.info-title {
+  font-family: var(--font-heading, 'Montserrat', sans-serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: var(--dark-color, #333);
+  position: relative;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(var(--primary-600-rgb, 197, 40, 28), 0.15);
+}
+
+.info-item {
+  display: flex;
+  margin-bottom: 30px;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  border-radius: 6px;
+  transition: background-color 0.25s ease-in-out;
+  margin-left: -10px; margin-right: -10px;
+}
+.info-item:hover {
+  background-color: rgba(var(--primary-600-rgb, 197, 40, 28), 0.04);
+}
+.info-item:hover .info-icon {
+  transform: scale(1.1);
+  background-color: rgba(var(--primary-600-rgb, 197, 40, 28), 0.15);
+}
+
+.info-icon {
+  width: 45px;
+  height: 45px;
+  background-color: rgba(var(--primary-600-rgb, 197, 40, 28), 0.08);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color, #c5281c);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.info-content h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--dark-color, #333);
+}
+.info-content p {
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.95rem;
+}
+.info-content p a {
+  color: var(--primary-color, #c5281c);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(var(--primary-600-rgb, 197, 40, 28), 0.5);
+  transition: border-bottom 0.2s ease;
+}
+.info-content p a:hover {
+  border-bottom-style: solid;
+  border-bottom-color: var(--primary-color, #c5281c);
+}
+.timezone {
+  font-size: 0.85em;
+  color: #777;
+  display: block;
+  margin-top: 4px;
+}
+
+.social-media {
+  margin-top: auto;
+  padding-top: 30px;
+  border-top: 1px solid var(--border-color, #dee2e6);
+}
+.social-media h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--dark-color, #333);
+}
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+.social-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px;
+  background-color: rgba(var(--primary-600-rgb, 197, 40, 28), 0.08);
+  color: var(--primary-color, #c5281c);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+.social-icon:hover {
+  background-color: var(--primary-color, #c5281c);
+  color: #fff;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 4px 10px rgba(var(--primary-600-rgb, 197, 40, 28), 0.3);
+}
+
+/* --- Styles pour la Colonne Formulaire --- */
+.contact-form-container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  padding: 40px 45px;
+  border: 1px solid #f0f0f0;
+}
+
+.form-title {
+  font-family: var(--font-heading, 'Montserrat', sans-serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: var(--dark-color, #333);
+  position: relative;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(var(--primary-600-rgb, 197, 40, 28), 0.15);
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px 25px;
+}
+
+.form-group {
+  margin-bottom: 0;
+  position: relative;
+}
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+  font-size: 0.9rem;
+}
+.required {
+  color: var(--primary-color, #c5281c);
+  margin-left: 3px;
+  font-weight: 600;
+}
+.optional {
+  font-size: 0.85em;
+  color: #888;
+  margin-left: 5px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: var(--font-main, 'Poppins', sans-serif);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--dark-color, #333);
+  background-color: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.form-group textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #aaa;
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.form-group textarea:focus-visible {
+  border-color: var(--primary-color, #c5281c);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(var(--primary-600-rgb, 197, 40, 28), 0.15);
+  background-color: #fff;
+}
+.checkbox-group input:focus-visible {
+  outline: 2px solid var(--primary-color, #c5281c);
+  outline-offset: 1px;
+}
+
+.form-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23c5281c' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 0.9em;
+  padding-right: 40px;
+  cursor: pointer;
+}
+.form-group select:required:invalid {
+  color: #777;
+}
+.form-group select option[value=""][disabled] {
+  color: #aaa;
+  font-style: italic;
+}
+.form-group select option {
+  color: var(--dark-color, #333);
+  font-style: normal;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 5px;
+}
+.checkbox-group input[type="checkbox"] {
+  width: 1.1em;
+  height: 1.1em;
+  margin-top: 0.2em;
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: var(--primary-color, #c5281c);
+}
+.checkbox-group label {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #555;
+  cursor: pointer;
+}
+.checkbox-group label a {
+  color: var(--primary-color, #c5281c);
+  text-decoration: underline;
+  font-weight: 500;
+}
+.checkbox-group label a:hover {
+  text-decoration: none;
+}
+
+/* --- Styles pour les messages d'erreur --- */
+.error-message {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--primary-color, #c5281c);
+  margin-top: 5px;
+  min-height: 1.1em;
+  padding-left: 2px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease, margin-top 0.3s ease;
+}
+.error-message.visible {
+  opacity: 1;
+  max-height: 3em;
+  margin-top: 5px;
+}
+
+/* Style des champs invalides */
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+  border-color: var(--primary-color, #c5281c) !important;
+  background-color: rgba(var(--primary-600-rgb, 197, 40, 28), 0.02);
+}
+.form-group .checkbox-group input.error {
+  outline: 1.5px solid var(--primary-color, #c5281c);
+  outline-offset: 1px;
+}
+.form-group .checkbox-group input.error + label {
+  color: var(--primary-color, #c5281c);
+  font-weight: 500;
+}
+
+
+/* Conteneur du bouton de soumission */
+.form-submit {
+  grid-column: span 2;
+  margin-top: 15px;
+}
+
+/* Bouton de soumission */
+.form-submit button {
+  /* Styles de base .btn et .btn-primary hérités */
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  padding: 14px 28px;
+  min-height: 51px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  text-align: center;
+  /* Styles spécifiques au bouton primaire DANS ce contexte */
+  background-color: var(--primary-color, #c5281c);
+  border-color: var(--primary-color, #c5281c);
+  /* ========= CORRECTION COULEUR TEXTE ========== */
+  color: var(--white-color, #fff); /* FORCE la couleur blanche */
+  /* ============================================= */
+  transition: background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Style du bouton pendant le survol (non désactivé) */
+.form-submit button:not(:disabled):hover {
+  background-color: var(--primary-500, #d84d3f);
+  border-color: var(--primary-500, #d84d3f);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(var(--primary-600-rgb, 197, 40, 28), 0.2);
+}
+
+/* Style du bouton lorsqu'il est désactivé (pendant l'envoi) */
+.form-submit button:disabled {
+  background-color: var(--primary-500, #d84d3f);
+  border-color: var(--primary-500, #d84d3f);
+  opacity: 0.65;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+/* Loader (icône spinner + texte "Envoi...") */
+.btn-loader {
+  display: none; /* Caché par défaut */
+  align-items: center;
+  justify-content: center;
+  /* ========= CORRECTION COULEUR TEXTE LOADER ========== */
+  color: var(--white-color, #fff); /* Assure couleur blanche */
+  /* ================================================== */
+  font-weight: 500;
+  font-size: 0.95em;
+}
+/* Classe ajoutée par JS pour afficher le loader */
+.btn-loader.show {
+  display: inline-flex; /* Afficher */
+}
+.btn-loader i {
+  margin-right: 8px;
+  font-size: 1em;
+  /* Optionnel : Animation de rotation (si FontAwesome ne l'inclut pas par défaut) */
+  /* animation: fa-spin 1s infinite linear; */
+}
+/* @keyframes fa-spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } } */
+
+/* Texte normal du bouton ("Envoyer ma demande") */
+.btn-text {
+  display: inline-block; /* Affiché par défaut */
+  /* ========= CORRECTION COULEUR TEXTE ========== */
+  color: inherit; /* Hérite la couleur du bouton (qui est maintenant forcée à blanc) */
+  /* ============================================= */
+}
+/* Classe ajoutée par JS pour cacher le texte normal */
+.btn-text.hide {
+  display: none; /* Caché */
+}
+
+/* Message global (succès ou erreur après soumission) */
+#form-message {
+  grid-column: span 2;
+  border-radius: 6px;
+  margin: 10px 0 0;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-left-width: 5px;
+  border-left-style: solid;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  transition: all 0.4s ease-out;
+}
+#form-message.show {
+  opacity: 1;
+  max-height: 100px;
+  margin-top: 15px;
+  padding: 12px 18px;
+}
+#form-message.success {
+  background-color: rgba(40, 167, 69, 0.1);
+  border-left-color: var(--secondary-color, #28a745);
+  color: #185e2a;
+}
+#form-message.error {
+  background-color: rgba(var(--primary-600-rgb, 197, 40, 28), 0.1);
+  border-left-color: var(--primary-color, #c5281c);
+  color: #a1261d;
+}
+
+
+/* --- Styles pour la Section Carte --- */
+.map-section {
+  height: 450px;
+  filter: grayscale(30%) contrast(90%);
+  transition: filter 0.4s ease;
+}
+.map-section:hover {
+  filter: grayscale(0%) contrast(100%);
+}
+.map-container {
+  height: 100%;
+  width: 100%;
+}
+.map-container iframe {
+  height: 100%;
+  width: 100%;
+  display: block;
+  border: none;
+}
+
+
+/* ============================================= */
+/* ===          STYLES RESPONSIVES           === */
+/* ============================================= */
+
+/* --- Tablettes (ex: > 768px et <= 992px) --- */
+@media (max-width: 992px) {
+  .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 50px;
+  }
+  .contact-info {
+      height: auto;
+  }
+  .info-title, .form-title {
+      text-align: center;
+      border-bottom: none;
+  }
+  .info-title::after, .form-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background-color: var(--primary-color, #c5281c);
+      border-radius: 1.5px;
+      display: block;
+  }
+}
+
+/* --- Petites Tablettes / Grands Mobiles (ex: > 576px et <= 768px) --- */
+@media (max-width: 768px) {
+  .internal-title {
+      font-size: clamp(1.6rem, 4vw, 2rem);
+      margin-bottom: 50px;
+  }
+  .contact-form {
+      grid-template-columns: 1fr;
+  }
+  .form-group.full-width {
+      grid-column: 1;
+  }
+  .contact-form-container, .contact-info {
+      padding: 35px 30px;
+  }
+  .map-section {
+      height: 350px;
+  }
+  .info-title, .form-title {
+      font-size: 1.5rem;
+  }
+}
+
+/* --- Petits Mobiles (ex: <= 576px) --- */
+@media (max-width: 576px) {
+  .contact-section { padding: 60px 0; }
+
+  .info-item {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      gap: 10px;
+      margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0;
+  }
+  .info-item:hover { background-color: transparent; }
+  .info-icon { margin-bottom: 5px; width: 40px; height: 40px; font-size: 1rem; }
+  .info-content h4 { font-size: 1rem; }
+  .info-title, .form-title {
+      font-size: 1.4rem;
+      margin-bottom: 30px;
+      text-align: left;
+      padding-bottom: 10px;
+  }
+   .info-title::after, .form-title::after {
+      left: 0;
+      transform: none;
+      width: 40px;
+   }
+
+  .contact-form-container, .contact-info { padding: 30px 20px; }
+  .contact-form { gap: 20px 0; }
+  .form-group input, .form-group select, .form-group textarea {
+      font-size: 0.9rem;
+      padding: 11px 13px;
+  }
+  .form-group label { font-size: 0.85rem; }
+  .checkbox-group label { font-size: 0.75rem; }
+  .error-message { font-size: 0.75rem; }
+
+  .form-submit button { padding: 12px 20px; min-height: 48px; }
+  .btn-loader { font-size: 0.9em; }
+  .map-section { height: 300px; }
+
+  .internal-title::after { display: none; }
+}
+
+/* Classe utilitaire pour l'accessibilité */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
