@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Un ou plusieurs éléments essentiels (bouton, loader, message global, checkboxes) sont manquants dans le formulaire. Vérifiez les ID et classes.");
         // Afficher une erreur plus visible pour l'utilisateur final serait une bonne idée ici
         if (formMessage) {
-             formMessage.textContent = "Erreur : Impossible d'initialiser le formulaire. Veuillez contacter le support.";
+             formMessage.textContent = "خطأ: تعذّر تحميل الاستمارة. يرجى التواصل مع فريق الدعم.";
              formMessage.className = "form-message error show";
         }
         if (submitButton) submitButton.disabled = true; // Désactiver l'envoi si initialisation échoue
@@ -45,10 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Messages d'erreur standard
     const errorMessages = {
-        required: "Ce champ est obligatoire.",
-        email: "Veuillez fournir une adresse email valide.",
-        checked: "Vous devez accepter cette condition.",
-        tel: "Format de téléphone invalide." // Si validation tel ajoutée
+        required: "هذا الحقل إلزامي.",
+        email: "يرجى إدخال عنوان بريد إلكتروني صحيح.",
+        checked: "يجب الموافقة على هذا الشرط.",
+        tel: "صيغة رقم الهاتف غير صحيحة." // Si validation tel ajoutée
     };
 
     /**
@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Traiter la réponse du serveur/worker
             if (response.ok) {
                 // Succès !
-                formMessage.textContent = "Votre demande a été envoyée avec succès. Nous reviendrons vers vous rapidement. ✅";
+                formMessage.textContent = "تم إرسال طلبكم بنجاح. سنتواصل معكم في أقرب وقت. ✅";
                 formMessage.className = "form-message success show";
                 form.reset(); // Vider le formulaire
 
@@ -237,14 +237,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
             } else {
                 // Erreur côté serveur
-                let errorText = `Une erreur est survenue (${response.status}). Veuillez réessayer plus tard.`;
+                let errorText = `حدث خطأ (${response.status}). يرجى المحاولة مرة أخرى لاحقًا.`;
                 try {
                     const errorData = await response.json(); // Tente de lire le JSON
-                    errorText = `Erreur : ${errorData.message || response.statusText}`; // Utilise message si dispo
+                    errorText = `خطأ: ${errorData.message || response.statusText}`; // Utilise message si dispo
                 } catch (jsonError) {
                     try { // Si pas JSON, tente texte brut
                        const plainTextError = await response.text();
-                       if (plainTextError) errorText = `Erreur : ${plainTextError}`;
+                       if (plainTextError) errorText = `خطأ: ${plainTextError}`;
                     } catch (textError) { /* Ignorer si même ça échoue */ }
                 }
                 formMessage.textContent = errorText + " ❌";
@@ -254,7 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
             // Erreur réseau ou autre erreur JS inattendue
             console.error("Erreur réseau ou JS lors de la soumission:", error);
-            formMessage.textContent = "Impossible de contacter le serveur. Veuillez vérifier votre connexion internet et réessayer. 🌐";
+            formMessage.textContent = "تعذّر الاتصال بالخادم. يرجى التحقق من اتصالكم بالإنترنت والمحاولة مرة أخرى. 🌐";
             formMessage.className = "form-message error show";
 
         } finally {
