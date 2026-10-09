@@ -1,0 +1,341 @@
+/* ===== STYLES SPÉCIFIQUES POUR LA PAGE SERVICES ===== */
+/* (Fichier: css/services.css) */
+
+/* ----- Surcharge Style Global pour CETTE page ----- */
+
+/* Surcharge pour l'image de fond de la bannière spécifique à la page Services */
+.page-banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/casa.jpg') center/cover no-repeat;
+  /* Remarque : Les autres styles du .page-banner (padding, color, etc.) sont hérités de style.css */
+}
+
+
+/* ----- Styles Uniques à la Page Services ----- */
+
+/* Style pour l'introduction des services */
+.services-intro {
+    padding: 40px 0 0; /* Espace avant la première section service */
+    text-align: center;
+}
+.services-intro p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* Service Sections */
+.service-section {
+  padding: 60px 0; /* Padding réduit */
+  scroll-margin-top: 100px; /* Pour le défilement fluide avec les ancres */
+}
+
+/* Fond alternatif */
+.alt-bg {
+  background-color: var(--light-color);
+}
+
+/* Carte de service */
+.service-card {
+  display: flex;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Icône de service */
+.service-icon {
+  flex-shrink: 0;
+  width: 100px; /* Taille ajustée */
+  height: 100px; /* Taille ajustée */
+  background-color: rgba(197, 40, 28, 0.08); /* Fond subtil */
+  border-radius: 15px; /* Moins rond */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  font-size: 2.5rem; /* Taille ajustée */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  margin-top: 10px; /* Aligner verticalement avec le titre */
+}
+
+/* Effet sur l'icône au survol de la carte */
+.service-card:hover .service-icon {
+  transform: scale(1.05) rotate(-5deg); /* Effet hover */
+  background-color: rgba(197, 40, 28, 0.15);
+}
+
+/* Contenu du service */
+.service-content {
+  flex-grow: 1;
+}
+
+/* Titre du service */
+.service-title {
+  font-family: var(--font-heading);
+  font-size: 2rem; /* Taille ajustée */
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 35px; /* Espace avant les blocs */
+  position: relative;
+}
+
+/* Soulignement du titre */
+.service-title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary-color);
+  opacity: 0.8;
+}
+
+/* Grille pour les blocs de service */
+.service-blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 colonnes */
+  gap: 30px; /* Espace réduit */
+  margin-top: 20px;
+}
+
+/* Bloc de service individuel */
+.service-block {
+  background-color: #fff; /* Fond blanc par défaut */
+  padding: 25px; /* Padding réduit */
+  border-radius: 8px; /* Moins arrondi */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04); /* Ombre subtile */
+  height: 100%; /* Pour aligner les hauteurs */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-top-color 0.3s ease; /* Ajouter transition bordure */
+  border-top: 3px solid transparent; /* Espace pour bordure hover */
+}
+
+/* Fond différent pour les blocs dans les sections sans alt-bg */
+.service-section:not(.alt-bg) .service-block {
+    background-color: var(--light-color);
+}
+
+/* Classe pour différencier le bloc bénéfice */
+.benefit-block {
+    background-color: rgba(197, 40, 28, 0.03); /* Léger fond rouge */
+    border-left: 3px solid rgba(197, 40, 28, 0.2); /* Bordure gauche subtile */
+}
+/* S'assurer que le bloc bénéfice est blanc sur fond gris */
+.service-section:not(.alt-bg) .benefit-block {
+    background-color: #fff;
+}
+
+/* Effet de survol pour les blocs internes */
+.service-block:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+  border-top-color: var(--primary-color); /* Bordure apparaît au hover */
+}
+
+/* Titre du bloc (avec icône) */
+.block-title {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem; /* Taille ajustée */
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.block-title i {
+  margin-right: 10px;
+  font-size: 1.3rem;
+  width: 20px;
+  text-align: center;
+}
+
+/* Liste dans les blocs de service */
+.service-list {
+  padding-left: 25px;
+  list-style: none;
+  margin: 0;
+}
+
+.service-list li {
+  margin-bottom: 8px; /* Espace réduit */
+  position: relative;
+  padding: 2px 5px; /* Padding pour hover */
+  margin-left: -5px; /* Compenser padding */
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  line-height: 1.6; /* Interligne */
+}
+/* Style pour texte en gras dans les listes */
+.service-list li strong {
+    color: var(--dark-color);
+}
+
+/* Effet de survol pour les items de liste */
+.service-list li:hover {
+    background-color: rgba(0,0,0,0.03); /* Fond gris très léger */
+}
+
+/* Puce personnalisée (check-circle vert) */
+.service-list li::before {
+  content: "\f058"; /* check-circle solide */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: var(--secondary-color); /* Vert (défini dans :root de style.css) */
+  position: absolute;
+  left: -15px;
+  top: 6px; /* Ajuster */
+  font-size: 0.9rem;
+}
+
+/* Style pour les paragraphes dans le bloc bénéfice */
+.benefit-block p {
+    line-height: 1.7;
+    font-size: 0.95rem; /* Légèrement plus petit */
+    color: #555; /* Gris plus foncé */
+}
+.benefit-block p strong {
+    color: var(--primary-color); /* Mettre en évidence les mots clés */
+}
+
+
+/* Section Approche (Style amélioré, repris de la modif a-propos car plus pertinent) */
+.approach-section-enhanced { /* Utilisation de la nouvelle classe */
+  text-align: center;
+  padding: 80px 0;
+  background-color: #f5f5f5; /* Fond gris différent pour section approche */
+  position: relative;
+  overflow: hidden;
+}
+
+.approach-section-enhanced .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Le titre utilise le style global .section-title */
+.approach-section-enhanced .section-title {
+    margin-bottom: 40px;
+}
+
+.approach-content { /* Conteneur texte approche */
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.approach-content p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+/* Style pour texte en gras (simule les ** du markdown) */
+.approach-content p strong {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Icône de fond pour la section approche */
+.approach-bg-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18rem; /* Très grande */
+    color: rgba(0, 0, 0, 0.04); /* Très transparent */
+    z-index: 1;
+    user-select: none;
+    pointer-events: none;
+}
+
+
+/* ----- Styles Responsives pour services.css ----- */
+
+@media (max-width: 992px) {
+  /* Pas de règle pour .page-banner ici */
+
+  .service-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .service-icon {
+      margin-bottom: 10px;
+  }
+
+  .service-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Blocs de service en 1 colonne */
+  .service-blocks {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .block-title {
+      justify-content: center; /* Centrer titre+icône */
+  }
+  .service-list {
+       text-align: left; /* Garder texte liste à gauche */
+       display: inline-block; /* Empêcher la liste de prendre 100% */
+       max-width: 100%;
+   }
+   /* Ajuster icône de fond Approche */
+   .approach-bg-icon {
+       font-size: 14rem;
+   }
+}
+
+@media (max-width: 768px) {
+  /* Pas de règle pour .page-banner ici */
+
+  .service-title {
+    font-size: 1.8rem;
+  }
+
+  .service-icon {
+    width: 90px; /* Taille ajustée tablette */
+    height: 90px; /* Taille ajustée tablette */
+    font-size: 2.2rem; /* Taille ajustée tablette */
+  }
+
+  .block-title {
+    font-size: 1.15rem; /* Taille ajustée tablette */
+  }
+  /* Ajuster icône de fond Approche */
+   .approach-bg-icon {
+       font-size: 12rem;
+       opacity: 0.03;
+   }
+}
+
+@media (max-width: 576px) {
+    .services-intro p {
+        font-size: 1rem;
+    }
+    .service-section {
+      padding: 50px 0; /* Moins d'espace */
+    }
+    .service-block {
+      padding: 20px;
+    }
+    .service-icon {
+      width: 80px; /* Taille mobile */
+      height: 80px; /* Taille mobile */
+      font-size: 2rem; /* Taille mobile */
+    }
+    .service-title {
+      font-size: 1.6rem;
+    }
+    /* Ajuster section approche */
+    .approach-section-enhanced {
+      padding: 60px 0;
+    }
+    /* Cacher icône de fond sur petit mobile */
+    .approach-bg-icon {
+       display: none;
+    }
+}

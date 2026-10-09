@@ -1,0 +1,707 @@
+/* css/quiz-page.css */
+
+/* ==========================================================================
+   0. VARIABLES LOCALES SPÉCIFIQUES AU QUIZ (Complément aux variables globales)
+   ========================================================================== */
+:root {
+    /* Couleurs principales du site Ezra (rappel pour cohérence, déjà dans le CSS du quiz, mais on peut les réaffirmer ici) */
+    --ezra-primary-color: #c41e3a;     /* Rouge Marocain Profond */
+    --ezra-primary-darker: #a91930;    /* Rouge Marocain plus foncé pour hover/active */
+    --ezra-secondary-color: #228B22;   /* Vert Marocain (ou #006400 pour un vert plus profond) */
+    --ezra-secondary-darker: #1b6d1b;  /* Vert Marocain plus foncé */
+    --ezra-accent-color: #FFBF00;      /* Or/Ambre plus riche que #FFD700 pour meilleur contraste sur blanc */
+    --ezra-accent-darker: #D4A000;     /* Or/Ambre plus foncé */
+    
+    --ezra-light-bg: #fdfdfe;          /* Fond très clair, presque blanc pur */
+    --ezra-neutral-bg: #f4f6f8;        /* Fond neutre légèrement grisé */
+    --ezra-border-color: #e1e4e8;      /* Couleur de bordure subtile */
+    
+    --ezra-dark-text: #24292e;         /* Texte principal foncé, plus doux que noir pur */
+    --ezra-medium-text: #4A5568;       /* Texte secondaire/gris moyen */
+    --ezra-light-text: #ffffff;        /* Texte clair sur fonds sombres */
+    
+    --ezra-border-radius-sm: 8px;
+    --ezra-border-radius-md: 12px;
+    --ezra-border-radius-lg: 20px;     /* Légèrement réduit pour un look plus net */
+    
+    --ezra-shadow-xs: 0 1px 2px rgba(0,0,0,0.03);
+    --ezra-shadow-sm: 0 3px 6px rgba(0,0,0,0.05);
+    --ezra-shadow-md: 0 6px 12px rgba(0,0,0,0.07);
+    --ezra-shadow-lg: 0 10px 25px rgba(0,0,0,0.08);
+    --ezra-shadow-xl: 0 20px 50px rgba(0,0,0,0.1);
+
+    /* Polices (rappel des polices du HTML pour être sûr) */
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Poppins', sans-serif;
+
+    /* Transitions */
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* ==========================================================================
+   1. BANNIÈRE DE PAGE SPÉCIFIQUE AU QUIZ
+   ========================================================================== */
+
+.page-banner.quiz-page-banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('../img/saha.jpg') center center/cover no-repeat;
+  min-height: 30vh; /* HAUTEUR RÉDUITE ET AJUSTABLE (essayez 25vh, 35vh, ou 280px etc.) */
+  display: flex;
+  flex-direction: column; /* Pour que h1 et p soient l'un en dessous de l'autre */
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* Centrer le texte dans le .container */
+  padding: 40px 20px; /* Espace de respiration */
+}
+
+.page-banner.quiz-page-banner .container {
+    width: 100%; /* Le conteneur prendra la largeur pour le centrage du texte */
+    max-width: 900px; /* Limite la largeur du texte pour la lisibilité */
+}
+
+.page-banner.quiz-page-banner h1 {
+  font-family: var(--font-primary);
+  font-size: clamp(2rem, 5.5vw, 3.2rem); /* Typographie responsive */
+  color: var(--ezra-light-text);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 15px; /* Espace entre titre et paragraphe */
+  text-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Ombre portée pour la lisibilité */
+}
+
+.page-banner.quiz-page-banner p {
+  font-family: var(--font-secondary);
+  font-size: clamp(0.95rem, 2.8vw, 1.2rem); /* Typographie responsive */
+  max-width: 700px; /* Largeur max pour le paragraphe */
+  color: rgba(255,255,255,0.92);
+  margin-left: auto; /* Centrer le paragraphe si son max-width est atteint */
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Conteneur principal du quiz sur la page */
+.quiz-main-content .container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Commence le contenu en haut */
+    padding-top: 60px;
+    padding-bottom: 80px;
+}
+
+
+/* ==========================================================================
+   2. STYLES DU CONTENEUR GLOBAL DU QUIZ
+   ========================================================================== */
+
+.quiz-container * {
+    box-sizing: border-box;
+}
+
+.quiz-container {
+    background: var(--ezra-light-bg);
+    border-radius: var(--ezra-border-radius-lg);
+    box-shadow: var(--ezra-shadow-xl);
+    padding: 40px 45px; /* Padding intérieur généreux */
+    max-width: 800px; /* Largeur max augmentée légèrement */
+    width: 100%;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Pour l'effet ::before et les confettis */
+    border: 1px solid var(--ezra-border-color); /* Bordure subtile pour définition */
+}
+
+/* Effet subtil de lumière tournante en fond (peut être désactivé si trop distrayant) */
+.quiz-container::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: -60%;
+    width: 220%;
+    height: 220%;
+    background: radial-gradient(circle, rgba(196,30,58,0.03) 0%, transparent 45%);
+    animation: rotateBackgroundShine 45s linear infinite;
+    z-index: 0;
+    pointer-events: none; /* Pour ne pas interférer avec les clics */
+}
+
+@keyframes rotateBackgroundShine {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.quiz-container .content {
+    position: relative;
+    z-index: 1; /* S'assurer que le contenu est au-dessus de ::before */
+}
+
+/* ==========================================================================
+   3. TITRES ET TEXTES D'INTRODUCTION DU QUIZ
+   ========================================================================== */
+
+.quiz-container h1 { /* Titre principal "🇲🇦 Quiz Majestueux du Maroc 🇲🇦" */
+    font-family: var(--font-primary);
+    font-size: clamp(2.2em, 6vw, 2.8em); /* Typographie responsive pour le titre */
+    font-weight: 700;
+    color: var(--ezra-primary-color);
+    margin-bottom: 12px;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    /* Les émojis s'adapteront à la font-size */
+}
+
+.quiz-container .subtitle { /* "Testez vos connaissances..." */
+    font-family: var(--font-secondary);
+    font-size: clamp(1em, 2.5vw, 1.15em);
+    color: var(--ezra-medium-text);
+    margin-bottom: 45px; /* Plus d'espace avant la sélection de thème */
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.quiz-container #theme-selection h2 { /* "Choisissez un thème..." */
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: clamp(1.3em, 4vw, 1.6em);
+    color: var(--ezra-dark-text);
+    margin-top: 20px; /* Réduit, car .subtitle a plus de marge en bas */
+    margin-bottom: 30px; /* Espace avant les boutons */
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--ezra-border-color);
+    position: relative; /* Pour le pseudo-élément de décoration */
+}
+/* Ligne décorative sous le titre de section de thème (optionnel) */
+.quiz-container #theme-selection h2::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; /* Pour être sur la bordure */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 3px;
+    background-color: var(--ezra-primary-color);
+    border-radius: 2px;
+}
+
+
+/* ==========================================================================
+   4. SÉLECTION DES THÈMES (BOUTONS)
+   ========================================================================== */
+
+.quiz-container .theme-selector {
+    margin: 30px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); /* Taille minimale pour les boutons */
+    gap: 20px; /* Espace entre les boutons */
+}
+
+.quiz-container .theme-btn {
+    background: var(--ezra-light-text);
+    border: 1px solid var(--ezra-border-color);
+    padding: 18px 15px; /* Ajusté pour le min-height */
+    min-height: 75px; /* HAUTEUR UNIFORME POUR TOUS LES BOUTONS */
+    border-radius: var(--ezra-border-radius-md);
+    cursor: pointer;
+    font-family: var(--font-secondary);
+    font-weight: 500;
+    color: var(--ezra-dark-text);
+    font-size: clamp(0.9em, 2vw, 0.95em);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left; /* Le texte du bouton à gauche */
+    gap: 15px; /* Espace entre icône et texte */
+    box-shadow: var(--ezra-shadow-sm);
+    transition: var(--transition-smooth); /* Transition pour tous les états */
+}
+.quiz-container .theme-btn i {
+    color: var(--ezra-primary-color);
+    font-size: 1.4em; /* Taille des icônes */
+    min-width: 30px; /* Largeur fixe pour l'icône pour l'alignement */
+    text-align: center;
+    transition: var(--transition-fast);
+}
+
+.quiz-container .theme-btn:hover {
+    background: var(--ezra-primary-color);
+    color: var(--ezra-light-text);
+    border-color: var(--ezra-primary-color);
+    transform: translateY(-5px) scale(1.02); /* Effet de soulèvement plus prononcé */
+    box-shadow: var(--ezra-shadow-lg); /* Ombre plus forte au survol */
+}
+.quiz-container .theme-btn:hover i {
+    color: var(--ezra-light-text);
+    transform: scale(1.15) rotate(-5deg); /* Légère rotation de l'icône */
+}
+
+.quiz-container .theme-btn.selected {
+    background: var(--ezra-secondary-color);
+    color: var(--ezra-light-text);
+    border-color: var(--ezra-secondary-color);
+    box-shadow: 0 0 0 3px rgba(34,139,34,0.3), var(--ezra-shadow-md); /* Outline et ombre */
+    transform: translateY(-2px);
+}
+.quiz-container .theme-btn.selected i {
+    color: var(--ezra-light-text);
+    transform: scale(1.1);
+}
+
+/* Centering the 'Mélangé' button */
+.quiz-container .theme-selector #theme-btn-mixte {
+    grid-column: 1 / -1; /* Span all columns in the grid row */
+    justify-self: center; /* Center the button itself within the spanned area */
+    /* Optional: you might want to give it a max-width if it becomes too wide 
+       on certain screen sizes, e.g., max-width: 250px; or a width similar to other buttons
+       if you want to enforce it: width: 190px; (or whatever the computed min-width is)
+    */
+}
+
+
+/* ==========================================================================
+   5. SECTION DU QUIZ EN COURS (QUESTIONS, SCORE, PROGRESSION)
+   ========================================================================== */
+
+.quiz-container .quiz-section {
+    display: none; /* Caché par défaut, activé par JS */
+    margin-top: 35px;
+}
+
+.quiz-container .quiz-section.active {
+    display: block;
+    animation: fadeInSmoothly 0.6s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+@keyframes fadeInSmoothly {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Carte pour la question actuelle */
+.quiz-container .question-card {
+    background: var(--ezra-light-bg);
+    border-radius: var(--ezra-border-radius-md);
+    padding: 30px 35px; /* Padding généreux */
+    margin: 25px 0;
+    box-shadow: var(--ezra-shadow-md);
+    border-left: 6px solid var(--ezra-primary-color); /* Bordure d'accentuation */
+    text-align: left;
+}
+
+.quiz-container .question { /* Texte de la question */
+    font-family: var(--font-primary);
+    font-size: clamp(1.15em, 3.5vw, 1.4em);
+    font-weight: 600;
+    color: var(--ezra-dark-text);
+    margin-bottom: 30px; /* Espace avant les réponses */
+    line-height: 1.55;
+}
+
+.quiz-container .answers { /* Conteneur pour les boutons de réponse */
+    display: grid;
+    gap: 15px; /* Espace entre les réponses */
+}
+
+/* Styles pour chaque bouton de réponse */
+.quiz-container .answer {
+    background: var(--ezra-neutral-bg);
+    border: 2px solid var(--ezra-border-color);
+    padding: 16px 20px;
+    border-radius: var(--ezra-border-radius-sm);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    text-align: left;
+    position: relative;
+    font-family: var(--font-secondary);
+    font-weight: 500;
+    font-size: clamp(0.9em, 2.2vw, 1em);
+    color: var(--ezra-medium-text);
+    display: flex; /* Pour aligner l'icône et le texte */
+    align-items: center;
+}
+
+.quiz-container .answer .icon { /* Style de l'icône (cercle par défaut) */
+    margin-right: 12px;
+    color: var(--ezra-primary-color);
+    opacity: 0.7;
+    transition: var(--transition-fast);
+    font-size: 0.9em; /* Taille de l'icône cercle */
+}
+.quiz-container .answer:hover:not(.disabled):not(.correct):not(.incorrect) {
+    border-color: var(--ezra-primary-color);
+    background-color: rgba(196,30,58,0.05);
+    color: var(--ezra-primary-color);
+    transform: translateX(5px); /* Léger décalage au survol */
+    box-shadow: 3px 3px 10px rgba(196,30,58,0.08);
+}
+.quiz-container .answer:hover:not(.disabled):not(.correct):not(.incorrect) .icon {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.quiz-container .answer.disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+    background-color: #e9ecef; /* Fond plus distinct pour désactivé */
+}
+
+/* Styles pour réponse correcte/incorrecte */
+.quiz-container .answer.correct,
+.quiz-container .answer.incorrect {
+    font-weight: 600;
+    color: var(--ezra-light-text);
+    box-shadow: var(--ezra-shadow-sm);
+}
+.quiz-container .answer.correct {
+    background: var(--ezra-secondary-color);
+    border-color: var(--ezra-secondary-darker);
+}
+.quiz-container .answer.correct .icon i::before {
+    content: "\f00c"; /* Checkmark FontAwesome */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--ezra-light-text);
+}
+
+.quiz-container .answer.incorrect {
+    background: var(--ezra-primary-color);
+    border-color: var(--ezra-primary-darker);
+}
+.quiz-container .answer.incorrect .icon i::before {
+    content: "\f00d"; /* Cross FontAwesome */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--ezra-light-text);
+}
+        
+/* Conteneur de l'explication */
+.quiz-container #explanation-container {
+    margin-top: 25px;
+}
+.quiz-container .explanation {
+    background-color: #fffbea; /* Fond jaune pâle pour l'explication */
+    border-left: 5px solid var(--ezra-accent-color);
+    padding: 20px;
+    border-radius: 0 var(--ezra-border-radius-sm) var(--ezra-border-radius-sm) 0;
+    text-align: left;
+    font-size: clamp(0.9em, 2vw, 0.95em);
+    color: #7a5c0d; /* Texte foncé pour contraste sur jaune pâle */
+    line-height: 1.65;
+    box-shadow: var(--ezra-shadow-xs);
+}
+.quiz-container .explanation strong { /* Pour "Explication:" */
+    color: var(--ezra-accent-darker);
+    font-weight: 600;
+    display: block; /* Met "Explication:" sur sa propre ligne */
+    margin-bottom: 5px;
+}
+
+/* Panneau de score en cours de quiz */
+.quiz-container .score-board {
+    background: var(--ezra-neutral-bg);
+    border-radius: var(--ezra-border-radius-md);
+    padding: 20px 25px;
+    margin: 0 0 10px 0; /* Marge uniquement en bas avant la barre de progression */
+    border: 1px solid var(--ezra-border-color);
+    box-shadow: var(--ezra-shadow-xs);
+    text-align: center;
+}
+.quiz-container .score-board .score { /* "Score: X/Y" */
+    font-family: var(--font-primary);
+    font-size: clamp(1.5em, 4vw, 1.8em);
+    font-weight: 600;
+    color: var(--ezra-primary-color);
+    margin-bottom: 5px;
+}
+.quiz-container .score-board .score-details { /* "Question X sur Y" */
+    font-family: var(--font-secondary);
+    font-size: clamp(0.85em, 2vw, 0.9em);
+    color: var(--ezra-medium-text);
+}
+
+/* Barre de progression */
+.quiz-container .progress-bar {
+    background: #dee2e6; /* Fond de la barre de progression plus clair */
+    border-radius: var(--ezra-border-radius-lg); /* Rayon important pour effet pilule */
+    height: 10px; /* Hauteur de la barre */
+    margin: 0 auto 30px auto; /* Centrée, espace avant la question */
+    overflow: hidden;
+    width: 100%;
+}
+.quiz-container .progress-fill {
+    background: linear-gradient(90deg, var(--ezra-primary-color) 0%, var(--ezra-accent-color) 100%);
+    height: 100%;
+    border-radius: var(--ezra-border-radius-lg);
+    transition: width 0.5s cubic-bezier(0.65, 0, 0.35, 1); /* Transition plus douce */
+}
+
+/* Information sur le thème choisi */
+.quiz-container .theme-info {
+    background: rgba(34, 139, 34, 0.08); /* Fond vert très pâle */
+    border-radius: var(--ezra-border-radius-sm);
+    padding: 14px 18px;
+    margin: 0 auto 25px auto; /* Centré, espace avant la question */
+    border-left: 4px solid var(--ezra-secondary-color);
+    font-family: var(--font-secondary);
+    font-style: italic;
+    color: var(--ezra-secondary-darker);
+    max-width: 95%;
+    font-size: clamp(0.85em, 1.8vw, 0.9em);
+    text-align: center;
+    box-shadow: var(--ezra-shadow-xs);
+}
+
+/* ==========================================================================
+   6. BOUTONS D'ACTION (SUIVANTE, RECOMMENCER, NOUVEAU THÈME)
+   ========================================================================== */
+
+.quiz-container .action-btn {
+    color: var(--ezra-light-text);
+    border: none;
+    padding: 14px 35px; /* Padding généreux */
+    border-radius: 50px; /* Forme pilule */
+    font-family: var(--font-primary);
+    font-size: clamp(0.95em, 2.2vw, 1.05em);
+    font-weight: 600;
+    cursor: pointer;
+    margin: 12px 8px;
+    transition: var(--transition-smooth);
+    box-shadow: var(--ezra-shadow-md);
+    text-transform: uppercase;
+    letter-spacing: 0.8px; /* Espacement des lettres */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espace entre icône et texte */
+    min-width: 180px; /* Largeur minimale pour une bonne apparence */
+}
+.quiz-container .action-btn i {
+    font-size: 1.15em;
+    line-height: 1; /* Assurer l'alignement vertical de l'icône */
+}
+
+.quiz-container .next-btn {
+    background: var(--ezra-primary-color);
+}
+.quiz-container .next-btn:hover {
+    background: var(--ezra-primary-darker);
+    transform: translateY(-3px);
+    box-shadow: var(--ezra-shadow-lg);
+}
+
+.quiz-container .restart-btn {
+    background: var(--ezra-secondary-color);
+}
+.quiz-container .restart-btn:hover {
+    background: var(--ezra-secondary-darker);
+    transform: translateY(-3px);
+    box-shadow: var(--ezra-shadow-lg);
+}
+        
+
+/* ==========================================================================
+   7. SECTION FINALE (SCORE FINAL, MESSAGE)
+   ========================================================================== */
+
+.quiz-container .final-score-card {
+    background: linear-gradient(135deg, var(--ezra-primary-color) 0%, var(--ezra-primary-darker) 60%, var(--ezra-accent-darker) 100%);
+    color: var(--ezra-light-text);
+    padding: 40px 35px;
+    border-radius: var(--ezra-border-radius-lg);
+    box-shadow: var(--ezra-shadow-xl);
+    text-align: center;
+}
+.quiz-container .final-score-card h2 { /* "🎉 Quiz Terminé ! Magnifique ! 🎉" */
+    font-family: var(--font-primary);
+    color: var(--ezra-light-text);
+    font-size: clamp(1.8em, 5vw, 2.5em);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.25);
+    margin-bottom: 20px;
+    display: flex; /* Pour aligner les émojis si besoin */
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+.quiz-container .final-score-card .score { /* Affichage du score final "X / Y" */
+    font-family: var(--font-primary);
+    color: var(--ezra-light-text);
+    font-size: clamp(2.5em, 8vw, 3.5em);
+    font-weight: 700;
+    margin: 20px 0 25px 0;
+    display: block;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    line-height: 1;
+}
+.quiz-container #final-message { /* Message de félicitations/encouragement */
+    font-family: var(--font-secondary);
+    font-size: clamp(1.05em, 2.8vw, 1.25em);
+    color: rgba(255,255,255,0.95);
+    font-weight: 400;
+    line-height: 1.7;
+    max-width: 90%;
+    margin: 0 auto 30px auto; /* Centré, espace avant boutons */
+}
+
+/* Conteneur pour les boutons de la section finale */
+.quiz-container #final-section > div:last-of-type {
+    margin-top: 35px !important;
+    display: flex;
+    flex-wrap: wrap; /* Permet aux boutons de passer à la ligne si manque de place */
+    justify-content: center;
+    gap: 15px; /* Espace entre les boutons */
+}
+
+/* Assurer que les boutons finaux utilisent bien les couleurs Ezra (déjà défini, mais rappel) */
+/* .quiz-container #final-section .action-btn.restart-btn { ... } */
+/* .quiz-container #final-section .action-btn.next-btn { ... } */
+
+
+/* ==========================================================================
+   8. EFFET CONFETTIS (AMÉLIORÉ)
+   ========================================================================== */
+
+.quiz-container .confetti-container {
+    position: absolute; /* Par rapport au .quiz-container */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Important pour ne pas bloquer les clics */
+    overflow: hidden; /* Doit être sur .quiz-container aussi */
+    z-index: 2; /* Au-dessus du contenu mais en dessous d'éventuels popups */
+}
+
+.quiz-container .confetti {
+    position: absolute;
+    opacity: 0; /* Commence invisible */
+    animation: confetti-fall-complex 3.5s ease-out forwards; /* Nouvelle animation */
+}
+/* Différentes couleurs et formes (utilisant les variables Ezra) */
+.quiz-container .confetti.c1 { background-color: var(--ezra-primary-color); width: 8px; height: 8px; animation-duration: 3.2s;}
+.quiz-container .confetti.c2 { background-color: var(--ezra-secondary-color); width: 10px; height: 5px; border-radius: 2px; animation-duration: 4s; }
+.quiz-container .confetti.c3 { background-color: var(--ezra-accent-color); width: 7px; height: 7px; border-radius: 50%; animation-duration: 3.6s; }
+.quiz-container .confetti.c4 { background-color: #f39c12; width: 6px; height: 12px; animation-duration: 4.3s; } /* Orange */
+.quiz-container .confetti.c5 { background-color: #3498db; width: 9px; height: 9px; animation-duration: 3.4s; } /* Bleu clair */
+
+@keyframes confetti-fall-complex {
+    0% {
+        transform: translateY(-10vh) translateX(0px) rotate(0deg) scale(0.8);
+        opacity: 1;
+    }
+    20% { /* Ajoute un léger mouvement latéral */
+        transform: translateY(15vh) translateX(-15px) rotate(180deg) scale(1.1);
+    }
+    80% { /* Ralentit avant la fin */
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) translateX(10px) rotate(720deg) scale(0.3);
+        opacity: 0;
+    }
+}
+
+
+/* ==========================================================================
+   9. AJUSTEMENTS RESPONSIVE (AFFINÉS)
+   ========================================================================== */
+
+@media (max-width: 820px) { /* Point de rupture un peu plus haut pour tablettes */
+    .quiz-container {
+        padding: 35px 30px; /* Moins de padding horizontal */
+        margin-left: 15px; /* Marge pour ne pas coller aux bords */
+        margin-right: 15px;
+        width: auto; /* Permet au conteneur de s'adapter avec les marges */
+    }
+    .quiz-container h1 {
+        font-size: clamp(2em, 5.5vw, 2.6em);
+    }
+    .quiz-container #theme-selection h2 {
+        font-size: clamp(1.2em, 3.5vw, 1.5em);
+    }
+    .quiz-container .theme-selector {
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 15px;
+    }
+     .quiz-container .theme-btn {
+        min-height: 70px;
+        font-size: clamp(0.85em, 1.8vw, 0.9em);
+    }
+    .quiz-container .question-card { padding: 25px 30px; }
+    .quiz-container .question { font-size: clamp(1.1em, 3vw, 1.3em); }
+    .quiz-container .final-score-card h2 { font-size: clamp(1.6em, 4.5vw, 2.3em); }
+    .quiz-container .final-score-card .score { font-size: clamp(2.2em, 7vw, 3.2em); }
+}
+
+@media (max-width: 600px) { /* Point de rupture pour petits téléphones/tablettes */
+    .page-banner.quiz-page-banner {
+        min-height: 28vh; /* Bannière encore plus petite sur mobile */
+    }
+    .page-banner.quiz-page-banner h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); }
+    .page-banner.quiz-page-banner p { font-size: clamp(0.9rem, 2.5vw, 1.1rem); }
+
+    .quiz-main-content .container {
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
+    .quiz-container {
+        padding: 30px 20px; /* Padding encore réduit */
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .quiz-container h1 { font-size: clamp(1.8em, 5vw, 2.2em); }
+    .quiz-container .subtitle { font-size: clamp(0.95em, 2.2vw, 1.05em); margin-bottom: 35px; }
+    .quiz-container #theme-selection h2 { font-size: clamp(1.1em, 3vw, 1.3em); margin-bottom: 25px; }
+    .quiz-container #theme-selection h2::after { width: 60px; height: 2.5px; }
+
+    .quiz-container .theme-selector {
+        grid-template-columns: 1fr 1fr; /* Deux colonnes fixes sur mobile */
+        gap: 12px;
+    }
+    .quiz-container .theme-btn {
+        padding: 15px 12px;
+        min-height: 65px;
+        gap: 10px;
+        font-size: 0.88em; /* Police des boutons plus petite */
+    }
+    .quiz-container .theme-btn i { font-size: 1.2em; min-width: 25px;}
+
+    .quiz-container .score-board { padding: 18px 20px; margin-bottom: 8px; }
+    .quiz-container .score-board .score { font-size: clamp(1.4em, 3.5vw, 1.6em); }
+    .quiz-container .progress-bar { height: 9px; margin-bottom: 25px; }
+
+    .quiz-container .question-card { padding: 20px 25px; border-left-width: 5px; }
+    .quiz-container .question { font-size: clamp(1.05em, 2.8vw, 1.2em); margin-bottom: 25px; }
+    .quiz-container .answer { padding: 14px 18px; font-size: 0.9em;}
+    .quiz-container .explanation { padding: 18px; font-size: 0.88em; }
+
+    .quiz-container .action-btn {
+        font-size: 0.92em;
+        padding: 13px 25px;
+        width: 100%; /* Boutons pleine largeur pour faciliter le clic */
+        margin: 8px 0; /* Ajustement des marges pour la disposition en colonne */
+        min-width: auto; /* Annule la largeur minimale */
+    }
+    .quiz-container #final-section > div:last-of-type {
+        flex-direction: column; /* Boutons finaux en colonne */
+        align-items: stretch; /* Étire les boutons sur la largeur disponible */
+    }
+     .quiz-container #final-section .action-btn {
+        width: 100%; /* S'assure qu'ils prennent toute la largeur dans la colonne flex */
+    }
+
+    .quiz-container .final-score-card { padding: 30px 20px; }
+    .quiz-container .final-score-card h2 { font-size: clamp(1.5em, 4.5vw, 2em); }
+    .quiz-container .final-score-card .score { font-size: clamp(2.2em, 7vw, 3em); margin: 15px 0 20px; }
+    .quiz-container #final-message { font-size: clamp(0.95em, 2.5vw, 1.1em); }
+
+    .quiz-container .confetti-container {
+         /* display: none; Déjà présent, on peut le laisser ou le gérer via JS si la performance est un souci */
+    }
+}
+
+@media (max-width: 380px) { /* Très petits écrans */
+    .quiz-container h1 { font-size: 1.7em; }
+    .quiz-container .theme-btn { font-size: 0.82em; gap: 8px; }
+    .quiz-container .theme-btn i { font-size: 1.1em; }
+    .quiz-container .question { font-size: 1em; }
+    .quiz-container .answer { font-size: 0.85em; padding: 12px 15px;}
+}

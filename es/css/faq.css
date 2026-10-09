@@ -1,0 +1,298 @@
+/* ============================================= */
+/* ===          STYLES PAGE FAQ              === */
+/*          (Version Corrigée Accordéon)       */
+/* ============================================= */
+
+/* ----- Surcharge Bannière de Page ----- */
+.page-banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/drapeau-maroc.jpg') center/cover no-repeat;
+}
+
+/* ==================================================== */
+/* == Styles Section AVANTAGES (Style Service-Like) === */
+/* ==================================================== */
+/* Ces styles concernent la section HORS accordéon FAQ */
+
+.advantages-section-servicelike {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.advantages-grid-sl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.advantage-card-sl {
+  background-color: var(--white-color);
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+  padding: 30px 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.advantage-card-sl:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.advantage-icon-sl {
+  font-size: 2.5rem;
+  color: var(--primary-600); /* Utilise la variable principale */
+  margin-bottom: 20px;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.advantage-card-sl:hover .advantage-icon-sl {
+    transform: scale(1.1);
+}
+
+.advantage-title-sl {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--dark-color);
+}
+
+.advantage-card-sl p {
+  color: var(--grey-text);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  flex-grow: 1;
+  margin-bottom: 0;
+}
+/* === FIN Styles Section Avantages === */
+
+
+/* ================================================= */
+/* == Styles Généraux FAQ (Intro, Accordéon, etc.) == */
+/* ================================================= */
+
+/* Conteneur principal pour les sections FAQ accordéon */
+.faq-container {
+  max-width: 850px;
+  margin: 40px auto 60px auto;
+  padding: 0 15px;
+}
+
+/* Style général pour chaque section DANS le conteneur FAQ */
+.faq-container .faq-section {
+  margin-bottom: 35px;
+  background-color: var(--white-color);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* Titres H2 des sections accordéon */
+.faq-container .faq-section h2 {
+  background-color: var(--light-color);
+  color: var(--primary-600); /* Utilise la variable principale */
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 20px 30px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Style spécifique pour le titre de la dernière section (Contact) */
+.faq-container .faq-section:last-of-type h2 {
+     background-color: #fff;
+     color: var(--dark-color);
+}
+
+/* Paragraphes d'introduction (dans .faq-section mais avant les .faq-item) */
+.faq-container .faq-section > p {
+   padding: 0 30px;
+   color: var(--dark-color);
+   line-height: 1.75;
+   margin: 0 0 16px 0;
+   font-size: 0.95rem;
+}
+.faq-container .faq-section h2 + p { padding-top: 20px; } /* Espace après titre si p suit */
+.faq-container .faq-section > p:last-of-type { margin-bottom: 0; padding-bottom: 20px; } /* Espace en bas si p termine la section */
+
+
+/* === Styles spécifiques à l'Accordéon === */
+
+.faq-item {
+  border-bottom: 1px solid var(--border-color);
+}
+.faq-item:last-child { border-bottom: none; }
+
+/* Le bouton qui contient la question */
+.faq-question {
+  background-color: var(--white-color);
+  border: none;
+  padding: 18px 30px 18px 25px; /* Ajustez si besoin */
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--dark-color);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question:hover {
+  background-color: var(--primary-50); /* Fond très pâle au survol */
+  color: var(--primary-600); /* Texte en couleur primaire */
+}
+
+/* Le texte de la question */
+.faq-question span {
+  flex-grow: 1;
+  padding-right: 15px;
+  line-height: 1.4;
+}
+
+/* L'icône chevron */
+.faq-icon {
+  font-size: 0.9rem;
+  color: var(--grey-text); /* Gris par défaut */
+  transition: transform 0.3s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.faq-question:hover .faq-icon {
+  color: var(--primary-600); /* Icône en couleur primaire au survol */
+}
+
+/* Rotation de l'icône gérée par JS via classList.toggle (pas besoin de style pour [aria-expanded="true"] ici) */
+
+/* La réponse (contenu caché/visible) */
+.faq-answer {
+  padding: 0px 30px; /* Padding horizontal, vertical géré par la transition */
+  color: var(--dark-color);
+  line-height: 1.75;
+  font-size: 0.95rem;
+  background-color: var(--white-color); /* Fond standard */
+
+  /* --- Styles pour cacher par défaut --- */
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden; /* Important pour accessibilité et interaction */
+
+  /* --- Transition pour l'animation d'ouverture/fermeture --- */
+  /* S'assurer que toutes les propriétés animées sont listées */
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), /* Timing doux */
+              opacity 0.4s ease-out,
+              padding-top 0.5s ease-out,
+              padding-bottom 0.5s ease-out,
+              visibility 0.5s ease-out;
+}
+
+/* --- Styles pour l'état OUVERT (CORRIGÉ) --- */
+/* C'est le JS qui met aria-hidden à "false" */
+.faq-answer[aria-hidden="false"] {
+  padding-top: 15px; /* Ajoute le padding vertical quand ouvert */
+  padding-bottom: 25px;
+  max-height: 6000px; /* Valeur large pour contenir n'importe quelle réponse */
+  opacity: 1;
+  visibility: visible; /* Rendre visible et interactif */
+}
+
+/* Styles internes à la réponse */
+.faq-answer p { margin-bottom: 16px; }
+.faq-answer p:last-child { margin-bottom: 0; }
+.faq-answer ul { list-style: none; padding-left: 20px; margin: 18px 0; }
+.faq-answer ul + p { margin-top: 18px; }
+.faq-answer li { margin-bottom: 12px; position: relative; padding-left: 5px; }
+.faq-answer li::before {
+  content: '\f105'; /* chevron-right */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: var(--primary-500); /* Couleur primaire un peu plus claire pour la puce */
+  position: absolute;
+  left: -18px;
+  top: 5px;
+  font-size: 0.85rem;
+}
+.faq-answer strong { font-weight: 600; color: var(--dark-color); }
+.faq-answer em { font-style: italic; color: var(--grey-text); }
+
+
+/* === Styles Section Contact & Disclaimer (dans la FAQ) === */
+.contact-info {
+  background-color: var(--light-color);
+  padding: 25px 30px;
+  border-radius: 8px;
+  margin: 20px 30px 25px 30px; /* Marges internes à la section */
+  border: 1px solid var(--border-color);
+}
+.contact-info p { margin-bottom: 12px; line-height: 1.6; color: var(--dark-color); font-size: 0.95rem;}
+.contact-info p:last-of-type { margin-bottom: 0;}
+.contact-info ul { list-style: none; padding-left: 0; margin: 15px 0 0 0; }
+.contact-info li { padding: 6px 0; margin-bottom: 10px; position: relative; display: flex; align-items: center;}
+.contact-info li:last-child { margin-bottom: 0;}
+.contact-info li i { margin-right: 12px; color: var(--primary-600); width: 20px; text-align: center; font-size: 1.1rem; flex-shrink: 0;}
+.contact-info li a { color: var(--primary-600); font-weight: 500; }
+.contact-info li a:hover { text-decoration: underline; }
+
+.disclaimer {
+  font-style: italic; font-size: 0.85rem; color: var(--grey-text);
+  padding: 20px 30px 25px 30px;
+  border-top: 1px solid var(--border-color);
+  margin: 0;
+}
+.faq-section > .contact-info + .disclaimer { margin-top: 0; } /* Si disclaimer suit direct contact-info */
+.faq-section > p + .disclaimer { margin-top: 25px; } /* Si disclaimer suit un paragraphe */
+
+.disclaimer strong { color: var(--dark-color); font-style: normal; }
+
+
+/* === Styles Responsive === */
+@media (max-width: 992px) {
+   .advantages-grid-sl { grid-template-columns: repeat(2, 1fr); }
+   .faq-container .faq-section h2 { font-size: 1.4rem; } /* Titre FAQ un peu plus petit */
+}
+
+@media (max-width: 768px) {
+    .advantages-section-servicelike { padding: 60px 0; }
+
+    .faq-container { margin-top: 40px; margin-bottom: 40px; }
+    .faq-container .faq-section h2 { font-size: 1.3rem; padding: 15px 20px; }
+    .faq-container .faq-section > p { padding: 15px 20px 0px 20px; margin-bottom: 12px;}
+
+    .contact-info { padding: 20px; margin: 20px; }
+    .disclaimer { padding: 15px 20px 20px 20px;}
+
+    .faq-question { font-size: 1.1rem; padding: 18px 25px 18px 20px; }
+    .faq-answer { padding-left: 20px; padding-right: 20px; }
+    /* Pas besoin de redéfinir .faq-answer[aria-hidden="false"] ici, le padding s'appliquera */
+}
+
+@media (max-width: 576px) {
+    .advantages-section-servicelike { padding: 50px 0; }
+    .advantages-grid-sl { grid-template-columns: 1fr; }
+    .advantage-card-sl { padding: 25px 20px; }
+    .advantage-title-sl { font-size: 1.15rem; }
+    .advantage-card-sl p { font-size: 0.9rem; }
+
+    .faq-container { padding: 0 10px; }
+    .faq-container .faq-section h2 { font-size: 1.2rem; padding: 15px; }
+    .faq-container .faq-section > p { padding: 15px; font-size: 0.9rem;}
+
+    .faq-question { font-size: 1.05rem; padding: 15px 20px 15px 15px; }
+    .faq-answer { padding-left: 15px; padding-right: 15px; font-size: 0.9rem;}
+
+    .contact-info { padding: 15px; margin: 15px; }
+    .disclaimer { padding: 15px; }
+}
+
+/* === FIN STYLES PAGE FAQ === */
