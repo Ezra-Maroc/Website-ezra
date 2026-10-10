@@ -104,6 +104,8 @@ const jsonLD = {
 
           <!-- Le formulaire lui-même -->
           <form id="contact-form" action="https://formspree.io/f/mjkwzpdr" method="POST" novalidate>
+            <!-- Champ piege anti-robots (Formspree _gotcha) : invisible pour les visiteurs -->
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none" />
 
             <!-- Champ Nom Complet -->
             <div class="form-group">
@@ -151,7 +153,7 @@ const jsonLD = {
             <!-- Champ Message -->
             <div class="form-group full-width">
               <label for="message">Détails de votre demande <span class="required">*</span></label>
-              <textarea id="message" name="message" rows="6" required aria-required="true" placeholder="Merci de décrire votre situation : Qui dans votre famille est/était Marocain(e) (père, mère, grand-père...) ? Quand sont-ils nés/ont-ils quitté le Maroc ? Possédez-vous des documents marocains (actes de naissance, CIN, passeport...) ? Quelle est votre question précise ?" aria-invalid="false" aria-describedby="message-error" maxlength="1000"></textarea>
+              <textarea id="message" name="message" rows="6" required aria-required="true" placeholder="Merci de décrire votre situation : Qui dans votre famille est/était Marocain(e) (père, mère, grand-père...) ? Quand sont-ils nés/ont-ils quitté le Maroc ? Possédez-vous des documents marocains (actes de naissance, CIN, passeport...) ? Quelle est votre question précise ?" aria-invalid="false" aria-describedby="message-error" maxlength="3000"></textarea>
               <!-- Compteur de caractères -->
               <div id="char-counter" class="char-counter-display">Caractères restants : 1000</div>
               <span class="error-message" id="message-error" aria-live="polite"></span>
