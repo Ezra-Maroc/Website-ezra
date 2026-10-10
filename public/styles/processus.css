@@ -5,7 +5,7 @@
 
 /* Surcharge pour l'image de fond de la bannière spécifique à la page Processus */
 .page-banner {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/saha.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/saha.webp') center/cover no-repeat;
 }
 
 

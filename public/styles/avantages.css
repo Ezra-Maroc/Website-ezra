@@ -17,7 +17,7 @@
 
    .page-banner.avantages-banner {
     /* !! VÉRIFIER LE CHEMIN !! */
-    background-image: linear-gradient(rgba(20, 20, 30, 0.75), rgba(20, 20, 30, 0.85)), url('../img/casablanca.jpg');
+    background-image: linear-gradient(rgba(20, 20, 30, 0.75), rgba(20, 20, 30, 0.85)), url('../img/casablanca.webp');
     min-height: 55vh; /* Hauteur spécifique si voulue */
 }
 /* Styles H1, P hérités de .page-banner (style.css) */

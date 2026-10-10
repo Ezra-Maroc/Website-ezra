@@ -45,7 +45,7 @@
    ========================================================================== */
 
 .page-banner.quiz-page-banner {
-  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('../img/saha.jpg') center center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('../img/saha.webp') center center/cover no-repeat;
   min-height: 30vh; /* HAUTEUR RÉDUITE ET AJUSTABLE (essayez 25vh, 35vh, ou 280px etc.) */
   display: flex;
   flex-direction: column; /* Pour que h1 et p soient l'un en dessous de l'autre */

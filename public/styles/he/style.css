@@ -266,7 +266,7 @@ header.site-header { /* Ajout selecteur pour spécificité si besoin */
 /* ===== HERO SECTION (Page Accueil) ===== */
 .hero {
   /* Chemin image conservé */
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../img/drapeau-maroc.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../img/drapeau-maroc.webp') center/cover no-repeat;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -471,7 +471,7 @@ header.site-header { /* Ajout selecteur pour spécificité si besoin */
 /* ===== BANNIÈRE DE PAGE (Pour autres pages) ===== */
 .page-banner {
   /* Image par défaut, peut être surchargée par page */
-  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../../img/drapeau-maroc.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../../img/drapeau-maroc.webp') center/cover no-repeat;
   padding: 140px 0 70px; /* Ajusté */
   color: var(--white-color);
   text-align: center;
@@ -493,7 +493,7 @@ header.site-header { /* Ajout selecteur pour spécificité si besoin */
 .cta-section {
   /* Image de fond par défaut */
   background: linear-gradient(rgba(var(--primary-600-rgb), 0.7), rgba(var(--primary-500-rgb), 0.8)), /* Dégradé avec couleurs primaires */
-              url('../../img/bleu.jpeg')
+              url('../../img/bleu.webp')
               center center / cover no-repeat;
   background-blend-mode: multiply; /* Option pour mélanger dégradé et image */
   color: var(--white-color);

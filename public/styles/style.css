@@ -288,7 +288,7 @@ nav { /* Cibler le conteneur nav pour lui donner de la flexibilité */
 
 /* ===== HERO SECTION (Page Accueil) ===== */
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/drapeau-maroc.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/drapeau-maroc.webp') center/cover no-repeat;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -486,7 +486,7 @@ nav { /* Cibler le conteneur nav pour lui donner de la flexibilité */
 
 /* ===== BANNIÈRE DE PAGE (Pour autres pages) ===== */
 .page-banner {
-  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../img/drapeau-maroc.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../img/drapeau-maroc.webp') center/cover no-repeat;
   padding: 140px 0 70px;
   color: var(--white-color);
   text-align: center;
@@ -507,7 +507,7 @@ nav { /* Cibler le conteneur nav pour lui donner de la flexibilité */
 /* ===== SECTION CTA (Globale) ===== */
 .cta-section {
   background: linear-gradient(rgba(var(--primary-600-rgb), 0.7), rgba(var(--primary-500-rgb), 0.8)),
-              url('../img/bleu.jpeg')
+              url('../img/bleu.webp')
               center center / cover no-repeat;
   background-blend-mode: multiply;
   color: var(--white-color);

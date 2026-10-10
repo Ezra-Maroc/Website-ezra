@@ -5,7 +5,7 @@
 
 /* Surcharge pour l'image de fond de la bannière spécifique à la page À Propos */
 .page-banner {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/kara.jpeg') center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/kara.webp') center/cover no-repeat;
   /* Optionnel: Ajuster la position si l'image le nécessite */
   /* background-position: center center; ou center top; etc. */
 }

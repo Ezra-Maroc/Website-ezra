@@ -19,10 +19,8 @@ const imgPrefix = config.pathPrefix ? '..' : '.';
 <header class="site-header">
   <div class="container header-container">
     <a href={getPageUrl('home', lang)} class="logo">
-      <picture>
-        <source srcset={`${imgPrefix}/img/logo.webp`} type="image/webp">
-        <img src={`${imgPrefix}/img/logo.png`} alt={t.logoAlt} width="751" height="721">
-      </picture>
+      {/* Logo sized for its display (40 px high, sharp up to 3x screens): 2 KB instead of 16 KB */}
+      <img src={`${imgPrefix}/img/logo-header.png`} alt={t.logoAlt} width="125" height="120">
       <div class="brand-text">
         <span>{t.brandName[0]}</span> <strong>{t.brandName[1]}</strong>
       </div>

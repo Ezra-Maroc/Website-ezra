@@ -2,14 +2,14 @@
 import type { Lang } from '../i18n/locales';
 import { locales, isRTL } from '../i18n/locales';
 import { ui } from '../i18n/translations';
-import { getHreflangMap, getPageUrl } from '../i18n/nav';
+import { nav, getHreflangMap, getPageUrl } from '../i18n/nav';
 import { getPrivacyUrl } from '../i18n/legal';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 // Fonts and icons served from the site itself (no Google Fonts, no cdnjs): nothing blocks
 // rendering from another domain, and visitors' IP addresses are not sent to third parties.
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import '../styles/fontawesome-subset.css';
 import '@fontsource/montserrat/400.css';
 import '@fontsource/montserrat/500.css';
 import '@fontsource/montserrat/600.css';
@@ -60,6 +60,51 @@ const canonicalUrl = `https://ezra-maroc.com${getPageUrl(currentPage, lang)}`;
 const privacyUrl = getPrivacyUrl(lang);
 const rtl = isRTL(lang);
 
+// Banner photo of each page. It is a CSS background, so the browser would only discover it after
+// downloading the stylesheets: preloading it starts the download right away (it is the LCP element).
+// Must match the url(...) used by the page's stylesheet (or inline style for ar/advantages).
+const bannerImages: Record<string, string> = {
+  home: 'drapeau-maroc',
+  advantages: lang === 'ar' ? 'kite' : 'casablanca',
+  services: 'casa',
+  process: 'saha',
+  quiz: 'saha',
+  contact: 'market1',
+  testimonials: 'kite',
+  about: 'kara',
+};
+const bannerImage = `/img/${bannerImages[currentPage] ?? 'drapeau-maroc'}.webp`;
+
+// Structured data added to every page: WebSite on home pages (site name shown by Google),
+// breadcrumb (Home > page) elsewhere.
+const legalLabels: Record<string, string> = {
+  privacy: t.privacyPolicy,
+  'legal-notice': t.legalNotice,
+  terms: t.termsOfService,
+  cookies: t.cookiePolicy,
+};
+const homeItem = nav[lang].find((item) => item.key === 'home');
+const pageLabel = nav[lang].find((item) => item.key === currentPage)?.label ?? legalLabels[currentPage];
+const structuredData = [
+  jsonLD,
+  currentPage === 'home' && {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Ezra Maroc',
+    alternateName: 'Ezra Maroc Consulting Services',
+    url: canonicalUrl,
+    inLanguage: config.htmlLang,
+  },
+  currentPage !== 'home' && homeItem && pageLabel && {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: homeItem.label, item: `https://ezra-maroc.com${getPageUrl('home', lang)}` },
+      { '@type': 'ListItem', position: 2, name: pageLabel, item: canonicalUrl },
+    ],
+  },
+].filter(Boolean);
+
 // Determine which style.css to use
 const langStyleMap: Record<string, string> = {
   fr: '/styles/style.css',
@@ -79,6 +124,9 @@ const langStyleMap: Record<string, string> = {
   <meta name="description" content={description}>
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- LCP: banner photo requested in parallel with the stylesheets -->
+  <link rel="preload" as="image" href={bannerImage} type="image/webp" fetchpriority="high">
 
   {noindex && <meta name="robots" content="noindex, follow">}
 
@@ -102,7 +150,7 @@ const langStyleMap: Record<string, string> = {
   <meta property="og:site_name" content="Ezra Maroc" />
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content="https://ezra-maroc.com/img/og-image.png" />
@@ -147,15 +195,8 @@ const langStyleMap: Record<string, string> = {
     }
   </style>
 
-  <!-- Logo preload -->
-  <link rel="preload" as="image" href="/img/logo.webp" type="image/webp">
-
-  <!-- LCP image preload: hero background of the home and contact pages -->
-  {currentPage === 'home' && <link rel="preload" as="image" href="/img/drapeau-maroc.jpg" fetchpriority="high">}
-  {currentPage === 'contact' && <link rel="preload" as="image" href="/img/market1.jpg" fetchpriority="high">}
-
   <!-- JSON-LD -->
-  {jsonLD && <script type="application/ld+json" set:html={JSON.stringify(jsonLD)} />}
+  {structuredData.map((data) => <script type="application/ld+json" set:html={JSON.stringify(data)} />)}
 </head>
 <body class:list={[config.bodyClass]}>
   <a href="#main-content" class="skip-link">{t.skipToContent}</a>

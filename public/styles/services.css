@@ -5,7 +5,7 @@
 
 /* Surcharge pour l'image de fond de la bannière spécifique à la page Services */
 .page-banner {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/casa.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/casa.webp') center/cover no-repeat;
   /* Remarque : Les autres styles du .page-banner (padding, color, etc.) sont hérités de style.css */
 }
 

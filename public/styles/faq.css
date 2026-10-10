@@ -5,7 +5,7 @@
 
 /* ----- Surcharge Bannière de Page ----- */
 .page-banner {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/drapeau-maroc.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/drapeau-maroc.webp') center/cover no-repeat;
 }
 
 /* ==================================================== */
