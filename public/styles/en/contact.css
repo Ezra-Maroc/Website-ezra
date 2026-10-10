@@ -134,7 +134,7 @@
 }
 .timezone {
   font-size: 0.85em;
-  color: #777;
+  color: #595959;
   display: block;
   margin-top: 4px;
 }
@@ -225,7 +225,7 @@
 }
 .optional-text, .optional { /* .optional est existant, .optional-text est nouveau pour JS */
   font-size: 0.85em;
-  color: #888;
+  color: #666;
   margin-left: 5px;
   font-weight: 400;
   font-style: italic;

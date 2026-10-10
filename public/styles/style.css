@@ -855,3 +855,7 @@ footer {
   .container { max-width: 100%; padding: 0; }
   section { page-break-inside: avoid; }
 }
+
+/* Accessibilite : logo du pied de page lisible sur fond sombre (contraste >= 4.5:1) */
+.footer-about .footer-logo { color: #ffffff; }
+.footer-about .footer-logo strong { color: #ff6f61; }

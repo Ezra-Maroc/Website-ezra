@@ -832,3 +832,7 @@ footer {
     .hero { min-height: calc(100vh - 70px); } /* Ajuster hauteur hero */
     .page-banner { padding-top: 110px; } /* Réduire padding bannière */
 }
+
+/* Accessibilite : logo du pied de page lisible sur fond sombre (contraste >= 4.5:1) */
+.footer-about .footer-logo { color: #ffffff; }
+.footer-about .footer-logo strong { color: #ff6f61; }

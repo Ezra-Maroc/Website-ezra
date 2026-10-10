@@ -77,6 +77,8 @@ const langStyleMap: Record<string, string> = {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title}</title>
   <meta name="description" content={description}>
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   {noindex && <meta name="robots" content="noindex, follow">}
 
@@ -147,6 +149,10 @@ const langStyleMap: Record<string, string> = {
 
   <!-- Logo preload -->
   <link rel="preload" as="image" href="/img/logo.webp" type="image/webp">
+
+  <!-- LCP image preload: hero background of the home and contact pages -->
+  {currentPage === 'home' && <link rel="preload" as="image" href="/img/drapeau-maroc.jpg" fetchpriority="high">}
+  {currentPage === 'contact' && <link rel="preload" as="image" href="/img/market1.jpg" fetchpriority="high">}
 
   <!-- JSON-LD -->
   {jsonLD && <script type="application/ld+json" set:html={JSON.stringify(jsonLD)} />}

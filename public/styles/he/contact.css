@@ -140,7 +140,7 @@
 }
 .timezone {
   font-size: 0.85em;
-  color: #777;
+  color: #595959;
   display: block;
   margin-top: 4px;
   /* RTL: text-align implicitement à droite */
@@ -239,7 +239,7 @@
 }
 .optional-text, .optional { 
   font-size: 0.85em;
-  color: #888;
+  color: #666;
   /* RTL: margin-left devient margin-right */
   margin-right: 5px; 
   margin-left: 0;
