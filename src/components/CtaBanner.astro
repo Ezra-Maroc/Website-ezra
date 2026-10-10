@@ -1,0 +1,54 @@
+---
+import type { Lang } from '../i18n/locales';
+import { getPageUrl } from '../i18n/nav';
+import { ui } from '../i18n/translations';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
+const contactUrl = getPageUrl('contact', lang);
+---
+
+<section class="cta-banner">
+  <div class="container">
+    <h2>{t.ctaTitle}</h2>
+    <p>{t.ctaSubtitle}</p>
+    <a href={contactUrl} class="btn btn-primary">{t.ctaButton}</a>
+  </div>
+</section>
+
+<style>
+  .cta-banner {
+    background: linear-gradient(135deg, #5a1510 0%, #8b1a14 50%, #6b1e18 100%);
+    padding: 50px 0;
+    text-align: center;
+    color: #fff;
+  }
+  .cta-banner h2 {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  .cta-banner p {
+    font-size: 1.05rem;
+    margin-bottom: 25px;
+    opacity: 0.9;
+    color: #fff;
+  }
+  .cta-banner .btn-primary {
+    background-color: #fff;
+    color: var(--primary-color, #c5281c);
+    border-color: #fff;
+    font-weight: 600;
+    padding: 12px 30px;
+  }
+  .cta-banner .btn-primary:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+</style>

@@ -1,8 +1,0 @@
-name = "ezra-contact"
-main = "worker.js"
-compatibility_date = "2025-04-23"
-
-[vars]
-
-TO_EMAIL = "info@ezra-project.fr"
-FROM_EMAIL = "info@ezra-project.fr"

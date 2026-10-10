@@ -1,0 +1,211 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+
+const lang = 'es' as const;
+---
+
+<BaseLayout
+  lang={lang}
+  title="Testimonios de Clientes | Ezra Maroc"
+  description="Lee historias de éxito de nuestros clientes. Descubre sus experiencias obteniendo la nacionalidad marroquí con la guía experta de Ezra Maroc."
+  currentPage="testimonials"
+  canonicalPath="/es/testimonios.html"
+  pageCSS={['temoignages']}
+>
+  <main id="main-content" class="page-banner">
+    <div class="container">
+      <h1>Testimonios de Nuestros Clientes</h1>
+      <p>Las historias de nuestros clientes son nuestro mayor orgullo. Descubre sus experiencias y cómo Ezra Maroc ayudó a hacer realidad sus proyectos de nacionalidad marroquí.</p>
+    </div>
+  </main>
+
+  <section class="section guestbook-section">
+    <div class="container">
+      <p class="guestbook-intro">Estos testimonios auténticos ilustran la diversidad de situaciones y la eficacia de nuestro apoyo personalizado.</p>
+
+      <div class="testimonial-cards">
+        <!-- Testimonio 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-profile">
+              <div class="testimonial-avatar">DC</div>
+              <div class="testimonial-identity">
+                <h3>D. C.</h3>
+                <p>París, Francia</p>
+              </div>
+            </div>
+            <div class="testimonial-success">
+              <span class="success-badge"><i class="fa-solid fa-certificate" aria-hidden="true"></i> Certificado obtenido en 11 meses</span>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-quote"><i class="fa-solid fa-quote-left" aria-hidden="true"></i></div>
+            <p>Después de años de intentos fallidos, Ezra Maroc logró conseguirme la nacionalidad marroquí en menos de un año. Su experiencia y profesionalismo marcaron toda la diferencia.</p>
+            <p>Había intentado dos veces compilar mi expediente yo mismo, pero constantemente me encontraba con obstáculos administrativos. El equipo de Ezra Maroc identificó inmediatamente las debilidades de mi expediente anterior y propuso una estrategia eficaz.</p>
+            <p>Lo que particularmente me impresionó fue su profundo conocimiento de los procedimientos marroquíes y su capacidad para anticipar las solicitudes de la administración. Su seguimiento regular también me permitió mantener la calma durante todo el proceso.</p>
+          </div>
+        </div>
+
+        <!-- Testimonio 2 -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-profile">
+              <div class="testimonial-avatar">SB</div>
+              <div class="testimonial-identity">
+                <h3>S. B.</h3>
+                <p>Montreal, Canadá</p>
+              </div>
+            </div>
+            <div class="testimonial-success">
+              <span class="success-badge"><i class="fa-solid fa-certificate" aria-hidden="true"></i> Certificado obtenido en 14 meses</span>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-quote"><i class="fa-solid fa-quote-left" aria-hidden="true"></i></div>
+            <p>Temía que la distancia y la complejidad administrativa fueran obstáculos insuperables, pero el equipo de Ezra Maroc gestionó todo con una eficiencia notable. ¡Hoy soy oficialmente marroquí!</p>
+            <p>Residiendo en Canadá, pensé que los trámites serían particularmente complicados para mí. Ezra Maroc gestionó todo el proceso considerando esta limitación, minimizando mis viajes a solo lo estrictamente necesario. Su plataforma de seguimiento en línea me mantuvo informado en tiempo real sobre el progreso de mi expediente.</p>
+            <p>El día de mi cita en el tribunal de Rabat, fui acompañado por su abogado, quien se aseguró de que todo saliera perfectamente. Un momento emotivo que nunca olvidaré.</p>
+          </div>
+        </div>
+
+        <!-- Testimonio 3 -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-profile">
+              <div class="testimonial-avatar">ML</div>
+              <div class="testimonial-identity">
+                <h3>M. L.</h3>
+                <p>Nueva York, USA</p>
+              </div>
+            </div>
+            <div class="testimonial-success">
+              <span class="success-badge"><i class="fa-solid fa-certificate" aria-hidden="true"></i> Certificado obtenido en 16 meses</span>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-quote"><i class="fa-solid fa-quote-left" aria-hidden="true"></i></div>
+            <p>La transparencia y profesionalidad de Ezra Maroc me impresionaron. Siempre estuve informado sobre el progreso de mi expediente, y su experiencia legal ayudó a superar obstáculos que pensé que eran insuperables.</p>
+            <p>Mi caso era particularmente complejo porque los documentos de mi abuelo se perdieron durante la guerra. El equipo de Ezra Maroc realizó un verdadero trabajo de detective, encontrando archivos que nunca pensé que podrían obtenerse.</p>
+            <p>Su enfoque metódico y perseverancia permitieron finalmente crear un expediente sólido que convenció a las autoridades marroquíes. Estoy inmensamente agradecido por su excepcional trabajo.</p>
+          </div>
+        </div>
+
+        <!-- Testimonio 4 -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-profile">
+              <div class="testimonial-avatar">RH</div>
+              <div class="testimonial-identity">
+                <h3>R. H.</h3>
+                <p>Tel Aviv, Israel</p>
+              </div>
+            </div>
+            <div class="testimonial-success">
+              <span class="success-badge"><i class="fa-solid fa-certificate" aria-hidden="true"></i> Certificado obtenido en 19 meses</span>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-quote"><i class="fa-solid fa-quote-left" aria-hidden="true"></i></div>
+            <p>Obtener la nacionalidad marroquí era un sueño que creía inaccesible, especialmente con la complejidad de las relaciones diplomáticas. Ezra Maroc convirtió este sueño en realidad con una profesionalidad notable.</p>
+            <p>Desde nuestra primera conversación, me tranquilizó su profundo conocimiento de la situación específica de los judíos marroquíes que emigraron a Israel. Supieron encontrar soluciones a cada obstáculo que surgió.</p>
+            <p>Lo que más me impactó fue su capacidad para manejar los aspectos emocionales e identitarios de mi viaje, más allá de las consideraciones puramente administrativas. Hoy puedo regresar a Marruecos con mi pasaporte marroquí y reconectar plenamente con mis raíces.</p>
+          </div>
+        </div>
+
+        <!-- Testimonio 5 -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-profile">
+              <div class="testimonial-avatar">AB</div>
+              <div class="testimonial-identity">
+                <h3>A. B.</h3>
+                <p>Lyon, Francia</p>
+              </div>
+            </div>
+            <div class="testimonial-success">
+              <span class="success-badge"><i class="fa-solid fa-certificate" aria-hidden="true"></i> Certificado obtenido en 13 meses</span>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-quote"><i class="fa-solid fa-quote-left" aria-hidden="true"></i></div>
+            <p>Quiero expresar mi profunda gratitud a todo el equipo de Ezra Maroc. Su experiencia y dedicación fueron decisivas para el éxito de mi solicitud de nacionalidad marroquí.</p>
+            <p>A pesar de una situación familiar compleja y documentos parcialmente faltantes, lograron encontrar soluciones innovadoras y legalmente sólidas. Su conocimiento de los procedimientos administrativos marroquíes me ahorró numerosos escollos y errores que podrían haber retrasado significativamente mi expediente.</p>
+            <p>Recomiendo encarecidamente sus servicios a cualquiera que desee emprender este proceso importante y simbólico.</p>
+          </div>
+        </div>
+
+        <!-- Testimonio 6 -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-profile">
+              <div class="testimonial-avatar"><i class="fa-solid fa-users" aria-hidden="true"></i></div>
+              <div class="testimonial-identity">
+                <h3>É. & N. M.</h3>
+                <p>Marsella, Francia</p>
+              </div>
+            </div>
+            <div class="testimonial-success">
+              <span class="success-badge"><i class="fa-solid fa-certificate" aria-hidden="true"></i> Certificados obtenidos en 15 meses</span>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-quote"><i class="fa-solid fa-quote-left" aria-hidden="true"></i></div>
+            <p>Como pareja, ambos deseábamos obtener la nacionalidad marroquí, con situaciones familiares diferentes. Ezra Maroc gestionó ambos expedientes en paralelo con una coordinación perfecta.</p>
+            <p>Su enfoque personalizado nos conmovió especialmente: se tomaron el tiempo de comprender nuestra historia familiar y nuestras profundas motivaciones. Su equipo mostró una paciencia y pedagogía notables al explicarnos cada paso del proceso.</p>
+            <p>Estamos infinitamente agradecidos por su apoyo, que nos permitió realizar este importante proyecto para nuestra familia y nuestros hijos.</p>
+          </div>
+        </div>
+
+        <!-- Testimonio 7 -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-profile">
+              <div class="testimonial-avatar">RA</div>
+              <div class="testimonial-identity">
+                <h3>R. A.</h3>
+                <p>Miami, USA</p>
+              </div>
+            </div>
+            <div class="testimonial-success">
+              <span class="success-badge"><i class="fa-solid fa-certificate" aria-hidden="true"></i> Certificado obtenido en 12 meses</span>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-quote"><i class="fa-solid fa-quote-left" aria-hidden="true"></i></div>
+            <p>Contratar a Ezra Maroc fue la mejor decisión que tomé en mi proceso de obtención de la nacionalidad marroquí. A pesar de la distancia y la diferencia horaria, su equipo siempre estuvo disponible y receptivo.</p>
+            <p>La compilación del expediente se realizó con un rigor ejemplar, lo que sin duda contribuyó a la relativa rapidez del proceso. Cada documento fue perfectamente preparado, traducido y legalizado según los requisitos específicos de las autoridades marroquíes.</p>
+            <p>Estoy particularmente agradecido por su apoyo durante mi viaje a Marruecos para la cita final. Su abogado en el lugar aseguró una transición perfecta y me puso en las mejores condiciones para este paso crucial.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="guestbook-cta">
+        <p>¿Tú también quieres compartir tu éxito o iniciar tu proyecto?</p>
+        <a href="contacto.html" class="btn btn-primary">Contáctanos hoy</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section engagement-section alt-bg">
+    <div class="container">
+      <h2 class="section-title">Nuestro Compromiso: <span>Tu Historia</span></h2>
+      <div class="engagement-content">
+        <p>Cada testimonio es una prueba de nuestro compromiso con la excelencia y el éxito de nuestros clientes. Tu viaje único merece toda nuestra atención y experiencia dedicada.</p>
+        <p>Nos sentiríamos honrados de ayudarte a escribir tu propio capítulo en este libro de visitas y acompañarte hacia el reconocimiento de tu nacionalidad marroquí.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">¿Listo/a para añadir tu nombre a nuestro Libro de Visitas?</h2>
+      <div class="cta-buttons">
+        <a href="contacto.html#contact-form-container" class="btn btn-light">Solicitar una Evaluación</a>
+        <a href="proceso.html" class="btn btn-outline-light">Ver Nuestro Proceso</a>
+      </div>
+    </div>
+  </section>
+  <CtaBanner lang={lang} />
+</BaseLayout>

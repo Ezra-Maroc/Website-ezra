@@ -1,0 +1,202 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getOrganizationJsonLD } from '../../i18n/jsonld';
+
+const lang = 'he' as const;
+const jsonLD = getOrganizationJsonLD(lang);
+---
+
+<BaseLayout
+  lang={lang}
+  title="עזרא מרוק - השיגו אזרחות מרוקאית | ליווי מומחה"
+  description="השיגו אזרחות מרוקאית עם עזרא מרוק. מומחיות משפטית מיוחדת, תמיכה אישית לבקשת האזרחות שלכם. שיעור הצלחה גבוה."
+  currentPage="home"
+  canonicalPath="/he.html"
+  jsonLD={jsonLD}
+>
+  <main id="main-content" class="hero">
+    <div class="container hero-content">
+      <h1>השער שלכם לאזרחות מרוקאית</h1>
+      <p>אנו מלווים אתכם צעד אחר צעד בתהליך קבלת האזרחות המרוקאית עם תמיכה מותאמת אישית ומומחיות משפטית מתקדמת.</p>
+      <div class="hero-buttons">
+        <a href="/he/services.html" class="btn btn-light">גלו את שירותינו</a>
+        <a href="/he/process.html" class="btn btn-light">התהליך הפשוט שלנו</a>
+        <a href="/he/contact.html" class="btn btn-primary">הערכה חינמית</a>
+      </div>
+    </div>
+  </main>
+
+  <section class="section intro-section">
+    <div class="container">
+      <p class="intro-text">התחברו בקלות למורשת המרוקאית שלכם. עזרא מרוק, מומחה מוכר, תומך בכם בהצלחה בכל שלב של בקשת האזרחות שלכם, מהערכה ראשונית ועד מסירת תעודת האזרחות שלכם.</p>
+      <div class="strengths">
+        <div class="strength-item">
+          <i class="fa-solid fa-scale-balanced strength-icon" aria-hidden="true"></i>
+          <h3>מומחיות משפטית מיוחדת</h3>
+          <p>בחוק האזרחות המרוקאי</p>
+        </div>
+        <div class="strength-item">
+          <i class="fa-solid fa-handshake-angle strength-icon" aria-hidden="true"></i>
+          <h3>תמיכה אישית</h3>
+          <p>לאורך כל התהליך שלכם</p>
+        </div>
+        <div class="strength-item">
+          <i class="fa-solid fa-network-wired strength-icon" aria-hidden="true"></i>
+          <h3>רשת קשרים מבוססת</h3>
+          <p>עם המנהל המרוקאי</p>
+        </div>
+        <div class="strength-item">
+          <i class="fa-solid fa-trophy strength-icon" aria-hidden="true"></i>
+          <h3>שיעור הצלחה גבוה</h3>
+          <p>עבור תיקי לקוחותינו</p>
+        </div>
+        <div class="strength-item">
+          <i class="fa-solid fa-lightbulb strength-icon" aria-hidden="true"></i>
+          <h3>שקיפות מלאה</h3>
+          <p>על התהליך ולוחות הזמנים</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="our-services" class="section services-section">
+    <div class="container">
+      <h2 class="section-title">ה<span>שירותים</span> שלנו</h2>
+      <div class="features">
+        <div class="feature-card">
+          <i class="fa-solid fa-magnifying-glass feature-icon" aria-hidden="true"></i>
+          <h3 class="feature-title">הערכת זכאות</h3>
+          <p>אנו מנתחים את מצבכם המשפחתי וקשריכם למרוקו כדי לקבוע במדויק את זכויותיכם לאזרחות מרוקאית.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-folder-open feature-icon" aria-hidden="true"></i>
+          <h3 class="feature-title">הרכבת תיק</h3>
+          <p>הכנה קפדנית של כל המסמכים הדרושים לבניית תיק חזק התואם לדרישות הרשויות המרוקאיות.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-clipboard-check feature-icon" aria-hidden="true"></i>
+          <h3 class="feature-title">מעקב מנהלי</h3>
+          <p>ניטור פעיל של התקדמות התיק שלכם מול המנהל המרוקאי והתערבות מהירה בעת הצורך.</p>
+        </div>
+      </div>
+      <div class="services-more">
+        <a href="/he/services.html" class="btn-link">גלו את כל השירותים שלנו <i class="fa-solid fa-arrow-left" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="why-us" class="section why-us-section">
+    <div class="container">
+      <h2 class="section-title">למה לבחור ב<span>עזרא מרוק?</span></h2>
+      <div class="why-us-grid">
+        <div class="why-us-item">
+          <i class="fa-solid fa-key why-us-icon" aria-hidden="true"></i>
+          <h3>גישת 'הכל כלול'</h3>
+          <p>המשחררת אתכם מטרדות מנהליות</p>
+        </div>
+        <div class="why-us-item">
+          <i class="fa-solid fa-gavel why-us-icon" aria-hidden="true"></i>
+          <h3>מומחיות משפטית חדה</h3>
+          <p>בחוק האזרחות המרוקאי</p>
+        </div>
+        <div class="why-us-item">
+          <i class="fa-solid fa-user-tie why-us-icon" aria-hidden="true"></i>
+          <h3>איש קשר ייעודי</h3>
+          <p>למעקב אישי</p>
+        </div>
+        <div class="why-us-item">
+          <i class="fa-solid fa-glasses why-us-icon" aria-hidden="true"></i>
+          <h3>שקיפות מלאה</h3>
+          <p>על התקדמות התיק שלכם</p>
+        </div>
+        <div class="why-us-item">
+          <i class="fa-solid fa-globe why-us-icon" aria-hidden="true"></i>
+          <h3>רשת מבוססת</h3>
+          <p>של עורכי דין ושותפים במרוקו</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="/he/about.html" class="btn-link">גלו את הצוות והערכים שלנו <i class="fa-solid fa-arrow-left" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="section process-section">
+    <div class="container">
+      <h2 class="section-title">התהליך ה<span>פשוט</span> שלנו</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3 class="step-title">הערכת זכאות</h3>
+            <p>ניתוח מלא של מצבכם וזכויותיכם הפוטנציאליות לאזרחות מרוקאית.</p>
+            <span class="step-duration">1-3 שבועות</span>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3 class="step-title">הרכבת תיק</h3>
+            <p>איסוף והכנת כל המסמכים הנדרשים לבקשתכם.</p>
+            <span class="step-duration">1-4 חודשים</span>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3 class="step-title">הגשה ומעקב מנהלי</h3>
+            <p>הגשת התיק שלכם לרשויות הרלוונטיות ומעקב צמוד.</p>
+            <span class="step-duration">2-3 חודשים</span>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3 class="step-title">בדיקה והחלטה</h3>
+            <p>תקופת בחינת התיק שלכם על ידי הרשויות המרוקאיות.</p>
+            <span class="step-duration">7-20+ חודשים</span>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3 class="step-title">סיום ומסמכים</h3>
+            <p>סיוע בקבלת המסמכים המרוקאיים שלכם (CNIE, דרכון...) לאחר קבלת האזרחות.</p>
+            <span class="step-duration">שירות אופציונלי</span>
+          </div>
+        </div>
+      </div>
+      <div class="process-more">
+        <a href="/he/process.html" class="btn-link">למדו עוד על התהליך שלנו <i class="fa-solid fa-arrow-left" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="section testimonial-section">
+    <div class="container">
+      <h2 class="section-title">המסעות שלהם, <span>הגאווה שלנו</span></h2>
+      <div class="testimonial">
+        <div class="testimonial-content">
+          <p class="testimonial-text">"אחרי שנים של ניסיונות לא מוצלחים, עזרא מרוק הצליחו להשיג לי אזרחות מרוקאית בפחות משנה. המומחיות והמקצועיות שלהם עשו את כל ההבדל."</p>
+        </div>
+        <div class="testimonial-client">
+          <h3>דוד כ.</h3>
+          <p>פריז, צרפת</p>
+        </div>
+        <div class="testimonials-more">
+          <a href="/he/testimonials.html" class="btn-link">צפו בכל ההמלצות <i class="fa-solid fa-arrow-left" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">מוכנים להתחיל את המסע שלכם לקראת אזרחות מרוקאית?</h2>
+      <div class="cta-buttons">
+        <a href="/he/services.html" class="btn btn-outline-light">ראו את השירותים שלנו</a>
+        <a href="/he/contact.html" class="btn btn-outline-light">צרו קשר</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

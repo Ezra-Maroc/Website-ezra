@@ -1,0 +1,189 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const lang = 'ar' as const;
+
+const jsonLD = {
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Ezra Maroc Consulting Services LLC",
+  "url": "https://ezra-maroc.com",
+  "logo": "https://ezra-maroc.com/img/logo.png",
+  "image": "https://ezra-maroc.com/img/logo.png",
+  "description": "مرافقة خبيرة للحصول على الجنسية المغربية عن طريق النسب.",
+  "email": "info@ezra-project.fr",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "30 N Gould St Ste R",
+    "addressLocality": "Sheridan",
+    "addressRegion": "WY",
+    "postalCode": "82801",
+    "addressCountry": "US"
+  },
+  "areaServed": ["FR", "MA", "US", "CA", "IL"],
+  "availableLanguage": ["French", "English", "Spanish", "Hebrew", "Arabic"],
+  "sameAs": ["https://www.instagram.com/ezramaroc/"]
+};
+---
+
+<BaseLayout
+  lang={lang}
+  title="اتصل بنا | عزرا ماروك"
+  description="تواصلوا مع عزرا ماروك لتقييم مجاني لأهليتكم للجنسية المغربية أو لأي سؤال حول خدمات الدعم التي نقدمها."
+  currentPage="contact"
+  canonicalPath="/ara/contact.html"
+  pageCSS={['contact']}
+  jsonLD={jsonLD}
+>
+  <main id="main-content" class="page-banner">
+    <div class="container">
+      <h1>اتصل بنا</h1>
+      <p>اطرحوا أسئلتكم أو اطلبوا تقييمًا شخصيًا. فريقنا هنا لمساعدتكم.</p>
+    </div>
+  </main>
+
+  <section class="section contact-section">
+    <div class="container">
+      <h2 class="section-title internal-title">لنبدا <span>الحوار</span></h2>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3 class="info-title">معلومات الاتصال بنا</h3>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+            <div class="info-content">
+              <h4>المقر الإداري</h4>
+              <p>30 N Gould St Ste R,<br>Sheridan, WY 82801, USA</p>
+              <span class="timezone">(ملاحظة: حضور إداري فقط)</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
+            <div class="info-content">
+              <h4>الاتصال الرئيسي</h4>
+              <p><a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-regular fa-clock" aria-hidden="true"></i></div>
+            <div class="info-content">
+              <h4>أوقات الرد</h4>
+              <p>نسعى للرد في غضون 24 إلى 48 ساعة عمل.</p>
+              <span class="timezone">(التوقيت المرجعي: توقيت وسط أوروبا/باريس)</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-solid fa-circle-info" aria-hidden="true"></i></div>
+            <div class="info-content">
+              <h4>توضيح هام</h4>
+              <p>لتحليل سريع ودقيق، يرجى تفصيل وضعكم العائلي وطلبكم قدر الإمكان في الاستمارة.</p>
+            </div>
+          </div>
+
+          <div class="social-media">
+            <h4>تابعونا</h4>
+            <div class="social-icons">
+              <a href="https://www.instagram.com/ezramaroc/" class="social-icon" aria-label="إنستغرام عزرا المغرب" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-container" id="contact-form-container">
+          <h3 class="form-title">رسالتكم</h3>
+
+          <form id="contact-form" action="https://formspree.io/f/mjkwzpdr" method="POST" novalidate>
+
+            <div class="form-group">
+              <label for="name">الاسم الكامل <span class="required">*</span></label>
+              <input type="text" id="name" name="name" required aria-required="true" placeholder="مثال: فاطمة العلوي" aria-invalid="false" aria-describedby="name-error">
+              <span class="error-message" id="name-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email">البريد الإلكتروني <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required aria-required="true" placeholder="مثال: fatima.elalaoui@email.com" aria-invalid="false" aria-describedby="email-error">
+              <span class="error-message" id="email-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">الهاتف <span class="required required-indicator" style="display: none;">*</span><span class="optional-text">(يُوصى به للرد السريع)</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="مثال: +33 6 12 34 56 78 (مع الرمز الدولي)" aria-invalid="false" aria-describedby="phone-error">
+              <span class="error-message" id="phone-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">موضوع طلبكم <span class="required">*</span></label>
+              <select id="subject" name="subject" required aria-required="true" aria-invalid="false" aria-describedby="subject-error">
+                <option value="" disabled selected>-- يرجى اختيار موضوع --</option>
+                <option value="تقييم أولي لأهليتي">تقييم أولي لأهليتي</option>
+                <option value="سؤال عام حول خدماتكم">سؤال عام حول خدماتكم</option>
+                <option value="توضيحات حول مسار الحصول على الجنسية">توضيحات حول مسار الحصول على الجنسية</option>
+                <option value="طلب معلومات حول الأسعار">طلب معلومات حول الأسعار</option>
+                <option value="طلب اتصال هاتفي">طلب اتصال هاتفي</option>
+                <option value="موضوع آخر">موضوع آخر</option>
+              </select>
+              <span class="error-message" id="subject-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group full-width" id="other-subject-group" style="display: none;">
+              <label for="other_subject_details">حدد موضوع طلبكم <span class="required">*</span></label>
+              <input type="text" id="other_subject_details" name="other_subject_details" placeholder="مثال: شراكة، مشكلة تقنية..." aria-invalid="false" aria-describedby="other-subject-details-error">
+              <span class="error-message" id="other-subject-details-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="message">تفاصيل طلبكم <span class="required">*</span></label>
+              <textarea id="message" name="message" rows="6" required aria-required="true" placeholder="يرجى وصف وضعكم: من في عائلتكم كان/كانت مغربي(ة) (الأب، الأم، الجد...)؟ متى ولدوا/غادروا المغرب؟ هل لديكم وثائق مغربية (عقود ازدياد، بطاقة وطنية، جواز سفر...)؟ ما هو سؤالكم المحدد؟" aria-invalid="false" aria-describedby="message-error" maxlength="1000"></textarea>
+              <div id="char-counter" class="char-counter-display">الأحرف المتبقية: 1000</div>
+              <span class="error-message" id="message-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group full-width">
+              <div class="checkbox-group" role="group" aria-labelledby="consent-label">
+                <input type="checkbox" id="consent" name="consent" value="accepted" required aria-required="true" aria-invalid="false" aria-describedby="consent-error">
+                <label for="consent" id="consent-label">أؤكد أنني قرأت ووافقت على <a href="politique-confidentialite.html" target="_blank" rel="noopener noreferrer">سياسة الخصوصية</a> و<a href="conditions-utilisation.html" target="_blank" rel="noopener noreferrer">شروط الاستخدام العامة</a>، وأوافق على معالجة بياناتي الشخصية لتمكين عزرا ماروك من الرد على طلبي.<span class="required">*</span></label>
+              </div>
+              <span class="error-message" id="consent-error" aria-live="polite"></span>
+            </div>
+
+            <!-- Turnstile Anti-Spam -->
+            <div class="form-group full-width">
+              <div class="cf-turnstile" data-sitekey="VOTRE_SITE_KEY" data-theme="light"></div>
+            </div>
+
+            <div class="form-submit full-width">
+              <button type="submit" class="btn btn-primary">
+                <span class="btn-loader" aria-hidden="true"><i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> جار الإرسال...</span>
+                <span class="btn-text">إرسال طلبي</span>
+              </button>
+            </div>
+
+            <div id="form-message" class="form-message" role="alert" aria-live="assertive"></div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="map-section" aria-label="خريطة توضح مقرنا الإداري">
+    <h2 class="visually-hidden">مقرنا الإداري (الولايات المتحدة)</h2>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3050.058614989749!2d-106.958361684615!3d44.79916297909831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5335f0e2f67f0a4f%3A0x579ff4e8b9e4b005!2s30%20N%20Gould%20St%20Ste%20R%2C%20Sheridan%2C%20WY%2082801%2C%20USA!5e0!3m2!1sen!2sfr!4v1678886541234!5m2!1sen!2sfr"
+        width="100%"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        sandbox="allow-scripts allow-same-origin"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="خريطة جوجل توضح العنوان 30 N Gould St Ste R, Sheridan, WY">
+      </iframe>
+    </div>
+  </section>
+</BaseLayout>

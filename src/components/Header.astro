@@ -1,0 +1,98 @@
+---
+import type { Lang } from '../i18n/locales';
+import { locales } from '../i18n/locales';
+import { nav, getPageUrl } from '../i18n/nav';
+import { ui } from '../i18n/translations';
+
+interface Props {
+  lang: Lang;
+  currentPage: string;
+}
+
+const { lang, currentPage } = Astro.props;
+const t = ui[lang];
+const navItems = nav[lang];
+const config = locales[lang];
+const imgPrefix = config.pathPrefix ? '..' : '.';
+---
+
+<header class="site-header">
+  <div class="container header-container">
+    <a href={getPageUrl('home', lang)} class="logo">
+      <picture>
+        <source srcset={`${imgPrefix}/img/logo.webp`} type="image/webp">
+        <img src={`${imgPrefix}/img/logo.png`} alt={t.logoAlt} width="751" height="721">
+      </picture>
+      <div class="brand-text">
+        <span>{t.brandName[0]}</span> <strong>{t.brandName[1]}</strong>
+      </div>
+    </a>
+
+    <button class="hamburger-btn" aria-label={t.menuLabel} aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav>
+      <ul class="nav-links">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={getPageUrl(item.key, lang)}
+              class:list={[{ active: item.key === currentPage }]}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="language-switcher">
+      <label for="lang-select" class="visually-hidden">{t.langSelectLabel}</label>
+      <select name="lang" id="lang-select" class="language-select">
+        {(['fr', 'en', 'es', 'he', 'ar'] as Lang[]).map((l) => (
+          <option
+            value={getPageUrl(currentPage, l)}
+            selected={l === lang}
+          >
+            {t.langNames[l]}
+          </option>
+        ))}
+      </select>
+    </div>
+  </div>
+</header>
+
+<script>
+  const hamburger = document.querySelector('.hamburger-btn');
+  const header = document.querySelector('.site-header');
+
+  if (hamburger && header) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = header.classList.toggle('nav-open');
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      document.body.classList.toggle('menu-open', isOpen);
+    });
+
+    // Close menu when clicking a nav link
+    header.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        header.classList.remove('nav-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+      });
+    });
+
+    // Close menu on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && header.classList.contains('nav-open')) {
+        header.classList.remove('nav-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+        hamburger.focus();
+      }
+    });
+  }
+</script>

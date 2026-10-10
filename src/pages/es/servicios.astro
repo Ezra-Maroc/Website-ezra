@@ -1,0 +1,204 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+
+const lang = 'es' as const;
+---
+
+<BaseLayout
+  lang={lang}
+  title="Nuestros Servicios | Ezra Maroc"
+  description="Descubre los servicios dedicados de Ezra Maroc para obtener la nacionalidad marroquí: evaluación de elegibilidad, constitución de expediente, seguimiento administrativo y más."
+  currentPage="services"
+  canonicalPath="/es/servicios.html"
+  pageCSS={['services']}
+>
+  <main id="main-content" class="page-banner">
+    <div class="container">
+      <h1>Nuestros Servicios Dedicados</h1>
+      <p>Simplifica tu viaje hacia la ciudadanía marroquí. Ezra Maroc transforma la complejidad administrativa en un proceso sereno y exitoso, reconectándote con tu herencia.</p>
+    </div>
+  </main>
+
+  <section class="section services-intro">
+    <div class="container">
+      <p>
+        Reconectar con tus raíces marroquíes a través de la nacionalidad es un proyecto poderoso, pero los procedimientos administrativos a menudo pueden parecer desalentadores.
+      </p>
+      <p>
+        En Ezra Maroc, entendemos perfectamente estos desafíos. Por eso hemos diseñado una <strong>gama completa e integrada de servicios</strong>, liderada por <strong>expertos dedicados</strong>. Nuestra misión: transformar la complejidad administrativa en un <strong>viaje claro, controlado y sereno</strong> para ti.
+      </p>
+      <p>
+        Déjanos manejar los aspectos técnicos y administrativos, para que puedas concentrarte en lo que más importa: tu reconexión con Marruecos. Descubre a continuación cómo te <strong>guiamos hacia el éxito</strong>, paso a paso.
+      </p>
+    </div>
+  </section>
+
+  <section id="eligibility" class="section service-section">
+    <div class="container">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        </div>
+        <div class="service-content">
+          <h2 class="service-title">Evaluación Estratégica de Elegibilidad</h2>
+          <div class="service-blocks">
+            <div class="service-block">
+              <h3 class="block-title"><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Qué hacemos</h3>
+              <ul class="service-list">
+                <li><strong>Análisis en profundidad</strong> de tu situación familiar y vínculos con Marruecos</li>
+                <li><strong>Revisión preliminar</strong> de los documentos que posees</li>
+                <li><strong>Entrevista personalizada</strong> para entender tu historia familiar</li>
+                <li><strong>Investigación genealógica dirigida</strong> si es necesario</li>
+                <li><strong>Evaluación experta</strong> de las posibilidades de éxito de tu solicitud</li>
+              </ul>
+            </div>
+            <div class="service-block benefit-block">
+              <h3 class="block-title"><i class="fa-solid fa-gift" aria-hidden="true"></i> Tu beneficio claro</h3>
+              <p>Recibe un <strong>análisis franco y preciso</strong> de tu elegibilidad. <strong>Decide con confianza</strong> si proceder o no, *antes* de invertir tiempo y gastos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="constitution" class="section service-section alt-bg">
+    <div class="container">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
+        </div>
+        <div class="service-content">
+          <h2 class="service-title">Constitución Rigurosa del Expediente</h2>
+          <div class="service-blocks">
+            <div class="service-block">
+              <h3 class="block-title"><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Qué hacemos</h3>
+              <ul class="service-list">
+                <li><strong>Establecimiento preciso</strong> de la lista exhaustiva de documentos para tu caso</li>
+                <li><strong>Asistencia proactiva</strong> en la recolección de documentos oficiales</li>
+                <li><strong>Organización completa</strong> de las traducciones juradas requeridas</li>
+                <li><strong>Gestión meticulosa</strong> de los procedimientos de legalización y apostilla</li>
+                <li><strong>Verificación legal rigurosa</strong> de cada documento</li>
+                <li><strong>Preparación estructurada</strong> de un expediente que cumpla los requisitos marroquíes</li>
+              </ul>
+            </div>
+            <div class="service-block benefit-block">
+              <h3 class="block-title"><i class="fa-solid fa-gift" aria-hidden="true"></i> Tu beneficio directo</h3>
+              <p>Asegúrate de presentar un <strong>expediente meticulosamente preparado</strong> que sea <strong>estrictamente conforme</strong> a los requisitos de las autoridades, <strong>maximizando</strong> así tus posibilidades de aprobación rápida.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="recherche" class="section service-section">
+    <div class="container">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fa-solid fa-tree" aria-hidden="true"></i>
+        </div>
+        <div class="service-content">
+          <h2 class="service-title">Investigación Genealógica Profunda</h2>
+          <div class="service-blocks">
+            <div class="service-block">
+              <h3 class="block-title"><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Qué hacemos</h3>
+              <ul class="service-list">
+                <li><strong>Investigación dirigida</strong> en archivos de estado civil (Marruecos y extranjero)</li>
+                <li><strong>Análisis de registros Adoul</strong> y consulares</li>
+                <li><strong>Reconstrucción de líneas familiares</strong> para establecer el linaje</li>
+                <li><strong>Búsqueda de documentos cruciales</strong>, antiguos o faltantes</li>
+                <li><strong>Colaboración con expertos locales</strong> en investigación de archivos</li>
+              </ul>
+            </div>
+            <div class="service-block benefit-block">
+              <h3 class="block-title"><i class="fa-solid fa-gift" aria-hidden="true"></i> Tu prueba esencial</h3>
+              <p>Encuentra la <strong>prueba documental crucial</strong>, incluso registros antiguos, para establecer <strong>irrefutablemente</strong> tu línea de descendencia y la nacionalidad de tus ancestros.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="suivi" class="section service-section alt-bg">
+    <div class="container">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fa-solid fa-clipboard-check" aria-hidden="true"></i>
+        </div>
+        <div class="service-content">
+          <h2 class="service-title">Seguimiento Administrativo Activo</h2>
+          <div class="service-blocks">
+            <div class="service-block">
+              <h3 class="block-title"><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Qué hacemos</h3>
+              <ul class="service-list">
+                <li><strong>Presentación optimizada</strong> de tu expediente a las autoridades competentes</li>
+                <li><strong>Monitoreo continuo y regular</strong> del progreso de tu solicitud</li>
+                <li><strong>Intervenciones dirigidas</strong> con las administraciones marroquíes</li>
+                <li><strong>Manejo rápido</strong> de cualquier solicitud adicional</li>
+                <li><strong>Comunicación transparente</strong> sobre el estado del progreso</li>
+              </ul>
+            </div>
+            <div class="service-block benefit-block">
+              <h3 class="block-title"><i class="fa-solid fa-gift" aria-hidden="true"></i> Tu tranquilidad</h3>
+              <p>Gana <strong>serenidad</strong> a través de un monitoreo proactivo que <strong>agiliza el procesamiento</strong> de tu solicitud y te mantiene informado del progreso en tiempo real.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="post-obtention" class="section service-section">
+    <div class="container">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fa-solid fa-passport" aria-hidden="true"></i>
+        </div>
+        <div class="service-content">
+          <h2 class="service-title">Soporte Post-Obtención (Opcional)</h2>
+          <div class="service-blocks">
+            <div class="service-block">
+              <h3 class="block-title"><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Qué hacemos</h3>
+              <ul class="service-list">
+                <li><strong>Consejos prácticos</strong> para obtener tus documentos de identidad marroquíes</li>
+                <li><strong>Asistencia específica</strong> para trámites relacionados con la CNIE</li>
+                <li><strong>Apoyo completo</strong> para la solicitud del pasaporte marroquí</li>
+                <li><strong>Orientación administrativa</strong> para formalidades post-nacionalidad</li>
+                <li><strong>Asesoramiento sólido</strong> para instalarse potencialmente en Marruecos</li>
+              </ul>
+            </div>
+            <div class="service-block benefit-block">
+              <h3 class="block-title"><i class="fa-solid fa-gift" aria-hidden="true"></i> Tu integración facilitada</h3>
+              <p>Finaliza tu integración como ciudadano marroquí <strong>sin complicaciones</strong>. Te guiamos para obtener rápidamente tus <strong>documentos oficiales</strong> (CNIE, pasaporte).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section approach-section-enhanced">
+    <div class="container">
+      <h2 class="section-title">Nuestro Enfoque <span>Integrado</span></h2>
+      <div class="approach-content">
+        <i class="fa-solid fa-key approach-bg-icon" aria-hidden="true"></i>
+        <p>Cada uno de nuestros servicios forma parte de un <strong>enfoque integral y llave en mano</strong>. Manejamos todos los procedimientos administrativos y legales, permitiéndote concentrarte serenamente en tu proyecto de reconexión con tus raíces marroquíes.</p>
+        <p>Nuestro equipo dedicado coordina a todos los actores y pasos, asegurando una <strong>experiencia fluida, transparente y sin estrés</strong>, incluso en las situaciones más complejas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">¿Listo/a para hacer realidad tu proyecto de nacionalidad marroquí?</h2>
+      <div class="cta-buttons">
+        <a href="#eligibility" class="btn btn-light">Evaluar mi elegibilidad</a>
+        <a href="contacto.html" class="btn btn-outline-light">Contactar un experto</a>
+      </div>
+    </div>
+  </section>
+  <CtaBanner lang={lang} />
+</BaseLayout>

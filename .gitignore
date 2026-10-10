@@ -1,15 +1,15 @@
-# Environnement virtuel
-env/
-venv/
-ENV/
-.env
-.venv
-env.bak/
-venv.bak/
-
-# Dossiers et fichiers existants
+# Dependances et builds
 node_modules/
 dist/
-.cache/
+.astro/
+
+# Environnement et secrets
+.env
+.env.*
+.dev.vars
+.wrangler/
+
+# Systeme
 .DS_Store
+Thumbs.db
 *.log

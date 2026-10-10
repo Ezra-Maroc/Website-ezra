@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LegalNav from '../../components/LegalNav.astro';
+
+const lang = 'en' as const;
+---
+
+<BaseLayout
+  lang={lang}
+  title="Legal Notice | Ezra Maroc"
+  description="Legal information concerning the website www.ezra-maroc.com, published by Ezra Maroc Consulting Services LLC."
+  currentPage="legal-notice"
+  canonicalPath="/en/legal-notice.html"
+  noindex={true}
+>
+    <!-- LEGAL NOTICE CONTENT -->
+    <main id="main-content" class="page-banner">
+        <div class="container">
+            <h1>Legal Notice</h1>
+            <p>Information regarding the website www.ezra-maroc.com</p>
+        </div>
+    </main>
+
+  <LegalNav lang={lang} pageTitle="Legal Notice" />
+
+  <section class="section legal-content-section">
+        <div class="container">
+
+            <p><strong>Last Updated:</strong> May 8, 2024</p>
+
+            <h2>ARTICLE 1: Site Editor</h2>
+            <p>The website https://www.ezra-maroc.com (hereinafter the "Site") is published by:</p>
+            <p>
+                <strong>Ezra Maroc Consulting Services LLC</strong><br>
+                A Limited Liability Company registered in the State of Wyoming, USA.<br>
+                Registration Number: [Your Wyoming Registration Number - TO BE COMPLETED]<br>
+                Registered Office: 30 N Gould St Ste R, Sheridan, WY 82801, USA<br>
+                Email: <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a><br>
+            </p>
+
+            <h2>ARTICLE 2: Publishing Director</h2>
+            <p>The Publishing Director of the Site is [Name of Publishing Director or Legal Representative], in their capacity as [Position, e.g., Manager] of Ezra Maroc Consulting Services LLC.</p>
+            <p>Contact: <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></p>
+
+            <h2>ARTICLE 3: Hosting Provider</h2>
+            <p>The Site is hosted by:</p>
+            <p>
+                <strong>Cloudflare, Inc.</strong><br>
+                101 Townsend St, San Francisco, CA 94107, USA<br>
+                Website: <a href="https://www.cloudflare.com" target="_blank" rel="noopener noreferrer">www.cloudflare.com</a><br>
+                Cloudflare provides CDN, security, and potentially other hosting-related services.
+            </p>
+            <p>The Site's static assets may also be served via:</p>
+            <p>
+                <strong>Netlify, Inc.</strong><br>
+                2325 3rd Street, Suite 296, San Francisco, CA 94107, USA<br>
+                Website: <a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">www.netlify.com</a>
+            </p>
+
+
+            <h2>ARTICLE 4: Intellectual Property</h2>
+            <p>All content on this Site, including, without limitation, graphics, images, texts, videos, animations, sounds, logos, gifs, and icons, as well as their formatting, are the exclusive property of Ezra Maroc Consulting Services LLC, with the exception of trademarks, logos, or content belonging to other partner companies or authors.</p>
+            <p>Any reproduction, distribution, modification, adaptation, retransmission, or publication, even partial, of these various elements is strictly prohibited without the express written consent of Ezra Maroc Consulting Services LLC. Such representation or reproduction, by any means whatsoever, constitutes an infringement punishable by applicable intellectual property laws.</p>
+            <p>For more details, please refer to our <a href="terms-of-service.html">Terms of Service</a>.</p>
+
+            <h2>ARTICLE 5: Limitation of Liability</h2>
+            <p>The information contained on this Site is as accurate as possible, and the Site is periodically updated, but may nonetheless contain inaccuracies or omissions. If you notice an inaccuracy, error, or what appears to be a malfunction, please report it by email to <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a>, describing the problem as precisely as possible (problematic page, triggering action, type of computer and browser used, etc.).</p>
+            <p>Ezra Maroc Consulting Services LLC cannot be held liable for any direct or indirect damage caused to the user's equipment when accessing the Site, resulting either from the use of equipment that does not meet the indicated specifications or from the appearance of a bug or incompatibility.</p>
+            <p>For more details, please refer to our <a href="terms-of-service.html">Terms of Service</a>.</p>
+
+            <h2>ARTICLE 6: Personal Data Protection</h2>
+            <p>For information regarding the collection and processing of your personal data, please refer to our <a href="privacy-policy.html">Privacy Policy</a> and our <a href="cookie-policy.html">Cookie Policy</a>.</p>
+
+            <h2>ARTICLE 7: Applicable Law and Jurisdiction</h2>
+            <p>This legal notice is governed by the laws of the State of Wyoming, USA. In the event of a dispute, and after an attempt to reach an amicable solution, jurisdiction is expressly attributed to the competent courts of Sheridan, Wyoming, USA, subject to any mandatory provisions applicable to EU consumers as detailed in our <a href="terms-of-service.html">Terms of Service</a>.</p>
+
+            <h2>ARTICLE 8: Contact</h2>
+            <p>For any questions or information concerning the Site, or any report of illegal content or activities, the User may contact the Editor at the following email address: <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a>, or send a registered letter with acknowledgment of receipt to Ezra Maroc Consulting Services LLC at the address specified in Article 1.</p>
+
+            <p style="text-align:center; margin-top:3em;"><a href="/en/" class="legal-back-link">Back to Home</a></p>
+
+        </div>
+    </section>
+
+    <style>
+        .legal-content-section { padding: 60px 0; }
+        .legal-content-section .container { max-width: 800px; }
+        .legal-content-section h2 { font-family: var(--font-heading); font-size: 1.7rem; color: var(--primary-color); margin-top: 2.5em; margin-bottom: 1.2em; padding-bottom: 0.6em; border-bottom: 2px solid var(--primary-50); font-weight: 600; }
+        .legal-content-section h2:first-of-type { margin-top: 0; }
+        .legal-content-section h3 { font-family: var(--font-heading); font-size: 1.3rem; color: var(--dark-color); margin-top: 1.8em; margin-bottom: 1em; font-weight: 600; }
+        .legal-content-section p { font-family: var(--font-main); font-size: 0.95rem; line-height: 1.8; color: #333; margin-bottom: 1.1em; text-align: justify; }
+        .legal-content-section strong { color: #111; font-weight: 600; }
+        .legal-content-section a { color: var(--primary-color); text-decoration: underline; }
+        .legal-content-section a:hover { color: var(--primary-500); text-decoration: none; }
+    </style>
+</BaseLayout>

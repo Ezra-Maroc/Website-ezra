@@ -1,0 +1,141 @@
+---
+import type { Lang } from '../i18n/translations';
+
+interface Props {
+  lang: Lang;
+  pageTitle: string;
+}
+
+const { lang, pageTitle } = Astro.props;
+
+const i18n: Record<Lang, { home: string; homeUrl: string; toc: string; back: string }> = {
+  fr: { home: 'Accueil', homeUrl: '/', toc: 'Table des matières', back: 'Retour à l\'accueil' },
+  en: { home: 'Home', homeUrl: '/en/', toc: 'Table of Contents', back: 'Back to Home' },
+  es: { home: 'Inicio', homeUrl: '/es/inicio.html', toc: 'Tabla de contenidos', back: 'Volver al inicio' },
+  he: { home: 'דף הבית', homeUrl: '/he/', toc: 'תוכן עניינים', back: 'חזרה לדף הבית' },
+  ar: { home: 'الرئيسية', homeUrl: '/ara/', toc: 'جدول المحتويات', back: 'العودة للرئيسية' },
+};
+
+const t = i18n[lang];
+---
+
+<nav class="legal-breadcrumb" aria-label="Breadcrumb">
+  <div class="container">
+    <a href={t.homeUrl}>{t.home}</a>
+    <span aria-hidden="true">›</span>
+    <span>{pageTitle}</span>
+  </div>
+</nav>
+
+<nav class="legal-toc" aria-label={t.toc}>
+  <div class="container">
+    <details open>
+      <summary class="legal-toc-title">{t.toc}</summary>
+      <ol id="legal-toc-list"></ol>
+    </details>
+  </div>
+</nav>
+
+<style is:global>
+  .legal-breadcrumb {
+    background: var(--primary-50, #fef2f2);
+    padding: 12px 0;
+    font-size: 0.9rem;
+  }
+  .legal-breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+  .legal-breadcrumb a:hover {
+    text-decoration: underline;
+  }
+  .legal-breadcrumb span {
+    color: #666;
+    margin: 0 8px;
+  }
+  .legal-breadcrumb span:last-child {
+    color: #333;
+    font-weight: 500;
+    margin: 0;
+  }
+  .legal-toc {
+    padding: 20px 0 0;
+  }
+  .legal-toc .container {
+    max-width: 800px;
+  }
+  .legal-toc details {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px 20px;
+  }
+  .legal-toc-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    cursor: pointer;
+    list-style: none;
+  }
+  .legal-toc-title::-webkit-details-marker {
+    display: none;
+  }
+  .legal-toc-title::before {
+    content: '▸ ';
+    display: inline;
+  }
+  details[open] > .legal-toc-title::before {
+    content: '▾ ';
+  }
+  #legal-toc-list {
+    margin: 12px 0 0;
+    padding-inline-start: 1.5em;
+    columns: 1;
+  }
+  #legal-toc-list li {
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  #legal-toc-list a {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+  #legal-toc-list a:hover {
+    text-decoration: underline;
+  }
+  .legal-back-link {
+    display: inline-block;
+    margin-top: 2em;
+    padding: 10px 24px;
+    background: var(--primary-color);
+    color: #fff !important;
+    border-radius: 6px;
+    text-decoration: none !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+  }
+  .legal-back-link:hover {
+    background: var(--primary-700, #b91c1c);
+  }
+</style>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function() {
+  var tocList = document.getElementById('legal-toc-list');
+  if (!tocList) return;
+  var headings = document.querySelectorAll('.legal-content-section h2');
+  for (var i = 0; i < headings.length; i++) {
+    var h2 = headings[i];
+    if (!h2.id) h2.id = 'article-' + (i + 1);
+    var li = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = '#' + h2.id;
+    a.textContent = h2.textContent;
+    li.appendChild(a);
+    tocList.appendChild(li);
+  }
+});
+</script>

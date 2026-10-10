@@ -1,0 +1,210 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const lang = 'fr' as const;
+
+const jsonLD = {
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Ezra Maroc Consulting Services LLC",
+  "url": "https://ezra-maroc.com",
+  "logo": "https://ezra-maroc.com/img/logo.png",
+  "image": "https://ezra-maroc.com/img/logo.png",
+  "description": "Accompagnement expert pour l'obtention de la nationalité marocaine par filiation.",
+  "email": "info@ezra-project.fr",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "30 N Gould St Ste R",
+    "addressLocality": "Sheridan",
+    "addressRegion": "WY",
+    "postalCode": "82801",
+    "addressCountry": "US"
+  },
+  "areaServed": ["FR", "MA", "US", "CA", "IL"],
+  "availableLanguage": ["French", "English", "Spanish", "Hebrew", "Arabic"],
+  "sameAs": ["https://www.instagram.com/ezramaroc/"]
+};
+---
+
+<BaseLayout
+  lang={lang}
+  title="Contactez Ezra Maroc | Obtenez votre Nationalité Marocaine"
+  description="Contactez Ezra Maroc pour une évaluation gratuite de votre éligibilité à la nationalité marocaine ou pour toute question sur nos services d'accompagnement."
+  currentPage="contact"
+  canonicalPath="/contact.html"
+  pageCSS={['contact']}
+  jsonLD={jsonLD}
+>
+  <!-- Bannière de Page -->
+  <main id="main-content" class="page-banner">
+    <div class="container">
+      <h1>Contactez-Nous</h1>
+      <p>Posez vos questions ou demandez une évaluation personnalisée. Notre équipe est là pour vous aider.</p>
+    </div>
+  </main>
+
+  <!-- Section Principale Contact -->
+  <section class="section contact-section">
+    <div class="container">
+      <!-- Titre de section interne -->
+      <h2 class="section-title internal-title">Entamons la <span>Conversation</span></h2>
+
+      <!-- Grille Contact (Info + Formulaire) -->
+      <div class="contact-grid">
+
+        <!-- Colonne Infos Contact -->
+        <div class="contact-info">
+          <h3 class="info-title">Nos Coordonnées</h3>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+            <div class="info-content">
+              <h4>Siège Administratif</h4>
+              <p>30 N Gould St Ste R,<br>Sheridan, WY 82801, USA</p>
+              <span class="timezone">(Note: Présence administrative uniquement)</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
+            <div class="info-content">
+              <h4>Contact Principal</h4>
+              <p><a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-regular fa-clock" aria-hidden="true"></i></div>
+            <div class="info-content">
+              <h4>Délais de Réponse</h4>
+              <p>Nous nous efforçons de répondre sous 24 à 48h ouvrées.</p>
+              <span class="timezone">(Fuseau horaire de référence : CET/Paris)</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-solid fa-circle-info" aria-hidden="true"></i></div>
+            <div class="info-content">
+              <h4>Précision</h4>
+              <p>Pour une analyse rapide et pertinente, merci de détailler au maximum votre situation familiale et votre demande dans le formulaire.</p>
+            </div>
+          </div>
+
+          <!-- Section Social Media -->
+          <div class="social-media">
+            <h4>Restons Connectés</h4>
+            <div class="social-icons">
+              <a href="https://www.instagram.com/ezramaroc/" class="social-icon" aria-label="Instagram Ezra Maroc" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div> <!-- Fin Colonne Infos Contact -->
+
+        <!-- Colonne Formulaire -->
+        <div class="contact-form-container" id="contact-form-container">
+          <h3 class="form-title">Votre Message</h3>
+
+          <!-- Le formulaire lui-même -->
+          <form id="contact-form" action="https://formspree.io/f/mjkwzpdr" method="POST" novalidate>
+
+            <!-- Champ Nom Complet -->
+            <div class="form-group">
+              <label for="name">Nom Complet <span class="required">*</span></label>
+              <input type="text" id="name" name="name" required aria-required="true" placeholder="Ex: Fatima El Alaoui" aria-invalid="false" aria-describedby="name-error">
+              <span class="error-message" id="name-error" aria-live="polite"></span>
+            </div>
+
+            <!-- Champ Email -->
+            <div class="form-group">
+              <label for="email">Adresse Email <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required aria-required="true" placeholder="Ex: fatima.elalaoui@email.com" aria-invalid="false" aria-describedby="email-error">
+              <span class="error-message" id="email-error" aria-live="polite"></span>
+            </div>
+
+            <!-- Champ Téléphone -->
+            <div class="form-group">
+              <label for="phone">Téléphone <span class="required required-indicator" style="display: none;">*</span><span class="optional-text">(Recommandé pour un suivi rapide)</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="Ex: +33 6 12 34 56 78 (avec indicatif)" aria-invalid="false" aria-describedby="phone-error">
+              <span class="error-message" id="phone-error" aria-live="polite"></span>
+            </div>
+
+            <!-- Champ Sujet -->
+            <div class="form-group">
+              <label for="subject">Objet de votre demande <span class="required">*</span></label>
+              <select id="subject" name="subject" required aria-required="true" aria-invalid="false" aria-describedby="subject-error">
+                <option value="" disabled selected>-- Veuillez choisir un sujet --</option>
+                <option value="Évaluation préliminaire de mon éligibilité">Évaluation préliminaire de mon éligibilité</option>
+                <option value="Question générale sur vos services">Question générale sur vos services</option>
+                <option value="Précisions sur le processus d'obtention">Précisions sur le processus d'obtention</option>
+                <option value="Demande d'informations sur les tarifs">Demande d'informations sur les tarifs</option>
+                <option value="Demande de rappel téléphonique">Demande de rappel téléphonique</option>
+                <option value="Autre sujet">Autre sujet</option>
+              </select>
+              <span class="error-message" id="subject-error" aria-live="polite"></span>
+            </div>
+
+            <!-- Champ Préciser autre sujet (initialement caché) -->
+            <div class="form-group full-width" id="other-subject-group" style="display: none;">
+              <label for="other_subject_details">Préciser l'objet de votre demande <span class="required">*</span></label>
+              <input type="text" id="other_subject_details" name="other_subject_details" placeholder="Ex: Partenariat, Problème technique..." aria-invalid="false" aria-describedby="other-subject-details-error">
+              <span class="error-message" id="other-subject-details-error" aria-live="polite"></span>
+            </div>
+
+            <!-- Champ Message -->
+            <div class="form-group full-width">
+              <label for="message">Détails de votre demande <span class="required">*</span></label>
+              <textarea id="message" name="message" rows="6" required aria-required="true" placeholder="Merci de décrire votre situation : Qui dans votre famille est/était Marocain(e) (père, mère, grand-père...) ? Quand sont-ils nés/ont-ils quitté le Maroc ? Possédez-vous des documents marocains (actes de naissance, CIN, passeport...) ? Quelle est votre question précise ?" aria-invalid="false" aria-describedby="message-error" maxlength="1000"></textarea>
+              <!-- Compteur de caractères -->
+              <div id="char-counter" class="char-counter-display">Caractères restants : 1000</div>
+              <span class="error-message" id="message-error" aria-live="polite"></span>
+            </div>
+
+            <!-- Champ Consentement -->
+            <div class="form-group full-width">
+              <div class="checkbox-group" role="group" aria-labelledby="consent-label">
+                <input type="checkbox" id="consent" name="consent" value="accepted" required aria-required="true" aria-invalid="false" aria-describedby="consent-error">
+                <label for="consent" id="consent-label">Je confirme avoir lu et accepté la <a href="politique-confidentialite.html" target="_blank" rel="noopener noreferrer">politique de confidentialité</a> et les <a href="conditions-utilisation.html" target="_blank" rel="noopener noreferrer">conditions d'utilisation</a>, et consens au traitement de mes données personnelles pour permettre à Ezra Maroc de répondre à ma demande.<span class="required">*</span></label>
+              </div>
+              <span class="error-message" id="consent-error" aria-live="polite"></span>
+            </div>
+
+            <!-- Turnstile Anti-Spam -->
+            <div class="form-group full-width">
+              <div class="cf-turnstile" data-sitekey="VOTRE_SITE_KEY" data-theme="light"></div>
+            </div>
+
+            <!-- Bouton de Soumission -->
+            <div class="form-submit full-width">
+              <button type="submit" class="btn btn-primary">
+                <span class="btn-loader" aria-hidden="true"><i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Envoi en cours...</span>
+                <span class="btn-text">Envoyer ma demande</span>
+              </button>
+            </div>
+
+            <!-- Zone pour afficher les messages globaux (succès/erreur) -->
+            <div id="form-message" class="form-message" role="alert" aria-live="assertive"></div>
+
+          </form> <!-- Fin du Formulaire -->
+        </div> <!-- Fin Colonne Formulaire -->
+
+      </div> <!-- Fin Contact Grid -->
+    </div> <!-- Fin Container -->
+  </section> <!-- Fin Section Contact -->
+
+  <!-- Section Carte -->
+  <section class="map-section" aria-label="Carte indiquant notre siège administratif">
+    <h2 class="visually-hidden">Notre Siège Administratif (USA)</h2>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3050.058614989749!2d-106.958361684615!3d44.79916297909831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5335f0e2f67f0a4f%3A0x579ff4e8b9e4b005!2s30%20N%20Gould%20St%20Ste%20R%2C%20Sheridan%2C%20WY%2082801%2C%20USA!5e0!3m2!1sen!2sfr!4v1678886541234!5m2!1sen!2sfr"
+        width="100%"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        sandbox="allow-scripts allow-same-origin"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Carte Google Maps indiquant l'adresse 30 N Gould St Ste R, Sheridan, WY">
+      </iframe>
+    </div>
+  </section>
+</BaseLayout>

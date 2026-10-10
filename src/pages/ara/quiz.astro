@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const lang = 'ar' as const;
+---
+
+<BaseLayout
+  lang={lang}
+  title="اختبار تفاعلي عن المغرب | عزرا ماروك"
+  description="اختبر معلوماتك عن المغرب من خلال اختبارنا التفاعلي والممتع! اكتشف التاريخ والثقافة والجغرافيا والمزيد."
+  currentPage="quiz"
+  canonicalPath="/ara/quiz.html"
+  pageCSS={['quiz-page']}
+>
+  <section class="page-banner quiz-page-banner">
+    <div class="container">
+      <h2>اختبر معلوماتك عن بلدك</h2>
+      <p>ضع معلوماتك على المحك واكتشف المملكة الشريفية كما لم تكتشفها من قبل!</p>
+    </div>
+  </section>
+
+  <main id="main-content">
+    <section class="section quiz-main-content">
+      <div class="container">
+        <div class="quiz-container">
+          <div class="confetti-container" id="confetti-container"></div>
+          <div class="content">
+            <h1 id="quiz-title">الاختبار الملكي للمغرب</h1>
+            <p class="subtitle" id="quiz-subtitle">اختبر معلوماتك عن المملكة الشريفية!</p>
+
+            <div id="theme-selection">
+              <h2 id="theme-prompt" style="color: var(--primary-color); margin: 25px 0 15px; font-weight:600;">اختر موضوعاً لبدء المغامرة:</h2>
+              <div class="theme-selector" id="theme-selector"></div>
+            </div>
+
+            <div id="quiz-section" class="quiz-section">
+              <div class="score-board">
+                <div class="score"><span id="score-label">النتيجة: </span><span id="score">0</span>/<span id="total-questions-in-quiz">0</span></div>
+                <div class="score-details"><span id="question-label">سؤال</span> <span id="current-q-num">1</span> <span id="of-label">من</span> <span id="total-q-count">0</span></div>
+                <div class="progress-bar">
+                  <div class="progress-fill" id="progress"></div>
+                </div>
+              </div>
+              <div class="theme-info" id="theme-info-display"></div>
+              <div class="question-card">
+                <div class="question" id="question"></div>
+                <div class="answers" id="answers"></div>
+                <div id="explanation-container" style="display:none;">
+                  <p class="explanation" id="explanation-text"></p>
+                </div>
+              </div>
+              <div style="margin-top:25px;">
+                <button class="action-btn next-btn" id="next-btn" data-action="next" style="display: none;"><i class="fas fa-arrow-left" aria-hidden="true"></i> التالي</button>
+                <button class="action-btn restart-btn" data-action="restart"><i class="fas fa-sync-alt" aria-hidden="true"></i> موضوع جديد</button>
+              </div>
+            </div>
+
+            <div id="final-section" class="quiz-section">
+              <div class="final-score-card">
+                <h2 id="completion-title">انتهى الاختبار! رائع!</h2>
+                <div class="score" id="final-score-text"></div>
+                <div id="final-message"></div>
+              </div>
+              <div style="margin-top:25px;">
+                <button class="action-btn restart-btn" data-action="retry"><i class="fas fa-redo" aria-hidden="true"></i> أعد المحاولة</button>
+                <button class="action-btn next-btn" data-action="mixed"><i class="fas fa-dice" aria-hidden="true"></i> اختبار مختلط</button>
+              </div>
+              <div class="quiz-cta" style="margin-top:30px; padding:20px; background:rgba(var(--primary-600-rgb,197,40,28),0.08); border-radius:10px; text-align:center;">
+                <p style="font-size:1.05rem; margin-bottom:12px; font-weight:600; color:var(--dark-color,#333);">اختبرو أهليتكم الحقيقية للجنسية المغربية!</p>
+                <a href="contact.html" class="btn btn-primary" style="display:inline-block;">تقييم مجاني</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">هل تريد معرفة المزيد عن المغرب؟</h2>
+      <div class="cta-buttons">
+        <a href="advantages.html" class="btn btn-light">اكتشف المزايا</a>
+        <a href="contact.html" class="btn btn-outline-light">اتصل بنا</a>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>window.QUIZ_CONFIG = { lang: 'ar', dataUrl: '/js/quiz-data-ar.json', quizLength: 10 };</script>
+  <script is:inline src="/js/quiz-engine.js" defer></script>
+</BaseLayout>

@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LegalNav from '../../components/LegalNav.astro';
+
+const lang = 'es' as const;
+---
+
+<BaseLayout
+  lang={lang}
+  title="Aviso Legal | Ezra Maroc"
+  description="Información legal sobre el sitio web www.ezra-maroc.com de Ezra Maroc Consulting Services LLC."
+  currentPage="legal-notice"
+  canonicalPath="/es/aviso-legal.html"
+  noindex={true}
+>
+  <style>
+    .legal-content-section { padding: 60px 0; }
+    .legal-content-section .container { max-width: 800px; }
+    .legal-content-section h2 { font-family: var(--font-heading); font-size: 1.7rem; color: var(--primary-color); margin-top: 2.5em; margin-bottom: 1.2em; padding-bottom: 0.6em; border-bottom: 2px solid var(--primary-50); font-weight: 600; }
+    .legal-content-section h2:first-of-type { margin-top: 0; }
+    .legal-content-section h3 { font-family: var(--font-heading); font-size: 1.3rem; color: var(--dark-color); margin-top: 1.8em; margin-bottom: 1em; font-weight: 600; }
+    .legal-content-section h4 { font-family: var(--font-heading); font-size: 1.1rem; color: var(--dark-color); margin-top: 1.5em; margin-bottom: 0.8em; font-weight: 600; }
+    .legal-content-section p, .legal-content-section li { font-family: var(--font-main); font-size: 0.95rem; line-height: 1.8; color: #333; margin-bottom: 1.1em; text-align: justify; }
+    .legal-content-section ul { list-style-type: disc; margin-left: 20px; margin-bottom: 1.2em; padding-left: 1.5em; }
+    .legal-content-section strong { color: #111; font-weight: 600; }
+    .legal-content-section a { color: var(--primary-color); text-decoration: underline; }
+    .legal-content-section a:hover { color: var(--primary-500); text-decoration: none; }
+    .legal-content-section .article-number { font-weight: bold; margin-right: 0.5em; }
+  </style>
+
+  <main id="main-content" class="page-banner">
+    <div class="container">
+      <h1>Aviso Legal</h1>
+      <p>Información legal aplicable al sitio web www.ezra-maroc.com</p>
+    </div>
+  </main>
+
+  <LegalNav lang={lang} pageTitle="Aviso Legal" />
+
+  <section class="section legal-content-section">
+    <div class="container">
+
+      <h2>Información General</h2>
+      <p>De conformidad con las disposiciones legales aplicables, se informa a los usuarios y visitantes del sitio web de Ezra Maroc (en adelante, el "Sitio") la siguiente información legal:</p>
+
+      <h2>Editor del Sitio</h2>
+      <p>
+        <strong>Nombre de la empresa:</strong> Ezra Maroc Consulting Services LLC<br>
+        <strong>Forma jurídica:</strong> Limited Liability Company (LLC)<br>
+        <strong>Dirección:</strong> 30 N Gould St Ste R, Sheridan, WY 82801, USA<br>
+        <strong>Correo electrónico:</strong> <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a><br>
+      </p>
+
+      <h2>Alojamiento Web (Hosting)</h2>
+      <p>
+        El Sitio está alojado por: <br>
+        <strong>Nombre del proveedor:</strong> Cloudflare, Inc.<br>
+        <strong>Dirección:</strong> 101 Townsend St, San Francisco, CA 94107, USA<br>
+        <strong>Sitio web:</strong> <a href="https://www.cloudflare.com" target="_blank" rel="noopener noreferrer">www.cloudflare.com</a>
+      </p>
+
+      <h2>Propiedad Intelectual</h2>
+      <p>
+        Todo el contenido presente en el Sitio, incluyendo, sin limitación, gráficos, imágenes, textos, vídeos, animaciones, sonidos, logos, gifs e iconos, así como su formato, son propiedad exclusiva de Ezra Maroc Consulting Services LLC, con excepción de las marcas, logos o contenidos pertenecientes a otras empresas asociadas o autores.
+      </p>
+      <p>
+        Cualquier reproducción, distribución, modificación, adaptación, retransmisión o publicación, incluso parcial, de estos diferentes elementos está estrictamente prohibida sin el consentimiento expreso por escrito de Ezra Maroc Consulting Services LLC. Esta representación o reproducción, por cualquier medio que sea, constituye una infracción sancionada por la legislación aplicable en materia de propiedad intelectual.
+      </p>
+
+      <h2>Limitación de Responsabilidad</h2>
+      <p>
+        La información contenida en este Sitio es lo más precisa posible y el Sitio se actualiza periódicamente, pero puede contener inexactitudes u omisiones. Si observa alguna laguna, error o lo que parece ser un mal funcionamiento, por favor, infórmenos por correo electrónico a <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a>, describiendo el problema de la manera más precisa posible (página problemática, tipo de ordenador y navegador utilizado, etc.).
+      </p>
+      <p>
+        La información proporcionada en este Sitio tiene únicamente fines informativos generales. No constituye asesoramiento legal, fiscal ni de ningún otro tipo profesional. Ezra Maroc Consulting Services LLC no garantiza la exhaustividad, precisión, actualidad o idoneidad de la información para un propósito particular.
+      </p>
+      <p>
+        Los servicios descritos relacionados con la obtención de la nacionalidad marroquí implican procedimientos administrativos complejos sujetos a la decisión soberana de las autoridades marroquíes. Ezra Maroc Consulting Services LLC se compromete a proporcionar el mejor apoyo posible basado en su experiencia, pero no puede garantizar el resultado final de ninguna solicitud de nacionalidad.
+      </p>
+      <p>
+        Ezra Maroc Consulting Services LLC no será responsable de ningún daño directo o indirecto resultante del uso de la información contenida en este Sitio o de las decisiones tomadas basándose en dicha información. Se recomienda encarecidamente a los usuarios consultar a profesionales cualificados (abogados, asesores fiscales, etc.) para obtener asesoramiento adaptado a su situación específica antes de tomar cualquier medida.
+      </p>
+      <p>
+        Los enlaces de hipertexto establecidos en el marco de este sitio web en dirección a otros recursos presentes en la red Internet no comprometen la responsabilidad de Ezra Maroc Consulting Services LLC.
+      </p>
+
+      <h2>Datos Personales</h2>
+      <p>
+        Para obtener información sobre cómo recopilamos, usamos y protegemos sus datos personales, consulte nuestra <a href="politica-privacidad.html">Política de Privacidad</a>.
+      </p>
+
+      <h2>Ley Aplicable y Jurisdicción</h2>
+      <p>
+        Las presentes condiciones del sitio se rigen por las leyes del Estado de Wyoming, USA, y cualquier disputa o litigio que pudiera derivarse de la interpretación o ejecución de las mismas será competencia exclusiva de los tribunales de dicha jurisdicción. El idioma de referencia para la resolución de posibles litigios es el inglés.
+      </p>
+
+      <h2>Contacto</h2>
+      <p>
+        Para cualquier pregunta sobre el aviso legal o el sitio en general, puede contactarnos en la dirección de correo electrónico mencionada en la sección sobre el Editor del Sitio.
+      </p>
+
+      <p style="text-align:center; margin-top:3em;"><a href="/es/inicio.html" class="legal-back-link">Volver al inicio</a></p>
+
+
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,188 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const lang = 'he' as const;
+
+const jsonLD = {
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Ezra Maroc Consulting Services LLC",
+  "url": "https://ezra-maroc.com",
+  "logo": "https://ezra-maroc.com/img/logo.png",
+  "image": "https://ezra-maroc.com/img/logo.png",
+  "description": "ליווי מומחה להשגת האזרחות המרוקאית דרך זיקה משפחתית.",
+  "email": "info@ezra-project.fr",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "30 N Gould St Ste R",
+    "addressLocality": "Sheridan",
+    "addressRegion": "WY",
+    "postalCode": "82801",
+    "addressCountry": "US"
+  },
+  "areaServed": ["FR", "MA", "US", "CA", "IL"],
+  "availableLanguage": ["French", "English", "Spanish", "Hebrew", "Arabic"],
+  "sameAs": ["https://www.instagram.com/ezramaroc/"]
+};
+---
+
+<BaseLayout
+  lang={lang}
+  title="יצירת קשר עזרא מרוק | קבלו את אזרחותכם המרוקאית"
+  description="צרו קשר עם עזרא מרוק להערכה חינמית של זכאותכם לאזרחות מרוקאית או לכל שאלה בנוגע לשירותי התמיכה שלנו."
+  currentPage="contact"
+  canonicalPath="/he/contact.html"
+  pageCSS={['contact']}
+  jsonLD={jsonLD}
+>
+  <main id="main-content" class="page-banner">
+    <div class="container">
+      <h1>צרו קשר</h1>
+      <p>שאלו שאלות או בקשו הערכה אישית. הצוות שלנו כאן כדי לעזור לכם.</p>
+    </div>
+  </main>
+
+  <section class="section contact-section">
+    <div class="container">
+      <h2 class="section-title internal-title">בואו נתחיל את ה<span>שיחה</span></h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3 class="info-title">פרטי ההתקשרות שלנו</h3>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+            <div class="info-content">
+              <h4>משרד אדמיניסטרטיבי</h4>
+              <p>30 N Gould St Ste R,<br>שרידן, ויומינג 82801, ארה"ב</p>
+              <span class="timezone">(הערה: נוכחות אדמיניסטרטיבית בלבד)</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
+            <div class="info-content">
+              <h4>איש קשר ראשי</h4>
+              <p><a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-regular fa-clock" aria-hidden="true"></i></div>
+            <div class="info-content">
+              <h4>זמן תגובה</h4>
+              <p>אנו משתדלים להשיב תוך 24-48 שעות עסקים.</p>
+              <span class="timezone">(אזור זמן ייחוס: CET/פריז)</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-solid fa-circle-info" aria-hidden="true"></i></div>
+            <div class="info-content">
+              <h4>דיוק</h4>
+              <p>לניתוח מהיר ורלוונטי, אנא פרטו ככל האפשר בטופס את מצבכם המשפחתי ובקשתכם.</p>
+            </div>
+          </div>
+
+          <div class="social-media">
+            <h4>הישארו מחוברים</h4>
+            <div class="social-icons">
+              <a href="https://www.instagram.com/ezramaroc/" class="social-icon" aria-label="אינסטגרם עזרא מרוק" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-container" id="contact-form-container">
+          <h3 class="form-title">ההודעה שלכם</h3>
+
+          <form id="contact-form" action="https://formspree.io/f/mjkwzpdr" method="POST" novalidate>
+
+            <div class="form-group">
+              <label for="name">שם מלא <span class="required">*</span></label>
+              <input type="text" id="name" name="name" required aria-required="true" placeholder="לדוגמה: משה כהן" aria-invalid="false" aria-describedby="name-error">
+              <span class="error-message" id="name-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email">כתובת דוא"ל <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required aria-required="true" placeholder="לדוגמה: moshe.cohen@email.com" aria-invalid="false" aria-describedby="email-error">
+              <span class="error-message" id="email-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">טלפון <span class="required required-indicator" style="display: none;">*</span><span class="optional-text">(מומלץ למעקב מהיר)</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="לדוגמה: +972 50 123 4567 (עם קידומת מדינה)" aria-invalid="false" aria-describedby="phone-error">
+              <span class="error-message" id="phone-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">נושא הפנייה <span class="required">*</span></label>
+              <select id="subject" name="subject" required aria-required="true" aria-invalid="false" aria-describedby="subject-error">
+                <option value="" disabled selected>-- נא לבחור נושא --</option>
+                <option value="Évaluation préliminaire de mon éligibilité">הערכת זכאות ראשונית</option>
+                <option value="Question générale sur vos services">שאלה כללית על שירותיכם</option>
+                <option value="Précisions sur le processus d'obtention">פרטים על תהליך הבקשה</option>
+                <option value="Demande d'informations sur les tarifs">בקשה למידע על תמחור</option>
+                <option value="Demande de rappel téléphonique">בקשה לחזרה טלפונית</option>
+                <option value="Autre sujet">נושא אחר</option>
+              </select>
+              <span class="error-message" id="subject-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group full-width" id="other-subject-group" style="display: none;">
+              <label for="other_subject_details">ציין את נושא פנייתך <span class="required">*</span></label>
+              <input type="text" id="other_subject_details" name="other_subject_details" placeholder="לדוגמה: שותפות, בעיה טכנית..." aria-invalid="false" aria-describedby="other-subject-details-error">
+              <span class="error-message" id="other-subject-details-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="message">פרטי הפנייה <span class="required">*</span></label>
+              <textarea id="message" name="message" rows="6" required aria-required="true" placeholder="נא לתאר את מצבכם: מי במשפחתכם הוא/היה מרוקאי (אב, אם, סב...)? מתי נולדו/עזבו את מרוקו? האם יש לכם מסמכים מרוקאיים (תעודות לידה, תעודת זהות, דרכון...)? מהי שאלתכם הספציפית?" aria-invalid="false" aria-describedby="message-error" maxlength="1000"></textarea>
+              <div id="char-counter" class="char-counter-display">תווים שנותרו: 1000</div>
+              <span class="error-message" id="message-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group full-width">
+              <div class="checkbox-group" role="group" aria-labelledby="consent-label">
+                <input type="checkbox" id="consent" name="consent" value="accepted" required aria-required="true" aria-invalid="false" aria-describedby="consent-error">
+                <label for="consent" id="consent-label">אני מאשר/ת שקראתי ומסכים/ה ל<a href="privacy-policy.html" target="_blank" rel="noopener noreferrer">מדיניות הפרטיות</a> ול<a href="terms-of-service.html" target="_blank" rel="noopener noreferrer">תנאי השימוש</a>, ומסכים/ה לעיבוד הנתונים האישיים שלי כדי לאפשר לעזרא מרוק להשיב לבקשתי.<span class="required">*</span></label>
+              </div>
+              <span class="error-message" id="consent-error" aria-live="polite"></span>
+            </div>
+
+            <!-- Turnstile Anti-Spam -->
+            <div class="form-group full-width">
+              <div class="cf-turnstile" data-sitekey="VOTRE_SITE_KEY" data-theme="light"></div>
+            </div>
+
+            <div class="form-submit full-width">
+              <button type="submit" class="btn btn-primary">
+                <span class="btn-loader" aria-hidden="true"><i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> שולח...</span>
+                <span class="btn-text">שלח את בקשתי</span>
+              </button>
+            </div>
+
+            <div id="form-message" class="form-message" role="alert" aria-live="assertive"></div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="map-section" aria-label="מפה המציגה את המשרד האדמיניסטרטיבי שלנו">
+    <h2 class="visually-hidden">המשרד האדמיניסטרטיבי שלנו (ארה"ב)</h2>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3050.058614989749!2d-106.958361684615!3d44.79916297909831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5335f0e2f67f0a4f%3A0x579ff4e8b9e4b005!2s30%20N%20Gould%20St%20Ste%20R%2C%20Sheridan%2C%20WY%2082801%2C%20USA!5e0!3m2!1sen!2sfr!4v1678886541234!5m2!1sen!2sfr"
+        width="100%"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        sandbox="allow-scripts allow-same-origin"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="מפות גוגל המציגות את הכתובת 30 N Gould St Ste R, שרידן, ויומינג">
+      </iframe>
+    </div>
+  </section>
+</BaseLayout>

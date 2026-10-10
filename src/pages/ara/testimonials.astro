@@ -1,0 +1,205 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+
+const lang = 'ar' as const;
+---
+
+<BaseLayout
+  lang={lang}
+  title="شهادات العملاء | عزرا ماروك"
+  description="قراو قصص نجاح عملائنا. اكتشفو تجاربهم فالحصول على الجنسية المغربية بتوجيه خبير من عزرا ماروك."
+  currentPage="testimonials"
+  canonicalPath="/ara/testimonials.html"
+  pageCSS={['temoignages']}
+>
+  <main id="main-content" class="page-banner">
+    <div class="container">
+      <h1>شهادات عملائنا</h1>
+      <p>رحلات عملائنا هي أعظم فخر لينا. اكتشفو تجاربهم وكيفاش عزرا ماروك عاوناتهم يحققو مشاريع جنسيتهم المغربية.</p>
+    </div>
+  </main>
+
+  <section class="section guestbook-section">
+    <div class="container">
+      <p class="guestbook-intro">هاد الشهادات الحقيقية كتبين تنوع الحالات وفعالية دعمنا الشخصي.</p>
+
+      <div class="testimonial-cards">
+
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-profile">
+              <div class="testimonial-avatar">DC</div>
+              <div class="testimonial-identity">
+                <h3>د. س.</h3>
+                <p>باريس، فرنسا</p>
+              </div>
+            </div>
+            <div class="testimonial-success">
+              <span class="success-badge"><i class="fa-solid fa-certificate" aria-hidden="true"></i> الشهادة تحصل عليها فـ 11 شهر</span>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-quote"><i class="fa-solid fa-quote-left" aria-hidden="true"></i></div>
+            <p>بعد سنين من المحاولات لي ما نجحاتش، عزرا ماروك قدرو يجيبو ليا الجنسية المغربية فأقل من عام. الخبرة والاحترافية ديالهم دارو الفرق كامل.</p>
+            <p>كنت حاولت جوج مرات نجمع الملف ديالي بوحدي، ولكن كنت ديما كنلقى عراقل إدارية. فريق عزرا ماروك فالبلاصة حددو نقاط الضعف فملفي القديم وقترحو عليا استراتيجية فعالة.</p>
+            <p>لي عجبني بزاف هو معرفتهم العميقة بالإجراءات المغربية وقدرتهم يتوقعو طلبات الإدارة. المتابعة المنتظمة ديالهم خلاتني نبقى هاني طول المسار.</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-profile">
+              <div class="testimonial-avatar">SB</div>
+              <div class="testimonial-identity">
+                <h3>س. ب.</h3>
+                <p>مونتريال، كندا</p>
+              </div>
+            </div>
+            <div class="testimonial-success">
+              <span class="success-badge"><i class="fa-solid fa-certificate" aria-hidden="true"></i> الشهادة تحصل عليها فـ 14 شهر</span>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-quote"><i class="fa-solid fa-quote-left" aria-hidden="true"></i></div>
+            <p>كنت خايف أن البعد والتعقيد الإداري يكونو عراقل ما نقدش نتجاوزهم، ولكن فريق عزرا ماروك تكلف بكلشي بكفاءة ملحوظة. اليوم، أنا رسميًا مغربي!</p>
+            <p>بما أني مقيم فكندا، كنت كنظن أن الإجراءات غاتكون معقدة بزاف ليا. عزرا ماروك دبرو المسار كامل واخدا بعين الاعتبار هاد القيد، وقللو التنقلات ديالي للضروري فقط. منصتهم للتتبع عبر الإنترنت خلاتني مطلع لحظة بلحظة على تقدم ملفي.</p>
+            <p>نهار موعدي فالمحكمة فالرباط، كان معايا المحامي ديالهم لي تأكد أن كلشي داز على ما يرام. لحظة مؤثرة ما عمرني ننساها.</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-profile">
+              <div class="testimonial-avatar">ML</div>
+              <div class="testimonial-identity">
+                <h3>م. ل.</h3>
+                <p>نيويورك، الولايات المتحدة</p>
+              </div>
+            </div>
+            <div class="testimonial-success">
+              <span class="success-badge"><i class="fa-solid fa-certificate" aria-hidden="true"></i> الشهادة تحصل عليها فـ 16 شهر</span>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-quote"><i class="fa-solid fa-quote-left" aria-hidden="true"></i></div>
+            <p>الشفافية والاحترافية ديال عزرا ماروك عجبوني بزاف. كنت ديما على علم بتقدم ملفي، وخبرتهم القانونية عاوناتني نتغلب على عراقل كنت كنظن مستحيل نتجاوزهم.</p>
+            <p>قضيتي كانت معقدة خصوصا لأن وثائق جدي تودرات فالحرب. فريق عزرا ماروك دارو خدمة ديال المحققين، لقاو أرشيفات ما كنتش كنظن ممكن نلقاهم.</p>
+            <p>مقاربتهم المنهجية والمثابرة ديالهم فالتالي خلات يتكون ملف متين قنع السلطات المغربية. كنشكرهم بزاااف على خدمتهم الاستثنائية.</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-profile">
+              <div class="testimonial-avatar">RH</div>
+              <div class="testimonial-identity">
+                <h3>ر. هـ.</h3>
+                <p>تل أبيب، إسرائيل</p>
+              </div>
+            </div>
+            <div class="testimonial-success">
+              <span class="success-badge"><i class="fa-solid fa-certificate" aria-hidden="true"></i> الشهادة تحصل عليها فـ 19 شهر</span>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-quote"><i class="fa-solid fa-quote-left" aria-hidden="true"></i></div>
+            <p>الحصول على الجنسية المغربية كان حلم كنت كنظنو صعيب يتحقق، خصوصا مع تعقيد العلاقات الدبلوماسية. عزرا ماروك حولو هاد الحلم لحقيقة باحترافية ملحوظة.</p>
+            <p>من أول مكالمة، تطمنت بمعرفتهم العميقة للوضعية الخاصة باليهود المغاربة لي هاجرو لإسرائيل. عرفو كيفاش يلقاو حلول لكل عقبة بانت.</p>
+            <p>لي أثر فيا بزاف هو قدرتهم يتعاملو مع الجوانب العاطفية والهوياتية لرحلتي، من غير الاعتبارات الإدارية البحتة. اليوم، نقدر نرجع للمغرب بجوازي المغربي ونتواصل بشكل كامل مع جذوري.</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-profile">
+              <div class="testimonial-avatar">AB</div>
+              <div class="testimonial-identity">
+                <h3>أ. ب.</h3>
+                <p>ليون، فرنسا</p>
+              </div>
+            </div>
+            <div class="testimonial-success">
+              <span class="success-badge"><i class="fa-solid fa-certificate" aria-hidden="true"></i> الشهادة تحصل عليها فـ 13 شهر</span>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-quote"><i class="fa-solid fa-quote-left" aria-hidden="true"></i></div>
+            <p>كنبغي نعبر عن شكري العميق لفريق عزرا ماروك كامل. خبرتهم وتفانيهم كانو حاسمين فالنجاح ديال طلب الجنسية المغربية ديالي.</p>
+            <p>وخا كانت وضعية عائلية معقدة ووثائق ناقصة، قدرو يلقاو حلول مبتكرة وقانونية. معرفتهم بالإجراءات الإدارية المغربية جنباتني بزاف ديال العراقيل والأخطاء لي كانت تقدر تأخر ملفي بزاف.</p>
+            <p>كنصح بشدة بخدماتهم لأي واحد باغي يبدا هاد المسار المهم والرمزي.</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-profile">
+              <div class="testimonial-avatar"><i class="fa-solid fa-users" aria-hidden="true"></i></div>
+              <div class="testimonial-identity">
+                <h3>إ. & ن. م.</h3>
+                <p>مارسيليا، فرنسا</p>
+              </div>
+            </div>
+            <div class="testimonial-success">
+              <span class="success-badge"><i class="fa-solid fa-certificate" aria-hidden="true"></i> الشهادات تحصل عليها فـ 15 شهر</span>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-quote"><i class="fa-solid fa-quote-left" aria-hidden="true"></i></div>
+            <p>كزوجين، كنا بجوج باغين نحصلو على الجنسية المغربية، بوضعيات عائلية مختلفة. عزرا ماروك دبرو الملفات ديالنا بجوج ف نفس الوقت بتنسيق مثالي.</p>
+            <p>مقاربتهم الشخصية أثرات فينا خصوصا - خداو الوقت يفهمو تاريخنا العائلي ودوافعنا العميقة. الفريق ديالهم بين صبر وبيداغوجية ملحوظة فشرح كل خطوة من المسار لينا.</p>
+            <p>كنشكروهم بلا حدود على دعمهم، لي خلانا نحققو هاد المشروع المهم لعائلتنا وولادنا.</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-profile">
+              <div class="testimonial-avatar">RA</div>
+              <div class="testimonial-identity">
+                <h3>ر. أ.</h3>
+                <p>ميامي، الولايات المتحدة</p>
+              </div>
+            </div>
+            <div class="testimonial-success">
+              <span class="success-badge"><i class="fa-solid fa-certificate" aria-hidden="true"></i> الشهادة تحصل عليها فـ 12 شهر</span>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-quote"><i class="fa-solid fa-quote-left" aria-hidden="true"></i></div>
+            <p>التعامل مع عزرا ماروك كان أحسن قرار خديتو فمساري للحصول على الجنسية المغربية. واخا البعد وفرق التوقيت، الفريق ديالهم كان ديما موجود وكيجاوب بسرعة.</p>
+            <p>تكوين الملف تدار بصرامة نموذجية، وهادشي أكيد ساهم فالسرعة النسبية للمسار. كل وثيقة كانت محضرة بشكل مثالي، مترجمة، ومصادق عليها حسب المتطلبات الخاصة للسلطات المغربية.</p>
+            <p>كنشكرهم بشكل خاص على دعمهم خلال سفري للمغرب للموعد النهائي. المحامي ديالهم فالمغرب ضمن انتقال مثالي وحطني فأحسن الظروف لهاد الخطوة الحاسمة.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="guestbook-cta">
+        <p>حتى نتا بغيتي تشارك نجاحك أو تبدا مشروعك؟</p>
+        <a href="contact.html" class="btn btn-primary">اتصل بنا اليوم</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section engagement-section alt-bg">
+    <div class="container">
+      <h2 class="section-title">التزامنا: <span>قصتكم</span></h2>
+      <div class="engagement-content">
+        <p>كل شهادة دليل على التزامنا بالتميز ونجاح عملائنا. رحلتكم الفريدة كتستحق اهتمامنا الكامل وخبرتنا المخصصة.</p>
+        <p>غايشرفنا نساعدوكم تكتبو الفصل ديالكم فهاد سجل الزوار ونرافقوكم نحو الاعتراف بجنسيتكم المغربية.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">مستعد تضيف اسمك لسجل الزوار ديالنا؟</h2>
+      <div class="cta-buttons">
+        <a href="contact.html#contact-form-container" class="btn btn-light">طلب تقييم</a>
+        <a href="process.html" class="btn btn-outline-light">شوف المسار ديالنا</a>
+      </div>
+    </div>
+  </section>
+  <CtaBanner lang={lang} />
+</BaseLayout>

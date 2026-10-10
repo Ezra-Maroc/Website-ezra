@@ -1,0 +1,240 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+
+const lang = 'es' as const;
+
+const jsonLD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "\u00bfQui\u00e9n puede obtener la nacionalidad marroqu\u00ed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cualquier persona que pueda demostrar un v\u00ednculo de filiaci\u00f3n con un ciudadano marroqu\u00ed puede ser elegible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "\u00bfQu\u00e9 documentos se necesitan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los documentos principales incluyen: acta de nacimiento, identificaci\u00f3n, acta de nacimiento del padre marroqu\u00ed y documentos que prueben la filiaci\u00f3n."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "\u00bfCu\u00e1nto tiempo dura el proceso?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El plazo var\u00eda seg\u00fan la complejidad del caso, generalmente entre 6 meses y 2 a\u00f1os."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "\u00bfPuede Ezra Maroc ayudarme si vivo en el extranjero?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "S\u00ed, acompa\u00f1amos a clientes de todo el mundo en sus tr\u00e1mites de nacionalidad marroqu\u00ed."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  lang={lang}
+  title="FAQ - Nacionalidad Marroqu&iacute; | Ezra Maroc"
+  description="Encuentra respuestas a preguntas comunes sobre la obtenci&oacute;n de la nacionalidad marroqu&iacute; a trav&eacute;s de Ezra Maroc. Elegibilidad, proceso, documentos, doble nacionalidad y m&aacute;s."
+  currentPage="faq"
+  canonicalPath="/es/faq.html"
+  pageCSS={['faq']}
+  jsonLD={jsonLD}
+>
+  <!-- CONTENIDO PAGINA FAQ -->
+  <main id="main-content" class="page-banner">
+    <div class="container">
+      <h1>Preguntas Frecuentes (FAQ)</h1>
+      <p>Encuentra aqu&iacute; respuestas a preguntas comunes sobre la obtenci&oacute;n de la nacionalidad marroqu&iacute;.</p>
+    </div>
+  </main>
+
+  <section class="section advantages-section-servicelike">
+    <div class="container">
+      <h2 class="section-title">&iquest;Por Qu&eacute; Obtener la Nacionalidad Marroqu&iacute;? <span>Principales Ventajas</span></h2>
+      <div class="advantages-grid-sl">
+        <div class="advantage-card-sl"> <div class="advantage-icon-sl"><i class="fa-solid fa-house-user" aria-hidden="true"></i></div> <h3 class="advantage-title-sl">Derecho de Estancia Ilimitado</h3> <p>Residir, trabajar y moverse libremente en Marruecos sin permiso de residencia.</p> </div>
+        <div class="advantage-card-sl"> <div class="advantage-icon-sl"><i class="fa-solid fa-vote-yea" aria-hidden="true"></i></div> <h3 class="advantage-title-sl">Derechos C&iacute;vicos y Pol&iacute;ticos</h3> <p>Participar plenamente en la vida p&uacute;blica (voto, elegibilidad).</p> </div>
+        <div class="advantage-card-sl"> <div class="advantage-icon-sl"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></div> <h3 class="advantage-title-sl">Acceso al Empleo</h3> <p>Acceso abierto a la mayor&iacute;a de los empleos (restricciones para puestos sensibles).</p> </div>
+        <div class="advantage-card-sl"> <div class="advantage-icon-sl"><i class="fa-solid fa-leaf" aria-hidden="true"></i></div> <h3 class="advantage-title-sl">Derechos de Propiedad Ampliados</h3> <p>Posibilidad de adquirir todo tipo de propiedades, incluidas tierras agr&iacute;colas.</p> </div>
+        <div class="advantage-card-sl"> <div class="advantage-icon-sl"><i class="fa-solid fa-children" aria-hidden="true"></i></div> <h3 class="advantage-title-sl">Transmisi&oacute;n Facilitada</h3> <p>La nacionalidad generalmente se transmite a tus hijos.</p> </div>
+        <div class="advantage-card-sl"> <div class="advantage-icon-sl"><i class="fa-solid fa-passport" aria-hidden="true"></i></div> <h3 class="advantage-title-sl">Viajes Facilitados</h3> <p>Pasaporte ofrece acceso m&aacute;s f&aacute;cil (~85 pa&iacute;ses, ~60&ordm; mundial).</p> </div>
+        <div class="advantage-card-sl"> <div class="advantage-icon-sl"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div> <h3 class="advantage-title-sl">Protecci&oacute;n Consular</h3> <p>Asistencia de embajadas/consulados en el extranjero.</p> </div>
+        <div class="advantage-card-sl"> <div class="advantage-icon-sl"><i class="fa-solid fa-landmark-flag" aria-hidden="true"></i></div> <h3 class="advantage-title-sl">Reconexi&oacute;n Cultural</h3> <p>Formalizar y fortalecer tus lazos con la herencia marroqu&iacute;.</p> </div>
+        <div class="advantage-card-sl"> <div class="advantage-icon-sl"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i></div> <h3 class="advantage-title-sl">Acceso a Servicios Sociales</h3> <p>Acceso potencial a sistemas de educaci&oacute;n, salud, etc.</p> </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="faq-container">
+    <section class="faq-section">
+      <h2>Nacionalidad marroqu&iacute;: mucho m&aacute;s que un estatus legal</h2>
+      <p> La nacionalidad marroqu&iacute; no es solo una simple formalidad legal. Representa una conexi&oacute;n profunda entre una persona y Marruecos, arraigada en la historia, la cultura y la memoria familiar. Es una forma de reconocer oficialmente una pertenencia que atraviesa generaciones, incluso m&aacute;s all&aacute; de fronteras o migraciones. </p>
+      <p> Solicitar o recuperar la nacionalidad marroqu&iacute;, especialmente por descendencia, suele ser un fuerte acto de identidad. Permite a las personas reconectar con sus or&iacute;genes, ver reconocidos sus lazos personales y familiares con el Reino, y participar plenamente en la comunidad nacional. </p>
+      <p> Sin embargo, los procedimientos administrativos pueden ser complejos, especialmente cuando se trata de probar el linaje con un ancestro marroqu&iacute;. Por eso creamos esta FAQ: para guiarte de forma clara y estructurada a trav&eacute;s de este proceso. Est&aacute; dirigida principalmente a aquellos cuyos padres o abuelos son de origen marroqu&iacute; y desean obtener la nacionalidad por esta v&iacute;a. </p>
+      <p> Nuestro equipo combina experiencia legal precisa con una comprensi&oacute;n humana de las trayectorias individuales. No solo procesamos expedientes: acompa&ntilde;amos historias, restablecemos conexiones y ayudamos a cada persona a plasmar su herencia en un reconocimiento legal. </p>
+      <p> Te animamos a emprender este viaje de reconexi&oacute;n identitaria, apoy&aacute;ndote en nuestro soporte riguroso, respetuoso y profundamente atento a la riqueza de los caminos personales. </p>
+    </section>
+
+    <section class="faq-section">
+      <h2>Preguntas generales sobre la nacionalidad marroqu&iacute;</h2>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-qg1">
+          <span>&iquest;Qui&eacute;n puede solicitar la nacionalidad marroqu&iacute;?</span>
+          <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-answer" id="faq-qg1" aria-hidden="true">
+          <p>La nacionalidad marroqu&iacute; se rige principalmente por el C&oacute;digo de la Nacionalidad Marroqu&iacute;. Las principales formas de adquirirla son:</p>
+          <ul> <li><strong>Por Descendencia (Filiaci&oacute;n):</strong> Haber nacido de padre marroqu&iacute; o madre marroqu&iacute;. Esta es la v&iacute;a m&aacute;s com&uacute;n para la di&aacute;spora y nuestra principal &aacute;rea de especializaci&oacute;n. <em>(Nota: Para personas nacidas de madre marroqu&iacute; antes de 2007, a menudo es necesaria una declaraci&oacute;n espec&iacute;fica.)</em></li> <li><strong>Por Nacimiento en Marruecos (Jus Soli):</strong> En casos muy espec&iacute;ficos (ej., padres desconocidos, padres extranjeros nacidos ellos mismos en Marruecos bajo ciertas condiciones, j&oacute;venes residentes regulares...).</li> <li><strong>Por Matrimonio:</strong> Para un extranjero casado con un nacional marroqu&iacute; despu&eacute;s de 5 a&ntilde;os de matrimonio y convivencia estable y continua en Marruecos.</li> <li><strong>Por Naturalizaci&oacute;n:</strong> Una decisi&oacute;n del Estado concedida a un extranjero que cumple ciertas condiciones (residencia a largo plazo, integraci&oacute;n, etc.).</li> </ul>
+          <p>Cada caso es &uacute;nico y requiere un an&aacute;lisis individual.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-qg2">
+          <span>&iquest;Puedo conservar mi nacionalidad actual (Doble Nacionalidad)?</span>
+          <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-answer" id="faq-qg2" aria-hidden="true">
+          <p>S&iacute;, Marruecos permite la doble nacionalidad. Generalmente no tienes que renunciar a tu otra nacionalidad para adquirir la nacionalidad marroqu&iacute;.</p>
+          <p>Es importante saber que cuando te encuentras en territorio marroqu&iacute;, las autoridades marroqu&iacute;es te consideran principalmente como marroqu&iacute;. Esto significa que las leyes marroqu&iacute;es se aplican primero, y la asistencia consular de tu otro pa&iacute;s podr&iacute;a verse limitada en ciertas situaciones.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-qg3">
+          <span>&iquest;Qu&eacute; documentos se requieren generalmente?</span>
+          <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-answer" id="faq-qg3" aria-hidden="true">
+          <p> Los documentos espec&iacute;ficos siempre dependen de tu situaci&oacute;n personal y de la base sobre la cual solicitas la nacionalidad (linaje paterno, linaje materno, fecha de nacimiento, etc.). </p> <p> T&iacute;picamente, necesitar&aacute;s proporcionar actas de estado civil recientes y completas (las tuyas, las de tus padres/abuelos marroqu&iacute;es) para establecer los lazos familiares de manera irrefutable. </p> <p> La prueba crucial concierne a la nacionalidad marroqu&iacute; de tus ascendientes en el momento de la transmisi&oacute;n relevante (tu nacimiento, el nacimiento de tu padre/madre...). Esto puede incluir una copia de su Tarjeta Nacional de Identidad Electr&oacute;nica (CNIE), un antiguo certificado de nacionalidad u otros documentos marroqu&iacute;es oficiales y concluyentes. </p> <p> Probar la l&iacute;nea directa de descendencia puede ser complejo, especialmente a lo largo de varias generaciones, y a menudo implica una investigaci&oacute;n profunda en registros civiles (Adouls, registradores civiles) o archivos consulares marroqu&iacute;es. </p> <p> Recuerda que los documentos emitidos por autoridades extranjeras generalmente necesitan ser traducidos al &aacute;rabe por un traductor jurado ante los tribunales marroqu&iacute;es. A menudo tambi&eacute;n requieren legalizaci&oacute;n o apostilla (dependiendo de los convenios internacionales) para ser reconocidos en Marruecos. </p> <p> Ezra Maroc te ayuda a identificar la lista exacta de documentos necesarios para <em>tu</em> caso espec&iacute;fico y te asiste en los procesos de recolecci&oacute;n, traducci&oacute;n y legalizaci&oacute;n/apostilla. </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-qg4">
+          <span>&iquest;Necesito hablar &aacute;rabe o amazigh para obtener la nacionalidad por descendencia?</span>
+          <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-answer" id="faq-qg4" aria-hidden="true">
+          <p>No, el conocimiento del idioma (&aacute;rabe dialectal, &aacute;rabe cl&aacute;sico o amazigh) no es un requisito legal para obtener la nacionalidad marroqu&iacute; por descendencia (jus sanguinis).</p>
+          <p>Este requisito ling&uuml;&iacute;stico concierne principalmente al proceso de naturalizaci&oacute;n, donde se eval&uacute;a la integraci&oacute;n en la sociedad marroqu&iacute;.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <h2>Tr&aacute;mites y Plazos</h2>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-proc1">
+          <span>&iquest;Cu&aacute;l es el procedimiento t&iacute;pico?</span>
+          <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-answer" id="faq-proc1" aria-hidden="true">
+          <p>El procedimiento general implica compilar meticulosamente un expediente que contenga todas las pruebas requeridas (estado civil, prueba de la nacionalidad del antepasado, prueba de linaje).</p> <p>Este expediente se presenta luego a la autoridad competente: m&aacute;s a menudo el Tribunal de Primera Instancia (departamento de nacionalidad) en Marruecos, o a veces a trav&eacute;s del Consulado marroqu&iacute; en tu lugar de residencia.</p> <p>Sigue una fase de investigaci&oacute;n, durante la cual los documentos son verificados por el Fiscal del Rey y el juez encargado de la nacionalidad. Se pueden solicitar investigaciones adicionales.</p> <p>El procedimiento concluye con una decisi&oacute;n oficial: ya sea la emisi&oacute;n directa de un Certificado de Nacionalidad Marroqu&iacute; (CNM) o una sentencia declarativa de nacionalidad dictada por el tribunal.</p> <p>Te guiamos en cada paso, desde la recopilaci&oacute;n de pruebas hasta la presentaci&oacute;n y el seguimiento, para garantizar la conformidad y maximizar las posibilidades de &eacute;xito de tu solicitud.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-proc2">
+          <span>&iquest;Cu&aacute;nto tiempo dura el proceso?</span>
+          <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-answer" id="faq-proc2" aria-hidden="true">
+          <p>Los plazos var&iacute;an <strong>considerablemente</strong> seg&uacute;n la complejidad del expediente, la carga de trabajo de las administraciones pertinentes (tribunales, consulados) y la necesidad de posibles investigaciones o verificaciones. <strong>No existe un plazo legal o reglamentario garantizado</strong> por la ley marroqu&iacute; para decidir sobre una solicitud de nacionalidad.</p> <p>Bas&aacute;ndonos puramente en nuestra experiencia y solo a t&iacute;tulo indicativo:</p> <ul> <li><strong>Descendencia (casos simples, bien documentados):</strong> A veces se observa un plazo de 6 meses a 2 a&ntilde;os, pero este rango sigue siendo optimista y no garantizado.</li> <li><strong>Descendencia (casos complejos):</strong> Los expedientes que requieren investigaci&oacute;n exhaustiva (archivos antiguos, pruebas indirectas), involucran m&uacute;ltiples generaciones o presentan complicaciones administrativas (documentos faltantes, transcripciones) <strong>pueden superar f&aacute;cilmente los 3 a&ntilde;os, o incluso m&aacute;s</strong>.</li> <li><strong>Matrimonio / Naturalizaci&oacute;n:</strong> Estos procesos son generalmente m&aacute;s largos y dependen estrictamente del cumplimiento de los requisitos legales (duraci&oacute;n de la residencia efectiva, etc.).</li> </ul> <p>Nuestro rol es preparar el expediente m&aacute;s completo y mejor argumentado posible para intentar optimizar estos plazos, y asegurar un seguimiento regular con las autoridades, pero la administraci&oacute;n sigue siendo soberana respecto a su velocidad de procesamiento.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-proc3">
+          <span>&iquest;Se puede rastrear la solicitud? &iquest;Existen recursos?</span>
+          <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-answer" id="faq-proc3" aria-hidden="true">
+          <p> S&iacute;, el seguimiento es posible, aunque requiere m&eacute;todo y perseverancia. Es esencial conservar cuidadosamente una copia completa de tu expediente presentado, as&iacute; como el recibo oficial de dep&oacute;sito, que generalmente contiene un n&uacute;mero de referencia. </p> <p> Se recomienda un seguimiento regular con la administraci&oacute;n competente (secretar&iacute;a del tribunal, servicio consular) para informarse sobre el progreso. Sin embargo, ten en cuenta que las respuestas pueden ser breves y los tiempos de procesamiento a veces largos. </p> <p> En caso de una decisi&oacute;n de rechazo expl&iacute;cita (o a veces impl&iacute;cita despu&eacute;s de un largo silencio), no te desanimes. Existen v&iacute;as de recurso (apelaci&oacute;n, recurso de casaci&oacute;n seg&uacute;n el caso) para impugnar la decisi&oacute;n ante tribunales superiores. </p> <p> Nuestro equipo legal tiene experiencia en estos procedimientos contenciosos y puede asesorarte sobre la conveniencia de un recurso, y asistirte en su preparaci&oacute;n y presentaci&oacute;n si es necesario. </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-proc4">
+          <span>&iquest;Siempre es necesario un viaje a Marruecos?</span>
+          <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-answer" id="faq-proc4" aria-hidden="true">
+          <p> La necesidad de viajar f&iacute;sicamente a Marruecos depende de tu ubicaci&oacute;n geogr&aacute;fica, del consulado al que perteneces y de la naturaleza exacta de tu procedimiento. No siempre es sistem&aacute;tico, pero sigue siendo com&uacute;n. </p> <p> <strong>Para documentos de identidad (CNIE, pasaporte):</strong> Una vez obtenida y probada la nacionalidad (por CNM o sentencia transcrita), a menudo se requiere un viaje para la solicitud y recogida de estos documentos. Sin embargo, algunos grandes consulados (ej., Par&iacute;s, Madrid, Montreal, Nueva York, etc.) ahora est&aacute;n equipados para capturar datos biom&eacute;tricos. Consulta con tu consulado para ver si ofrecen este servicio. </p> <p> <strong>Para el procedimiento judicial (si aplica):</strong> Si tu caso requiere una comparecencia ante un juez (ej., para una sentencia declarativa de nacionalidad), ciertos pasos o audiencias <em>a veces pueden</em> ser delegados por el juez marroqu&iacute; al consulado a trav&eacute;s de una "comisi&oacute;n rogatoria". Sin embargo, esto depende de la decisi&oacute;n del juez y de la naturaleza del acto a realizar. Por lo tanto, una comparecencia personal en Marruecos puede seguir siendo necesaria en algunos casos judiciales. </p> <p> <strong>Conclusi&oacute;n:</strong> La presencia f&iacute;sica puede ser requerida en diferentes etapas. Una evaluaci&oacute;n personalizada de tu expediente por nuestra parte ayudar&aacute; a anticipar mejor los viajes necesarios en tu caso espec&iacute;fico. </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <h2>Casos Especiales</h2>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-cas1">
+          <span>&iquest;Qu&eacute; pasa con los descendientes de jud&iacute;os marroqu&iacute;es?</span>
+          <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-answer" id="faq-cas1" aria-hidden="true">
+          <p> Absolutamente. Los ciudadanos marroqu&iacute;es de fe jud&iacute;a y sus descendientes pueden reclamar la nacionalidad marroqu&iacute; por descendencia, en las mismas condiciones que cualquier otro marroqu&iacute;, de acuerdo con el C&oacute;digo de la Nacionalidad. La Constituci&oacute;n marroqu&iacute; de 2011 reconoce expl&iacute;citamente el afluente hebraico como uno de los componentes de la identidad nacional unida. </p> <p> El principal desaf&iacute;o, como en muchas solicitudes por descendencia relativas a familias que emigraron hace mucho tiempo, a menudo reside en reunir pruebas documentales. Debe ser posible atestiguar irrefutablemente la l&iacute;nea directa de descendencia del antepasado marroqu&iacute; (padre o madre seg&uacute;n el caso y la &eacute;poca) y la conservaci&oacute;n de su nacionalidad marroqu&iacute; (que no la perdieron ni renunciaron voluntariamente a ella antes de la transmisi&oacute;n). </p> <p> La b&uacute;squeda de documentos antiguos (registros de estado civil hebreos o civiles, documentos de viaje, registros consulares, pruebas de residencia...) puede ser compleja. Ezra Maroc ha desarrollado una experiencia espec&iacute;fica en esta &aacute;rea, incluida la investigaci&oacute;n en diversos archivos y la compilaci&oacute;n rigurosa de estos expedientes para cumplir con los requisitos legales. </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-cas2">
+          <span>&iquest;C&oacute;mo obtienen la nacionalidad los menores?</span>
+          <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-answer" id="faq-cas2" aria-hidden="true">
+          <p> Para un ni&ntilde;o menor de edad, la adquisici&oacute;n de la nacionalidad marroqu&iacute; depende principalmente de la nacionalidad de los padres en el momento del nacimiento y de la legislaci&oacute;n vigente en esa fecha. </p> <p> Seg&uacute;n el C&oacute;digo de la Nacionalidad actual (desde la reforma de 2007), un ni&ntilde;o nacido de padre marroqu&iacute; O madre marroqu&iacute; es marroqu&iacute;. La transmisi&oacute;n a trav&eacute;s de la madre es, por lo tanto, equivalente a la del padre. La adquisici&oacute;n es generalmente autom&aacute;tica por derecho, pero requiere el registro en el registro civil marroqu&iacute; para ser efectiva. </p> <p> Nota: Para los ni&ntilde;os nacidos de madre marroqu&iacute; y padre extranjero <em>antes</em> de la reforma de 2007, la nacionalidad no era autom&aacute;tica. Existen procedimientos espec&iacute;ficos de declaraci&oacute;n o solicitud por parte de la madre o del ni&ntilde;o al alcanzar la mayor&iacute;a de edad para reconocer esta nacionalidad (Art&iacute;culo 6 del C&oacute;digo). </p> <p> Es importante se&ntilde;alar que la <em>Kafala</em> (tutela legal en el derecho marroqu&iacute; e isl&aacute;mico, que no es una adopci&oacute;n plena que rompa el linaje original) no confiere autom&aacute;ticamente la nacionalidad marroqu&iacute; al ni&ntilde;o tutelado (makfoul). Se prev&eacute;n condiciones espec&iacute;ficas de residencia y un procedimiento distinto para la posible naturalizaci&oacute;n del ni&ntilde;o bajo Kafala. </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <h2>P&eacute;rdida y Reintegraci&oacute;n</h2>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-perte1">
+          <span>&iquest;Se puede perder la nacionalidad marroqu&iacute;?</span>
+          <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-answer" id="faq-perte1" aria-hidden="true">
+          <p> La p&eacute;rdida <strong>involuntaria</strong> de la nacionalidad marroqu&iacute; es muy rara y est&aacute; estrictamente regulada por ley. Solo puede ocurrir en casos espec&iacute;ficos previstos por el C&oacute;digo de la Nacionalidad (ej., adquisici&oacute;n voluntaria de una nacionalidad extranjera con solicitud expresa de perder la nacionalidad marroqu&iacute; antes de ciertas fechas, ocupar un cargo p&uacute;blico para un estado extranjero sin autorizaci&oacute;n, actos graves contra la seguridad del estado...). </p>
+          <p> Es posible <strong>solicitar voluntariamente</strong> renunciar a la nacionalidad marroqu&iacute; (acto de repudio), por ejemplo, si otra nacionalidad lo exige. Sin embargo, esta renuncia nunca es autom&aacute;tica. Requiere una autorizaci&oacute;n expresa otorgada por decreto del gobierno marroqu&iacute;, que examina la solicitud caso por caso y puede rechazarla. </p>
+          <p> Para las personas que pudieron haber perdido la nacionalidad marroqu&iacute; en el pasado (ej., debido a antiguas leyes sobre matrimonio o residencia en el extranjero), el C&oacute;digo prev&eacute; procedimientos para la <strong>reintegraci&oacute;n</strong> en la nacionalidad marroqu&iacute;, sujeto al cumplimiento de ciertas condiciones (notablemente establecer residencia habitual en Marruecos). </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <h2>Contacto y Asistencia</h2>
+      <p>Cada viaje hacia la nacionalidad marroqu&iacute; es &uacute;nico y est&aacute; sujeto a las sutilezas de la ley y la administraci&oacute;n.</p>
+      <div class="contact-info">
+        <p>Para un an&aacute;lisis preciso de tu situaci&oacute;n personal, una evaluaci&oacute;n de tus posibilidades de &eacute;xito y un apoyo personalizado durante todo el proceso, nuestro equipo de expertos est&aacute; a tu disposici&oacute;n.</p>
+        <p>Se recomienda encarecidamente consultar a un profesional cualificado para evaluar tu caso espec&iacute;fico antes de tomar cualquier medida.</p>
+        <ul>
+          <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Sede: 30 N Gould St Ste R, Sheridan, WY 82801, USA</li>
+          <li><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></li>
+        </ul>
+        <p>Cont&aacute;ctanos para iniciar tu evaluaci&oacute;n preliminar.</p>
+      </div>
+      <div class="disclaimer">
+        <p><strong>Aviso Importante:</strong> Esta secci&oacute;n de Preguntas Frecuentes proporciona informaci&oacute;n general solo con fines indicativos y de ninguna manera constituye asesoramiento legal formal ni garant&iacute;a de resultados. La informaci&oacute;n se basa en nuestra comprensi&oacute;n de la ley marroqu&iacute; a la fecha de publicaci&oacute;n (sujeta a cambios legislativos o jurisprudenciales). Solo una consulta personalizada y un an&aacute;lisis exhaustivo de tu expediente pueden proporcionar un consejo adaptado a tu situaci&oacute;n &uacute;nica.</p>
+      </div>
+    </section>
+  </div>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">&iquest;Listo/a para explorar tu elegibilidad?</h2>
+      <div class="cta-buttons">
+        <a href="contacto.html" class="btn btn-light">Solicitar una Evaluaci&oacute;n Personalizada</a>
+        <a href="proceso.html" class="btn btn-outline-light">Comprender Nuestro Enfoque</a>
+      </div>
+    </div>
+  </section>
+  <CtaBanner lang={lang} />
+</BaseLayout>

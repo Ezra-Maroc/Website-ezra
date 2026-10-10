@@ -1,0 +1,273 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+
+const lang = 'fr' as const;
+---
+
+<BaseLayout
+  lang={lang}
+  title="Notre Processus Clair et Structuré | Ezra Maroc"
+  description="Découvrez le processus structuré d'Ezra Maroc en 6 étapes pour obtenir votre nationalité marocaine. Accompagnement transparent du début à la fin."
+  currentPage="process"
+  canonicalPath="/processus.html"
+  pageCSS={['processus']}
+>
+  <main id="main-content" class="page-banner">
+    <div class="container">
+      <h1>Notre Processus Éprouvé</h1>
+      <p>Découvrez notre méthodologie structurée, conçue pour vous guider sereinement et efficacement vers l'obtention de votre nationalité marocaine.</p>
+    </div>
+  </main>
+
+  <section class="section overview-section">
+    <div class="container">
+      <h2 class="section-title">Votre Parcours Simplifié : <span>Vue d'Ensemble</span></h2>
+      <p class="overview-text">Nous avons décomposé le chemin vers la nationalité en étapes claires et distinctes. Chaque phase est conçue pour progresser méthodiquement, avec des objectifs précis et une transparence totale, maximisant ainsi vos chances de succès.</p>
+      <div class="process-timeline">
+        <div class="timeline-item">
+          <div class="timeline-number">0</div>
+          <div class="timeline-content">
+            <h3>Diagnostic Initial</h3>
+            <span class="timeline-duration">1-3 semaines</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-number">1</div>
+          <div class="timeline-content">
+            <h3>Constitution Dossier</h3>
+            <span class="timeline-duration">1-4 mois</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-number">2</div>
+          <div class="timeline-content">
+            <h3>Dépôt &amp; Suivi Init.</h3>
+            <span class="timeline-duration">2-3 mois</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-number">3</div>
+          <div class="timeline-content">
+            <h3>Instruction &amp; Décision</h3>
+            <span class="timeline-duration">7-20 mois</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-number">4</div>
+          <div class="timeline-content">
+            <h3>Finalisation Admin.</h3>
+            <span class="timeline-duration">Optionnelle</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="phase0" class="section phase-section">
+    <div class="container">
+      <h2 class="section-title internal-title">Phase <span>0</span>: Votre Diagnostic Stratégique</h2>
+      <div class="phase-duration">
+        <i class="fa-regular fa-clock" aria-hidden="true"></i> Durée indicative: 1 à 3 semaines
+      </div>
+      <div class="phase-content">
+        <div class="phase-block">
+          <h3 class="block-title"><i class="fa-solid fa-bullseye" aria-hidden="true"></i> Objectif Principal</h3>
+          <p>Évaluer précisément votre éligibilité à la nationalité marocaine et définir la stratégie optimale avant d'investir davantage.</p>
+        </div>
+        <div class="phase-block">
+          <h3 class="block-title"><i class="fa-solid fa-list-check" aria-hidden="true"></i> Nos Actions Clés</h3>
+          <ul class="action-list">
+            <li><strong>Analyse Initiale</strong> : Examen approfondi des documents fournis.</li>
+            <li><strong>Entretien Détaillé</strong> : Compréhension de votre parcours familial et liens avec le Maroc.</li>
+            <li><strong>Collecte d'Infos</strong> : Collecte d'informations personnelles et familiales structurée.</li>
+            <li><strong>Évaluation Juridique</strong> : Confrontation de votre cas au Code de la Nationalité.</li>
+          </ul>
+        </div>
+        <div class="phase-block result-block">
+          <h3 class="block-title"><i class="fa-solid fa-flag-checkered" aria-hidden="true"></i> Votre Livrable Clé</h3>
+          <p>Vous recevez un <strong>rapport d'éligibilité complet</strong> incluant :</p>
+          <ul class="result-list">
+            <li>Positionnement juridique clair de votre cas.</li>
+            <li>Évaluation transparente de vos chances réelles.</li>
+            <li>Liste indicative des documents essentiels à réunir.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="phase1" class="section phase-section alt-bg">
+    <div class="container">
+      <h2 class="section-title internal-title">Phase <span>1</span>: Constitution d'un Dossier Rigoureux</h2>
+      <div class="phase-duration">
+        <i class="fa-regular fa-clock" aria-hidden="true"></i> Durée indicative: 1 à 4 mois
+      </div>
+      <div class="phase-content">
+        <div class="phase-block">
+          <h3 class="block-title"><i class="fa-solid fa-bullseye" aria-hidden="true"></i> Objectif Principal</h3>
+          <p>Assembler un dossier complet, rigoureusement vérifié et parfaitement aligné sur les exigences des autorités marocaines.</p>
+        </div>
+        <div class="phase-block">
+          <h3 class="block-title"><i class="fa-solid fa-list-check" aria-hidden="true"></i> Nos Actions Clés</h3>
+          <ul class="action-list">
+            <li><strong>Liste Documentaire</strong> : Fourniture d'une liste personnalisée et exhaustive.</li>
+            <li><strong>Support Collecte</strong> : Assistance proactive pour obtenir les pièces requises (Maroc &amp; étranger).</li>
+            <li><strong>Gestion Traductions</strong> : Coordination des traductions assermentées nécessaires.</li>
+            <li><strong>Suivi Légalisations</strong> : Prise en charge des procédures d'authentification (Apostille, etc.).</li>
+            <li><strong>Vérification Juridique</strong> : Examen minutieux de la conformité de chaque document.</li>
+            <li><strong>Assemblage Méthodique</strong> : Organisation du dossier selon les standards administratifs.</li>
+          </ul>
+        </div>
+        <div class="phase-block result-block">
+          <h3 class="block-title"><i class="fa-solid fa-flag-checkered" aria-hidden="true"></i> Votre Livrable Clé</h3>
+          <p>Un <strong>dossier finalisé, prêt pour le dépôt</strong>, contenant :</p>
+          <ul class="result-list">
+            <li>L'ensemble des documents originaux requis et validés.</li>
+            <li>Toutes les traductions assermentées conformes.</li>
+            <li>Les légalisations et apostilles appropriées.</li>
+            <li>Une organisation claire facilitant l'instruction.</li>
+            <li>Un inventaire précis du contenu pour suivi.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="phase2" class="section phase-section">
+    <div class="container">
+      <h2 class="section-title internal-title">Phase <span>2</span>: Dépôt Optimisé &amp; Suivi Initial</h2>
+      <div class="phase-duration">
+        <i class="fa-regular fa-clock" aria-hidden="true"></i> Durée indicative: 2 à 3 mois
+      </div>
+      <div class="phase-content">
+        <div class="phase-block">
+          <h3 class="block-title"><i class="fa-solid fa-bullseye" aria-hidden="true"></i> Objectif Principal</h3>
+          <p>Garantir un dépôt conforme de votre dossier et enclencher un suivi administratif immédiat et rigoureux.</p>
+        </div>
+        <div class="phase-block">
+          <h3 class="block-title"><i class="fa-solid fa-list-check" aria-hidden="true"></i> Nos Actions Clés</h3>
+          <ul class="action-list">
+            <li><strong>Dépôt Ciblé</strong> : Soumission auprès de l'autorité compétente la plus pertinente.</li>
+            <li><strong>Confirmation Dépôt</strong> : Obtention et vérification de la preuve officielle de soumission.</li>
+            <li><strong>Veille Active</strong> : Mise en place d'un suivi régulier de l'état d'avancement.</li>
+            <li><strong>Gestion Enquête</strong> : Attention particulière durant la phase d'enquête de sécurité.</li>
+            <li><strong>Réactivité Totale</strong> : Traitement rapide et précis de toute demande administrative complémentaire.</li>
+          </ul>
+        </div>
+        <div class="phase-block result-block">
+          <h3 class="block-title"><i class="fa-solid fa-flag-checkered" aria-hidden="true"></i> Votre Statut</h3>
+          <p>Votre dossier est <strong>officiellement enregistré et suivi activement</strong>, vous disposerez de :</p>
+          <ul class="result-list">
+            <li>Votre numéro de dossier de référence.</li>
+            <li>Confirmation de la recevabilité administrative.</li>
+            <li>Vision prévisionnelle des étapes suivantes.</li>
+            <li>Point de contact établi avec les services instructeurs.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="phase3" class="section phase-section alt-bg">
+    <div class="container">
+      <h2 class="section-title internal-title">Phase <span>3</span>: Accompagnement Jusqu'à la Décision Finale</h2>
+      <div class="phase-duration">
+        <i class="fa-regular fa-clock" aria-hidden="true"></i> Durée indicative: 7 à 20 mois
+      </div>
+      <div class="phase-content">
+        <div class="phase-block">
+          <h3 class="block-title"><i class="fa-solid fa-bullseye" aria-hidden="true"></i> Objectif Principal</h3>
+          <p>Naviguer efficacement la phase d'instruction et vous assister jusqu'à l'obtention de la décision favorable.</p>
+        </div>
+        <div class="phase-block">
+          <h3 class="block-title"><i class="fa-solid fa-list-check" aria-hidden="true"></i> Nos Actions Clés</h3>
+          <ul class="action-list">
+            <li><strong>Suivi Continu</strong> : Vérifications périodiques et relances si nécessaire.</li>
+            <li><strong>Interventions Stratégiques</strong> : Actions préventives pour éviter les blocages potentiels.</li>
+            <li><strong>Préparation Convocation</strong> : Assistance logistique et préparation pour votre entretien.</li>
+            <li><strong>Assistance RDV Final</strong> : Présence d'un avocat partenaire à vos côtés au tribunal.</li>
+            <li><strong>Sécurisation Certificat</strong> : Aide à la récupération du document officiel final.</li>
+          </ul>
+        </div>
+        <div class="phase-block result-block">
+          <h3 class="block-title"><i class="fa-solid fa-passport" aria-hidden="true"></i> Votre Aboutissement</h3>
+          <p>La reconnaissance officielle de votre statut : l'<strong>obtention de votre certificat de nationalité marocaine</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="phase4" class="section phase-section">
+    <div class="container">
+      <h2 class="section-title internal-title">Phase <span>4</span>: Finalisation Administrative (Optionnelle)</h2>
+      <div class="phase-duration">
+        <i class="fa-regular fa-clock" aria-hidden="true"></i> Durée indicative: 1 à 3 mois
+      </div>
+      <div class="phase-content">
+        <div class="phase-block">
+          <h3 class="block-title"><i class="fa-solid fa-bullseye" aria-hidden="true"></i> Objectif Principal</h3>
+          <p>Faciliter les démarches administratives marocaines suivant l'obtention de votre nationalité.</p>
+        </div>
+        <div class="phase-block">
+          <h3 class="block-title"><i class="fa-solid fa-list-check" aria-hidden="true"></i> Nos Actions Clés</h3>
+          <ul class="action-list">
+            <li><strong>Guidance Identité</strong> : Conseils clairs pour obtenir vos documents marocains (CNIE, passeport).</li>
+            <li><strong>Support CNIE</strong> : Assistance spécifique pour les formalités de la carte d'identité.</li>
+            <li><strong>Aide Passeport</strong> : Accompagnement dans le processus de demande de passeport.</li>
+            <li><strong>Orientation Admin.</strong> : Conseils sur les autres démarches utiles (inscription consulat, etc.).</li>
+            <li><strong>Conseils Installation</strong> : Ressources pour ceux envisageant de vivre au Maroc.</li>
+          </ul>
+        </div>
+        <div class="phase-block result-block">
+          <h3 class="block-title"><i class="fa-solid fa-id-card" aria-hidden="true"></i> Votre Intégration Complète</h3>
+          <p>La pleine jouissance de votre citoyenneté avec l'obtention de vos <strong>documents d'identité marocains officiels</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section quality-section alt-bg">
+    <div class="container">
+      <h2 class="section-title">Nos Engagements : <span>Qualité &amp; Confiance</span></h2>
+      <div class="quality-grid">
+        <div class="quality-item">
+          <div class="quality-icon"><i class="fa-regular fa-eye" aria-hidden="true"></i></div>
+          <h3>Transparence</h3>
+          <p>Vous êtes constamment informé de l'avancement, des délais et des prochaines étapes de votre dossier.</p>
+        </div>
+        <div class="quality-item">
+          <div class="quality-icon"><i class="fa-solid fa-bolt-lightning" aria-hidden="true"></i></div>
+          <h3>Réactivité</h3>
+          <p>Nous répondons rapidement à vos questions et traitons vos demandes avec diligence et efficacité.</p>
+        </div>
+        <div class="quality-item">
+          <div class="quality-icon"><i class="fa-solid fa-user-group" aria-hidden="true"></i></div>
+          <h3>Suivi Personnalisé</h3>
+          <p>Un conseiller dédié connaît votre dossier et vous accompagne de A à Z avec attention.</p>
+        </div>
+        <div class="quality-item">
+          <div class="quality-icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div>
+          <h3>Expertise Pointue</h3>
+          <p>Bénéficiez de notre connaissance approfondie et actualisée du droit marocain de la nationalité.</p>
+        </div>
+        <div class="quality-item">
+          <div class="quality-icon"><i class="fa-solid fa-shield-heart" aria-hidden="true"></i></div>
+          <h3>Confidentialité</h3>
+          <p>Vos informations personnelles et votre dossier sont traités avec la plus stricte confidentialité.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">Prêt à démarrer votre parcours vers la nationalité marocaine ?</h2>
+      <div class="cta-buttons">
+        <a href="#phase0" class="btn btn-light">Commencer par l'Évaluation</a>
+        <a href="contact.html" class="btn btn-outline-light">Poser une Question</a>
+      </div>
+    </div>
+  </section>
+  <CtaBanner lang={lang} />
+</BaseLayout>

@@ -1,0 +1,115 @@
+---
+// 404 page - intentionally minimal (no BaseLayout/header/footer)
+// This page uses absolute paths for Cloudflare Pages compatibility
+---
+
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page non trouvée - Ezra Maroc</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .error-page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 60vh;
+      text-align: center;
+      padding: 2rem;
+    }
+    .error-page h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 6rem;
+      font-weight: 700;
+      color: var(--primary-600, #c5281c);
+      margin-bottom: 0.5rem;
+      line-height: 1;
+    }
+    .error-page h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+    .error-page p {
+      font-family: 'Poppins', sans-serif;
+      color: #666;
+      max-width: 500px;
+      margin-bottom: 2rem;
+    }
+    .error-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+    .error-links a {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .error-links a.primary {
+      background: var(--primary-600, #c5281c);
+      color: #fff;
+    }
+    .error-links a.primary:hover {
+      background: #a02015;
+    }
+    .error-links a.secondary {
+      background: #f0f0f0;
+      color: #333;
+    }
+    .error-links a.secondary:hover {
+      background: #e0e0e0;
+    }
+    .error-messages {
+      max-width: 550px;
+      margin-bottom: 2rem;
+    }
+    .error-messages p {
+      font-family: 'Poppins', sans-serif;
+      color: #555;
+      font-size: 0.92rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+    .error-messages strong {
+      color: var(--primary-600, #c5281c);
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+  <main id="main-content" class="error-page">
+    <h1>404</h1>
+    <div class="error-messages">
+      <p><strong>FR :</strong> Page non trouvée. La page que vous recherchez n'existe pas ou a été déplacée.</p>
+      <p><strong>EN:</strong> Page not found. The page you are looking for does not exist or has been moved.</p>
+      <p><strong>ES:</strong> Página no encontrada. La página que buscas no existe o fue movida.</p>
+      <p dir="rtl"><strong>:HE</strong> הדף לא נמצא. הדף שאתם מחפשים אינו קיים או שהועבר.</p>
+      <p dir="rtl"><strong>:AR</strong> الصفحة غير موجودة. الصفحة التي تبحثون عنها غير موجودة أو تم نقلها.</p>
+    </div>
+    <div class="error-links">
+      <a href="/" class="primary"><i class="fa-solid fa-house" aria-hidden="true"></i> Accueil (FR)</a>
+      <a href="/en/" class="secondary">Home (EN)</a>
+      <a href="/es/inicio.html" class="secondary">Inicio (ES)</a>
+      <a href="/he/" class="secondary">דף הבית (HE)</a>
+      <a href="/ara/" class="secondary">الرئيسية (AR)</a>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,59 @@
+/* css/quiz-rtl.css — RTL overrides for quiz pages (HE, ARA) */
+/* Loaded AFTER quiz-page.css on dir="rtl" pages */
+
+/* Question card: border accent switches side */
+.quiz-container .question-card {
+    border-left: none;
+    border-right: 6px solid var(--ezra-primary-color);
+    text-align: right;
+}
+
+/* Answer buttons */
+.quiz-container .answer {
+    text-align: right;
+}
+.quiz-container .answer .icon {
+    margin-right: 0;
+    margin-left: 12px;
+}
+.quiz-container .answer:hover:not(.disabled):not(.correct):not(.incorrect) {
+    transform: translateX(-5px);
+}
+
+/* Theme buttons */
+.quiz-container .theme-btn {
+    text-align: right;
+}
+
+/* Explanation */
+.quiz-container .explanation {
+    border-left: none;
+    border-right: 5px solid var(--ezra-accent-color);
+    border-radius: var(--ezra-border-radius-sm) 0 0 var(--ezra-border-radius-sm);
+    text-align: right;
+}
+
+/* Theme info */
+.quiz-container .theme-info {
+    border-left: none;
+    border-right: 4px solid var(--ezra-secondary-color);
+}
+
+/* Progress bar gradient direction */
+.quiz-container .progress-fill {
+    background: linear-gradient(270deg, var(--ezra-primary-color) 0%, var(--ezra-accent-color) 100%);
+}
+
+/* Theme selection heading underline */
+.quiz-container #theme-selection h2::after {
+    left: auto;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+/* Responsive overrides */
+@media (max-width: 600px) {
+    .quiz-container .question-card {
+        border-right-width: 5px;
+    }
+}

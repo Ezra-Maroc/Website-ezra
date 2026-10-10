@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LegalNav from '../../components/LegalNav.astro';
+
+const lang = 'he' as const;
+---
+
+<BaseLayout
+  lang={lang}
+  title="הודעה משפטית | עזרא מרוק"
+  description="מידע משפטי בנוגע לאתר www.ezra-maroc.com, המפורסם על ידי Ezra Maroc Consulting Services LLC."
+  currentPage="legal-notice"
+  canonicalPath="/he/legal-notice.html"
+  noindex={true}
+>
+  <style>
+    .legal-content-section { padding: 60px 0; }
+    .legal-content-section .container { max-width: 800px; }
+    .legal-content-section h2 { font-family: var(--font-heading-he); font-size: 1.7rem; color: var(--primary-color); margin-top: 2.5em; margin-bottom: 1.2em; padding-bottom: 0.6em; border-bottom: 2px solid var(--primary-50); font-weight: 600; }
+    .legal-content-section h2:first-of-type { margin-top: 0; }
+    .legal-content-section h3 { font-family: var(--font-heading-he); font-size: 1.3rem; color: var(--dark-color); margin-top: 1.8em; margin-bottom: 1em; font-weight: 600; }
+    .legal-content-section p, .legal-content-section li { font-family: var(--font-main-he); font-size: 0.95rem; line-height: 1.8; color: #333; margin-bottom: 1.1em; text-align: justify; }
+    .legal-content-section ul { list-style-type: disc; margin-right: 20px; margin-left: 0; margin-bottom: 1.2em; padding-right: 1.5em; padding-left: 0; }
+    .legal-content-section strong { color: #111; font-weight: 600; }
+    .legal-content-section a { color: var(--primary-color); text-decoration: underline; }
+    .legal-content-section a:hover { color: var(--primary-500); text-decoration: none; }
+  </style>
+
+  <main id="main-content" class="page-banner">
+    <div class="container">
+      <h1>הודעה משפטית</h1>
+      <p>מידע בנוגע לאתר www.ezra-maroc.com</p>
+    </div>
+  </main>
+
+  <LegalNav lang={lang} pageTitle="הודעה משפטית" />
+
+  <section class="section legal-content-section">
+    <div class="container">
+
+      <p><strong>עודכן לאחרונה:</strong> 8 במאי 2024</p>
+
+      <h2>סעיף 1: עורך האתר</h2>
+      <p>אתר האינטרנט https://www.ezra-maroc.com (להלן "האתר") מפורסם על ידי:</p>
+      <p>
+        <strong>Ezra Maroc Consulting Services LLC</strong><br>
+        חברה בעירבון מוגבל (LLC) הרשומה במדינת ויומינג, ארה"ב.<br>
+        מספר רישום: [מספר הרישום בוויומינג - יש להשלים]<br>
+        משרד רשום: 30 N Gould St Ste R, Sheridan, WY 82801, USA<br>
+        דוא"ל: <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a><br>
+      </p>
+
+      <h2>סעיף 2: מנהל הפרסום</h2>
+      <p>מנהל הפרסום של האתר הוא [שם מנהל הפרסום או הנציג המשפטי], בתפקידו כ[תפקיד, למשל: מנהל] של Ezra Maroc Consulting Services LLC.</p>
+      <p>ליצירת קשר: <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a></p>
+
+      <h2>סעיף 3: ספק אירוח</h2>
+      <p>האתר מתארח על ידי:</p>
+      <p>
+        <strong>Cloudflare, Inc.</strong><br>
+        101 Townsend St, San Francisco, CA 94107, USA<br>
+        אתר אינטרנט: <a href="https://www.cloudflare.com" target="_blank" rel="noopener noreferrer">www.cloudflare.com</a><br>
+        Cloudflare מספקת שירותי CDN, אבטחה ושירותי אירוח נוספים.
+      </p>
+      <p>הנכסים הסטטיים של האתר עשויים להיות מוגשים גם באמצעות:</p>
+      <p>
+        <strong>Netlify, Inc.</strong><br>
+        2325 3rd Street, Suite 296, San Francisco, CA 94107, USA<br>
+        אתר אינטרנט: <a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">www.netlify.com</a>
+      </p>
+
+      <h2>סעיף 4: קניין רוחני</h2>
+      <p>כל התוכן באתר זה, לרבות, ללא הגבלה, גרפיקה, תמונות, טקסטים, סרטונים, אנימציות, צלילים, לוגואים, קבצי GIF ואייקונים, וכן עיצובם, הם רכושה הבלעדי של Ezra Maroc Consulting Services LLC, למעט סימני מסחר, לוגואים או תכנים השייכים לחברות שותפות או מחברים אחרים.</p>
+      <p>כל שכפול, הפצה, שינוי, התאמה, שידור חוזר או פרסום, אפילו חלקי, של מרכיבים אלה אסורים בהחלט ללא הסכמתה המפורשת בכתב של Ezra Maroc Consulting Services LLC. ייצוג או שכפול כאמור, בכל אמצעי שהוא, מהווה הפרה הניתנת לענישה על פי חוקי הקניין הרוחני החלים.</p>
+      <p>לפרטים נוספים, אנא עיינו ב<a href="terms-of-service.html">תנאי השימוש</a> שלנו.</p>
+
+      <h2>סעיף 5: הגבלת אחריות</h2>
+      <p>המידע הכלול באתר זה מדויק ככל האפשר, והאתר מעודכן מעת לעת, אך עלול בכל זאת להכיל אי-דיוקים או השמטות. אם הבחנתם באי-דיוק, שגיאה או מה שנראה כתקלה, אנא דווחו על כך בדוא"ל לכתובת <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a>, תוך תיאור הבעיה בצורה מדויקת ככל האפשר (עמוד בעייתי, פעולה שגרמה לבעיה, סוג מחשב ודפדפן בשימוש וכו').</p>
+      <p>Ezra Maroc Consulting Services LLC אינה יכולה להיות אחראית לכל נזק ישיר או עקיף שנגרם לציוד המשתמש בעת גישה לאתר, בין אם כתוצאה משימוש בציוד שאינו עומד במפרטים המצוינים ובין אם כתוצאה מהופעת באג או אי-תאימות.</p>
+      <p>לפרטים נוספים, אנא עיינו ב<a href="terms-of-service.html">תנאי השימוש</a> שלנו.</p>
+
+      <h2>סעיף 6: הגנה על נתונים אישיים</h2>
+      <p>למידע בנוגע לאיסוף ועיבוד הנתונים האישיים שלכם, אנא עיינו ב<a href="privacy-policy.html">מדיניות הפרטיות</a> שלנו וב<a href="cookie-policy.html">מדיניות העוגיות</a> שלנו.</p>
+
+      <h2>סעיף 7: הדין החל וסמכות שיפוט</h2>
+      <p>הודעה משפטית זו כפופה לחוקי מדינת ויומינג, ארה"ב. במקרה של סכסוך, ולאחר ניסיון להגיע לפתרון בדרכי נועם, סמכות השיפוט מוקנית במפורש לבתי המשפט המוסמכים בשרידן, ויומינג, ארה"ב, בכפוף להוראות כופות החלות על צרכנים באיחוד האירופי כמפורט ב<a href="terms-of-service.html">תנאי השימוש</a> שלנו.</p>
+
+      <h2>סעיף 8: יצירת קשר</h2>
+      <p>לכל שאלה או מידע הנוגע לאתר, או לכל דיווח על תוכן או פעילות בלתי חוקיים, המשתמש יכול ליצור קשר עם העורך בכתובת הדוא"ל הבאה: <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a>, או לשלוח מכתב רשום עם אישור קבלה ל-Ezra Maroc Consulting Services LLC בכתובת המצוינת בסעיף 1.</p>
+
+      <p style="text-align:center; margin-top:3em;"><a href="/he/" class="legal-back-link">חזרה לדף הבית</a></p>
+
+
+    </div>
+  </section>
+</BaseLayout>

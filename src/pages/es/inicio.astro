@@ -1,0 +1,202 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getOrganizationJsonLD } from '../../i18n/jsonld';
+
+const lang = 'es' as const;
+const jsonLD = getOrganizationJsonLD(lang);
+---
+
+<BaseLayout
+  lang={lang}
+  title="Ezra Maroc - Obtén la Nacionalidad Marroquí | Apoyo Experto"
+  description="Obtén la nacionalidad marroquí con Ezra Maroc. Experiencia legal especializada, apoyo personalizado para tu solicitud de ciudadanía. Alta tasa de éxito."
+  currentPage="home"
+  canonicalPath="/es/inicio.html"
+  jsonLD={jsonLD}
+>
+  <main id="main-content" class="hero">
+    <div class="container hero-content">
+      <h1>Tu Puerta a la Nacionalidad Marroquí</h1>
+      <p>Te guiamos paso a paso en tu proceso de obtención de la nacionalidad marroquí con apoyo a medida y experiencia legal de vanguardia.</p>
+      <div class="hero-buttons">
+        <a href="servicios.html" class="btn btn-light">Descubre Nuestros Servicios</a>
+        <a href="proceso.html" class="btn btn-light">Nuestro Proceso Simplificado</a>
+        <a href="contacto.html" class="btn btn-primary">Evaluación gratuita</a>
+      </div>
+    </div>
+  </main>
+
+  <section class="section intro-section">
+    <div class="container">
+      <p class="intro-text">Conecta fácilmente con tu herencia marroquí. Ezra Maroc, especialista reconocido, te apoya con éxito en cada etapa de tu solicitud de nacionalidad, desde la evaluación inicial hasta la entrega de tu certificado.</p>
+      <div class="strengths">
+        <div class="strength-item">
+          <i class="fa-solid fa-scale-balanced strength-icon" aria-hidden="true"></i>
+          <h3>Experiencia Legal Especializada</h3>
+          <p>en derecho de nacionalidad marroquí</p>
+        </div>
+        <div class="strength-item">
+          <i class="fa-solid fa-handshake-angle strength-icon" aria-hidden="true"></i>
+          <h3>Apoyo Personalizado</h3>
+          <p>durante todo tu proceso</p>
+        </div>
+        <div class="strength-item">
+          <i class="fa-solid fa-network-wired strength-icon" aria-hidden="true"></i>
+          <h3>Red Establecida</h3>
+          <p>con administraciones marroquíes</p>
+        </div>
+        <div class="strength-item">
+          <i class="fa-solid fa-trophy strength-icon" aria-hidden="true"></i>
+          <h3>Alta Tasa de Éxito</h3>
+          <p>en los expedientes de nuestros clientes</p>
+        </div>
+        <div class="strength-item">
+          <i class="fa-solid fa-lightbulb strength-icon" aria-hidden="true"></i>
+          <h3>Transparencia Total</h3>
+          <p>sobre el proceso y los plazos</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="nuestros-servicios" class="section services-section">
+    <div class="container">
+      <h2 class="section-title">Nuestros <span>Servicios</span></h2>
+      <div class="features">
+        <div class="feature-card">
+          <i class="fa-solid fa-magnifying-glass feature-icon" aria-hidden="true"></i>
+          <h3 class="feature-title">Evaluación de Elegibilidad</h3>
+          <p>Analizamos tu situación familiar y vínculos con Marruecos para determinar con precisión tus derechos a la nacionalidad.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-folder-open feature-icon" aria-hidden="true"></i>
+          <h3 class="feature-title">Constitución de Expediente</h3>
+          <p>Preparación meticulosa de todos los documentos necesarios para construir un expediente sólido y conforme a las exigencias.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-clipboard-check feature-icon" aria-hidden="true"></i>
+          <h3 class="feature-title">Seguimiento Administrativo</h3>
+          <p>Monitoreo activo del progreso de tu expediente ante las administraciones y intervención rápida si es necesario.</p>
+        </div>
+      </div>
+      <div class="services-more">
+        <a href="servicios.html" class="btn-link">Descubre todos nuestros servicios <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="por-que-nosotros" class="section why-us-section">
+    <div class="container">
+      <h2 class="section-title">¿Por Qué Elegir <span>Ezra Maroc?</span></h2>
+      <div class="why-us-grid">
+        <div class="why-us-item">
+          <i class="fa-solid fa-key why-us-icon" aria-hidden="true"></i>
+          <h3>Enfoque Llave en Mano</h3>
+          <p>liberándote de trámites administrativos</p>
+        </div>
+        <div class="why-us-item">
+          <i class="fa-solid fa-gavel why-us-icon" aria-hidden="true"></i>
+          <h3>Experiencia Legal Aguda</h3>
+          <p>en derecho de nacionalidad marroquí</p>
+        </div>
+        <div class="why-us-item">
+          <i class="fa-solid fa-user-tie why-us-icon" aria-hidden="true"></i>
+          <h3>Contacto Dedicado</h3>
+          <p>para seguimiento personalizado</p>
+        </div>
+        <div class="why-us-item">
+          <i class="fa-solid fa-glasses why-us-icon" aria-hidden="true"></i>
+          <h3>Transparencia Total</h3>
+          <p>sobre el progreso de tu expediente</p>
+        </div>
+        <div class="why-us-item">
+          <i class="fa-solid fa-globe why-us-icon" aria-hidden="true"></i>
+          <h3>Red Establecida</h3>
+          <p>de abogados y socios en Marruecos</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="sobre-nosotros.html" class="btn-link">Descubre nuestro equipo y valores <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="proceso" class="section process-section">
+    <div class="container">
+      <h2 class="section-title">Nuestro <span>Proceso</span> Simplificado</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3 class="step-title">Evaluación de Elegibilidad</h3>
+            <p>Análisis completo de tu situación y derechos potenciales.</p>
+            <span class="step-duration">1-3 semanas</span>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3 class="step-title">Constitución de Expediente</h3>
+            <p>Recopilación y preparación de todos los documentos requeridos.</p>
+            <span class="step-duration">1-4 meses</span>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3 class="step-title">Presentación y Seguimiento Admin.</h3>
+            <p>Envío de tu expediente a las autoridades pertinentes y seguimiento cercano.</p>
+            <span class="step-duration">2-3 meses</span>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3 class="step-title">Revisión y Decisión</h3>
+            <p>Periodo de examen de tu expediente por las autoridades marroquíes.</p>
+            <span class="step-duration">7-20 meses+</span>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3 class="step-title">Finalización y Documentos</h3>
+            <p>Ayuda para obtener tus documentos marroquíes (CNIE, pasaporte...) una vez concedida la nacionalidad.</p>
+            <span class="step-duration">Servicio Opcional</span>
+          </div>
+        </div>
+      </div>
+      <div class="process-more">
+        <a href="proceso.html" class="btn-link">Conoce más sobre nuestro proceso <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonios" class="section testimonial-section">
+    <div class="container">
+      <h2 class="section-title">Sus Historias, <span>Nuestro Orgullo</span></h2>
+      <div class="testimonial">
+        <div class="testimonial-content">
+          <p class="testimonial-text">"Después de años de intentos fallidos, Ezra Maroc logró conseguirme la nacionalidad marroquí en menos de un año. Su experiencia y profesionalismo marcaron toda la diferencia."</p>
+        </div>
+        <div class="testimonial-client">
+          <h3>David C.</h3>
+          <p>París, Francia</p>
+        </div>
+        <div class="testimonials-more">
+          <a href="testimonios.html" class="btn-link">Ver todos los testimonios <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">¿Listo/a para empezar tu viaje hacia la nacionalidad marroquí?</h2>
+      <div class="cta-buttons">
+        <a href="servicios.html" class="btn btn-outline-light">Ver Nuestros Servicios</a>
+        <a href="contacto.html" class="btn btn-outline-light">Contáctanos</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

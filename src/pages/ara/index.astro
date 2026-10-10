@@ -1,0 +1,202 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getOrganizationJsonLD } from '../../i18n/jsonld';
+
+const lang = 'ar' as const;
+const jsonLD = getOrganizationJsonLD(lang);
+---
+
+<BaseLayout
+  lang={lang}
+  title="عزرا ماروك - احصلو على الجنسية المغربية | مرافقة متخصصة"
+  description="احصلو على الجنسية المغربية مع عزرا ماروك. خبرة قانونية متخصصة، دعم شخصي لطلب الجنسية ديالكم. نسبة نجاح عالية."
+  currentPage="home"
+  canonicalPath="/ara.html"
+  jsonLD={jsonLD}
+>
+  <main id="main-content" class="hero">
+    <div class="container hero-content">
+      <h1>بوابتكم للجنسية المغربية</h1>
+      <p>كنوجهوكم خطوة بخطوة فمساركم للحصول على الجنسية المغربية بدعم مخصص وخبرة قانونية متقدمة.</p>
+      <div class="hero-buttons">
+        <a href="/ara/services.html" class="btn btn-light">اكتشفو خدماتنا</a>
+        <a href="/ara/process.html" class="btn btn-light">مسارنا المبسط</a>
+        <a href="/ara/contact.html" class="btn btn-primary">تقييم مجاني</a>
+      </div>
+    </div>
+  </main>
+
+  <section class="section intro-section">
+    <div class="container">
+      <p class="intro-text">تواصلو بسهولة مع تراثكم المغربي. عزرا ماروك، متخصص معترف به، كيرافقكم بنجاح فكل مراحل طلب الجنسية ديالكم، من التقييم الأولي حتى تسليم شهادة الجنسية.</p>
+      <div class="strengths">
+        <div class="strength-item">
+          <i class="fa-solid fa-scale-balanced strength-icon" aria-hidden="true"></i>
+          <h3>خبرة قانونية متخصصة</h3>
+          <p>فقانون الجنسية المغربي</p>
+        </div>
+        <div class="strength-item">
+          <i class="fa-solid fa-handshake-angle strength-icon" aria-hidden="true"></i>
+          <h3>دعم شخصي</h3>
+          <p>طول المسار ديالكم كامل</p>
+        </div>
+        <div class="strength-item">
+          <i class="fa-solid fa-network-wired strength-icon" aria-hidden="true"></i>
+          <h3>شبكة قوية</h3>
+          <p>مع الإدارات المغربية</p>
+        </div>
+        <div class="strength-item">
+          <i class="fa-solid fa-trophy strength-icon" aria-hidden="true"></i>
+          <h3>نسبة نجاح عالية</h3>
+          <p>لملفات عملائنا</p>
+        </div>
+        <div class="strength-item">
+          <i class="fa-solid fa-lightbulb strength-icon" aria-hidden="true"></i>
+          <h3>شفافية تامة</h3>
+          <p>حول المسار والآجال</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="our-services" class="section services-section">
+    <div class="container">
+      <h2 class="section-title"><span>خدماتنا</span></h2>
+      <div class="features">
+        <div class="feature-card">
+          <i class="fa-solid fa-magnifying-glass feature-icon" aria-hidden="true"></i>
+          <h3 class="feature-title">تقييم الأهلية</h3>
+          <p>كنحللو وضعيتكم العائلية وروابطكم بالمغرب باش نحددو بدقة حقوقكم فالجنسية المغربية.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-folder-open feature-icon" aria-hidden="true"></i>
+          <h3 class="feature-title">تكوين الملف</h3>
+          <p>تحضير دقيق لجميع الوثائق اللازمة باش نبنيو ملف قوي ومطابق لمتطلبات السلطات المغربية.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-clipboard-check feature-icon" aria-hidden="true"></i>
+          <h3 class="feature-title">متابعة إدارية</h3>
+          <p>مراقبة نشطة لتقدم ملفكم مع الإدارات المغربية وتدخل سريع عند الحاجة.</p>
+        </div>
+      </div>
+      <div class="services-more">
+        <a href="/ara/services.html" class="btn-link">اكتشفو جميع خدماتنا <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="why-us" class="section why-us-section">
+    <div class="container">
+      <h2 class="section-title">علاش تختارو <span>عزرا ماروك؟</span></h2>
+      <div class="why-us-grid">
+        <div class="why-us-item">
+          <i class="fa-solid fa-key why-us-icon" aria-hidden="true"></i>
+          <h3>مقاربة شاملة</h3>
+          <p>كتريحكم من المشاكل الإدارية</p>
+        </div>
+        <div class="why-us-item">
+          <i class="fa-solid fa-gavel why-us-icon" aria-hidden="true"></i>
+          <h3>خبرة قانونية دقيقة</h3>
+          <p>فقانون الجنسية المغربي</p>
+        </div>
+        <div class="why-us-item">
+          <i class="fa-solid fa-user-tie why-us-icon" aria-hidden="true"></i>
+          <h3>مكلف مخصص</h3>
+          <p>لمتابعة شخصية</p>
+        </div>
+        <div class="why-us-item">
+          <i class="fa-solid fa-glasses why-us-icon" aria-hidden="true"></i>
+          <h3>شفافية تامة</h3>
+          <p>حول تقدم ملفكم</p>
+        </div>
+        <div class="why-us-item">
+          <i class="fa-solid fa-globe why-us-icon" aria-hidden="true"></i>
+          <h3>شبكة قوية</h3>
+          <p>من المحامين والشركاء فالمغرب</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="/ara/about.html" class="btn-link">اكتشفو فريقنا وقيمنا <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="section process-section">
+    <div class="container">
+      <h2 class="section-title">مسارنا <span>المبسط</span></h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3 class="step-title">تقييم الأهلية</h3>
+            <p>تحليل كامل لوضعيتكم وحقوقكم المحتملة فالجنسية المغربية.</p>
+            <span class="step-duration">1-3 أسابيع</span>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3 class="step-title">تكوين الملف</h3>
+            <p>جمع وتحضير جميع الوثائق المطلوبة لطلبكم.</p>
+            <span class="step-duration">1-4 أشهر</span>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3 class="step-title">التقديم والمتابعة الإدارية</h3>
+            <p>تقديم ملفكم للسلطات المختصة ومراقبة قريبة.</p>
+            <span class="step-duration">2-3 أشهر</span>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3 class="step-title">الدراسة والقرار</h3>
+            <p>فترة فحص ملفكم من طرف السلطات المغربية.</p>
+            <span class="step-duration">7-20 شهر+</span>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3 class="step-title">الإنهاء والوثائق</h3>
+            <p>مساعدة فالحصول على وثائقكم المغربية (بطاقة وطنية، جواز سفر...) ملي تمنح الجنسية.</p>
+            <span class="step-duration">خدمة اختيارية</span>
+          </div>
+        </div>
+      </div>
+      <div class="process-more">
+        <a href="/ara/process.html" class="btn-link">عرفو كتر على مسارنا <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="section testimonial-section">
+    <div class="container">
+      <h2 class="section-title">رحلاتهم، <span>فخرنا</span></h2>
+      <div class="testimonial">
+        <div class="testimonial-content">
+          <p class="testimonial-text">"بعد سنين من المحاولات الفاشلة، عزرا ماروك قدرو يجيبو ليا الجنسية المغربية فأقل من عام. الخبرة والاحترافية ديالهم دارو الفرق كامل."</p>
+        </div>
+        <div class="testimonial-client">
+          <h3>دافيد س.</h3>
+          <p>باريس، فرنسا</p>
+        </div>
+        <div class="testimonials-more">
+          <a href="/ara/testimonials.html" class="btn-link">شوفو جميع الشهادات <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">مستعد تبدا رحلتك نحو الجنسية المغربية؟</h2>
+      <div class="cta-buttons">
+        <a href="/ara/services.html" class="btn btn-outline-light">شوفو خدماتنا</a>
+        <a href="/ara/contact.html" class="btn btn-outline-light">اتصلو بنا</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

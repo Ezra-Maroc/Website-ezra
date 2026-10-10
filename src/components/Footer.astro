@@ -1,0 +1,89 @@
+---
+import type { Lang } from '../i18n/locales';
+import { nav, getPageUrl } from '../i18n/nav';
+import { ui } from '../i18n/translations';
+import { getLegalUrl } from '../i18n/legal';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
+const navItems = nav[lang];
+const servicesUrl = getPageUrl('services', lang);
+---
+
+<footer>
+  <div class="container footer-container">
+    <!-- Col 1: About + social -->
+    <div class="footer-about">
+      <a href={getPageUrl('home', lang)} class="footer-logo">
+        {t.brandName[0]}<strong>{t.brandName[1]}</strong>
+      </a>
+      <p class="footer-text">{t.footerTagline}</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/ezramaroc/" aria-label={t.instagramLabel} target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Col 2: Quick links -->
+    <div class="footer-links">
+      <h3 class="footer-heading">{t.footerQuickLinks}</h3>
+      <ul>
+        {navItems.map((item) => (
+          <li><a href={getPageUrl(item.key, lang)}>{item.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Col 3: Key services -->
+    <div class="footer-services">
+      <h3 class="footer-heading">{t.footerKeyServices}</h3>
+      <ul>
+        <li><a href={`${servicesUrl}#eligibility`}>{t.serviceEligibility}</a></li>
+        <li><a href={`${servicesUrl}#constitution`}>{t.serviceConstitution}</a></li>
+        <li><a href={`${servicesUrl}#recherche`}>{t.serviceRecherche}</a></li>
+        <li><a href={`${servicesUrl}#suivi`}>{t.serviceSuivi}</a></li>
+        <li><a href={`${servicesUrl}#post-obtention`}>{t.servicePostObtention}</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 4: Contact info -->
+    <div class="footer-contact">
+      <h3 class="footer-heading">{t.footerContact}</h3>
+      <ul>
+        <li>
+          <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+          30 N Gould St Ste R, Sheridan WY 82801, USA
+        </li>
+        <li>
+          <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+          <strong>{t.footerFranceOffice}</strong><br>
+          {t.footerFranceAddress}
+        </li>
+        <li>
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+          <a href="mailto:info@ezra-project.fr">info@ezra-project.fr</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer bottom bar -->
+  <div class="footer-bottom">
+    <div class="container">
+      <p class="copyright">{t.copyright}</p>
+      <p class="disclaimer">{t.disclaimer}</p>
+      <nav class="footer-legal-links" aria-label={t.footerLegalLinks}>
+        <a href={getLegalUrl('privacy', lang)}>{t.privacyPolicy}</a>
+        <a href={getLegalUrl('legal', lang)}>{t.legalNotice}</a>
+        <a href={getLegalUrl('terms', lang)}>{t.termsOfService}</a>
+        <a href={getLegalUrl('cookies', lang)}>{t.cookiePolicy}</a>
+        <a href="#" class="cookie-settings-link">{t.cookieSettings}</a>
+      </nav>
+    </div>
+  </div>
+</footer>

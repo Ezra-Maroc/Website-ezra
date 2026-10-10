@@ -1,0 +1,202 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getOrganizationJsonLD } from '../i18n/jsonld';
+
+const lang = 'fr' as const;
+const jsonLD = getOrganizationJsonLD(lang);
+---
+
+<BaseLayout
+  lang={lang}
+  title="Ezra Maroc | Obtenez la Nationalité Marocaine"
+  description="Obtenez la nationalité marocaine avec Ezra Maroc. Expertise juridique spécialisée, accompagnement personnalisé pour votre demande de citoyenneté. Taux de réussite élevé."
+  currentPage="home"
+  canonicalPath="/index.html"
+  jsonLD={jsonLD}
+>
+  <main id="main-content" class="hero">
+    <div class="container hero-content">
+      <h1>Votre passerelle vers la nationalité marocaine</h1>
+      <p>Nous vous guidons pas à pas dans votre démarche d'obtention de la nationalité marocaine avec un accompagnement sur mesure et une expertise juridique de pointe pour votre demande de citoyenneté.</p>
+      <div class="hero-buttons">
+        <a href="services.html" class="btn btn-light">Découvrir nos services pour la nationalité marocaine</a>
+        <a href="processus.html" class="btn btn-light">Notre processus simplifié d'obtention de nationalité</a>
+        <a href="contact.html" class="btn btn-primary">Évaluation gratuite</a>
+      </div>
+    </div>
+  </main>
+
+  <section class="section intro-section">
+    <div class="container">
+      <p class="intro-text">Facilitez votre connexion à votre héritage et obtenez la nationalité marocaine. Ezra Maroc, spécialiste reconnu en droit de la nationalité marocaine, vous accompagne avec succès à chaque étape de votre demande, de l'évaluation initiale d'éligibilité jusqu'à la remise de votre certificat de nationalité.</p>
+      <div class="strengths">
+        <div class="strength-item">
+          <i class="fa-solid fa-scale-balanced strength-icon" aria-hidden="true"></i>
+          <h3>Expertise juridique spécialisée</h3>
+          <p>en droit marocain de la nationalité et citoyenneté</p>
+        </div>
+        <div class="strength-item">
+          <i class="fa-solid fa-handshake-angle strength-icon" aria-hidden="true"></i>
+          <h3>Accompagnement personnalisé</h3>
+          <p>pour votre dossier de nationalité marocaine</p>
+        </div>
+        <div class="strength-item">
+          <i class="fa-solid fa-network-wired strength-icon" aria-hidden="true"></i>
+          <h3>Réseau établi</h3>
+          <p>auprès des administrations pour les démarches de nationalité</p>
+        </div>
+        <div class="strength-item">
+          <i class="fa-solid fa-trophy strength-icon" aria-hidden="true"></i>
+          <h3>Taux de réussite élevé</h3>
+          <p>pour les demandes de nationalité marocaine</p>
+        </div>
+        <div class="strength-item">
+          <i class="fa-solid fa-lightbulb strength-icon" aria-hidden="true"></i>
+          <h3>Transparence totale</h3>
+          <p>sur le processus et les délais d'obtention</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="nos-services" class="section services-section">
+    <div class="container">
+      <h2 class="section-title">Nos <span>Services pour la Nationalité Marocaine</span></h2>
+      <div class="features">
+        <div class="feature-card">
+          <i class="fa-solid fa-magnifying-glass feature-icon" aria-hidden="true"></i>
+          <h3 class="feature-title">Évaluation d'éligibilité à la nationalité</h3>
+          <p>Nous analysons votre situation familiale et vos liens avec le Maroc pour déterminer avec précision vos droits à la nationalité marocaine et les conditions d'obtention.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-folder-open feature-icon" aria-hidden="true"></i>
+          <h3 class="feature-title">Constitution du dossier de citoyenneté</h3>
+          <p>Préparation minutieuse de tous les documents nécessaires pour constituer un dossier solide et conforme aux exigences des autorités pour votre demande de citoyenneté marocaine.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-clipboard-check feature-icon" aria-hidden="true"></i>
+          <h3 class="feature-title">Suivi administratif de votre demande</h3>
+          <p>Suivi actif de l'avancement de votre dossier de nationalité auprès des administrations marocaines et intervention rapide en cas de besoin.</p>
+        </div>
+      </div>
+      <div class="services-more">
+        <a href="services.html" class="btn-link">Découvrir tous nos services d'aide à la nationalité marocaine <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="why-us" class="section why-us-section">
+    <div class="container">
+      <h2 class="section-title">Pourquoi Choisir Ezra Maroc pour <span>Votre Nationalité ?</span></h2>
+      <div class="why-us-grid">
+        <div class="why-us-item">
+          <i class="fa-solid fa-key why-us-icon" aria-hidden="true"></i>
+          <h3>Approche clé en main</h3>
+          <p>qui vous libère des tracas administratifs pour votre citoyenneté</p>
+        </div>
+        <div class="why-us-item">
+          <i class="fa-solid fa-gavel why-us-icon" aria-hidden="true"></i>
+          <h3>Expertise juridique pointue</h3>
+          <p>en droit marocain de la nationalité et citoyenneté</p>
+        </div>
+        <div class="why-us-item">
+          <i class="fa-solid fa-user-tie why-us-icon" aria-hidden="true"></i>
+          <h3>Interlocuteur dédié</h3>
+          <p>pour un suivi personnalisé de votre dossier</p>
+        </div>
+        <div class="why-us-item">
+          <i class="fa-solid fa-glasses why-us-icon" aria-hidden="true"></i>
+          <h3>Transparence totale</h3>
+          <p>sur l'avancement de votre demande de nationalité</p>
+        </div>
+        <div class="why-us-item">
+          <i class="fa-solid fa-globe why-us-icon" aria-hidden="true"></i>
+          <h3>Réseau établi</h3>
+          <p>d'avocats et de partenaires au Maroc pour vos démarches</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="a-propos.html" class="btn-link">Découvrir l'équipe Ezra Maroc et nos valeurs d'accompagnement <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="section process-section">
+    <div class="container">
+      <h2 class="section-title">Notre Processus Simplifié pour <span>Devenir Citoyen Marocain</span></h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3 class="step-title">Évaluation d'éligibilité à la citoyenneté marocaine</h3>
+            <p>Analyse complète de votre situation et de vos droits potentiels à la nationalité marocaine par filiation ou autre voie.</p>
+            <span class="step-duration">1-3 semaines</span>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3 class="step-title">Constitution du dossier de demande de nationalité</h3>
+            <p>Rassemblement et préparation de tous les documents requis pour votre demande de citoyenneté.</p>
+            <span class="step-duration">1-4 mois</span>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3 class="step-title">Dépôt et suivi administratif de votre dossier de nationalité</h3>
+            <p>Soumission de votre dossier aux autorités compétentes et suivi rapproché des démarches.</p>
+            <span class="step-duration">2-3 mois</span>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3 class="step-title">Instruction et décision pour votre citoyenneté</h3>
+            <p>Période d'examen de votre dossier par les autorités marocaines en vue de l'obtention de la nationalité.</p>
+            <span class="step-duration">7-20 mois+</span>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3 class="step-title">Finalisation &amp; Documents Marocains</h3>
+            <p>Assistance pour obtenir vos documents marocains (CNIE, passeport...) une fois la nationalité acquise.</p>
+            <span class="step-duration">Service Optionnel</span>
+          </div>
+        </div>
+      </div>
+      <div class="process-more">
+        <a href="processus.html" class="btn-link">En savoir plus sur notre processus d'acquisition de la nationalité marocaine <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="section testimonial-section">
+    <div class="container">
+      <h2 class="section-title">Leurs Parcours vers la Nationalité, <span>Notre Fierté</span></h2>
+      <div class="testimonial">
+        <div class="testimonial-content">
+          <p class="testimonial-text">"Après des années d'essais infructueux, Ezra Maroc a réussi à m'obtenir la nationalité marocaine en moins d'un an. Leur expertise et leur professionnalisme ont fait toute la différence pour ma demande."</p>
+        </div>
+        <div class="testimonial-client">
+          <h3>David C.</h3>
+          <p>Paris, France</p>
+        </div>
+        <div class="testimonials-more">
+          <a href="temoignages.html" class="btn-link">Voir tous les témoignages de réussite pour la nationalité marocaine <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">Prêt à entamer votre démarche vers la nationalité marocaine?</h2>
+      <div class="cta-buttons">
+        <a href="services.html" class="btn btn-outline-light">Voir nos services pour devenir citoyen marocain</a>
+        <a href="contact.html" class="btn btn-outline-light">Nous contacter pour votre demande de nationalité</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
