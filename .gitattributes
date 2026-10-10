@@ -1,0 +1,10 @@
+# Fins de ligne LF dans le depot (projet web)
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.avif binary
+*.ico binary
+*.woff binary
+*.woff2 binary

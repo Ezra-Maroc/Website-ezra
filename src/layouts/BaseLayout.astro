@@ -2,7 +2,7 @@
 import type { Lang } from '../i18n/locales';
 import { locales, isRTL } from '../i18n/locales';
 import { ui } from '../i18n/translations';
-import { getHreflangMap } from '../i18n/nav';
+import { getHreflangMap, getPageUrl } from '../i18n/nav';
 import { getPrivacyUrl } from '../i18n/legal';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -13,7 +13,6 @@ interface Props {
   description: string;
   currentPage: string;
   pageCSS?: string[];
-  canonicalPath: string;
   jsonLD?: object | null;
   noindex?: boolean;
 }
@@ -24,7 +23,6 @@ const {
   description,
   currentPage,
   pageCSS = [],
-  canonicalPath,
   jsonLD = null,
   noindex = false,
 } = Astro.props;
@@ -32,7 +30,8 @@ const {
 const config = locales[lang];
 const t = ui[lang];
 const hreflangMap = getHreflangMap(currentPage);
-const canonicalUrl = `https://ezra-maroc.com${canonicalPath}`;
+// Canonical derived from the same source as hreflang, menus and sitemap (nav.ts)
+const canonicalUrl = `https://ezra-maroc.com${getPageUrl(currentPage, lang)}`;
 const privacyUrl = getPrivacyUrl(lang);
 const rtl = isRTL(lang);
 

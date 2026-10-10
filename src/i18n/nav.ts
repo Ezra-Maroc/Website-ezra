@@ -79,9 +79,10 @@ export function getPageUrl(pageKey: string, lang: Lang): string {
 
   const dirPrefix = lang === 'ar' ? 'ara' : lang;
 
-  // Home pages: FR → /index.html, others → /en.html (Astro build.format: 'file')
+  // Home pages: FR → /, others → /en/ (Astro build.format: 'preserve' → en/index.html,
+  // the same URLs as the former static site)
   if (item.slug === 'index.html') {
-    return lang === 'fr' ? '/index.html' : `/${dirPrefix}.html`;
+    return lang === 'fr' ? '/' : `/${dirPrefix}/`;
   }
 
   const prefix = lang === 'fr' ? '/' : `/${dirPrefix}/`;

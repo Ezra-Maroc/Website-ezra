@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /env/
-Disallow: /mapsvg-lite-interactive-vector-maps/
 
-Sitemap: https://ezra-maroc.com/sitemap.xml
+Sitemap: https://ezra-maroc.com/sitemap-index.xml
