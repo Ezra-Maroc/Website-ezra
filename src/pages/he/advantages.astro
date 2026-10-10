@@ -70,6 +70,7 @@ const lang = 'he' as const;
   <section class="section advantages-overview alt-bg">
     <div class="container">
       <h2 class="section-title">היתרונות שלכם <span>במבט חטוף</span></h2>
+      <p class="advantages-disclaimer" role="note" style="max-width:820px;margin:0 auto 28px;padding:14px 18px;border-inline-start:4px solid var(--secondary-color, #c5281c);background:rgba(0,0,0,0.035);border-radius:6px;font-size:0.95rem;line-height:1.6;"><strong>שימו לב:</strong> המידע בעמוד זה כללי ונועד להכוונה בלבד. רוב היתרונות בתחום המס והכספים תלויים בתושבות המס שלכם ובתנאי כל תוכנית, ולא רק באזרחות. עזרא מרוק אינה מעניקה ייעוץ מס: מומלץ לבדוק את מצבכם עם איש מקצוע מוסמך.</p>
       <div class="advantages-grid">
         <div class="advantage-card">
           <div class="advantage-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
@@ -131,7 +132,7 @@ const lang = 'he' as const;
           <h4><i class="fas fa-home" aria-hidden="true"></i> 3. תוכניות נדל"ן למגורים מועדפות</h4>
           <ul>
             <li><strong>דיור סוציאלי:</strong> גישה עדיפותית, מע"מ מופחת, דמי רישום מינימליים.</li>
-            <li><strong>ערבות דמאן פונסייר (Daman Foncier):</strong> עד 80% מרכישת הנדל"ן הראשונה מכוסה על ידי המדינה.</li>
+            <li><strong>ערבות דמאן פונסייר (Daman Foncier):</strong> ערבות מדינה לחלק מהלוואת הדיור הראשונה מכוסה על ידי המדינה.</li>
             <li><strong>פטורים ממס:</strong> מסי רישום (ברכישה ראשונה), מס דיור (5 שנים לנכסים חדשים).</li>
           </ul>
         </div>
@@ -145,11 +146,11 @@ const lang = 'he' as const;
           <h4><i class="fas fa-percentage" aria-hidden="true"></i> 1. פטורים משמעותיים ממס</h4>
           <ul>
             <li>💰 <strong>אפס מס על הכנסות מחו"ל שהועברו!</strong> (משכורות, שכר טרחה, דיבידנדים...).</li>
-            <li>👴 <strong>פנסיות מחו"ל: 80% הנחה במס!</strong> אחת ממערכות המס המתונות ביותר בעולם.</li>
+            <li>👴 <strong>פנסיות מחו"ל: הקלת מס ייעודית (לתושבי מס במרוקו)</strong> אחת ממערכות המס המתונות ביותר בעולם.</li>
             <li>יתרונות מס נוספים: פטור ממס דיור (5 שנים), הנחה של 40% על הכנסות משכירות, החזר מע"מ על יצוא (מעל 2000 דירהם).</li>
           </ul>
           <div class="example-box">
-            <strong><i class="fas fa-calculator" aria-hidden="true"></i> דוגמה קונקרטית:</strong> הכנסה מחו"ל של 90,000 אירו. העברה למרוקו של 45,000 אירו (כ-495,000 דירהם). <strong style="color: var(--secondary-color);">מס במרוקו = 0 דירהם!</strong> (תשואת שכירות נטו אפשרית: 6-7%)
+            <strong><i class="fas fa-calculator" aria-hidden="true"></i> דוגמה קונקרטית:</strong> הכנסה מחו"ל של 90,000 אירו. העברה למרוקו של 45,000 אירו (כ-495,000 דירהם). <strong style="color: var(--secondary-color);">המס בפועל תלוי במצבכם האישי ובתושבות המס.</strong> (תשואת שכירות נטו אפשרית: 6-7%)
           </div>
           <h4><i class="fas fa-exchange-alt" aria-hidden="true"></i> 2. מערכת בנקאות והמרה גמישה</h4>
           <ul>
@@ -163,7 +164,7 @@ const lang = 'he' as const;
           <ul>
             <li>ריביות מוזלות (<strong>-0.5% עד -1%</strong> בהשוואה לתושבים).</li>
             <li>תקופות החזר ארוכות (עד <strong>25 שנים</strong>).</li>
-            <li>יחס מימון גבוה (<strong>70-80%</strong> עם מקדמה במט"ח).</li>
+            <li>יחס מימון גבוה (בהתאם לבנק, עם מקדמה במט"ח).</li>
             <li>החזר גמיש וביטוח מותאם ל-MRE.</li>
           </ul>
           <p><a href="contact.html" class="btn-link">למטב את הנכסים שלכם? צרו קשר עם מומחי ה-MRE שלנו <i class="fa-solid fa-arrow-left" aria-hidden="true"></i></a></p>
@@ -197,9 +198,9 @@ const lang = 'he' as const;
           <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
         </button>
         <div class="faq-answer" id="eco-invest" aria-hidden="true">
-          <h4><i class="fas fa-gift" aria-hidden="true"></i> 1. תוכנית MDM Invest: מענק ישיר של 10%!</h4>
+          <h4><i class="fas fa-gift" aria-hidden="true"></i> 1. תוכנית MDM Invest: סיוע להשקעה</h4>
           <ul>
-            <li><strong>10% מההשקעה שלכם מוצעים על ידי המדינה</strong> (מענק שאינו ניתן להחזר, עד <strong>5 מיליון דירהם / כ-460,000 אירו</strong>).</li>
+            <li><strong>סיוע מהמדינה לחלק מההשקעה, בהתאם לתנאי התוכנית</strong> (מענק שאינו ניתן להחזר, עד <strong>5 מיליון דירהם / כ-460,000 אירו</strong>).</li>
             <li>תנאי עיקרי: תרומה מינימלית של 25% במטבע חוץ.</li>
             <li>הליך יעיל: מעובד תוך 60 יום דרך AMDIE (שיעור קבלה ב-2024: 68%).</li>
             <li>מגזרים זכאים: תעשייה, חינוך, בריאות, אירוח, אנרגיה מתחדשת, חקלאות ימית...</li>
@@ -253,7 +254,7 @@ const lang = 'he' as const;
             <li>⚖️ <strong>מקצועות משפטיים</strong> (שפיטה, נוטריון, עדול, פקידי הוצאה לפועל).</li>
             <li>⚕️ <strong>בריאות:</strong> יכולת להפעיל <strong>בית מרקחת</strong> (מכסה לאומית 1/10,000 תושבים, שמורה לאזרחים), הקמה קלה יותר של <strong>מרפאה פרטית</strong> (נדרש מינימום 51% הון מרוקאי - חוק 131-13).</li>
             <li>🛒 <strong>מסחר ותחבורה:</strong> סוגים מסוימים של קמעונאות/יבוא-יצוא אסטרטגיים, רישיונות מוניות ותחבורה ציבורית לנוסעים.</li>
-            <li>🏆 <strong>רכש ציבורי: העדפה לאומית (10-15%)</strong>, יתרון תחרותי מכריע במכרזים!</li>
+            <li>🏆 <strong>רכש ציבורי: העדפה לאומית</strong>, יתרון תחרותי מכריע במכרזים!</li>
           </ul>
         </div>
       </div>
@@ -357,7 +358,7 @@ const lang = 'he' as const;
         <div class="faq-answer" id="pat-retraite" aria-hidden="true">
           <h4>1. מסגרת מס ועלות מחיה</h4>
           <ul>
-            <li>💰 <strong>הנחה יוצאת דופן של 80% במס</strong> על פנסיות מחו"ל שהועברו!</li>
+            <li>💰 <strong>הקלת מס ייעודית</strong> על פנסיות מחו"ל שהועברו!</li>
             <li>☀️ עלות מחיה <strong>נמוכה ב-50-70%</strong> ממערב אירופה או צפון אמריקה.</li>
             <li>🏥 מערכת בריאות איכותית בעלות מתונה עם מתקנים פרטיים מצוינים.</li>
             <li>⛱️ אקלים נוח, סביבת חיים מועדפת ומורשת תרבותית עשירה.</li>

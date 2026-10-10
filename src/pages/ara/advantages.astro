@@ -35,6 +35,7 @@ const lang = 'ar' as const;
     <div class="faq-container">
          <section id="avantages-economiques-details" class="faq-section">
              <h2><i class="fas fa-chart-line" aria-hidden="true"></i> أولاً. المزايا الاقتصادية والممتلكات: التفاصيل</h2>
+             <p class="advantages-disclaimer" role="note" style="max-width:820px;margin:0 auto 28px;padding:14px 18px;border-inline-start:4px solid var(--secondary-color, #c5281c);background:rgba(0,0,0,0.035);border-radius:6px;font-size:0.95rem;line-height:1.6;"><strong>ملاحظة:</strong> هاد المعلومات عامة وللإرشاد فقط. أغلب المزايا الضريبية والمالية كتعتمد على الإقامة الضريبية ديالكم وشروط كل برنامج، ماشي غير على الجنسية. عزرا ماروك ما كتقدمش استشارة ضريبية: تأكدو من وضعيتكم مع مختص.</p>
              <div class="faq-item">
                  <button class="faq-question" aria-expanded="false" aria-controls="eco-prop">
                      <span><i class="fas fa-landmark" aria-hidden="true"></i> ولوج مميز للملكية العقارية والأراضي</span>
@@ -56,7 +57,7 @@ const lang = 'ar' as const;
                     <h4><i class="fas fa-home" aria-hidden="true"></i> 3. برامج عقارية سكنية مميزة</h4>
                     <ul>
                         <li><strong>السكن الاجتماعي:</strong> أولوية فالولوج، TVA مخفضة، رسوم تسجيل قليلة.</li>
-                        <li><strong>ضمان ضمان فونسيي:</strong> الدولة كتضمن حتى 80% من أول شراء عقاري.</li>
+                        <li><strong>ضمان ضمان فونسيي:</strong> الدولة كتضمن جزء من القرض ديال أول شراء عقاري.</li>
                         <li><strong>إعفاءات ضريبية:</strong> رسوم التسجيل (أول شراء)، ضريبة السكن (5 سنوات للعقارات الجديدة).</li>
                      </ul>
                  </div>
@@ -70,11 +71,11 @@ const lang = 'ar' as const;
                     <h4><i class="fas fa-percentage" aria-hidden="true"></i> 1. إعفاءات ضريبية كبيرة</h4>
                     <ul>
                         <li><strong>ضريبة صفر على الدخل الأجنبي المحول للمغرب!</strong> (الأجور، الأتعاب، الأرباح...).</li>
-                        <li><strong>المعاشات الأجنبية: تخفيض ضريبي بنسبة 80%!</strong> من أخف الأنظمة الضريبية فالعالم.</li>
+                        <li><strong>المعاشات الأجنبية: تخفيض ضريبي خاص (للمقيمين ضريبيا فالمغرب)</strong> من أخف الأنظمة الضريبية فالعالم.</li>
                         <li>مزايا ضريبية أخرى: إعفاء من ضريبة السكن (5 سنوات)، تخفيض 40% على دخل الإيجار، استرداد TVA على الصادرات (أكثر من 2000 درهم).</li>
                     </ul>
                     <div class="example-box">
-                        <strong><i class="fas fa-calculator" aria-hidden="true"></i> مثال ملموس:</strong> دخل أجنبي 90,000 يورو. تحويل للمغرب 45,000 يورو (تقريبا 495,000 درهم). <strong style="color: var(--secondary-color);">الضريبة فالمغرب = 0 درهم!</strong> (عائد إيجار صافي ممكن: 6-7%)
+                        <strong><i class="fas fa-calculator" aria-hidden="true"></i> مثال ملموس:</strong> دخل أجنبي 90,000 يورو. تحويل للمغرب 45,000 يورو (تقريبا 495,000 درهم). <strong style="color: var(--secondary-color);">الضريبة الفعلية كتعتمد على وضعيتكم الشخصية والإقامة الضريبية.</strong> (عائد إيجار صافي ممكن: 6-7%)
                     </div>
                      <h4><i class="fas fa-exchange-alt" aria-hidden="true"></i> 2. نظام بنكي وصرف مرن</h4>
                      <ul>
@@ -88,7 +89,7 @@ const lang = 'ar' as const;
                     <ul>
                         <li>أسعار مخفضة (<strong>-0.5% حتى -1%</strong> مقارنة بالمقيمين).</li>
                         <li>مدد ممتدة (حتى لـ <strong>25 عامًا</strong>).</li>
-                        <li>نسبة تمويل عالية (<strong>70-80%</strong> مع دفعة أولى بالعملة الصعبة).</li>
+                        <li>نسبة تمويل عالية (حسب البنك، مع دفعة أولى بالعملة الصعبة).</li>
                         <li>تسديد مرن وتأمين ملائم لـ MRE.</li>
                      </ul>
                     <p><a href="contact.html" class="btn-link">بغيتو تحسنو ممتلكاتكم؟ تواصلو مع خبراء MRE ديالنا <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></p>
@@ -122,9 +123,9 @@ const lang = 'ar' as const;
                     <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
                  </button>
                  <div class="faq-answer" id="eco-invest" aria-hidden="true">
-                    <h4><i class="fas fa-gift" aria-hidden="true"></i> 1. برنامج MDM Invest: منحة مباشرة بنسبة 10%!</h4>
+                    <h4><i class="fas fa-gift" aria-hidden="true"></i> 1. برنامج MDM Invest: دعم الاستثمار</h4>
                      <ul>
-                        <li><strong>10% من استثماركم هدية من الدولة</strong> (منحة غير قابلة للاسترداد، توصل حتى لـ <strong>5 مليون درهم / تقريبا 460,000 يورو</strong>).</li>
+                        <li><strong>دعم من الدولة لجزء من استثماركم، حسب شروط البرنامج</strong> (منحة غير قابلة للاسترداد، توصل حتى لـ <strong>5 مليون درهم / تقريبا 460,000 يورو</strong>).</li>
                         <li>الشرط الرئيسي: مساهمة لا تقل عن 25% بالعملة الصعبة.</li>
                         <li>إجراء فعال: تتم معالجته فـ 60 يوم عبر AMDIE (معدل القبول 2024: 68%).</li>
                         <li>القطاعات المؤهلة: الصناعة، التعليم، الصحة، الضيافة، الطاقات المتجددة، تربية الأحياء المائية...</li>
@@ -177,7 +178,7 @@ const lang = 'ar' as const;
                         <li><strong>المهن القانونية</strong> (القضاء، التوثيق، العدول، المفوضون القضائيون).</li>
                         <li><strong>الصحة:</strong> إمكانية تسيير <strong>صيدلية</strong> (حصة وطنية 1/10,000 نسمة، مخصصة للمواطنين)، إنشاء أسهل لـ <strong>عيادة خاصة</strong> (مطلوب 51% على الأقل رأس مال مغربي - قانون 131-13).</li>
                         <li><strong>التجارة والنقل:</strong> أنواع معينة من التجارة الاستراتيجية/الاستيراد والتصدير، رخص سيارات الأجرة، ونقل الركاب العمومي.</li>
-                        <li><strong>الصفقات العمومية: أفضلية وطنية (10-15%)</strong>، ميزة تنافسية حاسمة فالمناقصات!</li>
+                        <li><strong>الصفقات العمومية: أفضلية وطنية</strong>، ميزة تنافسية حاسمة فالمناقصات!</li>
                      </ul>
                  </div>
             </div>
@@ -279,7 +280,7 @@ const lang = 'ar' as const;
                  <div class="faq-answer" id="pat-retraite" aria-hidden="true">
                     <h4>1. الإطار الضريبي وتكلفة المعيشة</h4>
                      <ul>
-                         <li><strong>تخفيض ضريبي استثنائي بنسبة 80%</strong> على المعاشات الأجنبية المحولة!</li>
+                         <li><strong>تخفيض ضريبي خاص</strong> على المعاشات الأجنبية المحولة!</li>
                         <li>تكلفة المعيشة <strong>أقل بـ 50-70%</strong> من أوروبا الغربية أو أمريكا الشمالية.</li>
                         <li>نظام صحي ذو جودة بتكلفة معتدلة مع مرافق خاصة ممتازة.</li>
                         <li>مناخ ملائم، بيئة عيش مميزة، وتراث ثقافي غني.</li>
