@@ -166,10 +166,8 @@ const jsonLD = {
               <span class="error-message" id="consent-error" aria-live="polite"></span>
             </div>
 
-            <!-- Turnstile Anti-Spam -->
-            <div class="form-group full-width">
-              <div class="cf-turnstile" data-sitekey="VOTRE_SITE_KEY" data-theme="light"></div>
-            </div>
+            <!-- Anti-spam Turnstile retire : cle de site jamais configuree (VOTRE_SITE_KEY), le widget affichait
+                 une erreur. A reactiver avec une vraie cle Cloudflare et une verification cote serveur. -->
 
             <!-- Submit Button -->
             <div class="form-submit full-width">

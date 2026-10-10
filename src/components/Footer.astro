@@ -75,7 +75,7 @@ const servicesUrl = getPageUrl('services', lang);
   <!-- Footer bottom bar -->
   <div class="footer-bottom">
     <div class="container">
-      <p class="copyright">{t.copyright}</p>
+      <p class="copyright">{t.copyright.replace('{year}', String(new Date().getFullYear()))}</p>
       <p class="disclaimer">{t.disclaimer}</p>
       <nav class="footer-legal-links" aria-label={t.footerLegalLinks}>
         <a href={getLegalUrl('privacy', lang)}>{t.privacyPolicy}</a>
