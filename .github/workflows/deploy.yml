@@ -1,0 +1,52 @@
+name: Déploiement GitHub Pages (Astro)
+
+# A chaque push sur master : compilation Astro puis publication du dossier dist/
+# sur la branche gh-pages, servie par GitHub Pages sur ezra-maroc.com.
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploiement-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloner le dépôt
+        uses: actions/checkout@v4
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Installer les dépendances
+        run: npm ci --no-audit --no-fund
+
+      - name: Compiler le site
+        run: npm run build
+
+      - name: Publier sur la branche gh-pages
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd dist
+          # .nojekyll : sans lui, GitHub Pages ignore le dossier _astro/ (CSS, polices)
+          touch .nojekyll
+          echo 'ezra-maroc.com' > CNAME
+          git init -q
+          git config user.name "Ezra-Maroc"
+          git config user.email "albertassayag@ezra-project.fr"
+          git checkout -q -b gh-pages
+          git add -A
+          # [CF-Pages-Skip] : evite une compilation Cloudflare Pages inutile de gh-pages
+          git commit -q -m "Deploiement automatique (Astro) ${GITHUB_SHA::7} [CF-Pages-Skip]"
+          git push -q --force "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
