@@ -19,7 +19,7 @@ const servicesUrl = getPageUrl('services', lang);
     <!-- Col 1: About + social -->
     <div class="footer-about">
       <a href={getPageUrl('home', lang)} class="footer-logo">
-        {t.brandName[0]}<strong>{t.brandName[1]}</strong>
+        {t.brandName[0]} <strong>{t.brandName[1]}</strong>
       </a>
       <p class="footer-text">{t.footerTagline}</p>
       <div class="footer-social">
@@ -57,12 +57,13 @@ const servicesUrl = getPageUrl('services', lang);
       <ul>
         <li>
           <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-          30 N Gould St Ste R, Sheridan WY 82801, USA
+          <span><bdi>30 N Gould St Ste R, Sheridan WY 82801, USA</bdi></span>
         </li>
         <li>
           <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-          <strong>{t.footerFranceOffice}</strong><br>
-          {t.footerFranceAddress}
+          <!-- Un seul bloc texte : le <li> est en flex, sinon libelle et adresse s'affichent en deux colonnes.
+               <bdi> : en hebreu/arabe, garde le numero de rue au debut des adresses latines -->
+          <span><strong>{t.footerFranceOffice}</strong><br><bdi>{t.footerFranceAddress}</bdi></span>
         </li>
         <li>
           <i class="fas fa-envelope" aria-hidden="true"></i>
