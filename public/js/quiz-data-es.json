@@ -2,7 +2,7 @@
   "meta": {
     "lang": "es",
     "version": "1.0",
-    "questionCount": 1524
+    "questionCount": 1454
   },
   "ui": {
     "pageTitle": "Quiz Interactivo de Marruecos | Ezra Maroc",
@@ -158,17 +158,6 @@
         ],
         "correct": 1,
         "explanation": "La Kutubiya fue iniciada por los Almohades en el siglo XII."
-      },
-      {
-        "question": "La 'Marcha Verde' tuvo lugar en que ano?",
-        "answers": [
-          "1969",
-          "1975",
-          "1982",
-          "1991"
-        ],
-        "correct": 1,
-        "explanation": "La Marcha Verde tuvo lugar en noviembre de 1975 para reivindicar la soberania sobre el Sahara Occidental."
       },
       {
         "question": "Cual es la mas antigua de las ciudades imperiales de Marruecos?",
@@ -446,193 +435,6 @@
         "explanation": "Marrakech fue fundada hacia 1070-1071 por Yusuf ibn Tashfin, lider de la dinastia almoravide."
       },
       {
-        "question": "En que ano obtuvo Marruecos su independencia completa del protectorado franco-espanol?",
-        "answers": [
-          "1945",
-          "1956",
-          "1961",
-          "1975"
-        ],
-        "correct": 1,
-        "explanation": "Marruecos recupero su independencia el 2 de marzo de 1956 (zona francesa) y el 7 de abril de 1956 (zona espanola norte). Tanger fue reintegrada en octubre de 1956."
-      },
-      {
-        "question": "Quien era el sultan Mohammed V?",
-        "answers": [
-          "El fundador de la dinastia alauita",
-          "El padre de la independencia marroqui moderna",
-          "Un conquistador del siglo XVI",
-          "El primer ministro bajo el protectorado"
-        ],
-        "correct": 1,
-        "explanation": "El sultan Mohammed V es considerado el padre de la nacion marroqui moderna por su papel central en la consecucion de la independencia."
-      },
-      {
-        "question": "Que batalla de 1578 es tambien llamada 'Batalla de los Tres Reyes'?",
-        "answers": [
-          "Batalla de Zalaca",
-          "Batalla de Uad el-Majazin",
-          "Batalla de Alarcos",
-          "Batalla de Las Navas de Tolosa"
-        ],
-        "correct": 1,
-        "explanation": "La batalla de Uad el-Majazin (tambien Alcazarquivir) presencio la muerte del rey de Portugal Don Sebastian, del sultan marroqui Abd al-Malik y de su rival Muhammad al-Mutawakkil."
-      },
-      {
-        "question": "Que dinastia construyo la mezquita Kutubiya en Marrakech?",
-        "answers": [
-          "Los Almoravides",
-          "Los Almohades",
-          "Los Merinies",
-          "Los Watasies"
-        ],
-        "correct": 1,
-        "explanation": "La construccion de la Kutubiya fue iniciada por los Almohades en el siglo XII, bajo el reinado de Abd al-Mumin."
-      },
-      {
-        "question": "La 'Marcha Verde' tuvo lugar en que ano?",
-        "answers": [
-          "1969",
-          "1975",
-          "1982",
-          "1991"
-        ],
-        "correct": 1,
-        "explanation": "La Marcha Verde, una gran manifestacion pacifica, tuvo lugar el 6 de noviembre de 1975 para reivindicar la soberania marroqui sobre el Sahara Occidental."
-      },
-      {
-        "question": "Cual es la mas antigua de las ciudades imperiales de Marruecos?",
-        "answers": [
-          "Fez",
-          "Mequinez",
-          "Rabat",
-          "Marrakech"
-        ],
-        "correct": 0,
-        "explanation": "Fez, fundada en 789 por Idriss I, es la mas antigua de las cuatro ciudades imperiales de Marruecos."
-      },
-      {
-        "question": "Quien era Tariq ibn Ziyad?",
-        "answers": [
-          "Un sabio de Fez",
-          "Un general bereber que conquisto Iberia",
-          "Un poeta merinida",
-          "Un comerciante influyente"
-        ],
-        "correct": 1,
-        "explanation": "Tariq ibn Ziyad, un general bereber al servicio de los Omeyas, dirigio la conquista musulmana de la peninsula iberica en 711."
-      },
-      {
-        "question": "Que tratado instauro el protectorado frances en Marruecos en 1912?",
-        "answers": [
-          "Tratado de Tordesillas",
-          "Tratado de Fez",
-          "Tratado de Lalla Maghnia",
-          "Tratado de Algeciras"
-        ],
-        "correct": 1,
-        "explanation": "El Tratado de Fez, firmado el 30 de marzo de 1912, instauro oficialmente el protectorado frances sobre gran parte de Marruecos."
-      },
-      {
-        "question": "La dinastia saadi rechazo a que potencia europea en el siglo XVI?",
-        "answers": [
-          "El Imperio Otomano",
-          "Portugal",
-          "Espana",
-          "Inglaterra"
-        ],
-        "correct": 1,
-        "explanation": "Los Saadies obtuvieron una victoria decisiva contra los portugueses en la batalla de Uad el-Majazin (Batalla de los Tres Reyes) en 1578."
-      },
-      {
-        "question": "Que dinastia esta asociada a la construccion de la Madrasa Ben Youssef (version mas conocida)?",
-        "answers": [
-          "Idrisies",
-          "Almoravides",
-          "Almohades",
-          "Saadies (reconstruccion mayor)"
-        ],
-        "correct": 3,
-        "explanation": "Aunque existia una estructura anterior, la Madrasa Ben Youssef actual, una de las mas grandes del Magreb, fue ampliamente reconstruida y suntuosamente decorada por los Saadies en el siglo XVI."
-      },
-      {
-        "question": "Que explorador marroqui del siglo XIV es celebre por sus extensos viajes?",
-        "answers": [
-          "Leon el Africano",
-          "Ibn Battuta",
-          "Al Idrisi",
-          "Ibn Jaldun"
-        ],
-        "correct": 1,
-        "explanation": "Ibn Battuta, nacido en Tanger, es uno de los mas grandes viajeros de la historia, habiendo recorrido gran parte del mundo musulman y mas alla durante cerca de 30 anos."
-      },
-      {
-        "question": "Cerca de que ciudad se encuentra el sitio romano de Volubilis?",
-        "answers": [
-          "Rabat",
-          "Fez",
-          "Mequinez",
-          "Tanger"
-        ],
-        "correct": 2,
-        "explanation": "Volubilis, antigua capital de la Mauritania Tingitana, esta situada cerca de Mequinez y de la ciudad santa de Mulay Idriss Zerhoun."
-      },
-      {
-        "question": "Quien fue el primer Residente General de Francia en Marruecos?",
-        "answers": [
-          "Mariscal Petain",
-          "Charles de Gaulle",
-          "Mariscal Lyautey",
-          "Jules Ferry"
-        ],
-        "correct": 2,
-        "explanation": "El Mariscal Hubert Lyautey fue el primer Residente General de Francia en Marruecos, de 1912 a 1925, desempenando un papel fundamental en la organizacion del protectorado."
-      },
-      {
-        "question": "Que dinastia reina actualmente en Marruecos?",
-        "answers": [
-          "Saadi",
-          "Merinida",
-          "Idrisida",
-          "Alauita"
-        ],
-        "correct": 3,
-        "explanation": "La dinastia Alauita reina en Marruecos desde mediados del siglo XVII."
-      },
-      {
-        "question": "Contra que potencias lucho Abd el-Krim el-Jattabi durante la Guerra del Rif?",
-        "answers": [
-          "Francia y Reino Unido",
-          "Espana y Francia",
-          "Portugal y Espana",
-          "Italia y Alemania"
-        ],
-        "correct": 1,
-        "explanation": "Abd el-Krim el-Jattabi lidero la resistencia rifena contra Espana, y luego contra una coalicion franco-espanola durante la Guerra del Rif (1921-1926)."
-      },
-      {
-        "question": "Que sultan marroqui reconocio la independencia de Estados Unidos en 1777?",
-        "answers": [
-          "Mulay Ismail",
-          "Sidi Mohammed ben Abdallah (Mohammed III)",
-          "Mulay Abd al-Rahman",
-          "Hassan I"
-        ],
-        "correct": 1,
-        "explanation": "El sultan Sidi Mohammed ben Abdallah (Mohammed III) fue uno de los primeros jefes de Estado en reconocer la independencia de los Estados Unidos de America, en 1777."
-      },
-      {
-        "question": "El 'Golpe de Agadir' de 1911 implico a que potencia europea frente a Francia?",
-        "answers": [
-          "Reino Unido",
-          "Alemania",
-          "Espana",
-          "Italia"
-        ],
-        "correct": 1,
-        "explanation": "Alemania envio la canonera SMS Panther a Agadir, creando una crisis internacional (crisis de Agadir) con Francia respecto a las ambiciones coloniales en Marruecos."
-      },
-      {
         "question": "Essauira (Mogador) fue redisenada en el siglo XVIII por un arquitecto frances llamado:",
         "answers": [
           "Vauban",
@@ -644,50 +446,6 @@
         "explanation": "Theodore Cornut, un arquitecto frances discipulo de Vauban, fue encargado por el sultan Sidi Mohammed ben Abdallah de redisenar las fortificaciones y el urbanismo de Essauira."
       },
       {
-        "question": "Al-Kahina (Dihya) era una reina guerrera de que origen?",
-        "answers": [
-          "Arabe",
-          "Bereber (Amazigh)",
-          "Romano",
-          "Vandalo"
-        ],
-        "correct": 1,
-        "explanation": "Al-Kahina (Dihya) era una reina guerrera y lider religiosa bereber (Amazigh) que encabezo la resistencia contra la conquista musulmana del Magreb en el siglo VII."
-      },
-      {
-        "question": "El Dahir Bereber de 1930 pretendia aplicar que tipo de justicia a ciertas tribus?",
-        "answers": [
-          "Justicia islamica (Sharia)",
-          "Justicia consuetudinaria bereber",
-          "Justicia consular francesa",
-          "Justicia militar"
-        ],
-        "correct": 1,
-        "explanation": "El Dahir Bereber (16 de mayo de 1930) pretendia sustraer ciertas regiones y tribus bereberes de la justicia islamica (Sharia) para someterlas a sus propias leyes consuetudinarias, lo que fue percibido como un intento de division por los nacionalistas."
-      },
-      {
-        "question": "Que ciudad fue la capital de Marruecos bajo la dinastia almoravide?",
-        "answers": [
-          "Fez",
-          "Rabat",
-          "Marrakech",
-          "Sale"
-        ],
-        "correct": 2,
-        "explanation": "Marrakech fue la capital del imperio almoravide tras su fundacion por esta dinastia."
-      },
-      {
-        "question": "La dinastia de los Idrisies es considerada fundadora de que estado?",
-        "answers": [
-          "El estado argelino",
-          "El estado tunecino",
-          "El primer estado marroqui estructurado",
-          "Al-Andalus"
-        ],
-        "correct": 2,
-        "explanation": "Los Idrisies, descendientes de Idriss I, son considerados los fundadores del primer estado marroqui islamico independiente y estructurado en los siglos VIII-IX."
-      },
-      {
         "question": "Que ciudad imperial es famosa por sus curtidurias medievales aun en actividad?",
         "answers": [
           "Mequinez",
@@ -697,72 +455,6 @@
         ],
         "correct": 3,
         "explanation": "Las curtidurias Chouara de Fez, que datan de la Edad Media, son las mas grandes y conocidas de Marruecos, y siguen en actividad con metodos tradicionales."
-      },
-      {
-        "question": "Que sultan alauita es conocido por su muy largo reinado en los siglos XVII-XVIII y sus numerosas construcciones?",
-        "answers": [
-          "Mulay Rashid",
-          "Mulay Ismail",
-          "Sidi Mohammed ben Abdallah",
-          "Mulay Slimane"
-        ],
-        "correct": 1,
-        "explanation": "Mulay Ismail (1672-1727) es celebre por su reinado de 55 anos, sus grandes construcciones (especialmente en Mequinez, su capital), y su poderoso ejercito (la Guardia Negra o Abid al-Bukhari)."
-      },
-      {
-        "question": "La Conferencia de Algeciras en 1906 trataba sobre el futuro de que pais?",
-        "answers": [
-          "Argelia",
-          "Tunez",
-          "Marruecos",
-          "Libia"
-        ],
-        "correct": 2,
-        "explanation": "La Conferencia de Algeciras (Espana) estatuyo sobre las esferas de influencia en Marruecos, principalmente entre Francia y Espana, y afirmo la integridad territorial de Marruecos pero tambien el derecho de supervision de las potencias europeas sobre sus asuntos."
-      },
-      {
-        "question": "El Manifiesto de la Independencia de Marruecos fue presentado en que ano?",
-        "answers": [
-          "1930",
-          "1944",
-          "1952",
-          "1955"
-        ],
-        "correct": 1,
-        "explanation": "El Manifiesto de la Independencia, que reclamaba el fin del protectorado y la independencia total de Marruecos, fue presentado el 11 de enero de 1944 por nacionalistas marroquies."
-      },
-      {
-        "question": "Que papel desempeno Mehdi Ben Barka en la historia politica marroqui?",
-        "answers": [
-          "Primer rey del Marruecos independiente",
-          "Figura de la oposicion de izquierda y panafricanista",
-          "Gran visir bajo el protectorado",
-          "Jefe militar de la Guerra del Rif"
-        ],
-        "correct": 1,
-        "explanation": "Mehdi Ben Barka fue un lider nacionalista, socialista, tercermundista y figura destacada de la oposicion de izquierda. Desaparecio en 1965 en Paris en circunstancias no esclarecidas."
-      },
-      {
-        "question": "Las 'Tumbas Saadies' son un importante sitio historico en que ciudad?",
-        "answers": [
-          "Fez",
-          "Mequinez",
-          "Rabat",
-          "Marrakech"
-        ],
-        "correct": 3,
-        "explanation": "Las Tumbas Saadies, necropolis real de la dinastia saadi del siglo XVI, se encuentran en Marrakech, cerca de la mezquita de la Kasba."
-      },
-      {
-        "question": "Cual fue la principal actividad economica de Sijilmasa durante la Edad Media?",
-        "answers": [
-          "Puerto pesquero mediterraneo",
-          "Centro agricola de la llanura del Saiss",
-          "Encrucijada del comercio transahariano del oro",
-          "Capital politica de los Almohades"
-        ],
-        "correct": 2,
-        "explanation": "Sijilmasa, situada en la region del Tafilalet, era un nudo vital del comercio transahariano, especialmente para el oro, la sal, los esclavos y los productos manufacturados, conectando el Africa subsahariana con el Magreb."
       },
       {
         "question": "Que celebre erudito e historiador del siglo XIV, autor de la 'Muqaddima', tiene vinculos con Marruecos?",
@@ -2910,17 +2602,6 @@
         "explanation": "La construcción de la Kutubía fue iniciada por los almohades en el siglo XII, bajo el reinado de Abd al-Mumín."
       },
       {
-        "question": "La 'Marcha Verde' tuvo lugar en qué año?",
-        "answers": [
-          "1969",
-          "1975",
-          "1982",
-          "1991"
-        ],
-        "correct": 1,
-        "explanation": "La Marcha Verde, una gran manifestación pacífica, tuvo lugar el 6 de noviembre de 1975 para reivindicar la soberanía marroquí sobre el Sahara Occidental."
-      },
-      {
         "question": "¿Cuál es la más antigua de las ciudades imperiales de Marruecos?",
         "answers": [
           "Fez",
@@ -4870,17 +4551,6 @@
         "explanation": "El ued Dadés, al que se unen otros afluentes, atraviesa la región de Ouarzazate y alimenta la presa El Mansour Eddahbi."
       },
       {
-        "question": "¿Cuál es el punto más meridional del Marruecos continental (excluyendo el Sahara Occidental)?",
-        "answers": [
-          "Cabo Juby (Tarfaya)",
-          "Lagouira (Ras Nouadhibou)",
-          "Figuig",
-          "Gueltat Zemmour"
-        ],
-        "correct": 0,
-        "explanation": "Cabo Juby, cerca de la ciudad de Tarfaya, se considera generalmente como el punto más al sur de la parte no disputada del Marruecos continental. Lagouira está más al sur pero en la zona del Sahara Occidental."
-      },
-      {
         "question": "La ciudad de Esauira está particularmente expuesta a un viento fuerte y constante, favorable para los deportes náuticos. ¿Cuál es su nombre local?",
         "answers": [
           "El Chergui",
@@ -5156,17 +4826,6 @@
         "explanation": "El Tafilalet, cuna de la dinastía Alauita, constituye el mayor oasis y palmeral de Marruecos, extendiéndose a lo largo de los ueds Ziz y Ghriss."
       },
       {
-        "question": "La ciudad de Uchda, capital de la región del Oriental, está situada cerca de qué frontera?",
-        "answers": [
-          "Frontera mauritana",
-          "Frontera española (Melilla)",
-          "Frontera argelina",
-          "Frontera con el Sahara Occidental"
-        ],
-        "correct": 2,
-        "explanation": "Uchda se encuentra a pocos kilómetros de la frontera argelina, lo que históricamente la ha convertido en un importante punto de paso y comercio."
-      },
-      {
         "question": "El 'Macizo de los Beni Snassen', aislado al noreste de Marruecos, está geológicamente vinculado a qué cadena principal?",
         "answers": [
           "Al Atlas Medio",
@@ -5209,17 +4868,6 @@
         ],
         "correct": 2,
         "explanation": "La llanura del Haouz es una vasta llanura aluvial situada al norte del Alto Atlas occidental, donde se encuentra la ciudad de Marrakech. Está irrigada por los ueds que descienden del Atlas."
-      },
-      {
-        "question": "¿Cuál es la ciudad más meridional de Marruecos reconocida internacionalmente como tal (excluyendo el Sahara Occidental)?",
-        "answers": [
-          "Tarfaya",
-          "Tan-Tan",
-          "Guelmin",
-          "Laayún"
-        ],
-        "correct": 0,
-        "explanation": "Tarfaya (antiguamente Villa Bens / Cabo Juby) es a menudo citada como la ciudad más meridional de Marruecos antes de entrar en la zona del Sahara Occidental. Guelmin es también una puerta importante hacia el sur."
       },
       {
         "question": "La 'Mesogea Marroquí' es un término geológico que designa:",
@@ -10156,17 +9804,6 @@
         "explanation": "El francés conserva un lugar preponderante en Marruecos en muchos ámbitos de la vida pública y económica, a pesar de una diversificación lingüística en curso."
       },
       {
-        "question": "El Hassaniya es un dialecto árabe beduino hablado principalmente en qué región(es) de Marruecos y sus alrededores?",
-        "answers": [
-          "En las montañas del Rif y la región Oriental",
-          "En Tánger, Tetuán y a lo largo de la costa norte",
-          "En las provincias saharianas de Marruecos y en Mauritania",
-          "Únicamente en Oujda y en las llanuras de Angad"
-        ],
-        "correct": 2,
-        "explanation": "El Hassaniya es el dialecto árabe hablado por las poblaciones saharauis, especialmente en el sur de Marruecos, en el Sahara Occidental, en Mauritania y en ciertas partes de Mali y Argelia."
-      },
-      {
         "question": "Tachelhit, Tarifit y Tamazight (del Marruecos Central) son las tres principales variantes regionales de qué lengua en Marruecos?",
         "answers": [
           "De la Darija (árabe marroquí)",
@@ -10231,17 +9868,6 @@
         ],
         "correct": 1,
         "explanation": "La diglosia en Marruecos se manifiesta por el uso diferenciado del Árabe Estándar Moderno (lengua de prestigio, de la escritura, de lo formal) y de la Darija (lengua de la comunicación oral cotidiana e informal)."
-      },
-      {
-        "question": "Además del francés, ¿qué otra lengua europea tiene una presencia histórica y cierta influencia, especialmente en el norte de Marruecos?",
-        "answers": [
-          "El alemán",
-          "El italiano",
-          "El portugués",
-          "El español"
-        ],
-        "correct": 3,
-        "explanation": "El español, debido a la proximidad geográfica y al antiguo protectorado español sobre el norte de Marruecos (y el Sahara Occidental), conserva una presencia significativa, sobre todo en esas regiones."
       },
       {
         "question": "El término 'Amazigh' (plural 'Imazighen') significa 'hombre libre'. ¿La lengua amazige es una lengua aislada o forma parte de una familia lingüística más amplia?",
@@ -12818,17 +12444,6 @@
         "explanation": "\"Kayna chta lyoum\" (Hoy hay lluvia / Está lloviendo)."
       },
       {
-        "question": "Para preguntar \"¿Qué hora es?\" en Darija, la forma más natural es:",
-        "answers": [
-          "Bch'hal hadi f sa3a?",
-          "Ch7al f sa3a? (شحال فالساعة؟)",
-          "Imta lwaqt?",
-          "Fin sa3a?"
-        ],
-        "correct": 1,
-        "explanation": "\"Ch7al f sa3a?\" (lit. \"¿Cuánto en la hora?\") es la forma más común de preguntar la hora. La palabra \"hadi\" (esto/ahora) rara vez se añade en este contexto."
-      },
-      {
         "question": "\"Dir lkhir تلقاه\" (Dir lkhir telqah) es un proverbio que significa:",
         "answers": [
           "El que busca encuentra",
@@ -13599,28 +13214,6 @@
         "explanation": "Puede significar \"¡Perdón!\" de manera enfática o una interjección ante una situación impactante/irritante."
       },
       {
-        "question": "La expresión \"Sir tqowwed!\" (سير تقود!) es:",
-        "answers": [
-          "Una bendición",
-          "Un insulto vulgar que significa \"¡Lárgate!\" o \"¡Vete a paseo!\"",
-          "Una invitación a sentarse",
-          "Una broma"
-        ],
-        "correct": 1,
-        "explanation": "Es un insulto vulgar y muy ofensivo que es importante reconocer para evitar usarlo o para comprender su gravedad si se escucha."
-      },
-      {
-        "question": "\"Sberdila\" (سبيرديلة) en Darija se refiere específicamente a:",
-        "answers": [
-          "Zapatos de vestir de cuero",
-          "Sandalias tradicionales (Belgha)",
-          "Sneakers / Zapatillas deportivas (a veces tipo alpargatas modernas)",
-          "Botas"
-        ],
-        "correct": 2,
-        "explanation": "\"Sberdila\" se refiere a calzado deportivo tipo zapatillas o sneakers, y a veces puede hacer referencia a alpargatas modernas, pero no al calzado en general."
-      },
-      {
         "question": "¿Qué significa \"Qamija\" (قميجة)?",
         "answers": [
           "Calcetines (Tqacher)",
@@ -13641,17 +13234,6 @@
         ],
         "correct": 1,
         "explanation": "\"Serwal dial jean\" (Pantalón vaquero)."
-      },
-      {
-        "question": "Para pedir \"Ayúdame, por favor\" a un hombre, la forma correcta en imperativo es:",
-        "answers": [
-          "3awnek 3afak",
-          "3awni 3afak (عاوني عفاك)",
-          "N3awnek 3afak",
-          "T3awenni 3afak"
-        ],
-        "correct": 1,
-        "explanation": "\"3awni\" es el imperativo \"Ayúdame\" (dirigiéndose a un hombre). Si te diriges a una mujer, dirías \"3awnini 3afak\"."
       },
       {
         "question": "\"Lah ykhalik\" (الله يخليك) puede usarse para pedir algo amablemente, significa:",
@@ -15425,28 +15007,6 @@
         ],
         "correct": 1,
         "explanation": "La alfarería de Tamalloukt es una cerámica rural, modelada a mano por las mujeres, de color ocre rojo, a menudo sin esmaltar o parcialmente decorada con motivos sencillos. Es principalmente utilitaria (platos, tinajas)."
-      },
-      {
-        "question": "Los 'Cherratine' en los zocos son los artesanos que fabrican y venden:",
-        "answers": [
-          "Especias molidas",
-          "Cuerdas, cordeles, bridas y cabestros para los animales (cordeleros)",
-          "Babuchas de cuero",
-          "Instrumentos musicales"
-        ],
-        "correct": 1,
-        "explanation": "Los Cherratine son los cordeleros, que fabrican todo tipo de cordajes, bridas, cabestros y otros artículos de fibras vegetales o de cuero para los animales de carga y de tiro."
-      },
-      {
-        "question": "El arte del 'Tatuaje con Henna Negra' (Harkous) se utiliza para:",
-        "answers": [
-          "Crear tatuajes permanentes",
-          "Crear motivos temporales más oscuros y más precisos que la henna natural, a menudo para el rostro o detalles finos",
-          "Teñir el cabello de negro azabache",
-          "Proteger la piel del sol"
-        ],
-        "correct": 1,
-        "explanation": "El Harkous es una pasta negra (a menudo a base de agallas de roble u otros ingredientes) utilizada para dibujar motivos temporales más oscuros y más finos que la henna tradicional, imitando a veces la apariencia de un tatuaje permanente. Su uso requiere precaución."
       }
     ],
     "musique": [
@@ -16219,336 +15779,6 @@
         ],
         "correct": 2,
         "explanation": "Una 'lila' (noche) Gnaoua es una ceremonia ritual compleja que se desarrolla durante varias horas, a menudo toda la noche, con diferentes fases correspondientes a la invocación de diferentes cohortes de 'mlouk' (espíritus/santos)."
-      },
-      {
-        "question": "¿Cuál es el nombre de la danza colectiva de las mujeres del Rif, a menudo acompañada de cantos y bendires?",
-        "answers": [
-          "La Guedra",
-          "El Ahidous",
-          "La Tafsut o Laâlaoui femenino",
-          "La danza del puñal"
-        ],
-        "correct": 2,
-        "explanation": "Las mujeres del Rif tienen sus propias danzas colectivas, a menudo ejecutadas en línea o en círculo, con movimientos gráciles de los brazos y cantos responsoriales, acompañadas por percusión. Nombres como Tafsut (primavera) o variantes femeninas de Laâlaoui pueden existir."
-      },
-      {
-        "question": "El 'Foundou' es un estilo de canto y poesía popular originario de qué ciudad del norte, conocido por sus textos satíricos o sociales?",
-        "answers": [
-          "Marrakech",
-          "Tánger (y Tetuán)",
-          "Agadir",
-          "Uchda"
-        ],
-        "correct": 1,
-        "explanation": "El Foundou (o Fundu) es un género poético-musical popular de Tánger y Tetuán, a menudo en Darija o Haketia, que aborda temas de la vida cotidiana, el amor, la sátira social, con un tono a veces humorístico o nostálgico."
-      },
-      {
-        "question": "¿La escala pentatónica (de cinco notas) es frecuente en ciertas músicas tradicionales bereberes?",
-        "answers": [
-          "No, la música bereber utiliza siempre escalas heptatónicas (siete notas) complejas",
-          "Sí, numerosas melodías bereberes, especialmente en el Atlas, están basadas en escalas pentatónicas, dándoles un color particular",
-          "La música bereber es exclusivamente atonal",
-          "La escala pentatónica está reservada a la música Gnaoua"
-        ],
-        "correct": 1,
-        "explanation": "Las escalas pentatónicas son comunes en muchas tradiciones musicales amazighes, confiriendo a las melodías una sonoridad distinta y a menudo muy antigua."
-      },
-      {
-        "question": "¿Qué cantante amazigh (chleuh) moderno, apodado 'el ruiseñor del Souss', es una figura importante de la canción Tachelhit contemporánea?",
-        "answers": [
-          "Idir (argelino)",
-          "Amouri Mbarek",
-          "Lounès Matoub (argelino)",
-          "Hassan Arsmouk"
-        ],
-        "correct": 1,
-        "explanation": "Amouri Mbarek (1951-2015) fue uno de los más grandes renovadores de la canción amazigh Tachelhit, introduciendo instrumentos modernos y arreglos nuevos mientras preservaba el alma de esta tradición. Hassan Arsmouk es también una figura muy popular de la nueva generación."
-      },
-      {
-        "question": "El 'Festival del Raï de Uchda' es un evento anual que celebra:",
-        "answers": [
-          "Únicamente el jazz manouche",
-          "La música Raï en todas sus formas, con artistas argelinos y marroquíes",
-          "La música clásica árabe-andaluza",
-          "El folclore de las tribus del Oriental"
-        ],
-        "correct": 1,
-        "explanation": "Este festival destaca la música Raï, género popular nacido en Argelia pero muy arraigado en la región de Uchda, invitando a estrellas confirmadas y jóvenes talentos de ambos países."
-      },
-      {
-        "question": "La 'transcripción musical' de los repertorios tradicionales orales (como Al-Âla o el Malhoun) es un trabajo importante para:",
-        "answers": [
-          "Simplificar la música para los turistas",
-          "Asegurar su preservación, su estudio y su transmisión a las nuevas generaciones de músicos",
-          "Hacerla más fácil de bailar",
-          "Prohibirla a los no iniciados"
-        ],
-        "correct": 1,
-        "explanation": "La transcripción en partitura (notación musical) de los repertorios transmitidos oralmente permite documentarlos, analizarlos, enseñarlos de manera más sistemática y preservarlos del olvido o las alteraciones."
-      },
-      {
-        "question": "Los 'Qarqabat' son otro nombre para qué instrumento de percusión metálico?",
-        "answers": [
-          "El Bendir",
-          "Los Qarqabous (Krakeb)",
-          "La Darbouka",
-          "El Tbel"
-        ],
-        "correct": 1,
-        "explanation": "'Qarqabat' es una variante ortográfica o fonética de 'Qarqabous', las grandes castañuelas metálicas de los Gnaoua."
-      },
-      {
-        "question": "¿Qué papel desempeña el 'coro' (Rdada o Awwada) en la interpretación del Malhoun o de la Aïta?",
-        "answers": [
-          "Permanece en silencio y nunca interviene",
-          "Repite ciertos versos o estribillos, responde al solista y sostiene el canto",
-          "Toca únicamente instrumentos de viento",
-          "Baila mientras el solista canta"
-        ],
-        "correct": 1,
-        "explanation": "El coro (a veces llamado 'Rdada' - los que repiten, o 'Awwada' - los que responden) desempeña un papel esencial retomando estribillos, respondiendo a las estrofas del cantante principal (Cheikh) y creando una textura vocal colectiva."
-      },
-      {
-        "question": "El 'Festival Timizart' en Tiznit está dedicado a la valorización de qué artesanía vinculada a la cultura local, a menudo acompañada de música?",
-        "answers": [
-          "La cerámica de Tamegroute",
-          "El arte de la joyería en plata",
-          "La escultura en madera de tuya",
-          "El tejido de alfombras Boucherouite"
-        ],
-        "correct": 1,
-        "explanation": "El Festival Timizart ('plata' en amazigh) en Tiznit celebra la reputada tradición de la ciudad en materia de creación de joyas de plata, una artesanía íntimamente ligada a la cultura y la identidad de la región."
-      },
-      {
-        "question": "La 'música militar marroquí', con sus fanfarrias y sus noubas interpretadas durante las ceremonias oficiales, tiene raíces:",
-        "answers": [
-          "Puramente otomanas",
-          "Hispano-moriscas y otomanas, reorganizadas y modernizadas en la época contemporánea",
-          "Exclusivamente francesas coloniales",
-          "Inspiradas en las fanfarrias de jazz de Nueva Orleans"
-        ],
-        "correct": 1,
-        "explanation": "La música militar marroquí tiene un largo legado, con influencias andaluzas (noubas), otomanas (uso de ciertos instrumentos y estructuras), y fue estructurada y modernizada especialmente a partir de los siglos XIX y XX."
-      },
-      {
-        "question": "¿Qué artista marroquí, figura del 'World Jazz', es conocido por sus composiciones con oud y sus colaboraciones con músicos internacionales?",
-        "answers": [
-          "Brahim Maalouf (libanés)",
-          "Anouar Brahem (tunecino)",
-          "Driss El Maloumi",
-          "Rabih Abou-Khalil (libanés)"
-        ],
-        "correct": 2,
-        "explanation": "Driss El Maloumi es un oudista y compositor marroquí de renombre, cuyo estilo mezcla tradición árabe y amazigh con influencias de jazz y contemporáneas. Ha colaborado con numerosos artistas internacionales."
-      },
-      {
-        "question": "Los 'Mouachahates' (sing. Mouachah) son poemas estróficos en árabe clásico o andaluz que han sido ampliamente musicalizados. ¿Están presentes en el repertorio Al-Âla marroquí?",
-        "answers": [
-          "No, son específicos de Siria y Egipto",
-          "Sí, los Mouachahates constituyen una parte importante del repertorio vocal de la música árabe-andaluza (Al-Âla)",
-          "Se cantan únicamente en Tamazight",
-          "Son poemas épicos no cantados"
-        ],
-        "correct": 1,
-        "explanation": "El Mouachah (o Muwashshah) es una forma poética y musical originaria de Al-Ándalus, que se convirtió en un componente esencial del repertorio de la música árabe-andaluza (Al-Âla en Marruecos, Malouf en Túnez y Libia, Gharnati en Argelia)."
-      },
-      {
-        "question": "El 'clarinete' (a veces llamado 'Klarnit') ha sido integrado en ciertas orquestas de Chaâbi marroquí. ¿Qué papel desempeña a menudo?",
-        "answers": [
-          "Reemplaza al bajo",
-          "Toca frases melódicas, improvisaciones (taqsims) y respuestas al canto, aportando una sonoridad brillante",
-          "Marca únicamente el ritmo",
-          "Nunca se utiliza en el Chaâbi"
-        ],
-        "correct": 1,
-        "explanation": "El clarinete, como el saxofón, ha sido adoptado en ciertas orquestas de Chaâbi por su capacidad para tocar melodías ornamentadas, improvisaciones virtuosas y dialogar con la voz del cantante."
-      },
-      {
-        "question": "¿Cuál es el nombre del ritmo base en 6/8 muy frecuente en la música popular del Magreb, incluyendo Marruecos, y que da ganas de bailar?",
-        "answers": [
-          "El Mizan El Btāyhī (andaluz)",
-          "El ritmo 'Baladi' (egipcio)",
-          "El ritmo '6/8 magrebí' (a veces llamado Chaoui, Alloui, etc., según los estilos)",
-          "El vals de tres tiempos"
-        ],
-        "correct": 2,
-        "explanation": "Muchos ritmos populares festivos del Magreb se basan en un compás de 6/8 (o a veces 12/8 con subdivisiones), creando una pulsación animada típica del Chaâbi, la Aïta y otras músicas de baile."
-      },
-      {
-        "question": "Las letras de las canciones Gnaoua (invocaciones, alabanzas) son a menudo una mezcla de qué idiomas?",
-        "answers": [
-          "Árabe clásico y francés",
-          "Árabe dialectal marroquí, fragmentos de lenguas de África Occidental y términos religiosos árabes",
-          "Únicamente Tamazight",
-          "Judeoespañol y portugués"
-        ],
-        "correct": 1,
-        "explanation": "El repertorio cantado de los Gnaoua es una fascinante mezcla lingüística que refleja su historia: Darija, términos religiosos árabes y numerosas palabras o frases procedentes de lenguas subsaharianas (Bambara, Fulani, Hausa...), vestigios de sus orígenes."
-      },
-      {
-        "question": "¿Cuál es el nombre del Festival de música electrónica que se celebra cada año en Marrakech, atrayendo a DJs de renombre mundial?",
-        "answers": [
-          "Atlas Electronic",
-          "Oasis Festival",
-          "Moga Festival (Esauira y otros lugares)",
-          "Todos estos festivales existen o han existido"
-        ],
-        "correct": 1,
-        "explanation": "Oasis Festival es uno de los festivales de música electrónica más conocidos y establecidos en Marrakech, atrayendo a una clientela internacional. Moga comenzó en Esauira y Atlas Electronic tuvo lugar cerca de Marrakech."
-      },
-      {
-        "question": "El 'Mawlid' (celebración del nacimiento del Profeta Muhammad) es una ocasión para qué tipos de actuaciones musicales religiosas en Marruecos?",
-        "answers": [
-          "Únicamente conciertos de rock",
-          "Sesiones de 'Samaâ' (audición espiritual) con cantos de alabanza (Madih, Mouloudiyyat) y percusión",
-          "Óperas en árabe clásico",
-          "Concursos de rap místico"
-        ],
-        "correct": 1,
-        "explanation": "El Mawlid se marca con veladas de oración y sesiones de Samaâ, donde grupos (mounchidin) interpretan poemas y cantos a la gloria de Dios y del Profeta (Madih Nabawi, Mouloudiyyat), a menudo acompañados de bendires y otras percusiones."
-      },
-      {
-        "question": "¿Qué cantante de Raï argelino, muy popular en Marruecos, es apodado 'El Rey del Raï'?",
-        "answers": [
-          "Cheb Hasni",
-          "Cheb Mami",
-          "Khaled (Hadj Brahim)",
-          "Rachid Taha"
-        ],
-        "correct": 2,
-        "explanation": "Khaled es internacionalmente reconocido como 'El Rey del Raï' por haber popularizado este género en todo el mundo con éxitos como 'Didi' o 'Aïcha'."
-      },
-      {
-        "question": "La 'sfifa' y los 'aakads', pasamanerías que adornan los caftanes, ¿pueden considerarse como una artesanía vinculada al aparato musical durante las actuaciones?",
-        "answers": [
-          "No, son elementos puramente de indumentaria sin vínculo con la música",
-          "Sí, porque los músicos y cantantes tradicionales (andaluz, malhoun, chaâbi) a menudo llevan trajes de ceremonia ricamente decorados con estos elementos",
-          "Únicamente para las bailarinas orientales",
-          "Solo los instrumentos se decoran así"
-        ],
-        "correct": 1,
-        "explanation": "La elegancia de los trajes tradicionales (caftanes, chilabas de ceremonia) que llevan los músicos y cantantes durante las actuaciones forma parte integral del espectáculo y de la puesta en valor de estas artes. La sfifa y los aakads contribuyen enormemente a ello."
-      },
-      {
-        "question": "¿Qué tipo de flauta de caña con muesca, de sonido suave y aterciopelado, se utiliza a menudo en solo o en pequeños conjuntos de música popular o bereber?",
-        "answers": [
-          "La flauta de Pan",
-          "El píccolo",
-          "La 'flauta del pastor' (a veces llamada 'awada' simple, o nombres locales amazighes)",
-          "El fagot"
-        ],
-        "correct": 2,
-        "explanation": "Existen diversos tipos de flautas rústicas de caña, a menudo llamadas 'flautas de pastor' (aunque tocadas por todos), con muesca o con conducto, que producen melodías simples y expresivas en la música folclórica."
-      },
-      {
-        "question": "El 'Oriental Groove' es un término a veces utilizado para describir la música de qué artista marroquí que vive en Francia, mezclando chaâbi, jazz e influencias orientales?",
-        "answers": [
-          "Hindi Zahra",
-          "Aziz Sahmaoui (University of Gnawa)",
-          "Saad Lamjarred",
-          "Malik (Malik Adouane)"
-        ],
-        "correct": 3,
-        "explanation": "Malik Adouane es un artista que ha explorado las fusiones entre música oriental, chaâbi, jazz y funk, creando un estilo a veces calificado de Oriental Groove."
-      },
-      {
-        "question": "El 'Taqsim' (تقسيم) en la música árabe y andaluza es:",
-        "answers": [
-          "Un canto coral muy rítmico",
-          "Una improvisación instrumental en solo, no medida, que permite al músico demostrar su virtuosismo y explorar un modo (maqâm)",
-          "La parte final y más rápida de una Nouba",
-          "Un tipo de danza folclórica"
-        ],
-        "correct": 1,
-        "explanation": "El Taqsim es una improvisación instrumental, a menudo tocada como preludio a una pieza o entre dos movimientos, donde el músico solista (oud, violín, qanoun, ney) explora libremente las características melódicas y emocionales de un maqâm."
-      },
-      {
-        "question": "¿Cuál es el nombre del festival de músicas electrónicas y artes digitales que se celebra generalmente en Esauira, conocido por su ambiente festivo en la playa?",
-        "answers": [
-          "Moga Festival",
-          "Atlas Electronic (Marrakech)",
-          "Oasis Festival (Marrakech)",
-          "Rabat Africa Dance"
-        ],
-        "correct": 0,
-        "explanation": "Moga Festival, que comenzó en Esauira, es un evento popular que combina actuaciones de DJs internacionales y locales de la escena electrónica con el marco único de la ciudad y sus playas."
-      },
-      {
-        "question": "Los 'Abidat Rma' (عبيدات الرمى) son agrupaciones musicales populares, originarias de la región de Khouribga y Oued Zem, conocidas por:",
-        "answers": [
-          "Sus cantos religiosos lentos y meditativos",
-          "Sus cantos rítmicos, su percusión (bendir, taârija), sus danzas enérgicas y sus textos a menudo humorísticos o sociales",
-          "Su música clásica árabe-andaluza",
-          "Sus instrumentos de viento únicamente"
-        ],
-        "correct": 1,
-        "explanation": "Los Abidat Rma ('los esclavos/servidores de los tiradores') son agrupaciones de hombres que interpretan un repertorio de cantos y danzas muy rítmicos, a menudo con letras improvisadas o tradicionales que comentan la vida social, con un uso marcado de percusión."
-      },
-      {
-        "question": "La 'Aissawa de Fez' (o Mequinez) es famosa por sus 'hadrates' (sesiones rituales). ¿Qué instrumentos predominan en ellas?",
-        "answers": [
-          "Guitarras eléctricas y batería",
-          "Tambores (tbel, bendir, taârija), oboes (ghaita) y cantos potentes",
-          "Únicamente instrumentos de cuerda (oud, violín, qanoun)",
-          "El silencio y la meditación"
-        ],
-        "correct": 1,
-        "explanation": "Las hadrates de la cofradía Aissawa se caracterizan por el uso intensivo de percusión variada, el sonido penetrante de las ghaitas y cantos colectivos potentes que conducen al trance."
-      },
-      {
-        "question": "Tánger, ciudad cosmopolita, acoge varios festivales musicales. ¿Cuál de estos géneros es particularmente puesto en valor por un festival reputado de la ciudad?",
-        "answers": [
-          "El Rock Progresivo",
-          "El Jazz (con Tanjazz)",
-          "La música Country",
-          "La Ópera Barroca"
-        ],
-        "correct": 1,
-        "explanation": "El festival Tanjazz es un evento anual importante en Tánger, dedicado al jazz en todas sus formas, con artistas nacionales e internacionales."
-      },
-      {
-        "question": "El 'Amazigh Blues' es un término a veces utilizado para describir la música de qué artistas del desierto (Marruecos, Mali, Níger)?",
-        "answers": [
-          "Grupos de heavy metal",
-          "Artistas como Tinariwen, Bombino, o músicos marroquíes que se inspiran en estas sonoridades (ej: ciertos temas de Saida Fikri)",
-          "Cantantes de ópera",
-          "Intérpretes de gaita"
-        ],
-        "correct": 1,
-        "explanation": "El 'Blues del desierto' o 'Amazigh Blues' designa una música melancólica e hipnótica, tocada con guitarra eléctrica con ritmos tradicionales tuaregs o bereberes, popularizada por grupos como Tinariwen y artistas como Bombino. Algunos artistas marroquíes se inspiran en ella."
-      },
-      {
-        "question": "El 'Museo de la Música de Marrakech', situado en el barrio de Mouassine, también es conocido con el nombre de:",
-        "answers": [
-          "Dar Si Said",
-          "Dar Bellarj",
-          "Casa de la Fotografía",
-          "Museo de Mouassine"
-        ],
-        "correct": 3,
-        "explanation": "El Museo de Mouassine en Marrakech, alojado en una residencia histórica, está dedicado a las músicas de Marruecos, presentando instrumentos, grabaciones e información sobre las tradiciones musicales (andaluza, bereber, malhoun, etc.). Dar Bellarj también acoge eventos."
-      },
-      {
-        "question": "La cantante Hindi Zahra, de origen marroquí, es conocida por su estilo musical que fusiona:",
-        "answers": [
-          "Música clásica india y cantos gregorianos",
-          "Folk, blues, jazz, soul con influencias bereberes y orientales",
-          "Heavy metal y música árabe-andaluza",
-          "Techno hardcore y Chaâbi"
-        ],
-        "correct": 1,
-        "explanation": "Hindi Zahra, cantante y música aclamada, tiene un estilo muy personal que mezcla influencias folk, blues, jazz y soul, integrando al mismo tiempo elementos de sus raíces bereberes y marroquíes."
-      },
-      {
-        "question": "El 'Zajal' (poesía dialectal cantada) y el 'Malhoun', ¿se consideran formas de 'literatura oral'?",
-        "answers": [
-          "No, porque siempre están escritos y se leen",
-          "Sí, porque aunque puedan estar escritos, su transmisión, su vitalidad y su improvisación se realizan en gran medida por la oralidad y el canto",
-          "Solo el Zajal es oral, el Malhoun es escrito",
-          "Son formas de danza únicamente"
-        ],
-        "correct": 1,
-        "explanation": "Aunque numerosos poemas de Malhoun o de Zajal hayan sido transcritos, estos géneros pertenecen fundamentalmente a la tradición oral. Su aprendizaje, su interpretación y su evolución se han realizado durante mucho tiempo por la escucha, la memorización y la actuación cantada."
       },
       {
         "question": "¿Cuál es el nombre de la danza colectiva de las mujeres del Rif, a menudo acompañada de cantos y bendires?",

@@ -2,7 +2,7 @@
   "meta": {
     "lang": "en",
     "version": "1.0",
-    "questionCount": 1524
+    "questionCount": 1399
   },
   "ui": {
     "pageTitle": "Interactive Morocco Quiz | Ezra Maroc",
@@ -158,17 +158,6 @@
         ],
         "correct": 1,
         "explanation": "The Koutoubia was initiated by the Almohads in the 12th century."
-      },
-      {
-        "question": "In what year did the 'Green March' take place?",
-        "answers": [
-          "1969",
-          "1975",
-          "1982",
-          "1991"
-        ],
-        "correct": 1,
-        "explanation": "The Green March took place in November 1975 to claim sovereignty over Western Sahara."
       },
       {
         "question": "Which is the oldest of Morocco's imperial cities?",
@@ -433,336 +422,6 @@
         ],
         "correct": 2,
         "explanation": "Sijilmasa, in the Tafilalet region, was a vital hub of trans-Saharan trade, especially for gold and salt."
-      },
-      {
-        "question": "Which dynasty founded the city of Marrakech in the 11th century?",
-        "answers": [
-          "The Almoravids",
-          "The Almohads",
-          "The Marinids",
-          "The Saadians"
-        ],
-        "correct": 0,
-        "explanation": "Marrakech was founded around 1070–1071 by Yusuf ibn Tashfin, leader of the Almoravid dynasty."
-      },
-      {
-        "question": "In what year did Morocco gain full independence from the Franco-Spanish protectorate?",
-        "answers": [
-          "1945",
-          "1956",
-          "1961",
-          "1975"
-        ],
-        "correct": 1,
-        "explanation": "Morocco regained its independence on March 2, 1956 (French zone) and April 7, 1956 (northern Spanish zone). Tangier was reintegrated in October 1956."
-      },
-      {
-        "question": "Who was Sultan Mohammed V?",
-        "answers": [
-          "The founder of the Alaouite dynasty",
-          "The father of modern Moroccan independence",
-          "A 16th-century conqueror",
-          "The prime minister under the protectorate"
-        ],
-        "correct": 1,
-        "explanation": "Sultan Mohammed V is considered the father of the modern Moroccan nation for his central role in achieving independence."
-      },
-      {
-        "question": "Which battle of 1578 is also known as the 'Battle of the Three Kings'?",
-        "answers": [
-          "Battle of Sagrajas",
-          "Battle of Wadi al-Makhazin",
-          "Battle of Alarcos",
-          "Battle of Las Navas de Tolosa"
-        ],
-        "correct": 1,
-        "explanation": "The Battle of Wadi al-Makhazin (also Ksar el-Kebir) saw the death of King Sebastian of Portugal, Moroccan Sultan Abd al-Malik, and his rival Muhammad al-Mutawakkil."
-      },
-      {
-        "question": "Which dynasty built the Koutoubia Mosque in Marrakech?",
-        "answers": [
-          "The Almoravids",
-          "The Almohads",
-          "The Marinids",
-          "The Wattasids"
-        ],
-        "correct": 1,
-        "explanation": "Construction of the Koutoubia was initiated by the Almohads in the 12th century, under the reign of Abd al-Mumin."
-      },
-      {
-        "question": "In what year did the 'Green March' take place?",
-        "answers": [
-          "1969",
-          "1975",
-          "1982",
-          "1991"
-        ],
-        "correct": 1,
-        "explanation": "The Green March, a massive peaceful demonstration, took place on November 6, 1975, to claim Moroccan sovereignty over Western Sahara."
-      },
-      {
-        "question": "Which is the oldest of Morocco's imperial cities?",
-        "answers": [
-          "Fez",
-          "Meknes",
-          "Rabat",
-          "Marrakech"
-        ],
-        "correct": 0,
-        "explanation": "Fez, founded in 789 by Idris I, is the oldest of the four imperial cities of Morocco."
-      },
-      {
-        "question": "Who was Tariq ibn Ziyad?",
-        "answers": [
-          "A scholar from Fez",
-          "A Berber general who conquered Iberia",
-          "A Marinid poet",
-          "An influential merchant"
-        ],
-        "correct": 1,
-        "explanation": "Tariq ibn Ziyad, a Berber general in the service of the Umayyads, led the Muslim conquest of the Iberian Peninsula in 711."
-      },
-      {
-        "question": "Which treaty established the French protectorate in Morocco in 1912?",
-        "answers": [
-          "Treaty of Tordesillas",
-          "Treaty of Fez",
-          "Treaty of Lalla Maghnia",
-          "Treaty of Algeciras"
-        ],
-        "correct": 1,
-        "explanation": "The Treaty of Fez, signed on March 30, 1912, officially established the French protectorate over much of Morocco."
-      },
-      {
-        "question": "Which European power did the Saadian dynasty repel in the 16th century?",
-        "answers": [
-          "The Ottoman Empire",
-          "Portugal",
-          "Spain",
-          "England"
-        ],
-        "correct": 1,
-        "explanation": "The Saadians won a decisive victory over the Portuguese at the Battle of Wadi al-Makhazin (Battle of the Three Kings) in 1578."
-      },
-      {
-        "question": "Which dynasty is associated with the construction of the Ben Youssef Madrasa (its best-known version)?",
-        "answers": [
-          "Idrissids",
-          "Almoravids",
-          "Almohads",
-          "Saadians (major reconstruction)"
-        ],
-        "correct": 3,
-        "explanation": "Although an earlier structure existed, the current Ben Youssef Madrasa, one of the largest in the Maghreb, was largely rebuilt and sumptuously decorated by the Saadians in the 16th century."
-      },
-      {
-        "question": "Which 14th-century Moroccan explorer is famous for his extensive travels?",
-        "answers": [
-          "Leo Africanus",
-          "Ibn Battuta",
-          "Al-Idrisi",
-          "Ibn Khaldun"
-        ],
-        "correct": 1,
-        "explanation": "Ibn Battuta, born in Tangier, is one of the greatest travelers in history, having journeyed through much of the Muslim world and beyond over nearly 30 years."
-      },
-      {
-        "question": "Near which city is the Roman site of Volubilis located?",
-        "answers": [
-          "Rabat",
-          "Fez",
-          "Meknes",
-          "Tangier"
-        ],
-        "correct": 2,
-        "explanation": "Volubilis, the former capital of Mauretania Tingitana, is located near Meknes and the holy city of Moulay Idriss Zerhoun."
-      },
-      {
-        "question": "Who was the first French Resident-General in Morocco?",
-        "answers": [
-          "Marshal Petain",
-          "Charles de Gaulle",
-          "Marshal Lyautey",
-          "Jules Ferry"
-        ],
-        "correct": 2,
-        "explanation": "Marshal Hubert Lyautey was the first French Resident-General in Morocco, from 1912 to 1925, playing a major role in organizing the protectorate."
-      },
-      {
-        "question": "Which dynasty currently rules Morocco?",
-        "answers": [
-          "Saadian",
-          "Marinid",
-          "Idrissid",
-          "Alaouite"
-        ],
-        "correct": 3,
-        "explanation": "The Alaouite dynasty has ruled Morocco since the mid-17th century."
-      },
-      {
-        "question": "Against which powers did Abd el-Krim el-Khattabi fight during the Rif War?",
-        "answers": [
-          "France and the United Kingdom",
-          "Spain and France",
-          "Portugal and Spain",
-          "Italy and Germany"
-        ],
-        "correct": 1,
-        "explanation": "Abd el-Krim el-Khattabi led the Riffian resistance against Spain, then against a Franco-Spanish coalition during the Rif War (1921–1926)."
-      },
-      {
-        "question": "Which Moroccan sultan recognized the independence of the United States in 1777?",
-        "answers": [
-          "Moulay Ismail",
-          "Sidi Mohammed ben Abdallah (Mohammed III)",
-          "Moulay Abd al-Rahman",
-          "Hassan I"
-        ],
-        "correct": 1,
-        "explanation": "Sultan Sidi Mohammed ben Abdallah (Mohammed III) was one of the first heads of state to recognize the independence of the United States of America, in 1777."
-      },
-      {
-        "question": "The 'Agadir Crisis' of 1911 involved which European power against France?",
-        "answers": [
-          "United Kingdom",
-          "Germany",
-          "Spain",
-          "Italy"
-        ],
-        "correct": 1,
-        "explanation": "Germany sent the gunboat SMS Panther to Agadir, creating an international crisis (the Agadir Crisis) with France over colonial ambitions in Morocco."
-      },
-      {
-        "question": "Essaouira (Mogador) was redesigned in the 18th century by a French architect named:",
-        "answers": [
-          "Vauban",
-          "Theodore Cornut",
-          "Le Corbusier",
-          "Haussmann"
-        ],
-        "correct": 1,
-        "explanation": "Theodore Cornut, a French architect and disciple of Vauban, was commissioned by Sultan Sidi Mohammed ben Abdallah to redesign the fortifications and urban layout of Essaouira."
-      },
-      {
-        "question": "Al-Kahina (Dihya) was a warrior queen of what origin?",
-        "answers": [
-          "Arab",
-          "Berber (Amazigh)",
-          "Roman",
-          "Vandal"
-        ],
-        "correct": 1,
-        "explanation": "Al-Kahina (Dihya) was a Berber (Amazigh) warrior queen and religious leader who led the resistance against the Muslim conquest of the Maghreb in the 7th century."
-      },
-      {
-        "question": "The Berber Dahir of 1930 aimed to apply what type of justice to certain tribes?",
-        "answers": [
-          "Islamic justice (Sharia)",
-          "Berber customary law",
-          "French consular justice",
-          "Military justice"
-        ],
-        "correct": 1,
-        "explanation": "The Berber Dahir (May 16, 1930) aimed to remove certain Berber regions and tribes from Islamic justice (Sharia) and subject them to their own customary laws, which was perceived as a divisive tactic by nationalists."
-      },
-      {
-        "question": "Which city was the capital of Morocco under the Almoravid dynasty?",
-        "answers": [
-          "Fez",
-          "Rabat",
-          "Marrakech",
-          "Sale"
-        ],
-        "correct": 2,
-        "explanation": "Marrakech was the capital of the Almoravid empire after it was founded by that dynasty."
-      },
-      {
-        "question": "The Idrissid dynasty is considered the founder of which state?",
-        "answers": [
-          "The Algerian state",
-          "The Tunisian state",
-          "The first structured Moroccan state",
-          "Al-Andalus"
-        ],
-        "correct": 2,
-        "explanation": "The Idrissids, descendants of Idris I, are considered the founders of the first independent, structured Islamic Moroccan state in the 8th–9th century."
-      },
-      {
-        "question": "Which imperial city is famous for its medieval tanneries still in operation?",
-        "answers": [
-          "Meknes",
-          "Marrakech",
-          "Rabat",
-          "Fez"
-        ],
-        "correct": 3,
-        "explanation": "The Chouara tanneries of Fez, dating from the Middle Ages, are the largest and best-known in Morocco, still operating using traditional methods."
-      },
-      {
-        "question": "Which Alaouite sultan is known for his very long reign in the 17th–18th century and his numerous constructions?",
-        "answers": [
-          "Moulay Rashid",
-          "Moulay Ismail",
-          "Sidi Mohammed ben Abdallah",
-          "Moulay Slimane"
-        ],
-        "correct": 1,
-        "explanation": "Moulay Ismail (1672–1727) is famous for his 55-year reign, his grand constructions (especially in Meknes, his capital), and his powerful army (the Black Guard or Abid al-Bukhari)."
-      },
-      {
-        "question": "The Algeciras Conference in 1906 concerned the future of which country?",
-        "answers": [
-          "Algeria",
-          "Tunisia",
-          "Morocco",
-          "Libya"
-        ],
-        "correct": 2,
-        "explanation": "The Algeciras Conference (Spain) determined the spheres of influence in Morocco, mainly between France and Spain, and affirmed Morocco's territorial integrity but also the right of European powers to oversee its affairs."
-      },
-      {
-        "question": "The Independence Manifesto of Morocco was presented in what year?",
-        "answers": [
-          "1930",
-          "1944",
-          "1952",
-          "1955"
-        ],
-        "correct": 1,
-        "explanation": "The Independence Manifesto, demanding the end of the protectorate and full independence for Morocco, was presented on January 11, 1944, by Moroccan nationalists."
-      },
-      {
-        "question": "What role did Mehdi Ben Barka play in Moroccan political history?",
-        "answers": [
-          "First king of independent Morocco",
-          "Left-wing opposition figure and pan-Africanist",
-          "Grand vizier under the protectorate",
-          "Military chief of the Rif War"
-        ],
-        "correct": 1,
-        "explanation": "Mehdi Ben Barka was a nationalist, socialist, Third-Worldist leader and a major figure of the left-wing opposition. He disappeared in 1965 in Paris under unresolved circumstances."
-      },
-      {
-        "question": "The 'Saadian Tombs' are an important historical site in which city?",
-        "answers": [
-          "Fez",
-          "Meknes",
-          "Rabat",
-          "Marrakech"
-        ],
-        "correct": 3,
-        "explanation": "The Saadian Tombs, the royal necropolis of the Saadian dynasty dating from the 16th century, are located in Marrakech, near the Kasbah Mosque."
-      },
-      {
-        "question": "What was the main economic activity of Sijilmasa during the Middle Ages?",
-        "answers": [
-          "Mediterranean fishing port",
-          "Agricultural center of the Saiss plain",
-          "Crossroads of the trans-Saharan gold trade",
-          "Political capital of the Almohads"
-        ],
-        "correct": 2,
-        "explanation": "Sijilmasa, located in the Tafilalet region, was a vital hub of trans-Saharan trade, especially for gold, salt, slaves, and manufactured goods, connecting sub-Saharan Africa to the Maghreb."
       },
       {
         "question": "Which famous 14th-century scholar and historian, author of the 'Muqaddimah,' has ties to Morocco?",
@@ -2855,17 +2514,6 @@
         "explanation": "Faced with the intensification of resistance, international pressure, and the failure of the deposition policy, the French government eventually had to negotiate and accept the return of Sultan Mohammed V, paving the way for independence negotiations (Accords of La Celle-Saint-Cloud)."
       },
       {
-        "question": "Which dynasty founded the city of Marrakech in the 11th century?",
-        "answers": [
-          "The Almoravids",
-          "The Almohads",
-          "The Marinids",
-          "The Saadians"
-        ],
-        "correct": 0,
-        "explanation": "Marrakech was founded around 1070-1071 by Yusuf ibn Tashfin, leader of the Almoravid dynasty."
-      },
-      {
         "question": "In what year did Morocco achieve its full independence from the Franco-Spanish Protectorate?",
         "answers": [
           "1945",
@@ -2877,17 +2525,6 @@
         "explanation": "Morocco regained its independence on March 2, 1956 (French zone) and April 7, 1956 (northern Spanish zone). Tangier was reintegrated in October 1956."
       },
       {
-        "question": "Who was Sultan Mohammed V?",
-        "answers": [
-          "The founder of the Alaouite dynasty",
-          "The father of modern Moroccan independence",
-          "A 16th-century conqueror",
-          "The prime minister under the Protectorate"
-        ],
-        "correct": 1,
-        "explanation": "Sultan Mohammed V is considered the father of the modern Moroccan nation for his central role in achieving independence."
-      },
-      {
         "question": "Which battle of 1578 is also called the 'Battle of the Three Kings'?",
         "answers": [
           "Battle of Sagrajas",
@@ -2897,50 +2534,6 @@
         ],
         "correct": 1,
         "explanation": "The Battle of Oued el-Makhazine (also Ksar el-Kebir) saw the death of the King of Portugal Dom Sebastian, the Moroccan Sultan Abd al-Malik, and his rival Muhammad al-Mutawakkil."
-      },
-      {
-        "question": "Which dynasty built the Koutoubia Mosque in Marrakech?",
-        "answers": [
-          "The Almoravids",
-          "The Almohads",
-          "The Marinids",
-          "The Wattasids"
-        ],
-        "correct": 1,
-        "explanation": "The construction of the Koutoubia was initiated by the Almohads in the 12th century, under the reign of Abd al-Mu'min."
-      },
-      {
-        "question": "The 'Green March' took place in which year?",
-        "answers": [
-          "1969",
-          "1975",
-          "1982",
-          "1991"
-        ],
-        "correct": 1,
-        "explanation": "The Green March, a large peaceful demonstration, took place on November 6, 1975, to claim Moroccan sovereignty over the Western Sahara."
-      },
-      {
-        "question": "Which is the oldest of Morocco's imperial cities?",
-        "answers": [
-          "Fez",
-          "Meknes",
-          "Rabat",
-          "Marrakech"
-        ],
-        "correct": 0,
-        "explanation": "Fez, founded in 789 by Idris I, is the oldest of Morocco's four imperial cities."
-      },
-      {
-        "question": "Who was Tariq ibn Ziyad?",
-        "answers": [
-          "A scholar from Fez",
-          "A Berber general who conquered Iberia",
-          "A Marinid poet",
-          "An influential merchant"
-        ],
-        "correct": 1,
-        "explanation": "Tariq ibn Ziyad, a Berber general in the service of the Umayyads, led the Muslim conquest of the Iberian Peninsula in 711."
       },
       {
         "question": "Which treaty established the French Protectorate over Morocco in 1912?",
@@ -2976,39 +2569,6 @@
         "explanation": "Although an earlier structure existed, the current Ben Youssef Madrasa, one of the largest in the Maghreb, was largely rebuilt and sumptuously decorated by the Saadians in the 16th century."
       },
       {
-        "question": "Which 14th-century Moroccan explorer is famous for his extensive travels?",
-        "answers": [
-          "Leo Africanus",
-          "Ibn Battuta",
-          "Al-Idrisi",
-          "Ibn Khaldun"
-        ],
-        "correct": 1,
-        "explanation": "Ibn Battuta, born in Tangier, is one of the greatest travelers in history, having journeyed through much of the Muslim world and beyond over nearly 30 years."
-      },
-      {
-        "question": "Near which city is the Roman site of Volubilis located?",
-        "answers": [
-          "Rabat",
-          "Fez",
-          "Meknes",
-          "Tangier"
-        ],
-        "correct": 2,
-        "explanation": "Volubilis, the former capital of Mauretania Tingitana, is located near Meknes and the holy city of Moulay Idriss Zerhoun."
-      },
-      {
-        "question": "Who was the first French Resident-General in Morocco?",
-        "answers": [
-          "Marshal Petain",
-          "Charles de Gaulle",
-          "Marshal Lyautey",
-          "Jules Ferry"
-        ],
-        "correct": 2,
-        "explanation": "Marshal Hubert Lyautey was the first French Resident-General in Morocco, from 1912 to 1925, playing a major role in organizing the Protectorate."
-      },
-      {
         "question": "Which dynasty currently reigns over Morocco?",
         "answers": [
           "Saadian",
@@ -3020,83 +2580,6 @@
         "explanation": "The Alaouite dynasty has reigned over Morocco since the mid-17th century."
       },
       {
-        "question": "Against which powers did Abd el-Krim el-Khattabi fight during the Rif War?",
-        "answers": [
-          "France and the United Kingdom",
-          "Spain and France",
-          "Portugal and Spain",
-          "Italy and Germany"
-        ],
-        "correct": 1,
-        "explanation": "Abd el-Krim el-Khattabi led the Riffian resistance against Spain, then against a Franco-Spanish coalition during the Rif War (1921-1926)."
-      },
-      {
-        "question": "Which Moroccan sultan recognized the independence of the United States in 1777?",
-        "answers": [
-          "Moulay Ismail",
-          "Sidi Mohammed ben Abdallah (Mohammed III)",
-          "Moulay Abd al-Rahman",
-          "Hassan I"
-        ],
-        "correct": 1,
-        "explanation": "Sultan Sidi Mohammed ben Abdallah (Mohammed III) was one of the first heads of state to recognize the independence of the United States of America, in 1777."
-      },
-      {
-        "question": "The 'Agadir Crisis' of 1911 involved which European power against France?",
-        "answers": [
-          "United Kingdom",
-          "Germany",
-          "Spain",
-          "Italy"
-        ],
-        "correct": 1,
-        "explanation": "Germany sent the gunboat SMS Panther to Agadir, creating an international crisis (Agadir Crisis) with France regarding colonial ambitions in Morocco."
-      },
-      {
-        "question": "Essaouira (Mogador) was redesigned in the 18th century by a French architect named:",
-        "answers": [
-          "Vauban",
-          "Theodore Cornut",
-          "Le Corbusier",
-          "Haussmann"
-        ],
-        "correct": 1,
-        "explanation": "Theodore Cornut, a French architect and disciple of Vauban, was commissioned by Sultan Sidi Mohammed ben Abdallah to redesign the fortifications and urban layout of Essaouira."
-      },
-      {
-        "question": "Al-Kahina (Dihya) was a warrior queen of what origin?",
-        "answers": [
-          "Arab",
-          "Berber (Amazigh)",
-          "Roman",
-          "Vandal"
-        ],
-        "correct": 1,
-        "explanation": "Al-Kahina (Dihya) was a Berber (Amazigh) warrior queen and religious leader who led resistance against the Muslim conquest of the Maghreb in the 7th century."
-      },
-      {
-        "question": "The Berber Dahir of 1930 aimed to apply what type of justice to certain tribes?",
-        "answers": [
-          "Islamic law (Sharia)",
-          "Berber customary law",
-          "French consular justice",
-          "Military justice"
-        ],
-        "correct": 1,
-        "explanation": "The Berber Dahir (May 16, 1930) aimed to remove certain Berber regions and tribes from Islamic law (Sharia) to subject them to their own customary laws, which was perceived as a divide-and-rule attempt by the nationalists."
-      },
-      {
-        "question": "Which city was the capital of Morocco under the Almoravid dynasty?",
-        "answers": [
-          "Fez",
-          "Rabat",
-          "Marrakech",
-          "Sale"
-        ],
-        "correct": 2,
-        "explanation": "Marrakech was the capital of the Almoravid Empire after its founding by this dynasty."
-      },
-      {
         "question": "The Idrisid dynasty is considered the founder of which state?",
         "answers": [
           "The Algerian state",
@@ -3106,17 +2589,6 @@
         ],
         "correct": 2,
         "explanation": "The Idrisids, descendants of Idris I, are considered the founders of the first independent and structured Moroccan Islamic state in the 8th-9th centuries."
-      },
-      {
-        "question": "Which imperial city is famous for its medieval tanneries still in operation?",
-        "answers": [
-          "Meknes",
-          "Marrakech",
-          "Rabat",
-          "Fez"
-        ],
-        "correct": 3,
-        "explanation": "The Chouara tanneries of Fez, dating from the Middle Ages, are the largest and best known in Morocco, still operating using traditional methods."
       },
       {
         "question": "Which Alaouite sultan is known for his very long reign in the 17th-18th centuries and his many construction projects?",
@@ -3152,50 +2624,6 @@
         "explanation": "The Independence Manifesto, demanding the end of the Protectorate and full independence for Morocco, was presented on January 11, 1944, by Moroccan nationalists."
       },
       {
-        "question": "What role did Mehdi Ben Barka play in Moroccan political history?",
-        "answers": [
-          "First king of independent Morocco",
-          "Left-wing opposition figure and Pan-Africanist",
-          "Grand vizier under the Protectorate",
-          "Military leader of the Rif War"
-        ],
-        "correct": 1,
-        "explanation": "Mehdi Ben Barka was a nationalist leader, socialist, third-worldist, and a major figure of the left-wing opposition. He disappeared in 1965 in Paris under unresolved circumstances."
-      },
-      {
-        "question": "The 'Saadian Tombs' are an important historical site in which city?",
-        "answers": [
-          "Fez",
-          "Meknes",
-          "Rabat",
-          "Marrakech"
-        ],
-        "correct": 3,
-        "explanation": "The Saadian Tombs, the royal necropolis of the Saadian dynasty dating from the 16th century, are located in Marrakech, near the Kasbah Mosque."
-      },
-      {
-        "question": "What was the main economic activity of Sijilmasa during the Middle Ages?",
-        "answers": [
-          "Mediterranean fishing port",
-          "Agricultural center of the Saiss plain",
-          "Crossroads of the trans-Saharan gold trade",
-          "Political capital of the Almohads"
-        ],
-        "correct": 2,
-        "explanation": "Sijilmasa, located in the Tafilalet region, was a vital hub of trans-Saharan trade, particularly for gold, salt, slaves, and manufactured goods, connecting sub-Saharan Africa to the Maghreb."
-      },
-      {
-        "question": "Which famous 14th-century scholar and historian, author of the 'Muqaddimah,' has ties to Morocco?",
-        "answers": [
-          "Al-Ghazali",
-          "Averroes (Ibn Rushd)",
-          "Ibn Khaldun",
-          "Avicenna (Ibn Sina)"
-        ],
-        "correct": 2,
-        "explanation": "Ibn Khaldun, one of the fathers of sociology and historiography, spent a significant part of his life in Fez, serving the Marinid sultans, where he wrote part of his major work."
-      },
-      {
         "question": "Who directed the construction of the city of Rabat and initially named it 'Ribat Al Fath'?",
         "answers": [
           "Yusuf ibn Tashfin (Almoravid)",
@@ -3218,17 +2646,6 @@
         "explanation": "Hassan II became King of Morocco on March 3, 1961, succeeding his father Mohammed V after his death."
       },
       {
-        "question": "The 'Republic of the Bou Regreg,' or Republic of Sale, was a corsair city-state active in the 17th century. Where was it mainly based?",
-        "answers": [
-          "Tangier and Tetouan",
-          "Sale and Rabat",
-          "Essaouira and Safi",
-          "Larache and Asilah"
-        ],
-        "correct": 1,
-        "explanation": "The Republic of Sale (or Republic of the Bou Regreg) was a de facto independent political entity centered on the cities of Sale and present-day Rabat (on the banks of the Bou Regreg), and engaged in maritime piracy."
-      },
-      {
         "question": "What notable event of 1907 led to the occupation of Oujda and Casablanca by France?",
         "answers": [
           "The murder of Dr. Emile Mauchamp in Marrakech and the Casablanca riots",
@@ -3240,61 +2657,6 @@
         "explanation": "The assassination of Dr. Mauchamp in Marrakech in March 1907 served as a pretext for France to occupy Oujda. Anti-European riots in Casablanca in August 1907, following the alleged desecration of a cemetery, led to the bombardment and occupation of the city by France."
       },
       {
-        "question": "The Marinid dynasty, known for its artistic refinement, made which city its main capital?",
-        "answers": [
-          "Marrakech",
-          "Fez",
-          "Rabat",
-          "Meknes"
-        ],
-        "correct": 1,
-        "explanation": "Fez was the capital and cultural center of the Marinid Empire, which left many magnificent monuments, particularly sumptuously decorated madrasas."
-      },
-      {
-        "question": "Who was Lalla Fatma N'Soumer?",
-        "answers": [
-          "A 16th-century poetess",
-          "A figure of the Kabyle resistance (Algeria) in the 19th century",
-          "The first Moroccan female pilot",
-          "A Sufi saint of Tetouan"
-        ],
-        "correct": 1,
-        "explanation": "Lalla Fatma N'Soumer was an emblematic figure of the popular Kabyle resistance against the French conquest of Algeria in the mid-19th century. Although Algerian, her story is sometimes known in Morocco in the broader context of Maghrebi resistance."
-      },
-      {
-        "question": "The 'Years of Lead' (Sanawat Ar-Rasas) refers to a period in recent Moroccan history characterized by:",
-        "answers": [
-          "Great economic prosperity",
-          "Major geological disturbances",
-          "Severe political repression and human rights violations",
-          "Prolonged drought"
-        ],
-        "correct": 2,
-        "explanation": "The 'Years of Lead' spanned approximately from the 1960s to the 1990s (mainly under Hassan II), marked by strong repression of political opponents and human rights violations."
-      },
-      {
-        "question": "Which dynasty directly preceded the Almoravids in Morocco before the latter unified the country?",
-        "answers": [
-          "The centralized Idrisids",
-          "The Barghawata across the entire territory",
-          "The Umayyads of Cordoba directly",
-          "A fragmentation into several emirates and principalities"
-        ],
-        "correct": 3,
-        "explanation": "Before unification by the Almoravids, Morocco was politically fragmented, with entities such as the Barghawata, remnants of the Idrisids, and the influence of the Fatimids and the Umayyads of Cordoba, with no major unified dynasty."
-      },
-      {
-        "question": "The city of Lixus, near Larache, is an important archaeological site of which successive ancient civilizations?",
-        "answers": [
-          "Greek then Byzantine",
-          "Egyptian then Nubian",
-          "Phoenician, Carthaginian, then Roman",
-          "Vandal then Visigothic"
-        ],
-        "correct": 2,
-        "explanation": "Lixus was first a Phoenician trading post, then an important Carthaginian and finally Roman city, known for its fish salting works, its temple, and its amphitheater."
-      },
-      {
         "question": "What was the main demand of the Istiqlal Party upon its official creation in the 1940s?",
         "answers": [
           "Agricultural reform",
@@ -3304,17 +2666,6 @@
         ],
         "correct": 1,
         "explanation": "The Istiqlal Party (Independence Party), born from the nationalist movement, had as its main goal the independence of Morocco from the Franco-Spanish Protectorate."
-      },
-      {
-        "question": "The 'Makhzen' in Morocco traditionally refers to:",
-        "answers": [
-          "The central market of a medina",
-          "A higher Quranic school",
-          "The traditional Moroccan state apparatus, including the Sovereign and his administration",
-          "A religious warrior brotherhood"
-        ],
-        "correct": 2,
-        "explanation": "The Makhzen is a complex term referring to the traditional Moroccan state, its government, its administration, and its ruling elite centered around the Sultan/King. It has evolved, but the term is still used."
       },
       {
         "question": "Which event of 1953 galvanized the Moroccan nationalist movement and accelerated the march toward independence?",
@@ -3339,17 +2690,6 @@
         "explanation": "The Sand War was a short but intense border conflict between Morocco and Algeria, shortly after Algeria's independence, concerning disputed territories."
       },
       {
-        "question": "Which European power controlled the city of Tangier under a special international status for much of the first half of the 20th century?",
-        "answers": [
-          "The United Kingdom alone",
-          "France alone",
-          "Spain alone",
-          "A consortium of several powers (International Zone of Tangier)"
-        ],
-        "correct": 3,
-        "explanation": "From 1923 to 1956 (with an interruption during World War II when it was occupied by Spain), Tangier had an international status jointly administered by several European powers and the United States."
-      },
-      {
         "question": "Al Quaraouiyine University in Fez, founded in 859 by Fatima al-Fihri, is often considered:",
         "answers": [
           "The oldest hospital in the world",
@@ -3361,17 +2701,6 @@
         "explanation": "Founded by Fatima al-Fihri, Al Quaraouiyine University is recognized by UNESCO and the Guinness World Records as the oldest existing and continuously operating institution of higher learning in the world."
       },
       {
-        "question": "The Portuguese capture of Ceuta (Sebta) in 1415 marked:",
-        "answers": [
-          "The end of the Reconquista on the Iberian Peninsula",
-          "The beginning of European expansion in North Africa",
-          "The peak of the Wattasid dynasty in Morocco",
-          "A Moroccan-Ottoman alliance against Portugal"
-        ],
-        "correct": 1,
-        "explanation": "The capture of Ceuta by Portugal is a pivotal event marking the beginning of Portuguese and, more broadly, European expansion in North Africa, coinciding with the decline of Marinid power in Morocco."
-      },
-      {
         "question": "Which Alaouite sultan, at the end of the 19th century, attempted to modernize Morocco's army and administration in the face of European pressures?",
         "answers": [
           "Moulay Slimane",
@@ -3381,39 +2710,6 @@
         ],
         "correct": 3,
         "explanation": "Moulay Hassan I (reign 1873-1894) undertook important reforms (notably the 'Tertib,' a unified tax) to modernize Morocco and strengthen the state against the growing threat of colonial powers, but with limited success."
-      },
-      {
-        "question": "The 'Aviators' Plot' (1972) or the 'Skhirat Coup' (1971) were attempts to overthrow which monarch?",
-        "answers": [
-          "Mohammed V",
-          "Hassan II",
-          "Mohammed VI",
-          "Moulay Youssef"
-        ],
-        "correct": 1,
-        "explanation": "King Hassan II was the target of several coup attempts, notably the bloody Skhirat coup in July 1971 during a birthday reception, and the attempt to shoot down his royal plane by air force officers in August 1972."
-      },
-      {
-        "question": "What was the Roman name for the region roughly corresponding to present-day northern Morocco?",
-        "answers": [
-          "Numidia",
-          "Mauretania Tingitana",
-          "Africa Proconsularis",
-          "Cyrenaica"
-        ],
-        "correct": 1,
-        "explanation": "Mauretania Tingitana was a Roman province located in northwestern Africa, encompassing much of what is today northern Morocco, with Tingis (Tangier) as its capital."
-      },
-      {
-        "question": "Which European power established the enclaves of Ceuta and Melilla on the Moroccan coast?",
-        "answers": [
-          "Portugal then Spain (Ceuta) / Spain (Melilla)",
-          "France",
-          "United Kingdom",
-          "Italy"
-        ],
-        "correct": 0,
-        "explanation": "Ceuta was conquered by Portugal in 1415 and then passed to Spanish sovereignty. Melilla was conquered by Spain in 1497. These two cities remain Spanish enclaves."
       },
       {
         "question": "The Battle of Sagrajas (Zallaqa) in 1086 was a major victory of the Almoravids against whom?",
@@ -3438,39 +2734,6 @@
         "explanation": "Idris I, a descendant of the Prophet Muhammad, fled the Abbasid Caliphate and established the Idrisid dynasty in Morocco in 788-789 AD, thus founding the first distinct Moroccan state."
       },
       {
-        "question": "The 'Sale Rovers' (Corsairs of Sale) were particularly active and feared during which century?",
-        "answers": [
-          "15th century",
-          "16th century",
-          "17th century",
-          "18th century"
-        ],
-        "correct": 2,
-        "explanation": "The corsairs of Sale (and Rabat), known as the 'Sale Rovers,' reached the peak of their activity in the 17th century, conducting maritime raids and capturing ships in the Atlantic and as far as Cornwall and Iceland."
-      },
-      {
-        "question": "Which Almohad caliph initiated the construction of the Giralda in Seville (then part of Al-Andalus)?",
-        "answers": [
-          "Abd al-Mu'min",
-          "Abu Yaqub Yusuf",
-          "Abu Yusuf Yaqub al-Mansur",
-          "Muhammad al-Nasir"
-        ],
-        "correct": 1,
-        "explanation": "The construction of the Giralda, originally the minaret of the Great Mosque of Seville, began under the Almohad caliph Abu Yaqub Yusuf in 1184 and was largely continued by his son Abu Yusuf Yaqub al-Mansur."
-      },
-      {
-        "question": "Which dynasty, descended from the Marinids, preceded the Saadians and was eventually overthrown by them?",
-        "answers": [
-          "The Hafsids",
-          "The Zirids",
-          "The Wattasids",
-          "The Hammadids"
-        ],
-        "correct": 2,
-        "explanation": "The Wattasid dynasty, a branch of the Marinids, ruled Morocco (or parts of it) before being overthrown by the Saadian Sharifs in the mid-16th century."
-      },
-      {
         "question": "The city of Tetouan maintains a strong historical and cultural connection with which European region?",
         "answers": [
           "Sicily",
@@ -3480,28 +2743,6 @@
         ],
         "correct": 1,
         "explanation": "Tetouan was significantly rebuilt and populated by Andalusian refugees, both Muslim and Jewish, fleeing the Reconquista in Spain, which gave it a distinct Andalusian character."
-      },
-      {
-        "question": "Which natural resource, discovered in large quantities in the early 20th century, became a major Moroccan export?",
-        "answers": [
-          "Gold",
-          "Diamonds",
-          "Oil",
-          "Phosphates"
-        ],
-        "correct": 3,
-        "explanation": "Vast deposits of phosphates were discovered in Khouribga in 1921, and Morocco quickly became one of the world's leading producers and exporters of this resource."
-      },
-      {
-        "question": "What was the main purpose of the Agdal gardens found in cities like Marrakech and Meknes?",
-        "answers": [
-          "Purely ornamental and for leisure",
-          "Botanical research for new crops",
-          "Productive (fruits, olives) and pleasure gardens for the sovereigns",
-          "Cemeteries for royal families"
-        ],
-        "correct": 2,
-        "explanation": "The Agdal (or Aguedal) gardens were vast royal domains enclosed by walls that combined agricultural production (orchards, olive groves) with pleasure areas and a sophisticated irrigation system."
       },
       {
         "question": "The term 'Mellah' refers to what type of quarter in Moroccan cities?",
@@ -3524,72 +2765,6 @@
         ],
         "correct": 2,
         "explanation": "The Moroccan Goumiers, integrated into the French Expeditionary Corps, played a crucial and distinguished role in the Italian campaign during World War II, particularly during the Battle of Monte Cassino."
-      },
-      {
-        "question": "The concept of 'Baraka' in Moroccan popular belief is often associated with:",
-        "answers": [
-          "Formal legal contracts",
-          "Divine grace or spiritual power, often embodied by saints or sharifs",
-          "Astronomical predictions",
-          "Maritime navigation techniques"
-        ],
-        "correct": 1,
-        "explanation": "Baraka is a key concept designating a beneficial force of divine origin that can bring luck, health, and prosperity. It is often associated with saints (marabouts), sharifs (descendants of the Prophet), and certain objects or places."
-      },
-      {
-        "question": "Juba II was a famous king of which ancient Berber kingdom allied with Rome?",
-        "answers": [
-          "Numidia",
-          "Mauretania",
-          "Garamantes",
-          "Gaetuli"
-        ],
-        "correct": 1,
-        "explanation": "Juba II, a client king of Rome, ruled over Mauretania from 25 BC to 23 AD. His capital was Caesarea (present-day Cherchell, Algeria), and he also developed Volubilis in Morocco."
-      },
-      {
-        "question": "What was 'Operation Torch' in the context of Moroccan history during World War II?",
-        "answers": [
-          "A German bombing campaign on Casablanca",
-          "The Allied landings in North Africa, including Morocco",
-          "A Moroccan resistance movement against Vichy France",
-          "A secret mission to rescue the Moroccan royal family"
-        ],
-        "correct": 1,
-        "explanation": "Operation Torch was the Anglo-American invasion of French North Africa in November 1942 during World War II, with landings in Morocco (Casablanca, Safi, Fedala) and Algeria."
-      },
-      {
-        "question": "The Treaty of Lalla Maghnia in 1845 aimed to define the borders between Morocco and which territory?",
-        "answers": [
-          "The Spanish Sahara",
-          "French Algeria",
-          "Portuguese Guinea",
-          "British Gambia"
-        ],
-        "correct": 1,
-        "explanation": "The Treaty of Lalla Maghnia was signed between Morocco and France to delimit part of the border between Morocco and French Algeria, following the Battle of Isly."
-      },
-      {
-        "question": "Which Almohad sovereign defeated Alfonso VIII of Castile at the Battle of Alarcos in 1195?",
-        "answers": [
-          "Abd al-Mu'min",
-          "Abu Yaqub Yusuf",
-          "Abu Yusuf Yaqub al-Mansur",
-          "Muhammad al-Nasir"
-        ],
-        "correct": 2,
-        "explanation": "Abu Yusuf Yaqub al-Mansur ('The Victorious') led the Almohad forces to a decisive victory over the Castilian army of Alfonso VIII at the Battle of Alarcos."
-      },
-      {
-        "question": "The 'Hassan Tower' in Rabat was intended to be the minaret of what would have been:",
-        "answers": [
-          "The largest palace in Africa",
-          "The largest mosque in the world at the time",
-          "A fortified lighthouse",
-          "A royal observatory"
-        ],
-        "correct": 1,
-        "explanation": "The Hassan Tower was commissioned by the Almohad caliph Abu Yusuf Yaqub al-Mansur at the end of the 12th century as the minaret of a gigantic mosque that was never completed but would have been the largest in the world at the time."
       },
       {
         "question": "Of whom was Moulay Idris I, founder of the Idrisid dynasty, a descendant?",
@@ -3623,28 +2798,6 @@
         ],
         "correct": 1,
         "explanation": "The Battle of Oued el-Leben in 1558 saw the Saadian army defeat the forces of the Ottoman Regency of Algiers, stopping their advance into Morocco."
-      },
-      {
-        "question": "What was the name of the Berber reformist movement, originating from the Souss Valley, that gave rise to the Almohad dynasty?",
-        "answers": [
-          "The Kharijites",
-          "The Murabitun (Almoravids)",
-          "The Unitarians (Al-Muwahhidun)",
-          "The Sufi orders"
-        ],
-        "correct": 2,
-        "explanation": "The Almohad movement (Al-Muwahhidun, meaning 'those who proclaim the unity of God' or 'Unitarians') was founded by Ibn Tumart, insisting on a strict interpretation of monotheism."
-      },
-      {
-        "question": "The city of Chefchaouen, known for its blue-painted buildings, was founded in 1471 by:",
-        "answers": [
-          "Berber refugees from the Sahara",
-          "Portuguese adventurers",
-          "Moulay Ali Ben Moussa Ben Rached El Alami, and later welcomed Andalusian refugees",
-          "Ottoman janissaries"
-        ],
-        "correct": 2,
-        "explanation": "Chefchaouen was founded by Moulay Ali Ben Moussa Ben Rached El Alami, a Sharifian emir. It later welcomed significant waves of Andalusian refugees, both Muslim and Jewish, fleeing the Reconquista, who strongly influenced its architecture and characteristic blue color."
       },
       {
         "question": "What were the 'proteges' in Morocco in the 19th and early 20th centuries?",
@@ -3691,28 +2844,6 @@
         "explanation": "The Kingdom of Altava was a Mauro-Roman Berber kingdom, with Christian elements, that existed in the former province of Mauretania Caesariensis and extended toward Mauretania Tingitana after the Roman and Vandal withdrawal."
       },
       {
-        "question": "The Battle of Annual in 1921 was a major victory for whom against whom?",
-        "answers": [
-          "French forces against the Zemmour tribes",
-          "Spanish troops against the Germans at Agadir",
-          "Riffian warriors of Abd el-Krim against the Spanish army",
-          "The Sultan against rebel tribes from the south"
-        ],
-        "correct": 2,
-        "explanation": "The Battle of Annual was a catastrophic defeat for the Spanish army against Riffian fighters led by Abd el-Krim el-Khattabi, marking a turning point in the Rif War."
-      },
-      {
-        "question": "What is the significance of the Jebel Irhoud site for paleoanthropology?",
-        "answers": [
-          "Oldest cave paintings in North Africa",
-          "First Neolithic agricultural tools",
-          "Oldest known Homo sapiens fossils discovered to date",
-          "Traces of Neanderthal occupation"
-        ],
-        "correct": 2,
-        "explanation": "The discoveries at Jebel Irhoud pushed back the age of the oldest known Homo sapiens to approximately 300,000 years, which has major implications for understanding the origins of our species."
-      },
-      {
         "question": "The bombardment of Sale by the French navy in 1851 was a response to what acts?",
         "answers": [
           "Moroccan support for the Algerian resistance",
@@ -3757,17 +2888,6 @@
         "explanation": "It was the Alaouite sultan Moulay Ismail who, in the 17th-18th centuries, made Meknes his capital and undertook monumental construction projects there (palaces, walls, granaries, stables)."
       },
       {
-        "question": "The 'Barghawata' was a confederation of Berber tribes that established an independent state with a distinct religion. In which region of Morocco was it mainly located?",
-        "answers": [
-          "The eastern Rif",
-          "The Atlantic plain between Sale and Safi (Tamesna)",
-          "The central High Atlas",
-          "The Souss Valley"
-        ],
-        "correct": 1,
-        "explanation": "The Barghawata confederation controlled the Tamesna region on the Atlantic coast for several centuries (8th-11th), developing a syncretic religion inspired by Islam but with its own prophets and a Quran in Berber."
-      },
-      {
         "question": "Which incident in 1952 in Casablanca, involving a violently repressed labor demonstration, is considered a prelude to the final phase of the independence struggle?",
         "answers": [
           "The bread riots",
@@ -3790,17 +2910,6 @@
         "explanation": "The Agadirs (or Igoudar) were communal granary-citadels built of rammed earth or stone, serving to protect harvests (barley, wheat, almonds), documents, and other precious goods of the tribes from pillaging and famine, and could serve as refuge in times of danger."
       },
       {
-        "question": "The 'Anfa Pact' (or Casablanca Conference) in 1943 brought together which Allied leaders during World War II, with the participation of Sultan Mohammed V?",
-        "answers": [
-          "Churchill and Stalin",
-          "Roosevelt and De Gaulle",
-          "Roosevelt and Churchill",
-          "Eisenhower and Montgomery"
-        ],
-        "correct": 2,
-        "explanation": "The Casablanca Conference (Anfa) in January 1943 brought together American President Franklin D. Roosevelt and British Prime Minister Winston Churchill. Sultan Mohammed V also held talks with Roosevelt, who reportedly expressed his support for eventual Moroccan independence."
-      },
-      {
         "question": "The 'Ifni Crisis' of 1957-1958 was triggered by attacks from which armed Moroccan organization?",
         "answers": [
           "The Algerian National Liberation Army (ALN)",
@@ -3821,39 +2930,6 @@
         ],
         "correct": 1,
         "explanation": "Sidi Mohammed ben Abdallah (Mohammed III) made Essaouira (formerly Mogador) a fortified royal port and center of international trade, inviting Jewish and European merchants to settle there."
-      },
-      {
-        "question": "The Battle of Las Navas de Tolosa in 1212 was a major defeat for which Moroccan dynasty, marking a turning point in the Reconquista?",
-        "answers": [
-          "Almoravids",
-          "Marinids",
-          "Almohads",
-          "Saadians"
-        ],
-        "correct": 2,
-        "explanation": "The Battle of Las Navas de Tolosa was a catastrophic defeat for the Almohad caliph Muhammad al-Nasir against a coalition of Christian kings, accelerating the decline of Almohad power in Iberia."
-      },
-      {
-        "question": "Which Saharan ethnic group played a key role in the founding of the Almoravid Empire?",
-        "answers": [
-          "The Zenata",
-          "The Masmuda",
-          "The Sanhaja (Lamtuna, Gudala)",
-          "The Barghawata"
-        ],
-        "correct": 2,
-        "explanation": "The Almoravids primarily originated from the Sanhaja Berber tribes of the Sahara, notably the Lamtuna, Gudala, and Massufa."
-      },
-      {
-        "question": "The Mohammed V Mausoleum in Rabat houses the tombs of which Alaouite sovereigns?",
-        "answers": [
-          "Mohammed V, Hassan II, and Moulay Abdallah",
-          "Mohammed V, Moulay Youssef, and Hassan I",
-          "Mohammed V only",
-          "Mohammed V and all his direct descendants"
-        ],
-        "correct": 0,
-        "explanation": "The Mohammed V Mausoleum contains the tombs of King Mohammed V, his sons King Hassan II and Prince Moulay Abdallah."
       },
       {
         "question": "Which archaeological site near Rabat, a former Roman city named Sala Colonia, also houses a Marinid necropolis?",
@@ -4870,17 +3946,6 @@
         "explanation": "The Dades river, joined by other tributaries, crosses the Ouarzazate region and feeds the El Mansour Eddahbi dam."
       },
       {
-        "question": "What is the southernmost point of continental Morocco (excluding Western Sahara)?",
-        "answers": [
-          "Cape Juby (Tarfaya)",
-          "Lagouira (Ras Nouadhibou)",
-          "Figuig",
-          "Gueltat Zemmour"
-        ],
-        "correct": 0,
-        "explanation": "Cape Juby, near the town of Tarfaya, is generally considered the southernmost point of the uncontested part of continental Morocco. Lagouira is further south but in the Western Sahara zone."
-      },
-      {
         "question": "The city of Essaouira is particularly exposed to a strong and constant wind, favorable for water sports. What is its local name?",
         "answers": [
           "The Chergui",
@@ -5156,17 +4221,6 @@
         "explanation": "The Tafilalet, cradle of the Alaouite dynasty, constitutes the largest oasis and palm grove in Morocco, extending along the Ziz and Ghriss rivers."
       },
       {
-        "question": "The city of Oujda, capital of the Oriental region, is located near which border?",
-        "answers": [
-          "Mauritanian border",
-          "Spanish border (Melilla)",
-          "Algerian border",
-          "Western Sahara border"
-        ],
-        "correct": 2,
-        "explanation": "Oujda is located just a few kilometers from the Algerian border, which has historically made it an important crossing point and trading hub."
-      },
-      {
         "question": "The 'Beni Snassen Massif', isolated in northeastern Morocco, is geologically linked to which main range?",
         "answers": [
           "The Middle Atlas",
@@ -5209,17 +4263,6 @@
         ],
         "correct": 2,
         "explanation": "The Haouz plain is a vast alluvial plain located north of the western High Atlas, where the city of Marrakech is found. It is irrigated by rivers descending from the Atlas."
-      },
-      {
-        "question": "What is the southernmost city of Morocco internationally recognized as such (excluding Western Sahara)?",
-        "answers": [
-          "Tarfaya",
-          "Tan-Tan",
-          "Guelmim",
-          "Laayoune"
-        ],
-        "correct": 0,
-        "explanation": "Tarfaya (formerly Villa Bens / Cape Juby) is often cited as the southernmost city of Morocco before entering the Western Sahara zone. Guelmim is also an important gateway to the south."
       },
       {
         "question": "The 'Moroccan Mesogee' is a geological term referring to:",
@@ -10156,17 +9199,6 @@
         "explanation": "French maintains a predominant position in Morocco across many areas of public and economic life, despite ongoing linguistic diversification."
       },
       {
-        "question": "Hassaniya is a Bedouin Arabic dialect spoken mainly in which region(s) of Morocco and its surroundings?",
-        "answers": [
-          "In the Rif mountains and the Oriental region",
-          "In Tangier, Tetouan, and along the northern coast",
-          "In the Saharan provinces of Morocco and in Mauritania",
-          "Only in Oujda and in the Angad plains"
-        ],
-        "correct": 2,
-        "explanation": "Hassaniya is the Arabic dialect spoken by Sahrawi populations, notably in southern Morocco, Western Sahara, Mauritania, and parts of Mali and Algeria."
-      },
-      {
         "question": "Tachelhit, Tarifit, and Tamazight (of Central Morocco) are the three main regional variants of which language in Morocco?",
         "answers": [
           "Darija (Moroccan Arabic)",
@@ -10231,17 +9263,6 @@
         ],
         "correct": 1,
         "explanation": "Diglossia in Morocco manifests through the differentiated use of Modern Standard Arabic (prestige language, for writing and formal settings) and Darija (language of everyday oral and informal communication)."
-      },
-      {
-        "question": "Besides French, which other European language has a historical presence and some influence, particularly in northern Morocco?",
-        "answers": [
-          "German",
-          "Italian",
-          "Portuguese",
-          "Spanish"
-        ],
-        "correct": 3,
-        "explanation": "Spanish, due to geographic proximity and the former Spanish protectorate over northern Morocco (and Western Sahara), maintains a significant presence, especially in these regions."
       },
       {
         "question": "The term 'Amazigh' (plural 'Imazighen') means 'free man'. Is the Amazigh language an isolated language or part of a larger language family?",
@@ -12818,17 +11839,6 @@
         "explanation": "\"Kayna chta lyoum\" (It's raining today)."
       },
       {
-        "question": "To ask \"What time is it?\" in Darija, the most natural way is:",
-        "answers": [
-          "Bch'hal hadi f sa3a?",
-          "Ch7al f sa3a? (شحال فالساعة؟)",
-          "Imta lwaqt?",
-          "Fin sa3a?"
-        ],
-        "correct": 1,
-        "explanation": "\"Ch7al f sa3a?\" (lit. \"How much in the hour?\") is the most common way to ask the time. The word \"hadi\" (this/now) is rarely added in this context."
-      },
-      {
         "question": "\"Dir lkhir تلقاه\" (Dir lkhir telqah) is a proverb that means:",
         "answers": [
           "Seek and you shall find",
@@ -13599,28 +12609,6 @@
         "explanation": "Can mean \"Forgive me!\" emphatically or an interjection when facing a shocking/annoying situation."
       },
       {
-        "question": "The expression \"Sir tqowwed!\" (سير تقود!) is:",
-        "answers": [
-          "A blessing",
-          "A vulgar insult meaning \"Get lost!\" or \"Go to hell!\"",
-          "An invitation to sit down",
-          "A joke"
-        ],
-        "correct": 1,
-        "explanation": "It is a vulgar and very offensive insult that is important to recognize in order to avoid using it or to understand its gravity if heard."
-      },
-      {
-        "question": "\"Sberdila\" (سبيرديلة) in Darija specifically refers to:",
-        "answers": [
-          "Leather dress shoes",
-          "Traditional sandals (Belgha)",
-          "Sneakers / Trainers (sometimes modern espadrille-type shoes)",
-          "Boots"
-        ],
-        "correct": 2,
-        "explanation": "\"Sberdila\" refers to sports shoes like trainers or sneakers, and can sometimes refer to modern espadrilles, but not to shoes in general."
-      },
-      {
         "question": "What does \"Qamija\" (قميجة) mean?",
         "answers": [
           "Socks (Tqacher)",
@@ -13641,17 +12629,6 @@
         ],
         "correct": 1,
         "explanation": "\"Serwal dial jean\" (Jeans / Denim trousers)."
-      },
-      {
-        "question": "To ask \"Help me, please\" to a man, the correct imperative form is:",
-        "answers": [
-          "3awnek 3afak",
-          "3awni 3afak (عاوني عفاك)",
-          "N3awnek 3afak",
-          "T3awenni 3afak"
-        ],
-        "correct": 1,
-        "explanation": "\"3awni\" is the imperative \"Help me\" (when addressing a man). When addressing a woman, you would say \"3awnini 3afak\"."
       },
       {
         "question": "\"Lah ykhalik\" (الله يخليك) can be used to ask for something kindly; it means:",
@@ -15425,28 +14402,6 @@
         ],
         "correct": 1,
         "explanation": "Tamalloukt pottery is a rural pottery, hand-modeled by women, of red-ochre color, often unglazed or partially decorated with simple patterns. It is primarily utilitarian (dishes, jars)."
-      },
-      {
-        "question": "The 'Cherratine' in the souks are artisans who make and sell:",
-        "answers": [
-          "Ground spices",
-          "Ropes, strings, bridles, and halters for animals (rope-makers)",
-          "Leather babouches",
-          "Musical instruments"
-        ],
-        "correct": 1,
-        "explanation": "The Cherratine are rope-makers, who make all kinds of cordage, bridles, halters, and other items from plant fibers or leather for pack and draft animals."
-      },
-      {
-        "question": "The art of 'Black Henna Tattooing' (Harkous) is used to:",
-        "answers": [
-          "Create permanent tattoos",
-          "Create temporary patterns darker and more precise than natural henna, often for the face or fine details",
-          "Dye hair jet black",
-          "Protect the skin from the sun"
-        ],
-        "correct": 1,
-        "explanation": "Harkous is a black paste (often based on gall nuts or other ingredients) used to draw temporary patterns darker and finer than traditional henna, sometimes imitating the appearance of a permanent tattoo. Its use requires caution."
       }
     ],
     "musique": [
@@ -16226,336 +15181,6 @@
           "The Guedra",
           "The Ahidous",
           "The Tafsut or female Laalaaoui",
-          "The dagger dance"
-        ],
-        "correct": 2,
-        "explanation": "Riffian women have their own collective dances, often performed in a line or circle, with graceful arm movements and responsorial singing, accompanied by percussion. Names like Tafsut (spring) or female variants of Laalaoui may exist."
-      },
-      {
-        "question": "The 'Foundou' is a song and poetry style originating from which northern city, known for its satirical or social texts?",
-        "answers": [
-          "Marrakech",
-          "Tangier (and Tetouan)",
-          "Agadir",
-          "Oujda"
-        ],
-        "correct": 1,
-        "explanation": "The Foundou (or Fundu) is a popular poetic-musical genre of Tangier and Tetouan, often in Darija or Haketia, addressing themes of daily life, love, social satire, with a sometimes humorous or nostalgic tone."
-      },
-      {
-        "question": "Is the 'pentatonic scale' (five notes) common in certain traditional Berber music?",
-        "answers": [
-          "No, Berber music always uses complex heptatonic (seven-note) scales",
-          "Yes, many Berber melodies, especially in the Atlas, are based on pentatonic scales, giving them a particular color",
-          "Berber music is exclusively atonal",
-          "The pentatonic scale is reserved for Gnaoua music"
-        ],
-        "correct": 1,
-        "explanation": "Pentatonic scales are common in many Amazigh musical traditions, giving melodies a distinctive and often very ancient sonority."
-      },
-      {
-        "question": "Which modern Amazigh (Shilha) singer, nicknamed 'the nightingale of the Souss', is a major figure of contemporary Tachelhit song?",
-        "answers": [
-          "Idir (Algerian)",
-          "Amouri Mbarek",
-          "Lounes Matoub (Algerian)",
-          "Hassan Arsmouk"
-        ],
-        "correct": 1,
-        "explanation": "Amouri Mbarek (1951-2015) was one of the greatest innovators of Amazigh Tachelhit song, introducing modern instruments and new arrangements while preserving the soul of this tradition. Hassan Arsmouk is also a very popular figure of the new generation."
-      },
-      {
-        "question": "The 'Oujda Rai Festival' is an annual event that celebrates:",
-        "answers": [
-          "Only gypsy jazz",
-          "Rai music in all its forms, with Algerian and Moroccan artists",
-          "Classical Arabo-Andalusian music",
-          "The folklore of Oriental tribes"
-        ],
-        "correct": 1,
-        "explanation": "This festival highlights Rai music, a popular genre born in Algeria but deeply rooted in the Oujda region, by inviting established stars and young talents from both countries."
-      },
-      {
-        "question": "The 'musical transcription' of traditional oral repertoires (like Al-Ala or Malhoun) is important work for:",
-        "answers": [
-          "Simplifying the music for tourists",
-          "Ensuring their preservation, study, and transmission to new generations of musicians",
-          "Making them easier to dance to",
-          "Banning them from the uninitiated"
-        ],
-        "correct": 1,
-        "explanation": "Transcription to sheet music (musical notation) of orally transmitted repertoires helps document, analyze, teach more systematically, and preserve them from oblivion or alteration."
-      },
-      {
-        "question": "'Qarqabat' is another name for which metallic percussion instrument?",
-        "answers": [
-          "The Bendir",
-          "The Qarqabous (Krakeb)",
-          "The Derbouka",
-          "The Tbel"
-        ],
-        "correct": 1,
-        "explanation": "'Qarqabat' is an orthographic or phonetic variant of 'Qarqabous', the large metal castanets of the Gnaoua."
-      },
-      {
-        "question": "What role does the 'chorus' (Rdada or Awwada) play in performing Malhoun or Aita?",
-        "answers": [
-          "It is silent and never intervenes",
-          "It repeats certain verses or refrains, responds to the soloist, and supports the singing",
-          "It only plays wind instruments",
-          "It dances while the soloist sings"
-        ],
-        "correct": 1,
-        "explanation": "The chorus (sometimes called 'Rdada' - those who repeat, or 'Awwada' - those who respond) plays an essential role by picking up refrains, responding to the main singer's (Cheikh) verses, and creating a collective vocal texture."
-      },
-      {
-        "question": "The 'Festival Timizart' in Tiznit is dedicated to showcasing which craft linked to local culture, often accompanied by music?",
-        "answers": [
-          "Tamegroute pottery",
-          "The art of silver jewelry",
-          "Thuya wood carving",
-          "Boucherouite carpet weaving"
-        ],
-        "correct": 1,
-        "explanation": "The Timizart Festival ('silver' in Amazigh) in Tiznit celebrates the city's renowned tradition of silver jewelry creation, a craft intimately linked to the region's culture and identity."
-      },
-      {
-        "question": "'Moroccan military music', with its fanfares and noubas played during official ceremonies, has roots that are:",
-        "answers": [
-          "Purely Ottoman",
-          "Hispano-Moorish and Ottoman, reorganized and modernized in the contemporary era",
-          "Exclusively French colonial",
-          "Inspired by New Orleans jazz bands"
-        ],
-        "correct": 1,
-        "explanation": "Moroccan military music has a long heritage, with Andalusian (noubas) and Ottoman (use of certain instruments and structures) influences, and was structured and modernized particularly from the 19th and 20th centuries."
-      },
-      {
-        "question": "Which Moroccan artist, a figure of 'World Jazz', is known for his oud compositions and collaborations with international musicians?",
-        "answers": [
-          "Brahim Maalouf (Lebanese)",
-          "Anouar Brahem (Tunisian)",
-          "Driss El Maloumi",
-          "Rabih Abou-Khalil (Lebanese)"
-        ],
-        "correct": 2,
-        "explanation": "Driss El Maloumi is a renowned Moroccan oud player and composer, whose style blends Arab and Amazigh tradition with jazz and contemporary influences. He has collaborated with many international artists."
-      },
-      {
-        "question": "The 'Muwashshah' (sing. Muwashshah) are strophic poems in classical or Andalusian Arabic that have been widely set to music. Are they present in the Moroccan Al-Ala repertoire?",
-        "answers": [
-          "No, they are specific to Syria and Egypt",
-          "Yes, the Muwashshah constitute an important part of the vocal repertoire of Arabo-Andalusian music (Al-Ala)",
-          "They are sung only in Tamazight",
-          "They are non-sung epic poems"
-        ],
-        "correct": 1,
-        "explanation": "The Muwashshah is a poetic and musical form originating from Al-Andalus, which has become an essential component of the Arabo-Andalusian music repertoire (Al-Ala in Morocco, Malouf in Tunisia and Libya, Gharnati in Algeria)."
-      },
-      {
-        "question": "The 'clarinet' (sometimes called 'Klarnit') has been integrated into certain Moroccan Chaabi orchestras. What role does it often play?",
-        "answers": [
-          "It replaces the bass",
-          "It plays melodic phrases, improvisations (taqsims), and responses to the singing, bringing a bright sonority",
-          "It only marks the rhythm",
-          "It is never used in Chaabi"
-        ],
-        "correct": 1,
-        "explanation": "The clarinet, like the saxophone, has been adopted in certain Chaabi orchestras for its ability to play ornamented melodies, virtuoso improvisations, and to dialogue with the singer's voice."
-      },
-      {
-        "question": "What is the name of the basic 6/8 rhythm very common in North African popular music, including Morocco, that makes you want to dance?",
-        "answers": [
-          "The Mizan El Btayhi (Andalusian)",
-          "The 'Baladi' rhythm (Egyptian)",
-          "The '6/8 Maghrebi' rhythm (sometimes called Chaoui, Alloui, etc., depending on the style)",
-          "The three-beat waltz"
-        ],
-        "correct": 2,
-        "explanation": "Many festive popular rhythms of North Africa are based on a 6/8 time signature (or sometimes 12/8 with subdivisions), creating a lively pulse typical of Chaabi, Aita, and other dance music."
-      },
-      {
-        "question": "The lyrics of Gnaoua songs (invocations, praises) are often a mixture of which languages?",
-        "answers": [
-          "Classical Arabic and French",
-          "Moroccan dialectal Arabic, fragments of West African languages, and Arabic religious terms",
-          "Only Tamazight",
-          "Judeo-Spanish and Portuguese"
-        ],
-        "correct": 1,
-        "explanation": "The sung repertoire of the Gnaoua is a fascinating linguistic mix reflecting their history: Darija, Arabic religious terms, and many words or phrases from sub-Saharan languages (Bambara, Fulani, Hausa...), vestiges of their origins."
-      },
-      {
-        "question": "What is the name of the electronic music festival held each year in Marrakech, attracting world-renowned DJs?",
-        "answers": [
-          "Atlas Electronic",
-          "Oasis Festival",
-          "Moga Festival (Essaouira and elsewhere)",
-          "All these festivals exist or have existed"
-        ],
-        "correct": 1,
-        "explanation": "Oasis Festival is one of the most well-known and established electronic music festivals in Marrakech, attracting an international clientele. Moga started in Essaouira and Atlas Electronic took place near Marrakech."
-      },
-      {
-        "question": "The 'Mawlid' (celebration of the birth of Prophet Muhammad) is an occasion for which types of religious musical performances in Morocco?",
-        "answers": [
-          "Only rock concerts",
-          "Sessions of 'Samaa' (spiritual audition) with praise songs (Madih, Mouloudiyyat) and percussion",
-          "Operas in classical Arabic",
-          "Mystical rap competitions"
-        ],
-        "correct": 1,
-        "explanation": "The Mawlid is marked by prayer vigils and Samaa sessions, where groups (mounchidin) perform poems and songs glorifying God and the Prophet (Madih Nabawi, Mouloudiyyat), often accompanied by bendirs and other percussion."
-      },
-      {
-        "question": "Which Algerian Rai singer, very popular in Morocco, is nicknamed 'The King of Rai'?",
-        "answers": [
-          "Cheb Hasni",
-          "Cheb Mami",
-          "Khaled (Hadj Brahim)",
-          "Rachid Taha"
-        ],
-        "correct": 2,
-        "explanation": "Khaled is internationally recognized as 'The King of Rai' for having popularized this genre around the world with hits like 'Didi' or 'Aicha'."
-      },
-      {
-        "question": "Can 'sfifa' and 'aakads', passementerie adorning caftans, be considered a craft linked to musical pageantry during performances?",
-        "answers": [
-          "No, they are purely clothing elements with no link to music",
-          "Yes, because traditional musicians and singers (Andalusian, Malhoun, Chaabi) often wear ceremonial outfits richly decorated with these elements",
-          "Only for oriental dancers",
-          "Only instruments are decorated this way"
-        ],
-        "correct": 1,
-        "explanation": "The elegance of traditional outfits (caftans, ceremonial djellabas) worn by musicians and singers during performances is an integral part of the show and the showcasing of these arts. Sfifa and aakads contribute greatly to this."
-      },
-      {
-        "question": "Which type of notched reed flute, with a soft and velvety sound, is often used solo or in small ensembles of popular or Berber music?",
-        "answers": [
-          "The Pan flute",
-          "The piccolo",
-          "The 'shepherd's flute' (sometimes called simple 'awada', or local Amazigh names)",
-          "The bassoon"
-        ],
-        "correct": 2,
-        "explanation": "There are various types of rustic reed flutes, often called 'shepherd's flutes' (though played by all), with notched or duct mouthpieces, that produce simple and expressive melodies in folk music."
-      },
-      {
-        "question": "'Oriental Groove' is a term sometimes used to describe the music of which Moroccan artist living in France, blending chaabi, jazz, and oriental influences?",
-        "answers": [
-          "Hindi Zahra",
-          "Aziz Sahmaoui (University of Gnawa)",
-          "Saad Lamjarred",
-          "Malik (Malik Adouane)"
-        ],
-        "correct": 3,
-        "explanation": "Malik Adouane is an artist who has explored fusions between oriental music, chaabi, jazz, and funk, creating a style sometimes described as Oriental Groove."
-      },
-      {
-        "question": "The 'Taqsim' in Arabic and Andalusian music is:",
-        "answers": [
-          "A highly rhythmic choral chant",
-          "A solo instrumental improvisation, unmeasured, allowing the musician to demonstrate virtuosity and explore a mode (maqam)",
-          "The final and fastest part of a Nouba",
-          "A type of folk dance"
-        ],
-        "correct": 1,
-        "explanation": "The Taqsim is an instrumental improvisation, often played as a prelude to a piece or between two movements, where the solo musician (oud, violin, qanoun, ney) freely explores the melodic and emotional characteristics of a maqam."
-      },
-      {
-        "question": "What is the name of the electronic and digital arts music festival generally held in Essaouira, known for its festive beach atmosphere?",
-        "answers": [
-          "Moga Festival",
-          "Atlas Electronic (Marrakech)",
-          "Oasis Festival (Marrakech)",
-          "Rabat Africa Dance"
-        ],
-        "correct": 0,
-        "explanation": "Moga Festival, which started in Essaouira, is a popular event combining performances by international and local electronic scene DJs with the unique setting of the city and its beaches."
-      },
-      {
-        "question": "The 'Abidat Rma' are popular musical troupes, originating from the Khouribga and Oued Zem region, known for:",
-        "answers": [
-          "Their slow and meditative religious chants",
-          "Their rhythmic songs, percussion (bendir, taarija), energetic dances, and often humorous or social lyrics",
-          "Their classical Arabo-Andalusian music",
-          "Their wind instruments only"
-        ],
-        "correct": 1,
-        "explanation": "The Abidat Rma ('the slaves/servants of the shooters') are troupes of men who perform a repertoire of highly rhythmic songs and dances, often with improvised or traditional lyrics commenting on social life, with a marked use of percussion."
-      },
-      {
-        "question": "The 'Aissawa of Fez' (or Meknes) is famous for its 'hadrates' (ritual sessions). Which instruments are predominant?",
-        "answers": [
-          "Electric guitars and drums",
-          "Drums (tbel, bendir, taarija), oboes (ghaita), and powerful chants",
-          "Only stringed instruments (oud, violin, qanoun)",
-          "Silence and meditation"
-        ],
-        "correct": 1,
-        "explanation": "The hadrates of the Aissawa brotherhood are characterized by the intensive use of varied percussion, the piercing sound of ghaitas, and powerful collective chants that lead to trance."
-      },
-      {
-        "question": "Tangier, a cosmopolitan city, hosts several music festivals. Which of these genres is particularly honored by a renowned festival in the city?",
-        "answers": [
-          "Progressive Rock",
-          "Jazz (with Tanjazz)",
-          "Country music",
-          "Baroque Opera"
-        ],
-        "correct": 1,
-        "explanation": "The Tanjazz festival is an important annual event in Tangier, dedicated to jazz in all its forms, with national and international artists."
-      },
-      {
-        "question": "The 'Amazigh Blues' is a term sometimes used to describe the music of which desert artists (Morocco, Mali, Niger)?",
-        "answers": [
-          "Heavy metal groups",
-          "Artists like Tinariwen, Bombino, or Moroccan musicians inspired by these sonorities (e.g.: certain pieces by Saida Fikri)",
-          "Opera singers",
-          "Bagpipe players"
-        ],
-        "correct": 1,
-        "explanation": "The 'Desert Blues' or 'Amazigh Blues' refers to a melancholic and hypnotic music, played on electric guitar with traditional Tuareg or Berber rhythms, popularized by groups like Tinariwen and artists like Bombino. Some Moroccan artists draw inspiration from it."
-      },
-      {
-        "question": "The 'Music Museum of Marrakech', located in the Mouassine quarter, is also known as:",
-        "answers": [
-          "Dar Si Said",
-          "Dar Bellarj",
-          "Maison de la Photographie",
-          "Mouassine Museum"
-        ],
-        "correct": 3,
-        "explanation": "The Mouassine Museum in Marrakech, housed in a historic residence, is dedicated to Moroccan music, presenting instruments, recordings, and information on musical traditions (Andalusian, Berber, Malhoun, etc.). Dar Bellarj also hosts events."
-      },
-      {
-        "question": "Singer Hindi Zahra, of Moroccan origin, is known for her musical style that fuses:",
-        "answers": [
-          "Indian classical music and Gregorian chants",
-          "Folk, blues, jazz, soul with Berber and oriental influences",
-          "Heavy metal and Arabo-Andalusian music",
-          "Hardcore techno and Chaabi"
-        ],
-        "correct": 1,
-        "explanation": "Hindi Zahra, an acclaimed singer and musician, has a very personal style that blends folk, blues, jazz, and soul influences, while integrating elements of her Berber and Moroccan roots."
-      },
-      {
-        "question": "Are 'Zajal' (sung dialectal poetry) and 'Malhoun' considered forms of 'oral literature'?",
-        "answers": [
-          "No, because they are always written and read",
-          "Yes, because even though they may be written, their transmission, vitality, and improvisation occur largely through orality and singing",
-          "Only Zajal is oral, Malhoun is written",
-          "They are forms of dance only"
-        ],
-        "correct": 1,
-        "explanation": "Although many Malhoun or Zajal poems have been transcribed, these genres fundamentally belong to the oral tradition. Their learning, interpretation, and evolution have long occurred through listening, memorization, and sung performance."
-      },
-      {
-        "question": "What is the name of the collective dance of Riffian women, often accompanied by songs and bendirs?",
-        "answers": [
-          "The Guedra",
-          "The Ahidous",
-          "The Tafsut or female Laalaoui",
           "The dagger dance"
         ],
         "correct": 2,
