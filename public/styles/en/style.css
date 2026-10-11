@@ -836,3 +836,41 @@ footer {
 /* Accessibilite : logo du pied de page lisible sur fond sombre (contraste >= 4.5:1) */
 .footer-about .footer-logo { color: #ffffff; }
 .footer-about .footer-logo strong { color: #ff6f61; }
+
+
+/* ===== MENU MOBILE (bouton "hamburger" de Header.astro) =====
+   Ces regles n'existaient que dans la copie inutilisee src/styles : sans elles, le bouton s'affichait comme un
+   petit carre et l'en-tete fixe montrait tout le menu sur mobile (pres de 200 px de haut, haut des pages masque).
+   Sur mobile, l'en-tete devient "sticky" : il garde sa hauteur reelle dans la page, donc rien n'est masque, meme si
+   la ligne logo / langue / bouton passe sur deux lignes. Marges logiques (inline) : correctes aussi en hebreu/arabe. */
+.hamburger-btn { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; justify-content: center; align-items: center; gap: 5px; width: 44px; height: 44px; }
+.hamburger-btn span { display: block; width: 24px; height: 2px; background-color: var(--dark-color, #333); border-radius: 1px; transition: transform 0.3s ease, opacity 0.3s ease; }
+.site-header.nav-open .hamburger-btn span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.site-header.nav-open .hamburger-btn span:nth-child(2) { opacity: 0; }
+.site-header.nav-open .hamburger-btn span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+body.menu-open { overflow: hidden; }
+
+@media (max-width: 768px) {
+  header.site-header { position: sticky; padding-top: 0; padding-bottom: 0; }
+  body { padding-top: 0; }
+  .site-header .header-container { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 0; padding: 10px 15px; }
+  .site-header .logo { flex: 1; min-width: 0; order: 1; margin-bottom: 0; }
+  .site-header .language-switcher { order: 2; margin: 0; margin-inline-end: 8px; align-self: center; }
+  .site-header .language-switcher select { padding: 6px 10px; padding-inline-end: 28px; font-size: 0.85rem; }
+  .hamburger-btn { display: flex; order: 3; }
+  .site-header nav { order: 4; width: 100%; margin: 0; max-height: 0; overflow: hidden; transition: max-height 0.35s ease-out; }
+  .site-header.nav-open nav { max-height: 75vh; overflow-y: auto; border-top: 1px solid rgba(0, 0, 0, 0.08); transition: max-height 0.4s ease-in; }
+  .site-header .nav-links { flex-direction: column; align-items: stretch; flex-wrap: nowrap; gap: 0; margin: 0; padding: 8px 0; width: 100%; }
+  .site-header .nav-links li { margin: 0; border-bottom: 1px solid rgba(0, 0, 0, 0.04); }
+  .site-header .nav-links li:last-child { border-bottom: none; }
+  .site-header .nav-links a { display: block; padding: 12px 20px; font-size: 1rem; white-space: normal; }
+  .site-header .nav-links a:hover { background-color: rgba(var(--primary-600-rgb, 197, 40, 28), 0.04); }
+  .site-header .nav-links a.active { background-color: rgba(var(--primary-600-rgb, 197, 40, 28), 0.06); font-weight: 600; }
+  .site-header .nav-links a.active::after { display: none; }
+  .hero { min-height: calc(100vh - 64px); }
+  .page-banner { padding: 60px 0 50px; }
+}
+@media (max-width: 576px) {
+  .site-header .nav-links a { font-size: 0.95rem; padding: 11px 18px; }
+  .page-banner { padding: 50px 0 40px; }
+}
