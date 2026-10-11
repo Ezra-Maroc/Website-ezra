@@ -123,8 +123,15 @@
     var selected = q.multiple ? (answers[q.id] || []).slice() : null;
     var nextBtn = null;
 
+    // Une option avec "selects" (ex. "Mes deux parents") n'est pas enregistree : elle coche ou decoche ses cibles
+    function isPressed(o) {
+      if (!q.multiple) return answers[q.id] === o.id;
+      if (o.selects) return o.selects.every(function (t) { return selected.indexOf(t) !== -1; });
+      return selected.indexOf(o.id) !== -1;
+    }
+
     opts.forEach(function (o) {
-      var pressed = q.multiple ? selected.indexOf(o.id) !== -1 : answers[q.id] === o.id;
+      var pressed = isPressed(o);
       var btn = h('button', {
         type: 'button',
         class: 'elig-option' + (q.multiple ? ' is-multi' : ''),
@@ -132,14 +139,18 @@
         onclick: function () {
           if (!q.multiple) { answers[q.id] = o.id; goNext(i); return; }
           var pos = selected.indexOf(o.id);
-          if (pos !== -1) selected.splice(pos, 1);
+          if (o.selects) {
+            var all = isPressed(o);
+            selected = selected.filter(function (s) { return excl.indexOf(s) === -1 && (!all || o.selects.indexOf(s) === -1); });
+            if (!all) o.selects.forEach(function (t) { if (selected.indexOf(t) === -1) selected.push(t); });
+          } else if (pos !== -1) selected.splice(pos, 1);
           else if (excl.indexOf(o.id) !== -1) selected = [o.id];
           else {
             selected = selected.filter(function (s) { return excl.indexOf(s) === -1; });
             selected.push(o.id);
           }
           Array.prototype.forEach.call(options.children, function (b, k) {
-            b.setAttribute('aria-pressed', selected.indexOf(opts[k].id) !== -1 ? 'true' : 'false');
+            b.setAttribute('aria-pressed', isPressed(opts[k]) ? 'true' : 'false');
           });
           nextBtn.disabled = selected.length === 0;
         }

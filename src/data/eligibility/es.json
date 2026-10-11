@@ -52,6 +52,7 @@
       "options": [
         { "id": "pere", "text": "Mi padre" },
         { "id": "mere", "text": "Mi madre" },
+        { "id": "deux_parents", "text": "Mi padre y mi madre", "selects": ["pere", "mere"] },
         { "id": "gp_pere", "text": "Un abuelo o abuela por parte de mi padre" },
         { "id": "gp_mere", "text": "Un abuelo o abuela por parte de mi madre" },
         { "id": "arriere", "text": "Un bisabuelo o bisabuela" },

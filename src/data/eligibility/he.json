@@ -52,6 +52,7 @@
       "options": [
         { "id": "pere", "text": "אבי" },
         { "id": "mere", "text": "אמי" },
+        { "id": "deux_parents", "text": "שני הוריי", "selects": ["pere", "mere"] },
         { "id": "gp_pere", "text": "סבא או סבתא מצד אבי" },
         { "id": "gp_mere", "text": "סבא או סבתא מצד אמי" },
         { "id": "arriere", "text": "סבא רבא או סבתא רבא" },
