@@ -47,6 +47,10 @@ function toPagePath(url) {
 export default defineConfig({
   site: SITE,
   output: 'static',
+  // Astro 7 defaults to 'jsx' whitespace rules, which drop the spaces between elements written
+  // on separate lines (e.g. "Accueil›Mentions" in the legal breadcrumb). `true` = Astro 5 behaviour:
+  // lossless compression that keeps the rendering identical.
+  compressHTML: true,
   // 'preserve' keeps the former static site's URLs: about.astro → about.html,
   // en/index.astro → en/index.html
   trailingSlash: 'ignore',
