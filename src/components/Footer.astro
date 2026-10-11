@@ -33,7 +33,7 @@ const servicesUrl = getPageUrl('services', lang);
     <div class="footer-links">
       <h3 class="footer-heading">{t.footerQuickLinks}</h3>
       <ul>
-        {navItems.map((item) => (
+        {navItems.filter((item) => !item.cta).map((item) => (
           <li><a href={getPageUrl(item.key, lang)}>{item.label}</a></li>
         ))}
       </ul>
@@ -43,7 +43,7 @@ const servicesUrl = getPageUrl('services', lang);
     <div class="footer-services">
       <h3 class="footer-heading">{t.footerKeyServices}</h3>
       <ul>
-        <li><a href={`${servicesUrl}#eligibility`}>{t.serviceEligibility}</a></li>
+        <li><a href={getPageUrl('eligibility', lang)}>{t.serviceEligibility}</a></li>
         <li><a href={`${servicesUrl}#constitution`}>{t.serviceConstitution}</a></li>
         <li><a href={`${servicesUrl}#recherche`}>{t.serviceRecherche}</a></li>
         <li><a href={`${servicesUrl}#suivi`}>{t.serviceSuivi}</a></li>

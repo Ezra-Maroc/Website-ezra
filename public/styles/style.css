@@ -860,11 +860,12 @@ footer {
 .footer-about .footer-logo strong { color: #ff6f61; }
 
 
-/* ===== MENU MOBILE (bouton "hamburger" de Header.astro) =====
-   Ces regles n'existaient que dans la copie inutilisee src/styles : sans elles, le bouton s'affichait comme un
-   petit carre et l'en-tete fixe montrait tout le menu sur mobile (pres de 200 px de haut, haut des pages masque).
-   Sur mobile, l'en-tete devient "sticky" : il garde sa hauteur reelle dans la page, donc rien n'est masque, meme si
-   la ligne logo / langue / bouton passe sur deux lignes. Marges logiques (inline) : correctes aussi en hebreu/arabe. */
+/* ===== EN-TETE : MENU REPLIABLE ET BOUTON "TEST D'ELIGIBILITE" =====
+   Les regles du bouton "hamburger" de Header.astro n'existaient que dans la copie inutilisee src/styles : sans
+   elles, le bouton s'affichait comme un petit carre et l'en-tete fixe montrait tout le menu (pres de 200 px de haut
+   sur mobile, haut des pages masque). Avec ses 10 entrees, le menu ne tient sur une ligne qu'a partir de 1200 px :
+   en dessous (mobiles, tablettes, petits portables), il est replie derriere le bouton. L'en-tete y est "sticky" :
+   il garde sa hauteur reelle dans la page, donc rien n'est masque. Marges logiques : correctes en hebreu/arabe. */
 .hamburger-btn { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; justify-content: center; align-items: center; gap: 5px; width: 44px; height: 44px; }
 .hamburger-btn span { display: block; width: 24px; height: 2px; background-color: var(--dark-color, #333); border-radius: 1px; transition: transform 0.3s ease, opacity 0.3s ease; }
 .site-header.nav-open .hamburger-btn span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -872,7 +873,19 @@ footer {
 .site-header.nav-open .hamburger-btn span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 body.menu-open { overflow: hidden; }
 
-@media (max-width: 768px) {
+/* Bouton "Test d'eligibilite" au bout du menu (element de nav.ts avec cta: true) */
+.site-header .nav-links a.nav-cta { background: var(--primary-600, #c5281c); color: #fff; padding: 8px 14px; border-radius: 6px; font-weight: 600; white-space: nowrap; transition: background 0.2s; }
+.site-header .nav-links a.nav-cta:hover, .site-header .nav-links a.nav-cta:focus-visible, .site-header .nav-links a.nav-cta.active { background: var(--primary-500, #d84d3f); color: #fff; }
+.site-header .nav-links a.nav-cta::after { display: none; }
+
+@media (min-width: 1200px) {
+  .site-header nav { margin-left: 0; margin-right: 0; margin-inline: 12px; }
+  .site-header .nav-links li { margin: 0; margin-inline-start: 10px; }
+  .site-header .nav-links li:first-child { margin-inline-start: 0; }
+  .site-header .nav-links li.nav-cta-item { margin-inline-start: 14px; }
+}
+
+@media (max-width: 1199.98px) {
   header.site-header { position: sticky; padding-top: 0; padding-bottom: 0; }
   body { padding-top: 0; }
   .site-header .header-container { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 0; padding: 10px 15px; }
@@ -889,10 +902,15 @@ body.menu-open { overflow: hidden; }
   .site-header .nav-links a:hover { background-color: rgba(var(--primary-600-rgb, 197, 40, 28), 0.04); }
   .site-header .nav-links a.active { background-color: rgba(var(--primary-600-rgb, 197, 40, 28), 0.06); font-weight: 600; }
   .site-header .nav-links a.active::after { display: none; }
+  .site-header .nav-links li.nav-cta-item { border-bottom: none; padding: 10px 15px 6px; }
+  .site-header .nav-links a.nav-cta { display: block; text-align: center; padding: 12px 20px; border-radius: 8px; }
+}
+@media (max-width: 768px) {
   .hero { min-height: calc(100vh - 64px); }
   .page-banner { padding: 60px 0 50px; }
 }
 @media (max-width: 576px) {
   .site-header .nav-links a { font-size: 0.95rem; padding: 11px 18px; }
+  .site-header .nav-links a.nav-cta { padding: 12px 18px; }
   .page-banner { padding: 50px 0 40px; }
 }

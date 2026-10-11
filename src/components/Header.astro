@@ -35,10 +35,10 @@ const imgPrefix = config.pathPrefix ? '..' : '.';
     <nav>
       <ul class="nav-links">
         {navItems.map((item) => (
-          <li>
+          <li class:list={[{ 'nav-cta-item': item.cta }]}>
             <a
               href={getPageUrl(item.key, lang)}
-              class:list={[{ active: item.key === currentPage }]}
+              class:list={[{ active: item.key === currentPage, 'nav-cta': item.cta }]}
             >
               {item.label}
             </a>

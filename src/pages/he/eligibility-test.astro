@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import EligibilityTest from '../../components/EligibilityTest.astro';
+import data from '../../data/eligibility/he.json';
+import fr from '../../data/eligibility/fr.json';
+
+const lang = 'he' as const;
+---
+
+<BaseLayout lang={lang} title={data.page.title} description={data.page.description} currentPage="eligibility">
+  <EligibilityTest data={data} fr={fr} />
+</BaseLayout>

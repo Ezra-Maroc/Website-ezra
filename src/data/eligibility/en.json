@@ -1,0 +1,162 @@
+{
+  "page": {
+    "title": "Moroccan Nationality Eligibility Test | Ezra Maroc",
+    "description": "Find out in one minute whether your family allows you to obtain Moroccan nationality by descent. Free test, no commitment.",
+    "h1": "Moroccan Nationality Eligibility Test",
+    "intro": "Up to 7 questions, about one minute: a first indicative assessment of your situation.",
+    "noscript": "This test requires JavaScript. You can also",
+    "noscriptLink": "describe your situation to us directly",
+    "privacy": "Your answers stay in your browser: nothing is stored or sent unless you choose to send it to us."
+  },
+  "ui": {
+    "progress": "Question {n} of {total}",
+    "back": "Back",
+    "next": "Continue",
+    "restart": "Retake the test",
+    "multiHint": "Several answers possible",
+    "resultKicker": "Your result",
+    "nextStepTitle": "Next step",
+    "tipTitle": "Good to know",
+    "summaryTitle": "Your answers",
+    "send": "Send my answers to an expert",
+    "sendNote": "Your answers will be attached to the contact form: you can add your personal message before sending.",
+    "disclaimer": "This result is an indicative assessment based solely on your answers. It does not constitute legal advice and does not replace an analysis of your file. The decision rests with the competent Moroccan authorities.",
+    "contactUrl": "/en/contact.html",
+    "subjectPrefix": "Eligibility test",
+    "resultLine": "Result",
+    "handoff": {
+      "title": "Your eligibility test results",
+      "note": "These answers will be attached to your request automatically.",
+      "messageLabel": "Your personal message (optional)",
+      "messagePlaceholder": "Add any details or questions here: names and dates of birth, documents you have, family situation…",
+      "subjectValue": "Preliminary eligibility assessment",
+      "fieldName": "Résultats du test d'éligibilité"
+    }
+  },
+  "questions": [
+    {
+      "id": "ascendant",
+      "label": "Moroccan ancestor",
+      "text": "Who in your family is or was a Moroccan national?",
+      "options": [
+        { "id": "pere", "text": "My father" },
+        { "id": "mere", "text": "My mother" },
+        { "id": "grandparent", "text": "One of my grandparents" },
+        { "id": "arriere", "text": "One of my great-grandparents" },
+        { "id": "nsp", "text": "I don't know yet" },
+        { "id": "aucun", "text": "No one, as far as I know" }
+      ]
+    },
+    {
+      "id": "cote",
+      "label": "Related through",
+      "text": "Through which of your parents are you related to this person?",
+      "showIf": { "ascendant": ["grandparent", "arriere"] },
+      "options": [
+        { "id": "pere", "text": "My father" },
+        { "id": "mere", "text": "My mother" },
+        { "id": "nsp", "text": "I don't know" }
+      ]
+    },
+    {
+      "id": "naissance",
+      "label": "Ancestor's place of birth",
+      "text": "Where was this person born?",
+      "showIf": { "ascendant": ["pere", "mere", "grandparent", "arriere"] },
+      "options": [
+        { "id": "maroc", "text": "In Morocco" },
+        { "id": "ailleurs", "text": "In another country" },
+        { "id": "nsp", "text": "I don't know" }
+      ]
+    },
+    {
+      "id": "documents",
+      "label": "Moroccan documents available",
+      "text": "Which Moroccan documents concerning this person do you have, or can you obtain?",
+      "multiple": true,
+      "exclusive": "aucun",
+      "showIf": { "ascendant": ["pere", "mere", "grandparent", "arriere"] },
+      "options": [
+        { "id": "acte_naissance", "text": "Moroccan birth certificate" },
+        { "id": "livret", "text": "Moroccan family record book (livret d'état civil)" },
+        { "id": "identite", "text": "Old Moroccan passport or identity card" },
+        { "id": "mariage", "text": "Moroccan marriage certificate" },
+        { "id": "certificat", "text": "Moroccan nationality certificate" },
+        { "id": "aucun", "text": "None for now" }
+      ]
+    },
+    {
+      "id": "liens",
+      "label": "Records proving the links",
+      "text": "Do you have the records proving each family link between this person and you (births, marriages)?",
+      "showIf": { "ascendant": ["pere", "mere", "grandparent", "arriere"] },
+      "options": [
+        { "id": "tous", "text": "Yes, all of them" },
+        { "id": "partie", "text": "Some of them" },
+        { "id": "non", "text": "No, or I don't know" }
+      ]
+    },
+    {
+      "id": "pour",
+      "label": "Application for",
+      "text": "Who is the application for?",
+      "showIf": { "ascendant": ["pere", "mere", "grandparent", "arriere", "nsp"] },
+      "options": [
+        { "id": "moi", "text": "For myself" },
+        { "id": "enfant", "text": "For my minor child" },
+        { "id": "famille", "text": "For several family members" }
+      ]
+    },
+    {
+      "id": "pays",
+      "label": "Country of residence",
+      "text": "Which country do you live in?",
+      "options": [
+        { "id": "fr", "text": "France" },
+        { "id": "il", "text": "Israel" },
+        { "id": "ma", "text": "Morocco" },
+        { "id": "ca", "text": "Canada" },
+        { "id": "us", "text": "United States" },
+        { "id": "autre", "text": "Another country" }
+      ]
+    }
+  ],
+  "results": {
+    "favorable": {
+      "label": "Favorable situation",
+      "text": "You have a Moroccan parent and documents establishing this link: this is the most common case of Moroccan nationality being passed on by descent (Article 6 of the Moroccan Nationality Code). It remains to be checked that your documents are complete and compliant.",
+      "next": "A free first discussion to review your documents and the steps to take."
+    },
+    "etudier": {
+      "label": "Situation to be assessed",
+      "text": "Moroccan nationality is passed on by descent, including over several generations, but each link between your Moroccan ancestor and you will have to be proven by official records. Your file deserves a careful analysis of the documents available and of those missing.",
+      "next": "A free first discussion to identify the documents to gather and the strategy best suited to your family."
+    },
+    "recherche": {
+      "label": "Document search needed",
+      "text": "Without any Moroccan documents for now, the first step is to find your family's records. In many cases, records can be found in the Moroccan civil registers: this is the purpose of our research service.",
+      "next": "A free first discussion to gather what you know about your family and see where to start the search."
+    },
+    "hors": {
+      "label": "No Moroccan descent identified",
+      "text": "Based on your answers, no link of descent to a Moroccan national appears. Moroccan nationality can sometimes be acquired in other ways, for example through marriage, under certain conditions.",
+      "next": "Tell us about your situation: we will let you know whether a procedure is possible."
+    }
+  },
+  "tips": {
+    "il": "Israeli records (birth, marriage) will need a paper apostille: a printout of an e-Apostille is not accepted in Morocco.",
+    "default": "Depending on your country, some records will need to be apostilled or translated: we will tell you exactly which ones."
+  },
+  "subjectDetail": {
+    "pere": "Moroccan father",
+    "mere": "Moroccan mother",
+    "grandparent": "grandparent",
+    "arriere": "great-grandparent",
+    "nsp": "ancestor to be identified",
+    "aucun": "no Moroccan ancestor"
+  },
+  "sideDetail": {
+    "pere": "father's side",
+    "mere": "mother's side"
+  }
+}

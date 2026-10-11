@@ -1,0 +1,162 @@
+{
+  "page": {
+    "title": "Test de elegibilidad para la nacionalidad marroquí | Ezra Maroc",
+    "description": "Compruebe en un minuto si su familia le permite obtener la nacionalidad marroquí por filiación. Test gratuito y sin compromiso.",
+    "h1": "Test de elegibilidad para la nacionalidad marroquí",
+    "intro": "Hasta 7 preguntas, alrededor de un minuto: una primera orientación indicativa sobre su situación.",
+    "noscript": "Este test necesita JavaScript. También puede",
+    "noscriptLink": "describirnos su situación directamente",
+    "privacy": "Sus respuestas permanecen en su navegador: nada se guarda ni se envía mientras no decida transmitírnoslas."
+  },
+  "ui": {
+    "progress": "Pregunta {n} de {total}",
+    "back": "Volver",
+    "next": "Continuar",
+    "restart": "Repetir el test",
+    "multiHint": "Varias respuestas posibles",
+    "resultKicker": "Su resultado",
+    "nextStepTitle": "Próximo paso",
+    "tipTitle": "Conviene saber",
+    "summaryTitle": "Sus respuestas",
+    "send": "Enviar mis respuestas a un experto",
+    "sendNote": "Sus respuestas se adjuntarán al formulario de contacto: podrá añadir su mensaje personal antes del envío.",
+    "disclaimer": "Este resultado es una orientación indicativa, basada únicamente en sus respuestas. No constituye un asesoramiento jurídico y no sustituye el análisis de su expediente. La decisión corresponde a las autoridades marroquíes competentes.",
+    "contactUrl": "/es/contacto.html",
+    "subjectPrefix": "Test de elegibilidad",
+    "resultLine": "Resultado",
+    "handoff": {
+      "title": "Resultados de su test de elegibilidad",
+      "note": "Estas respuestas se adjuntarán automáticamente a su solicitud.",
+      "messageLabel": "Su mensaje personal (opcional)",
+      "messagePlaceholder": "Añada aquí sus precisiones o preguntas: nombres y fechas de nacimiento, documentos que posee, situación familiar…",
+      "subjectValue": "Evaluación preliminar de mi elegibilidad",
+      "fieldName": "Résultats du test d'éligibilité"
+    }
+  },
+  "questions": [
+    {
+      "id": "ascendant",
+      "label": "Ascendiente marroquí",
+      "text": "¿Quién de su familia tiene o tenía la nacionalidad marroquí?",
+      "options": [
+        { "id": "pere", "text": "Mi padre" },
+        { "id": "mere", "text": "Mi madre" },
+        { "id": "grandparent", "text": "Uno de mis abuelos" },
+        { "id": "arriere", "text": "Uno de mis bisabuelos" },
+        { "id": "nsp", "text": "Todavía no lo sé" },
+        { "id": "aucun", "text": "Nadie, que yo sepa" }
+      ]
+    },
+    {
+      "id": "cote",
+      "label": "Vinculado(a) por",
+      "text": "¿A través de cuál de sus padres está vinculado(a) a esta persona?",
+      "showIf": { "ascendant": ["grandparent", "arriere"] },
+      "options": [
+        { "id": "pere", "text": "Mi padre" },
+        { "id": "mere", "text": "Mi madre" },
+        { "id": "nsp", "text": "No lo sé" }
+      ]
+    },
+    {
+      "id": "naissance",
+      "label": "Lugar de nacimiento del ascendiente",
+      "text": "¿Dónde nació esta persona?",
+      "showIf": { "ascendant": ["pere", "mere", "grandparent", "arriere"] },
+      "options": [
+        { "id": "maroc", "text": "En Marruecos" },
+        { "id": "ailleurs", "text": "En otro país" },
+        { "id": "nsp", "text": "No lo sé" }
+      ]
+    },
+    {
+      "id": "documents",
+      "label": "Documentos marroquíes disponibles",
+      "text": "¿Qué documentos marroquíes de esta persona tiene o puede conseguir?",
+      "multiple": true,
+      "exclusive": "aucun",
+      "showIf": { "ascendant": ["pere", "mere", "grandparent", "arriere"] },
+      "options": [
+        { "id": "acte_naissance", "text": "Partida de nacimiento marroquí" },
+        { "id": "livret", "text": "Libro de familia marroquí (livret d'état civil)" },
+        { "id": "identite", "text": "Antiguo pasaporte o documento de identidad marroquí" },
+        { "id": "mariage", "text": "Acta de matrimonio marroquí" },
+        { "id": "certificat", "text": "Certificado de nacionalidad marroquí" },
+        { "id": "aucun", "text": "Ninguno por ahora" }
+      ]
+    },
+    {
+      "id": "liens",
+      "label": "Actas que prueban los vínculos",
+      "text": "¿Tiene las actas que prueban cada vínculo de parentesco entre esta persona y usted (nacimientos, matrimonios)?",
+      "showIf": { "ascendant": ["pere", "mere", "grandparent", "arriere"] },
+      "options": [
+        { "id": "tous", "text": "Sí, todas" },
+        { "id": "partie", "text": "Una parte" },
+        { "id": "non", "text": "No, o no lo sé" }
+      ]
+    },
+    {
+      "id": "pour",
+      "label": "Solicitud para",
+      "text": "¿Para quién es la solicitud?",
+      "showIf": { "ascendant": ["pere", "mere", "grandparent", "arriere", "nsp"] },
+      "options": [
+        { "id": "moi", "text": "Para mí" },
+        { "id": "enfant", "text": "Para mi hijo o hija menor de edad" },
+        { "id": "famille", "text": "Para varios miembros de mi familia" }
+      ]
+    },
+    {
+      "id": "pays",
+      "label": "País de residencia",
+      "text": "¿En qué país reside?",
+      "options": [
+        { "id": "fr", "text": "Francia" },
+        { "id": "il", "text": "Israel" },
+        { "id": "ma", "text": "Marruecos" },
+        { "id": "ca", "text": "Canadá" },
+        { "id": "us", "text": "Estados Unidos" },
+        { "id": "autre", "text": "Otro país" }
+      ]
+    }
+  ],
+  "results": {
+    "favorable": {
+      "label": "Situación favorable",
+      "text": "Tiene un progenitor marroquí y documentos que establecen este vínculo: es el caso más habitual de transmisión de la nacionalidad marroquí por filiación (artículo 6 del Código de la nacionalidad marroquí). Queda por comprobar que sus documentos estén completos y sean conformes.",
+      "next": "Una primera conversación gratuita para revisar sus documentos y los trámites que hay que iniciar."
+    },
+    "etudier": {
+      "label": "Situación por estudiar",
+      "text": "La nacionalidad marroquí se transmite por filiación, también a lo largo de varias generaciones, pero cada vínculo entre su ascendiente marroquí y usted deberá probarse con actas oficiales. Su expediente merece un análisis atento de los documentos disponibles y de los que faltan.",
+      "next": "Una primera conversación gratuita para identificar los documentos que hay que reunir y la estrategia más adecuada para su familia."
+    },
+    "recherche": {
+      "label": "Búsqueda de documentos necesaria",
+      "text": "Sin documentos marroquíes por ahora, el primer paso es encontrar las actas de su familia. En muchos casos, pueden encontrarse actas en los registros civiles marroquíes: ese es el objetivo de nuestro servicio de búsqueda.",
+      "next": "Una primera conversación gratuita para reunir lo que sabe de su familia y ver por dónde empezar la búsqueda."
+    },
+    "hors": {
+      "label": "No se ha identificado filiación marroquí",
+      "text": "Según sus respuestas, no aparece ningún vínculo de filiación con una persona de nacionalidad marroquí. La nacionalidad marroquí puede a veces adquirirse por otras vías, por ejemplo por matrimonio, bajo ciertas condiciones.",
+      "next": "Cuéntenos su situación: le diremos si es posible iniciar un trámite."
+    }
+  },
+  "tips": {
+    "il": "Las actas israelíes (nacimiento, matrimonio) deberán llevar una apostilla en papel: la impresión de una e-Apostilla no se acepta en Marruecos.",
+    "default": "Según su país, algunas actas deberán apostillarse o traducirse: le indicaremos exactamente cuáles."
+  },
+  "subjectDetail": {
+    "pere": "padre marroquí",
+    "mere": "madre marroquí",
+    "grandparent": "abuelo o abuela",
+    "arriere": "bisabuelo o bisabuela",
+    "nsp": "ascendiente por identificar",
+    "aucun": "sin ascendiente marroquí"
+  },
+  "sideDetail": {
+    "pere": "por parte de padre",
+    "mere": "por parte de madre"
+  }
+}

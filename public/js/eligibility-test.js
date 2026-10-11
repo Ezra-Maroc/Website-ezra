@@ -9,6 +9,11 @@
   var app = document.getElementById('elig-app');
   if (!dataEl || !app) return;
   var D = JSON.parse(dataEl.textContent);
+  // Resume et objet de l'e-mail envoyes a l'equipe : toujours en francais (textes FR embarques sur les autres langues)
+  var frEl = document.getElementById('elig-data-fr');
+  var FR = frEl ? JSON.parse(frEl.textContent) : D;
+  var lang = (document.documentElement.lang || 'fr').split('-')[0];
+  var BACK_ICON = document.documentElement.dir === 'rtl' ? 'fa-solid fa-arrow-right' : 'fa-solid fa-arrow-left';
   var Q = D.questions;
   var answers = {};
   var path = []; // ecrans affiches : index de question, ou 'result'
@@ -106,7 +111,7 @@
     var nav = h('div', { class: 'elig-nav' });
     if (path.length > 1) {
       nav.appendChild(h('button', { type: 'button', class: 'elig-back', onclick: goBack },
-        [h('i', { class: 'fa-solid fa-arrow-left', 'aria-hidden': 'true' }), ' ' + D.ui.back]));
+        [h('i', { class: BACK_ICON, 'aria-hidden': 'true' }), ' ' + D.ui.back]));
     } else {
       nav.appendChild(h('span'));
     }
@@ -147,24 +152,28 @@
     }).join(', ');
   }
 
-  function summaryLines() {
-    return Q.filter(function (q) { return answers[q.id] !== undefined && isVisible(q); })
+  // Questions et options ont les memes identifiants dans toutes les langues
+  function summaryLines(data) {
+    return data.questions.filter(function (q) { return answers[q.id] !== undefined && isVisible(q); })
       .map(function (q) { return [q.label, answerText(q)]; });
   }
 
-  function emailSubject(key) {
+  function emailSubject(data, key) {
     var a = answers;
-    var detail = D.subjectDetail[a.ascendant] || '';
-    var side = (a.ascendant === 'grandparent' || a.ascendant === 'arriere') ? D.sideDetail[a.cote] : '';
-    return D.ui.subjectPrefix + ' – ' + D.results[key].label +
-      (detail ? ' (' + detail + (side ? ', ' + side : '') + ')' : '');
+    var detail = data.subjectDetail[a.ascendant] || '';
+    var side = (a.ascendant === 'grandparent' || a.ascendant === 'arriere') ? data.sideDetail[a.cote] : '';
+    return data.ui.subjectPrefix + ' – ' + data.results[key].label +
+      (detail ? ' (' + detail + (side ? ', ' + side : '') + ')' : '') +
+      (lang === 'fr' ? '' : ' [' + lang.toUpperCase() + ']');
   }
 
   function handoffUrl(key) {
     var payload = {
-      v: 1, s: emailSubject(key), r: D.results[key].label, rl: D.ui.resultLine,
-      l: summaryLines(), ui: D.ui.handoff
+      v: 1, s: emailSubject(FR, key), r: D.results[key].label, rl: D.ui.resultLine,
+      l: summaryLines(D), ui: D.ui.handoff
     };
+    // Version francaise du resume pour l'e-mail de l'equipe (inutile sur la page francaise)
+    if (FR !== D) payload.f = { r: FR.results[key].label, rl: FR.ui.resultLine, l: summaryLines(FR) };
     return D.ui.contactUrl + '#test=' + encodeURIComponent(JSON.stringify(payload));
   }
 
@@ -173,7 +182,7 @@
     var R = D.results[key];
     var title = h('h2', { class: 'elig-badge elig-badge--' + key, tabindex: '-1' }, [R.label]);
     var dl = h('dl');
-    summaryLines().forEach(function (l) { dl.appendChild(h('dt', {}, [l[0]])); dl.appendChild(h('dd', {}, [l[1]])); });
+    summaryLines(D).forEach(function (l) { dl.appendChild(h('dt', {}, [l[0]])); dl.appendChild(h('dd', {}, [l[1]])); });
     var tip = key === 'hors' ? null : (D.tips[answers.pays] || D.tips['default']);
 
     app.textContent = '';
@@ -190,7 +199,7 @@
         h('p', { class: 'elig-send-note' }, [D.ui.sendNote]),
         h('div', { class: 'elig-result-nav' }, [
           h('button', { type: 'button', class: 'elig-back', onclick: goBack },
-            [h('i', { class: 'fa-solid fa-arrow-left', 'aria-hidden': 'true' }), ' ' + D.ui.back]),
+            [h('i', { class: BACK_ICON, 'aria-hidden': 'true' }), ' ' + D.ui.back]),
           h('button', {
             type: 'button', class: 'elig-restart',
             onclick: function () { answers = {}; path = [0]; render(); }

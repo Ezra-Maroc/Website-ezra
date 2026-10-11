@@ -5,6 +5,8 @@ export interface NavItem {
   key: string;
   label: string;
   slug: string;
+  /** Shown as a highlighted button at the end of the menu (eligibility test) */
+  cta?: boolean;
 }
 
 export const nav: Record<Lang, NavItem[]> = {
@@ -14,10 +16,11 @@ export const nav: Record<Lang, NavItem[]> = {
     { key: 'services', label: 'Services', slug: 'services.html' },
     { key: 'process', label: 'Processus', slug: 'processus.html' },
     { key: 'contact', label: 'Contact', slug: 'contact.html' },
-    { key: 'testimonials', label: 'Témoignages', slug: 'temoignages.html' },
+    { key: 'testimonials', label: 'Avis', slug: 'temoignages.html' },
     { key: 'about', label: 'À propos', slug: 'a-propos.html' },
     { key: 'faq', label: 'FAQ', slug: 'faq.html' },
     { key: 'quiz', label: 'Quiz', slug: 'quiz.html' },
+    { key: 'eligibility', label: "Test d'éligibilité", slug: 'test-eligibilite.html', cta: true },
   ],
   en: [
     { key: 'home', label: 'Home', slug: 'index.html' },
@@ -29,6 +32,7 @@ export const nav: Record<Lang, NavItem[]> = {
     { key: 'about', label: 'About', slug: 'about.html' },
     { key: 'faq', label: 'FAQ', slug: 'faq.html' },
     { key: 'quiz', label: 'Quiz', slug: 'quiz.html' },
+    { key: 'eligibility', label: 'Eligibility test', slug: 'eligibility-test.html', cta: true },
   ],
   es: [
     { key: 'home', label: 'Inicio', slug: 'inicio.html' },
@@ -36,10 +40,11 @@ export const nav: Record<Lang, NavItem[]> = {
     { key: 'services', label: 'Servicios', slug: 'servicios.html' },
     { key: 'process', label: 'Proceso', slug: 'proceso.html' },
     { key: 'contact', label: 'Contacto', slug: 'contacto.html' },
-    { key: 'testimonials', label: 'Testimonios', slug: 'testimonios.html' },
-    { key: 'about', label: 'Sobre nosotros', slug: 'sobre-nosotros.html' },
+    { key: 'testimonials', label: 'Opiniones', slug: 'testimonios.html' },
+    { key: 'about', label: 'Nosotros', slug: 'sobre-nosotros.html' },
     { key: 'faq', label: 'FAQ', slug: 'faq.html' },
     { key: 'quiz', label: 'Quiz', slug: 'quiz.html' },
+    { key: 'eligibility', label: '¿Soy elegible?', slug: 'test-elegibilidad.html', cta: true },
   ],
   he: [
     { key: 'home', label: 'דף הבית', slug: 'index.html' },
@@ -51,6 +56,7 @@ export const nav: Record<Lang, NavItem[]> = {
     { key: 'about', label: 'אודות', slug: 'about.html' },
     { key: 'faq', label: 'שאלות נפוצות', slug: 'faq.html' },
     { key: 'quiz', label: 'חידון', slug: 'quiz.html' },
+    { key: 'eligibility', label: 'בדיקת זכאות', slug: 'eligibility-test.html', cta: true },
   ],
   ar: [
     { key: 'home', label: 'الرئيسية', slug: 'index.html' },
@@ -62,6 +68,7 @@ export const nav: Record<Lang, NavItem[]> = {
     { key: 'about', label: 'شكون حنا', slug: 'about.html' },
     { key: 'faq', label: 'أسئلة شائعة', slug: 'faq.html' },
     { key: 'quiz', label: 'اختبار', slug: 'quiz.html' },
+    { key: 'eligibility', label: 'اختبار الأهلية', slug: 'eligibility-test.html', cta: true },
   ],
 };
 

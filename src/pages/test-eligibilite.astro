@@ -1,87 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import EligibilityTest from '../components/EligibilityTest.astro';
 import data from '../data/eligibility/fr.json';
 
 const lang = 'fr' as const;
-// Questions et textes embarques dans la page (aucune requete en plus) ; "<" echappe pour ne jamais fermer la balise
-const json = JSON.stringify(data).replace(/</g, '\\u003c');
 ---
 
-<BaseLayout
-  lang={lang}
-  title="Test d'éligibilité à la nationalité marocaine | Ezra Maroc"
-  description="Faites le point en une minute : votre famille vous permet-elle d'obtenir la nationalité marocaine par filiation ? Test gratuit, sans engagement."
-  currentPage="eligibility"
-  noindex={true}
->
-  <main id="main-content" class="page-banner">
-    <div class="container">
-      <h1>Test d'éligibilité à la nationalité marocaine</h1>
-      <p>Jusqu'à 7 questions, environ une minute : un premier avis indicatif sur votre situation.</p>
-    </div>
-  </main>
-
-  <section class="section elig-section">
-    <div class="container">
-      <div class="elig-card" id="elig-app">
-        <noscript><p>Ce test nécessite JavaScript. Vous pouvez aussi <a href="/contact.html">nous décrire votre situation directement</a>.</p></noscript>
-      </div>
-      <p class="elig-privacy"><i class="fa-solid fa-lock" aria-hidden="true"></i> Vos réponses restent dans votre navigateur : rien n'est enregistré ni envoyé tant que vous ne choisissez pas de nous les transmettre.</p>
-    </div>
-  </section>
-
-  <script is:inline type="application/json" id="elig-data" set:html={json}></script>
-  <script is:inline defer src="/js/eligibility-test.js"></script>
-
-  <style is:global>
-    .elig-section { padding: 50px 0 60px; background: var(--light-color, #f8f9fa); }
-    .elig-card { max-width: 720px; margin: 0 auto; background: #fff; border-radius: 14px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); padding: 32px 28px; }
-    .elig-progress-text { font-size: 0.85rem; color: var(--grey-text, #555); margin: 0 0 8px; }
-    .elig-progress { height: 6px; background: #eee; border-radius: 3px; overflow: hidden; margin-bottom: 24px; }
-    .elig-progress span { display: block; height: 100%; background: var(--primary-600, #c5281c); transition: width 0.3s ease; }
-    .elig-question { font-family: var(--font-heading); font-size: 1.35rem; line-height: 1.4; color: var(--dark-color, #333); margin: 0 0 8px; outline: none; }
-    .elig-hint { font-size: 0.9rem; color: var(--grey-text, #555); margin: 0; }
-    .elig-options { display: grid; gap: 10px; margin-top: 18px; }
-    .elig-option { display: flex; align-items: center; gap: 12px; width: 100%; text-align: start; font: inherit; font-size: 1rem; color: var(--dark-color, #333); background: #fff; border: 2px solid #e2e2e2; border-radius: 10px; padding: 14px 16px; cursor: pointer; transition: border-color 0.2s, background 0.2s; }
-    .elig-option:hover { border-color: var(--primary-500, #d84d3f); background: var(--primary-50, #fdeceb); }
-    .elig-option:focus-visible, .elig-back:focus-visible, .elig-restart:focus-visible { outline: 3px solid rgba(var(--primary-600-rgb, 197, 40, 28), 0.35); outline-offset: 2px; }
-    .elig-option[aria-pressed="true"] { border-color: var(--primary-600, #c5281c); background: var(--primary-50, #fdeceb); font-weight: 600; }
-    .elig-check { flex: 0 0 22px; height: 22px; border: 2px solid #999; border-radius: 50%; }
-    .elig-option.is-multi .elig-check { border-radius: 5px; }
-    .elig-option[aria-pressed="true"] .elig-check { border-color: var(--primary-600, #c5281c); background: var(--primary-600, #c5281c); box-shadow: inset 0 0 0 3px #fff; }
-    .elig-nav, .elig-result-nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
-    .elig-back, .elig-restart { background: none; border: none; font: inherit; cursor: pointer; padding: 8px 4px; }
-    .elig-back { color: var(--grey-text, #555); }
-    .elig-back:hover { color: var(--primary-600, #c5281c); text-decoration: underline; }
-    .elig-restart { color: var(--primary-600, #c5281c); text-decoration: underline; }
-    .elig-next[disabled] { opacity: 0.5; cursor: not-allowed; }
-    .elig-kicker { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; color: var(--grey-text, #555); margin: 0 0 8px; }
-    .elig-badge { display: inline-block; font-family: var(--font-heading); font-weight: 700; font-size: 1.3rem; padding: 10px 16px; border-radius: 10px; margin: 0 0 16px; outline: none; }
-    .elig-badge--favorable { background: #e7f6ec; color: #17663a; }
-    .elig-badge--etudier { background: #fff4e0; color: #8a4b00; }
-    .elig-badge--recherche { background: #e8f0fb; color: #1d4f91; }
-    .elig-badge--hors { background: #eef0f2; color: #3d4650; }
-    .elig-result p { line-height: 1.7; color: #333; }
-    .elig-block { border-inline-start: 4px solid var(--primary-600, #c5281c); background: var(--light-color, #f8f9fa); padding: 12px 16px; border-radius: 6px; margin: 16px 0; }
-    .elig-block--tip { border-inline-start-color: #1d4f91; }
-    .elig-block h3, .elig-summary h3 { font-family: var(--font-heading); font-size: 1rem; margin: 0 0 4px; color: var(--dark-color, #333); }
-    .elig-block p { margin: 0; }
-    .elig-summary { margin: 24px 0; }
-    .elig-summary h3 { margin-bottom: 10px; }
-    .elig-summary dl { display: grid; grid-template-columns: minmax(0, 40%) 1fr; gap: 6px 14px; margin: 0; font-size: 0.95rem; }
-    .elig-summary dt { color: var(--grey-text, #555); }
-    .elig-summary dd { margin: 0; color: #222; font-weight: 500; }
-    .elig-actions { display: flex; flex-direction: column; align-items: stretch; gap: 10px; }
-    .elig-actions .btn { text-align: center; }
-    .elig-send-note { font-size: 0.9rem; color: var(--grey-text, #555); margin: 0; text-align: center; }
-    .elig-result-nav { margin-top: 6px; }
-    .elig-disclaimer { font-size: 0.82rem; color: var(--grey-text, #555); border-top: 1px solid #eee; padding-top: 14px; margin-top: 22px; line-height: 1.6; }
-    .elig-privacy { max-width: 720px; margin: 16px auto 0; font-size: 0.88rem; color: var(--grey-text, #555); text-align: center; }
-    @media (max-width: 600px) {
-      .elig-card { padding: 24px 18px; border-radius: 12px; }
-      .elig-question { font-size: 1.2rem; }
-      .elig-summary dl { grid-template-columns: 1fr; }
-      .elig-summary dd { margin-bottom: 8px; }
-    }
-  </style>
+<BaseLayout lang={lang} title={data.page.title} description={data.page.description} currentPage="eligibility">
+  <EligibilityTest data={data} />
 </BaseLayout>

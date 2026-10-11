@@ -1,4 +1,13 @@
 {
+  "page": {
+    "title": "Test d'éligibilité à la nationalité marocaine | Ezra Maroc",
+    "description": "Faites le point en une minute : votre famille vous permet-elle d'obtenir la nationalité marocaine par filiation ? Test gratuit, sans engagement.",
+    "h1": "Test d'éligibilité à la nationalité marocaine",
+    "intro": "Jusqu'à 7 questions, environ une minute : un premier avis indicatif sur votre situation.",
+    "noscript": "Ce test nécessite JavaScript. Vous pouvez aussi",
+    "noscriptLink": "nous décrire votre situation directement",
+    "privacy": "Vos réponses restent dans votre navigateur : rien n'est enregistré ni envoyé tant que vous ne choisissez pas de nous les transmettre."
+  },
   "ui": {
     "progress": "Question {n} sur {total}",
     "back": "Retour",

@@ -65,7 +65,11 @@
       i.value = value;
       form.appendChild(i);
     }
-    var summary = [resultLabel + ' : ' + result].concat(lines.map(function (x) { return x[0] + ' : ' + x[1]; }));
+    // Resume joint a l'e-mail : version francaise si le test a ete fait dans une autre langue
+    var fr = p.f && Array.isArray(p.f.l) ? p.f : null;
+    var mailHead = fr ? clip(fr.rl || 'Résultat', 40) + ' : ' + clip(fr.r, 120) : resultLabel + ' : ' + result;
+    var mailLines = fr ? fr.l.slice(0, 12).map(function (x) { return [clip(x && x[0], 120), clip(x && x[1], 300)]; }) : lines;
+    var summary = [mailHead].concat(mailLines.map(function (x) { return x[0] + ' : ' + x[1]; }));
     hidden(clip(ui.fieldName || 'Résultats du test', 80), summary.join('\n'));
     if (p.s) hidden('_subject', clip(p.s, 200));
 
@@ -84,6 +88,9 @@
         sel.value = opt.value;
         sel.dispatchEvent(new Event('change', { bubbles: true }));
       }
+      // Formspree prend le champ "subject" comme objet de l'e-mail avant "_subject" : on le renomme pour que
+      // l'objet affiche le resultat du test (le choix reste envoye, sous le nom "objet_demande")
+      if (p.s) sel.name = 'objet_demande';
     }
 
     var style = document.createElement('style');

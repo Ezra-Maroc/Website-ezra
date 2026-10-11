@@ -14,6 +14,7 @@ const pageGroups = {
   contact:      { fr: '/contact',                    en: '/en/contact',        es: '/es/contacto',         he: '/he/contact',        ar: '/ara/contact' },
   faq:          { fr: '/faq',                        en: '/en/faq',            es: '/es/faq',              he: '/he/faq',            ar: '/ara/faq' },
   quiz:         { fr: '/quiz',                       en: '/en/quiz',           es: '/es/quiz',             he: '/he/quiz',           ar: '/ara/quiz' },
+  eligibility:  { fr: '/test-eligibilite',            en: '/en/eligibility-test', es: '/es/test-elegibilidad', he: '/he/eligibility-test', ar: '/ara/eligibility-test' },
   privacy:      { fr: '/politique-confidentialite',   en: '/en/privacy-policy', es: '/es/politica-privacidad', he: '/he/privacy-policy', ar: '/ara/politique-confidentialite' },
   legal:        { fr: '/mentions-legales',            en: '/en/legal-notice',   es: '/es/aviso-legal',      he: '/he/legal-notice',   ar: '/ara/mentions-legales' },
   terms:        { fr: '/conditions-utilisation',      en: '/en/terms-of-service', es: '/es/condiciones-uso', he: '/he/terms-of-service', ar: '/ara/conditions-utilisation' },
@@ -31,7 +32,7 @@ for (const [key, langs] of Object.entries(pageGroups)) {
 // Kept out of the sitemap: the legal pages (all noindex, Search Console flags noindex URLs submitted
 // in a sitemap) and pages being drafted, not yet linked in the menus
 const NOINDEX_PATHS = new Set(['privacy', 'legal', 'terms', 'cookies'].flatMap((key) => Object.values(pageGroups[key])));
-const DRAFT_PATHS = ['/test-eligibilite'];
+const DRAFT_PATHS = new Set([]);
 
 // Language home pages are served as directories (/en/ → en/index.html)
 const LANG_ROOTS = new Set(['/en', '/he', '/ara']);
@@ -73,7 +74,7 @@ export default defineConfig({
     sitemap({
       filter: (page) => {
         const path = toPagePath(page);
-        return !page.includes('404') && !NOINDEX_PATHS.has(path) && !DRAFT_PATHS.includes(path);
+        return !page.includes('404') && !NOINDEX_PATHS.has(path) && !DRAFT_PATHS.has(path);
       },
       serialize(item) {
         // Same URLs as the pages' canonical and hreflang tags
