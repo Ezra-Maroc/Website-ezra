@@ -441,6 +441,8 @@
   content: "\f0eb"; }
 .fa-flag::before {
   content: "\f024"; }
+.fa-lock::before {
+  content: "\f023"; }
 .fa-tree::before {
   content: "\f1bb"; }
 .fa-users::before {
@@ -613,6 +615,8 @@
   content: "\f071"; }
 .fa-exchange-alt::before {
   content: "\f362"; }
+.fa-paper-plane::before {
+  content: "\f1d8"; }
 .fa-dice::before {
   content: "\f522"; }
 .fa-building-columns::before {

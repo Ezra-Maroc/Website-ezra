@@ -1,0 +1,153 @@
+{
+  "ui": {
+    "progress": "Question {n} sur {total}",
+    "back": "Retour",
+    "next": "Continuer",
+    "restart": "Refaire le test",
+    "multiHint": "Plusieurs réponses possibles",
+    "resultKicker": "Votre résultat",
+    "nextStepTitle": "Prochaine étape",
+    "tipTitle": "Bon à savoir",
+    "summaryTitle": "Vos réponses",
+    "send": "Envoyer mes réponses à un expert",
+    "sendNote": "Vos réponses seront jointes au formulaire de contact : vous pourrez y ajouter votre message personnel avant l'envoi.",
+    "disclaimer": "Ce résultat est une orientation indicative, établie à partir de vos seules réponses. Il ne constitue pas un avis juridique et ne remplace pas l'analyse de votre dossier. La décision appartient aux autorités marocaines compétentes.",
+    "contactUrl": "/contact.html",
+    "subjectPrefix": "Test d'éligibilité",
+    "resultLine": "Résultat",
+    "handoff": {
+      "title": "Résultats de votre test d'éligibilité",
+      "note": "Ces réponses seront jointes automatiquement à votre demande.",
+      "messageLabel": "Votre message personnel (facultatif)",
+      "messagePlaceholder": "Ajoutez ici vos précisions ou vos questions : noms et dates de naissance, documents en votre possession, situation familiale…",
+      "subjectValue": "Évaluation préliminaire de mon éligibilité",
+      "fieldName": "Résultats du test d'éligibilité"
+    }
+  },
+  "questions": [
+    {
+      "id": "ascendant",
+      "label": "Ascendant marocain",
+      "text": "Qui, dans votre famille, est ou était de nationalité marocaine ?",
+      "options": [
+        { "id": "pere", "text": "Mon père" },
+        { "id": "mere", "text": "Ma mère" },
+        { "id": "grandparent", "text": "Un de mes grands-parents" },
+        { "id": "arriere", "text": "Un de mes arrière-grands-parents" },
+        { "id": "nsp", "text": "Je ne sais pas encore" },
+        { "id": "aucun", "text": "Personne, à ma connaissance" }
+      ]
+    },
+    {
+      "id": "cote",
+      "label": "Relié(e) par",
+      "text": "Par lequel de vos parents êtes-vous relié(e) à cette personne ?",
+      "showIf": { "ascendant": ["grandparent", "arriere"] },
+      "options": [
+        { "id": "pere", "text": "Mon père" },
+        { "id": "mere", "text": "Ma mère" },
+        { "id": "nsp", "text": "Je ne sais pas" }
+      ]
+    },
+    {
+      "id": "naissance",
+      "label": "Lieu de naissance de l'ascendant",
+      "text": "Où cette personne est-elle née ?",
+      "showIf": { "ascendant": ["pere", "mere", "grandparent", "arriere"] },
+      "options": [
+        { "id": "maroc", "text": "Au Maroc" },
+        { "id": "ailleurs", "text": "Dans un autre pays" },
+        { "id": "nsp", "text": "Je ne sais pas" }
+      ]
+    },
+    {
+      "id": "documents",
+      "label": "Documents marocains disponibles",
+      "text": "Quels documents marocains la concernant avez-vous, ou pouvez-vous retrouver ?",
+      "multiple": true,
+      "exclusive": "aucun",
+      "showIf": { "ascendant": ["pere", "mere", "grandparent", "arriere"] },
+      "options": [
+        { "id": "acte_naissance", "text": "Acte de naissance marocain" },
+        { "id": "livret", "text": "Livret d'état civil marocain" },
+        { "id": "identite", "text": "Ancien passeport ou carte d'identité marocaine" },
+        { "id": "mariage", "text": "Acte de mariage marocain" },
+        { "id": "certificat", "text": "Certificat de nationalité marocaine" },
+        { "id": "aucun", "text": "Aucun pour l'instant" }
+      ]
+    },
+    {
+      "id": "liens",
+      "label": "Actes prouvant les liens",
+      "text": "Avez-vous les actes qui prouvent chaque lien de parenté entre cette personne et vous (naissances, mariages) ?",
+      "showIf": { "ascendant": ["pere", "mere", "grandparent", "arriere"] },
+      "options": [
+        { "id": "tous", "text": "Oui, tous" },
+        { "id": "partie", "text": "En partie" },
+        { "id": "non", "text": "Non, ou je ne sais pas" }
+      ]
+    },
+    {
+      "id": "pour",
+      "label": "Demande pour",
+      "text": "Pour qui est la demande ?",
+      "showIf": { "ascendant": ["pere", "mere", "grandparent", "arriere", "nsp"] },
+      "options": [
+        { "id": "moi", "text": "Pour moi" },
+        { "id": "enfant", "text": "Pour mon enfant mineur" },
+        { "id": "famille", "text": "Pour plusieurs membres de ma famille" }
+      ]
+    },
+    {
+      "id": "pays",
+      "label": "Pays de résidence",
+      "text": "Dans quel pays résidez-vous ?",
+      "options": [
+        { "id": "fr", "text": "France" },
+        { "id": "il", "text": "Israël" },
+        { "id": "ma", "text": "Maroc" },
+        { "id": "ca", "text": "Canada" },
+        { "id": "us", "text": "États-Unis" },
+        { "id": "autre", "text": "Autre pays" }
+      ]
+    }
+  ],
+  "results": {
+    "favorable": {
+      "label": "Situation favorable",
+      "text": "Vous avez un parent marocain et des documents qui établissent ce lien : c'est la situation la plus courante de transmission de la nationalité marocaine par filiation (article 6 du Code de la nationalité marocaine). Il reste à vérifier que vos pièces sont complètes et conformes.",
+      "next": "Un premier échange gratuit pour faire le point sur vos documents et sur les démarches à engager."
+    },
+    "etudier": {
+      "label": "Situation à étudier",
+      "text": "La nationalité marocaine se transmet par filiation, y compris sur plusieurs générations, mais chaque lien entre votre ascendant marocain et vous devra être prouvé par des actes officiels. Votre dossier mérite une analyse attentive des documents disponibles et de ceux qui manquent.",
+      "next": "Un premier échange gratuit pour identifier les pièces à réunir et la stratégie la plus adaptée à votre famille."
+    },
+    "recherche": {
+      "label": "Recherche de documents nécessaire",
+      "text": "Sans document marocain pour l'instant, la première étape consiste à retrouver les actes de votre famille. Dans bien des cas, des actes peuvent être retrouvés dans les registres d'état civil marocains : c'est l'objet de notre service de recherche.",
+      "next": "Un premier échange gratuit pour rassembler ce que vous savez de votre famille et voir par où commencer les recherches."
+    },
+    "hors": {
+      "label": "Pas de filiation marocaine identifiée",
+      "text": "D'après vos réponses, aucun lien de filiation avec une personne de nationalité marocaine n'apparaît. La nationalité marocaine peut parfois s'acquérir par d'autres voies, par exemple par le mariage, sous certaines conditions.",
+      "next": "Parlez-nous de votre situation : nous vous dirons si une démarche est envisageable."
+    }
+  },
+  "tips": {
+    "il": "Les actes israéliens (naissance, mariage) devront porter une apostille sur papier : l'impression d'une e-Apostille n'est pas acceptée au Maroc.",
+    "default": "Selon votre pays, certains actes devront être apostillés ou traduits : nous vous indiquerons précisément lesquels."
+  },
+  "subjectDetail": {
+    "pere": "père marocain",
+    "mere": "mère marocaine",
+    "grandparent": "grand-parent",
+    "arriere": "arrière-grand-parent",
+    "nsp": "ascendant à identifier",
+    "aucun": "pas d'ascendant marocain"
+  },
+  "sideDetail": {
+    "pere": "côté père",
+    "mere": "côté mère"
+  }
+}

@@ -28,6 +28,11 @@ for (const [key, langs] of Object.entries(pageGroups)) {
   }
 }
 
+// Kept out of the sitemap: the legal pages (all noindex, Search Console flags noindex URLs submitted
+// in a sitemap) and pages being drafted, not yet linked in the menus
+const NOINDEX_PATHS = new Set(['privacy', 'legal', 'terms', 'cookies'].flatMap((key) => Object.values(pageGroups[key])));
+const DRAFT_PATHS = ['/test-eligibilite'];
+
 // Language home pages are served as directories (/en/ → en/index.html)
 const LANG_ROOTS = new Set(['/en', '/he', '/ara']);
 
@@ -66,7 +71,10 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('404'),
+      filter: (page) => {
+        const path = toPagePath(page);
+        return !page.includes('404') && !NOINDEX_PATHS.has(path) && !DRAFT_PATHS.includes(path);
+      },
       serialize(item) {
         // Same URLs as the pages' canonical and hreflang tags
         const path = toPagePath(item.url);

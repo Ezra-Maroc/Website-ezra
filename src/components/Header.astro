@@ -52,7 +52,7 @@ const imgPrefix = config.pathPrefix ? '..' : '.';
       <select name="lang" id="lang-select" class="language-select">
         {(['fr', 'en', 'es', 'he', 'ar'] as Lang[]).map((l) => (
           <option
-            value={getPageUrl(currentPage, l)}
+            value={getPageUrl(currentPage, l) === '#' ? getPageUrl('home', l) : getPageUrl(currentPage, l)}
             selected={l === lang}
           >
             {t.langNames[l]}

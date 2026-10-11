@@ -53,9 +53,13 @@ const {
 
 const config = locales[lang];
 const t = ui[lang];
-const hreflangMap = getHreflangMap(currentPage);
+// A page not yet in the menus (nav.ts), e.g. one being drafted in a single language:
+// no hreflang alternates, canonical = its own URL
+const pagePath = getPageUrl(currentPage, lang);
+const isListedPage = pagePath !== '#';
+const hreflangMap = isListedPage ? getHreflangMap(currentPage) : {};
 // Canonical derived from the same source as hreflang, menus and sitemap (nav.ts)
-const canonicalUrl = `https://ezra-maroc.com${getPageUrl(currentPage, lang)}`;
+const canonicalUrl = `https://ezra-maroc.com${isListedPage ? pagePath : Astro.url.pathname}`;
 const rtl = isRTL(lang);
 
 // Banner photo of each page. It is a CSS background, so the browser would only discover it after
@@ -223,6 +227,8 @@ const langStyleMap: Record<string, string> = {
   {currentPage === 'contact' && (
     <script is:inline defer src={`/js/contact-form${lang === 'fr' ? '' : '-' + lang}.js`}></script>
   )}
+  {/* Results of the eligibility test (#test=...) attached to the contact form; inactive without the anchor */}
+  {currentPage === 'contact' && <script is:inline defer src="/js/eligibility-handoff.js"></script>}
 
   {/* No cookie banner: the site sets no cookies and loads no trackers (see the cookie policy pages).
       If a consent-requiring service is ever added, a consent manager must come back first. */}
