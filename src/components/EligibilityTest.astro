@@ -40,9 +40,15 @@ const contactUrl = data.ui.contactUrl;
   .elig-progress span { display: block; height: 100%; background: var(--primary-600, #c5281c); transition: width 0.3s ease; }
   .elig-question { font-family: var(--font-heading); font-size: 1.35rem; line-height: 1.4; color: var(--dark-color, #333); margin: 0 0 8px; outline: none; }
   .elig-hint { font-size: 0.9rem; color: var(--grey-text, #555); margin: 0; }
+  .elig-about { display: inline-block; font-size: 0.85rem; font-weight: 500; color: #a8231a; background: var(--primary-50, #fdeceb); border-radius: 999px; padding: 4px 12px; margin: 0 0 12px; }
   .elig-options { display: grid; gap: 10px; margin-top: 18px; }
   .elig-option { display: flex; align-items: center; gap: 12px; width: 100%; text-align: start; font: inherit; font-size: 1rem; color: var(--dark-color, #333); background: #fff; border: 2px solid #e2e2e2; border-radius: 10px; padding: 14px 16px; cursor: pointer; transition: border-color 0.2s, background 0.2s; }
-  .elig-option:hover { border-color: var(--primary-500, #d84d3f); background: var(--primary-50, #fdeceb); }
+  /* Survol seulement avec une vraie souris : sur ecran tactile, l'effet restait sur l'option placee au meme
+     endroit de la question suivante, comme si elle etait deja choisie */
+  @media (hover: hover) {
+    .elig-option:hover { border-color: var(--primary-500, #d84d3f); background: var(--primary-50, #fdeceb); }
+    .elig-back:hover { color: var(--primary-600, #c5281c); text-decoration: underline; }
+  }
   .elig-option:focus-visible, .elig-back:focus-visible, .elig-restart:focus-visible { outline: 3px solid rgba(var(--primary-600-rgb, 197, 40, 28), 0.35); outline-offset: 2px; }
   .elig-option[aria-pressed="true"] { border-color: var(--primary-600, #c5281c); background: var(--primary-50, #fdeceb); font-weight: 600; }
   .elig-check { flex: 0 0 22px; height: 22px; border: 2px solid #999; border-radius: 50%; }
@@ -51,7 +57,6 @@ const contactUrl = data.ui.contactUrl;
   .elig-nav, .elig-result-nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
   .elig-back, .elig-restart { background: none; border: none; font: inherit; cursor: pointer; padding: 8px 4px; }
   .elig-back { color: var(--grey-text, #555); }
-  .elig-back:hover { color: var(--primary-600, #c5281c); text-decoration: underline; }
   .elig-restart { color: var(--primary-600, #c5281c); text-decoration: underline; }
   .elig-next[disabled] { opacity: 0.5; cursor: not-allowed; }
   .elig-kicker { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; color: var(--grey-text, #555); margin: 0 0 8px; }

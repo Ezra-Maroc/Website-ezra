@@ -1,9 +1,9 @@
 {
   "page": {
     "title": "Test de elegibilidad para la nacionalidad marroquí | Ezra Maroc",
-    "description": "Compruebe en un minuto si su familia le permite obtener la nacionalidad marroquí por filiación. Test gratuito y sin compromiso.",
+    "description": "Compruebe en dos minutos si su familia le permite obtener la nacionalidad marroquí por filiación. Test gratuito y sin compromiso.",
     "h1": "Test de elegibilidad para la nacionalidad marroquí",
-    "intro": "Hasta 7 preguntas, alrededor de un minuto: una primera orientación indicativa sobre su situación.",
+    "intro": "Una decena de preguntas, unos dos minutos: una primera orientación indicativa sobre su situación.",
     "noscript": "Este test necesita JavaScript. También puede",
     "noscriptLink": "describirnos su situación directamente",
     "privacy": "Sus respuestas permanecen en su navegador: nada se guarda ni se envía mientras no decida transmitírnoslas."
@@ -14,6 +14,7 @@
     "next": "Continuar",
     "restart": "Repetir el test",
     "multiHint": "Varias respuestas posibles",
+    "aboutPrefix": "Ascendiente considerado:",
     "resultKicker": "Su resultado",
     "nextStepTitle": "Próximo paso",
     "tipTitle": "Conviene saber",
@@ -23,6 +24,7 @@
     "disclaimer": "Este resultado es una orientación indicativa, basada únicamente en sus respuestas. No constituye un asesoramiento jurídico y no sustituye el análisis de su expediente. La decisión corresponde a las autoridades marroquíes competentes.",
     "contactUrl": "/es/contacto.html",
     "subjectPrefix": "Test de elegibilidad",
+    "multiSuffix": " + otro ascendiente",
     "resultLine": "Resultado",
     "handoff": {
       "title": "Resultados de su test de elegibilidad",
@@ -33,39 +35,61 @@
       "fieldName": "Résultats du test d'éligibilité"
     }
   },
+  "refs": {
+    "pere": "su padre",
+    "mere": "su madre",
+    "gp_pere": "su abuelo o abuela por parte de padre",
+    "gp_mere": "su abuelo o abuela por parte de madre",
+    "arriere": "su bisabuelo o bisabuela"
+  },
   "questions": [
     {
-      "id": "ascendant",
-      "label": "Ascendiente marroquí",
+      "id": "ascendants",
+      "label": "Ascendientes marroquíes",
       "text": "¿Quién de su familia tiene o tenía la nacionalidad marroquí?",
+      "multiple": true,
+      "exclusive": ["nsp", "aucun"],
       "options": [
         { "id": "pere", "text": "Mi padre" },
         { "id": "mere", "text": "Mi madre" },
-        { "id": "grandparent", "text": "Uno de mis abuelos" },
-        { "id": "arriere", "text": "Uno de mis bisabuelos" },
+        { "id": "gp_pere", "text": "Un abuelo o abuela por parte de mi padre" },
+        { "id": "gp_mere", "text": "Un abuelo o abuela por parte de mi madre" },
+        { "id": "arriere", "text": "Un bisabuelo o bisabuela" },
         { "id": "nsp", "text": "Todavía no lo sé" },
         { "id": "aucun", "text": "Nadie, que yo sepa" }
       ]
     },
     {
-      "id": "cote",
-      "label": "Vinculado(a) por",
-      "text": "¿A través de cuál de sus padres está vinculado(a) a esta persona?",
-      "showIf": { "ascendant": ["grandparent", "arriere"] },
+      "id": "principal",
+      "label": "Ascendiente considerado",
+      "text": "Para las siguientes preguntas, ¿qué ascendiente elige? Elija aquel del que tenga más documentos.",
+      "when": "several",
+      "optionsFrom": "ascendants"
+    },
+    {
+      "id": "vivant",
+      "label": "Ascendiente con vida",
+      "text": "¿Esta persona sigue con vida?",
+      "when": "known",
+      "about": true,
       "options": [
-        { "id": "pere", "text": "Mi padre" },
-        { "id": "mere", "text": "Mi madre" },
+        { "id": "oui", "text": "Sí" },
+        { "id": "non", "text": "No" },
         { "id": "nsp", "text": "No lo sé" }
       ]
     },
     {
-      "id": "naissance",
-      "label": "Lugar de nacimiento del ascendiente",
-      "text": "¿Dónde nació esta persona?",
-      "showIf": { "ascendant": ["pere", "mere", "grandparent", "arriere"] },
+      "id": "maroc",
+      "label": "Trayectoria del ascendiente",
+      "text": "¿Cuál es la trayectoria de esta persona?",
+      "when": "known",
+      "about": true,
       "options": [
-        { "id": "maroc", "text": "En Marruecos" },
-        { "id": "ailleurs", "text": "En otro país" },
+        { "id": "reste", "text": "Nació en Marruecos y siempre ha vivido allí" },
+        { "id": "apres1970", "text": "Nació en Marruecos y se fue después de 1970" },
+        { "id": "1956_1970", "text": "Nació en Marruecos y se fue entre 1956 y 1970" },
+        { "id": "avant1956", "text": "Nació en Marruecos y se fue antes de 1956" },
+        { "id": "ailleurs", "text": "Nació fuera de Marruecos" },
         { "id": "nsp", "text": "No lo sé" }
       ]
     },
@@ -74,22 +98,37 @@
       "label": "Documentos marroquíes disponibles",
       "text": "¿Qué documentos marroquíes de esta persona tiene o puede conseguir?",
       "multiple": true,
-      "exclusive": "aucun",
-      "showIf": { "ascendant": ["pere", "mere", "grandparent", "arriere"] },
+      "exclusive": ["aucun"],
+      "when": "known",
+      "about": true,
       "options": [
         { "id": "acte_naissance", "text": "Partida de nacimiento marroquí" },
         { "id": "livret", "text": "Libro de familia marroquí (livret d'état civil)" },
         { "id": "identite", "text": "Antiguo pasaporte o documento de identidad marroquí" },
+        { "id": "consulaire", "text": "Tarjeta de inscripción consular marroquí" },
         { "id": "mariage", "text": "Acta de matrimonio marroquí" },
         { "id": "certificat", "text": "Certificado de nacionalidad marroquí" },
         { "id": "aucun", "text": "Ninguno por ahora" }
       ]
     },
     {
+      "id": "famille",
+      "label": "Precedente en la familia",
+      "text": "¿Algún miembro de su familia ya ha obtenido documentos marroquíes (certificado de nacionalidad, pasaporte, documento de identidad) gracias a esta misma persona?",
+      "when": "known",
+      "about": true,
+      "options": [
+        { "id": "oui", "text": "Sí" },
+        { "id": "non", "text": "No" },
+        { "id": "nsp", "text": "No lo sé" }
+      ]
+    },
+    {
       "id": "liens",
       "label": "Actas que prueban los vínculos",
       "text": "¿Tiene las actas que prueban cada vínculo de parentesco entre esta persona y usted (nacimientos, matrimonios)?",
-      "showIf": { "ascendant": ["pere", "mere", "grandparent", "arriere"] },
+      "when": "known",
+      "about": true,
       "options": [
         { "id": "tous", "text": "Sí, todas" },
         { "id": "partie", "text": "Una parte" },
@@ -97,10 +136,32 @@
       ]
     },
     {
+      "id": "noms",
+      "label": "Ortografía de los nombres",
+      "text": "¿Los nombres y apellidos están escritos de la misma forma en todos los documentos?",
+      "when": "known",
+      "options": [
+        { "id": "oui", "text": "Sí, igual en todas partes" },
+        { "id": "non", "text": "No, hay diferencias" },
+        { "id": "nsp", "text": "No lo sé" }
+      ]
+    },
+    {
+      "id": "maries",
+      "label": "Padres casados",
+      "text": "¿Sus padres estaban casados cuando usted nació?",
+      "when": "paternal",
+      "options": [
+        { "id": "oui", "text": "Sí" },
+        { "id": "non", "text": "No" },
+        { "id": "nsp", "text": "No lo sé" }
+      ]
+    },
+    {
       "id": "pour",
       "label": "Solicitud para",
       "text": "¿Para quién es la solicitud?",
-      "showIf": { "ascendant": ["pere", "mere", "grandparent", "arriere", "nsp"] },
+      "when": "notNone",
       "options": [
         { "id": "moi", "text": "Para mí" },
         { "id": "enfant", "text": "Para mi hijo o hija menor de edad" },
@@ -119,12 +180,25 @@
         { "id": "us", "text": "Estados Unidos" },
         { "id": "autre", "text": "Otro país" }
       ]
+    },
+    {
+      "id": "objectif",
+      "label": "Objetivo",
+      "text": "¿Cuál es su objetivo principal?",
+      "multiple": true,
+      "options": [
+        { "id": "papiers", "text": "Obtener un pasaporte o documento de identidad marroquí" },
+        { "id": "enfants", "text": "Transmitir la nacionalidad a mis hijos" },
+        { "id": "projet", "text": "Un proyecto en Marruecos (instalarme, invertir, jubilarme)" },
+        { "id": "famille", "text": "Un trámite familiar o de identidad" },
+        { "id": "autre", "text": "Otro" }
+      ]
     }
   ],
   "results": {
     "favorable": {
       "label": "Situación favorable",
-      "text": "Tiene un progenitor marroquí y documentos que establecen este vínculo: es el caso más habitual de transmisión de la nacionalidad marroquí por filiación (artículo 6 del Código de la nacionalidad marroquí). Queda por comprobar que sus documentos estén completos y sean conformes.",
+      "text": "Su vínculo con un ascendiente marroquí parece poder probarse con documentos: es la situación más favorable para la transmisión de la nacionalidad marroquí por filiación (artículo 6 del Código de la nacionalidad marroquí). Queda por comprobar que sus documentos estén completos y sean conformes.",
       "next": "Una primera conversación gratuita para revisar sus documentos y los trámites que hay que iniciar."
     },
     "etudier": {
@@ -150,13 +224,10 @@
   "subjectDetail": {
     "pere": "padre marroquí",
     "mere": "madre marroquí",
-    "grandparent": "abuelo o abuela",
+    "gp_pere": "abuelo o abuela paterno",
+    "gp_mere": "abuelo o abuela materno",
     "arriere": "bisabuelo o bisabuela",
     "nsp": "ascendiente por identificar",
     "aucun": "sin ascendiente marroquí"
-  },
-  "sideDetail": {
-    "pere": "por parte de padre",
-    "mere": "por parte de madre"
   }
 }

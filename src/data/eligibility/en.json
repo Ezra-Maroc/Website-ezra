@@ -1,9 +1,9 @@
 {
   "page": {
     "title": "Moroccan Nationality Eligibility Test | Ezra Maroc",
-    "description": "Find out in one minute whether your family allows you to obtain Moroccan nationality by descent. Free test, no commitment.",
+    "description": "Find out in two minutes whether your family allows you to obtain Moroccan nationality by descent. Free test, no commitment.",
     "h1": "Moroccan Nationality Eligibility Test",
-    "intro": "Up to 7 questions, about one minute: a first indicative assessment of your situation.",
+    "intro": "About ten questions, around two minutes: a first indicative assessment of your situation.",
     "noscript": "This test requires JavaScript. You can also",
     "noscriptLink": "describe your situation to us directly",
     "privacy": "Your answers stay in your browser: nothing is stored or sent unless you choose to send it to us."
@@ -14,6 +14,7 @@
     "next": "Continue",
     "restart": "Retake the test",
     "multiHint": "Several answers possible",
+    "aboutPrefix": "Ancestor considered:",
     "resultKicker": "Your result",
     "nextStepTitle": "Next step",
     "tipTitle": "Good to know",
@@ -23,6 +24,7 @@
     "disclaimer": "This result is an indicative assessment based solely on your answers. It does not constitute legal advice and does not replace an analysis of your file. The decision rests with the competent Moroccan authorities.",
     "contactUrl": "/en/contact.html",
     "subjectPrefix": "Eligibility test",
+    "multiSuffix": " + other ancestor",
     "resultLine": "Result",
     "handoff": {
       "title": "Your eligibility test results",
@@ -33,63 +35,100 @@
       "fieldName": "Résultats du test d'éligibilité"
     }
   },
+  "refs": {
+    "pere": "your father",
+    "mere": "your mother",
+    "gp_pere": "your grandparent on your father's side",
+    "gp_mere": "your grandparent on your mother's side",
+    "arriere": "your great-grandparent"
+  },
   "questions": [
     {
-      "id": "ascendant",
-      "label": "Moroccan ancestor",
+      "id": "ascendants",
+      "label": "Moroccan ancestors",
       "text": "Who in your family is or was a Moroccan national?",
+      "multiple": true,
+      "exclusive": ["nsp", "aucun"],
       "options": [
         { "id": "pere", "text": "My father" },
         { "id": "mere", "text": "My mother" },
-        { "id": "grandparent", "text": "One of my grandparents" },
-        { "id": "arriere", "text": "One of my great-grandparents" },
+        { "id": "gp_pere", "text": "A grandparent on my father's side" },
+        { "id": "gp_mere", "text": "A grandparent on my mother's side" },
+        { "id": "arriere", "text": "A great-grandparent" },
         { "id": "nsp", "text": "I don't know yet" },
         { "id": "aucun", "text": "No one, as far as I know" }
       ]
     },
     {
-      "id": "cote",
-      "label": "Related through",
-      "text": "Through which of your parents are you related to this person?",
-      "showIf": { "ascendant": ["grandparent", "arriere"] },
+      "id": "principal",
+      "label": "Ancestor considered",
+      "text": "For the next questions, which ancestor do you choose? Pick the one for whom you have the most documents.",
+      "when": "several",
+      "optionsFrom": "ascendants"
+    },
+    {
+      "id": "vivant",
+      "label": "Ancestor alive",
+      "text": "Is this person still alive?",
+      "when": "known",
+      "about": true,
       "options": [
-        { "id": "pere", "text": "My father" },
-        { "id": "mere", "text": "My mother" },
+        { "id": "oui", "text": "Yes" },
+        { "id": "non", "text": "No" },
         { "id": "nsp", "text": "I don't know" }
       ]
     },
     {
-      "id": "naissance",
-      "label": "Ancestor's place of birth",
-      "text": "Where was this person born?",
-      "showIf": { "ascendant": ["pere", "mere", "grandparent", "arriere"] },
+      "id": "maroc",
+      "label": "Ancestor's background",
+      "text": "What is this person's background?",
+      "when": "known",
+      "about": true,
       "options": [
-        { "id": "maroc", "text": "In Morocco" },
-        { "id": "ailleurs", "text": "In another country" },
+        { "id": "reste", "text": "Born in Morocco, has always lived there" },
+        { "id": "apres1970", "text": "Born in Morocco, left after 1970" },
+        { "id": "1956_1970", "text": "Born in Morocco, left between 1956 and 1970" },
+        { "id": "avant1956", "text": "Born in Morocco, left before 1956" },
+        { "id": "ailleurs", "text": "Born outside Morocco" },
         { "id": "nsp", "text": "I don't know" }
       ]
     },
     {
       "id": "documents",
       "label": "Moroccan documents available",
-      "text": "Which Moroccan documents concerning this person do you have, or can you obtain?",
+      "text": "Which Moroccan documents of this person do you have, or can you obtain?",
       "multiple": true,
-      "exclusive": "aucun",
-      "showIf": { "ascendant": ["pere", "mere", "grandparent", "arriere"] },
+      "exclusive": ["aucun"],
+      "when": "known",
+      "about": true,
       "options": [
         { "id": "acte_naissance", "text": "Moroccan birth certificate" },
         { "id": "livret", "text": "Moroccan family record book (livret d'état civil)" },
         { "id": "identite", "text": "Old Moroccan passport or identity card" },
+        { "id": "consulaire", "text": "Moroccan consular registration card" },
         { "id": "mariage", "text": "Moroccan marriage certificate" },
         { "id": "certificat", "text": "Moroccan nationality certificate" },
         { "id": "aucun", "text": "None for now" }
       ]
     },
     {
+      "id": "famille",
+      "label": "Precedent in the family",
+      "text": "Has a member of your family already obtained Moroccan papers (nationality certificate, passport, identity card) through this same person?",
+      "when": "known",
+      "about": true,
+      "options": [
+        { "id": "oui", "text": "Yes" },
+        { "id": "non", "text": "No" },
+        { "id": "nsp", "text": "I don't know" }
+      ]
+    },
+    {
       "id": "liens",
       "label": "Records proving the links",
       "text": "Do you have the records proving each family link between this person and you (births, marriages)?",
-      "showIf": { "ascendant": ["pere", "mere", "grandparent", "arriere"] },
+      "when": "known",
+      "about": true,
       "options": [
         { "id": "tous", "text": "Yes, all of them" },
         { "id": "partie", "text": "Some of them" },
@@ -97,10 +136,32 @@
       ]
     },
     {
+      "id": "noms",
+      "label": "Spelling of names",
+      "text": "Are first names and surnames spelled the same way on all documents?",
+      "when": "known",
+      "options": [
+        { "id": "oui", "text": "Yes, the same everywhere" },
+        { "id": "non", "text": "No, there are differences" },
+        { "id": "nsp", "text": "I don't know" }
+      ]
+    },
+    {
+      "id": "maries",
+      "label": "Parents married",
+      "text": "Were your parents married when you were born?",
+      "when": "paternal",
+      "options": [
+        { "id": "oui", "text": "Yes" },
+        { "id": "non", "text": "No" },
+        { "id": "nsp", "text": "I don't know" }
+      ]
+    },
+    {
       "id": "pour",
       "label": "Application for",
       "text": "Who is the application for?",
-      "showIf": { "ascendant": ["pere", "mere", "grandparent", "arriere", "nsp"] },
+      "when": "notNone",
       "options": [
         { "id": "moi", "text": "For myself" },
         { "id": "enfant", "text": "For my minor child" },
@@ -119,12 +180,25 @@
         { "id": "us", "text": "United States" },
         { "id": "autre", "text": "Another country" }
       ]
+    },
+    {
+      "id": "objectif",
+      "label": "Goal",
+      "text": "What is your main goal?",
+      "multiple": true,
+      "options": [
+        { "id": "papiers", "text": "Obtain a Moroccan passport or identity card" },
+        { "id": "enfants", "text": "Pass the nationality on to my children" },
+        { "id": "projet", "text": "A project in Morocco (settling, investing, retiring)" },
+        { "id": "famille", "text": "A family or identity-related step" },
+        { "id": "autre", "text": "Other" }
+      ]
     }
   ],
   "results": {
     "favorable": {
       "label": "Favorable situation",
-      "text": "You have a Moroccan parent and documents establishing this link: this is the most common case of Moroccan nationality being passed on by descent (Article 6 of the Moroccan Nationality Code). It remains to be checked that your documents are complete and compliant.",
+      "text": "Your link with a Moroccan ancestor appears to be provable with documents: this is the most favorable situation for Moroccan nationality to be passed on by descent (Article 6 of the Moroccan Nationality Code). It remains to be checked that your documents are complete and compliant.",
       "next": "A free first discussion to review your documents and the steps to take."
     },
     "etudier": {
@@ -150,13 +224,10 @@
   "subjectDetail": {
     "pere": "Moroccan father",
     "mere": "Moroccan mother",
-    "grandparent": "grandparent",
+    "gp_pere": "grandparent, father's side",
+    "gp_mere": "grandparent, mother's side",
     "arriere": "great-grandparent",
     "nsp": "ancestor to be identified",
     "aucun": "no Moroccan ancestor"
-  },
-  "sideDetail": {
-    "pere": "father's side",
-    "mere": "mother's side"
   }
 }

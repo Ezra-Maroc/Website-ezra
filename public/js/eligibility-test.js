@@ -2,7 +2,13 @@
    Les questions et les textes viennent du bloc <script type="application/json" id="elig-data"> de la page
    (fichier src/data/eligibility/<langue>.json). Rien n'est stocke ni envoye : les reponses ne quittent le
    navigateur que si le visiteur clique sur "Envoyer mes reponses", qui ouvre le formulaire de contact
-   pre-rempli via l'ancre #test=... (une ancre n'est jamais transmise au serveur). */
+   pre-rempli via l'ancre #test=... (une ancre n'est jamais transmise au serveur).
+
+   Conditions d'affichage ("when" dans le JSON) :
+     known    : au moins un ascendant marocain identifie (pere, mere, grand-parent, arriere-grand-parent)
+     several  : plusieurs ascendants coches -> le visiteur choisit celui qu'il retient ("principal")
+     paternal : l'ascendant retenu est du cote du pere (la filiation paternelle repose sur le mariage)
+     notNone  : le visiteur n'a pas repondu "personne" */
 (function () {
   'use strict';
   var dataEl = document.getElementById('elig-data');
@@ -14,6 +20,7 @@
   var FR = frEl ? JSON.parse(frEl.textContent) : D;
   var lang = (document.documentElement.lang || 'fr').split('-')[0];
   var BACK_ICON = document.documentElement.dir === 'rtl' ? 'fa-solid fa-arrow-right' : 'fa-solid fa-arrow-left';
+  var KNOWN = ['pere', 'mere', 'gp_pere', 'gp_mere', 'arriere'];
   var Q = D.questions;
   var answers = {};
   var path = []; // ecrans affiches : index de question, ou 'result'
@@ -32,11 +39,37 @@
     return e;
   }
 
+  function known() {
+    return (answers.ascendants || []).filter(function (x) { return KNOWN.indexOf(x) !== -1; });
+  }
+
+  // Ascendant sur lequel portent les questions suivantes : le seul coche, ou celui choisi parmi plusieurs
+  function principal() {
+    var k = known();
+    return k.length > 1 ? answers.principal : k[0];
+  }
+
   function isVisible(q) {
-    if (!q.showIf) return true;
-    return Object.keys(q.showIf).every(function (k) {
-      return answers[k] !== undefined && q.showIf[k].indexOf(answers[k]) !== -1;
-    });
+    switch (q.when) {
+      case 'known': return known().length > 0;
+      case 'several': return known().length > 1;
+      case 'paternal': var p = principal(); return p === 'pere' || p === 'gp_pere';
+      case 'notNone':
+        var a = answers.ascendants || [];
+        return a.length > 0 && a.indexOf('aucun') === -1;
+      default: return true;
+    }
+  }
+
+  function questionById(data, id) {
+    return data.questions.filter(function (q) { return q.id === id; })[0];
+  }
+
+  // Options affichees : celles de la question, ou les ascendants coches pour la question "principal"
+  function shownOptions(q) {
+    if (!q.optionsFrom) return q.options;
+    var k = known();
+    return questionById(D, q.optionsFrom).options.filter(function (o) { return k.indexOf(o.id) !== -1; });
   }
 
   function nextIndex(from) {
@@ -45,11 +78,15 @@
   }
 
   function totalQuestions() {
-    return answers[Q[0].id] === undefined ? Q.length : Q.filter(isVisible).length;
+    if (answers.ascendants === undefined) {
+      return Q.filter(function (q) { return !q.when || q.when === 'known' || q.when === 'notNone'; }).length;
+    }
+    return Q.filter(isVisible).length;
   }
 
   // Apres une reponse, efface celles des questions qui ne s'appliquent plus
   function pruneAnswers() {
+    if (answers.principal && known().indexOf(answers.principal) === -1) delete answers.principal;
     Q.forEach(function (q) { if (!isVisible(q)) delete answers[q.id]; });
   }
 
@@ -76,15 +113,17 @@
 
   function renderQuestion(i) {
     var q = Q[i];
+    var opts = shownOptions(q);
+    var excl = [].concat(q.exclusive || []);
     var n = path.filter(function (p) { return p !== 'result'; }).length;
-    var total = totalQuestions();
+    var total = Math.max(totalQuestions(), n);
     var progressText = D.ui.progress.replace('{n}', n).replace('{total}', total);
     var title = h('h2', { class: 'elig-question', tabindex: '-1', id: 'elig-q' }, [q.text]);
     var options = h('div', { class: 'elig-options', role: 'group', 'aria-labelledby': 'elig-q' });
     var selected = q.multiple ? (answers[q.id] || []).slice() : null;
     var nextBtn = null;
 
-    q.options.forEach(function (o) {
+    opts.forEach(function (o) {
       var pressed = q.multiple ? selected.indexOf(o.id) !== -1 : answers[q.id] === o.id;
       var btn = h('button', {
         type: 'button',
@@ -94,13 +133,13 @@
           if (!q.multiple) { answers[q.id] = o.id; goNext(i); return; }
           var pos = selected.indexOf(o.id);
           if (pos !== -1) selected.splice(pos, 1);
-          else if (o.id === q.exclusive) selected = [o.id];
+          else if (excl.indexOf(o.id) !== -1) selected = [o.id];
           else {
-            selected = selected.filter(function (s) { return s !== q.exclusive; });
+            selected = selected.filter(function (s) { return excl.indexOf(s) === -1; });
             selected.push(o.id);
           }
           Array.prototype.forEach.call(options.children, function (b, k) {
-            b.setAttribute('aria-pressed', selected.indexOf(q.options[k].id) !== -1 ? 'true' : 'false');
+            b.setAttribute('aria-pressed', selected.indexOf(opts[k].id) !== -1 ? 'true' : 'false');
           });
           nextBtn.disabled = selected.length === 0;
         }
@@ -123,10 +162,12 @@
       nav.appendChild(nextBtn);
     }
 
+    var p = principal();
     app.textContent = '';
     app.appendChild(h('p', { class: 'elig-progress-text', 'aria-live': 'polite' }, [progressText]));
     app.appendChild(h('div', { class: 'elig-progress', 'aria-hidden': 'true' },
       [h('span', { style: 'width:' + Math.round((100 * n) / total) + '%' })]));
+    if (q.about && p && D.refs[p]) app.appendChild(h('p', { class: 'elig-about' }, [D.ui.aboutPrefix + ' ' + D.refs[p]]));
     app.appendChild(title);
     if (q.multiple) app.appendChild(h('p', { class: 'elig-hint' }, [D.ui.multiHint]));
     app.appendChild(options);
@@ -136,18 +177,23 @@
 
   function computeResult() {
     var a = answers;
-    if (a.ascendant === 'aucun') return 'hors';
-    if (a.ascendant === 'nsp') return 'recherche';
+    if ((a.ascendants || []).indexOf('aucun') !== -1) return 'hors';
+    var p = principal();
+    if (!p) return 'recherche'; // ascendant pas encore identifie
     var docs = a.documents || [];
-    if (docs.length === 0 || docs.indexOf('aucun') !== -1) return 'recherche';
-    if ((a.ascendant === 'pere' || a.ascendant === 'mere') && a.liens === 'tous') return 'favorable';
-    return 'etudier';
+    var hasDocs = docs.length > 0 && docs.indexOf('aucun') === -1;
+    var precedent = a.famille === 'oui'; // papiers deja obtenus par un proche grace au meme ascendant
+    if (!hasDocs && !precedent) return 'recherche';
+    var direct = p === 'pere' || p === 'mere';
+    var solid = a.liens === 'tous' && a.noms !== 'non' && a.maries !== 'non';
+    return (direct || precedent) && solid ? 'favorable' : 'etudier';
   }
 
-  function answerText(q) {
+  function answerText(data, q) {
     var v = answers[q.id];
+    var opts = q.optionsFrom ? questionById(data, q.optionsFrom).options : q.options;
     return (Array.isArray(v) ? v : [v]).map(function (id) {
-      var o = q.options.filter(function (x) { return x.id === id; })[0];
+      var o = opts.filter(function (x) { return x.id === id; })[0];
       return o ? o.text : id;
     }).join(', ');
   }
@@ -155,15 +201,14 @@
   // Questions et options ont les memes identifiants dans toutes les langues
   function summaryLines(data) {
     return data.questions.filter(function (q) { return answers[q.id] !== undefined && isVisible(q); })
-      .map(function (q) { return [q.label, answerText(q)]; });
+      .map(function (q) { return [q.label, answerText(data, q)]; });
   }
 
   function emailSubject(data, key) {
-    var a = answers;
-    var detail = data.subjectDetail[a.ascendant] || '';
-    var side = (a.ascendant === 'grandparent' || a.ascendant === 'arriere') ? data.sideDetail[a.cote] : '';
+    var p = principal() || (answers.ascendants || [])[0];
+    var detail = (data.subjectDetail[p] || '') + (known().length > 1 ? data.ui.multiSuffix : '');
     return data.ui.subjectPrefix + ' – ' + data.results[key].label +
-      (detail ? ' (' + detail + (side ? ', ' + side : '') + ')' : '') +
+      (detail ? ' (' + detail + ')' : '') +
       (lang === 'fr' ? '' : ' [' + lang.toUpperCase() + ']');
   }
 

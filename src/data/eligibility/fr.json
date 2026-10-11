@@ -1,9 +1,9 @@
 {
   "page": {
     "title": "Test d'éligibilité à la nationalité marocaine | Ezra Maroc",
-    "description": "Faites le point en une minute : votre famille vous permet-elle d'obtenir la nationalité marocaine par filiation ? Test gratuit, sans engagement.",
+    "description": "Faites le point en deux minutes : votre famille vous permet-elle d'obtenir la nationalité marocaine par filiation ? Test gratuit, sans engagement.",
     "h1": "Test d'éligibilité à la nationalité marocaine",
-    "intro": "Jusqu'à 7 questions, environ une minute : un premier avis indicatif sur votre situation.",
+    "intro": "Une dizaine de questions, environ deux minutes : un premier avis indicatif sur votre situation.",
     "noscript": "Ce test nécessite JavaScript. Vous pouvez aussi",
     "noscriptLink": "nous décrire votre situation directement",
     "privacy": "Vos réponses restent dans votre navigateur : rien n'est enregistré ni envoyé tant que vous ne choisissez pas de nous les transmettre."
@@ -14,6 +14,7 @@
     "next": "Continuer",
     "restart": "Refaire le test",
     "multiHint": "Plusieurs réponses possibles",
+    "aboutPrefix": "Ascendant retenu :",
     "resultKicker": "Votre résultat",
     "nextStepTitle": "Prochaine étape",
     "tipTitle": "Bon à savoir",
@@ -23,6 +24,7 @@
     "disclaimer": "Ce résultat est une orientation indicative, établie à partir de vos seules réponses. Il ne constitue pas un avis juridique et ne remplace pas l'analyse de votre dossier. La décision appartient aux autorités marocaines compétentes.",
     "contactUrl": "/contact.html",
     "subjectPrefix": "Test d'éligibilité",
+    "multiSuffix": " + autre ascendant",
     "resultLine": "Résultat",
     "handoff": {
       "title": "Résultats de votre test d'éligibilité",
@@ -33,63 +35,100 @@
       "fieldName": "Résultats du test d'éligibilité"
     }
   },
+  "refs": {
+    "pere": "votre père",
+    "mere": "votre mère",
+    "gp_pere": "votre grand-parent côté père",
+    "gp_mere": "votre grand-parent côté mère",
+    "arriere": "votre arrière-grand-parent"
+  },
   "questions": [
     {
-      "id": "ascendant",
-      "label": "Ascendant marocain",
+      "id": "ascendants",
+      "label": "Ascendants marocains",
       "text": "Qui, dans votre famille, est ou était de nationalité marocaine ?",
+      "multiple": true,
+      "exclusive": ["nsp", "aucun"],
       "options": [
         { "id": "pere", "text": "Mon père" },
         { "id": "mere", "text": "Ma mère" },
-        { "id": "grandparent", "text": "Un de mes grands-parents" },
-        { "id": "arriere", "text": "Un de mes arrière-grands-parents" },
+        { "id": "gp_pere", "text": "Un grand-parent du côté de mon père" },
+        { "id": "gp_mere", "text": "Un grand-parent du côté de ma mère" },
+        { "id": "arriere", "text": "Un arrière-grand-parent" },
         { "id": "nsp", "text": "Je ne sais pas encore" },
         { "id": "aucun", "text": "Personne, à ma connaissance" }
       ]
     },
     {
-      "id": "cote",
-      "label": "Relié(e) par",
-      "text": "Par lequel de vos parents êtes-vous relié(e) à cette personne ?",
-      "showIf": { "ascendant": ["grandparent", "arriere"] },
+      "id": "principal",
+      "label": "Ascendant retenu",
+      "text": "Pour la suite, quel ascendant retenez-vous ? Choisissez celui pour lequel vous avez le plus de documents.",
+      "when": "several",
+      "optionsFrom": "ascendants"
+    },
+    {
+      "id": "vivant",
+      "label": "Ascendant en vie",
+      "text": "Cette personne est-elle toujours en vie ?",
+      "when": "known",
+      "about": true,
       "options": [
-        { "id": "pere", "text": "Mon père" },
-        { "id": "mere", "text": "Ma mère" },
+        { "id": "oui", "text": "Oui" },
+        { "id": "non", "text": "Non" },
         { "id": "nsp", "text": "Je ne sais pas" }
       ]
     },
     {
-      "id": "naissance",
-      "label": "Lieu de naissance de l'ascendant",
-      "text": "Où cette personne est-elle née ?",
-      "showIf": { "ascendant": ["pere", "mere", "grandparent", "arriere"] },
+      "id": "maroc",
+      "label": "Parcours de l'ascendant",
+      "text": "Quel est le parcours de cette personne ?",
+      "when": "known",
+      "about": true,
       "options": [
-        { "id": "maroc", "text": "Au Maroc" },
-        { "id": "ailleurs", "text": "Dans un autre pays" },
+        { "id": "reste", "text": "Née au Maroc, elle y a toujours vécu" },
+        { "id": "apres1970", "text": "Née au Maroc, partie après 1970" },
+        { "id": "1956_1970", "text": "Née au Maroc, partie entre 1956 et 1970" },
+        { "id": "avant1956", "text": "Née au Maroc, partie avant 1956" },
+        { "id": "ailleurs", "text": "Née hors du Maroc" },
         { "id": "nsp", "text": "Je ne sais pas" }
       ]
     },
     {
       "id": "documents",
       "label": "Documents marocains disponibles",
-      "text": "Quels documents marocains la concernant avez-vous, ou pouvez-vous retrouver ?",
+      "text": "Quels documents marocains de cette personne avez-vous, ou pouvez-vous retrouver ?",
       "multiple": true,
-      "exclusive": "aucun",
-      "showIf": { "ascendant": ["pere", "mere", "grandparent", "arriere"] },
+      "exclusive": ["aucun"],
+      "when": "known",
+      "about": true,
       "options": [
         { "id": "acte_naissance", "text": "Acte de naissance marocain" },
         { "id": "livret", "text": "Livret d'état civil marocain" },
         { "id": "identite", "text": "Ancien passeport ou carte d'identité marocaine" },
+        { "id": "consulaire", "text": "Carte d'immatriculation consulaire" },
         { "id": "mariage", "text": "Acte de mariage marocain" },
         { "id": "certificat", "text": "Certificat de nationalité marocaine" },
         { "id": "aucun", "text": "Aucun pour l'instant" }
       ]
     },
     {
+      "id": "famille",
+      "label": "Précédent dans la famille",
+      "text": "Un membre de votre famille a-t-il déjà obtenu des papiers marocains (certificat de nationalité, passeport, carte d'identité) grâce à cette même personne ?",
+      "when": "known",
+      "about": true,
+      "options": [
+        { "id": "oui", "text": "Oui" },
+        { "id": "non", "text": "Non" },
+        { "id": "nsp", "text": "Je ne sais pas" }
+      ]
+    },
+    {
       "id": "liens",
       "label": "Actes prouvant les liens",
       "text": "Avez-vous les actes qui prouvent chaque lien de parenté entre cette personne et vous (naissances, mariages) ?",
-      "showIf": { "ascendant": ["pere", "mere", "grandparent", "arriere"] },
+      "when": "known",
+      "about": true,
       "options": [
         { "id": "tous", "text": "Oui, tous" },
         { "id": "partie", "text": "En partie" },
@@ -97,10 +136,32 @@
       ]
     },
     {
+      "id": "noms",
+      "label": "Orthographe des noms",
+      "text": "Les noms et prénoms sont-ils écrits de la même façon sur tous les documents ?",
+      "when": "known",
+      "options": [
+        { "id": "oui", "text": "Oui, partout pareil" },
+        { "id": "non", "text": "Non, il y a des différences" },
+        { "id": "nsp", "text": "Je ne sais pas" }
+      ]
+    },
+    {
+      "id": "maries",
+      "label": "Parents mariés",
+      "text": "Vos parents étaient-ils mariés au moment de votre naissance ?",
+      "when": "paternal",
+      "options": [
+        { "id": "oui", "text": "Oui" },
+        { "id": "non", "text": "Non" },
+        { "id": "nsp", "text": "Je ne sais pas" }
+      ]
+    },
+    {
       "id": "pour",
       "label": "Demande pour",
       "text": "Pour qui est la demande ?",
-      "showIf": { "ascendant": ["pere", "mere", "grandparent", "arriere", "nsp"] },
+      "when": "notNone",
       "options": [
         { "id": "moi", "text": "Pour moi" },
         { "id": "enfant", "text": "Pour mon enfant mineur" },
@@ -119,12 +180,25 @@
         { "id": "us", "text": "États-Unis" },
         { "id": "autre", "text": "Autre pays" }
       ]
+    },
+    {
+      "id": "objectif",
+      "label": "Objectif",
+      "text": "Quel est votre objectif principal ?",
+      "multiple": true,
+      "options": [
+        { "id": "papiers", "text": "Obtenir un passeport ou une carte d'identité marocaine" },
+        { "id": "enfants", "text": "Transmettre la nationalité à mes enfants" },
+        { "id": "projet", "text": "Un projet au Maroc (installation, investissement, retraite)" },
+        { "id": "famille", "text": "Une démarche familiale ou identitaire" },
+        { "id": "autre", "text": "Autre" }
+      ]
     }
   ],
   "results": {
     "favorable": {
       "label": "Situation favorable",
-      "text": "Vous avez un parent marocain et des documents qui établissent ce lien : c'est la situation la plus courante de transmission de la nationalité marocaine par filiation (article 6 du Code de la nationalité marocaine). Il reste à vérifier que vos pièces sont complètes et conformes.",
+      "text": "Votre lien avec un ascendant marocain semble pouvoir être établi par des documents : c'est la situation la plus favorable pour une transmission de la nationalité marocaine par filiation (article 6 du Code de la nationalité marocaine). Il reste à vérifier que vos pièces sont complètes et conformes.",
       "next": "Un premier échange gratuit pour faire le point sur vos documents et sur les démarches à engager."
     },
     "etudier": {
@@ -150,13 +224,10 @@
   "subjectDetail": {
     "pere": "père marocain",
     "mere": "mère marocaine",
-    "grandparent": "grand-parent",
+    "gp_pere": "grand-parent côté père",
+    "gp_mere": "grand-parent côté mère",
     "arriere": "arrière-grand-parent",
     "nsp": "ascendant à identifier",
     "aucun": "pas d'ascendant marocain"
-  },
-  "sideDetail": {
-    "pere": "côté père",
-    "mere": "côté mère"
   }
 }
