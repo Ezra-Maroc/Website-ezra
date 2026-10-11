@@ -197,6 +197,11 @@
     }
   ],
   "results": {
+    "neutre": {
+      "label": "Votre situation mérite une étude personnalisée",
+      "text": "Chaque histoire familiale est unique. Vos réponses nous donnent une première base : un échange avec nos experts permettra d'examiner votre situation et de vous indiquer les démarches possibles, y compris la recherche des documents qui pourraient manquer.",
+      "next": "Un premier échange gratuit pour étudier votre dossier et vous proposer la démarche la plus adaptée."
+    },
     "favorable": {
       "label": "Situation favorable",
       "text": "Votre lien avec un ascendant marocain semble pouvoir être établi par des documents : c'est la situation la plus favorable pour une transmission de la nationalité marocaine par filiation (article 6 du Code de la nationalité marocaine). Il reste à vérifier que vos pièces sont complètes et conformes.",

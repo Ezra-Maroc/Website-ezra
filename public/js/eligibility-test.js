@@ -223,20 +223,25 @@
       (lang === 'fr' ? '' : ' [' + lang.toUpperCase() + ']');
   }
 
+  // Le visiteur ne voit jamais de resultat negatif ou peu concluant (choix de l'equipe) : en dehors de
+  // "favorable", il lit un message neutre ("etude personnalisee"). Le classement precis (etudier, recherche,
+  // hors) n'est envoye qu'a l'equipe, dans l'objet et le resume caches de l'e-mail.
+  function publicKey(key) { return key === 'favorable' ? 'favorable' : 'neutre'; }
+
   function handoffUrl(key) {
     var payload = {
-      v: 1, s: emailSubject(FR, key), r: D.results[key].label, rl: D.ui.resultLine,
-      l: summaryLines(D), ui: D.ui.handoff
+      v: 1, s: emailSubject(FR, key), r: D.results[publicKey(key)].label, rl: D.ui.resultLine,
+      l: summaryLines(D), ui: D.ui.handoff,
+      // Resume pour l'e-mail de l'equipe : en francais, avec le classement precis
+      f: { r: FR.results[key].label, rl: FR.ui.resultLine, l: summaryLines(FR) }
     };
-    // Version francaise du resume pour l'e-mail de l'equipe (inutile sur la page francaise)
-    if (FR !== D) payload.f = { r: FR.results[key].label, rl: FR.ui.resultLine, l: summaryLines(FR) };
     return D.ui.contactUrl + '#test=' + encodeURIComponent(JSON.stringify(payload));
   }
 
   function renderResult() {
     var key = computeResult();
-    var R = D.results[key];
-    var title = h('h2', { class: 'elig-badge elig-badge--' + key, tabindex: '-1' }, [R.label]);
+    var R = D.results[publicKey(key)];
+    var title = h('h2', { class: 'elig-badge elig-badge--' + publicKey(key), tabindex: '-1' }, [R.label]);
     var dl = h('dl');
     summaryLines(D).forEach(function (l) { dl.appendChild(h('dt', {}, [l[0]])); dl.appendChild(h('dd', {}, [l[1]])); });
     var tip = key === 'hors' ? null : (D.tips[answers.pays] || D.tips['default']);

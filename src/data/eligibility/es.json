@@ -197,6 +197,11 @@
     }
   ],
   "results": {
+    "neutre": {
+      "label": "Su situación merece un estudio personalizado",
+      "text": "Cada historia familiar es única. Sus respuestas nos dan una primera base: una conversación con nuestros expertos permitirá examinar su situación e indicarle los trámites posibles, incluida la búsqueda de los documentos que pudieran faltar.",
+      "next": "Una primera conversación gratuita para estudiar su expediente y proponerle el trámite más adecuado."
+    },
     "favorable": {
       "label": "Situación favorable",
       "text": "Su vínculo con un ascendiente marroquí parece poder probarse con documentos: es la situación más favorable para la transmisión de la nacionalidad marroquí por filiación (artículo 6 del Código de la nacionalidad marroquí). Queda por comprobar que sus documentos estén completos y sean conformes.",

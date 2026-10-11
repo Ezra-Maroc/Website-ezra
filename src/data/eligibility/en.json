@@ -197,6 +197,11 @@
     }
   ],
   "results": {
+    "neutre": {
+      "label": "Your situation deserves a personalized review",
+      "text": "Every family history is unique. Your answers give us a first basis: a discussion with our experts will allow us to review your situation and tell you which steps are possible, including searching for any documents that may be missing.",
+      "next": "A free first discussion to review your file and suggest the most suitable approach."
+    },
     "favorable": {
       "label": "Favorable situation",
       "text": "Your link with a Moroccan ancestor appears to be provable with documents: this is the most favorable situation for Moroccan nationality to be passed on by descent (Article 6 of the Moroccan Nationality Code). It remains to be checked that your documents are complete and compliant.",
