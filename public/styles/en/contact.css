@@ -367,7 +367,7 @@
 /* NOUVEAU : Style pour le compteur de caractères sous le textarea */
 .char-counter-display {
   font-size: 0.75rem;
-  color: #777;
+  color: #666;
   margin-top: 5px; /* Espace par rapport au textarea */
   text-align: right;
   padding-right: 5px;
