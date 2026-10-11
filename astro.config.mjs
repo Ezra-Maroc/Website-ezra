@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import preact from '@astrojs/preact';
 import sitemap from '@astrojs/sitemap';
 
 const SITE = 'https://ezra-maroc.com';
@@ -62,7 +61,6 @@ export default defineConfig({
     }
   },
   integrations: [
-    preact(),
     sitemap({
       filter: (page) => !page.includes('404'),
       serialize(item) {
