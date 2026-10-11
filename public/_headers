@@ -19,5 +19,3 @@
 /js/*
   Cache-Control: public, max-age=2592000
 
-/tarteaucitron/*
-  Cache-Control: public, max-age=604800

@@ -845,8 +845,7 @@ footer {
 @media print {
   body { padding-top: 0; font-size: 12pt; color: #000; background: #fff; }
   .site-header, .site-footer, .language-switcher, .skip-link,
-  .cookie-settings-link, .btn-loader, #tarteaucitronRoot,
-  .hero-cta, .scroll-indicator { display: none; }
+  .btn-loader, .hero-cta, .scroll-indicator { display: none; }
   a { color: #000; text-decoration: underline; }
   a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #666; }
   a[href^="#"]::after, a[href^="javascript"]::after { content: ""; }

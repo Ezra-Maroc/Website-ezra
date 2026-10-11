@@ -30,7 +30,6 @@ export const ui: Record<Lang, {
   legalNotice: string;
   termsOfService: string;
   cookiePolicy: string;
-  cookieSettings: string;
 
   // Footer France office
   footerFranceOffice: string;
@@ -72,7 +71,6 @@ export const ui: Record<Lang, {
     legalNotice: 'Mentions légales',
     termsOfService: 'Conditions d\'utilisation',
     cookiePolicy: 'Politique cookies',
-    cookieSettings: 'Gestion des cookies',
     footerFranceOffice: 'Bureau France',
     footerFranceAddress: '113 Bd du Général Koenig, 92200 Neuilly-sur-Seine, France',
     menuLabel: 'Menu',
@@ -104,7 +102,6 @@ export const ui: Record<Lang, {
     legalNotice: 'Legal Notice',
     termsOfService: 'Terms of Service',
     cookiePolicy: 'Cookie Policy',
-    cookieSettings: 'Cookie Settings',
     footerFranceOffice: 'France Office',
     footerFranceAddress: '113 Bd du Général Koenig, 92200 Neuilly-sur-Seine, France',
     menuLabel: 'Menu',
@@ -136,7 +133,6 @@ export const ui: Record<Lang, {
     legalNotice: 'Aviso legal',
     termsOfService: 'Condiciones de uso',
     cookiePolicy: 'Política de cookies',
-    cookieSettings: 'Gestión de cookies',
     footerFranceOffice: 'Oficina Francia',
     footerFranceAddress: '113 Bd du Général Koenig, 92200 Neuilly-sur-Seine, France',
     menuLabel: 'Menú',
@@ -168,7 +164,6 @@ export const ui: Record<Lang, {
     legalNotice: 'הודעה משפטית',
     termsOfService: 'תנאי שימוש',
     cookiePolicy: 'מדיניות עוגיות',
-    cookieSettings: 'הגדרות עוגיות',
     footerFranceOffice: 'משרד צרפת',
     footerFranceAddress: '113 Bd du Général Koenig, 92200 Neuilly-sur-Seine, France',
     menuLabel: 'תפריט',
@@ -200,7 +195,6 @@ export const ui: Record<Lang, {
     legalNotice: 'الإشعار القانوني',
     termsOfService: 'شروط الاستخدام',
     cookiePolicy: 'سياسة ملفات تعريف الارتباط',
-    cookieSettings: 'إدارة ملفات تعريف الارتباط',
     footerFranceOffice: 'مكتب فرنسا',
     footerFranceAddress: '113 Bd du Général Koenig, 92200 Neuilly-sur-Seine, France',
     menuLabel: 'القائمة',

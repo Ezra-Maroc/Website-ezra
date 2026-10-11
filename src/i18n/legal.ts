@@ -46,8 +46,3 @@ export function getLegalUrl(pageType: keyof typeof legalPages['fr'], lang: Lang)
   const prefix = lang === 'fr' ? '/' : `/${lang === 'ar' ? 'ara' : lang}/`;
   return prefix + legalPages[lang][pageType];
 }
-
-// Get the privacy policy URL for tarteaucitron data-privacy-url
-export function getPrivacyUrl(lang: Lang): string {
-  return getLegalUrl('privacy', lang);
-}

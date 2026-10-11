@@ -3,7 +3,6 @@ import type { Lang } from '../i18n/locales';
 import { locales, isRTL } from '../i18n/locales';
 import { ui } from '../i18n/translations';
 import { nav, getHreflangMap, getPageUrl } from '../i18n/nav';
-import { getPrivacyUrl } from '../i18n/legal';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
@@ -57,7 +56,6 @@ const t = ui[lang];
 const hreflangMap = getHreflangMap(currentPage);
 // Canonical derived from the same source as hreflang, menus and sitemap (nav.ts)
 const canonicalUrl = `https://ezra-maroc.com${getPageUrl(currentPage, lang)}`;
-const privacyUrl = getPrivacyUrl(lang);
 const rtl = isRTL(lang);
 
 // Banner photo of each page. It is a CSS background, so the browser would only discover it after
@@ -173,9 +171,6 @@ const langStyleMap: Record<string, string> = {
   <!-- Quiz RTL CSS (only for quiz pages in HE/ARA) -->
   {currentPage === 'quiz' && rtl && <link rel="stylesheet" href="/styles/quiz-rtl.css">}
 
-  <!-- Tarteaucitron CSS -->
-  <link rel="stylesheet" href="/tarteaucitron/css/tarteaucitron.css">
-
   <!-- Skip link style -->
   <style>
     .skip-link {
@@ -216,15 +211,6 @@ const langStyleMap: Record<string, string> = {
           if (this.value) location = this.value;
         });
       }
-      const cookieLinks = document.querySelectorAll('.cookie-settings-link');
-      cookieLinks.forEach(function(link) {
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-          if (window.tarteaucitron && tarteaucitron.userInterface && tarteaucitron.userInterface.openPanel) {
-            tarteaucitron.userInterface.openPanel();
-          }
-        });
-      });
     });
   </script>
 
@@ -238,8 +224,7 @@ const langStyleMap: Record<string, string> = {
     <script is:inline defer src={`/js/contact-form${lang === 'fr' ? '' : '-' + lang}.js`}></script>
   )}
 
-  <!-- Tarteaucitron (synchrone, PAS defer) -->
-  <script is:inline type="text/javascript" src="/tarteaucitron/tarteaucitron.js"></script>
-  <script is:inline src="/js/tarteaucitron-init.js" data-privacy-url={privacyUrl}></script>
+  {/* No cookie banner: the site sets no cookies and loads no trackers (see the cookie policy pages).
+      If a consent-requiring service is ever added, a consent manager must come back first. */}
 </body>
 </html>
