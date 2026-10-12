@@ -1,0 +1,73 @@
+---
+// Accueil uniquement : quand la langue de la page ne figure pas parmi les langues du navigateur, propose
+// l'accueil dans la premiere langue du visiteur que le site connait, avec un texte dans cette langue.
+// Ne s'affiche qu'a l'arrivee depuis l'exterieur (pas apres un clic dans le site, ni apres le choix d'une
+// langue dans le menu). Aucun cookie ni stockage : la fermeture vaut pour la page affichee.
+// Le script suit immediatement les bandeaux et precede la banniere d'accueil : le bandeau est en place avant
+// le premier affichage, rien ne se decale.
+import type { Lang } from '../i18n/locales';
+import { locales, LANGS } from '../i18n/locales';
+import { getPageUrl } from '../i18n/nav';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const TEXTS: Record<Lang, { message: string; action: string; close: string }> = {
+  fr: { message: 'Ce site est aussi disponible en français.', action: 'Voir en français', close: 'Fermer' },
+  en: { message: 'This site is also available in English.', action: 'View in English', close: 'Close' },
+  es: { message: 'Este sitio también está disponible en español.', action: 'Ver en español', close: 'Cerrar' },
+  he: { message: 'האתר זמין גם בעברית.', action: 'לאתר בעברית', close: 'סגירה' },
+  ar: { message: 'هذا الموقع متوفر أيضًا باللغة العربية.', action: 'تصفح بالعربية', close: 'إغلاق' },
+};
+const others = LANGS.filter((l) => l !== lang);
+---
+
+{others.map((l) => (
+  <div class="lang-suggest" data-suggest={l} lang={locales[l].htmlLang} dir={locales[l].dir} role="region" aria-labelledby={`lang-suggest-${l}`} data-nosnippet hidden>
+    <div class="container lang-suggest-inner">
+      <p class="lang-suggest-text" id={`lang-suggest-${l}`}>{TEXTS[l].message}</p>
+      <a class="lang-suggest-link" href={getPageUrl('home', l)} hreflang={locales[l].htmlLang}>{TEXTS[l].action}</a>
+      <button type="button" class="lang-suggest-close" aria-label={TEXTS[l].close}><span aria-hidden="true">×</span></button>
+    </div>
+  </div>
+))}
+
+<script is:inline define:vars={{ pageLang: lang, known: LANGS }}>
+  (function () {
+    var prefs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''])
+      .map(function (l) { var c = String(l).toLowerCase().split('-')[0]; return c === 'iw' ? 'he' : c; });
+    if (prefs.indexOf(pageLang) !== -1) return; // le visiteur lit la langue de la page
+    try { if (document.referrer && new URL(document.referrer).origin === location.origin) return; } catch (e) { /* referent illisible : on continue */ }
+    var wanted = null;
+    for (var i = 0; i < prefs.length && !wanted; i++) if (known.indexOf(prefs[i]) !== -1) wanted = prefs[i];
+    var box = wanted && document.querySelector('.lang-suggest[data-suggest="' + wanted + '"]');
+    if (!box) return;
+    box.hidden = false;
+    box.querySelector('.lang-suggest-close').addEventListener('click', function () { box.remove(); });
+  })();
+</script>
+
+<style is:global>
+  .lang-suggest { background: #f7f1e8; border-bottom: 1px solid rgba(0, 0, 0, 0.08); color: #2b2b2b; font-family: 'Poppins', sans-serif; font-size: 0.95rem; }
+  .lang-suggest[hidden] { display: none; }
+  .lang-suggest[lang="he"] { font-family: 'Assistant', 'Heebo', sans-serif; font-size: 1.02rem; }
+  .lang-suggest[lang="ar"] { font-family: 'Cairo', sans-serif; }
+  /* Message puis bouton sur la meme ligne, le bouton ne passe dessous que s'il manque de place ; la croix reste en
+     bout de bandeau (place reservee par padding-inline-end). `.lang-suggest` devant : l'emporte sur
+     `.container { padding: 0 20px }` quel que soit l'ordre des feuilles. */
+  .lang-suggest .lang-suggest-inner { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; padding-block: 8px; padding-inline-end: 64px; }
+  .lang-suggest-text { margin: 0; line-height: 1.4; }
+  .lang-suggest-link { display: inline-flex; align-items: center; min-height: 40px; padding: 6px 16px; border-radius: 6px; background: var(--primary-600, #c5281c); color: #fff; font-weight: 600; text-decoration: none; white-space: nowrap; }
+  .lang-suggest-link:hover { background: var(--primary-700, #a3201a); color: #fff; }
+  .lang-suggest-close { position: absolute; inset-inline-end: 12px; top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 0; border-radius: 6px; background: none; color: #555; font-size: 1.7rem; line-height: 1; cursor: pointer; }
+  .lang-suggest-close:hover { background: rgba(0, 0, 0, 0.06); color: #222; }
+  .lang-suggest-link:focus-visible, .lang-suggest-close:focus-visible { outline: 3px solid rgba(197, 40, 28, 0.35); outline-offset: 2px; }
+  @media (max-width: 576px) {
+    .lang-suggest { font-size: 0.9rem; }
+    .lang-suggest[lang="he"] { font-size: 0.98rem; }
+    .lang-suggest .lang-suggest-inner { gap: 6px 12px; padding-inline-end: 52px; }
+    .lang-suggest-link { min-height: 38px; padding: 4px 14px; }
+    .lang-suggest-close { inset-inline-end: 6px; top: 3px; transform: none; }
+  }
+</style>

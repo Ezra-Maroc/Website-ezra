@@ -6,6 +6,7 @@ import { nav, getHreflangMap, getPageUrl } from '../i18n/nav';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MobileActionBar from '../components/MobileActionBar.astro';
+import LanguageSuggestion from '../components/LanguageSuggestion.astro';
 
 // Fonts and icons served from the site itself (no Google Fonts, no cdnjs): nothing blocks
 // rendering from another domain, and visitors' IP addresses are not sent to third parties.
@@ -202,6 +203,9 @@ const langStyleMap: Record<string, string> = {
   <a href="#main-content" class="skip-link">{t.skipToContent}</a>
 
   <Header lang={lang} currentPage={currentPage} />
+
+  {/* Home pages only: offers the visitor's own language (no cookie, no storage) */}
+  {currentPage === 'home' && <LanguageSuggestion lang={lang} />}
 
   <slot />
 
