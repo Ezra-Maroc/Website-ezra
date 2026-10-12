@@ -6,15 +6,17 @@ vérifie l'anti-robot Turnstile côté serveur et envoie le message à **info@ez
 
 Sécurité :
 - l'envoi est verrouillé dans `wrangler.jsonc` : un seul destinataire (info@ezra-project.fr) et un seul expéditeur
-  (formulaire@form.ezra-maroc.com) — même détournée, la fonction ne peut écrire qu'à nous ;
+  (formulaire@a2deepsec.com) — même détournée, la fonction ne peut écrire qu'à nous ;
 - requêtes acceptées uniquement depuis ezra-maroc.com (en-tête Origin) ;
 - jeton Turnstile vérifié auprès de Cloudflare (et obtenu sur ezra-maroc.com), champ piège `_gotcha` ;
 - champs validés et bornés (taille, e-mail, consentement), aucune injection possible dans les en-têtes.
 
 ## Mise en place (une seule fois)
 
-1. Cloudflare → Email Routing de **ezra-maroc.com** → Paramètres → **Sous-domaines** : ajouter `form.ezra-maroc.com`.
-   Ne pas activer Email Routing sur le domaine principal : ses MX (messagerie actuelle) doivent rester tels quels.
+1. Cloudflare → Compute → Email Service → Email Routing → Onboard Domain : **a2deepsec.com** (domaine du compte sans
+   messagerie), puis Activate. Ne PAS le faire sur ezra-maroc.com : l'activation y remplacerait les MX de l'ancienne
+   messagerie (action@ezra-maroc.com). Garder a2deepsec.com renouvelé (expire le 2027-07-03), sinon les envois
+   échouent (le site bascule alors sur Formspree).
 2. Email Routing → **Adresses de destination** : ajouter `info@ezra-project.fr` et cliquer le lien de confirmation reçu.
 3. Turnstile → ajouter un widget : domaines `ezra-maroc.com` et `www.ezra-maroc.com`, mode « Géré ».
 4. Dans ce dossier : `npm install`, `npx wrangler login`, `npx wrangler secret put TURNSTILE_SECRET`

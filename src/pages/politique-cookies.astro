@@ -8,7 +8,7 @@ const lang = 'fr' as const;
 <BaseLayout
   lang={lang}
   title="Politique d'Utilisation des Cookies | Ezra Maroc"
-  description="Le site ezra-maroc.com ne dépose aucun cookie et n'utilise aucun traceur : ni mesure d'audience, ni publicité, ni réseau social intégré."
+  description="Le site ezra-maroc.com ne dépose aucun cookie et n'utilise aucun traceur de mesure d'audience, de publicité ou de réseau social."
   currentPage="cookies"
   noindex={true}
 >
@@ -36,10 +36,10 @@ const lang = 'fr' as const;
   <section class="section legal-content-section">
     <div class="container">
 
-      <p><strong>Date de dernière mise à jour :</strong> 11 octobre 2026</p>
+      <p><strong>Date de dernière mise à jour :</strong> 12 octobre 2026</p>
 
       <h2>ARTICLE 1 : En bref</h2>
-      <p>Le site https://ezra-maroc.com (le « Site »), édité par Ezra Maroc Consulting Services LLC (« Ezra Maroc », « nous »), <strong>ne dépose aucun cookie sur votre appareil et n'utilise aucun traceur</strong> : ni mesure d'audience, ni publicité, ni bouton ou contenu de réseau social intégré.</p>
+      <p>Le site https://ezra-maroc.com (le « Site »), édité par Ezra Maroc Consulting Services LLC (« Ezra Maroc », « nous »), <strong>ne dépose aucun cookie sur votre appareil et n'utilise aucun traceur de mesure d'audience, de publicité ou de réseau social</strong> (ni bouton ni contenu de réseau social intégré). Seule exception : sur la page Contact, la vérification anti-robot du formulaire, strictement nécessaire à sa sécurité (voir l'article 4).</p>
       <p>C'est pourquoi aucun bandeau ne vous demande votre consentement : la réglementation (RGPD, directive ePrivacy et recommandations de la CNIL) ne l'exige que pour les cookies et traceurs non indispensables, que nous n'utilisons pas.</p>
 
       <h2>ARTICLE 2 : Qu'est-ce qu'un cookie ?</h2>
@@ -54,7 +54,8 @@ const lang = 'fr' as const;
       </ul>
 
       <h2>ARTICLE 4 : Formulaire de contact</h2>
-      <p>Lorsque vous envoyez le formulaire de contact, les informations saisies sont transmises à notre prestataire Formspree, qui nous les achemine par e-mail. Cette transmission ne nécessite aucun cookie. Le traitement de ces données est décrit dans notre <a href="politique-confidentialite.html">Politique de Confidentialité</a>.</p>
+      <p>Lorsque vous envoyez le formulaire de contact, les informations saisies sont transmises à notre prestataire Cloudflare, qui nous les achemine par e-mail ; Formspree prend le relais uniquement si ce service est momentanément indisponible. Ces transmissions ne nécessitent aucun cookie.</p>
+      <p>Pour bloquer les envois automatisés (spam), la page Contact utilise la vérification anti-robot Cloudflare Turnstile, le plus souvent invisible. Elle ne dépose aucun cookie, mais enregistre dans le stockage local de votre navigateur, pour le domaine challenges.cloudflare.com, une donnée technique (« cf.turnstile.u ») servant uniquement à cette vérification. Elle ne sert ni à la publicité ni au suivi de votre navigation ; strictement nécessaire à la sécurité du formulaire, elle ne requiert pas votre consentement. Le traitement de ces données est décrit dans notre <a href="politique-confidentialite.html">Politique de Confidentialité</a>.</p>
 
       <h2>ARTICLE 5 : Hébergement</h2>
       <p>Le Site est hébergé par GitHub, Inc. (service GitHub Pages). Comme pour tout site internet, l'hébergeur reçoit techniquement votre adresse IP afin de vous transmettre les pages demandées ; ce fonctionnement ne fait appel à aucun cookie. Les coordonnées de l'hébergeur figurent dans nos <a href="mentions-legales.html">Mentions Légales</a>.</p>

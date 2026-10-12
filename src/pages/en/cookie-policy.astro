@@ -8,7 +8,7 @@ const lang = 'en' as const;
 <BaseLayout
   lang={lang}
   title="Cookie Policy | Ezra Maroc"
-  description="ezra-maroc.com places no cookies and uses no trackers: no audience measurement, no advertising and no embedded social media."
+  description="ezra-maroc.com places no cookies and uses no audience measurement, advertising or social media trackers."
   currentPage="cookies"
   noindex={true}
 >
@@ -36,10 +36,10 @@ const lang = 'en' as const;
   <section class="section legal-content-section">
     <div class="container">
 
-      <p><strong>Last Updated:</strong> October 11, 2026</p>
+      <p><strong>Last Updated:</strong> October 12, 2026</p>
 
       <h2>ARTICLE 1: In Short</h2>
-      <p>The website https://ezra-maroc.com (the "Site"), published by Ezra Maroc Consulting Services LLC ("Ezra Maroc", "we"), <strong>places no cookies on your device and uses no trackers</strong>: no audience measurement, no advertising, and no embedded social media buttons or content.</p>
+      <p>The website https://ezra-maroc.com (the "Site"), published by Ezra Maroc Consulting Services LLC ("Ezra Maroc", "we"), <strong>places no cookies on your device and uses no audience measurement, advertising or social media trackers</strong> (no embedded social media buttons or content). The only exception is on the Contact page: the form's anti-bot check, strictly necessary for its security (see article 4).</p>
       <p>That is why no banner asks for your consent: the regulations (GDPR, the ePrivacy Directive and the recommendations of data protection authorities such as the French CNIL) only require consent for non-essential cookies and trackers, which we do not use.</p>
 
       <h2>ARTICLE 2: What Is a Cookie?</h2>
@@ -54,7 +54,8 @@ const lang = 'en' as const;
       </ul>
 
       <h2>ARTICLE 4: Contact Form</h2>
-      <p>When you send the contact form, the information you enter is transmitted to our service provider Formspree, which forwards it to us by email. This transmission does not require any cookie. The processing of this data is described in our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+      <p>When you send the contact form, the information you enter is transmitted to our service provider Cloudflare, which forwards it to us by email; Formspree takes over only if this service is temporarily unavailable. These transmissions do not require any cookie.</p>
+      <p>To block automated submissions (spam), the Contact page uses the Cloudflare Turnstile anti-bot check, which is usually invisible. It places no cookies, but stores a technical value ("cf.turnstile.u") in your browser's local storage for the challenges.cloudflare.com domain, used solely for this check. It is not used for advertising or to track your browsing; as it is strictly necessary for the security of the form, it does not require your consent. The processing of this data is described in our <a href="privacy-policy.html">Privacy Policy</a>.</p>
 
       <h2>ARTICLE 5: Hosting</h2>
       <p>The Site is hosted by GitHub, Inc. (GitHub Pages service). As with any website, the host technically receives your IP address in order to send you the pages you request; this does not involve any cookie. The host's details are given in our <a href="legal-notice.html">Legal Notice</a>.</p>

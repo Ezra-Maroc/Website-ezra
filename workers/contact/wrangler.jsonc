@@ -1,13 +1,16 @@
 // Fonction Cloudflare du formulaire de contact (voir README.md). Deploiement : npm run deploy (dans ce dossier).
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "ezra-contact",
+  // "ezra-contact" existe deja dans le compte (ancien essai, non utilise par le site) : nom distinct pour ne pas l'ecraser
+  "name": "ezra-formulaire",
   "main": "src/index.js",
   "compatibility_date": "2026-09-15",
   "workers_dev": true,
   "observability": { "enabled": true },
   "vars": {
-    "FROM_ADDRESS": "formulaire@form.ezra-maroc.com",
+    // Expediteur sur a2deepsec.com (domaine du compte sans messagerie) : Email Routing n'y casse rien, alors
+    // qu'ezra-maroc.com garde ses MX historiques (ancienne messagerie, action@ezra-maroc.com).
+    "FROM_ADDRESS": "formulaire@a2deepsec.com",
     "TO_ADDRESS": "info@ezra-project.fr",
     // jetons Turnstile acceptes seulement s'ils ont ete obtenus sur ces domaines
     "TURNSTILE_HOSTNAMES": "ezra-maroc.com,www.ezra-maroc.com"
@@ -18,7 +21,7 @@
       "name": "EMAIL",
       // la fonction ne peut ecrire qu'a cette adresse, et seulement depuis l'expediteur ci-dessous
       "destination_address": "info@ezra-project.fr",
-      "allowed_sender_addresses": ["formulaire@form.ezra-maroc.com"]
+      "allowed_sender_addresses": ["formulaire@a2deepsec.com"]
     }
   ]
 }
