@@ -1,0 +1,7 @@
+# Copier en .dev.vars pour les essais locaux (npm run dev) : rien n'est envoye, les e-mails sont ecrits dans des fichiers.
+# Cle de test Cloudflare qui accepte toujours le jeton factice (XXXX.DUMMY.TOKEN.XXXX)
+TURNSTILE_SECRET=1x0000000000000000000000000000000AA
+# Pas de controle du domaine du jeton en local
+TURNSTILE_HOSTNAMES=
+# Site servi en local
+DEV_ORIGINS=http://127.0.0.1:4402,http://localhost:4402

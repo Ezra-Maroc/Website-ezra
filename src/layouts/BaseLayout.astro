@@ -7,6 +7,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MobileActionBar from '../components/MobileActionBar.astro';
 import LanguageSuggestion from '../components/LanguageSuggestion.astro';
+import { SHOW_TURNSTILE } from '../config/contact';
 
 // Fonts and icons served from the site itself (no Google Fonts, no cdnjs): nothing blocks
 // rendering from another domain, and visitors' IP addresses are not sent to third parties.
@@ -235,6 +236,8 @@ const langStyleMap: Record<string, string> = {
   {currentPage === 'contact' && (
     <script is:inline defer src={`/js/contact-form${lang === 'fr' ? '' : '-' + lang}.js`}></script>
   )}
+  {/* Anti-bot check of the contact form (Cloudflare Turnstile), only once the Cloudflare contact function is configured */}
+  {currentPage === 'contact' && SHOW_TURNSTILE && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
   {/* Results of the eligibility test (#test=...) attached to the contact form; inactive without the anchor */}
   {currentPage === 'contact' && <script is:inline defer src="/js/eligibility-handoff.js"></script>}
 
