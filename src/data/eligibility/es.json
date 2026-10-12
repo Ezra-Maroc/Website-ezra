@@ -175,10 +175,14 @@
       "text": "¿En qué país reside?",
       "options": [
         { "id": "fr", "text": "Francia" },
-        { "id": "il", "text": "Israel" },
-        { "id": "ma", "text": "Marruecos" },
+        { "id": "es", "text": "España" },
+        { "id": "it", "text": "Italia" },
+        { "id": "be", "text": "Bélgica" },
+        { "id": "nl", "text": "Países Bajos" },
+        { "id": "de", "text": "Alemania" },
         { "id": "ca", "text": "Canadá" },
         { "id": "us", "text": "Estados Unidos" },
+        { "id": "ma", "text": "Marruecos" },
         { "id": "autre", "text": "Otro país" }
       ]
     },
@@ -224,7 +228,6 @@
     }
   },
   "tips": {
-    "il": "Las actas israelíes (nacimiento, matrimonio) deberán llevar una apostilla en papel: la impresión de una e-Apostilla no se acepta en Marruecos.",
     "default": "Según su país, algunas actas deberán apostillarse o traducirse: le indicaremos exactamente cuáles."
   },
   "subjectDetail": {

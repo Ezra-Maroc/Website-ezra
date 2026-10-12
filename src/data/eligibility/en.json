@@ -175,10 +175,14 @@
       "text": "Which country do you live in?",
       "options": [
         { "id": "fr", "text": "France" },
-        { "id": "il", "text": "Israel" },
-        { "id": "ma", "text": "Morocco" },
+        { "id": "es", "text": "Spain" },
+        { "id": "it", "text": "Italy" },
+        { "id": "be", "text": "Belgium" },
+        { "id": "nl", "text": "Netherlands" },
+        { "id": "de", "text": "Germany" },
         { "id": "ca", "text": "Canada" },
         { "id": "us", "text": "United States" },
+        { "id": "ma", "text": "Morocco" },
         { "id": "autre", "text": "Another country" }
       ]
     },
@@ -224,7 +228,6 @@
     }
   },
   "tips": {
-    "il": "Israeli records (birth, marriage) will need a paper apostille: a printout of an e-Apostille is not accepted in Morocco.",
     "default": "Depending on your country, some records will need to be apostilled or translated: we will tell you exactly which ones."
   },
   "subjectDetail": {

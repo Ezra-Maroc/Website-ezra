@@ -175,10 +175,14 @@
       "text": "Dans quel pays résidez-vous ?",
       "options": [
         { "id": "fr", "text": "France" },
-        { "id": "il", "text": "Israël" },
-        { "id": "ma", "text": "Maroc" },
+        { "id": "es", "text": "Espagne" },
+        { "id": "it", "text": "Italie" },
+        { "id": "be", "text": "Belgique" },
+        { "id": "nl", "text": "Pays-Bas" },
+        { "id": "de", "text": "Allemagne" },
         { "id": "ca", "text": "Canada" },
         { "id": "us", "text": "États-Unis" },
+        { "id": "ma", "text": "Maroc" },
         { "id": "autre", "text": "Autre pays" }
       ]
     },
@@ -224,7 +228,6 @@
     }
   },
   "tips": {
-    "il": "Les actes israéliens (naissance, mariage) devront porter une apostille sur papier : l'impression d'une e-Apostille n'est pas acceptée au Maroc.",
     "default": "Selon votre pays, certains actes devront être apostillés ou traduits : nous vous indiquerons précisément lesquels."
   },
   "subjectDetail": {
