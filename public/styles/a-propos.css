@@ -24,7 +24,7 @@
 .internal-title {
   font-size: 2rem; /* Plus petit que titre principal de page */
   margin-bottom: 40px;
-  text-align: left; /* Aligner à gauche */
+  text-align: start; /* Aligner à gauche */
   position: relative;
   color: var(--dark-color); /* Couleur standard */
   padding-bottom: 10px;
@@ -36,7 +36,7 @@
   content: '';
   position: absolute;
   bottom: 0; /* Juste en dessous du padding-bottom */
-  left: 0;
+  inset-inline-start: 0;
   width: 60px;
   height: 3px;
   background-color: var(--primary-color);
@@ -97,18 +97,18 @@
     font-size: 1.1rem;
     color: var(--primary-color);
     margin-top: 30px;
-    padding: 20px 20px 20px 45px; /* Augmenter padding gauche */
-    border-left: 4px solid var(--primary-color);
+    padding-block: 20px; padding-inline: 45px 20px; /* Augmenter padding gauche */
+    border-inline-start: 4px solid var(--primary-color);
     background-color: rgba(197, 40, 28, 0.03);
     position: relative;
-    border-radius: 0 8px 8px 0;
+    border-start-start-radius: 0; border-start-end-radius: 8px; border-end-end-radius: 8px; border-end-start-radius: 0;
 }
 .about-quote::before {
     content: "\f10d"; /* fa-quote-left */
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     position: absolute;
-    left: 15px; /* Ajuster position */
+    inset-inline-start: 15px; /* Ajuster position */
     top: 18px; /* Ajuster position */
     font-size: 1.6rem; /* Légèrement plus grand */
     color: rgba(197, 40, 28, 0.15); /* Moins transparent */
@@ -160,7 +160,7 @@
   padding: 0;
   max-width: 750px;
   margin: 0 auto;
-  text-align: left;
+  text-align: start;
 }
 
 .commitment-list li {
@@ -179,10 +179,11 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   background-color: #fdfdfd;
 }
+[dir="rtl"] .commitment-list li:hover { transform: translateX(-8px); } /* meme decalage, vers l'interieur en hebreu/arabe */
 
 .commitment-list i {
   color: var(--secondary-color); /* Utiliser vert pour le check */
-  margin-right: 15px;
+  margin-inline-end: 15px;
   font-size: 1.2rem; /* Légèrement plus grand */
   /* margin-top: retiré car align-items: center */
   transition: transform 0.3s ease;
@@ -471,7 +472,7 @@
 /* ----- Responsive styles ----- */
 @media (max-width: 992px) {
   .internal-title { text-align: center; font-size: 1.8rem; }
-  .internal-title::after { left: 50%; transform: translateX(-50%); }
+  .internal-title::after { inset-inline-start: auto; left: 50%; transform: translateX(-50%); }
   .about-content { flex-direction: column; text-align: center; }
   .about-image { order: 1; margin: 0 auto 30px; }
   .about-text { order: 2; }

@@ -53,7 +53,7 @@
     font-weight: 900;
     position: absolute;
     top: -10px;
-    right: 15px;
+    inset-inline-end: 15px;
     font-size: 1.8rem;
     color: var(--accent-color); /* Couleur accent */
     opacity: 0.2;
@@ -145,7 +145,7 @@
 }
 
 .success-badge i {
-  margin-right: 5px;
+  margin-inline-end: 5px;
   font-size: 0.9em; /* Icône proportionnelle */
 }
 
@@ -158,7 +158,7 @@
 
 /* Contenu Témoignage */
 .testimonial-content {
-  padding: 25px 30px 30px 35px; /* Padding ajusté */
+  padding-block: 25px 30px; padding-inline: 35px 30px; /* Padding ajusté */
   position: relative;
 }
 
@@ -166,7 +166,7 @@
 .testimonial-quote {
   position: absolute;
   top: 15px; /* Remontée */
-  left: 15px; /* Rapprochée */
+  inset-inline-start: 15px; /* Rapprochée */
   color: rgba(197, 40, 28, 0.08); /* Encore plus pâle */
   font-size: 3rem; /* Plus grande */
   transition: opacity 0.4s ease, transform 0.4s ease;
@@ -193,8 +193,8 @@
   font-style: normal; /* Pas d'italique par défaut */
   font-size: 1rem; /* Un peu plus grand */
   margin-bottom: 20px; /* Plus d'espace après */
-  padding-left: 10px; /* Léger retrait */
-  border-left: 2px solid rgba(197, 40, 28, 0.2); /* Bordure gauche discrète */
+  padding-inline-start: 10px; /* Léger retrait */
+  border-inline-start: 2px solid rgba(197, 40, 28, 0.2); /* Bordure gauche discrète */
 }
 
 .testimonial-content p:last-child {
@@ -257,12 +257,12 @@
   /* } */
 
   .testimonial-content {
-    padding: 25px 25px 25px 30px; /* Ajusté */
+    padding-block: 25px; padding-inline: 30px 25px; /* Ajusté */
   }
 
   .testimonial-quote {
     font-size: 2.5rem; /* Ajusté */
-    left: 10px;
+    inset-inline-start: 10px;
     top: 10px;
   }
 }

@@ -134,9 +134,9 @@
 .faq-question {
   background-color: var(--white-color);
   border: none;
-  padding: 18px 30px 18px 25px; /* Ajustez si besoin */
+  padding-block: 18px; padding-inline: 25px 30px; /* Ajustez si besoin */
   width: 100%;
-  text-align: left;
+  text-align: start;
   cursor: pointer;
   font-family: var(--font-heading);
   font-size: 1.15rem;
@@ -156,7 +156,7 @@
 /* Le texte de la question */
 .faq-question span {
   flex-grow: 1;
-  padding-right: 15px;
+  padding-inline-end: 15px;
   line-height: 1.4;
 }
 
@@ -210,16 +210,16 @@
 /* Styles internes à la réponse */
 .faq-answer p { margin-bottom: 16px; }
 .faq-answer p:last-child { margin-bottom: 0; }
-.faq-answer ul { list-style: none; padding-left: 20px; margin: 18px 0; }
+.faq-answer ul { list-style: none; padding-inline-start: 20px; margin: 18px 0; }
 .faq-answer ul + p { margin-top: 18px; }
-.faq-answer li { margin-bottom: 12px; position: relative; padding-left: 5px; }
+.faq-answer li { margin-bottom: 12px; position: relative; padding-inline-start: 5px; }
 .faq-answer li::before {
   content: '\f105'; /* chevron-right */
   font-family: 'Font Awesome 6 Free';
   font-weight: 900;
   color: var(--primary-500); /* Couleur primaire un peu plus claire pour la puce */
   position: absolute;
-  left: -18px;
+  inset-inline-start: -18px;
   top: 5px;
   font-size: 0.85rem;
 }
@@ -237,10 +237,10 @@
 }
 .contact-info p { margin-bottom: 12px; line-height: 1.6; color: var(--dark-color); font-size: 0.95rem;}
 .contact-info p:last-of-type { margin-bottom: 0;}
-.contact-info ul { list-style: none; padding-left: 0; margin: 15px 0 0 0; }
+.contact-info ul { list-style: none; padding-inline-start: 0; margin: 15px 0 0 0; }
 .contact-info li { padding: 6px 0; margin-bottom: 10px; position: relative; display: flex; align-items: center;}
 .contact-info li:last-child { margin-bottom: 0;}
-.contact-info li i { margin-right: 12px; color: var(--primary-600); width: 20px; text-align: center; font-size: 1.1rem; flex-shrink: 0;}
+.contact-info li i { margin-inline-end: 12px; color: var(--primary-600); width: 20px; text-align: center; font-size: 1.1rem; flex-shrink: 0;}
 .contact-info li a { color: var(--primary-600); font-weight: 500; }
 .contact-info li a:hover { text-decoration: underline; }
 
@@ -272,8 +272,8 @@
     .contact-info { padding: 20px; margin: 20px; }
     .disclaimer { padding: 15px 20px 20px 20px;}
 
-    .faq-question { font-size: 1.1rem; padding: 18px 25px 18px 20px; }
-    .faq-answer { padding-left: 20px; padding-right: 20px; }
+    .faq-question { font-size: 1.1rem; padding-block: 18px; padding-inline: 20px 25px; }
+    .faq-answer { padding-inline-start: 20px; padding-inline-end: 20px; }
     /* Pas besoin de redéfinir .faq-answer[aria-hidden="false"] ici, le padding s'appliquera */
 }
 
@@ -288,11 +288,14 @@
     .faq-container .faq-section h2 { font-size: 1.2rem; padding: 15px; }
     .faq-container .faq-section > p { padding: 15px; font-size: 0.9rem;}
 
-    .faq-question { font-size: 1.05rem; padding: 15px 20px 15px 15px; }
-    .faq-answer { padding-left: 15px; padding-right: 15px; font-size: 0.9rem;}
+    .faq-question { font-size: 1.05rem; padding-block: 15px; padding-inline: 15px 20px; }
+    .faq-answer { padding-inline-start: 15px; padding-inline-end: 15px; font-size: 0.9rem;}
 
     .contact-info { padding: 15px; margin: 15px; }
     .disclaimer { padding: 15px; }
 }
 
 /* === FIN STYLES PAGE FAQ === */
+
+/* Hebreu / arabe : la puce fleche pointe vers le texte (sens de lecture inverse) */
+[dir="rtl"] .faq-answer li::before { transform: scaleX(-1); }

@@ -86,7 +86,7 @@
   content: '';
   position: absolute;
   bottom: -12px;
-  left: 0;
+  inset-inline-start: 0;
   width: 60px;
   height: 3px;
   background-color: var(--primary-color);
@@ -120,7 +120,7 @@
 /* Classe pour différencier le bloc bénéfice */
 .benefit-block {
     background-color: rgba(197, 40, 28, 0.03); /* Léger fond rouge */
-    border-left: 3px solid rgba(197, 40, 28, 0.2); /* Bordure gauche subtile */
+    border-inline-start: 3px solid rgba(197, 40, 28, 0.2); /* Bordure gauche subtile */
 }
 /* S'assurer que le bloc bénéfice est blanc sur fond gris */
 .service-section:not(.alt-bg) .benefit-block {
@@ -145,7 +145,7 @@
 }
 
 .block-title i {
-  margin-right: 10px;
+  margin-inline-end: 10px;
   font-size: 1.3rem;
   width: 20px;
   text-align: center;
@@ -153,7 +153,7 @@
 
 /* Liste dans les blocs de service */
 .service-list {
-  padding-left: 25px;
+  padding-inline-start: 25px;
   list-style: none;
   margin: 0;
 }
@@ -162,7 +162,7 @@
   margin-bottom: 8px; /* Espace réduit */
   position: relative;
   padding: 2px 5px; /* Padding pour hover */
-  margin-left: -5px; /* Compenser padding */
+  margin-inline-start: -5px; /* Compenser padding */
   border-radius: 4px;
   transition: background-color 0.2s ease;
   line-height: 1.6; /* Interligne */
@@ -184,7 +184,7 @@
   font-weight: 900;
   color: var(--secondary-color); /* Vert (défini dans :root de style.css) */
   position: absolute;
-  left: -15px;
+  inset-inline-start: -15px;
   top: 6px; /* Ajuster */
   font-size: 0.9rem;
 }
@@ -266,7 +266,7 @@
   }
 
   .service-title::after {
-    left: 50%;
+    inset-inline-start: auto; left: 50%;
     transform: translateX(-50%);
   }
 
@@ -279,7 +279,7 @@
       justify-content: center; /* Centrer titre+icône */
   }
   .service-list {
-       text-align: left; /* Garder texte liste à gauche */
+       text-align: start; /* Garder texte liste à gauche */
        display: inline-block; /* Empêcher la liste de prendre 100% */
        max-width: 100%;
    }

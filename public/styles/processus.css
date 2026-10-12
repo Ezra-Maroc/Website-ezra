@@ -120,14 +120,14 @@
 .internal-title {
     font-size: 2rem;
     margin-bottom: 40px;
-    text-align: left;
+    text-align: start;
     position: relative;
 }
 .internal-title::after {
     content: '';
     position: absolute;
     bottom: -10px;
-    left: 0;
+    inset-inline-start: 0;
     width: 60px;
     height: 3px;
     background-color: var(--primary-color);
@@ -143,7 +143,7 @@
 }
 
 .phase-duration i {
-  margin-right: 8px;
+  margin-inline-end: 8px;
 }
 
 .phase-content {
@@ -158,7 +158,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.04);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-left: 4px solid transparent; /* Préparer bordure gauche */
+  border-inline-start: 4px solid transparent; /* Préparer bordure gauche */
 }
 .phase-section:not(.alt-bg) .phase-block {
     background: var(--light-color);
@@ -166,7 +166,7 @@
 /* Mise en évidence du bloc résultat */
 .result-block {
     background-color: rgba(40, 167, 69, 0.05); /* Fond vert très léger */
-    border-left-color: var(--secondary-color); /* Bordure verte */
+    border-inline-start-color: var(--secondary-color); /* Bordure verte */
 }
 .phase-section:not(.alt-bg) .result-block {
     background-color: #fff; /* Garder blanc sur fond gris */
@@ -176,10 +176,10 @@
 .phase-block:hover {
      transform: translateY(-4px);
      box-shadow: 0 8px 20px rgba(0,0,0,0.07);
-     border-left-color: var(--primary-color); /* Bordure primaire au survol */
+     border-inline-start-color: var(--primary-color); /* Bordure primaire au survol */
 }
 .result-block:hover {
-    border-left-color: var(--secondary-color); /* Garder vert au survol */
+    border-inline-start-color: var(--secondary-color); /* Garder vert au survol */
 }
 
 
@@ -195,14 +195,14 @@
 }
 
 .block-title i {
-  margin-right: 12px;
+  margin-inline-end: 12px;
   font-size: 1.3rem; /* Légèrement réduit */
   width: 20px; /* Garder largeur pour alignement */
   text-align: center;
 }
 
 .action-list, .result-list {
-  padding-left: 25px;
+  padding-inline-start: 25px;
   margin-top: 15px;
   list-style: none;
 }
@@ -212,7 +212,7 @@
   position: relative;
   transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
   padding: 2px 5px; /* Préparer hover */
-  margin-left: -5px; /* Compenser padding */
+  margin-inline-start: -5px; /* Compenser padding */
   border-radius: 4px;
 }
 /* Style strong ajouté dans HTML */
@@ -225,7 +225,7 @@
   font-weight: 900; /* Ou 400 pour version regular si préférée */
   color: var(--secondary-color); /* Vert */
   position: absolute;
-  left: -15px; /* Position icone */
+  inset-inline-start: -15px; /* Position icone */
   top: 6px; /* Ajuster */
   font-size: 0.95rem; /* Taille icone */
   transition: transform 0.2s ease;
@@ -332,7 +332,7 @@
   .timeline-item { min-width: calc(33.33% - 11px); } /* 3 par ligne */
 
   .internal-title { text-align: center; }
-  .internal-title::after { left: 50%; transform: translateX(-50%); }
+  .internal-title::after { inset-inline-start: auto; left: 50%; transform: translateX(-50%); }
   .phase-duration { justify-content: center; }
 
   .quality-item { max-width: calc(33.33% - 21px); flex-basis: calc(33.33% - 21px); }
@@ -360,8 +360,8 @@
   .phase-section { padding: 50px 0; }
   .internal-title { font-size: 1.6rem; }
   .phase-block { padding: 20px 15px; }
-  .action-list, .result-list { padding-left: 20px; }
-  .action-list li::before, .result-list li::before { left: -15px; }
+  .action-list, .result-list { padding-inline-start: 20px; }
+  .action-list li::before, .result-list li::before { inset-inline-start: -15px; }
 
   .quality-section { padding: 60px 0; }
   .quality-item { padding: 25px 15px; max-width: none; flex-basis: 100%; }
