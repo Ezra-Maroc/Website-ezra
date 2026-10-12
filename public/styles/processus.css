@@ -366,3 +366,9 @@
   .quality-section { padding: 60px 0; }
   .quality-item { padding: 25px 15px; max-width: none; flex-basis: 100%; }
 }
+
+/* Vue d'ensemble : chaque etape mene a sa phase detaillee (la page fait 16 ecrans sur mobile) */
+a.timeline-item { color: inherit; text-decoration: none; cursor: pointer; border-radius: 10px; }
+a.timeline-item .timeline-number { transition: transform 0.2s ease; }
+@media (hover: hover) { a.timeline-item:hover .timeline-number { transform: scale(1.08); } }
+a.timeline-item:focus-visible { outline: 3px solid rgba(var(--primary-600-rgb, 197, 40, 28), 0.35); outline-offset: 4px; }

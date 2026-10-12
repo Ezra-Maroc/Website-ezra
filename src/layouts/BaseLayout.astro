@@ -5,6 +5,7 @@ import { ui } from '../i18n/translations';
 import { nav, getHreflangMap, getPageUrl } from '../i18n/nav';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import MobileActionBar from '../components/MobileActionBar.astro';
 
 // Fonts and icons served from the site itself (no Google Fonts, no cdnjs): nothing blocks
 // rendering from another domain, and visitors' IP addresses are not sent to third parties.
@@ -205,6 +206,9 @@ const langStyleMap: Record<string, string> = {
   <slot />
 
   <Footer lang={lang} />
+
+  {/* Not on the pages that already are the action (contact form, eligibility test) */}
+  {currentPage !== 'contact' && currentPage !== 'eligibility' && <MobileActionBar lang={lang} />}
 
   <!-- Language switcher handler -->
   <script is:inline>

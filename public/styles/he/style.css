@@ -974,3 +974,10 @@ body.menu-open { overflow: hidden; }
   .site-header .nav-links a.nav-cta { padding: 12px 18px; }
   .page-banner { padding: 50px 0 40px; }
 }
+
+/* ===== PIED DE PAGE : liens legaux et logo plus faciles a toucher sur mobile (27 px avant) ===== */
+@media (max-width: 768px) {
+  .footer-bottom .footer-legal-links { gap: 0 14px; }
+  .footer-bottom .footer-legal-links a { display: inline-block; padding: 12px 4px; }
+  .footer-about .footer-logo { display: inline-block; padding: 10px 0; }
+}

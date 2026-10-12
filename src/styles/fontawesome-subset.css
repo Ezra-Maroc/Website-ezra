@@ -433,6 +433,8 @@
   content: "\f11e"; }
 .fa-landmark-flag::before {
   content: "\e51c"; }
+.fa-comments::before {
+  content: "\f086"; }
 .fa-clipboard-list::before {
   content: "\f46d"; }
 .fa-gavel::before {

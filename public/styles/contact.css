@@ -604,3 +604,6 @@
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap; /* Ajouté pour être complet */
 }
+
+/* Case de consentement agrandie : 16 px etait difficile a cocher au doigt */
+.form-group .checkbox-group input[type="checkbox"] { width: 22px; height: 22px; flex-shrink: 0; }

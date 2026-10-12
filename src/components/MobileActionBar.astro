@@ -1,0 +1,68 @@
+---
+// Barre d'action fixee en bas de l'ecran sur mobile : le test d'eligibilite et le premier echange gratuit
+// restent a portee de pouce sur les longues pages. Elle apparait une fois la banniere depassee et se retire
+// quand le pied de page arrive ou quand le menu est ouvert. Absente des pages Contact et Test (BaseLayout).
+import type { Lang } from '../i18n/locales';
+import { getPageUrl } from '../i18n/nav';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const LABELS: Record<Lang, { test: string; contact: string; aria: string }> = {
+  fr: { test: "Test d'éligibilité", contact: 'Échange gratuit', aria: 'Actions rapides' },
+  en: { test: 'Eligibility test', contact: 'Free discussion', aria: 'Quick actions' },
+  es: { test: '¿Soy elegible?', contact: 'Conversación gratuita', aria: 'Acciones rápidas' },
+  he: { test: 'בדיקת זכאות', contact: 'שיחה ללא עלות', aria: 'פעולות מהירות' },
+  ar: { test: 'اختبار الأهلية', contact: 'محادثة مجانية', aria: 'إجراءات سريعة' },
+};
+const t = LABELS[lang];
+---
+
+<div class="mobile-action-bar" role="region" aria-label={t.aria} hidden>
+  <a class="mab-btn mab-test" href={getPageUrl('eligibility', lang)}><i class="fa-solid fa-list-check" aria-hidden="true"></i> {t.test}</a>
+  <a class="mab-btn mab-contact" href={getPageUrl('contact', lang)}><i class="fa-solid fa-comments" aria-hidden="true"></i> {t.contact}</a>
+</div>
+
+<script is:inline>
+  (function () {
+    var bar = document.querySelector('.mobile-action-bar');
+    // Banniere de la page ; sur les quiz, #main-content englobe toute la page, d'ou la classe en premier
+    var banner = document.querySelector('.hero, .page-banner') || document.getElementById('main-content');
+    var footer = document.querySelector('footer');
+    if (!bar || !banner || !('IntersectionObserver' in window)) return;
+    var pastBanner = false, footerVisible = false;
+    bar.hidden = false;
+    function update() {
+      var show = pastBanner && !footerVisible && !document.body.classList.contains('menu-open');
+      bar.classList.toggle('is-visible', show);
+      bar.setAttribute('aria-hidden', show ? 'false' : 'true');
+      bar.querySelectorAll('a').forEach(function (a) { if (show) a.removeAttribute('tabindex'); else a.setAttribute('tabindex', '-1'); });
+    }
+    new IntersectionObserver(function (e) {
+      pastBanner = !e[0].isIntersecting && e[0].boundingClientRect.top < 0; update();
+    }).observe(banner);
+    if (footer) new IntersectionObserver(function (e) { footerVisible = e[0].isIntersecting; update(); }).observe(footer);
+    new MutationObserver(update).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+    update();
+  })();
+</script>
+
+<style is:global>
+  .mobile-action-bar { display: none; }
+  @media (max-width: 768px) {
+    .mobile-action-bar { display: flex; gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 900; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(255, 255, 255, 0.97); box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.12); transform: translateY(110%); visibility: hidden; transition: transform 0.25s ease, visibility 0.25s; }
+    .mobile-action-bar[hidden] { display: none; }
+    .mobile-action-bar.is-visible { transform: translateY(0); visibility: visible; }
+    .mab-btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 46px; padding: 8px 10px; border-radius: 8px; font-weight: 600; font-size: 0.92rem; line-height: 1.2; text-align: center; text-decoration: none; }
+    .mab-test { background: var(--primary-600, #c5281c); color: #fff; }
+    .mab-contact { background: #fff; color: var(--primary-600, #c5281c); border: 2px solid var(--primary-600, #c5281c); }
+    .mab-btn:focus-visible { outline: 3px solid rgba(var(--primary-600-rgb, 197, 40, 28), 0.35); outline-offset: 2px; }
+  }
+  @media (max-width: 360px) {
+    .mab-btn i { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-action-bar { transition: none; }
+  }
+</style>
