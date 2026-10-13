@@ -20,19 +20,22 @@ const ALLOWED = {
 };
 const MULTI = new Set(['ascendants', 'documents', 'objectif']);
 
-// --- Grille (points) ---
+// --- Grille (points) --- v2 (2026-10-13, avis de l'equipe) : l'acte de naissance marocain du parent regle
+// quasiment le dossier, le livret de famille marocain est presque aussi important (il donne les numeros d'actes).
 // Lien avec l'ascendant marocain retenu : direct (parent) > 2 generations > 3 generations
 const LIEN = { pere: 30, mere: 30, gp_pere: 18, gp_mere: 18, arriere: 8 };
 const PLUSIEURS_ASCENDANTS = 5;
-// Documents marocains : le meilleur compte en entier, les autres pour 30 %, plafond 30
-const DOCS = { certificat: 25, acte_naissance: 22, livret: 18, identite: 18, consulaire: 12, mariage: 10 };
-const DOCS_MAX = 30;
-const LIENS = { tous: 15, partie: 7, non: 0 };
-const PRECEDENT = 10; // un proche a deja obtenu ses papiers grace au meme ascendant
-const MAROC = { reste: 8, apres1970: 7, '1956_1970': 5, avant1956: 3, ailleurs: 1, nsp: 2 };
-const VIVANT = 4;
-const NOMS = { oui: 5, non: -5, nsp: 0 };
-const MARIES = { oui: 3, non: -15, nsp: -3 }; // lignee paternelle seulement
+// Documents marocains : le meilleur compte en entier, les autres pour 30 %, plafond 40 (premier critere de la note)
+const DOCS = { certificat: 40, acte_naissance: 40, livret: 36, identite: 25, consulaire: 15, mariage: 12 };
+const DOCS_MAX = 40;
+// Actes reliant les generations : pour un parent direct, l'acte de naissance du demandeur suffit le plus souvent
+const LIENS_DIRECT = { tous: 12, partie: 10, non: 6 };
+const LIENS_INDIRECT = { tous: 12, partie: 6, non: 0 };
+const PRECEDENT = 8; // un proche a deja obtenu ses papiers grace au meme ascendant
+const MAROC = { reste: 6, apres1970: 5, '1956_1970': 4, avant1956: 2, ailleurs: 1, nsp: 1 };
+const VIVANT = 3;
+const NOMS = { oui: 4, non: -4, nsp: 0 };
+const MARIES = { oui: 2, non: -20, nsp: -3 }; // lignee paternelle seulement
 const GRADES = [
   [75, 'A', 'Dossier solide : à traiter en priorité', '#1b7f3b'],
   [55, 'B', 'Bon potentiel : quelques pièces à réunir', '#1d6fb8'],
@@ -43,8 +46,8 @@ const GRADES = [
 const REF = { pere: 'père', mere: 'mère', gp_pere: 'grand-parent côté père', gp_mere: 'grand-parent côté mère', arriere: 'arrière-grand-parent' };
 const DOC_FORT = {
   certificat: 'Certificat de nationalité de l’ascendant : preuve directe de sa nationalité',
-  acte_naissance: 'Acte de naissance marocain : excellent, l’acte est identifié et une copie récente peut être demandée',
-  livret: 'Livret d’état civil marocain : très bon signe, il donne les numéros d’actes de toute la famille',
+  acte_naissance: 'Acte de naissance marocain de l’ascendant : excellent, l’acte est identifié et une copie récente peut être demandée',
+  livret: 'Livret de famille marocain : très important, il donne les numéros d’actes de toute la famille pour les récupérer',
   identite: 'Ancien passeport ou CIN marocaine : preuve de nationalité, numéro exploitable pour les recherches',
   consulaire: 'Immatriculation consulaire : un dossier existe au consulat',
   mariage: 'Acte de mariage marocain : mariage enregistré au Maroc',
@@ -53,7 +56,7 @@ const PAYS = { fr: 'France', es: 'Espagne', it: 'Italie', be: 'Belgique', nl: 'P
 const POUR = { moi: 'le demandeur seul', enfant: 'un enfant mineur', famille: 'plusieurs membres de la famille (plusieurs dossiers possibles)' };
 const OBJECTIF = { papiers: 'passeport / CIN', enfants: 'transmission aux enfants', projet: 'projet au Maroc', famille: 'démarche familiale / identitaire', autre: 'autre' };
 // Reponses du visiteur, telles qu'affichees dans le detail de la note
-const DOC_TXT = { certificat: 'certificat de nationalité', acte_naissance: 'acte de naissance', livret: 'livret d’état civil', identite: 'ancien passeport / CIN', consulaire: 'immatriculation consulaire', mariage: 'acte de mariage' };
+const DOC_TXT = { certificat: 'certificat de nationalité', acte_naissance: 'acte de naissance marocain', livret: 'livret de famille marocain', identite: 'ancien passeport / CIN', consulaire: 'immatriculation consulaire', mariage: 'acte de mariage' };
 const LIENS_TXT = { tous: 'tous disponibles', partie: 'en partie', non: 'absents ou inconnus' };
 const MAROC_TXT = { reste: 'naissance au Maroc, y a toujours vécu', apres1970: 'naissance au Maroc, départ après 1970', '1956_1970': 'naissance au Maroc, départ entre 1956 et 1970', avant1956: 'naissance au Maroc, départ avant 1956', ailleurs: 'naissance hors du Maroc', nsp: 'ne sait pas' };
 const NOMS_TXT = { oui: 'identique sur tous les documents', non: 'différences entre documents', nsp: 'ne sait pas' };
@@ -103,6 +106,7 @@ export function preAnalyse(raw) {
       details: [['Lien de filiation', 'ascendant marocain pas encore identifié (5 points forfaitaires)', 5, LIEN.pere]], totalNote: '' };
   }
 
+  const direct = p === 'pere' || p === 'mere';
   // Detail de la note : [critere, reponse du visiteur, points obtenus, maximum]
   const details = [];
   let s = 0;
@@ -123,6 +127,9 @@ export function preAnalyse(raw) {
     const order = ['certificat', 'acte_naissance', 'livret', 'identite', 'consulaire', 'mariage'].filter((d) => docs.includes(d));
     add('Documents marocains', order.map((d) => DOC_TXT[d]).join(', ') + (docs.length > 1 ? ' (le meilleur compte en entier, les autres pour 30 %)' : ''),
       Math.min(DOCS_MAX, pts[0] + 0.3 * pts.slice(1).reduce((t, v) => t + v, 0)), DOCS_MAX);
+    if (direct && (docs.includes('acte_naissance') || docs.includes('certificat'))) {
+      strengths.push(`Élément quasi décisif : ${docs.includes('acte_naissance') ? 'acte de naissance marocain' : 'certificat de nationalité'} ${p === 'pere' ? 'du père' : 'de la mère'} disponible`);
+    }
     for (const d of order) strengths.push(DOC_FORT[d]);
     if (docs.includes('livret') && !docs.includes('acte_naissance')) todo.push('Relever les numéros d’actes dans le livret puis commander les actes (Watiqa)');
     if (docs.includes('acte_naissance')) todo.push('Demander une copie intégrale récente de l’acte de naissance marocain');
@@ -134,7 +141,8 @@ export function preAnalyse(raw) {
   }
 
   if (a.liens) {
-    add('Actes de liaison entre générations', LIENS_TXT[a.liens], LIENS[a.liens], LIENS.tous);
+    const L = direct ? LIENS_DIRECT : LIENS_INDIRECT;
+    add('Actes de liaison entre générations', LIENS_TXT[a.liens] + (direct && a.liens !== 'tous' ? ' (lien direct : l’acte de naissance du demandeur suffit le plus souvent)' : ''), L[a.liens], L.tous);
     if (a.liens === 'tous') strengths.push('Tous les actes de liaison entre les générations sont disponibles');
     else if (a.liens === 'partie') warnings.push('Actes de liaison (naissances, mariages) incomplets');
     else warnings.push('Actes de liaison absents ou inconnus');
