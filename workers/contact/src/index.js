@@ -79,8 +79,9 @@ function json(status, body, origin) {
 
 // Texte saisi : retours a la ligne normalises, caracteres de controle retires (sauf saut de ligne et tabulation)
 function clean(value, max, singleLine) {
-  let s = String(value).replace(/\r\n?/g, '\n').replace(/[\u0000-\u0008\u000B-\u001F\u007F]/g, '');
-  if (singleLine) s = s.replace(/\s*\n\s*/g, ' ');
+  // coupe d'abord (un champ enorme ne doit pas couter de calcul), puis nettoie en temps lineaire
+  let s = String(value).slice(0, max * 2 + 100).replace(/\r\n?/g, '\n').replace(/[\u0000-\u0008\u000B-\u001F\u007F]/g, '');
+  if (singleLine) s = s.split('\n').map((x) => x.trim()).filter(Boolean).join(' ');
   s = s.trim();
   return s.length > max ? s.slice(0, max) : s;
 }
@@ -189,8 +190,13 @@ export default {
     const paHead = pa ? `PRÉ-ANALYSE AUTOMATIQUE (interne) : ${pa.grade} · ${pa.score}/100 — ${pa.label}` : '';
     const paNote = 'Note indicative, calculée uniquement à partir des réponses du visiteur : à confirmer à l’analyse des pièces.';
     const paLists = pa ? [['Points forts', '+', pa.strengths], ['Points de vigilance', '–', pa.warnings], ['À faire en premier', '→', pa.todo]].filter(([, , l]) => l.length) : [];
+    const pts = (p, m) => `${p < 0 ? '−' + Math.abs(p) : p} / ${m}`;
+    const paTotal = pa ? `${pa.score} / 100${pa.totalNote ? ` (${pa.totalNote})` : ''}` : '';
     const paText = pa ? [
       paHead,
+      'Détail de la note :',
+      ...pa.details.map(([k, v, p, m]) => `  • ${k} — ${v} : ${pts(p, m)}`),
+      `  = Total : ${paTotal}`,
       ...paLists.flatMap(([t, mark, l]) => [`${t} :`, ...l.map((x) => `  ${mark} ${x}`)]),
       ...(pa.context ? [`Contexte : ${pa.context}`] : []),
       `(${paNote})`,
@@ -199,6 +205,8 @@ export default {
     ] : [];
     const paHtml = pa ? `<div style="border:2px solid ${pa.color};border-radius:8px;padding:12px 16px;margin:0 0 18px">
 <p style="margin:0 0 8px"><span style="display:inline-block;background:${pa.color};color:#fff;font-weight:bold;border-radius:6px;padding:2px 10px;margin-right:8px">${pa.grade} · ${pa.score}/100</span><strong style="color:${pa.color}">${escapeHtml(pa.label)}</strong></p>
+<p style="margin:10px 0 4px;color:#444;font-weight:bold">Détail de la note</p>
+<table cellpadding="4" style="border-collapse:collapse;font-size:14px;width:100%">${pa.details.map(([k, v, p, m]) => `<tr style="border-bottom:1px solid #eee"><td style="color:#444;vertical-align:top">${escapeHtml(k)}</td><td style="color:#222;vertical-align:top">${escapeHtml(v)}</td><td style="text-align:right;white-space:nowrap;vertical-align:top;font-weight:bold;color:${p < 0 ? '#b42318' : p === 0 ? '#888' : '#222'}">${escapeHtml(pts(p, m))}</td></tr>`).join('')}<tr><td colspan="2" style="font-weight:bold;padding-top:6px">Total</td><td style="text-align:right;white-space:nowrap;font-weight:bold;padding-top:6px;color:${pa.color}">${escapeHtml(paTotal)}</td></tr></table>
 ${paLists.map(([t, mark, l]) => `<p style="margin:10px 0 2px;color:#444;font-weight:bold">${escapeHtml(t)}</p><ul style="margin:0;padding-left:18px">${l.map((x) => `<li>${escapeHtml(x)}</li>`).join('')}</ul>`).join('\n')}
 ${pa.context ? `<p style="margin:10px 0 0;color:#444">Contexte : ${escapeHtml(pa.context)}</p>` : ''}
 <p style="margin:8px 0 0;color:#888;font-size:12px">${escapeHtml(paNote)}</p></div>` : '';

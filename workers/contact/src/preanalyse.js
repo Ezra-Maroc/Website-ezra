@@ -52,6 +52,12 @@ const DOC_FORT = {
 const PAYS = { fr: 'France', es: 'Espagne', it: 'Italie', be: 'Belgique', nl: 'Pays-Bas', de: 'Allemagne', ca: 'Canada', us: 'États-Unis', ma: 'Maroc', autre: 'autre pays' };
 const POUR = { moi: 'le demandeur seul', enfant: 'un enfant mineur', famille: 'plusieurs membres de la famille (plusieurs dossiers possibles)' };
 const OBJECTIF = { papiers: 'passeport / CIN', enfants: 'transmission aux enfants', projet: 'projet au Maroc', famille: 'démarche familiale / identitaire', autre: 'autre' };
+// Reponses du visiteur, telles qu'affichees dans le detail de la note
+const DOC_TXT = { certificat: 'certificat de nationalité', acte_naissance: 'acte de naissance', livret: 'livret d’état civil', identite: 'ancien passeport / CIN', consulaire: 'immatriculation consulaire', mariage: 'acte de mariage' };
+const LIENS_TXT = { tous: 'tous disponibles', partie: 'en partie', non: 'absents ou inconnus' };
+const MAROC_TXT = { reste: 'naissance au Maroc, y a toujours vécu', apres1970: 'naissance au Maroc, départ après 1970', '1956_1970': 'naissance au Maroc, départ entre 1956 et 1970', avant1956: 'naissance au Maroc, départ avant 1956', ailleurs: 'naissance hors du Maroc', nsp: 'ne sait pas' };
+const NOMS_TXT = { oui: 'identique sur tous les documents', non: 'différences entre documents', nsp: 'ne sait pas' };
+const OUI_NON = { oui: 'oui', non: 'non', nsp: 'ne sait pas' };
 
 // Reponses recues : on ne garde que les questions et valeurs connues (le champ vient du navigateur du visiteur)
 function sanitize(raw) {
@@ -85,58 +91,74 @@ export function preAnalyse(raw) {
 
   if (asc.includes('aucun')) {
     return { score: 0, grade: 'X', label: 'Pas d’ascendant marocain déclaré', color: '#6b7280', strengths, warnings,
-      todo: ['Réponse courtoise ; vérifier lors d’un éventuel échange s’il existe un ascendant non identifié'], context };
+      todo: ['Réponse courtoise ; vérifier lors d’un éventuel échange s’il existe un ascendant non identifié'], context,
+      details: [['Lien de filiation', 'aucun ascendant marocain déclaré', 0, LIEN.pere]], totalNote: '' };
   }
   const known = asc.filter((x) => KNOWN.includes(x));
   const p = known.length > 1 ? (a.principal || known[0]) : known[0];
   if (!p) {
     return { score: 5, grade: 'D', label: 'Ascendant marocain encore à identifier', color: GRADES[3][3], strengths,
       warnings: ['Le visiteur ne sait pas encore quel ascendant est marocain'],
-      todo: ['Premier échange : reconstituer l’arbre familial et identifier la lignée marocaine'], context };
+      todo: ['Premier échange : reconstituer l’arbre familial et identifier la lignée marocaine'], context,
+      details: [['Lien de filiation', 'ascendant marocain pas encore identifié (5 points forfaitaires)', 5, LIEN.pere]], totalNote: '' };
   }
 
-  let s = LIEN[p];
+  // Detail de la note : [critere, reponse du visiteur, points obtenus, maximum]
+  const details = [];
+  let s = 0;
+  const add = (k, v, pts, max) => { const r = Math.round(pts); s += pts; details.push([k, v, r, max]); };
+
+  add('Lien de filiation', `${REF[p]} (${p === 'pere' || p === 'mere' ? 'lien direct' : p === 'arriere' ? '3 générations' : '2 générations'})`, LIEN[p], LIEN.pere);
   if (p === 'pere' || p === 'mere') strengths.push(`Lien direct : ${p === 'pere' ? 'père marocain' : 'mère marocaine'}`);
   else if (p === 'arriere') warnings.push('Filiation sur 3 générations : établir aussi la nationalité des deux générations intermédiaires');
   else warnings.push(`Filiation sur 2 générations (${REF[p]}) : établir aussi la nationalité du parent intermédiaire`);
   if (known.length > 1) {
-    s += PLUSIEURS_ASCENDANTS;
+    add('Plusieurs ascendants marocains', known.map((k) => REF[k]).join(', '), PLUSIEURS_ASCENDANTS, PLUSIEURS_ASCENDANTS);
     strengths.push(`Plusieurs ascendants marocains (${known.map((k) => REF[k]).join(', ')}) : lignée de secours possible`);
   }
 
   const docs = (a.documents || []).filter((d) => d !== 'aucun');
   if (docs.length) {
     const pts = docs.map((d) => DOCS[d]).sort((x, y) => y - x);
-    s += Math.min(DOCS_MAX, pts[0] + 0.3 * pts.slice(1).reduce((t, v) => t + v, 0));
-    for (const d of ['certificat', 'acte_naissance', 'livret', 'identite', 'consulaire', 'mariage']) if (docs.includes(d)) strengths.push(DOC_FORT[d]);
+    const order = ['certificat', 'acte_naissance', 'livret', 'identite', 'consulaire', 'mariage'].filter((d) => docs.includes(d));
+    add('Documents marocains', order.map((d) => DOC_TXT[d]).join(', ') + (docs.length > 1 ? ' (le meilleur compte en entier, les autres pour 30 %)' : ''),
+      Math.min(DOCS_MAX, pts[0] + 0.3 * pts.slice(1).reduce((t, v) => t + v, 0)), DOCS_MAX);
+    for (const d of order) strengths.push(DOC_FORT[d]);
     if (docs.includes('livret') && !docs.includes('acte_naissance')) todo.push('Relever les numéros d’actes dans le livret puis commander les actes (Watiqa)');
     if (docs.includes('acte_naissance')) todo.push('Demander une copie intégrale récente de l’acte de naissance marocain');
     if (docs.includes('identite')) todo.push('Obtenir une copie de l’ancienne CIN ou du passeport (numéro utile aux recherches)');
   } else if (a.documents) {
+    add('Documents marocains', 'aucun pour l’instant', 0, DOCS_MAX);
     warnings.push('Aucun document marocain pour l’instant');
     todo.push('Recherche d’actes à prévoir (Watiqa, état civil marocain, archives consulaires)');
   }
 
   if (a.liens) {
-    s += LIENS[a.liens];
+    add('Actes de liaison entre générations', LIENS_TXT[a.liens], LIENS[a.liens], LIENS.tous);
     if (a.liens === 'tous') strengths.push('Tous les actes de liaison entre les générations sont disponibles');
     else if (a.liens === 'partie') warnings.push('Actes de liaison (naissances, mariages) incomplets');
     else warnings.push('Actes de liaison absents ou inconnus');
   }
-  if (a.famille === 'oui') { s += PRECEDENT; strengths.push('Un proche a déjà obtenu ses papiers grâce au même ascendant : chaîne déjà reconnue'); }
+  if (a.famille) {
+    add('Précédent dans la famille', OUI_NON[a.famille], a.famille === 'oui' ? PRECEDENT : 0, PRECEDENT);
+    if (a.famille === 'oui') strengths.push('Un proche a déjà obtenu ses papiers grâce au même ascendant : chaîne déjà reconnue');
+  }
   if (a.maroc) {
-    s += MAROC[a.maroc];
+    add('Parcours de l’ascendant', MAROC_TXT[a.maroc], MAROC[a.maroc], MAROC.reste);
     if (a.maroc === 'reste' || a.maroc === 'apres1970') strengths.push(a.maroc === 'reste' ? 'Ascendant toujours au Maroc' : 'Départ du Maroc après 1970 : actes et CIN plus faciles à retrouver');
     else if (a.maroc === 'avant1956') warnings.push('Départ avant 1956 : actes plus anciens, parfois plus difficiles à retrouver');
     else if (a.maroc === 'ailleurs') warnings.push('Ascendant né hors du Maroc : sa propre filiation marocaine est à établir');
   }
-  if (a.vivant === 'oui') { s += VIVANT; strengths.push('Ascendant en vie : il peut demander lui-même ses actes ou sa CIN'); }
+  if (a.vivant) {
+    add('Ascendant en vie', OUI_NON[a.vivant], a.vivant === 'oui' ? VIVANT : 0, VIVANT);
+    if (a.vivant === 'oui') strengths.push('Ascendant en vie : il peut demander lui-même ses actes ou sa CIN');
+  }
   if (a.noms) {
-    s += NOMS[a.noms];
+    add('Orthographe des noms', NOMS_TXT[a.noms], NOMS[a.noms], NOMS.oui);
     if (a.noms === 'non') { warnings.push('Orthographes différentes selon les documents'); todo.push('Prévoir les attestations ou rectifications d’orthographe'); }
   }
   if (a.maries && (p === 'pere' || p === 'gp_pere')) {
-    s += MARIES[a.maries];
+    add('Parents mariés à la naissance (lignée paternelle)', OUI_NON[a.maries], MARIES[a.maries], MARIES.oui);
     if (a.maries === 'non') warnings.push('Parents non mariés à la naissance : filiation paternelle à examiner en priorité');
     else if (a.maries === 'nsp') warnings.push('Mariage des parents à vérifier (lignée paternelle)');
   }
@@ -145,5 +167,7 @@ export function preAnalyse(raw) {
   const [, grade, label, color] = GRADES.find(([min]) => score >= min);
   if (!todo.length) todo.push(grade === 'A' ? 'Proposer rapidement l’analyse d’éligibilité (précontrat)' : 'Premier échange : faire l’inventaire des pièces');
   else if (grade === 'A') todo.unshift('Proposer rapidement l’analyse d’éligibilité (précontrat)');
-  return { score, grade, label, color, strengths, warnings, todo, context };
+  const total = details.reduce((t, d) => t + d[2], 0);
+  return { score, grade, label, color, strengths, warnings, todo, context, details,
+    totalNote: total > 100 ? `${total} points, plafonnés à 100` : total < 0 ? `${total} points, ramenés à 0` : '' };
 }
