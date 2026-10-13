@@ -129,13 +129,17 @@ export function preAnalyse(raw) {
     const order = ['certificat', 'acte_naissance', 'livret', 'identite', 'consulaire', 'mariage'].filter((d) => docs.includes(d));
     add('Documents marocains', order.map((d) => DOC_TXT[d]).join(', ') + (docs.length > 1 ? ' (le meilleur compte en entier, les autres pour 30 %)' : ''),
       Math.min(DOCS_MAX, pts[0] + 0.3 * pts.slice(1).reduce((t, v) => t + v, 0)), DOCS_MAX);
+    // Document mis en avant (ligne « quasi décisif » / « très fort ») : sa ligne standard n'est pas repetee
     const parent = p === 'pere' ? 'du père' : 'de la mère';
+    let featured = null;
     if (direct && (docs.includes('acte_naissance') || docs.includes('certificat'))) {
-      strengths.push(`Élément quasi décisif : ${docs.includes('acte_naissance') ? 'acte de naissance marocain' : 'certificat de nationalité'} ${parent} disponible`);
+      featured = docs.includes('acte_naissance') ? 'acte_naissance' : 'certificat';
+      strengths.push(`Élément quasi décisif : ${featured === 'acte_naissance' ? 'acte de naissance marocain' : 'certificat de nationalité'} ${parent} disponible (acte identifié, copie récente demandable)`);
     } else if (direct && (docs.includes('livret') || docs.includes('identite'))) {
-      strengths.push(`Élément très fort : ${docs.includes('livret') ? 'livret de famille marocain' : 'CIN ou ancien passeport marocain'} ${parent} disponible`);
+      featured = docs.includes('livret') ? 'livret' : 'identite';
+      strengths.push(`Élément très fort : ${featured === 'livret' ? 'livret de famille marocain' : 'CIN ou ancien passeport marocain'} ${parent} disponible (${featured === 'livret' ? 'numéros d’actes de toute la famille' : 'preuve directe de nationalité, numéro exploitable'})`);
     }
-    for (const d of order) strengths.push(DOC_FORT[d]);
+    for (const d of order) if (d !== featured) strengths.push(DOC_FORT[d]);
     if (docs.includes('livret') && !docs.includes('acte_naissance')) todo.push('Relever les numéros d’actes dans le livret puis commander les actes (Watiqa)');
     if (docs.includes('acte_naissance')) todo.push('Demander une copie intégrale récente de l’acte de naissance marocain');
     if (docs.includes('identite')) todo.push('Obtenir une copie de l’ancienne CIN ou du passeport (numéro utile aux recherches)');
