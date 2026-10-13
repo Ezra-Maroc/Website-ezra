@@ -34,6 +34,14 @@ async function post(body, { origin = ORIGIN, type = 'application/json', raw } = 
     _subject: "Test d'éligibilité – Situation favorable (mère marocaine) [EN]" });
   check(r.status === 200 && r.data?.ok === true, `envoi depuis le test d'eligibilite (EN, message vide) : ${r.status}`);
 }
+// Pre-analyse : reponses brutes du test -> note en tete de l'objet (verifiee dans le journal de wrangler)
+{
+  const { subject, ...rest } = base;
+  const _elig = JSON.stringify({ k: 'favorable', a: { ascendants: ['mere'], vivant: 'oui', maroc: 'reste', documents: ['acte_naissance', 'livret'], famille: 'non', liens: 'tous', noms: 'oui', pour: 'moi', pays: 'fr', objectif: ['papiers'] } });
+  const r = await post({ ...rest, message: '', objet_demande: 'Évaluation préliminaire de mon éligibilité', "Résultats du test d'éligibilité": 'Résultat : Situation favorable', _subject: "Test d'éligibilité – Situation favorable (mère marocaine)", _elig });
+  const bad = await post({ ...base, _elig: '{pas du json' });
+  check(r.status === 200 && bad.status === 200, `pre-analyse : envoi ${r.status} (objet attendu « [A · 89/100] ... ») | _elig invalide ignore : ${bad.status}`);
+}
 // Refus attendus
 const cases = [
   ['autre domaine (Origin)', post(base, { origin: 'https://pirate.example' }), 403],

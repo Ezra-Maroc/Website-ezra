@@ -72,6 +72,8 @@
     var summary = [mailHead].concat(mailLines.map(function (x) { return x[0] + ' : ' + x[1]; }));
     hidden(clip(ui.fieldName || 'Résultats du test', 80), summary.join('\n'));
     if (p.s) hidden('_subject', clip(p.s, 200));
+    // Reponses brutes (identifiants) : la fonction du formulaire en tire une pre-analyse pour l'e-mail de l'equipe
+    if (p.x && typeof p.x === 'object') hidden('_elig', clip(JSON.stringify(p.x), 2000));
 
     // Message personnel : libre et facultatif
     msg.removeAttribute('required');

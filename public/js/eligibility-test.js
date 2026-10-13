@@ -228,12 +228,21 @@
   // hors) n'est envoye qu'a l'equipe, dans l'objet et le resume caches de l'e-mail.
   function publicKey(key) { return key === 'favorable' ? 'favorable' : 'neutre'; }
 
+  // Reponses des questions affichees, en identifiants (memes dans toutes les langues)
+  function visibleAnswers() {
+    var out = {};
+    Q.forEach(function (q) { if (answers[q.id] !== undefined && isVisible(q)) out[q.id] = answers[q.id]; });
+    return out;
+  }
+
   function handoffUrl(key) {
     var payload = {
       v: 1, s: emailSubject(FR, key), r: D.results[publicKey(key)].label, rl: D.ui.resultLine,
       l: summaryLines(D), ui: D.ui.handoff,
       // Resume pour l'e-mail de l'equipe : en francais, avec le classement precis
-      f: { r: FR.results[key].label, rl: FR.ui.resultLine, l: summaryLines(FR) }
+      f: { r: FR.results[key].label, rl: FR.ui.resultLine, l: summaryLines(FR) },
+      // Reponses brutes : la fonction du formulaire en tire la pre-analyse de l'e-mail de l'equipe (grille privee)
+      x: { k: key, a: visibleAnswers() }
     };
     return D.ui.contactUrl + '#test=' + encodeURIComponent(JSON.stringify(payload));
   }
