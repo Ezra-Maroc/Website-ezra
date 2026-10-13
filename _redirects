@@ -1,0 +1,26 @@
+# Cloudflare Pages Redirects
+# 301 redirects from /fr/ to root (canonical FR pages are at root)
+
+/fr/                              /                              301
+/fr/index.html                    /                              301
+/fr/a-propos.html                 /a-propos.html                 301
+/fr/avantages.html                /avantages.html                301
+/fr/services.html                 /services.html                 301
+/fr/processus.html                /processus.html                301
+/fr/temoignages.html              /temoignages.html              301
+/fr/contact.html                  /contact.html                  301
+/fr/faq.html                      /faq.html                      301
+/fr/mentions-legales.html         /mentions-legales.html         301
+/fr/politique-confidentialite.html /politique-confidentialite.html 301
+/fr/politique-cookies.html        /politique-cookies.html        301
+/fr/conditions-utilisation.html   /conditions-utilisation.html   301
+
+# Backward compatibility: old /lang/index.html → /lang.html (Astro build format)
+/en/index.html                    /en.html                       301
+/he/index.html                    /he.html                       301
+/ara/index.html                   /ara.html                      301
+
+# Trailing slash redirects (no en/index.html in Astro build)
+/en/                              /en.html                       301
+/he/                              /he.html                       301
+/ara/                             /ara.html                      301
