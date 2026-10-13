@@ -26,7 +26,8 @@ const MULTI = new Set(['ascendants', 'documents', 'objectif']);
 const LIEN = { pere: 30, mere: 30, gp_pere: 18, gp_mere: 18, arriere: 8 };
 const PLUSIEURS_ASCENDANTS = 5;
 // Documents marocains : le meilleur compte en entier, les autres pour 30 %, plafond 40 (premier critere de la note)
-const DOCS = { certificat: 40, acte_naissance: 40, livret: 36, identite: 25, consulaire: 15, mariage: 12 };
+// (CIN du parent : preuve directe de nationalite et numero exploitable, au niveau du livret — avis de l'equipe)
+const DOCS = { certificat: 40, acte_naissance: 40, livret: 38, identite: 38, consulaire: 15, mariage: 12 };
 const DOCS_MAX = 40;
 // Actes reliant les generations : pour un parent direct, l'acte de naissance du demandeur suffit le plus souvent
 const LIENS_DIRECT = { tous: 12, partie: 10, non: 6 };
@@ -36,6 +37,7 @@ const MAROC = { reste: 6, apres1970: 5, '1956_1970': 4, avant1956: 2, ailleurs: 
 const VIVANT = 3;
 const NOMS = { oui: 4, non: -4, nsp: 0 };
 const MARIES = { oui: 2, non: -20, nsp: -3 }; // lignee paternelle seulement
+const NON_MARIES_PLAFOND = 54; // parents non maries (lignee paternelle) : note plafonnee au niveau C
 const GRADES = [
   [75, 'A', 'Dossier solide : à traiter en priorité', '#1b7f3b'],
   [55, 'B', 'Bon potentiel : quelques pièces à réunir', '#1d6fb8'],
@@ -48,7 +50,7 @@ const DOC_FORT = {
   certificat: 'Certificat de nationalité de l’ascendant : preuve directe de sa nationalité',
   acte_naissance: 'Acte de naissance marocain de l’ascendant : excellent, l’acte est identifié et une copie récente peut être demandée',
   livret: 'Livret de famille marocain : très important, il donne les numéros d’actes de toute la famille pour les récupérer',
-  identite: 'Ancien passeport ou CIN marocaine : preuve de nationalité, numéro exploitable pour les recherches',
+  identite: 'CIN ou ancien passeport marocain de l’ascendant : preuve directe de sa nationalité, numéro exploitable pour retrouver ses actes',
   consulaire: 'Immatriculation consulaire : un dossier existe au consulat',
   mariage: 'Acte de mariage marocain : mariage enregistré au Maroc',
 };
@@ -56,7 +58,7 @@ const PAYS = { fr: 'France', es: 'Espagne', it: 'Italie', be: 'Belgique', nl: 'P
 const POUR = { moi: 'le demandeur seul', enfant: 'un enfant mineur', famille: 'plusieurs membres de la famille (plusieurs dossiers possibles)' };
 const OBJECTIF = { papiers: 'passeport / CIN', enfants: 'transmission aux enfants', projet: 'projet au Maroc', famille: 'démarche familiale / identitaire', autre: 'autre' };
 // Reponses du visiteur, telles qu'affichees dans le detail de la note
-const DOC_TXT = { certificat: 'certificat de nationalité', acte_naissance: 'acte de naissance marocain', livret: 'livret de famille marocain', identite: 'ancien passeport / CIN', consulaire: 'immatriculation consulaire', mariage: 'acte de mariage' };
+const DOC_TXT = { certificat: 'certificat de nationalité', acte_naissance: 'acte de naissance marocain', livret: 'livret de famille marocain', identite: 'CIN ou ancien passeport marocain', consulaire: 'immatriculation consulaire', mariage: 'acte de mariage' };
 const LIENS_TXT = { tous: 'tous disponibles', partie: 'en partie', non: 'absents ou inconnus' };
 const MAROC_TXT = { reste: 'naissance au Maroc, y a toujours vécu', apres1970: 'naissance au Maroc, départ après 1970', '1956_1970': 'naissance au Maroc, départ entre 1956 et 1970', avant1956: 'naissance au Maroc, départ avant 1956', ailleurs: 'naissance hors du Maroc', nsp: 'ne sait pas' };
 const NOMS_TXT = { oui: 'identique sur tous les documents', non: 'différences entre documents', nsp: 'ne sait pas' };
@@ -127,8 +129,11 @@ export function preAnalyse(raw) {
     const order = ['certificat', 'acte_naissance', 'livret', 'identite', 'consulaire', 'mariage'].filter((d) => docs.includes(d));
     add('Documents marocains', order.map((d) => DOC_TXT[d]).join(', ') + (docs.length > 1 ? ' (le meilleur compte en entier, les autres pour 30 %)' : ''),
       Math.min(DOCS_MAX, pts[0] + 0.3 * pts.slice(1).reduce((t, v) => t + v, 0)), DOCS_MAX);
+    const parent = p === 'pere' ? 'du père' : 'de la mère';
     if (direct && (docs.includes('acte_naissance') || docs.includes('certificat'))) {
-      strengths.push(`Élément quasi décisif : ${docs.includes('acte_naissance') ? 'acte de naissance marocain' : 'certificat de nationalité'} ${p === 'pere' ? 'du père' : 'de la mère'} disponible`);
+      strengths.push(`Élément quasi décisif : ${docs.includes('acte_naissance') ? 'acte de naissance marocain' : 'certificat de nationalité'} ${parent} disponible`);
+    } else if (direct && (docs.includes('livret') || docs.includes('identite'))) {
+      strengths.push(`Élément très fort : ${docs.includes('livret') ? 'livret de famille marocain' : 'CIN ou ancien passeport marocain'} ${parent} disponible`);
     }
     for (const d of order) strengths.push(DOC_FORT[d]);
     if (docs.includes('livret') && !docs.includes('acte_naissance')) todo.push('Relever les numéros d’actes dans le livret puis commander les actes (Watiqa)');
@@ -171,11 +176,16 @@ export function preAnalyse(raw) {
     else if (a.maries === 'nsp') warnings.push('Mariage des parents à vérifier (lignée paternelle)');
   }
 
-  const score = Math.max(0, Math.min(100, Math.round(s)));
+  // Parents non maries en lignee paternelle : filiation paternelle a examiner, le dossier ne peut pas depasser C
+  const capPaternel = a.maries === 'non' && (p === 'pere' || p === 'gp_pere') ? NON_MARIES_PLAFOND : 100;
+  const score = Math.max(0, Math.min(100, capPaternel, Math.round(s)));
   const [, grade, label, color] = GRADES.find(([min]) => score >= min);
   if (!todo.length) todo.push(grade === 'A' ? 'Proposer rapidement l’analyse d’éligibilité (précontrat)' : 'Premier échange : faire l’inventaire des pièces');
   else if (grade === 'A') todo.unshift('Proposer rapidement l’analyse d’éligibilité (précontrat)');
   const total = details.reduce((t, d) => t + d[2], 0);
-  return { score, grade, label, color, strengths, warnings, todo, context, details,
-    totalNote: total > 100 ? `${total} points, plafonnés à 100` : total < 0 ? `${total} points, ramenés à 0` : '' };
+  let totalNote = '';
+  if (capPaternel < 100 && total > capPaternel) totalNote = `${total} points, plafonnés à ${capPaternel} : parents non mariés en lignée paternelle`;
+  else if (total > 100) totalNote = `${total} points, plafonnés à 100`;
+  else if (total < 0) totalNote = `${total} points, ramenés à 0`;
+  return { score, grade, label, color, strengths, warnings, todo, context, details, totalNote };
 }
