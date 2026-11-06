@@ -1,0 +1,912 @@
+{
+  "meta": {
+    "lang": "es",
+    "pageTitle": "Área de cliente | Ezra Maroc",
+    "pageDescription": "Área de cliente segura de EZRA MAROC, reservada a las personas que han recibido sus credenciales.",
+    "h1": "Área de cliente",
+    "noscript": "El Área de cliente requiere JavaScript. Actívelo en su navegador o escríbanos a info@ezra-project.fr.",
+    "title": "Cuestionario de elegibilidad — EZRA MAROC",
+    "intro": "En su Área de cliente puede completar nuestro cuestionario detallado de elegibilidad (entre 5 y 10 minutos). Nos permite realizar una evaluación preliminar de su elegibilidad para adquirir la nacionalidad marroquí: le rogamos que responda con la mayor precisión posible, para que podamos llevar a cabo un análisis riguroso y mantener con usted una primera conversación confidencial.",
+    "privacy": "Sus datos se tratan de forma estrictamente confidencial, de conformidad con el RGPD, y nunca se comparten sin su consentimiento explícito. Para ejercer sus derechos: info@ezra-project.fr."
+  },
+  "ui": {
+    "start": "Comenzar",
+    "next": "Siguiente",
+    "back": "Volver",
+    "submit": "Enviar mis respuestas",
+    "progress": "Pregunta {n} de {total}",
+    "section": "Sección {n} de {total}",
+    "multiHint": "Varias respuestas posibles.",
+    "optional": "(opcional)",
+    "choose": "Seleccione…",
+    "otherLabel": "Otra",
+    "otherPlaceholder": "Especifique…",
+    "errRequired": "Por favor, responda a esta pregunta.",
+    "errEmail": "Por favor, indique una dirección de correo electrónico válida.",
+    "errTel": "Por favor, indique un número de teléfono válido (con el prefijo internacional).",
+    "errDate": "Por favor, indique una fecha válida.",
+    "sending": "Enviando…",
+    "successTitle": "Cuestionario recibido",
+    "successText": "Gracias. Hemos recibido su solicitud y la trataremos con el mayor cuidado. Un miembro de nuestro equipo se pondrá en contacto con usted en un plazo de 72 horas hábiles para una primera conversación.",
+    "errorTitle": "No se ha podido enviar",
+    "errorText": "Se ha producido un error. Puede volver a intentarlo; si el problema persiste, escríbanos a info@ezra-project.fr.",
+    "expiredTitle": "Acceso expirado o desactivado",
+    "expiredText": "Este acceso ya no es válido. Póngase en contacto con su asesor de EZRA MAROC para obtener uno nuevo.",
+    "reviewTitle": "Revise sus respuestas",
+    "edit": "Modificar",
+    "consentBlock": "Sin su consentimiento, no podemos tramitar su solicitud.",
+    "accessTitle": "Acceso seguro",
+    "accessText": "Para abrir su cuestionario, introduzca la contraseña que le hemos enviado en un correo electrónico aparte.",
+    "codeLabel": "Contraseña",
+    "codePlaceholder": "XXXX-XXXX",
+    "accessButton": "Acceder al cuestionario",
+    "verifying": "Verificando…",
+    "errCodeFormat": "La contraseña consta de 8 caracteres (letras y números).",
+    "errCodeWrong": "Contraseña incorrecta. Intentos restantes: {n}.",
+    "lockedTitle": "Acceso bloqueado",
+    "lockedText": "Se han introducido demasiadas contraseñas incorrectas: por su seguridad, se ha bloqueado este acceso. Póngase en contacto con su asesor de EZRA MAROC para obtener uno nuevo.",
+    "usedTitle": "Cuestionario ya enviado",
+    "usedText": "Este cuestionario ya se ha completado y enviado. ¡Gracias! Para modificar una respuesta, escríbanos a info@ezra-project.fr.",
+    "errBot": "La verificación anti-robot no ha podido completarse. Vuelva a intentarlo dentro de unos segundos.",
+    "errNetwork": "No se ha podido conectar. Compruebe su conexión a internet y vuelva a intentarlo.",
+    "sessionExpired": "Por motivos de seguridad, su sesión ha expirado. Vuelva a iniciar sesión: sus respuestas se conservan.",
+    "secureNote": "Conexión segura: sus respuestas están cifradas y solo las lee el equipo de EZRA MAROC.",
+    "loginTitle": "Acceso a su Área de cliente",
+    "loginText": "Introduzca la dirección de correo electrónico en la que recibió nuestros mensajes y la contraseña que le enviamos en un correo aparte.",
+    "emailLabel": "Correo electrónico (usuario)",
+    "loginButton": "Iniciar sesión",
+    "errLoginFormat": "Compruebe la dirección de correo electrónico y la contraseña (8 caracteres).",
+    "errLogin": "Correo electrónico o contraseña incorrectos. Utilice la dirección en la que recibió nuestros mensajes.",
+    "showPassword": "Mostrar la contraseña",
+    "hidePassword": "Ocultar la contraseña",
+    "noAccess": "¿Todavía no tiene credenciales? Nuestro equipo abre el acceso al Área de cliente tras una primera conversación.",
+    "noAccessLink": "Contactar"
+  },
+  "optionLists": {
+    "pays": [
+      {
+        "id": "afrique_sud",
+        "text": "Sudáfrica"
+      },
+      {
+        "id": "algerie",
+        "text": "Argelia"
+      },
+      {
+        "id": "andorre",
+        "text": "Andorra"
+      },
+      {
+        "id": "argentine",
+        "text": "Argentina"
+      },
+      {
+        "id": "armenie",
+        "text": "Armenia"
+      },
+      {
+        "id": "australie",
+        "text": "Australia"
+      },
+      {
+        "id": "bresil",
+        "text": "Brasil"
+      },
+      {
+        "id": "canada",
+        "text": "Canadá"
+      },
+      {
+        "id": "egypte",
+        "text": "Egipto"
+      },
+      {
+        "id": "etats_unis",
+        "text": "Estados Unidos"
+      },
+      {
+        "id": "france",
+        "text": "Francia"
+      },
+      {
+        "id": "israel",
+        "text": "Israel"
+      },
+      {
+        "id": "liban",
+        "text": "Líbano"
+      },
+      {
+        "id": "luxembourg",
+        "text": "Luxemburgo"
+      },
+      {
+        "id": "maroc",
+        "text": "Marruecos"
+      },
+      {
+        "id": "nouvelle_zelande",
+        "text": "Nueva Zelanda"
+      },
+      {
+        "id": "royaume_uni",
+        "text": "Reino Unido"
+      },
+      {
+        "id": "suisse",
+        "text": "Suiza"
+      },
+      {
+        "id": "tunisie",
+        "text": "Túnez"
+      },
+      {
+        "id": "ue_hors_france",
+        "text": "Unión Europea (excepto Francia)"
+      },
+      {
+        "id": "autre",
+        "text": "Otro país"
+      }
+    ],
+    "nationalites": [
+      {
+        "id": "marocaine",
+        "text": "Marroquí"
+      },
+      {
+        "id": "francaise",
+        "text": "Francés/Francesa"
+      },
+      {
+        "id": "israelienne",
+        "text": "Israelí"
+      },
+      {
+        "id": "americaine",
+        "text": "Estadounidense"
+      },
+      {
+        "id": "canadienne",
+        "text": "Canadiense"
+      },
+      {
+        "id": "britannique",
+        "text": "Británico/a"
+      },
+      {
+        "id": "suisse",
+        "text": "Suizo/a"
+      },
+      {
+        "id": "belge",
+        "text": "Belga"
+      },
+      {
+        "id": "luxembourgeoise",
+        "text": "Luxemburgués/Luxemburguesa"
+      },
+      {
+        "id": "neo_zelandaise",
+        "text": "Neozelandés/Neozelandesa"
+      },
+      {
+        "id": "australienne",
+        "text": "Australiano/a"
+      },
+      {
+        "id": "sud_africaine",
+        "text": "Sudafricano/a"
+      },
+      {
+        "id": "argentine",
+        "text": "Argentino/a"
+      },
+      {
+        "id": "bresilienne",
+        "text": "Brasileño/a"
+      },
+      {
+        "id": "armenienne",
+        "text": "Armenio/a"
+      },
+      {
+        "id": "andorrane",
+        "text": "Andorrano/a"
+      },
+      {
+        "id": "algerienne",
+        "text": "Argelino/a"
+      },
+      {
+        "id": "egyptienne",
+        "text": "Egipcio/a"
+      },
+      {
+        "id": "tunisienne",
+        "text": "Tunecino/a"
+      },
+      {
+        "id": "libanaise",
+        "text": "Libanés/Libanesa"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "identite",
+      "num": "I",
+      "title": "Identidad"
+    },
+    {
+      "id": "famille",
+      "num": "II",
+      "title": "Situación familiar y profesional"
+    },
+    {
+      "id": "projet",
+      "num": "III",
+      "title": "Su proyecto y sus vínculos con Marruecos",
+      "intro": "Describa su proyecto (personal, profesional o familiar) relacionado con Marruecos y la naturaleza de sus vínculos con el país."
+    },
+    {
+      "id": "complements",
+      "num": "IV",
+      "title": "Información complementaria",
+      "intro": "Algunos datos administrativos y personales útiles para el estudio de su expediente."
+    },
+    {
+      "id": "consentement",
+      "num": "V",
+      "title": "Consentimiento"
+    }
+  ],
+  "questions": [
+    {
+      "id": "nom",
+      "section": "identite",
+      "type": "text",
+      "required": true,
+      "label": "Apellidos",
+      "text": "Sus apellidos",
+      "autocomplete": "family-name"
+    },
+    {
+      "id": "prenom",
+      "section": "identite",
+      "type": "text",
+      "required": true,
+      "label": "Nombre",
+      "text": "Su nombre",
+      "autocomplete": "given-name"
+    },
+    {
+      "id": "date_naissance",
+      "section": "identite",
+      "type": "date",
+      "required": true,
+      "label": "Fecha de nacimiento",
+      "text": "Su fecha de nacimiento"
+    },
+    {
+      "id": "ville_naissance",
+      "section": "identite",
+      "type": "text",
+      "required": true,
+      "label": "Ciudad de nacimiento",
+      "text": "Su ciudad de nacimiento"
+    },
+    {
+      "id": "pays_naissance",
+      "section": "identite",
+      "type": "select",
+      "required": true,
+      "label": "País de nacimiento",
+      "text": "Su país de nacimiento",
+      "optionsRef": "pays"
+    },
+    {
+      "id": "nationalites",
+      "section": "identite",
+      "type": "multi",
+      "required": true,
+      "other": true,
+      "label": "Nacionalidad(es) actual(es)",
+      "text": "¿Qué nacionalidad o nacionalidades tiene actualmente?",
+      "optionsRef": "nationalites"
+    },
+    {
+      "id": "autre_nationalite_passee",
+      "section": "identite",
+      "type": "single",
+      "required": true,
+      "label": "Ha tenido otra nacionalidad anteriormente",
+      "text": "¿Ha tenido alguna vez otra nacionalidad?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "Sí"
+        },
+        {
+          "id": "non",
+          "text": "No"
+        },
+        {
+          "id": "nsp",
+          "text": "No lo sé"
+        }
+      ]
+    },
+    {
+      "id": "pays_residence",
+      "section": "identite",
+      "type": "select",
+      "required": true,
+      "label": "País de residencia actual",
+      "text": "Su país de residencia actual",
+      "optionsRef": "pays"
+    },
+    {
+      "id": "date_residence",
+      "section": "identite",
+      "type": "date",
+      "required": true,
+      "label": "Reside en este país desde",
+      "text": "¿Desde qué fecha reside en este país?"
+    },
+    {
+      "id": "email",
+      "section": "identite",
+      "type": "email",
+      "required": true,
+      "label": "Correo electrónico",
+      "text": "Su dirección de correo electrónico",
+      "autocomplete": "email"
+    },
+    {
+      "id": "telephone",
+      "section": "identite",
+      "type": "tel",
+      "required": true,
+      "label": "Teléfono",
+      "text": "Su número de teléfono (con el prefijo internacional)",
+      "autocomplete": "tel",
+      "placeholder": "+34 612 34 56 78"
+    },
+    {
+      "id": "situation_familiale",
+      "section": "famille",
+      "type": "single",
+      "required": true,
+      "label": "Estado civil",
+      "text": "¿Cuál es su estado civil?",
+      "options": [
+        {
+          "id": "celibataire",
+          "text": "Soltero/a"
+        },
+        {
+          "id": "marie",
+          "text": "Casado/a"
+        },
+        {
+          "id": "divorce",
+          "text": "Divorciado/a"
+        },
+        {
+          "id": "veuf",
+          "text": "Viudo/a"
+        },
+        {
+          "id": "pacse",
+          "text": "Pareja de hecho o unión civil"
+        },
+        {
+          "id": "nrp",
+          "text": "Prefiero no responder"
+        }
+      ]
+    },
+    {
+      "id": "nationalite_conjoint",
+      "section": "famille",
+      "type": "text",
+      "required": true,
+      "label": "Nacionalidad del cónyuge o pareja",
+      "text": "¿Cuál es la nacionalidad de su cónyuge o pareja?",
+      "showIf": {
+        "q": "situation_familiale",
+        "in": [
+          "marie",
+          "pacse"
+        ]
+      }
+    },
+    {
+      "id": "enfants",
+      "section": "famille",
+      "type": "single",
+      "required": true,
+      "label": "Tiene hijos",
+      "text": "¿Tiene hijos?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "Sí"
+        },
+        {
+          "id": "non",
+          "text": "No"
+        },
+        {
+          "id": "nrp",
+          "text": "Prefiero no responder"
+        }
+      ]
+    },
+    {
+      "id": "secteur_pro",
+      "section": "famille",
+      "type": "text",
+      "required": false,
+      "label": "Sector profesional",
+      "text": "Su sector profesional"
+    },
+    {
+      "id": "motivations",
+      "section": "projet",
+      "type": "multi",
+      "required": true,
+      "label": "Motivaciones",
+      "text": "¿Por qué desea obtener la nacionalidad marroquí?",
+      "help": "Seleccione todos los motivos que correspondan a su situación.",
+      "options": [
+        {
+          "id": "origines",
+          "text": "Orígenes familiares y filiación"
+        },
+        {
+          "id": "culture",
+          "text": "Preservación y transmisión de la identidad cultural"
+        },
+        {
+          "id": "sejour",
+          "text": "Facilidad de estancia, de desplazamiento y de instalación"
+        },
+        {
+          "id": "economique",
+          "text": "Oportunidades profesionales, económicas o de inversión"
+        }
+      ]
+    },
+    {
+      "id": "ascendants_marocains",
+      "section": "projet",
+      "type": "single",
+      "required": true,
+      "label": "Ascendientes marroquíes",
+      "text": "¿Tiene ascendientes (padres, abuelos, bisabuelos) de nacionalidad marroquí?",
+      "help": "Según el Código de la nacionalidad marroquí, la nacionalidad se transmite principalmente por filiación (derecho de sangre).",
+      "options": [
+        {
+          "id": "oui",
+          "text": "Sí"
+        },
+        {
+          "id": "non",
+          "text": "No"
+        },
+        {
+          "id": "nsp",
+          "text": "No lo sé"
+        }
+      ]
+    },
+    {
+      "id": "lien_parente",
+      "section": "projet",
+      "type": "multi",
+      "required": true,
+      "label": "Vínculo de parentesco con el ascendiente marroquí",
+      "text": "Indique el vínculo de parentesco y el grado de su ascendiente o ascendientes marroquíes.",
+      "showIf": {
+        "q": "ascendants_marocains",
+        "in": [
+          "oui"
+        ]
+      },
+      "options": [
+        {
+          "id": "mere",
+          "text": "Madre"
+        },
+        {
+          "id": "pere",
+          "text": "Padre"
+        },
+        {
+          "id": "gm_maternelle",
+          "text": "Abuela materna"
+        },
+        {
+          "id": "gp_maternel",
+          "text": "Abuelo materno"
+        },
+        {
+          "id": "gm_paternelle",
+          "text": "Abuela paterna"
+        },
+        {
+          "id": "gp_paternel",
+          "text": "Abuelo paterno"
+        },
+        {
+          "id": "agm_maternelle",
+          "text": "Bisabuela materna"
+        },
+        {
+          "id": "agp_maternel",
+          "text": "Bisabuelo materno"
+        },
+        {
+          "id": "agm_paternelle",
+          "text": "Bisabuela paterna"
+        },
+        {
+          "id": "agp_paternel",
+          "text": "Bisabuelo paterno"
+        }
+      ]
+    },
+    {
+      "id": "documents_anciens",
+      "section": "projet",
+      "type": "single",
+      "required": true,
+      "label": "Documentos marroquíes antiguos del ascendiente",
+      "text": "¿Dispone de documentos de identidad marroquíes antiguos de este ascendiente o podría conseguirlos?",
+      "showIf": {
+        "q": "ascendants_marocains",
+        "in": [
+          "oui"
+        ]
+      },
+      "options": [
+        {
+          "id": "oui_dispose",
+          "text": "Sí, actualmente dispongo de algunos documentos."
+        },
+        {
+          "id": "pense_pouvoir",
+          "text": "Actualmente no dispongo de ellos, pero creo que puedo conseguirlos."
+        },
+        {
+          "id": "sais_pas_comment",
+          "text": "No dispongo de ellos y no sé cómo conseguirlos."
+        },
+        {
+          "id": "non_impossible",
+          "text": "No, y no creo que pueda conseguirlos."
+        },
+        {
+          "id": "nsp",
+          "text": "No lo sé."
+        }
+      ]
+    },
+    {
+      "id": "type_documents",
+      "section": "projet",
+      "type": "multi",
+      "required": true,
+      "label": "Tipo de documentos disponibles",
+      "text": "¿Qué tipo de documentos podría aportar?",
+      "showIf": {
+        "q": "documents_anciens",
+        "in": [
+          "oui_dispose",
+          "pense_pouvoir"
+        ]
+      },
+      "options": [
+        {
+          "id": "passeport",
+          "text": "Pasaporte marroquí (antiguo o reciente) del ascendiente"
+        },
+        {
+          "id": "cin",
+          "text": "Documento nacional de identidad marroquí (CIN) del ascendiente"
+        },
+        {
+          "id": "acte_naissance",
+          "text": "Acta de nacimiento marroquí del ascendiente"
+        },
+        {
+          "id": "extrait_naissance",
+          "text": "Extracto de acta de nacimiento en el que conste la nacionalidad marroquí"
+        },
+        {
+          "id": "acte_mariage",
+          "text": "Acta de matrimonio marroquí del ascendiente"
+        },
+        {
+          "id": "livret_famille",
+          "text": "Libro de familia marroquí"
+        },
+        {
+          "id": "carte_sejour",
+          "text": "Tarjeta de residencia marroquí del ascendiente"
+        },
+        {
+          "id": "doc_residence",
+          "text": "Documento oficial de residencia en Marruecos (permiso de residencia, certificado de domicilio, etc.)"
+        },
+        {
+          "id": "acte_notarie",
+          "text": "Documento notarial o administrativo que acredite un vínculo con Marruecos"
+        },
+        {
+          "id": "doc_militaire",
+          "text": "Documentos militares o de la función pública marroquí"
+        },
+        {
+          "id": "archives",
+          "text": "Extractos de archivos nacionales que prueben la pertenencia a Marruecos"
+        },
+        {
+          "id": "temoignages",
+          "text": "Testimonios o certificados oficiales que acrediten la filiación y la nacionalidad"
+        },
+        {
+          "id": "jugement_filiation",
+          "text": "Sentencia de reconocimiento de filiación"
+        }
+      ]
+    },
+    {
+      "id": "voyage_maroc",
+      "section": "projet",
+      "type": "single",
+      "required": false,
+      "label": "Ha viajado a Marruecos",
+      "text": "¿Ha viajado alguna vez a Marruecos?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "Sí"
+        },
+        {
+          "id": "non",
+          "text": "No"
+        },
+        {
+          "id": "nrp",
+          "text": "Prefiero no responder"
+        }
+      ]
+    },
+    {
+      "id": "residence_maroc",
+      "section": "projet",
+      "type": "single",
+      "required": true,
+      "label": "Ha residido en Marruecos",
+      "text": "¿Ha residido alguna vez en Marruecos?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "Sí"
+        },
+        {
+          "id": "non",
+          "text": "No"
+        },
+        {
+          "id": "nrp",
+          "text": "Prefiero no responder"
+        }
+      ]
+    },
+    {
+      "id": "langues",
+      "section": "projet",
+      "type": "multi",
+      "required": true,
+      "label": "Idiomas que habla",
+      "text": "¿Qué idiomas habla?",
+      "options": [
+        {
+          "id": "arabe_classique",
+          "text": "Árabe clásico"
+        },
+        {
+          "id": "darija",
+          "text": "Árabe marroquí (darija)"
+        },
+        {
+          "id": "amazigh",
+          "text": "Amazigh (bereber)"
+        },
+        {
+          "id": "francais",
+          "text": "Francés"
+        },
+        {
+          "id": "espagnol",
+          "text": "Español"
+        },
+        {
+          "id": "anglais",
+          "text": "Inglés"
+        }
+      ]
+    },
+    {
+      "id": "famille_maroc",
+      "section": "projet",
+      "type": "single",
+      "required": true,
+      "label": "Familia cercana en Marruecos",
+      "text": "¿Tiene familiares cercanos (padres, hermanos, hijos, cónyuge o pareja) que residan en Marruecos?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "Sí"
+        },
+        {
+          "id": "non",
+          "text": "No"
+        },
+        {
+          "id": "nrp",
+          "text": "Prefiero no responder"
+        }
+      ]
+    },
+    {
+      "id": "condamnation",
+      "section": "complements",
+      "type": "single",
+      "required": false,
+      "label": "Condena relevante",
+      "text": "¿Existe en su caso alguna condena que sea importante tener en cuenta?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "Sí"
+        },
+        {
+          "id": "non",
+          "text": "No"
+        },
+        {
+          "id": "nrp",
+          "text": "Prefiero no responder"
+        }
+      ]
+    },
+    {
+      "id": "naturalisation_ailleurs",
+      "section": "complements",
+      "type": "single",
+      "required": false,
+      "label": "Solicitud de naturalización en otro país",
+      "text": "¿Ha solicitado alguna vez la naturalización en otro país?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "Sí"
+        },
+        {
+          "id": "non",
+          "text": "No"
+        },
+        {
+          "id": "nrp",
+          "text": "Prefiero no responder"
+        }
+      ]
+    },
+    {
+      "id": "connu_ezra",
+      "section": "complements",
+      "type": "single",
+      "required": true,
+      "label": "Cómo conoció EZRA",
+      "text": "¿Cómo conoció EZRA MAROC PROJECT?",
+      "options": [
+        {
+          "id": "internet",
+          "text": "Búsqueda en internet"
+        },
+        {
+          "id": "reseaux",
+          "text": "Redes sociales"
+        },
+        {
+          "id": "bouche_oreille",
+          "text": "Boca a boca"
+        },
+        {
+          "id": "presse",
+          "text": "Artículo de prensa (digital o en papel)"
+        },
+        {
+          "id": "salon",
+          "text": "Feria / evento"
+        }
+      ]
+    },
+    {
+      "id": "influenceur",
+      "section": "complements",
+      "type": "single",
+      "required": false,
+      "label": "Influencer",
+      "text": "¿Nos descubrió gracias a algún influencer?",
+      "options": [
+        {
+          "id": "pink_tarbouche",
+          "text": "PINK TARBOUCHE"
+        },
+        {
+          "id": "ysabella_elisheva",
+          "text": "YSABELLA ELISHEVA"
+        },
+        {
+          "id": "aucun",
+          "text": "Ninguno"
+        }
+      ]
+    },
+    {
+      "id": "complements_libre",
+      "section": "complements",
+      "type": "paragraph",
+      "required": false,
+      "label": "Información complementaria",
+      "text": "¿Tiene alguna información complementaria que pueda ser útil para evaluar su elegibilidad?",
+      "placeholder": "Déjelo en blanco si no tiene nada que señalar."
+    },
+    {
+      "id": "consent_contact",
+      "section": "consentement",
+      "type": "single",
+      "required": true,
+      "label": "Consentimiento para el contacto y la evaluación",
+      "text": "¿Acepta que EZRA MAROC PROJECT utilice sus datos para ponerse en contacto con usted y evaluar su elegibilidad para la nacionalidad marroquí?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "Sí"
+        },
+        {
+          "id": "non",
+          "text": "No"
+        }
+      ]
+    },
+    {
+      "id": "consent_conservation",
+      "section": "consentement",
+      "type": "single",
+      "required": false,
+      "label": "Consentimiento para la conservación (2 años)",
+      "text": "¿Autoriza a EZRA MAROC PROJECT a conservar sus datos durante un plazo máximo de 2 años, con el fin de analizar y mejorar los servicios que ofrece?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "Sí"
+        },
+        {
+          "id": "non",
+          "text": "No"
+        },
+        {
+          "id": "nrp",
+          "text": "Prefiero no responder"
+        }
+      ]
+    }
+  ]
+}

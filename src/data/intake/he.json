@@ -1,0 +1,912 @@
+{
+  "meta": {
+    "lang": "he",
+    "pageTitle": "אזור אישי | Ezra Maroc",
+    "pageDescription": "האזור האישי המאובטח של EZRA MAROC, המיועד למי שקיבלו פרטי התחברות.",
+    "h1": "אזור אישי",
+    "noscript": "האזור האישי דורש JavaScript. הפעילו אותו בדפדפן, או כתבו לנו לכתובת info@ezra-project.fr.",
+    "title": "שאלון זכאות — EZRA MAROC",
+    "intro": "באזור האישי שלכם תמלאו את שאלון הזכאות המעמיק שלנו (כ-5 עד 10 דקות). השאלון מאפשר לנו לגבש הערכה ראשונית של זכאותכם לקבלת האזרחות המרוקאית: אנא השיבו בדיוק רב ככל האפשר, כדי שנוכל לבצע ניתוח קפדני ולקיים עמכם שיחת היכרות ראשונה, בסודיות מלאה.",
+    "privacy": "הנתונים שלכם מעובדים בסודיות מוחלטת, בהתאם לתקנה הכללית להגנה על מידע (GDPR), ולעולם אינם מועברים לצד שלישי ללא הסכמתכם המפורשת. למימוש זכויותיכם, ניתן לפנות אלינו בכתובת info@ezra-project.fr."
+  },
+  "ui": {
+    "start": "התחלה",
+    "next": "המשך",
+    "back": "חזרה",
+    "submit": "שליחת התשובות",
+    "progress": "שאלה {n} מתוך {total}",
+    "section": "חלק {n} מתוך {total}",
+    "multiHint": "ניתן לבחור כמה תשובות.",
+    "optional": "(לא חובה)",
+    "choose": "בחרו…",
+    "otherLabel": "אחר",
+    "otherPlaceholder": "פרטו…",
+    "errRequired": "נא להשיב על שאלה זו.",
+    "errEmail": "נא להזין כתובת דוא\"ל תקינה.",
+    "errTel": "נא להזין מספר טלפון תקין (כולל קידומת המדינה).",
+    "errDate": "נא להזין תאריך תקין.",
+    "sending": "השליחה מתבצעת…",
+    "successTitle": "השאלון התקבל בהצלחה",
+    "successText": "תודה רבה. פנייתכם התקבלה ותטופל בקפידה מרבית. אחד מאנשי הצוות שלנו ייצור עמכם קשר תוך 72 שעות עסקים לשיחת היכרות ראשונה.",
+    "errorTitle": "השליחה נכשלה",
+    "errorText": "אירעה שגיאה. ניתן לנסות שוב; אם הבעיה נמשכת, כתבו לנו לכתובת info@ezra-project.fr.",
+    "expiredTitle": "הגישה פגה או בוטלה",
+    "expiredText": "גישה זו אינה בתוקף עוד. אנא פנו ליועץ שלכם ב-EZRA MAROC כדי לקבל גישה חדשה.",
+    "reviewTitle": "בדקו את התשובות שלכם",
+    "edit": "עריכה",
+    "consentBlock": "ללא הסכמתכם, לא נוכל לטפל בפנייתכם.",
+    "accessTitle": "גישה מאובטחת",
+    "accessText": "כדי לפתוח את השאלון שלכם, הזינו את הסיסמה ששלחנו אליכם בהודעת דוא\"ל נפרדת.",
+    "codeLabel": "סיסמה",
+    "codePlaceholder": "XXXX-XXXX",
+    "accessButton": "כניסה לשאלון",
+    "verifying": "האימות מתבצע…",
+    "errCodeFormat": "הסיסמה מורכבת מ-8 תווים (אותיות באנגלית וספרות).",
+    "errCodeWrong": "הסיסמה שגויה. ניסיונות שנותרו: {n}.",
+    "lockedTitle": "הגישה נחסמה",
+    "lockedText": "הוזנו יותר מדי סיסמאות שגויות: מטעמי אבטחה, הגישה נחסמה. פנו ליועץ שלכם ב-EZRA MAROC כדי לקבל גישה חדשה.",
+    "usedTitle": "השאלון כבר נשלח",
+    "usedText": "שאלון זה כבר מולא ונשלח. תודה! כדי לשנות תשובה, כתבו לנו לכתובת info@ezra-project.fr.",
+    "errBot": "האימות נגד רובוטים לא הושלם. נא לנסות שוב בעוד כמה שניות.",
+    "errNetwork": "לא ניתן להתחבר. בדקו את החיבור שלכם לאינטרנט ונסו שוב.",
+    "sessionExpired": "מטעמי אבטחה, פג תוקף ההתחברות שלכם. התחברו שוב: התשובות שלכם נשמרו.",
+    "secureNote": "חיבור מאובטח: התשובות שלכם מוצפנות, ורק צוות EZRA MAROC קורא אותן.",
+    "loginTitle": "כניסה לאזור האישי",
+    "loginText": "הזינו את כתובת הדוא\"ל שאליה קיבלתם את ההודעות שלנו ואת הסיסמה ששלחנו אליכם בהודעת דוא\"ל נפרדת.",
+    "emailLabel": "כתובת דוא\"ל (שם משתמש)",
+    "loginButton": "כניסה",
+    "errLoginFormat": "בדקו את כתובת הדוא\"ל ואת הסיסמה (8 תווים).",
+    "errLogin": "כתובת הדוא\"ל או הסיסמה שגויים. השתמשו בכתובת שאליה קיבלתם את ההודעות שלנו.",
+    "showPassword": "הצגת הסיסמה",
+    "hidePassword": "הסתרת הסיסמה",
+    "noAccess": "עדיין אין לכם פרטי התחברות? הגישה לאזור האישי נפתחת על ידי הצוות שלנו לאחר שיחה ראשונה.",
+    "noAccessLink": "צרו קשר"
+  },
+  "optionLists": {
+    "pays": [
+      {
+        "id": "afrique_sud",
+        "text": "דרום אפריקה"
+      },
+      {
+        "id": "algerie",
+        "text": "אלג'יריה"
+      },
+      {
+        "id": "andorre",
+        "text": "אנדורה"
+      },
+      {
+        "id": "argentine",
+        "text": "ארגנטינה"
+      },
+      {
+        "id": "armenie",
+        "text": "ארמניה"
+      },
+      {
+        "id": "australie",
+        "text": "אוסטרליה"
+      },
+      {
+        "id": "bresil",
+        "text": "ברזיל"
+      },
+      {
+        "id": "canada",
+        "text": "קנדה"
+      },
+      {
+        "id": "egypte",
+        "text": "מצרים"
+      },
+      {
+        "id": "etats_unis",
+        "text": "ארצות הברית"
+      },
+      {
+        "id": "france",
+        "text": "צרפת"
+      },
+      {
+        "id": "israel",
+        "text": "ישראל"
+      },
+      {
+        "id": "liban",
+        "text": "לבנון"
+      },
+      {
+        "id": "luxembourg",
+        "text": "לוקסמבורג"
+      },
+      {
+        "id": "maroc",
+        "text": "מרוקו"
+      },
+      {
+        "id": "nouvelle_zelande",
+        "text": "ניו זילנד"
+      },
+      {
+        "id": "royaume_uni",
+        "text": "בריטניה"
+      },
+      {
+        "id": "suisse",
+        "text": "שווייץ"
+      },
+      {
+        "id": "tunisie",
+        "text": "תוניסיה"
+      },
+      {
+        "id": "ue_hors_france",
+        "text": "האיחוד האירופי (למעט צרפת)"
+      },
+      {
+        "id": "autre",
+        "text": "מדינה אחרת"
+      }
+    ],
+    "nationalites": [
+      {
+        "id": "marocaine",
+        "text": "מרוקאית"
+      },
+      {
+        "id": "francaise",
+        "text": "צרפתית"
+      },
+      {
+        "id": "israelienne",
+        "text": "ישראלית"
+      },
+      {
+        "id": "americaine",
+        "text": "אמריקאית"
+      },
+      {
+        "id": "canadienne",
+        "text": "קנדית"
+      },
+      {
+        "id": "britannique",
+        "text": "בריטית"
+      },
+      {
+        "id": "suisse",
+        "text": "שווייצרית"
+      },
+      {
+        "id": "belge",
+        "text": "בלגית"
+      },
+      {
+        "id": "luxembourgeoise",
+        "text": "לוקסמבורגית"
+      },
+      {
+        "id": "neo_zelandaise",
+        "text": "ניו זילנדית"
+      },
+      {
+        "id": "australienne",
+        "text": "אוסטרלית"
+      },
+      {
+        "id": "sud_africaine",
+        "text": "דרום אפריקאית"
+      },
+      {
+        "id": "argentine",
+        "text": "ארגנטינאית"
+      },
+      {
+        "id": "bresilienne",
+        "text": "ברזילאית"
+      },
+      {
+        "id": "armenienne",
+        "text": "ארמנית"
+      },
+      {
+        "id": "andorrane",
+        "text": "אנדורית"
+      },
+      {
+        "id": "algerienne",
+        "text": "אלג'יראית"
+      },
+      {
+        "id": "egyptienne",
+        "text": "מצרית"
+      },
+      {
+        "id": "tunisienne",
+        "text": "תוניסאית"
+      },
+      {
+        "id": "libanaise",
+        "text": "לבנונית"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "identite",
+      "num": "I",
+      "title": "פרטים אישיים"
+    },
+    {
+      "id": "famille",
+      "num": "II",
+      "title": "מצב משפחתי ותעסוקתי"
+    },
+    {
+      "id": "projet",
+      "num": "III",
+      "title": "תוכניותיכם וקשריכם למרוקו",
+      "intro": "פרטו את תוכניותיכם (האישיות, המקצועיות או המשפחתיות) הקשורות למרוקו, ואת אופי קשריכם אליה."
+    },
+    {
+      "id": "complements",
+      "num": "IV",
+      "title": "מידע נוסף",
+      "intro": "כמה פרטים מנהליים ואישיים שיסייעו לנו בבחינת התיק שלכם."
+    },
+    {
+      "id": "consentement",
+      "num": "V",
+      "title": "הסכמה"
+    }
+  ],
+  "questions": [
+    {
+      "id": "nom",
+      "section": "identite",
+      "type": "text",
+      "required": true,
+      "label": "שם משפחה",
+      "text": "שם המשפחה שלכם",
+      "autocomplete": "family-name"
+    },
+    {
+      "id": "prenom",
+      "section": "identite",
+      "type": "text",
+      "required": true,
+      "label": "שם פרטי",
+      "text": "השם הפרטי שלכם",
+      "autocomplete": "given-name"
+    },
+    {
+      "id": "date_naissance",
+      "section": "identite",
+      "type": "date",
+      "required": true,
+      "label": "תאריך לידה",
+      "text": "תאריך הלידה שלכם"
+    },
+    {
+      "id": "ville_naissance",
+      "section": "identite",
+      "type": "text",
+      "required": true,
+      "label": "עיר לידה",
+      "text": "העיר שבה נולדתם"
+    },
+    {
+      "id": "pays_naissance",
+      "section": "identite",
+      "type": "select",
+      "required": true,
+      "label": "ארץ לידה",
+      "text": "המדינה שבה נולדתם",
+      "optionsRef": "pays"
+    },
+    {
+      "id": "nationalites",
+      "section": "identite",
+      "type": "multi",
+      "required": true,
+      "other": true,
+      "label": "אזרחות נוכחית (אחת או יותר)",
+      "text": "איזו אזרחות, או אילו אזרחויות, יש לכם כיום?",
+      "optionsRef": "nationalites"
+    },
+    {
+      "id": "autre_nationalite_passee",
+      "section": "identite",
+      "type": "single",
+      "required": true,
+      "label": "אזרחות אחרת בעבר",
+      "text": "האם הייתה לכם בעבר אזרחות אחרת?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "כן"
+        },
+        {
+          "id": "non",
+          "text": "לא"
+        },
+        {
+          "id": "nsp",
+          "text": "לא ידוע לי"
+        }
+      ]
+    },
+    {
+      "id": "pays_residence",
+      "section": "identite",
+      "type": "select",
+      "required": true,
+      "label": "מדינת מגורים נוכחית",
+      "text": "המדינה שבה אתם מתגוררים כיום",
+      "optionsRef": "pays"
+    },
+    {
+      "id": "date_residence",
+      "section": "identite",
+      "type": "date",
+      "required": true,
+      "label": "מגורים במדינה זו מאז",
+      "text": "ממתי אתם מתגוררים במדינה זו?"
+    },
+    {
+      "id": "email",
+      "section": "identite",
+      "type": "email",
+      "required": true,
+      "label": "דוא\"ל",
+      "text": "כתובת הדוא\"ל שלכם",
+      "autocomplete": "email"
+    },
+    {
+      "id": "telephone",
+      "section": "identite",
+      "type": "tel",
+      "required": true,
+      "label": "טלפון",
+      "text": "מספר הטלפון שלכם (כולל קידומת המדינה)",
+      "autocomplete": "tel",
+      "placeholder": "+972 54 123 4567"
+    },
+    {
+      "id": "situation_familiale",
+      "section": "famille",
+      "type": "single",
+      "required": true,
+      "label": "מצב משפחתי",
+      "text": "מהו מצבכם המשפחתי?",
+      "options": [
+        {
+          "id": "celibataire",
+          "text": "רווק/ה"
+        },
+        {
+          "id": "marie",
+          "text": "נשוי/אה"
+        },
+        {
+          "id": "divorce",
+          "text": "גרוש/ה"
+        },
+        {
+          "id": "veuf",
+          "text": "אלמן/ה"
+        },
+        {
+          "id": "pacse",
+          "text": "ידוע/ה בציבור (או PACS)"
+        },
+        {
+          "id": "nrp",
+          "text": "אעדיף שלא להשיב"
+        }
+      ]
+    },
+    {
+      "id": "nationalite_conjoint",
+      "section": "famille",
+      "type": "text",
+      "required": true,
+      "label": "אזרחות בן/בת הזוג",
+      "text": "מהי האזרחות של בן/בת הזוג שלכם?",
+      "showIf": {
+        "q": "situation_familiale",
+        "in": [
+          "marie",
+          "pacse"
+        ]
+      }
+    },
+    {
+      "id": "enfants",
+      "section": "famille",
+      "type": "single",
+      "required": true,
+      "label": "ילדים",
+      "text": "האם יש לכם ילדים?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "כן"
+        },
+        {
+          "id": "non",
+          "text": "לא"
+        },
+        {
+          "id": "nrp",
+          "text": "אעדיף שלא להשיב"
+        }
+      ]
+    },
+    {
+      "id": "secteur_pro",
+      "section": "famille",
+      "type": "text",
+      "required": false,
+      "label": "תחום עיסוק",
+      "text": "תחום העיסוק שלכם"
+    },
+    {
+      "id": "motivations",
+      "section": "projet",
+      "type": "multi",
+      "required": true,
+      "label": "מניעים",
+      "text": "מדוע אתם מעוניינים לקבל אזרחות מרוקאית?",
+      "help": "בחרו את כל הסיבות הרלוונטיות למצבכם.",
+      "options": [
+        {
+          "id": "origines",
+          "text": "שורשים משפחתיים וייחוס"
+        },
+        {
+          "id": "culture",
+          "text": "שימור הזהות התרבותית והנחלתה"
+        },
+        {
+          "id": "sejour",
+          "text": "הקלות בשהייה, בנסיעות ובהשתקעות"
+        },
+        {
+          "id": "economique",
+          "text": "הזדמנויות מקצועיות, כלכליות או הזדמנויות השקעה"
+        }
+      ]
+    },
+    {
+      "id": "ascendants_marocains",
+      "section": "projet",
+      "type": "single",
+      "required": true,
+      "label": "בני משפחה מרוקאים",
+      "text": "האם מישהו מבני משפחתכם בקו הישיר (הורה, סבא או סבתא, סבא רבא או סבתא רבא) הוא או היה בעל אזרחות מרוקאית?",
+      "help": "על פי חוק האזרחות המרוקאי, האזרחות עוברת בעיקר מכוח ייחוס (דין הדם).",
+      "options": [
+        {
+          "id": "oui",
+          "text": "כן"
+        },
+        {
+          "id": "non",
+          "text": "לא"
+        },
+        {
+          "id": "nsp",
+          "text": "לא ידוע לי"
+        }
+      ]
+    },
+    {
+      "id": "lien_parente",
+      "section": "projet",
+      "type": "multi",
+      "required": true,
+      "label": "דרגת הקרבה לבן המשפחה המרוקאי",
+      "text": "ציינו את הקשר המשפחתי ואת דרגת הקרבה ביניכם לבין כל אחד מבני המשפחה המרוקאים שלכם.",
+      "showIf": {
+        "q": "ascendants_marocains",
+        "in": [
+          "oui"
+        ]
+      },
+      "options": [
+        {
+          "id": "mere",
+          "text": "אמי"
+        },
+        {
+          "id": "pere",
+          "text": "אבי"
+        },
+        {
+          "id": "gm_maternelle",
+          "text": "סבתא מצד אמי"
+        },
+        {
+          "id": "gp_maternel",
+          "text": "סבא מצד אמי"
+        },
+        {
+          "id": "gm_paternelle",
+          "text": "סבתא מצד אבי"
+        },
+        {
+          "id": "gp_paternel",
+          "text": "סבא מצד אבי"
+        },
+        {
+          "id": "agm_maternelle",
+          "text": "סבתא רבא מצד אמי"
+        },
+        {
+          "id": "agp_maternel",
+          "text": "סבא רבא מצד אמי"
+        },
+        {
+          "id": "agm_paternelle",
+          "text": "סבתא רבא מצד אבי"
+        },
+        {
+          "id": "agp_paternel",
+          "text": "סבא רבא מצד אבי"
+        }
+      ]
+    },
+    {
+      "id": "documents_anciens",
+      "section": "projet",
+      "type": "single",
+      "required": true,
+      "label": "מסמכים מרוקאיים ישנים של בן המשפחה",
+      "text": "האם יש ברשותכם מסמכי זהות מרוקאיים ישנים של בן משפחה זה, או שתוכלו להשיג מסמכים כאלה?",
+      "showIf": {
+        "q": "ascendants_marocains",
+        "in": [
+          "oui"
+        ]
+      },
+      "options": [
+        {
+          "id": "oui_dispose",
+          "text": "כן, יש ברשותי כרגע כמה מסמכים."
+        },
+        {
+          "id": "pense_pouvoir",
+          "text": "אין ברשותי מסמכים כאלה כרגע, אך לדעתי אוכל להשיג אותם."
+        },
+        {
+          "id": "sais_pas_comment",
+          "text": "אין ברשותי מסמכים כאלה, ולא ברור לי כיצד להשיג אותם."
+        },
+        {
+          "id": "non_impossible",
+          "text": "לא, ולדעתי לא אוכל להשיג אותם."
+        },
+        {
+          "id": "nsp",
+          "text": "לא ידוע לי."
+        }
+      ]
+    },
+    {
+      "id": "type_documents",
+      "section": "projet",
+      "type": "multi",
+      "required": true,
+      "label": "סוגי מסמכים זמינים",
+      "text": "אילו סוגי מסמכים תוכלו להמציא?",
+      "showIf": {
+        "q": "documents_anciens",
+        "in": [
+          "oui_dispose",
+          "pense_pouvoir"
+        ]
+      },
+      "options": [
+        {
+          "id": "passeport",
+          "text": "דרכון מרוקאי (ישן או חדש) של בן המשפחה"
+        },
+        {
+          "id": "cin",
+          "text": "תעודת זהות לאומית מרוקאית (CIN) של בן המשפחה"
+        },
+        {
+          "id": "acte_naissance",
+          "text": "תעודת לידה מרוקאית של בן המשפחה"
+        },
+        {
+          "id": "extrait_naissance",
+          "text": "תמצית תעודת לידה המציינת את האזרחות המרוקאית"
+        },
+        {
+          "id": "acte_mariage",
+          "text": "תעודת נישואין מרוקאית של בן המשפחה"
+        },
+        {
+          "id": "livret_famille",
+          "text": "ספר משפחה מרוקאי (livret d'état civil)"
+        },
+        {
+          "id": "carte_sejour",
+          "text": "היתר שהייה מרוקאי של בן המשפחה"
+        },
+        {
+          "id": "doc_residence",
+          "text": "מסמך רשמי המעיד על מגורים במרוקו (היתר, אישור מגורים וכו')"
+        },
+        {
+          "id": "acte_notarie",
+          "text": "מסמך נוטריוני או מסמך מנהלי המעיד על קשר למרוקו"
+        },
+        {
+          "id": "doc_militaire",
+          "text": "מסמכים מהצבא או מהשירות הציבורי במרוקו"
+        },
+        {
+          "id": "archives",
+          "text": "העתקים מהארכיונים הלאומיים המוכיחים השתייכות למרוקו"
+        },
+        {
+          "id": "temoignages",
+          "text": "עדויות או תעודות רשמיות המבססות את הייחוס ואת האזרחות"
+        },
+        {
+          "id": "jugement_filiation",
+          "text": "פסק דין להכרה בייחוס"
+        }
+      ]
+    },
+    {
+      "id": "voyage_maroc",
+      "section": "projet",
+      "type": "single",
+      "required": false,
+      "label": "ביקור קודם במרוקו",
+      "text": "האם ביקרתם בעבר במרוקו?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "כן"
+        },
+        {
+          "id": "non",
+          "text": "לא"
+        },
+        {
+          "id": "nrp",
+          "text": "אעדיף שלא להשיב"
+        }
+      ]
+    },
+    {
+      "id": "residence_maroc",
+      "section": "projet",
+      "type": "single",
+      "required": true,
+      "label": "מגורים קודמים במרוקו",
+      "text": "האם התגוררתם בעבר במרוקו?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "כן"
+        },
+        {
+          "id": "non",
+          "text": "לא"
+        },
+        {
+          "id": "nrp",
+          "text": "אעדיף שלא להשיב"
+        }
+      ]
+    },
+    {
+      "id": "langues",
+      "section": "projet",
+      "type": "multi",
+      "required": true,
+      "label": "ידיעת שפות",
+      "text": "אילו שפות אתם דוברים?",
+      "options": [
+        {
+          "id": "arabe_classique",
+          "text": "ערבית ספרותית"
+        },
+        {
+          "id": "darija",
+          "text": "ערבית מרוקאית (דארג'ה)"
+        },
+        {
+          "id": "amazigh",
+          "text": "אמזיגית (ברברית)"
+        },
+        {
+          "id": "francais",
+          "text": "צרפתית"
+        },
+        {
+          "id": "espagnol",
+          "text": "ספרדית"
+        },
+        {
+          "id": "anglais",
+          "text": "אנגלית"
+        }
+      ]
+    },
+    {
+      "id": "famille_maroc",
+      "section": "projet",
+      "type": "single",
+      "required": true,
+      "label": "משפחה קרובה במרוקו",
+      "text": "האם יש לכם בני משפחה קרובים (הורים, אחים ואחיות, ילדים, בן/בת זוג) המתגוררים במרוקו?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "כן"
+        },
+        {
+          "id": "non",
+          "text": "לא"
+        },
+        {
+          "id": "nrp",
+          "text": "אעדיף שלא להשיב"
+        }
+      ]
+    },
+    {
+      "id": "condamnation",
+      "section": "complements",
+      "type": "single",
+      "required": false,
+      "label": "הרשעה שיש לציין",
+      "text": "האם יש לחובתכם הרשעה שחשוב שנביא בחשבון?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "כן"
+        },
+        {
+          "id": "non",
+          "text": "לא"
+        },
+        {
+          "id": "nrp",
+          "text": "אעדיף שלא להשיב"
+        }
+      ]
+    },
+    {
+      "id": "naturalisation_ailleurs",
+      "section": "complements",
+      "type": "single",
+      "required": false,
+      "label": "בקשת התאזרחות במדינה אחרת",
+      "text": "האם הגשתם בעבר בקשת התאזרחות במדינה אחרת?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "כן"
+        },
+        {
+          "id": "non",
+          "text": "לא"
+        },
+        {
+          "id": "nrp",
+          "text": "אעדיף שלא להשיב"
+        }
+      ]
+    },
+    {
+      "id": "connu_ezra",
+      "section": "complements",
+      "type": "single",
+      "required": true,
+      "label": "מקור ההיכרות עם EZRA",
+      "text": "כיצד שמעתם על EZRA MAROC PROJECT?",
+      "options": [
+        {
+          "id": "internet",
+          "text": "חיפוש באינטרנט"
+        },
+        {
+          "id": "reseaux",
+          "text": "רשתות חברתיות"
+        },
+        {
+          "id": "bouche_oreille",
+          "text": "מפה לאוזן"
+        },
+        {
+          "id": "presse",
+          "text": "כתבה בעיתונות (דיגיטלית או מודפסת)"
+        },
+        {
+          "id": "salon",
+          "text": "יריד / אירוע"
+        }
+      ]
+    },
+    {
+      "id": "influenceur",
+      "section": "complements",
+      "type": "single",
+      "required": false,
+      "label": "משפיען/ית ברשת",
+      "text": "האם הכרתם אותנו בזכות משפיען/ית ברשת?",
+      "options": [
+        {
+          "id": "pink_tarbouche",
+          "text": "PINK TARBOUCHE"
+        },
+        {
+          "id": "ysabella_elisheva",
+          "text": "YSABELLA ELISHEVA"
+        },
+        {
+          "id": "aucun",
+          "text": "אף אחד"
+        }
+      ]
+    },
+    {
+      "id": "complements_libre",
+      "section": "complements",
+      "type": "paragraph",
+      "required": false,
+      "label": "מידע נוסף",
+      "text": "האם יש לכם מידע נוסף שעשוי לסייע בהערכת זכאותכם?",
+      "placeholder": "השאירו ריק אם אין מה לציין."
+    },
+    {
+      "id": "consent_contact",
+      "section": "consentement",
+      "type": "single",
+      "required": true,
+      "label": "הסכמה ליצירת קשר ולהערכת זכאות",
+      "text": "האם אתם מסכימים שהנתונים שלכם ישמשו את EZRA MAROC PROJECT כדי ליצור עמכם קשר ולהעריך את זכאותכם לאזרחות מרוקאית?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "כן"
+        },
+        {
+          "id": "non",
+          "text": "לא"
+        }
+      ]
+    },
+    {
+      "id": "consent_conservation",
+      "section": "consentement",
+      "type": "single",
+      "required": false,
+      "label": "הסכמה לשמירת הנתונים (שנתיים)",
+      "text": "האם אתם מאשרים ל-EZRA MAROC PROJECT לשמור את הנתונים שלכם לתקופה של שנתיים לכל היותר, לצורכי ניתוח ושיפור השירותים?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "כן"
+        },
+        {
+          "id": "non",
+          "text": "לא"
+        },
+        {
+          "id": "nrp",
+          "text": "אעדיף שלא להשיב"
+        }
+      ]
+    }
+  ]
+}

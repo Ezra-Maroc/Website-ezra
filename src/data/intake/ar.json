@@ -1,0 +1,912 @@
+{
+  "meta": {
+    "lang": "ar",
+    "pageTitle": "مساحة العميل | Ezra Maroc",
+    "pageDescription": "مساحة العميل الآمنة ديال EZRA MAROC، مخصصة غير للأشخاص اللي توصلو بمعلومات الدخول ديالهم.",
+    "h1": "مساحة العميل",
+    "noscript": "مساحة العميل خاصها JavaScript. فعّلوه فالمتصفح ديالكم، ولا كتبو لينا على info@ezra-project.fr.",
+    "title": "استبيان الأهلية — EZRA MAROC",
+    "intro": "فمساحة العميل ديالكم، كتعمرو استبيان الأهلية المعمّق ديالنا (ما بين 5 و10 دقايق). كايخلينا نديرو تقييم أولي لأهليتكم للحصول على الجنسية المغربية: عافاكم جاوبو بأكبر دقة ممكنة، باش نقدرو نديرو تحليل معمّق ونبداو معاكم محادثة أولى فسرية تامة.",
+    "privacy": "البيانات ديالكم كاتتعالج بسرية تامة، طبقا للقانون العام لحماية البيانات (GDPR)، وعمرها ما كاتتشارك بلا الموافقة الصريحة ديالكم. باش تمارسو الحقوق ديالكم: info@ezra-project.fr."
+  },
+  "ui": {
+    "start": "بداو",
+    "next": "كمّلو",
+    "back": "رجوع",
+    "submit": "صيفطو الأجوبة ديالكم",
+    "progress": "السؤال {n} من {total}",
+    "section": "القسم {n} من {total}",
+    "multiHint": "تقدرو تختارو أكثر من جواب.",
+    "optional": "(اختياري)",
+    "choose": "اختارو…",
+    "otherLabel": "أخرى",
+    "otherPlaceholder": "حددو…",
+    "errRequired": "عافاكم جاوبو على هاد السؤال.",
+    "errEmail": "عافاكم دخلو عنوان إلكتروني صحيح.",
+    "errTel": "عافاكم دخلو رقم هاتف صحيح (مع الرمز الدولي).",
+    "errDate": "عافاكم دخلو تاريخ صحيح.",
+    "sending": "كانصيفطو…",
+    "successTitle": "توصلنا بالاستبيان ديالكم",
+    "successText": "شكرا. الطلب ديالكم وصلنا وغادي نتعاملو معاه بعناية كبيرة. واحد من الفريق ديالنا غادي يتواصل معاكم فظرف 72 ساعة عمل لأول محادثة.",
+    "errorTitle": "الإرسال ما نجحش",
+    "errorText": "وقع شي مشكل. تقدرو تعاودو تحاولو؛ وإيلا بقى المشكل، كتبو لينا على info@ezra-project.fr.",
+    "expiredTitle": "الدخول انتهات صلاحيتو ولا تّوقف",
+    "expiredText": "هاد الدخول ما بقاش صالح. عافاكم تواصلو مع المستشار ديالكم عند EZRA MAROC باش يعطيكم دخول جديد.",
+    "reviewTitle": "راجعو الأجوبة ديالكم",
+    "edit": "عدّلو",
+    "consentBlock": "بلا الموافقة ديالكم، ما نقدروش نعالجو الطلب ديالكم.",
+    "accessTitle": "دخول آمن",
+    "accessText": "باش تحلّو الاستبيان ديالكم، كتبو كلمة السر اللي صيفطناها ليكم فإيميل منفصل.",
+    "codeLabel": "كلمة السر",
+    "codePlaceholder": "XXXX-XXXX",
+    "accessButton": "دخلو للاستبيان",
+    "verifying": "كانتحققو…",
+    "errCodeFormat": "كلمة السر فيها 8 خانات (حروف وأرقام).",
+    "errCodeWrong": "كلمة السر غالطة. المحاولات اللي باقية ليكم: {n}.",
+    "lockedTitle": "الدخول مقفول",
+    "lockedText": "دخلتو كلمة سر غالطة بزاف ديال المرات: حفاظا على الأمان ديالكم، تقفل هاد الدخول. تواصلو مع المستشار ديالكم عند EZRA MAROC باش يعطيكم دخول جديد.",
+    "usedTitle": "الاستبيان تصيفط من قبل",
+    "usedText": "هاد الاستبيان تعمّر وتصيفط من قبل. شكرا! إيلا بغيتو تبدلو شي جواب، كتبو لينا على info@ezra-project.fr.",
+    "errBot": "التحقق ضد الروبوتات ما نجحش. عافاكم عاودو حاولو من بعد شي ثواني.",
+    "errNetwork": "الاتصال ما نجحش. تأكدو من الاتصال ديالكم بالإنترنت، ومن بعد عاودو حاولو.",
+    "sessionExpired": "حفاظا على الأمان ديالكم، انتهات الجلسة. دخلو مرة أخرى: الأجوبة ديالكم محفوظة.",
+    "secureNote": "اتصال آمن: الأجوبة ديالكم مشفّرة وما كايقراهاش غير الفريق ديال EZRA MAROC.",
+    "loginTitle": "الدخول لمساحة العميل ديالكم",
+    "loginText": "كتبو عنوان الإيميل اللي توصلتو فيه بالرسائل ديالنا وكلمة السر اللي صيفطناها ليكم فإيميل منفصل.",
+    "emailLabel": "عنوان الإيميل (اسم المستخدم)",
+    "loginButton": "دخول",
+    "errLoginFormat": "تأكدو من عنوان الإيميل وكلمة السر (8 خانات).",
+    "errLogin": "عنوان الإيميل ولا كلمة السر غالطين. استعملو العنوان اللي توصلتو فيه بالرسائل ديالنا.",
+    "showPassword": "بيّن كلمة السر",
+    "hidePassword": "خبّي كلمة السر",
+    "noAccess": "ما عندكمش معلومات الدخول باقي؟ الفريق ديالنا كيحل الدخول لمساحة العميل من بعد أول محادثة.",
+    "noAccessLink": "تواصلو معانا"
+  },
+  "optionLists": {
+    "pays": [
+      {
+        "id": "afrique_sud",
+        "text": "جنوب إفريقيا"
+      },
+      {
+        "id": "algerie",
+        "text": "الجزائر"
+      },
+      {
+        "id": "andorre",
+        "text": "أندورا"
+      },
+      {
+        "id": "argentine",
+        "text": "الأرجنتين"
+      },
+      {
+        "id": "armenie",
+        "text": "أرمينيا"
+      },
+      {
+        "id": "australie",
+        "text": "أستراليا"
+      },
+      {
+        "id": "bresil",
+        "text": "البرازيل"
+      },
+      {
+        "id": "canada",
+        "text": "كندا"
+      },
+      {
+        "id": "egypte",
+        "text": "مصر"
+      },
+      {
+        "id": "etats_unis",
+        "text": "الولايات المتحدة"
+      },
+      {
+        "id": "france",
+        "text": "فرنسا"
+      },
+      {
+        "id": "israel",
+        "text": "إسرائيل"
+      },
+      {
+        "id": "liban",
+        "text": "لبنان"
+      },
+      {
+        "id": "luxembourg",
+        "text": "لوكسمبورغ"
+      },
+      {
+        "id": "maroc",
+        "text": "المغرب"
+      },
+      {
+        "id": "nouvelle_zelande",
+        "text": "نيوزيلندا"
+      },
+      {
+        "id": "royaume_uni",
+        "text": "المملكة المتحدة"
+      },
+      {
+        "id": "suisse",
+        "text": "سويسرا"
+      },
+      {
+        "id": "tunisie",
+        "text": "تونس"
+      },
+      {
+        "id": "ue_hors_france",
+        "text": "الاتحاد الأوروبي (من غير فرنسا)"
+      },
+      {
+        "id": "autre",
+        "text": "بلاد أخرى"
+      }
+    ],
+    "nationalites": [
+      {
+        "id": "marocaine",
+        "text": "مغربية"
+      },
+      {
+        "id": "francaise",
+        "text": "فرنسية"
+      },
+      {
+        "id": "israelienne",
+        "text": "إسرائيلية"
+      },
+      {
+        "id": "americaine",
+        "text": "أمريكية"
+      },
+      {
+        "id": "canadienne",
+        "text": "كندية"
+      },
+      {
+        "id": "britannique",
+        "text": "بريطانية"
+      },
+      {
+        "id": "suisse",
+        "text": "سويسرية"
+      },
+      {
+        "id": "belge",
+        "text": "بلجيكية"
+      },
+      {
+        "id": "luxembourgeoise",
+        "text": "لوكسمبورغية"
+      },
+      {
+        "id": "neo_zelandaise",
+        "text": "نيوزيلندية"
+      },
+      {
+        "id": "australienne",
+        "text": "أسترالية"
+      },
+      {
+        "id": "sud_africaine",
+        "text": "جنوب إفريقية"
+      },
+      {
+        "id": "argentine",
+        "text": "أرجنتينية"
+      },
+      {
+        "id": "bresilienne",
+        "text": "برازيلية"
+      },
+      {
+        "id": "armenienne",
+        "text": "أرمنية"
+      },
+      {
+        "id": "andorrane",
+        "text": "أندورية"
+      },
+      {
+        "id": "algerienne",
+        "text": "جزائرية"
+      },
+      {
+        "id": "egyptienne",
+        "text": "مصرية"
+      },
+      {
+        "id": "tunisienne",
+        "text": "تونسية"
+      },
+      {
+        "id": "libanaise",
+        "text": "لبنانية"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "identite",
+      "num": "I",
+      "title": "الهوية"
+    },
+    {
+      "id": "famille",
+      "num": "II",
+      "title": "الوضعية العائلية والمهنية"
+    },
+    {
+      "id": "projet",
+      "num": "III",
+      "title": "مشروعكم وروابطكم مع المغرب",
+      "intro": "شرحو لينا المشروع ديالكم (الشخصي، المهني ولا العائلي) اللي مرتبط بالمغرب، وشنو هي الروابط اللي عندكم مع هاد البلاد."
+    },
+    {
+      "id": "complements",
+      "num": "IV",
+      "title": "معلومات إضافية",
+      "intro": "شي توضيحات إدارية وشخصية كاتعاونا فدراسة الملف ديالكم."
+    },
+    {
+      "id": "consentement",
+      "num": "V",
+      "title": "الموافقة"
+    }
+  ],
+  "questions": [
+    {
+      "id": "nom",
+      "section": "identite",
+      "type": "text",
+      "required": true,
+      "label": "الاسم العائلي",
+      "text": "الاسم العائلي ديالكم",
+      "autocomplete": "family-name"
+    },
+    {
+      "id": "prenom",
+      "section": "identite",
+      "type": "text",
+      "required": true,
+      "label": "الاسم الشخصي",
+      "text": "الاسم الشخصي ديالكم",
+      "autocomplete": "given-name"
+    },
+    {
+      "id": "date_naissance",
+      "section": "identite",
+      "type": "date",
+      "required": true,
+      "label": "تاريخ الازدياد",
+      "text": "تاريخ الازدياد ديالكم"
+    },
+    {
+      "id": "ville_naissance",
+      "section": "identite",
+      "type": "text",
+      "required": true,
+      "label": "مدينة الازدياد",
+      "text": "مدينة الازدياد ديالكم"
+    },
+    {
+      "id": "pays_naissance",
+      "section": "identite",
+      "type": "select",
+      "required": true,
+      "label": "بلاد الازدياد",
+      "text": "بلاد الازدياد ديالكم",
+      "optionsRef": "pays"
+    },
+    {
+      "id": "nationalites",
+      "section": "identite",
+      "type": "multi",
+      "required": true,
+      "other": true,
+      "label": "الجنسية (الجنسيات) الحالية",
+      "text": "شنو هي الجنسية ولا الجنسيات الحالية ديالكم؟",
+      "optionsRef": "nationalites"
+    },
+    {
+      "id": "autre_nationalite_passee",
+      "section": "identite",
+      "type": "single",
+      "required": true,
+      "label": "جنسية أخرى سابقة",
+      "text": "واش سبق ليكم كانت عندكم شي جنسية أخرى؟",
+      "options": [
+        {
+          "id": "oui",
+          "text": "إيه"
+        },
+        {
+          "id": "non",
+          "text": "لا"
+        },
+        {
+          "id": "nsp",
+          "text": "ما عرفتش"
+        }
+      ]
+    },
+    {
+      "id": "pays_residence",
+      "section": "identite",
+      "type": "select",
+      "required": true,
+      "label": "بلاد الإقامة الحالية",
+      "text": "البلاد اللي ساكنين فيها دابا",
+      "optionsRef": "pays"
+    },
+    {
+      "id": "date_residence",
+      "section": "identite",
+      "type": "date",
+      "required": true,
+      "label": "تاريخ بداية الإقامة فهاد البلاد",
+      "text": "من أي تاريخ وانتوما ساكنين فهاد البلاد؟"
+    },
+    {
+      "id": "email",
+      "section": "identite",
+      "type": "email",
+      "required": true,
+      "label": "البريد الإلكتروني",
+      "text": "العنوان الإلكتروني ديالكم",
+      "autocomplete": "email"
+    },
+    {
+      "id": "telephone",
+      "section": "identite",
+      "type": "tel",
+      "required": true,
+      "label": "الهاتف",
+      "text": "رقم الهاتف ديالكم (مع الرمز الدولي)",
+      "autocomplete": "tel",
+      "placeholder": "+212 6 12 34 56 78"
+    },
+    {
+      "id": "situation_familiale",
+      "section": "famille",
+      "type": "single",
+      "required": true,
+      "label": "الحالة العائلية",
+      "text": "شنو هي الحالة العائلية ديالكم؟",
+      "options": [
+        {
+          "id": "celibataire",
+          "text": "عازب(ة)"
+        },
+        {
+          "id": "marie",
+          "text": "متزوج(ة)"
+        },
+        {
+          "id": "divorce",
+          "text": "مطلق(ة)"
+        },
+        {
+          "id": "veuf",
+          "text": "أرمل / أرملة"
+        },
+        {
+          "id": "pacse",
+          "text": "مرتبط(ة) بشراكة مدنية (PACS)"
+        },
+        {
+          "id": "nrp",
+          "text": "كانفضل ما نجاوبش"
+        }
+      ]
+    },
+    {
+      "id": "nationalite_conjoint",
+      "section": "famille",
+      "type": "text",
+      "required": true,
+      "label": "جنسية الزوج(ة) ولا الشريك(ة)",
+      "text": "شنو هي جنسية الزوج(ة) ولا الشريك(ة) ديالكم؟",
+      "showIf": {
+        "q": "situation_familiale",
+        "in": [
+          "marie",
+          "pacse"
+        ]
+      }
+    },
+    {
+      "id": "enfants",
+      "section": "famille",
+      "type": "single",
+      "required": true,
+      "label": "الأولاد",
+      "text": "واش عندكم ولاد؟",
+      "options": [
+        {
+          "id": "oui",
+          "text": "إيه"
+        },
+        {
+          "id": "non",
+          "text": "لا"
+        },
+        {
+          "id": "nrp",
+          "text": "كانفضل ما نجاوبش"
+        }
+      ]
+    },
+    {
+      "id": "secteur_pro",
+      "section": "famille",
+      "type": "text",
+      "required": false,
+      "label": "القطاع المهني",
+      "text": "القطاع المهني ديالكم"
+    },
+    {
+      "id": "motivations",
+      "section": "projet",
+      "type": "multi",
+      "required": true,
+      "label": "الدوافع",
+      "text": "علاش باغيين تاخدو الجنسية المغربية؟",
+      "help": "اختارو كاع الأسباب اللي كاتنطبق على الوضعية ديالكم.",
+      "options": [
+        {
+          "id": "origines",
+          "text": "الأصول العائلية والنسب"
+        },
+        {
+          "id": "culture",
+          "text": "الحفاظ على الهوية الثقافية ونقلها للأجيال الجاية"
+        },
+        {
+          "id": "sejour",
+          "text": "سهولة الإقامة والتنقل والاستقرار"
+        },
+        {
+          "id": "economique",
+          "text": "فرص مهنية، اقتصادية ولا استثمارية"
+        }
+      ]
+    },
+    {
+      "id": "ascendants_marocains",
+      "section": "projet",
+      "type": "single",
+      "required": true,
+      "label": "أفراد العائلة المغاربة",
+      "text": "واش شي حد من الوالدين ولا الجدود ولا جدود الوالدين ديالكم عندو ولا كانت عندو الجنسية المغربية؟",
+      "help": "على حساب قانون الجنسية المغربية، الجنسية كاتنتقل بالأساس عن طريق النسب (حق الدم).",
+      "options": [
+        {
+          "id": "oui",
+          "text": "إيه"
+        },
+        {
+          "id": "non",
+          "text": "لا"
+        },
+        {
+          "id": "nsp",
+          "text": "ما عرفتش"
+        }
+      ]
+    },
+    {
+      "id": "lien_parente",
+      "section": "projet",
+      "type": "multi",
+      "required": true,
+      "label": "صلة القرابة مع فرد العائلة المغربي",
+      "text": "حددو صلة القرابة ودرجتها مع فرد ولا أفراد العائلة المغاربة ديالكم.",
+      "showIf": {
+        "q": "ascendants_marocains",
+        "in": [
+          "oui"
+        ]
+      },
+      "options": [
+        {
+          "id": "mere",
+          "text": "الوالدة"
+        },
+        {
+          "id": "pere",
+          "text": "الوالد"
+        },
+        {
+          "id": "gm_maternelle",
+          "text": "الجدة من جهة الوالدة"
+        },
+        {
+          "id": "gp_maternel",
+          "text": "الجد من جهة الوالدة"
+        },
+        {
+          "id": "gm_paternelle",
+          "text": "الجدة من جهة الوالد"
+        },
+        {
+          "id": "gp_paternel",
+          "text": "الجد من جهة الوالد"
+        },
+        {
+          "id": "agm_maternelle",
+          "text": "جدة الوالدة"
+        },
+        {
+          "id": "agp_maternel",
+          "text": "جد الوالدة"
+        },
+        {
+          "id": "agm_paternelle",
+          "text": "جدة الوالد"
+        },
+        {
+          "id": "agp_paternel",
+          "text": "جد الوالد"
+        }
+      ]
+    },
+    {
+      "id": "documents_anciens",
+      "section": "projet",
+      "type": "single",
+      "required": true,
+      "label": "الوثائق المغربية القديمة ديال فرد العائلة",
+      "text": "واش عندكم شي وثائق هوية مغربية قديمة ديال فرد العائلة المغربي، ولا تقدرو تجيبوها؟",
+      "showIf": {
+        "q": "ascendants_marocains",
+        "in": [
+          "oui"
+        ]
+      },
+      "options": [
+        {
+          "id": "oui_dispose",
+          "text": "إيه، عندي دابا شي وثائق."
+        },
+        {
+          "id": "pense_pouvoir",
+          "text": "ما عنديش دابا، ولكن كانظن نقدر نجيبها."
+        },
+        {
+          "id": "sais_pas_comment",
+          "text": "ما عنديش، وما عرفتش كيفاش نجيبها."
+        },
+        {
+          "id": "non_impossible",
+          "text": "لا، وما كانظنش نقدر نجيبها."
+        },
+        {
+          "id": "nsp",
+          "text": "ما عرفتش."
+        }
+      ]
+    },
+    {
+      "id": "type_documents",
+      "section": "projet",
+      "type": "multi",
+      "required": true,
+      "label": "نوع الوثائق المتوفرة",
+      "text": "شنو هو نوع الوثائق اللي تقدرو تعطيونا؟",
+      "showIf": {
+        "q": "documents_anciens",
+        "in": [
+          "oui_dispose",
+          "pense_pouvoir"
+        ]
+      },
+      "options": [
+        {
+          "id": "passeport",
+          "text": "جواز السفر المغربي (القديم ولا الجديد) ديال فرد العائلة"
+        },
+        {
+          "id": "cin",
+          "text": "البطاقة الوطنية المغربية (CIN) ديال فرد العائلة"
+        },
+        {
+          "id": "acte_naissance",
+          "text": "عقد الازدياد المغربي ديال فرد العائلة"
+        },
+        {
+          "id": "extrait_naissance",
+          "text": "نسخة موجزة من عقد الازدياد مذكورة فيها الجنسية المغربية"
+        },
+        {
+          "id": "acte_mariage",
+          "text": "عقد الزواج المغربي ديال فرد العائلة"
+        },
+        {
+          "id": "livret_famille",
+          "text": "دفتر الحالة المدنية المغربي"
+        },
+        {
+          "id": "carte_sejour",
+          "text": "بطاقة الإقامة المغربية ديال فرد العائلة"
+        },
+        {
+          "id": "doc_residence",
+          "text": "وثيقة رسمية كاتثبت الإقامة فالمغرب (رخصة الإقامة، شهادة السكنى، إلخ)"
+        },
+        {
+          "id": "acte_notarie",
+          "text": "عقد موثّق ولا وثيقة إدارية كاتثبت شي رابطة مع المغرب"
+        },
+        {
+          "id": "doc_militaire",
+          "text": "وثائق عسكرية ولا ديال الوظيفة العمومية المغربية"
+        },
+        {
+          "id": "archives",
+          "text": "مستخرجات من الأرشيف الوطني كاتثبت الانتماء للمغرب"
+        },
+        {
+          "id": "temoignages",
+          "text": "شهادات الشهود ولا شواهد رسمية كاتثبت النسب والجنسية"
+        },
+        {
+          "id": "jugement_filiation",
+          "text": "حكم بثبوت النسب"
+        }
+      ]
+    },
+    {
+      "id": "voyage_maroc",
+      "section": "projet",
+      "type": "single",
+      "required": false,
+      "label": "سفر سابق للمغرب",
+      "text": "واش سبق ليكم سافرتو للمغرب؟",
+      "options": [
+        {
+          "id": "oui",
+          "text": "إيه"
+        },
+        {
+          "id": "non",
+          "text": "لا"
+        },
+        {
+          "id": "nrp",
+          "text": "كانفضل ما نجاوبش"
+        }
+      ]
+    },
+    {
+      "id": "residence_maroc",
+      "section": "projet",
+      "type": "single",
+      "required": true,
+      "label": "إقامة سابقة فالمغرب",
+      "text": "واش سبق ليكم سكنتو فالمغرب؟",
+      "options": [
+        {
+          "id": "oui",
+          "text": "إيه"
+        },
+        {
+          "id": "non",
+          "text": "لا"
+        },
+        {
+          "id": "nrp",
+          "text": "كانفضل ما نجاوبش"
+        }
+      ]
+    },
+    {
+      "id": "langues",
+      "section": "projet",
+      "type": "multi",
+      "required": true,
+      "label": "اللغات المتحدث بها",
+      "text": "شنو هي اللغات اللي كاتهضرو؟",
+      "options": [
+        {
+          "id": "arabe_classique",
+          "text": "العربية الفصحى"
+        },
+        {
+          "id": "darija",
+          "text": "الدارجة المغربية"
+        },
+        {
+          "id": "amazigh",
+          "text": "الأمازيغية"
+        },
+        {
+          "id": "francais",
+          "text": "الفرنسية"
+        },
+        {
+          "id": "espagnol",
+          "text": "الإسبانية"
+        },
+        {
+          "id": "anglais",
+          "text": "الإنجليزية"
+        }
+      ]
+    },
+    {
+      "id": "famille_maroc",
+      "section": "projet",
+      "type": "single",
+      "required": true,
+      "label": "عائلة قريبة فالمغرب",
+      "text": "واش عندكم شي حد من العائلة القريبة (الوالدين، الخوت، الولاد، الزوج ولا الزوجة) ساكن فالمغرب؟",
+      "options": [
+        {
+          "id": "oui",
+          "text": "إيه"
+        },
+        {
+          "id": "non",
+          "text": "لا"
+        },
+        {
+          "id": "nrp",
+          "text": "كانفضل ما نجاوبش"
+        }
+      ]
+    },
+    {
+      "id": "condamnation",
+      "section": "complements",
+      "type": "single",
+      "required": false,
+      "label": "حكم بالإدانة خاصو يتذكر",
+      "text": "واش كاين فالملف ديالكم شي حكم بالإدانة مهم ناخدوه بعين الاعتبار؟",
+      "options": [
+        {
+          "id": "oui",
+          "text": "إيه"
+        },
+        {
+          "id": "non",
+          "text": "لا"
+        },
+        {
+          "id": "nrp",
+          "text": "كانفضل ما نجاوبش"
+        }
+      ]
+    },
+    {
+      "id": "naturalisation_ailleurs",
+      "section": "complements",
+      "type": "single",
+      "required": false,
+      "label": "طلب التجنيس فبلاد أخرى",
+      "text": "واش سبق ليكم درتو طلب التجنيس فبلاد أخرى؟",
+      "options": [
+        {
+          "id": "oui",
+          "text": "إيه"
+        },
+        {
+          "id": "non",
+          "text": "لا"
+        },
+        {
+          "id": "nrp",
+          "text": "كانفضل ما نجاوبش"
+        }
+      ]
+    },
+    {
+      "id": "connu_ezra",
+      "section": "complements",
+      "type": "single",
+      "required": true,
+      "label": "طريقة التعرف على EZRA",
+      "text": "كيفاش عرفتو EZRA MAROC PROJECT؟",
+      "options": [
+        {
+          "id": "internet",
+          "text": "البحث فالإنترنت"
+        },
+        {
+          "id": "reseaux",
+          "text": "الشبكات الاجتماعية"
+        },
+        {
+          "id": "bouche_oreille",
+          "text": "عن طريق المعارف"
+        },
+        {
+          "id": "presse",
+          "text": "مقال صحفي (رقمي ولا ورقي)"
+        },
+        {
+          "id": "salon",
+          "text": "معرض / تظاهرة"
+        }
+      ]
+    },
+    {
+      "id": "influenceur",
+      "section": "complements",
+      "type": "single",
+      "required": false,
+      "label": "المؤثر(ة)",
+      "text": "واش عرفتونا عن طريق شي مؤثر ولا مؤثرة؟",
+      "options": [
+        {
+          "id": "pink_tarbouche",
+          "text": "PINK TARBOUCHE"
+        },
+        {
+          "id": "ysabella_elisheva",
+          "text": "YSABELLA ELISHEVA"
+        },
+        {
+          "id": "aucun",
+          "text": "حتى واحد"
+        }
+      ]
+    },
+    {
+      "id": "complements_libre",
+      "section": "complements",
+      "type": "paragraph",
+      "required": false,
+      "label": "معلومات إضافية",
+      "text": "واش عندكم شي معلومات إضافية تقدر تفيدنا فتقييم الأهلية ديالكم؟",
+      "placeholder": "خليو هاد الخانة خاوية إيلا ما عندكم حتى حاجة تزيدوها."
+    },
+    {
+      "id": "consent_contact",
+      "section": "consentement",
+      "type": "single",
+      "required": true,
+      "label": "الموافقة على التواصل والتقييم",
+      "text": "واش موافقين بلي EZRA MAROC PROJECT تستعمل البيانات ديالكم باش تتواصل معاكم وتقيّم أهليتكم للجنسية المغربية؟",
+      "options": [
+        {
+          "id": "oui",
+          "text": "إيه"
+        },
+        {
+          "id": "non",
+          "text": "لا"
+        }
+      ]
+    },
+    {
+      "id": "consent_conservation",
+      "section": "consentement",
+      "type": "single",
+      "required": false,
+      "label": "الموافقة على الاحتفاظ بالبيانات (عامين)",
+      "text": "واش كاتسمحو لـ EZRA MAROC PROJECT تحتفظ بالبيانات ديالكم لمدة أقصاها عامين، لأغراض التحليل وتحسين الخدمات ديالها؟",
+      "options": [
+        {
+          "id": "oui",
+          "text": "إيه"
+        },
+        {
+          "id": "non",
+          "text": "لا"
+        },
+        {
+          "id": "nrp",
+          "text": "كانفضل ما نجاوبش"
+        }
+      ]
+    }
+  ]
+}

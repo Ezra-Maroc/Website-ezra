@@ -441,6 +441,8 @@
   content: "\f0e3"; }
 .fa-lightbulb::before {
   content: "\f0eb"; }
+.fa-circle-exclamation::before {
+  content: "\f06a"; }
 .fa-flag::before {
   content: "\f024"; }
 .fa-lock::before {
@@ -449,6 +451,8 @@
   content: "\f1bb"; }
 .fa-users::before {
   content: "\f0c0"; }
+.fa-eye-slash::before {
+  content: "\f070"; }
 .fa-chevron-up::before {
   content: "\f077"; }
 .fa-bullseye::before {
@@ -483,6 +487,8 @@
   content: "\f2b5"; }
 .fa-gem::before {
   content: "\f3a5"; }
+.fa-circle-check::before {
+  content: "\f058"; }
 .fa-check-circle::before {
   content: "\f058"; }
 .fa-user-tie::before {

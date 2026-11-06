@@ -15,9 +15,9 @@ const navItems = nav[lang];
 const config = locales[lang];
 const imgPrefix = config.pathPrefix ? '..' : '.';
 
-// Portail de depot de documents (application separee, hebergee sur Render).
-// Le client accede ensuite a SON espace via le lien personnel recu par email.
-const PORTAL_URL = 'https://ezra-portal.onrender.com/';
+// Espace client (page du site, hors menu) : connexion avec l'adresse e-mail + le mot de passe propose par
+// EZRA, pour remplir le questionnaire d'eligibilite approfondi.
+const clientAreaUrl = getPageUrl('intake', lang);
 ---
 
 <header class="site-header">
@@ -52,10 +52,9 @@ const PORTAL_URL = 'https://ezra-portal.onrender.com/';
     </nav>
 
     <a
-      href={PORTAL_URL}
-      class="header-client-btn"
-      target="_blank"
-      rel="noopener noreferrer"
+      href={clientAreaUrl}
+      class:list={['header-client-btn', { active: currentPage === 'intake' }]}
+      aria-current={currentPage === 'intake' ? 'page' : undefined}
       title={t.clientAreaTitle}
       aria-label={t.clientAreaTitle}
     >

@@ -13,9 +13,26 @@
     "FROM_ADDRESS": "formulaire@a2deepsec.com",
     "TO_ADDRESS": "info@ezra-project.fr",
     // jetons Turnstile acceptes seulement s'ils ont ete obtenus sur ces domaines
-    "TURNSTILE_HOSTNAMES": "ezra-maroc.com,www.ezra-maroc.com"
+    "TURNSTILE_HOSTNAMES": "ezra-maroc.com,www.ezra-maroc.com",
+    // Questionnaire approfondi (src/intake/) : cle PUBLIQUE du logiciel EZRA (RSA-OAEP 3072, SPKI base64).
+    // Elle ne permet que de chiffrer ; la cle privee reste sur le PC (webapp/services/intake_service.py).
+    "INTAKE_PUBLIC_KEY": "MIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEAmYgsDnvprihIu2v2aTD1j8ZoHsOhHNDFdTsfgj97hfWLLitHhizORcEF9NcCuhr6zMZA9rbqSiJOKeZC8ZBfBo2vIlRW59jV9NAHdlBQJKD9K2WlIPRczgK3mxFX9PwriNXKMGvhw6CskOhkwvVotwM3tb5n8c2jwarmx7QoSYN4L+/ieC2i97mBIlBWh32Y2WIb+nGKzncq6FRF2ywqbjMWi7ObSocqnyEHBVHXqzp8+AUQjlPjtTClCGTw6/gmQkvYIZaqXDO6V6l1wYySRetWD0NePahBD0kmA/BvNZtP1P3o5YGSsqd+2aPOOR3AqgQ/w0e1e3JwWjX/XyB0nFoOyg6/G5kLaENOlqnnsQMTnn67h/ODgBR8nAJmj0v6/dS36IpPT0rHenNKbGEW5Y9nIs+cpjAsj7eeBCjzdSyzkRWvRzYCl+eyRNXY0QQJkSbuO5wrKPeOOYYgHqR55N5mVhoPqMIOspsP6UvM3PSIX8RZJZy8OHN7fzm9zMi5AgMBAAE=",
+    // "full" = recapitulatif complet par e-mail ; "notify" = simple avis sans donnee personnelle
+    "INTAKE_EMAIL_MODE": "full",
+    "INTAKE_FROM_NAME": "Questionnaire Ezra Maroc"
   },
-  // Secret a definir une fois : npx wrangler secret put TURNSTILE_SECRET
+  // Secrets a definir une fois : npx wrangler secret put TURNSTILE_SECRET / INTAKE_MASTER_KEY
+  // Questionnaire : etat des liens + copies chiffrees en attente du logiciel (migrations/)
+  "d1_databases": [
+    { "binding": "INTAKE_DB", "database_name": "ezra-intake", "database_id": "f34e4c61-2524-4d0d-8b1a-9005f0d654ff", "migrations_dir": "migrations" }
+  ],
+  // Limite par adresse IP sur /intake/login, /intake/verify et /intake/submit (en plus de Turnstile et du blocage
+  // a 5 mots de passe faux)
+  "ratelimits": [
+    { "name": "INTAKE_LIMITER", "namespace_id": "1101", "simple": { "limit": 20, "period": 60 } }
+  ],
+  // Menage quotidien (03:17 UTC) : copies chiffrees > 60 jours, liens expires depuis > 90 jours
+  "triggers": { "crons": ["17 3 * * *"] },
   "send_email": [
     {
       "name": "EMAIL",

@@ -72,12 +72,27 @@ export const nav: Record<Lang, NavItem[]> = {
   ],
 };
 
+// Pages hors menus (atteintes seulement par un lien direct), avec une adresse par langue : le
+// selecteur de langue reste sur la meme page. Exclues du plan du site (astro.config.mjs, PRIVATE_PATHS).
+export const hiddenPages: Record<string, Record<Lang, string>> = {
+  // Espace client : questionnaire approfondi des prospects invites (adresse e-mail + mot de passe propose par
+  // EZRA). Atteint par le bouton « Espace client » de l'en-tete et du pied de page, pas par le menu.
+  // Memes adresses dans le logiciel EZRA (intake_service.PAGE_PATHS).
+  intake: { fr: 'espace-client.html', en: 'client-area.html', es: 'area-cliente.html', he: 'client-area.html', ar: 'client-area.html' },
+};
+
 // Get the URL for a page in a specific language
 export function getPageUrl(pageKey: string, lang: Lang): string {
   // Check if this is a legal page first
   const legalKey = legalKeyMap[pageKey];
   if (legalKey) {
     return getLegalUrl(legalKey, lang);
+  }
+
+  const hidden = hiddenPages[pageKey];
+  if (hidden) {
+    const folder = lang === 'ar' ? 'ara' : lang;
+    return (lang === 'fr' ? '/' : `/${folder}/`) + hidden[lang];
   }
 
   const items = nav[lang];

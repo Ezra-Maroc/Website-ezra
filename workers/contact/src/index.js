@@ -5,10 +5,12 @@
 // Reponses au format attendu par les scripts du site : 200 {"ok":true}, sinon {"message": "..."}.
 // Envoi depuis le test d'eligibilite : pre-analyse interne (note + points forts / vigilance) en tete de l'e-mail,
 // calculee dans preanalyse.js a partir des reponses brutes (champ cache _elig).
+// Les chemins /intake/* sont le questionnaire approfondi des prospects (src/intake/, voir handler.js).
 
 import { preAnalyse } from './preanalyse.js';
+import { allowedOrigins, corsHeaders, json, escapeHtml, verifyTurnstile } from './shared.js';
+import { handleIntake, scheduledPurge } from './intake/handler.js';
 
-const ALLOWED_ORIGINS = ['https://ezra-maroc.com', 'https://www.ezra-maroc.com'];
 const MAX_BODY_BYTES = 32 * 1024;
 const MAX_FIELDS = 20;
 // Champs connus : libelle dans l'e-mail + longueur maximale
@@ -50,33 +52,6 @@ const MESSAGES = {
   },
 };
 
-function allowedOrigins(env) {
-  const dev = (env.DEV_ORIGINS || '').split(',').map((s) => s.trim()).filter(Boolean);
-  return ALLOWED_ORIGINS.concat(dev);
-}
-
-function corsHeaders(origin) {
-  return {
-    'Access-Control-Allow-Origin': origin,
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type, Accept',
-    'Access-Control-Max-Age': '86400',
-    Vary: 'Origin',
-  };
-}
-
-function json(status, body, origin) {
-  return new Response(JSON.stringify(body), {
-    status,
-    headers: {
-      'Content-Type': 'application/json; charset=utf-8',
-      'Cache-Control': 'no-store',
-      'X-Content-Type-Options': 'nosniff',
-      ...(origin ? corsHeaders(origin) : {}),
-    },
-  });
-}
-
 // Texte saisi : retours a la ligne normalises, caracteres de controle retires (sauf saut de ligne et tabulation)
 function clean(value, max, singleLine) {
   // coupe d'abord (un champ enorme ne doit pas couter de calcul), puis nettoie en temps lineaire
@@ -86,30 +61,22 @@ function clean(value, max, singleLine) {
   return s.length > max ? s.slice(0, max) : s;
 }
 
-function escapeHtml(s) {
-  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-}
-
 const EMAIL_RE = /^[^\s@<>()[\]\\,;:"]+@[^\s@<>()[\]\\,;:"]+\.[^\s@<>()[\]\\,;:"]{2,}$/;
 
-async function verifyTurnstile(token, ip, env) {
-  if (!token || typeof token !== 'string' || token.length > 2048) return 'jeton absent';
-  const body = new FormData();
-  body.append('secret', env.TURNSTILE_SECRET);
-  body.append('response', token);
-  if (ip) body.append('remoteip', ip);
-  body.append('idempotency_key', crypto.randomUUID());
-  const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', { method: 'POST', body });
-  if (!res.ok) return `siteverify HTTP ${res.status}`;
-  const data = await res.json();
-  if (!data.success) return 'refuse : ' + (data['error-codes'] || []).join(',');
-  const hostnames = (env.TURNSTILE_HOSTNAMES || '').split(',').map((s) => s.trim()).filter(Boolean);
-  if (hostnames.length && !hostnames.includes(data.hostname)) return 'domaine inattendu : ' + data.hostname;
-  return null;
-}
-
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
+    if (new URL(request.url).pathname.startsWith('/intake/')) return handleIntake(request, env, ctx);
+    return handleContact(request, env);
+  },
+  // Menage quotidien du questionnaire (wrangler.jsonc : triggers.crons)
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(scheduledPurge(env));
+  },
+};
+
+// Formulaire de contact (toute autre adresse que /intake/*), inchange
+async function handleContact(request, env) {
+  {
     const origin = request.headers.get('Origin') || '';
     const okOrigin = allowedOrigins(env).includes(origin) ? origin : null;
 
@@ -243,5 +210,5 @@ ${blocks.map(([k, v]) => `<p style="margin:18px 0 4px;color:#666">${escapeHtml(k
       return json(502, { message: msg('failed') }, okOrigin);
     }
     return json(200, { ok: true }, okOrigin);
-  },
-};
+  }
+}

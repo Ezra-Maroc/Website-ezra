@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import IntakeQuestionnaire from '../../components/IntakeQuestionnaire.astro';
+import data from '../../data/intake/ar.json';
+
+const lang = 'ar' as const;
+---
+
+<BaseLayout lang={lang} title={data.meta.pageTitle} description={data.meta.pageDescription} currentPage="intake" pageCSS={['intake']} privatePage>
+  <IntakeQuestionnaire data={data} />
+</BaseLayout>

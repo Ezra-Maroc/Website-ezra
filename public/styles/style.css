@@ -878,7 +878,8 @@ body.menu-open { overflow: hidden; }
 .site-header .nav-links a.nav-cta:hover, .site-header .nav-links a.nav-cta:focus-visible, .site-header .nav-links a.nav-cta.active { background: var(--primary-500, #d84d3f); color: #fff; }
 .site-header .nav-links a.nav-cta::after { display: none; }
 
-/* Bouton "Espace client" (en-tete, avant le selecteur de langue) -> portail de depot de documents.
+/* Bouton "Espace client" (en-tete, avant le selecteur de langue) -> page Espace client du site
+   (connexion e-mail + mot de passe, questionnaire approfondi des prospects invites).
    Icone seule (le menu remplit deja la barre : aucune place pour un libelle sans rogner le menu) ;
    le libelle en toutes lettres est dans le pied de page. Infobulle + aria-label portent le sens.
    Style sobre en contour, distinct du CTA rouge "Test d'eligibilite". Marges logiques = OK hebreu/arabe. */
@@ -898,7 +899,8 @@ body.menu-open { overflow: hidden; }
   transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
 .header-client-btn:hover,
-.header-client-btn:focus-visible {
+.header-client-btn:focus-visible,
+.header-client-btn.active {
   border-color: var(--primary-600, #c5281c);
   color: var(--primary-600, #c5281c);
 }

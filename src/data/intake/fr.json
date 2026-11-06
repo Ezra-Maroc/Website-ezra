@@ -1,0 +1,912 @@
+{
+  "meta": {
+    "lang": "fr",
+    "pageTitle": "Espace client | Ezra Maroc",
+    "pageDescription": "Espace client sécurisé d'EZRA MAROC, réservé aux personnes ayant reçu leurs identifiants.",
+    "h1": "Espace client",
+    "noscript": "L'Espace client nécessite JavaScript. Activez-le dans votre navigateur, ou écrivez-nous à info@ezra-project.fr.",
+    "title": "Questionnaire d'éligibilité — EZRA MAROC",
+    "intro": "Dans votre Espace client, vous remplissez notre questionnaire d'éligibilité approfondi (5 à 10 minutes). Il nous permet d'établir une évaluation préliminaire de votre éligibilité à l'acquisition de la nationalité marocaine : merci de répondre avec le plus de précision possible, pour une analyse rigoureuse et un premier échange confidentiel.",
+    "privacy": "Vos données sont traitées de façon strictement confidentielle, conformément au RGPD, et ne sont jamais partagées sans votre consentement explicite. Pour exercer vos droits : info@ezra-project.fr."
+  },
+  "ui": {
+    "start": "Commencer",
+    "next": "Suivant",
+    "back": "Retour",
+    "submit": "Envoyer mes réponses",
+    "progress": "Question {n} sur {total}",
+    "section": "Section {n} sur {total}",
+    "multiHint": "Plusieurs réponses possibles.",
+    "optional": "(facultatif)",
+    "choose": "Choisir…",
+    "otherLabel": "Autre",
+    "otherPlaceholder": "Précisez…",
+    "errRequired": "Merci de répondre à cette question.",
+    "errEmail": "Merci d'indiquer une adresse email valide.",
+    "errTel": "Merci d'indiquer un numéro de téléphone valide (avec l'indicatif).",
+    "errDate": "Merci d'indiquer une date valide.",
+    "sending": "Envoi en cours…",
+    "successTitle": "Questionnaire bien reçu",
+    "successText": "Merci. Votre demande a bien été reçue et sera traitée avec le plus grand soin. Un membre de notre équipe vous contactera sous 72 heures ouvrables pour un premier échange.",
+    "errorTitle": "Envoi impossible",
+    "errorText": "Une erreur est survenue. Vous pouvez réessayer ; si cela persiste, écrivez-nous à info@ezra-project.fr.",
+    "expiredTitle": "Accès expiré ou désactivé",
+    "expiredText": "Cet accès n'est plus valide. Contactez votre conseiller EZRA MAROC pour en obtenir un nouveau.",
+    "reviewTitle": "Vérifiez vos réponses",
+    "edit": "Modifier",
+    "consentBlock": "Sans votre consentement, nous ne pouvons pas traiter votre demande.",
+    "accessTitle": "Accès sécurisé",
+    "accessText": "Pour ouvrir votre questionnaire, saisissez le mot de passe que nous vous avons envoyé dans un e-mail séparé.",
+    "codeLabel": "Mot de passe",
+    "codePlaceholder": "XXXX-XXXX",
+    "accessButton": "Accéder au questionnaire",
+    "verifying": "Vérification…",
+    "errCodeFormat": "Le mot de passe comporte 8 caractères (lettres et chiffres).",
+    "errCodeWrong": "Mot de passe incorrect. Il vous reste {n} essai(s).",
+    "lockedTitle": "Accès bloqué",
+    "lockedText": "Trop de mots de passe incorrects ont été saisis : pour votre sécurité, cet accès a été bloqué. Contactez votre conseiller EZRA MAROC pour en obtenir un nouveau.",
+    "usedTitle": "Questionnaire déjà envoyé",
+    "usedText": "Ce questionnaire a déjà été rempli et envoyé. Merci ! Pour modifier une réponse, écrivez-nous à info@ezra-project.fr.",
+    "errBot": "La vérification anti-robot n'a pas abouti. Merci de réessayer dans quelques secondes.",
+    "errNetwork": "Connexion impossible. Vérifiez votre connexion internet, puis réessayez.",
+    "sessionExpired": "Pour votre sécurité, votre session a expiré. Reconnectez-vous : vos réponses sont conservées.",
+    "secureNote": "Connexion sécurisée : vos réponses sont chiffrées et ne sont lues que par l'équipe EZRA MAROC.",
+    "loginTitle": "Connexion à votre Espace client",
+    "loginText": "Saisissez l'adresse e-mail à laquelle vous avez reçu nos messages et le mot de passe que nous vous avons envoyé dans un e-mail séparé.",
+    "emailLabel": "Adresse e-mail (identifiant)",
+    "loginButton": "Se connecter",
+    "errLoginFormat": "Vérifiez l'adresse e-mail et le mot de passe (8 caractères).",
+    "errLogin": "Adresse e-mail ou mot de passe incorrect. Utilisez l'adresse à laquelle vous avez reçu nos messages.",
+    "showPassword": "Afficher le mot de passe",
+    "hidePassword": "Masquer le mot de passe",
+    "noAccess": "Pas encore d'identifiants ? L'accès à l'Espace client est ouvert par notre équipe après un premier échange.",
+    "noAccessLink": "Nous contacter"
+  },
+  "optionLists": {
+    "pays": [
+      {
+        "id": "afrique_sud",
+        "text": "Afrique du Sud"
+      },
+      {
+        "id": "algerie",
+        "text": "Algérie"
+      },
+      {
+        "id": "andorre",
+        "text": "Andorre"
+      },
+      {
+        "id": "argentine",
+        "text": "Argentine"
+      },
+      {
+        "id": "armenie",
+        "text": "Arménie"
+      },
+      {
+        "id": "australie",
+        "text": "Australie"
+      },
+      {
+        "id": "bresil",
+        "text": "Brésil"
+      },
+      {
+        "id": "canada",
+        "text": "Canada"
+      },
+      {
+        "id": "egypte",
+        "text": "Égypte"
+      },
+      {
+        "id": "etats_unis",
+        "text": "États-Unis"
+      },
+      {
+        "id": "france",
+        "text": "France"
+      },
+      {
+        "id": "israel",
+        "text": "Israël"
+      },
+      {
+        "id": "liban",
+        "text": "Liban"
+      },
+      {
+        "id": "luxembourg",
+        "text": "Luxembourg"
+      },
+      {
+        "id": "maroc",
+        "text": "Maroc"
+      },
+      {
+        "id": "nouvelle_zelande",
+        "text": "Nouvelle-Zélande"
+      },
+      {
+        "id": "royaume_uni",
+        "text": "Royaume-Uni"
+      },
+      {
+        "id": "suisse",
+        "text": "Suisse"
+      },
+      {
+        "id": "tunisie",
+        "text": "Tunisie"
+      },
+      {
+        "id": "ue_hors_france",
+        "text": "Union européenne (hors France)"
+      },
+      {
+        "id": "autre",
+        "text": "Autre pays"
+      }
+    ],
+    "nationalites": [
+      {
+        "id": "marocaine",
+        "text": "Marocain(e)"
+      },
+      {
+        "id": "francaise",
+        "text": "Français(e)"
+      },
+      {
+        "id": "israelienne",
+        "text": "Israélien(ne)"
+      },
+      {
+        "id": "americaine",
+        "text": "Américain(e)"
+      },
+      {
+        "id": "canadienne",
+        "text": "Canadien(ne)"
+      },
+      {
+        "id": "britannique",
+        "text": "Britannique"
+      },
+      {
+        "id": "suisse",
+        "text": "Suisse"
+      },
+      {
+        "id": "belge",
+        "text": "Belge"
+      },
+      {
+        "id": "luxembourgeoise",
+        "text": "Luxembourgeois(e)"
+      },
+      {
+        "id": "neo_zelandaise",
+        "text": "Néo-zélandais(e)"
+      },
+      {
+        "id": "australienne",
+        "text": "Australien(ne)"
+      },
+      {
+        "id": "sud_africaine",
+        "text": "Sud-africain(e)"
+      },
+      {
+        "id": "argentine",
+        "text": "Argentin(e)"
+      },
+      {
+        "id": "bresilienne",
+        "text": "Brésilien(ne)"
+      },
+      {
+        "id": "armenienne",
+        "text": "Arménien(ne)"
+      },
+      {
+        "id": "andorrane",
+        "text": "Andorran(e)"
+      },
+      {
+        "id": "algerienne",
+        "text": "Algérien(ne)"
+      },
+      {
+        "id": "egyptienne",
+        "text": "Égyptien(ne)"
+      },
+      {
+        "id": "tunisienne",
+        "text": "Tunisien(ne)"
+      },
+      {
+        "id": "libanaise",
+        "text": "Libanais(e)"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "identite",
+      "num": "I",
+      "title": "Identité"
+    },
+    {
+      "id": "famille",
+      "num": "II",
+      "title": "Situation familiale et professionnelle"
+    },
+    {
+      "id": "projet",
+      "num": "III",
+      "title": "Votre projet et vos liens avec le Maroc",
+      "intro": "Détaillez votre projet (personnel, professionnel ou familial) en lien avec le Maroc et la nature de vos liens avec le pays."
+    },
+    {
+      "id": "complements",
+      "num": "IV",
+      "title": "Informations complémentaires",
+      "intro": "Quelques précisions administratives et personnelles utiles à l'instruction de votre dossier."
+    },
+    {
+      "id": "consentement",
+      "num": "V",
+      "title": "Consentement"
+    }
+  ],
+  "questions": [
+    {
+      "id": "nom",
+      "section": "identite",
+      "type": "text",
+      "required": true,
+      "label": "Nom",
+      "text": "Votre nom",
+      "autocomplete": "family-name"
+    },
+    {
+      "id": "prenom",
+      "section": "identite",
+      "type": "text",
+      "required": true,
+      "label": "Prénom",
+      "text": "Votre prénom",
+      "autocomplete": "given-name"
+    },
+    {
+      "id": "date_naissance",
+      "section": "identite",
+      "type": "date",
+      "required": true,
+      "label": "Date de naissance",
+      "text": "Votre date de naissance"
+    },
+    {
+      "id": "ville_naissance",
+      "section": "identite",
+      "type": "text",
+      "required": true,
+      "label": "Ville de naissance",
+      "text": "Votre ville de naissance"
+    },
+    {
+      "id": "pays_naissance",
+      "section": "identite",
+      "type": "select",
+      "required": true,
+      "label": "Pays de naissance",
+      "text": "Votre pays de naissance",
+      "optionsRef": "pays"
+    },
+    {
+      "id": "nationalites",
+      "section": "identite",
+      "type": "multi",
+      "required": true,
+      "other": true,
+      "label": "Nationalité(s) actuelle(s)",
+      "text": "Quelle est votre (vos) nationalité(s) actuelle(s) ?",
+      "optionsRef": "nationalites"
+    },
+    {
+      "id": "autre_nationalite_passee",
+      "section": "identite",
+      "type": "single",
+      "required": true,
+      "label": "A déjà possédé une autre nationalité",
+      "text": "Avez-vous déjà possédé une autre nationalité ?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "Oui"
+        },
+        {
+          "id": "non",
+          "text": "Non"
+        },
+        {
+          "id": "nsp",
+          "text": "Je ne sais pas"
+        }
+      ]
+    },
+    {
+      "id": "pays_residence",
+      "section": "identite",
+      "type": "select",
+      "required": true,
+      "label": "Pays de résidence actuel",
+      "text": "Votre pays de résidence actuel",
+      "optionsRef": "pays"
+    },
+    {
+      "id": "date_residence",
+      "section": "identite",
+      "type": "date",
+      "required": true,
+      "label": "Réside dans ce pays depuis",
+      "text": "Depuis quelle date résidez-vous dans ce pays ?"
+    },
+    {
+      "id": "email",
+      "section": "identite",
+      "type": "email",
+      "required": true,
+      "label": "Email",
+      "text": "Votre adresse email",
+      "autocomplete": "email"
+    },
+    {
+      "id": "telephone",
+      "section": "identite",
+      "type": "tel",
+      "required": true,
+      "label": "Téléphone",
+      "text": "Votre numéro de téléphone (avec l'indicatif)",
+      "autocomplete": "tel",
+      "placeholder": "+33 6 12 34 56 78"
+    },
+    {
+      "id": "situation_familiale",
+      "section": "famille",
+      "type": "single",
+      "required": true,
+      "label": "Situation familiale",
+      "text": "Quelle est votre situation familiale ?",
+      "options": [
+        {
+          "id": "celibataire",
+          "text": "Célibataire"
+        },
+        {
+          "id": "marie",
+          "text": "Marié(e)"
+        },
+        {
+          "id": "divorce",
+          "text": "Divorcé(e)"
+        },
+        {
+          "id": "veuf",
+          "text": "Veuf / Veuve"
+        },
+        {
+          "id": "pacse",
+          "text": "Pacsé(e)"
+        },
+        {
+          "id": "nrp",
+          "text": "Je préfère ne pas répondre"
+        }
+      ]
+    },
+    {
+      "id": "nationalite_conjoint",
+      "section": "famille",
+      "type": "text",
+      "required": true,
+      "label": "Nationalité du conjoint",
+      "text": "Quelle est la nationalité de votre conjoint ?",
+      "showIf": {
+        "q": "situation_familiale",
+        "in": [
+          "marie",
+          "pacse"
+        ]
+      }
+    },
+    {
+      "id": "enfants",
+      "section": "famille",
+      "type": "single",
+      "required": true,
+      "label": "A des enfants",
+      "text": "Avez-vous des enfants ?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "Oui"
+        },
+        {
+          "id": "non",
+          "text": "Non"
+        },
+        {
+          "id": "nrp",
+          "text": "Je préfère ne pas répondre"
+        }
+      ]
+    },
+    {
+      "id": "secteur_pro",
+      "section": "famille",
+      "type": "text",
+      "required": false,
+      "label": "Secteur professionnel",
+      "text": "Votre secteur professionnel"
+    },
+    {
+      "id": "motivations",
+      "section": "projet",
+      "type": "multi",
+      "required": true,
+      "label": "Motivations",
+      "text": "Pourquoi souhaitez-vous obtenir la nationalité marocaine ?",
+      "help": "Sélectionnez toutes les raisons qui s'appliquent à votre situation.",
+      "options": [
+        {
+          "id": "origines",
+          "text": "Origines familiales et filiation"
+        },
+        {
+          "id": "culture",
+          "text": "Préservation et transmission de l'identité culturelle"
+        },
+        {
+          "id": "sejour",
+          "text": "Facilité de séjour, de circulation et d'installation"
+        },
+        {
+          "id": "economique",
+          "text": "Opportunités professionnelles, économiques ou d'investissement"
+        }
+      ]
+    },
+    {
+      "id": "ascendants_marocains",
+      "section": "projet",
+      "type": "single",
+      "required": true,
+      "label": "Ascendants marocains",
+      "text": "Avez-vous des ascendants (parents, grands-parents, arrière-grands-parents) de nationalité marocaine ?",
+      "help": "Selon le Code de la nationalité marocaine, la nationalité se transmet principalement par filiation (droit du sang).",
+      "options": [
+        {
+          "id": "oui",
+          "text": "Oui"
+        },
+        {
+          "id": "non",
+          "text": "Non"
+        },
+        {
+          "id": "nsp",
+          "text": "Je ne sais pas"
+        }
+      ]
+    },
+    {
+      "id": "lien_parente",
+      "section": "projet",
+      "type": "multi",
+      "required": true,
+      "label": "Lien de parenté de l'ascendant marocain",
+      "text": "Précisez le lien de parenté et le degré de votre (vos) ascendant(s) marocain(s).",
+      "showIf": {
+        "q": "ascendants_marocains",
+        "in": [
+          "oui"
+        ]
+      },
+      "options": [
+        {
+          "id": "mere",
+          "text": "Mère"
+        },
+        {
+          "id": "pere",
+          "text": "Père"
+        },
+        {
+          "id": "gm_maternelle",
+          "text": "Grand-mère maternelle"
+        },
+        {
+          "id": "gp_maternel",
+          "text": "Grand-père maternel"
+        },
+        {
+          "id": "gm_paternelle",
+          "text": "Grand-mère paternelle"
+        },
+        {
+          "id": "gp_paternel",
+          "text": "Grand-père paternel"
+        },
+        {
+          "id": "agm_maternelle",
+          "text": "Arrière-grand-mère maternelle"
+        },
+        {
+          "id": "agp_maternel",
+          "text": "Arrière-grand-père maternel"
+        },
+        {
+          "id": "agm_paternelle",
+          "text": "Arrière-grand-mère paternelle"
+        },
+        {
+          "id": "agp_paternel",
+          "text": "Arrière-grand-père paternel"
+        }
+      ]
+    },
+    {
+      "id": "documents_anciens",
+      "section": "projet",
+      "type": "single",
+      "required": true,
+      "label": "Documents marocains anciens de l'ascendant",
+      "text": "Disposez-vous de documents d'identité marocains anciens concernant cet ascendant, ou pourriez-vous vous en procurer ?",
+      "showIf": {
+        "q": "ascendants_marocains",
+        "in": [
+          "oui"
+        ]
+      },
+      "options": [
+        {
+          "id": "oui_dispose",
+          "text": "Oui, je dispose actuellement de certains documents."
+        },
+        {
+          "id": "pense_pouvoir",
+          "text": "Je n'en dispose pas actuellement, mais je pense pouvoir m'en procurer."
+        },
+        {
+          "id": "sais_pas_comment",
+          "text": "Je n'en dispose pas, et je ne sais pas comment me les procurer."
+        },
+        {
+          "id": "non_impossible",
+          "text": "Non, et je ne pense pas pouvoir m'en procurer."
+        },
+        {
+          "id": "nsp",
+          "text": "Je ne sais pas."
+        }
+      ]
+    },
+    {
+      "id": "type_documents",
+      "section": "projet",
+      "type": "multi",
+      "required": true,
+      "label": "Type de documents disponibles",
+      "text": "Quel type de document pourriez-vous fournir ?",
+      "showIf": {
+        "q": "documents_anciens",
+        "in": [
+          "oui_dispose",
+          "pense_pouvoir"
+        ]
+      },
+      "options": [
+        {
+          "id": "passeport",
+          "text": "Passeport marocain (ancien ou nouveau) de l'ascendant"
+        },
+        {
+          "id": "cin",
+          "text": "Carte d'identité nationale marocaine (CIN) de l'ascendant"
+        },
+        {
+          "id": "acte_naissance",
+          "text": "Acte de naissance marocain de l'ascendant"
+        },
+        {
+          "id": "extrait_naissance",
+          "text": "Extrait d'acte de naissance mentionnant la nationalité marocaine"
+        },
+        {
+          "id": "acte_mariage",
+          "text": "Acte de mariage marocain de l'ascendant"
+        },
+        {
+          "id": "livret_famille",
+          "text": "Livret de famille marocain"
+        },
+        {
+          "id": "carte_sejour",
+          "text": "Carte de séjour marocaine de l'ascendant"
+        },
+        {
+          "id": "doc_residence",
+          "text": "Document officiel de résidence au Maroc (permis, attestation de domicile, etc.)"
+        },
+        {
+          "id": "acte_notarie",
+          "text": "Acte notarié ou document administratif attestant d'un lien avec le Maroc"
+        },
+        {
+          "id": "doc_militaire",
+          "text": "Documents militaires ou de fonction publique marocaine"
+        },
+        {
+          "id": "archives",
+          "text": "Extraits d'archives nationales prouvant l'appartenance au Maroc"
+        },
+        {
+          "id": "temoignages",
+          "text": "Témoignages ou certificats officiels établissant la filiation et la nationalité"
+        },
+        {
+          "id": "jugement_filiation",
+          "text": "Jugement de reconnaissance de filiation"
+        }
+      ]
+    },
+    {
+      "id": "voyage_maroc",
+      "section": "projet",
+      "type": "single",
+      "required": false,
+      "label": "A déjà voyagé au Maroc",
+      "text": "Avez-vous déjà voyagé au Maroc ?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "Oui"
+        },
+        {
+          "id": "non",
+          "text": "Non"
+        },
+        {
+          "id": "nrp",
+          "text": "Je préfère ne pas répondre"
+        }
+      ]
+    },
+    {
+      "id": "residence_maroc",
+      "section": "projet",
+      "type": "single",
+      "required": true,
+      "label": "A déjà résidé au Maroc",
+      "text": "Avez-vous déjà résidé au Maroc ?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "Oui"
+        },
+        {
+          "id": "non",
+          "text": "Non"
+        },
+        {
+          "id": "nrp",
+          "text": "Je préfère ne pas répondre"
+        }
+      ]
+    },
+    {
+      "id": "langues",
+      "section": "projet",
+      "type": "multi",
+      "required": true,
+      "label": "Langues parlées",
+      "text": "Quelles langues parlez-vous ?",
+      "options": [
+        {
+          "id": "arabe_classique",
+          "text": "Arabe classique"
+        },
+        {
+          "id": "darija",
+          "text": "Arabe marocain (darija)"
+        },
+        {
+          "id": "amazigh",
+          "text": "Amazigh (berbère)"
+        },
+        {
+          "id": "francais",
+          "text": "Français"
+        },
+        {
+          "id": "espagnol",
+          "text": "Espagnol"
+        },
+        {
+          "id": "anglais",
+          "text": "Anglais"
+        }
+      ]
+    },
+    {
+      "id": "famille_maroc",
+      "section": "projet",
+      "type": "single",
+      "required": true,
+      "label": "Famille proche au Maroc",
+      "text": "Avez-vous de la famille proche (parents, frères/sœurs, enfants, conjoint) résidant au Maroc ?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "Oui"
+        },
+        {
+          "id": "non",
+          "text": "Non"
+        },
+        {
+          "id": "nrp",
+          "text": "Je préfère ne pas répondre"
+        }
+      ]
+    },
+    {
+      "id": "condamnation",
+      "section": "complements",
+      "type": "single",
+      "required": false,
+      "label": "Condamnation à signaler",
+      "text": "Votre dossier comporte-t-il une condamnation dont il serait important de tenir compte ?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "Oui"
+        },
+        {
+          "id": "non",
+          "text": "Non"
+        },
+        {
+          "id": "nrp",
+          "text": "Je préfère ne pas répondre"
+        }
+      ]
+    },
+    {
+      "id": "naturalisation_ailleurs",
+      "section": "complements",
+      "type": "single",
+      "required": false,
+      "label": "Demande de naturalisation ailleurs",
+      "text": "Avez-vous déjà fait une demande de naturalisation dans un autre pays ?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "Oui"
+        },
+        {
+          "id": "non",
+          "text": "Non"
+        },
+        {
+          "id": "nrp",
+          "text": "Je préfère ne pas répondre"
+        }
+      ]
+    },
+    {
+      "id": "connu_ezra",
+      "section": "complements",
+      "type": "single",
+      "required": true,
+      "label": "Comment a connu EZRA",
+      "text": "Comment avez-vous connu EZRA MAROC PROJECT ?",
+      "options": [
+        {
+          "id": "internet",
+          "text": "Recherche internet"
+        },
+        {
+          "id": "reseaux",
+          "text": "Réseaux sociaux"
+        },
+        {
+          "id": "bouche_oreille",
+          "text": "Bouche-à-oreille"
+        },
+        {
+          "id": "presse",
+          "text": "Article de presse (numérique ou papier)"
+        },
+        {
+          "id": "salon",
+          "text": "Salon / événement"
+        }
+      ]
+    },
+    {
+      "id": "influenceur",
+      "section": "complements",
+      "type": "single",
+      "required": false,
+      "label": "Influenceur",
+      "text": "Nous avez-vous découverts grâce à un influenceur ?",
+      "options": [
+        {
+          "id": "pink_tarbouche",
+          "text": "PINK TARBOUCHE"
+        },
+        {
+          "id": "ysabella_elisheva",
+          "text": "YSABELLA ELISHEVA"
+        },
+        {
+          "id": "aucun",
+          "text": "Aucun"
+        }
+      ]
+    },
+    {
+      "id": "complements_libre",
+      "section": "complements",
+      "type": "paragraph",
+      "required": false,
+      "label": "Informations complémentaires",
+      "text": "Avez-vous des informations complémentaires utiles à l'évaluation de votre éligibilité ?",
+      "placeholder": "Laissez vide si rien à signaler."
+    },
+    {
+      "id": "consent_contact",
+      "section": "consentement",
+      "type": "single",
+      "required": true,
+      "label": "Consentement au contact et à l'évaluation",
+      "text": "Acceptez-vous que vos données soient utilisées par EZRA MAROC PROJECT pour vous contacter et évaluer votre éligibilité à la nationalité marocaine ?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "Oui"
+        },
+        {
+          "id": "non",
+          "text": "Non"
+        }
+      ]
+    },
+    {
+      "id": "consent_conservation",
+      "section": "consentement",
+      "type": "single",
+      "required": false,
+      "label": "Consentement à la conservation (2 ans)",
+      "text": "Autorisez-vous EZRA MAROC PROJECT à conserver vos données pour une durée maximale de 2 ans, à des fins d'analyse et d'amélioration de ses services ?",
+      "options": [
+        {
+          "id": "oui",
+          "text": "Oui"
+        },
+        {
+          "id": "non",
+          "text": "Non"
+        },
+        {
+          "id": "nrp",
+          "text": "Je préfère ne pas répondre"
+        }
+      ]
+    }
+  ]
+}

@@ -999,7 +999,8 @@ body.menu-open { overflow: hidden; }
   transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
 .header-client-btn:hover,
-.header-client-btn:focus-visible {
+.header-client-btn:focus-visible,
+.header-client-btn.active {
   border-color: var(--primary-600, #c5281c);
   color: var(--primary-600, #c5281c);
 }
