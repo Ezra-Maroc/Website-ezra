@@ -14,6 +14,10 @@ const t = ui[lang];
 const navItems = nav[lang];
 const config = locales[lang];
 const imgPrefix = config.pathPrefix ? '..' : '.';
+
+// Portail de depot de documents (application separee, hebergee sur Render).
+// Le client accede ensuite a SON espace via le lien personnel recu par email.
+const PORTAL_URL = 'https://ezra-portal.onrender.com/';
 ---
 
 <header class="site-header">
@@ -46,6 +50,21 @@ const imgPrefix = config.pathPrefix ? '..' : '.';
         ))}
       </ul>
     </nav>
+
+    <a
+      href={PORTAL_URL}
+      class="header-client-btn"
+      target="_blank"
+      rel="noopener noreferrer"
+      title={t.clientAreaTitle}
+      aria-label={t.clientAreaTitle}
+    >
+      <svg class="header-client-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
+      </svg>
+      <span class="header-client-label">{t.clientArea}</span>
+    </a>
 
     <div class="language-switcher">
       <label for="lang-select" class="visually-hidden">{t.langSelectLabel}</label>

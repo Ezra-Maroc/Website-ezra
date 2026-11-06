@@ -38,6 +38,10 @@ export const ui: Record<Lang, {
   // Mobile menu
   menuLabel: string;
 
+  // Client area (header button -> portail de depot de documents)
+  clientArea: string;
+  clientAreaTitle: string;
+
   // Mid-page CTA
   ctaTitle: string;
   ctaSubtitle: string;
@@ -74,6 +78,8 @@ export const ui: Record<Lang, {
     footerFranceOffice: 'Bureau France',
     footerFranceAddress: '113 Bd du Général Koenig, 92200 Neuilly-sur-Seine, France',
     menuLabel: 'Menu',
+    clientArea: 'Espace client',
+    clientAreaTitle: 'Espace client — déposer vos documents',
     ctaTitle: 'Prêt à démarrer ?',
     ctaSubtitle: 'Demandez votre évaluation gratuite dès maintenant.',
     ctaButton: 'Contactez-nous',
@@ -105,6 +111,8 @@ export const ui: Record<Lang, {
     footerFranceOffice: 'France Office',
     footerFranceAddress: '113 Bd du Général Koenig, 92200 Neuilly-sur-Seine, France',
     menuLabel: 'Menu',
+    clientArea: 'Client Area',
+    clientAreaTitle: 'Client area — upload your documents',
     ctaTitle: 'Ready to get started?',
     ctaSubtitle: 'Request your free assessment now.',
     ctaButton: 'Contact Us',
@@ -136,6 +144,8 @@ export const ui: Record<Lang, {
     footerFranceOffice: 'Oficina Francia',
     footerFranceAddress: '113 Bd du Général Koenig, 92200 Neuilly-sur-Seine, France',
     menuLabel: 'Menú',
+    clientArea: 'Área de cliente',
+    clientAreaTitle: 'Área de cliente — suba sus documentos',
     ctaTitle: '¿Listo para empezar?',
     ctaSubtitle: 'Solicite su evaluación gratuita ahora.',
     ctaButton: 'Contáctenos',
@@ -167,6 +177,8 @@ export const ui: Record<Lang, {
     footerFranceOffice: 'משרד צרפת',
     footerFranceAddress: '113 Bd du Général Koenig, 92200 Neuilly-sur-Seine, France',
     menuLabel: 'תפריט',
+    clientArea: 'אזור אישי',
+    clientAreaTitle: 'אזור אישי — העלאת מסמכים',
     ctaTitle: 'מוכנים להתחיל?',
     ctaSubtitle: 'בקשו את ההערכה החינמית שלכם עכשיו.',
     ctaButton: 'צרו קשר',
@@ -198,6 +210,8 @@ export const ui: Record<Lang, {
     footerFranceOffice: 'مكتب فرنسا',
     footerFranceAddress: '113 Bd du Général Koenig, 92200 Neuilly-sur-Seine, France',
     menuLabel: 'القائمة',
+    clientArea: 'مساحة العميل',
+    clientAreaTitle: 'مساحة العميل — رفع المستندات',
     ctaTitle: 'مستعدين تبدأو؟',
     ctaSubtitle: 'اطلبو تقييمكم المجاني دابا.',
     ctaButton: 'تواصلو معانا',

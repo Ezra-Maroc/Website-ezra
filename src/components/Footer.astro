@@ -12,6 +12,8 @@ const { lang } = Astro.props;
 const t = ui[lang];
 const navItems = nav[lang];
 const servicesUrl = getPageUrl('services', lang);
+// Portail de depot de documents (meme cible que l'icone de l'en-tete)
+const PORTAL_URL = 'https://ezra-portal.onrender.com/';
 ---
 
 <footer>
@@ -36,6 +38,11 @@ const servicesUrl = getPageUrl('services', lang);
         {navItems.filter((item) => !item.cta).map((item) => (
           <li><a href={getPageUrl(item.key, lang)}>{item.label}</a></li>
         ))}
+        <li>
+          <a href={PORTAL_URL} target="_blank" rel="noopener noreferrer" class="footer-client-link">
+            {t.clientArea}
+          </a>
+        </li>
       </ul>
     </div>
 
