@@ -6,8 +6,8 @@
     "h1": "Espace client",
     "noscript": "L'Espace client nécessite JavaScript. Activez-le dans votre navigateur, ou écrivez-nous à info@ezra-project.fr.",
     "title": "Questionnaire d'éligibilité — EZRA MAROC",
-    "intro": "Dans votre Espace client, vous remplissez notre questionnaire d'éligibilité approfondi (5 à 10 minutes). Il nous permet d'établir une évaluation préliminaire de votre éligibilité à l'acquisition de la nationalité marocaine : merci de répondre avec le plus de précision possible, pour une analyse rigoureuse et un premier échange confidentiel.",
-    "privacy": "Vos données sont traitées de façon strictement confidentielle, conformément au RGPD, et ne sont jamais partagées sans votre consentement explicite. Pour exercer vos droits : info@ezra-project.fr."
+    "intro": "Votre questionnaire d'éligibilité approfondi, en toute confidentialité.",
+    "privacy": "Vos données sont traitées de façon strictement confidentielle, conformément au RGPD, et ne sont jamais partagées sans votre consentement explicite. Pour exercer vos droits : info@ezra-project.fr."
   },
   "ui": {
     "start": "Commencer",
@@ -27,9 +27,9 @@
     "errDate": "Merci d'indiquer une date valide.",
     "sending": "Envoi en cours…",
     "successTitle": "Questionnaire bien reçu",
-    "successText": "Merci. Votre demande a bien été reçue et sera traitée avec le plus grand soin. Un membre de notre équipe vous contactera sous 72 heures ouvrables pour un premier échange.",
+    "successText": "Merci, vos réponses nous sont bien parvenues. Elles seront étudiées avec le plus grand soin.",
     "errorTitle": "Envoi impossible",
-    "errorText": "Une erreur est survenue. Vous pouvez réessayer ; si cela persiste, écrivez-nous à info@ezra-project.fr.",
+    "errorText": "Une erreur est survenue. Vous pouvez réessayer ; si cela persiste, écrivez-nous à info@ezra-project.fr.",
     "expiredTitle": "Accès expiré ou désactivé",
     "expiredText": "Cet accès n'est plus valide. Contactez votre conseiller EZRA MAROC pour en obtenir un nouveau.",
     "reviewTitle": "Vérifiez vos réponses",
@@ -44,13 +44,12 @@
     "errCodeFormat": "Le mot de passe comporte 8 caractères (lettres et chiffres).",
     "errCodeWrong": "Mot de passe incorrect. Il vous reste {n} essai(s).",
     "lockedTitle": "Accès bloqué",
-    "lockedText": "Trop de mots de passe incorrects ont été saisis : pour votre sécurité, cet accès a été bloqué. Contactez votre conseiller EZRA MAROC pour en obtenir un nouveau.",
+    "lockedText": "Trop de mots de passe incorrects ont été saisis : pour votre sécurité, cet accès a été bloqué. Contactez votre conseiller EZRA MAROC pour en obtenir un nouveau.",
     "usedTitle": "Questionnaire déjà envoyé",
-    "usedText": "Ce questionnaire a déjà été rempli et envoyé. Merci ! Pour modifier une réponse, écrivez-nous à info@ezra-project.fr.",
+    "usedText": "Ce questionnaire a déjà été rempli et envoyé. Merci ! Pour modifier une réponse, écrivez-nous à info@ezra-project.fr.",
     "errBot": "La vérification anti-robot n'a pas abouti. Merci de réessayer dans quelques secondes.",
     "errNetwork": "Connexion impossible. Vérifiez votre connexion internet, puis réessayez.",
-    "sessionExpired": "Pour votre sécurité, votre session a expiré. Reconnectez-vous : vos réponses sont conservées.",
-    "secureNote": "Connexion sécurisée : vos réponses sont chiffrées et ne sont lues que par l'équipe EZRA MAROC.",
+    "sessionExpired": "Pour votre sécurité, votre session a expiré. Reconnectez-vous : vos réponses sont conservées.",
     "loginTitle": "Connexion à votre Espace client",
     "loginText": "Saisissez l'adresse e-mail à laquelle vous avez reçu nos messages et le mot de passe que nous vous avons envoyé dans un e-mail séparé.",
     "emailLabel": "Adresse e-mail (identifiant)",
@@ -59,8 +58,34 @@
     "errLogin": "Adresse e-mail ou mot de passe incorrect. Utilisez l'adresse à laquelle vous avez reçu nos messages.",
     "showPassword": "Afficher le mot de passe",
     "hidePassword": "Masquer le mot de passe",
-    "noAccess": "Pas encore d'identifiants ? L'accès à l'Espace client est ouvert par notre équipe après un premier échange.",
-    "noAccessLink": "Nous contacter"
+    "noAccess": "Pas encore d'identifiants ? L'accès à l'Espace client est ouvert par notre équipe après un premier échange.",
+    "noAccessLink": "Nous contacter",
+    "welcomeTitle": "Bienvenue",
+    "welcomeText": "Ce questionnaire nous permet d'établir une première évaluation de votre éligibilité à la nationalité marocaine. Répondez avec le plus de précision possible : c'est la base de notre analyse.",
+    "step1Title": "Connectez-vous",
+    "step1Text": "Avec votre adresse e-mail et le mot de passe reçu dans un e-mail séparé.",
+    "step2Title": "Répondez au questionnaire",
+    "step2Text": "5 courtes étapes, environ 10 minutes. Vous pouvez revenir aux étapes précédentes à tout moment.",
+    "step3Title": "Envoyez vos réponses",
+    "step3Text": "En une seule fois. Notre équipe vous recontacte sous 72 heures ouvrables.",
+    "trust1": "Connexion chiffrée",
+    "trust2": "Réponses lues uniquement par l'équipe EZRA MAROC",
+    "trust3": "Vos réponses ne sont pas conservées sur votre appareil",
+    "emailPlaceholder": "vous@exemple.com",
+    "stepOf": "Étape {n} sur {total}",
+    "stepReview": "Vérification",
+    "stepsLabel": "Étapes du questionnaire",
+    "stepDone": "terminée",
+    "requiredNote": "Toutes les questions sont obligatoires, sauf celles marquées (facultatif).",
+    "toReview": "Vérifier mes réponses",
+    "backToReview": "Revenir à la vérification",
+    "reviewIntro": "Relisez vos réponses avant de les envoyer : chaque étape reste modifiable jusqu'à l'envoi.",
+    "submitNote": "L'envoi est définitif : vous ne pourrez plus modifier vos réponses en ligne. Pour toute correction ensuite, écrivez-nous à info@ezra-project.fr.",
+    "nextTitle": "Et maintenant ?",
+    "next1": "Notre équipe étudie votre questionnaire avec attention.",
+    "next2": "Nous vous contactons sous 72 heures ouvrables.",
+    "next3": "Nous échangeons ensemble, en toute confidentialité, sur la suite de votre démarche.",
+    "homeLink": "Retour à l'accueil"
   },
   "optionLists": {
     "pays": [
@@ -236,29 +261,34 @@
     {
       "id": "identite",
       "num": "I",
-      "title": "Identité"
+      "title": "Identité",
+      "short": "Identité"
     },
     {
       "id": "famille",
       "num": "II",
-      "title": "Situation familiale et professionnelle"
+      "title": "Situation familiale et professionnelle",
+      "short": "Famille & travail"
     },
     {
       "id": "projet",
       "num": "III",
       "title": "Votre projet et vos liens avec le Maroc",
-      "intro": "Détaillez votre projet (personnel, professionnel ou familial) en lien avec le Maroc et la nature de vos liens avec le pays."
+      "intro": "Détaillez votre projet (personnel, professionnel ou familial) en lien avec le Maroc et la nature de vos liens avec le pays.",
+      "short": "Projet & Maroc"
     },
     {
       "id": "complements",
       "num": "IV",
       "title": "Informations complémentaires",
-      "intro": "Quelques précisions administratives et personnelles utiles à l'instruction de votre dossier."
+      "intro": "Quelques précisions administratives et personnelles utiles à l'instruction de votre dossier.",
+      "short": "Compléments"
     },
     {
       "id": "consentement",
       "num": "V",
-      "title": "Consentement"
+      "title": "Consentement",
+      "short": "Consentement"
     }
   ],
   "questions": [
@@ -269,7 +299,8 @@
       "required": true,
       "label": "Nom",
       "text": "Votre nom",
-      "autocomplete": "family-name"
+      "autocomplete": "family-name",
+      "width": "half"
     },
     {
       "id": "prenom",
@@ -278,7 +309,8 @@
       "required": true,
       "label": "Prénom",
       "text": "Votre prénom",
-      "autocomplete": "given-name"
+      "autocomplete": "given-name",
+      "width": "half"
     },
     {
       "id": "date_naissance",
@@ -286,7 +318,8 @@
       "type": "date",
       "required": true,
       "label": "Date de naissance",
-      "text": "Votre date de naissance"
+      "text": "Votre date de naissance",
+      "width": "half"
     },
     {
       "id": "ville_naissance",
@@ -294,7 +327,8 @@
       "type": "text",
       "required": true,
       "label": "Ville de naissance",
-      "text": "Votre ville de naissance"
+      "text": "Votre ville de naissance",
+      "width": "half"
     },
     {
       "id": "pays_naissance",
@@ -303,7 +337,8 @@
       "required": true,
       "label": "Pays de naissance",
       "text": "Votre pays de naissance",
-      "optionsRef": "pays"
+      "optionsRef": "pays",
+      "width": "half"
     },
     {
       "id": "nationalites",
@@ -312,7 +347,7 @@
       "required": true,
       "other": true,
       "label": "Nationalité(s) actuelle(s)",
-      "text": "Quelle est votre (vos) nationalité(s) actuelle(s) ?",
+      "text": "Quelle est votre (vos) nationalité(s) actuelle(s) ?",
       "optionsRef": "nationalites"
     },
     {
@@ -321,7 +356,7 @@
       "type": "single",
       "required": true,
       "label": "A déjà possédé une autre nationalité",
-      "text": "Avez-vous déjà possédé une autre nationalité ?",
+      "text": "Avez-vous déjà possédé une autre nationalité ?",
       "options": [
         {
           "id": "oui",
@@ -344,7 +379,8 @@
       "required": true,
       "label": "Pays de résidence actuel",
       "text": "Votre pays de résidence actuel",
-      "optionsRef": "pays"
+      "optionsRef": "pays",
+      "width": "half"
     },
     {
       "id": "date_residence",
@@ -352,7 +388,8 @@
       "type": "date",
       "required": true,
       "label": "Réside dans ce pays depuis",
-      "text": "Depuis quelle date résidez-vous dans ce pays ?"
+      "text": "Depuis quelle date résidez-vous dans ce pays ?",
+      "width": "half"
     },
     {
       "id": "email",
@@ -361,7 +398,8 @@
       "required": true,
       "label": "Email",
       "text": "Votre adresse email",
-      "autocomplete": "email"
+      "autocomplete": "email",
+      "width": "half"
     },
     {
       "id": "telephone",
@@ -371,7 +409,8 @@
       "label": "Téléphone",
       "text": "Votre numéro de téléphone (avec l'indicatif)",
       "autocomplete": "tel",
-      "placeholder": "+33 6 12 34 56 78"
+      "placeholder": "+33 6 12 34 56 78",
+      "width": "half"
     },
     {
       "id": "situation_familiale",
@@ -379,7 +418,7 @@
       "type": "single",
       "required": true,
       "label": "Situation familiale",
-      "text": "Quelle est votre situation familiale ?",
+      "text": "Quelle est votre situation familiale ?",
       "options": [
         {
           "id": "celibataire",
@@ -413,14 +452,15 @@
       "type": "text",
       "required": true,
       "label": "Nationalité du conjoint",
-      "text": "Quelle est la nationalité de votre conjoint ?",
+      "text": "Quelle est la nationalité de votre conjoint ?",
       "showIf": {
         "q": "situation_familiale",
         "in": [
           "marie",
           "pacse"
         ]
-      }
+      },
+      "width": "half"
     },
     {
       "id": "enfants",
@@ -428,7 +468,7 @@
       "type": "single",
       "required": true,
       "label": "A des enfants",
-      "text": "Avez-vous des enfants ?",
+      "text": "Avez-vous des enfants ?",
       "options": [
         {
           "id": "oui",
@@ -450,7 +490,8 @@
       "type": "text",
       "required": false,
       "label": "Secteur professionnel",
-      "text": "Votre secteur professionnel"
+      "text": "Votre secteur professionnel",
+      "width": "half"
     },
     {
       "id": "motivations",
@@ -458,7 +499,7 @@
       "type": "multi",
       "required": true,
       "label": "Motivations",
-      "text": "Pourquoi souhaitez-vous obtenir la nationalité marocaine ?",
+      "text": "Pourquoi souhaitez-vous obtenir la nationalité marocaine ?",
       "help": "Sélectionnez toutes les raisons qui s'appliquent à votre situation.",
       "options": [
         {
@@ -485,7 +526,7 @@
       "type": "single",
       "required": true,
       "label": "Ascendants marocains",
-      "text": "Avez-vous des ascendants (parents, grands-parents, arrière-grands-parents) de nationalité marocaine ?",
+      "text": "Avez-vous des ascendants (parents, grands-parents, arrière-grands-parents) de nationalité marocaine ?",
       "help": "Selon le Code de la nationalité marocaine, la nationalité se transmet principalement par filiation (droit du sang).",
       "options": [
         {
@@ -564,7 +605,7 @@
       "type": "single",
       "required": true,
       "label": "Documents marocains anciens de l'ascendant",
-      "text": "Disposez-vous de documents d'identité marocains anciens concernant cet ascendant, ou pourriez-vous vous en procurer ?",
+      "text": "Disposez-vous de documents d'identité marocains anciens concernant cet ascendant, ou pourriez-vous vous en procurer ?",
       "showIf": {
         "q": "ascendants_marocains",
         "in": [
@@ -600,7 +641,7 @@
       "type": "multi",
       "required": true,
       "label": "Type de documents disponibles",
-      "text": "Quel type de document pourriez-vous fournir ?",
+      "text": "Quel type de document pourriez-vous fournir ?",
       "showIf": {
         "q": "documents_anciens",
         "in": [
@@ -669,7 +710,7 @@
       "type": "single",
       "required": false,
       "label": "A déjà voyagé au Maroc",
-      "text": "Avez-vous déjà voyagé au Maroc ?",
+      "text": "Avez-vous déjà voyagé au Maroc ?",
       "options": [
         {
           "id": "oui",
@@ -691,7 +732,7 @@
       "type": "single",
       "required": true,
       "label": "A déjà résidé au Maroc",
-      "text": "Avez-vous déjà résidé au Maroc ?",
+      "text": "Avez-vous déjà résidé au Maroc ?",
       "options": [
         {
           "id": "oui",
@@ -713,7 +754,7 @@
       "type": "multi",
       "required": true,
       "label": "Langues parlées",
-      "text": "Quelles langues parlez-vous ?",
+      "text": "Quelles langues parlez-vous ?",
       "options": [
         {
           "id": "arabe_classique",
@@ -747,7 +788,7 @@
       "type": "single",
       "required": true,
       "label": "Famille proche au Maroc",
-      "text": "Avez-vous de la famille proche (parents, frères/sœurs, enfants, conjoint) résidant au Maroc ?",
+      "text": "Avez-vous de la famille proche (parents, frères/sœurs, enfants, conjoint) résidant au Maroc ?",
       "options": [
         {
           "id": "oui",
@@ -769,7 +810,7 @@
       "type": "single",
       "required": false,
       "label": "Condamnation à signaler",
-      "text": "Votre dossier comporte-t-il une condamnation dont il serait important de tenir compte ?",
+      "text": "Votre dossier comporte-t-il une condamnation dont il serait important de tenir compte ?",
       "options": [
         {
           "id": "oui",
@@ -791,7 +832,7 @@
       "type": "single",
       "required": false,
       "label": "Demande de naturalisation ailleurs",
-      "text": "Avez-vous déjà fait une demande de naturalisation dans un autre pays ?",
+      "text": "Avez-vous déjà fait une demande de naturalisation dans un autre pays ?",
       "options": [
         {
           "id": "oui",
@@ -813,7 +854,7 @@
       "type": "single",
       "required": true,
       "label": "Comment a connu EZRA",
-      "text": "Comment avez-vous connu EZRA MAROC PROJECT ?",
+      "text": "Comment avez-vous connu EZRA MAROC PROJECT ?",
       "options": [
         {
           "id": "internet",
@@ -843,7 +884,7 @@
       "type": "single",
       "required": false,
       "label": "Influenceur",
-      "text": "Nous avez-vous découverts grâce à un influenceur ?",
+      "text": "Nous avez-vous découverts grâce à un influenceur ?",
       "options": [
         {
           "id": "pink_tarbouche",
@@ -865,7 +906,7 @@
       "type": "paragraph",
       "required": false,
       "label": "Informations complémentaires",
-      "text": "Avez-vous des informations complémentaires utiles à l'évaluation de votre éligibilité ?",
+      "text": "Avez-vous des informations complémentaires utiles à l'évaluation de votre éligibilité ?",
       "placeholder": "Laissez vide si rien à signaler."
     },
     {
@@ -874,7 +915,7 @@
       "type": "single",
       "required": true,
       "label": "Consentement au contact et à l'évaluation",
-      "text": "Acceptez-vous que vos données soient utilisées par EZRA MAROC PROJECT pour vous contacter et évaluer votre éligibilité à la nationalité marocaine ?",
+      "text": "Acceptez-vous que vos données soient utilisées par EZRA MAROC PROJECT pour vous contacter et évaluer votre éligibilité à la nationalité marocaine ?",
       "options": [
         {
           "id": "oui",
@@ -892,7 +933,7 @@
       "type": "single",
       "required": false,
       "label": "Consentement à la conservation (2 ans)",
-      "text": "Autorisez-vous EZRA MAROC PROJECT à conserver vos données pour une durée maximale de 2 ans, à des fins d'analyse et d'amélioration de ses services ?",
+      "text": "Autorisez-vous EZRA MAROC PROJECT à conserver vos données pour une durée maximale de 2 ans, à des fins d'analyse et d'amélioration de ses services ?",
       "options": [
         {
           "id": "oui",

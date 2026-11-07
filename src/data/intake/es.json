@@ -6,7 +6,7 @@
     "h1": "Área de cliente",
     "noscript": "El Área de cliente requiere JavaScript. Actívelo en su navegador o escríbanos a info@ezra-project.fr.",
     "title": "Cuestionario de elegibilidad — EZRA MAROC",
-    "intro": "En su Área de cliente puede completar nuestro cuestionario detallado de elegibilidad (entre 5 y 10 minutos). Nos permite realizar una evaluación preliminar de su elegibilidad para adquirir la nacionalidad marroquí: le rogamos que responda con la mayor precisión posible, para que podamos llevar a cabo un análisis riguroso y mantener con usted una primera conversación confidencial.",
+    "intro": "Su cuestionario detallado de elegibilidad, con total confidencialidad.",
     "privacy": "Sus datos se tratan de forma estrictamente confidencial, de conformidad con el RGPD, y nunca se comparten sin su consentimiento explícito. Para ejercer sus derechos: info@ezra-project.fr."
   },
   "ui": {
@@ -27,7 +27,7 @@
     "errDate": "Por favor, indique una fecha válida.",
     "sending": "Enviando…",
     "successTitle": "Cuestionario recibido",
-    "successText": "Gracias. Hemos recibido su solicitud y la trataremos con el mayor cuidado. Un miembro de nuestro equipo se pondrá en contacto con usted en un plazo de 72 horas hábiles para una primera conversación.",
+    "successText": "Gracias, hemos recibido sus respuestas. Las estudiaremos con el mayor cuidado.",
     "errorTitle": "No se ha podido enviar",
     "errorText": "Se ha producido un error. Puede volver a intentarlo; si el problema persiste, escríbanos a info@ezra-project.fr.",
     "expiredTitle": "Acceso expirado o desactivado",
@@ -50,7 +50,6 @@
     "errBot": "La verificación anti-robot no ha podido completarse. Vuelva a intentarlo dentro de unos segundos.",
     "errNetwork": "No se ha podido conectar. Compruebe su conexión a internet y vuelva a intentarlo.",
     "sessionExpired": "Por motivos de seguridad, su sesión ha expirado. Vuelva a iniciar sesión: sus respuestas se conservan.",
-    "secureNote": "Conexión segura: sus respuestas están cifradas y solo las lee el equipo de EZRA MAROC.",
     "loginTitle": "Acceso a su Área de cliente",
     "loginText": "Introduzca la dirección de correo electrónico en la que recibió nuestros mensajes y la contraseña que le enviamos en un correo aparte.",
     "emailLabel": "Correo electrónico (usuario)",
@@ -60,7 +59,33 @@
     "showPassword": "Mostrar la contraseña",
     "hidePassword": "Ocultar la contraseña",
     "noAccess": "¿Todavía no tiene credenciales? Nuestro equipo abre el acceso al Área de cliente tras una primera conversación.",
-    "noAccessLink": "Contactar"
+    "noAccessLink": "Contactar",
+    "welcomeTitle": "Le damos la bienvenida",
+    "welcomeText": "Este cuestionario nos permite realizar una primera evaluación de su elegibilidad para la nacionalidad marroquí. Responda con la mayor precisión posible: es la base de nuestro análisis.",
+    "step1Title": "Inicie sesión",
+    "step1Text": "Con su dirección de correo electrónico y la contraseña que recibió en un correo aparte.",
+    "step2Title": "Responda al cuestionario",
+    "step2Text": "5 etapas breves, unos 10 minutos. Puede volver a las etapas anteriores en cualquier momento.",
+    "step3Title": "Envíe sus respuestas",
+    "step3Text": "Una sola vez. Nuestro equipo se pondrá en contacto con usted en un plazo de 72 horas hábiles.",
+    "trust1": "Conexión cifrada",
+    "trust2": "Solo el equipo de EZRA MAROC lee sus respuestas",
+    "trust3": "Sus respuestas no se guardan en su dispositivo",
+    "emailPlaceholder": "usted@ejemplo.com",
+    "stepOf": "Etapa {n} de {total}",
+    "stepReview": "Revisión",
+    "stepsLabel": "Etapas del cuestionario",
+    "stepDone": "completada",
+    "requiredNote": "Todas las preguntas son obligatorias, salvo las marcadas como (opcional).",
+    "toReview": "Revisar mis respuestas",
+    "backToReview": "Volver a la revisión",
+    "reviewIntro": "Revise sus respuestas antes de enviarlas: puede modificar cada etapa hasta el envío.",
+    "submitNote": "El envío es definitivo: después no podrá modificar sus respuestas en línea. Para cualquier corrección posterior, escríbanos a info@ezra-project.fr.",
+    "nextTitle": "¿Y ahora?",
+    "next1": "Nuestro equipo estudia su cuestionario con atención.",
+    "next2": "Nos pondremos en contacto con usted en un plazo de 72 horas hábiles.",
+    "next3": "Mantendremos una primera conversación confidencial sobre los siguientes pasos.",
+    "homeLink": "Volver al inicio"
   },
   "optionLists": {
     "pays": [
@@ -236,29 +261,34 @@
     {
       "id": "identite",
       "num": "I",
-      "title": "Identidad"
+      "title": "Identidad",
+      "short": "Identidad"
     },
     {
       "id": "famille",
       "num": "II",
-      "title": "Situación familiar y profesional"
+      "title": "Situación familiar y profesional",
+      "short": "Familia y trabajo"
     },
     {
       "id": "projet",
       "num": "III",
       "title": "Su proyecto y sus vínculos con Marruecos",
-      "intro": "Describa su proyecto (personal, profesional o familiar) relacionado con Marruecos y la naturaleza de sus vínculos con el país."
+      "intro": "Describa su proyecto (personal, profesional o familiar) relacionado con Marruecos y la naturaleza de sus vínculos con el país.",
+      "short": "Proyecto y Marruecos"
     },
     {
       "id": "complements",
       "num": "IV",
       "title": "Información complementaria",
-      "intro": "Algunos datos administrativos y personales útiles para el estudio de su expediente."
+      "intro": "Algunos datos administrativos y personales útiles para el estudio de su expediente.",
+      "short": "Complementos"
     },
     {
       "id": "consentement",
       "num": "V",
-      "title": "Consentimiento"
+      "title": "Consentimiento",
+      "short": "Consentimiento"
     }
   ],
   "questions": [
@@ -269,7 +299,8 @@
       "required": true,
       "label": "Apellidos",
       "text": "Sus apellidos",
-      "autocomplete": "family-name"
+      "autocomplete": "family-name",
+      "width": "half"
     },
     {
       "id": "prenom",
@@ -278,7 +309,8 @@
       "required": true,
       "label": "Nombre",
       "text": "Su nombre",
-      "autocomplete": "given-name"
+      "autocomplete": "given-name",
+      "width": "half"
     },
     {
       "id": "date_naissance",
@@ -286,7 +318,8 @@
       "type": "date",
       "required": true,
       "label": "Fecha de nacimiento",
-      "text": "Su fecha de nacimiento"
+      "text": "Su fecha de nacimiento",
+      "width": "half"
     },
     {
       "id": "ville_naissance",
@@ -294,7 +327,8 @@
       "type": "text",
       "required": true,
       "label": "Ciudad de nacimiento",
-      "text": "Su ciudad de nacimiento"
+      "text": "Su ciudad de nacimiento",
+      "width": "half"
     },
     {
       "id": "pays_naissance",
@@ -303,7 +337,8 @@
       "required": true,
       "label": "País de nacimiento",
       "text": "Su país de nacimiento",
-      "optionsRef": "pays"
+      "optionsRef": "pays",
+      "width": "half"
     },
     {
       "id": "nationalites",
@@ -344,7 +379,8 @@
       "required": true,
       "label": "País de residencia actual",
       "text": "Su país de residencia actual",
-      "optionsRef": "pays"
+      "optionsRef": "pays",
+      "width": "half"
     },
     {
       "id": "date_residence",
@@ -352,7 +388,8 @@
       "type": "date",
       "required": true,
       "label": "Reside en este país desde",
-      "text": "¿Desde qué fecha reside en este país?"
+      "text": "¿Desde qué fecha reside en este país?",
+      "width": "half"
     },
     {
       "id": "email",
@@ -361,7 +398,8 @@
       "required": true,
       "label": "Correo electrónico",
       "text": "Su dirección de correo electrónico",
-      "autocomplete": "email"
+      "autocomplete": "email",
+      "width": "half"
     },
     {
       "id": "telephone",
@@ -371,7 +409,8 @@
       "label": "Teléfono",
       "text": "Su número de teléfono (con el prefijo internacional)",
       "autocomplete": "tel",
-      "placeholder": "+34 612 34 56 78"
+      "placeholder": "+34 612 34 56 78",
+      "width": "half"
     },
     {
       "id": "situation_familiale",
@@ -420,7 +459,8 @@
           "marie",
           "pacse"
         ]
-      }
+      },
+      "width": "half"
     },
     {
       "id": "enfants",
@@ -450,7 +490,8 @@
       "type": "text",
       "required": false,
       "label": "Sector profesional",
-      "text": "Su sector profesional"
+      "text": "Su sector profesional",
+      "width": "half"
     },
     {
       "id": "motivations",

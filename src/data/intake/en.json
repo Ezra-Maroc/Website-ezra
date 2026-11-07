@@ -6,7 +6,7 @@
     "h1": "Client Area",
     "noscript": "The Client Area requires JavaScript. Please enable it in your browser, or write to us at info@ezra-project.fr.",
     "title": "Eligibility Questionnaire — EZRA MAROC",
-    "intro": "In your Client Area, you complete our in-depth eligibility questionnaire (5 to 10 minutes). It allows us to make a preliminary assessment of your eligibility to acquire Moroccan nationality: please answer as accurately as possible, so that we can carry out a rigorous analysis and hold a first confidential discussion with you.",
+    "intro": "Your in-depth eligibility questionnaire, in complete confidentiality.",
     "privacy": "Your data is processed in strict confidence, in accordance with the GDPR, and is never shared without your explicit consent. To exercise your rights: info@ezra-project.fr."
   },
   "ui": {
@@ -27,7 +27,7 @@
     "errDate": "Please enter a valid date.",
     "sending": "Sending…",
     "successTitle": "Questionnaire received",
-    "successText": "Thank you. Your request has been received and will be handled with the utmost care. A member of our team will contact you within 72 business hours for a first discussion.",
+    "successText": "Thank you, we have received your answers. They will be reviewed with the utmost care.",
     "errorTitle": "Unable to send",
     "errorText": "An error occurred. You can try again; if the problem persists, please write to us at info@ezra-project.fr.",
     "expiredTitle": "Access expired or deactivated",
@@ -50,7 +50,6 @@
     "errBot": "The anti-bot check could not be completed. Please try again in a few seconds.",
     "errNetwork": "Unable to connect. Please check your internet connection, then try again.",
     "sessionExpired": "For your security, your session has expired. Please sign in again: your answers have been preserved.",
-    "secureNote": "Secure connection: your answers are encrypted and are read only by the EZRA MAROC team.",
     "loginTitle": "Sign in to your Client Area",
     "loginText": "Enter the email address at which you received our messages and the password we sent you in a separate email.",
     "emailLabel": "Email address (username)",
@@ -60,7 +59,33 @@
     "showPassword": "Show password",
     "hidePassword": "Hide password",
     "noAccess": "No login details yet? Access to the Client Area is opened by our team after a first conversation.",
-    "noAccessLink": "Contact us"
+    "noAccessLink": "Contact us",
+    "welcomeTitle": "Welcome",
+    "welcomeText": "This questionnaire allows us to make a first assessment of your eligibility for Moroccan nationality. Please answer as accurately as possible: it is the basis of our analysis.",
+    "step1Title": "Sign in",
+    "step1Text": "With your email address and the password you received in a separate email.",
+    "step2Title": "Answer the questionnaire",
+    "step2Text": "5 short steps, about 10 minutes. You can go back to previous steps at any time.",
+    "step3Title": "Send your answers",
+    "step3Text": "Just once. Our team will get back to you within 72 business hours.",
+    "trust1": "Encrypted connection",
+    "trust2": "Your answers are read only by the EZRA MAROC team",
+    "trust3": "Your answers are not kept on your device",
+    "emailPlaceholder": "you@example.com",
+    "stepOf": "Step {n} of {total}",
+    "stepReview": "Review",
+    "stepsLabel": "Questionnaire steps",
+    "stepDone": "completed",
+    "requiredNote": "All questions are required unless marked (optional).",
+    "toReview": "Review my answers",
+    "backToReview": "Back to review",
+    "reviewIntro": "Check your answers before sending them: you can edit any step until you send.",
+    "submitNote": "Sending is final: you will no longer be able to change your answers online. For any later correction, email us at info@ezra-project.fr.",
+    "nextTitle": "What happens next?",
+    "next1": "Our team carefully reviews your questionnaire.",
+    "next2": "We will contact you within 72 business hours.",
+    "next3": "We will have a first confidential conversation about the next steps.",
+    "homeLink": "Back to home page"
   },
   "optionLists": {
     "pays": [
@@ -236,29 +261,34 @@
     {
       "id": "identite",
       "num": "I",
-      "title": "Personal information"
+      "title": "Personal information",
+      "short": "Identity"
     },
     {
       "id": "famille",
       "num": "II",
-      "title": "Family and professional situation"
+      "title": "Family and professional situation",
+      "short": "Family & work"
     },
     {
       "id": "projet",
       "num": "III",
       "title": "Your plans and your ties to Morocco",
-      "intro": "Please describe your plans (personal, professional or family-related) in connection with Morocco, and the nature of your ties to the country."
+      "intro": "Please describe your plans (personal, professional or family-related) in connection with Morocco, and the nature of your ties to the country.",
+      "short": "Project & Morocco"
     },
     {
       "id": "complements",
       "num": "IV",
       "title": "Additional information",
-      "intro": "A few administrative and personal details that will help us review your file."
+      "intro": "A few administrative and personal details that will help us review your file.",
+      "short": "Additional info"
     },
     {
       "id": "consentement",
       "num": "V",
-      "title": "Consent"
+      "title": "Consent",
+      "short": "Consent"
     }
   ],
   "questions": [
@@ -269,7 +299,8 @@
       "required": true,
       "label": "Surname",
       "text": "Your surname",
-      "autocomplete": "family-name"
+      "autocomplete": "family-name",
+      "width": "half"
     },
     {
       "id": "prenom",
@@ -278,7 +309,8 @@
       "required": true,
       "label": "First name",
       "text": "Your first name",
-      "autocomplete": "given-name"
+      "autocomplete": "given-name",
+      "width": "half"
     },
     {
       "id": "date_naissance",
@@ -286,7 +318,8 @@
       "type": "date",
       "required": true,
       "label": "Date of birth",
-      "text": "Your date of birth"
+      "text": "Your date of birth",
+      "width": "half"
     },
     {
       "id": "ville_naissance",
@@ -294,7 +327,8 @@
       "type": "text",
       "required": true,
       "label": "City of birth",
-      "text": "Your city of birth"
+      "text": "Your city of birth",
+      "width": "half"
     },
     {
       "id": "pays_naissance",
@@ -303,7 +337,8 @@
       "required": true,
       "label": "Country of birth",
       "text": "Your country of birth",
-      "optionsRef": "pays"
+      "optionsRef": "pays",
+      "width": "half"
     },
     {
       "id": "nationalites",
@@ -344,7 +379,8 @@
       "required": true,
       "label": "Current country of residence",
       "text": "Your current country of residence",
-      "optionsRef": "pays"
+      "optionsRef": "pays",
+      "width": "half"
     },
     {
       "id": "date_residence",
@@ -352,7 +388,8 @@
       "type": "date",
       "required": true,
       "label": "Resident in this country since",
-      "text": "Since what date have you been living in this country?"
+      "text": "Since what date have you been living in this country?",
+      "width": "half"
     },
     {
       "id": "email",
@@ -361,7 +398,8 @@
       "required": true,
       "label": "Email",
       "text": "Your email address",
-      "autocomplete": "email"
+      "autocomplete": "email",
+      "width": "half"
     },
     {
       "id": "telephone",
@@ -371,7 +409,8 @@
       "label": "Phone",
       "text": "Your phone number (with country code)",
       "autocomplete": "tel",
-      "placeholder": "+1 555 123 4567"
+      "placeholder": "+1 555 123 4567",
+      "width": "half"
     },
     {
       "id": "situation_familiale",
@@ -420,7 +459,8 @@
           "marie",
           "pacse"
         ]
-      }
+      },
+      "width": "half"
     },
     {
       "id": "enfants",
@@ -450,7 +490,8 @@
       "type": "text",
       "required": false,
       "label": "Field of work",
-      "text": "Your field of work"
+      "text": "Your field of work",
+      "width": "half"
     },
     {
       "id": "motivations",

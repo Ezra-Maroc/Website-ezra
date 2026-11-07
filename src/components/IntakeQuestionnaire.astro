@@ -1,7 +1,8 @@
 ---
 // Espace client : questionnaire d'eligibilite approfondi des prospects invites, commun aux 5 langues.
 // Connexion par identifiants (adresse e-mail + mot de passe propose par EZRA) ou par lien direct + mot de passe.
-// `data` = textes de la langue de la page (src/data/intake/<langue>.json).
+// `data` = textes de la langue de la page (src/data/intake/<langue>.json). Tout l'affichage (connexion, etapes,
+// verification, confirmation) est construit par public/js/intake-form.js ; styles : public/styles/intake.css.
 // Le recapitulatif de l'equipe est compose par le serveur, en francais, a partir des reponses validees.
 // Securite : jeton du lien direct apres le # (jamais envoye au serveur web), CSP stricte ajoutee apres le
 // build (scripts/intake-csp.mjs), page noindex/nofollow hors plan du site, rien d'ecrit dans le navigateur.
@@ -13,11 +14,12 @@ interface Props {
 }
 const { data } = Astro.props;
 const contactUrl = getPageUrl('contact', data.meta.lang);
+const homeUrl = getPageUrl('home', data.meta.lang);
 // JSON embarque dans la page (aucune requete en plus) ; "<" echappe pour ne jamais fermer la balise script
 const toJson = (value: unknown) => JSON.stringify(value).replace(/</g, '\\u003c');
 ---
 
-<main id="main-content" class="page-banner">
+<main id="main-content" class="page-banner intake-hero">
   <div class="container">
     <h1>{data.meta.h1}</h1>
     <p>{data.meta.intro}</p>
@@ -26,7 +28,7 @@ const toJson = (value: unknown) => JSON.stringify(value).replace(/</g, '\\u003c'
 
 <section class="section intake-section-page">
   <div class="container">
-    <div class="intake-card" id="intake-app" data-endpoint={INTAKE_ENDPOINT} data-sitekey={INTAKE_SITEKEY} data-contact={contactUrl} aria-live="polite">
+    <div class="intake-card" id="intake-app" data-endpoint={INTAKE_ENDPOINT} data-sitekey={INTAKE_SITEKEY} data-contact={contactUrl} data-home={homeUrl}>
       <noscript><p>{data.meta.noscript}</p></noscript>
     </div>
     <p class="intake-privacy"><i class="fa-solid fa-lock" aria-hidden="true"></i> {data.meta.privacy}</p>

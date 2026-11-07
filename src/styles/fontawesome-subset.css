@@ -431,6 +431,8 @@
   content: "\f52b"; }
 .fa-flag-checkered::before {
   content: "\f11e"; }
+.fa-laptop::before {
+  content: "\f109"; }
 .fa-landmark-flag::before {
   content: "\e51c"; }
 .fa-comments::before {
@@ -487,8 +489,6 @@
   content: "\f2b5"; }
 .fa-gem::before {
   content: "\f3a5"; }
-.fa-circle-check::before {
-  content: "\f058"; }
 .fa-check-circle::before {
   content: "\f058"; }
 .fa-user-tie::before {
@@ -527,10 +527,14 @@
   content: "\f5b0"; }
 .fa-eye::before {
   content: "\f06e"; }
+.fa-pen::before {
+  content: "\f304"; }
 .fa-comment-dots::before {
   content: "\f4ad"; }
 .fa-redo::before {
   content: "\f01e"; }
+.fa-phone::before {
+  content: "\f095"; }
 .fa-quote-right::before {
   content: "\f10e"; }
 .fa-arrow-left::before {
@@ -587,6 +591,8 @@
   content: "\f078"; }
 .fa-list-check::before {
   content: "\f0ae"; }
+.fa-user-shield::before {
+  content: "\f505"; }
 .fa-quote-left::before {
   content: "\f10d"; }
 .fa-tractor::before {
