@@ -140,13 +140,13 @@ export function preAnalyse(raw) {
       strengths.push(`Élément très fort : ${featured === 'livret' ? 'livret de famille marocain' : 'CIN ou ancien passeport marocain'} ${parent} disponible (${featured === 'livret' ? 'numéros d’actes de toute la famille' : 'preuve directe de nationalité, numéro exploitable'})`);
     }
     for (const d of order) if (d !== featured) strengths.push(DOC_FORT[d]);
-    if (docs.includes('livret') && !docs.includes('acte_naissance')) todo.push('Relever les numéros d’actes dans le livret puis commander les actes (Watiqa)');
+    if (docs.includes('livret') && !docs.includes('acte_naissance')) todo.push('Relever les numéros d’actes dans le livret puis commander les actes à l’état civil marocain');
     if (docs.includes('acte_naissance')) todo.push('Demander une copie intégrale récente de l’acte de naissance marocain');
     if (docs.includes('identite')) todo.push('Obtenir une copie de l’ancienne CIN ou du passeport (numéro utile aux recherches)');
   } else if (a.documents) {
     add('Documents marocains', 'aucun pour l’instant', 0, DOCS_MAX);
     warnings.push('Aucun document marocain pour l’instant');
-    todo.push('Recherche d’actes à prévoir (Watiqa, état civil marocain, archives consulaires)');
+    todo.push('Recherche d’actes à prévoir (état civil marocain, archives consulaires)');
   }
 
   if (a.liens) {
