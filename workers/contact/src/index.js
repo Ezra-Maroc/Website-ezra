@@ -1,7 +1,9 @@
 // Formulaire de contact d'ezra-maroc.com (fonction Cloudflare Workers, remplace Formspree).
 // Recoit le JSON envoye par public/js/contact-form*.js, verifie l'anti-robot Turnstile cote serveur, puis envoie
 // le message par e-mail. Le binding EMAIL (wrangler.jsonc) ne peut ecrire qu'a info@ezra-project.fr : meme
-// detournee, la fonction ne peut pas servir a envoyer du courrier ailleurs. Rien n'est stocke.
+// detournee, la fonction ne peut pas servir a envoyer du courrier ailleurs. Une copie CHIFFREE de la demande
+// (cle publique du logiciel EZRA, table leads) attend que le logiciel la recupere pour creer le prospect ; elle
+// est alors effacee (au plus tard apres 60 jours). Rien n'est stocke en clair.
 // Reponses au format attendu par les scripts du site : 200 {"ok":true}, sinon {"message": "..."}.
 // Envoi depuis le test d'eligibilite : pre-analyse interne (note + points forts / vigilance) en tete de l'e-mail,
 // calculee dans preanalyse.js a partir des reponses brutes (champ cache _elig).
@@ -10,6 +12,7 @@
 import { preAnalyse } from './preanalyse.js';
 import { allowedOrigins, corsHeaders, json, escapeHtml, verifyTurnstile } from './shared.js';
 import { handleIntake, scheduledPurge } from './intake/handler.js';
+import { b64uEncode, sealForCrm } from './intake/crypto.js';
 
 const MAX_BODY_BYTES = 32 * 1024;
 const MAX_FIELDS = 20;
@@ -209,6 +212,36 @@ ${blocks.map(([k, v]) => `<p style="margin:18px 0 4px;color:#666">${escapeHtml(k
       console.error('envoi : ' + (e && e.code ? e.code : '') + ' ' + (e && e.message ? e.message : e));
       return json(502, { message: msg('failed') }, okOrigin);
     }
+    // L'e-mail est parti : copie chiffree pour le logiciel (son echec ne gene pas le visiteur)
+    await storeLead(env, { kind: pa ? 'test' : 'contact', lang, fields, subject: subjectChoice, extras, pa });
     return json(200, { ok: true }, okOrigin);
+  }
+}
+
+// Copie chiffree de la demande pour le logiciel EZRA (meme chiffrement que le questionnaire : RSA-OAEP-256 +
+// AES-256-GCM, lie a son identifiant « lead:<id> »). Le logiciel la recupere (/intake/admin/leads), cree ou
+// complete le prospect, puis la fait effacer (/intake/admin/leads/ack).
+async function storeLead(env, { kind, lang, fields, subject, extras, pa }) {
+  if (!env.INTAKE_DB || !env.INTAKE_PUBLIC_KEY) return;
+  try {
+    const id = b64uEncode(crypto.getRandomValues(new Uint8Array(16)));
+    const receivedAt = new Date().toISOString();
+    const record = {
+      id: 'lead:' + id, v: 1, kind, lang, receivedAt,
+      fields: {
+        name: fields.name || '', email: fields.email || '', phone: fields.phone || '',
+        subject: subject || '', subjectDetails: fields.other_subject_details || '', message: fields.message || '',
+      },
+      extras,
+      preanalyse: pa ? {
+        grade: pa.grade, score: pa.score, label: pa.label, details: pa.details,
+        strengths: pa.strengths, warnings: pa.warnings, todo: pa.todo, context: pa.context || '',
+      } : null,
+    };
+    const sealed = await sealForCrm(env.INTAKE_PUBLIC_KEY, record.id, JSON.stringify(record));
+    await env.INTAKE_DB.prepare('INSERT INTO leads (id, created_at, kind, alg, ek, iv, ct) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7)')
+      .bind(id, receivedAt, kind, sealed.alg, sealed.ek, sealed.iv, sealed.ct).run();
+  } catch (e) {
+    console.error('demande : copie chiffree non enregistree : ' + (e && e.message ? e.message : e));
   }
 }

@@ -5,8 +5,8 @@
 //   POST /intake/verify  { token, code, turnstile }  -> lien personnel signe + mot de passe -> session (4 h)
 //   POST /intake/submit  { session, answers, lang }  -> validation serveur -> copie chiffree (D1) -> e-mail recap
 // Logiciel EZRA (requetes signees HMAC, jamais depuis un navigateur) :
-//   GET  /intake/admin/ping | /intake/admin/submissions
-//   POST /intake/admin/register | /ack | /revoke | /status
+//   GET  /intake/admin/ping | /intake/admin/submissions | /intake/admin/leads
+//   POST /intake/admin/register | /ack | /revoke | /status | /leads/ack
 //
 // Garde-fous : 5 codes faux -> lien bloque ; une seule soumission par lien (cle primaire) ; Turnstile ; limite
 // par IP ; rien du prospect dans les journaux (identifiant tronque seulement) ; aucune adresse IP conservee.
@@ -339,6 +339,20 @@ async function handleAdmin(request, env, url) {
     return adminJson(200, { ok: true, deleted: res.reduce((n, r) => n + (r.meta ? r.meta.changes : 0), 0) });
   }
 
+  // Demandes du formulaire de contact / test d'eligibilite (copies chiffrees deposees par index.js)
+  if (route === 'GET /intake/admin/leads') {
+    const { results } = await db.prepare('SELECT id, created_at, kind, alg, ek, iv, ct FROM leads ORDER BY created_at LIMIT 50').all();
+    return adminJson(200, { ok: true, leads: results });
+  }
+
+  if (route === 'POST /intake/admin/leads/ack') {
+    // Recuperees, dechiffrees et rangees par le logiciel : la copie chiffree est effacee de Cloudflare
+    const ids = idsFrom(body, 50);
+    if (!ids) return adminJson(400, { ok: false });
+    const res = await db.batch(ids.map((id) => db.prepare('DELETE FROM leads WHERE id = ?1').bind(id)));
+    return adminJson(200, { ok: true, deleted: res.reduce((n, r) => n + (r.meta ? r.meta.changes : 0), 0) });
+  }
+
   if (route === 'POST /intake/admin/register') {
     // Invitation creee par le logiciel : ouverte des maintenant a la connexion par l'Espace client.
     // eh = empreinte HMAC de l'adresse e-mail du prospect (calculee par le logiciel : l'adresse ne transite pas)
@@ -382,9 +396,10 @@ export async function scheduledPurge(env) {
   if (!env.INTAKE_DB) return;
   const nowSec = Math.floor(Date.now() / 1000);
   const cutoff = new Date(Date.now() - 60 * 86400 * 1000).toISOString();
-  const [subs, invs] = await env.INTAKE_DB.batch([
+  const [subs, invs, leads] = await env.INTAKE_DB.batch([
     env.INTAKE_DB.prepare('DELETE FROM submissions WHERE created_at < ?1').bind(cutoff),
     env.INTAKE_DB.prepare('DELETE FROM invites WHERE exp < ?1').bind(nowSec - 90 * 86400),
+    env.INTAKE_DB.prepare('DELETE FROM leads WHERE created_at < ?1').bind(cutoff),
   ]);
-  console.log(`intake menage : ${subs.meta.changes} copie(s) chiffree(s) et ${invs.meta.changes} invitation(s) expiree(s) supprimees`);
+  console.log(`intake menage : ${subs.meta.changes} copie(s) chiffree(s), ${invs.meta.changes} invitation(s) expiree(s) et ${leads.meta.changes} demande(s) non recuperee(s) supprimees`);
 }
