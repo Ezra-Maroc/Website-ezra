@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node scripts/intake-csp.mjs",
+    "build": "astro build && node scripts/site-csp.mjs",
     "preview": "astro preview"
   },
   "keywords": [],

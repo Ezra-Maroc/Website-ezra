@@ -5,7 +5,7 @@
 // verification, confirmation) est construit par public/js/intake-form.js ; styles : public/styles/intake.css.
 // Le recapitulatif de l'equipe est compose par le serveur, en francais, a partir des reponses validees.
 // Securite : jeton du lien direct apres le # (jamais envoye au serveur web), CSP stricte ajoutee apres le
-// build (scripts/intake-csp.mjs), page noindex/nofollow hors plan du site, rien d'ecrit dans le navigateur.
+// build (scripts/site-csp.mjs), page noindex/nofollow hors plan du site, rien d'ecrit dans le navigateur.
 import { INTAKE_ENDPOINT, INTAKE_SITEKEY } from '../config/intake';
 import { getPageUrl } from '../i18n/nav';
 
